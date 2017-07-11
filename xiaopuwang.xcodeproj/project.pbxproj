@@ -26,6 +26,11 @@
 		0478B9B51F148C98003A9C8B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B41F148C98003A9C8B /* CFNetwork.framework */; };
 		0478B9B71F148CA0003A9C8B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B61F148CA0003A9C8B /* CoreMotion.framework */; };
 		0478B9BC1F148D51003A9C8B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B81F148D51003A9C8B /* libWeChatSDK.a */; };
+		0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9BE1F149346003A9C8B /* BaseViewController.m */; };
+		0478B9C61F1495A7003A9C8B /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9C51F1495A7003A9C8B /* BaseViewModel.m */; };
+		0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9C91F149613003A9C8B /* CMRequest.m */; };
+		0478B9CF1F1497D2003A9C8B /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9CD1F1497D2003A9C8B /* BaseView.m */; };
+		0478B9D41F149A2A003A9C8B /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9D21F149A2A003A9C8B /* BaseTableViewCell.m */; };
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,28 @@
 		0478B9B91F148D51003A9C8B /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		0478B9BA1F148D51003A9C8B /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		0478B9BB1F148D51003A9C8B /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		0478B9BD1F149346003A9C8B /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		0478B9BE1F149346003A9C8B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0478B9C31F1495A7003A9C8B /* BaseViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewControllerProtocol.h; sourceTree = "<group>"; };
+		0478B9C41F1495A7003A9C8B /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
+		0478B9C51F1495A7003A9C8B /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
+		0478B9C71F1495C5003A9C8B /* BaseViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModelProtocol.h; sourceTree = "<group>"; };
+		0478B9C81F149613003A9C8B /* CMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRequest.h; sourceTree = "<group>"; };
+		0478B9C91F149613003A9C8B /* CMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRequest.m; sourceTree = "<group>"; };
+		0478B9CB1F1496A2003A9C8B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0478B9CC1F1497D2003A9C8B /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		0478B9CD1F1497D2003A9C8B /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		0478B9CE1F1497D2003A9C8B /* BaseViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewProtocol.h; sourceTree = "<group>"; };
+		0478B9D11F149A29003A9C8B /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		0478B9D21F149A2A003A9C8B /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		0478B9D31F149A2A003A9C8B /* BaseTableVIewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableVIewCellProtocol.h; sourceTree = "<group>"; };
+		0478B9D51F149AC7003A9C8B /* ACMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
+		0478B9D61F149AC7003A9C8B /* APIMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMacro.h; sourceTree = "<group>"; };
+		0478B9D71F149AC7003A9C8B /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		0478B9D81F149AC7003A9C8B /* NotificationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationMacro.h; sourceTree = "<group>"; };
+		0478B9D91F149AC7003A9C8B /* ToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolView.h; sourceTree = "<group>"; };
+		0478B9DA1F149AC7003A9C8B /* UtilsMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
+		0478B9DB1F149AC7003A9C8B /* VendorMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorMarco.h; sourceTree = "<group>"; };
 		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				04573F6E1F13725F00B52C76 /* main.m */,
+				0478B9CB1F1496A2003A9C8B /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,6 +191,8 @@
 		0478B98E1F147A65003A9C8B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0478B9C81F149613003A9C8B /* CMRequest.h */,
+				0478B9C91F149613003A9C8B /* CMRequest.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -170,6 +200,13 @@
 		0478B98F1F147A6B003A9C8B /* Marco */ = {
 			isa = PBXGroup;
 			children = (
+				0478B9D51F149AC7003A9C8B /* ACMacros.h */,
+				0478B9D61F149AC7003A9C8B /* APIMacro.h */,
+				0478B9D71F149AC7003A9C8B /* AppMacro.h */,
+				0478B9D81F149AC7003A9C8B /* NotificationMacro.h */,
+				0478B9D91F149AC7003A9C8B /* ToolView.h */,
+				0478B9DA1F149AC7003A9C8B /* UtilsMacro.h */,
+				0478B9DB1F149AC7003A9C8B /* VendorMarco.h */,
 			);
 			name = Marco;
 			sourceTree = "<group>";
@@ -203,6 +240,18 @@
 		0478B9931F147ABD003A9C8B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0478B9BD1F149346003A9C8B /* BaseViewController.h */,
+				0478B9BE1F149346003A9C8B /* BaseViewController.m */,
+				0478B9C31F1495A7003A9C8B /* BaseViewControllerProtocol.h */,
+				0478B9C71F1495C5003A9C8B /* BaseViewModelProtocol.h */,
+				0478B9C41F1495A7003A9C8B /* BaseViewModel.h */,
+				0478B9C51F1495A7003A9C8B /* BaseViewModel.m */,
+				0478B9CC1F1497D2003A9C8B /* BaseView.h */,
+				0478B9CD1F1497D2003A9C8B /* BaseView.m */,
+				0478B9CE1F1497D2003A9C8B /* BaseViewProtocol.h */,
+				0478B9D11F149A29003A9C8B /* BaseTableViewCell.h */,
+				0478B9D21F149A2A003A9C8B /* BaseTableViewCell.m */,
+				0478B9D31F149A2A003A9C8B /* BaseTableVIewCellProtocol.h */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -435,8 +484,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0478B9C61F1495A7003A9C8B /* BaseViewModel.m in Sources */,
+				0478B9D41F149A2A003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
+				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
+				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
+				0478B9CF1F1497D2003A9C8B /* BaseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +616,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/xiaopuwang",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/xiaopuwang/PrefixHeader.pch";
 				INFOPLIST_FILE = xiaopuwang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -586,6 +641,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/xiaopuwang",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/xiaopuwang/PrefixHeader.pch";
 				INFOPLIST_FILE = xiaopuwang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
