@@ -1,5 +1,5 @@
 //
-//  MyApplyCell.h
+//  MainServiceTableViewCell.h
 //  xiaopuwang
 //
 //  Created by TonyJiang on 2017/7/11.
@@ -8,6 +8,6 @@
 
 #import "BaseTableViewCell.h"
 
-@interface MyApplyCell : BaseTableViewCell
+@interface MainServiceTableViewCell : BaseTableViewCell
 
 @end

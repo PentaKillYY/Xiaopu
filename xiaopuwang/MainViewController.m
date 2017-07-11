@@ -1,28 +1,28 @@
 //
-//  MyViewController.m
+//  MainViewController.m
 //  xiaopuwang
 //
 //  Created by TonyJiang on 2017/7/11.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "MyViewController.h"
-#import "MyBannerCell.h"
-#import "MyOrderCell.h"
-#import "MyApplyCell.h"
-#import "MyTableCell.h"
+#import "MainViewController.h"
+#import "MainCycleTableViewCell.h"
+#import "MainRollingTableViewCell.h"
+#import "MainServiceTableViewCell.h"
+#import "MainActivityTableViewCell.h"
+#import "MainPreferedTableViewCell.h"
 
-@interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
 @end
 
-@implementation MyViewController
+@implementation MainViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self hideNavigationBar:YES animated:YES];
     [self changeStatusBarStyle:UIStatusBarStyleLightContent statusBarHidden:NO changeStatusBarAnimated:YES];
 }
 
@@ -34,30 +34,29 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 4;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 3) {
-        return 4;
-    }else{
-        return 1;
-    }
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        MyBannerCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyBannerCell" owner:self options:nil].firstObject;
+        MainCycleTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainCycleTableViewCell" owner:self options:nil].firstObject;
         return cell;
     }else if (indexPath.section == 1){
-        MyOrderCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyOrderCell" owner:self options:nil].firstObject;
+        MainRollingTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainRollingTableViewCell" owner:self options:nil].firstObject;
         return cell;
     }else if (indexPath.section == 2){
-        MyApplyCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyApplyCell" owner:self options:nil].firstObject;
+        MainServiceTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainServiceTableViewCell" owner:self options:nil].firstObject;
         return cell;
-    }else {
-        MyTableCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyTableCell" owner:self options:nil].firstObject;
+    }else if (indexPath.section == 5){
+        MainPreferedTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainPreferedTableViewCell" owner:self options:nil].firstObject;
+        return cell;
+    }else{
+        MainActivityTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainActivityTableViewCell" owner:self options:nil].firstObject;
         return cell;
     }
 }
@@ -67,10 +66,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return 180;
-    }else if (indexPath.section == 3){
+    }else if (indexPath.section == 1){
         return 44;
-    }else{
+    }else if (indexPath.section == 2){
         return 100;
+    }else {
+        return 140;
     }
 }
 

@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="1313" y="-796"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="jRR-ka-Kp2">
             <objects>
-                <viewController id="2S3-IP-56e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="2S3-IP-56e" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z0D-hj-yt1"/>
                         <viewControllerLayoutGuide type="bottom" id="44E-Oy-Hxc"/>
@@ -57,9 +57,28 @@
                     <view key="view" contentMode="scaleToFill" id="P2J-9H-tHz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2S3-IP-56e" id="EJa-oU-8Xu"/>
+                                    <outlet property="delegate" destination="2S3-IP-56e" id="COa-Jv-IVN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vbg-n6-qoj" firstAttribute="leading" secondItem="P2J-9H-tHz" secondAttribute="leading" id="Sca-FE-0dS"/>
+                            <constraint firstItem="44E-Oy-Hxc" firstAttribute="top" secondItem="vbg-n6-qoj" secondAttribute="bottom" id="aFu-Sl-0E6"/>
+                            <constraint firstAttribute="trailing" secondItem="vbg-n6-qoj" secondAttribute="trailing" id="dXZ-pL-5lK"/>
+                            <constraint firstItem="vbg-n6-qoj" firstAttribute="top" secondItem="z0D-hj-yt1" secondAttribute="bottom" id="w6c-zD-ePQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WNY-ck-eeQ"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="1313" y="-141"/>
         </scene>
-        <!--View Controller-->
+        <!--Orginization View Controller-->
         <scene sceneID="djl-vk-Swq">
             <objects>
-                <viewController id="3IF-KR-xqP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Orginization" id="3IF-KR-xqP" customClass="OrginizationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gla-Kb-4zk"/>
                         <viewControllerLayoutGuide type="bottom" id="g9H-Dq-cjM"/>
@@ -118,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1313" y="521"/>
         </scene>
-        <!--View Controller-->
+        <!--School View Controller-->
         <scene sceneID="l3a-Z6-cnw">
             <objects>
-                <viewController id="65V-t9-4va" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="School" id="65V-t9-4va" customClass="SchoolViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A3u-gX-Cis"/>
                         <viewControllerLayoutGuide type="bottom" id="5B5-1j-8hY"/>
@@ -211,7 +230,7 @@
         <!--My View Controller-->
         <scene sceneID="3M7-S4-jcA">
             <objects>
-                <viewController storyboardIdentifier="My" id="bZN-OK-cEx" customClass="MyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="My" automaticallyAdjustsScrollViewInsets="NO" id="bZN-OK-cEx" customClass="MyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CAp-b4-Ebz"/>
                         <viewControllerLayoutGuide type="bottom" id="HsO-YJ-PbF"/>
@@ -221,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-oE-hC9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bZN-OK-cEx" id="flG-5s-AtE"/>
@@ -232,13 +251,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WxS-oE-hC9" firstAttribute="top" secondItem="CAp-b4-Ebz" secondAttribute="bottom" id="Lwr-w7-ZhE"/>
-                            <constraint firstAttribute="bottom" secondItem="WxS-oE-hC9" secondAttribute="bottom" id="T2b-zh-5SU"/>
                             <constraint firstItem="WxS-oE-hC9" firstAttribute="leading" secondItem="MSZ-ld-fgo" secondAttribute="leading" id="Z2f-vs-KpF"/>
                             <constraint firstAttribute="trailing" secondItem="WxS-oE-hC9" secondAttribute="trailing" id="gFE-Mr-0Bf"/>
+                            <constraint firstItem="HsO-YJ-PbF" firstAttribute="top" secondItem="WxS-oE-hC9" secondAttribute="bottom" id="qf7-Cl-j20"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j8I-Pq-b7S"/>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>

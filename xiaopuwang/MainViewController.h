@@ -1,13 +1,13 @@
 //
-//  MyApplyCell.h
+//  MainViewController.h
 //  xiaopuwang
 //
 //  Created by TonyJiang on 2017/7/11.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "BaseTableViewCell.h"
+#import "BaseViewController.h"
 
-@interface MyApplyCell : BaseTableViewCell
+@interface MainViewController : BaseViewController
 
 @end

@@ -1,14 +1,14 @@
 //
-//  MyBannerCell.m
+//  MainActivityTableViewCell.m
 //  xiaopuwang
 //
 //  Created by TonyJiang on 2017/7/11.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "MyBannerCell.h"
+#import "MainActivityTableViewCell.h"
 
-@implementation MyBannerCell
+@implementation MainActivityTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

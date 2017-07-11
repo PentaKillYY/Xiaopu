@@ -1,18 +1,19 @@
 //
-//  MyBannerCell.m
+//  BaseTableViewCell.m
 //  xiaopuwang
 //
 //  Created by TonyJiang on 2017/7/11.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "MyBannerCell.h"
+#import "BaseTableViewCell.h"
 
-@implementation MyBannerCell
+@implementation BaseTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

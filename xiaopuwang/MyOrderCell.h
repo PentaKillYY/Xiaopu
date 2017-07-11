@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface MyOrderCell : UITableViewCell
+@interface MyOrderCell : BaseTableViewCell
 
 @end

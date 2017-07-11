@@ -37,6 +37,20 @@
 		0478BA0D1F14B0A6003A9C8B /* MyApplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA0B1F14B0A6003A9C8B /* MyApplyCell.xib */; };
 		0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA0F1F14B0C0003A9C8B /* MyTableCell.m */; };
 		0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA101F14B0C0003A9C8B /* MyTableCell.xib */; };
+		0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA191F14BBC9003A9C8B /* MainViewController.m */; };
+		0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA1C1F14BC05003A9C8B /* MainCycleTableViewCell.m */; };
+		0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA1D1F14BC05003A9C8B /* MainCycleTableViewCell.xib */; };
+		0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA211F14BC40003A9C8B /* MainRollingTableViewCell.m */; };
+		0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA221F14BC40003A9C8B /* MainRollingTableViewCell.xib */; };
+		0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA261F14BC55003A9C8B /* MainServiceTableViewCell.m */; };
+		0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA271F14BC55003A9C8B /* MainServiceTableViewCell.xib */; };
+		0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA2B1F14BC74003A9C8B /* MainActivityTableViewCell.m */; };
+		0478BA2E1F14BC74003A9C8B /* MainActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA2C1F14BC74003A9C8B /* MainActivityTableViewCell.xib */; };
+		0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA301F14BCA1003A9C8B /* MainPreferedTableViewCell.m */; };
+		0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA311F14BCA1003A9C8B /* MainPreferedTableViewCell.xib */; };
+		0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA351F14C489003A9C8B /* BaseTableViewCell.m */; };
+		0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */; };
+		0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA451F14CD0F003A9C8B /* SchoolViewController.m */; };
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +106,29 @@
 		0478BA0E1F14B0C0003A9C8B /* MyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableCell.h; sourceTree = "<group>"; };
 		0478BA0F1F14B0C0003A9C8B /* MyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableCell.m; sourceTree = "<group>"; };
 		0478BA101F14B0C0003A9C8B /* MyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableCell.xib; sourceTree = "<group>"; };
+		0478BA181F14BBC9003A9C8B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0478BA191F14BBC9003A9C8B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0478BA1B1F14BC05003A9C8B /* MainCycleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCycleTableViewCell.h; sourceTree = "<group>"; };
+		0478BA1C1F14BC05003A9C8B /* MainCycleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCycleTableViewCell.m; sourceTree = "<group>"; };
+		0478BA1D1F14BC05003A9C8B /* MainCycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCycleTableViewCell.xib; sourceTree = "<group>"; };
+		0478BA201F14BC40003A9C8B /* MainRollingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRollingTableViewCell.h; sourceTree = "<group>"; };
+		0478BA211F14BC40003A9C8B /* MainRollingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRollingTableViewCell.m; sourceTree = "<group>"; };
+		0478BA221F14BC40003A9C8B /* MainRollingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRollingTableViewCell.xib; sourceTree = "<group>"; };
+		0478BA251F14BC55003A9C8B /* MainServiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainServiceTableViewCell.h; sourceTree = "<group>"; };
+		0478BA261F14BC55003A9C8B /* MainServiceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainServiceTableViewCell.m; sourceTree = "<group>"; };
+		0478BA271F14BC55003A9C8B /* MainServiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainServiceTableViewCell.xib; sourceTree = "<group>"; };
+		0478BA2A1F14BC74003A9C8B /* MainActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainActivityTableViewCell.h; sourceTree = "<group>"; };
+		0478BA2B1F14BC74003A9C8B /* MainActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainActivityTableViewCell.m; sourceTree = "<group>"; };
+		0478BA2C1F14BC74003A9C8B /* MainActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainActivityTableViewCell.xib; sourceTree = "<group>"; };
+		0478BA2F1F14BCA1003A9C8B /* MainPreferedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPreferedTableViewCell.h; sourceTree = "<group>"; };
+		0478BA301F14BCA1003A9C8B /* MainPreferedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPreferedTableViewCell.m; sourceTree = "<group>"; };
+		0478BA311F14BCA1003A9C8B /* MainPreferedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPreferedTableViewCell.xib; sourceTree = "<group>"; };
+		0478BA341F14C489003A9C8B /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		0478BA351F14C489003A9C8B /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		0478BA411F14CCFE003A9C8B /* OrginizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationViewController.h; sourceTree = "<group>"; };
+		0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationViewController.m; sourceTree = "<group>"; };
+		0478BA441F14CD0F003A9C8B /* SchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolViewController.h; sourceTree = "<group>"; };
+		0478BA451F14CD0F003A9C8B /* SchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolViewController.m; sourceTree = "<group>"; };
 		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +261,9 @@
 		0478B9901F147A79003A9C8B /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				0478BA381F14CA63003A9C8B /* SchoolSection */,
+				0478BA371F14CA54003A9C8B /* OrginizationSection */,
+				0478BA131F14BB7C003A9C8B /* MainSection */,
 				0478B9DC1F14A06A003A9C8B /* MySection */,
 			);
 			name = Sections;
@@ -253,6 +293,8 @@
 			children = (
 				0478B9BD1F149346003A9C8B /* BaseViewController.h */,
 				0478B9BE1F149346003A9C8B /* BaseViewController.m */,
+				0478BA341F14C489003A9C8B /* BaseTableViewCell.h */,
+				0478BA351F14C489003A9C8B /* BaseTableViewCell.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -386,6 +428,144 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		0478BA131F14BB7C003A9C8B /* MainSection */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA171F14BBA5003A9C8B /* ViewController */,
+				0478BA161F14BB9E003A9C8B /* ViewModel */,
+				0478BA151F14BB97003A9C8B /* View */,
+				0478BA141F14BB91003A9C8B /* Model */,
+			);
+			name = MainSection;
+			sourceTree = "<group>";
+		};
+		0478BA141F14BB91003A9C8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0478BA151F14BB97003A9C8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA1B1F14BC05003A9C8B /* MainCycleTableViewCell.h */,
+				0478BA1C1F14BC05003A9C8B /* MainCycleTableViewCell.m */,
+				0478BA1D1F14BC05003A9C8B /* MainCycleTableViewCell.xib */,
+				0478BA201F14BC40003A9C8B /* MainRollingTableViewCell.h */,
+				0478BA211F14BC40003A9C8B /* MainRollingTableViewCell.m */,
+				0478BA221F14BC40003A9C8B /* MainRollingTableViewCell.xib */,
+				0478BA251F14BC55003A9C8B /* MainServiceTableViewCell.h */,
+				0478BA261F14BC55003A9C8B /* MainServiceTableViewCell.m */,
+				0478BA271F14BC55003A9C8B /* MainServiceTableViewCell.xib */,
+				0478BA2A1F14BC74003A9C8B /* MainActivityTableViewCell.h */,
+				0478BA2B1F14BC74003A9C8B /* MainActivityTableViewCell.m */,
+				0478BA2C1F14BC74003A9C8B /* MainActivityTableViewCell.xib */,
+				0478BA2F1F14BCA1003A9C8B /* MainPreferedTableViewCell.h */,
+				0478BA301F14BCA1003A9C8B /* MainPreferedTableViewCell.m */,
+				0478BA311F14BCA1003A9C8B /* MainPreferedTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0478BA161F14BB9E003A9C8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0478BA171F14BBA5003A9C8B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA181F14BBC9003A9C8B /* MainViewController.h */,
+				0478BA191F14BBC9003A9C8B /* MainViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		0478BA371F14CA54003A9C8B /* OrginizationSection */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA401F14CCBC003A9C8B /* Model */,
+				0478BA3F1F14CCB7003A9C8B /* View */,
+				0478BA3E1F14CCAF003A9C8B /* ViewModel */,
+				0478BA3D1F14CCA7003A9C8B /* ViewController */,
+			);
+			name = OrginizationSection;
+			sourceTree = "<group>";
+		};
+		0478BA381F14CA63003A9C8B /* SchoolSection */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA3C1F14CB80003A9C8B /* Model */,
+				0478BA3B1F14CB7B003A9C8B /* View */,
+				0478BA3A1F14CB70003A9C8B /* ViewModel */,
+				0478BA391F14CAA1003A9C8B /* ViewController */,
+			);
+			name = SchoolSection;
+			sourceTree = "<group>";
+		};
+		0478BA391F14CAA1003A9C8B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA441F14CD0F003A9C8B /* SchoolViewController.h */,
+				0478BA451F14CD0F003A9C8B /* SchoolViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		0478BA3A1F14CB70003A9C8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0478BA3B1F14CB7B003A9C8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0478BA3C1F14CB80003A9C8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0478BA3D1F14CCA7003A9C8B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA411F14CCFE003A9C8B /* OrginizationViewController.h */,
+				0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		0478BA3E1F14CCAF003A9C8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0478BA3F1F14CCB7003A9C8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0478BA401F14CCBC003A9C8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		2CB1636ADA4F1070C9964D16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,13 +657,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0478BA081F14B08D003A9C8B /* MyOrderCell.xib in Resources */,
+				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
+				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
 				0478BA0D1F14B0A6003A9C8B /* MyApplyCell.xib in Resources */,
+				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
+				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
+				0478BA2E1F14BC74003A9C8B /* MainActivityTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,11 +728,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */,
+				0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */,
+				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
+				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
 				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
+				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
+				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
+				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
+				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
 				0478BA0C1F14B0A6003A9C8B /* MyApplyCell.m in Sources */,
+				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
+				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				0478BA071F14B08D003A9C8B /* MyOrderCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
