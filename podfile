@@ -1,0 +1,18 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target 'xiaopuwang' do
+
+pod 'AFNetworking', '~> 3.1.0'
+pod 'SDCycleScrollView', '~> 1.61'
+pod 'MBProgressHUD', '~> 1.0.0'
+pod 'MJRefresh', '~> 3.1.12'
+pod 'MJExtension', '~> 3.0.13'
+pod 'UMengUShare', '~> 6.4.5'
+pod 'UMengAnalytics','~>4.2.4'
+pod 'AMap3DMap', '~> 5.2.1'
+pod 'RongCloudIM', '~> 2.8.13'
+pod 'JPush', '~> 3.0.6'
+
+end

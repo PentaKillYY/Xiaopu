@@ -13,6 +13,7 @@
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
 		04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04573F791F13725F00B52C76 /* Assets.xcassets */; };
 		04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F7B1F13725F00B52C76 /* LaunchScreen.storyboard */; };
+		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		04573F791F13725F00B52C76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04573F7C1F13725F00B52C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04573F7E1F13725F00B52C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
+		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				04573F6C1F13725F00B52C76 /* xiaopuwang */,
 				04573F6B1F13725F00B52C76 /* Products */,
+				7F1A206C25071C5E920D42A0 /* Pods */,
+				2CB1636ADA4F1070C9964D16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2CB1636ADA4F1070C9964D16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F1A206C25071C5E920D42A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */,
+				F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04573F811F13725F00B52C76 /* Build configuration list for PBXNativeTarget "xiaopuwang" */;
 			buildPhases = (
+				5A37125156FE9A12E3E66B28 /* [CP] Check Pods Manifest.lock */,
 				04573F661F13725F00B52C76 /* Sources */,
 				04573F671F13725F00B52C76 /* Frameworks */,
 				04573F681F13725F00B52C76 /* Resources */,
+				6A2824FA8B951F3933DA9E44 /* [CP] Embed Pods Frameworks */,
+				1B726C085D18AA6172E12BF3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B726C085D18AA6172E12BF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A37125156FE9A12E3E66B28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6A2824FA8B951F3933DA9E44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04573F661F13725F00B52C76 /* Sources */ = {
@@ -269,6 +344,7 @@
 		};
 		04573F821F13725F00B52C76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -283,6 +359,7 @@
 		};
 		04573F831F13725F00B52C76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
