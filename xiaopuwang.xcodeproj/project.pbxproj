@@ -65,8 +65,9 @@
 		04573F6C1F13725F00B52C76 /* xiaopuwang */ = {
 			isa = PBXGroup;
 			children = (
-				04573F701F13725F00B52C76 /* AppDelegate.h */,
-				04573F711F13725F00B52C76 /* AppDelegate.m */,
+				0478B98B1F147A2F003A9C8B /* AppDelegate */,
+				0478B98C1F147A4B003A9C8B /* Class */,
+				0478B9921F147A94003A9C8B /* Resources */,
 				04573F731F13725F00B52C76 /* ViewController.h */,
 				04573F741F13725F00B52C76 /* ViewController.m */,
 				04573F761F13725F00B52C76 /* Main.storyboard */,
@@ -84,6 +85,141 @@
 				04573F6E1F13725F00B52C76 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0478B98B1F147A2F003A9C8B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				04573F701F13725F00B52C76 /* AppDelegate.h */,
+				04573F711F13725F00B52C76 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		0478B98C1F147A4B003A9C8B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				0478B98D1F147A5D003A9C8B /* General */,
+				0478B9911F147A7F003A9C8B /* Vendors */,
+				0478B9901F147A79003A9C8B /* Sections */,
+				0478B98F1F147A6B003A9C8B /* Marco */,
+				0478B98E1F147A65003A9C8B /* Helpers */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		0478B98D1F147A5D003A9C8B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				0478B9931F147ABD003A9C8B /* Base */,
+				0478B9981F147AEB003A9C8B /* Views */,
+				0478B9971F147AE3003A9C8B /* Public */,
+				0478B9961F147ADA003A9C8B /* Models */,
+				0478B9951F147AD2003A9C8B /* Core */,
+				0478B9941F147AC5003A9C8B /* Categories */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		0478B98E1F147A65003A9C8B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		0478B98F1F147A6B003A9C8B /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Marco;
+			sourceTree = "<group>";
+		};
+		0478B9901F147A79003A9C8B /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
+		0478B9911F147A7F003A9C8B /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		0478B9921F147A94003A9C8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0478B9991F147B38003A9C8B /* Fonts */,
+				0478B99A1F147B46003A9C8B /* Sounds */,
+				0478B99B1F147B4C003A9C8B /* Videos */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0478B9931F147ABD003A9C8B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		0478B9941F147AC5003A9C8B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		0478B9951F147AD2003A9C8B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		0478B9961F147ADA003A9C8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0478B9971F147AE3003A9C8B /* Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		0478B9981F147AEB003A9C8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0478B9991F147B38003A9C8B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		0478B99A1F147B46003A9C8B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		0478B99B1F147B4C003A9C8B /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Videos;
 			sourceTree = "<group>";
 		};
 		2CB1636ADA4F1070C9964D16 /* Frameworks */ = {
