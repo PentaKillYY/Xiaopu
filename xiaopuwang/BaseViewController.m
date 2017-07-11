@@ -18,6 +18,13 @@
 
 @implementation BaseViewController
 
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    
+    BaseViewController *viewController = [super allocWithZone:zone];
+    
+    return viewController;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -151,26 +158,5 @@
     }
 }
 
-#pragma mark - BasicMethod
-
-/**
- *  添加控件
- */
-- (void)yd_addSubviews {}
-
-/**
- *  绑定
- */
-- (void)yd_bindViewModel {}
-
-/**
- *  设置navation
- */
-- (void)yd_layoutNavigation {}
-
-/**
- *  初次获取数据
- */
-- (void)yd_getNewData {}
 
 @end
