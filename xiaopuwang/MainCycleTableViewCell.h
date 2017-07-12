@@ -7,7 +7,9 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "SDCycleScrollView.h"
 
-@interface MainCycleTableViewCell : BaseTableViewCell
+@interface MainCycleTableViewCell : BaseTableViewCell<SDCycleScrollViewDelegate>
+@property(nonatomic,strong)IBOutlet SDCycleScrollView* cycleScrollView;
 
 @end

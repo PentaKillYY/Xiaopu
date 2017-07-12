@@ -1,19 +1,49 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MainPreferedTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="KGk-i7-Jjw" customClass="MainPreferedTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUs-TQ-cst">
+                        <rect key="frame" x="127" y="10" width="66" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="gUs-TQ-cst" secondAttribute="height" multiplier="198:30" id="bSG-Fq-TmW"/>
+                            <constraint firstAttribute="height" constant="10" id="vsT-JY-n22"/>
+                        </constraints>
+                    </imageView>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhT-sB-anV">
+                        <rect key="frame" x="8" y="28" width="304" height="39"/>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gUs-TQ-cst" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="16i-SN-UEL"/>
+                    <constraint firstItem="dhT-sB-anV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8d6-22-jiw"/>
+                    <constraint firstAttribute="bottom" secondItem="dhT-sB-anV" secondAttribute="bottom" constant="8" id="CyZ-Bc-eVh"/>
+                    <constraint firstItem="dhT-sB-anV" firstAttribute="top" secondItem="gUs-TQ-cst" secondAttribute="bottom" constant="8" id="NEr-o6-yzj"/>
+                    <constraint firstAttribute="trailing" secondItem="dhT-sB-anV" secondAttribute="trailing" constant="8" id="lRH-5Z-eNY"/>
+                    <constraint firstItem="gUs-TQ-cst" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qTg-5e-5aS"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="atitleView" destination="gUs-TQ-cst" id="a86-6L-7fh"/>
+                <outlet property="scrollView" destination="dhT-sB-anV" id="r3s-ja-J3J"/>
+            </connections>
+            <point key="canvasLocation" x="85" y="101.5"/>
         </tableViewCell>
     </objects>
 </document>

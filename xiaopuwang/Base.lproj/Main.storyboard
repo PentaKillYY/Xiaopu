@@ -58,8 +58,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7U-Xh-xOa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7g-UZ-xdV">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="A5B-n3-i2b"/>
+                                        </constraints>
+                                        <state key="normal" title="定位"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEu-dT-Wwi">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Fl2-9e-H5c"/>
+                                        </constraints>
+                                        <state key="normal" title="个人"/>
+                                    </button>
+                                    <searchBar contentMode="redraw" placeholder="输入机构、学校、课程名称                             " translatesAutoresizingMaskIntoConstraints="NO" id="aY7-PR-9Eb">
+                                        <rect key="frame" x="44" y="0.0" width="287" height="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="i7g-UZ-xdV" secondAttribute="bottom" id="4RT-zC-oL8"/>
+                                    <constraint firstAttribute="height" constant="44" id="5qy-e7-SaD"/>
+                                    <constraint firstAttribute="trailing" secondItem="lEu-dT-Wwi" secondAttribute="trailing" id="9XZ-vS-c6C"/>
+                                    <constraint firstItem="i7g-UZ-xdV" firstAttribute="top" secondItem="O7U-Xh-xOa" secondAttribute="top" id="DUA-In-juA"/>
+                                    <constraint firstItem="lEu-dT-Wwi" firstAttribute="top" secondItem="O7U-Xh-xOa" secondAttribute="top" id="Fzf-ti-9VM"/>
+                                    <constraint firstItem="lEu-dT-Wwi" firstAttribute="leading" secondItem="aY7-PR-9Eb" secondAttribute="trailing" id="Xvx-dN-0ez"/>
+                                    <constraint firstAttribute="bottom" secondItem="aY7-PR-9Eb" secondAttribute="bottom" id="fMg-2k-6Ao"/>
+                                    <constraint firstItem="i7g-UZ-xdV" firstAttribute="leading" secondItem="O7U-Xh-xOa" secondAttribute="leading" id="gGx-XY-CFT"/>
+                                    <constraint firstItem="aY7-PR-9Eb" firstAttribute="top" secondItem="O7U-Xh-xOa" secondAttribute="top" id="mV7-Ya-ak6"/>
+                                    <constraint firstAttribute="bottom" secondItem="lEu-dT-Wwi" secondAttribute="bottom" id="nkj-Sr-wtx"/>
+                                    <constraint firstItem="aY7-PR-9Eb" firstAttribute="leading" secondItem="i7g-UZ-xdV" secondAttribute="trailing" id="rEW-rv-AS3"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2S3-IP-56e" id="EJa-oU-8Xu"/>
@@ -69,10 +106,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="O7U-Xh-xOa" firstAttribute="top" secondItem="z0D-hj-yt1" secondAttribute="bottom" id="0Jm-AS-dnh"/>
                             <constraint firstItem="vbg-n6-qoj" firstAttribute="leading" secondItem="P2J-9H-tHz" secondAttribute="leading" id="Sca-FE-0dS"/>
                             <constraint firstItem="44E-Oy-Hxc" firstAttribute="top" secondItem="vbg-n6-qoj" secondAttribute="bottom" id="aFu-Sl-0E6"/>
                             <constraint firstAttribute="trailing" secondItem="vbg-n6-qoj" secondAttribute="trailing" id="dXZ-pL-5lK"/>
-                            <constraint firstItem="vbg-n6-qoj" firstAttribute="top" secondItem="z0D-hj-yt1" secondAttribute="bottom" id="w6c-zD-ePQ"/>
+                            <constraint firstAttribute="trailing" secondItem="O7U-Xh-xOa" secondAttribute="trailing" id="jCf-eH-SMa"/>
+                            <constraint firstItem="vbg-n6-qoj" firstAttribute="top" secondItem="z0D-hj-yt1" secondAttribute="bottom" constant="44" id="w6c-zD-ePQ"/>
+                            <constraint firstItem="O7U-Xh-xOa" firstAttribute="leading" secondItem="P2J-9H-tHz" secondAttribute="leading" id="y2h-B5-iRH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WNY-ck-eeQ"/>
@@ -82,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-797"/>
+            <point key="canvasLocation" x="1997.5999999999999" y="-797.45127436281871"/>
         </scene>
         <!--机构-->
         <scene sceneID="cTG-h4-w1b">

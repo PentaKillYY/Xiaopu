@@ -9,5 +9,8 @@
 #import "BaseTableViewCell.h"
 
 @interface MainActivityTableViewCell : BaseTableViewCell
-
+@property(nonatomic,weak)IBOutlet UIImageView* atitleImage;
+@property(nonatomic,weak)IBOutlet UIImageView* acontentImage;
+@property(nonatomic,strong)IBOutlet NSLayoutConstraint* tHeight;
+@property(nonatomic,strong)IBOutlet NSLayoutConstraint* cHeight;
 @end

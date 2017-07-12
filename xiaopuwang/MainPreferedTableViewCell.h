@@ -9,5 +9,6 @@
 #import "BaseTableViewCell.h"
 
 @interface MainPreferedTableViewCell : BaseTableViewCell
-
+@property(nonatomic,weak)IBOutlet UIImageView* atitleView;
+@property(nonatomic,weak)IBOutlet UIScrollView* scrollView;
 @end

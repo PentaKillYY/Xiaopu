@@ -11,6 +11,7 @@
 		04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */; };
 		04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */; };
 		04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */; };
+		04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -65,6 +66,8 @@
 		04267ED01F15D1D900FFBC3E /* SchoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTableViewCell.h; sourceTree = "<group>"; };
 		04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolTableViewCell.m; sourceTree = "<group>"; };
 		04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
+		04267EDE1F16179700FFBC3E /* AutoRollingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoRollingScrollView.h; sourceTree = "<group>"; };
+		04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoRollingScrollView.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				0478BA2F1F14BCA1003A9C8B /* MainPreferedTableViewCell.h */,
 				0478BA301F14BCA1003A9C8B /* MainPreferedTableViewCell.m */,
 				0478BA311F14BCA1003A9C8B /* MainPreferedTableViewCell.xib */,
+				04267EDE1F16179700FFBC3E /* AutoRollingScrollView.h */,
+				04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -762,6 +767,7 @@
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
+				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,
 				0478BA071F14B08D003A9C8B /* MyOrderCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
