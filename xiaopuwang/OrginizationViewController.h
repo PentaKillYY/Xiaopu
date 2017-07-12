@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface OrginizationViewController : BaseViewController
+@interface OrginizationViewController : BaseViewController<UITableViewDelegate>
 
 @end

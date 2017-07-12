@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */; };
+		04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */; };
+		04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */; };
+		04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -55,6 +59,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04267ECB1F15CE5F00FFBC3E /* OrginizationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationTableViewCell.h; sourceTree = "<group>"; };
+		04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationTableViewCell.m; sourceTree = "<group>"; };
+		04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrginizationTableViewCell.xib; sourceTree = "<group>"; };
+		04267ED01F15D1D900FFBC3E /* SchoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTableViewCell.h; sourceTree = "<group>"; };
+		04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolTableViewCell.m; sourceTree = "<group>"; };
+		04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -525,6 +535,9 @@
 		0478BA3B1F14CB7B003A9C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04267ED01F15D1D900FFBC3E /* SchoolTableViewCell.h */,
+				04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */,
+				04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -555,6 +568,9 @@
 		0478BA3F1F14CCB7003A9C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04267ECB1F15CE5F00FFBC3E /* OrginizationTableViewCell.h */,
+				04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */,
+				04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -662,9 +678,11 @@
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
+				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
 				0478BA0D1F14B0A6003A9C8B /* MyApplyCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
+				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
@@ -730,6 +748,7 @@
 				0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */,
 				0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */,
 				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
+				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
 				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
@@ -745,6 +764,7 @@
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				0478BA071F14B08D003A9C8B /* MyOrderCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
+				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -104,7 +104,7 @@
         <!--Orginization View Controller-->
         <scene sceneID="djl-vk-Swq">
             <objects>
-                <viewController storyboardIdentifier="Orginization" id="3IF-KR-xqP" customClass="OrginizationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Orginization" automaticallyAdjustsScrollViewInsets="NO" id="3IF-KR-xqP" customClass="OrginizationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gla-Kb-4zk"/>
                         <viewControllerLayoutGuide type="bottom" id="g9H-Dq-cjM"/>
@@ -112,13 +112,53 @@
                     <view key="view" contentMode="scaleToFill" id="V1g-uG-f1A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4K-KL-bFe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="OjM-kP-ubv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBz-41-WAo">
+                                <rect key="frame" x="0.0" y="181" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UvC-Un-YTJ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lQ9-Oc-ELi">
+                                <rect key="frame" x="0.0" y="232" width="375" height="435"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3IF-KR-xqP" id="o36-EX-umV"/>
+                                    <outlet property="delegate" destination="3IF-KR-xqP" id="Pvn-NQ-51B"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LBz-41-WAo" firstAttribute="top" secondItem="t4K-KL-bFe" secondAttribute="bottom" constant="1" id="2O9-lV-76Q"/>
+                            <constraint firstItem="lQ9-Oc-ELi" firstAttribute="top" secondItem="LBz-41-WAo" secondAttribute="bottom" constant="1" id="4Eq-cJ-Qx3"/>
+                            <constraint firstItem="t4K-KL-bFe" firstAttribute="leading" secondItem="V1g-uG-f1A" secondAttribute="leading" id="8P8-gn-WbB"/>
+                            <constraint firstAttribute="trailing" secondItem="t4K-KL-bFe" secondAttribute="trailing" id="Gkv-4P-TVC"/>
+                            <constraint firstAttribute="trailing" secondItem="LBz-41-WAo" secondAttribute="trailing" id="Snc-lG-ko5"/>
+                            <constraint firstAttribute="trailing" secondItem="lQ9-Oc-ELi" secondAttribute="trailing" id="eee-73-55V"/>
+                            <constraint firstItem="g9H-Dq-cjM" firstAttribute="top" secondItem="lQ9-Oc-ELi" secondAttribute="bottom" id="gEW-WK-Kh9"/>
+                            <constraint firstItem="lQ9-Oc-ELi" firstAttribute="leading" secondItem="V1g-uG-f1A" secondAttribute="leading" id="gMQ-S5-Z77"/>
+                            <constraint firstItem="LBz-41-WAo" firstAttribute="leading" secondItem="V1g-uG-f1A" secondAttribute="leading" id="k45-8x-xhM"/>
+                            <constraint firstAttribute="trailing" secondItem="LBz-41-WAo" secondAttribute="trailing" id="rbV-b6-Nye"/>
+                            <constraint firstItem="t4K-KL-bFe" firstAttribute="top" secondItem="V1g-uG-f1A" secondAttribute="top" id="scR-m0-gT3"/>
+                            <constraint firstItem="LBz-41-WAo" firstAttribute="leading" secondItem="V1g-uG-f1A" secondAttribute="leading" id="w5C-Pm-Cso"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yoM-Xh-DIU"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArY-bA-Cfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-142"/>
+            <point key="canvasLocation" x="1997.5999999999999" y="-142.57871064467767"/>
         </scene>
         <!--学校-->
         <scene sceneID="WaC-mN-rM2">
@@ -148,13 +188,51 @@
                     <view key="view" contentMode="scaleToFill" id="QiA-JS-cJJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vum-Cw-nC4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="d0y-KQ-Cja"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LO-I1-aIQ">
+                                <rect key="frame" x="0.0" y="181" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="A8f-28-dyL"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pX2-jD-VX4">
+                                <rect key="frame" x="0.0" y="232" width="375" height="435"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="65V-t9-4va" id="gKC-D3-OFR"/>
+                                    <outlet property="delegate" destination="65V-t9-4va" id="UsA-Q5-wtZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5LO-I1-aIQ" firstAttribute="top" secondItem="Vum-Cw-nC4" secondAttribute="bottom" constant="1" id="7fy-WV-JbF"/>
+                            <constraint firstItem="pX2-jD-VX4" firstAttribute="leading" secondItem="QiA-JS-cJJ" secondAttribute="leading" id="Edc-sm-YJY"/>
+                            <constraint firstAttribute="trailing" secondItem="pX2-jD-VX4" secondAttribute="trailing" id="IMe-W9-MJa"/>
+                            <constraint firstItem="5LO-I1-aIQ" firstAttribute="leading" secondItem="QiA-JS-cJJ" secondAttribute="leading" id="JxS-O2-Unm"/>
+                            <constraint firstAttribute="trailing" secondItem="5LO-I1-aIQ" secondAttribute="trailing" id="TaM-uQ-1YD"/>
+                            <constraint firstItem="pX2-jD-VX4" firstAttribute="top" secondItem="5LO-I1-aIQ" secondAttribute="bottom" constant="1" id="YB0-Rb-zV2"/>
+                            <constraint firstAttribute="trailing" secondItem="Vum-Cw-nC4" secondAttribute="trailing" id="Ynx-LK-Mvk"/>
+                            <constraint firstItem="5B5-1j-8hY" firstAttribute="top" secondItem="pX2-jD-VX4" secondAttribute="bottom" id="i3Y-Ke-4gA"/>
+                            <constraint firstItem="Vum-Cw-nC4" firstAttribute="top" secondItem="QiA-JS-cJJ" secondAttribute="top" id="sKV-f6-IRC"/>
+                            <constraint firstItem="Vum-Cw-nC4" firstAttribute="leading" secondItem="QiA-JS-cJJ" secondAttribute="leading" id="x2X-k9-qSF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cRF-AA-aOL"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQh-HJ-i37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="520"/>
+            <point key="canvasLocation" x="1997.5999999999999" y="519.49025487256381"/>
         </scene>
         <!--我的-->
         <scene sceneID="XCv-XS-aFS">
