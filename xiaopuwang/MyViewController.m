@@ -8,8 +8,6 @@
 
 #import "MyViewController.h"
 #import "MyBannerCell.h"
-#import "MyOrderCell.h"
-#import "MyApplyCell.h"
 #import "MyTableCell.h"
 
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -38,10 +36,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 3) {
-        return 4;
-    }else{
+    if (section == 0) {
         return 1;
+    }else{
+        return 3;
     }
 }
 
@@ -49,12 +47,6 @@
     
     if (indexPath.section == 0) {
         MyBannerCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyBannerCell" owner:self options:nil].firstObject;
-        return cell;
-    }else if (indexPath.section == 1){
-        MyOrderCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyOrderCell" owner:self options:nil].firstObject;
-        return cell;
-    }else if (indexPath.section == 2){
-        MyApplyCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyApplyCell" owner:self options:nil].firstObject;
         return cell;
     }else {
         MyTableCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyTableCell" owner:self options:nil].firstObject;
@@ -67,10 +59,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return 180;
-    }else if (indexPath.section == 3){
-        return 44;
     }else{
-        return 100;
+        return 44;
     }
 }
 

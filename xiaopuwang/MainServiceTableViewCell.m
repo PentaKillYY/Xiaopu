@@ -19,6 +19,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    
+    [self setupUI];
 }
 
+- (void)setupUI{
+    self.lineH.constant = 0.5;
+    self.lineH2.constant = 0.5;
+    [self.specialistBtn setBackgroundImage:[UIImage imageNamed:@"专家服务"] forState:0];
+    [self.personalBtn setBackgroundImage:[UIImage imageNamed:@"自主选校"] forState:0];
+}
 @end

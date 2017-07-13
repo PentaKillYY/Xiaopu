@@ -21,13 +21,17 @@
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
     
     BaseViewController *viewController = [super allocWithZone:zone];
-    
     return viewController;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0/255.0 green:144.0/255.0 blue:240.0/255.0 alpha:1.0];
+    
+    [self changeStatusBarStyle:UIStatusBarStyleLightContent statusBarHidden:NO changeStatusBarAnimated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -157,6 +161,5 @@
         self.navigationItem.rightBarButtonItem=rightItem;
     }
 }
-
 
 @end

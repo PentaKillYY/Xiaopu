@@ -33,7 +33,7 @@
         <scene sceneID="7Xp-xj-cKG">
             <objects>
                 <navigationController id="Y9b-lJ-u6C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="主页" id="u9w-xf-kEY"/>
+                    <tabBarItem key="tabBarItem" title="主页" image="footernav_01" selectedImage="footernav_05" id="u9w-xf-kEY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kKR-tF-UbL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -58,7 +58,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -79,16 +79,19 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="8Sk-dl-eGf" kind="push" identifier="MainSearch" id="hc7-hA-kQF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-797"/>
+            <point key="canvasLocation" x="2186" y="-797"/>
         </scene>
         <!--机构-->
         <scene sceneID="cTG-h4-w1b">
             <objects>
                 <navigationController id="zqf-B2-uYY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="机构" id="JHi-Cy-P7W"/>
+                    <tabBarItem key="tabBarItem" title="机构" image="footernav_02" selectedImage="footernav_06" id="JHi-Cy-P7W"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qfh-wR-X28">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -164,7 +167,7 @@
         <scene sceneID="WaC-mN-rM2">
             <objects>
                 <navigationController id="fZh-4R-eml" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="学校" id="sCf-iN-Acg"/>
+                    <tabBarItem key="tabBarItem" title="学校" image="footernav_03" selectedImage="footernav_07" id="sCf-iN-Acg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f7u-Gg-kif">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -238,7 +241,7 @@
         <scene sceneID="XCv-XS-aFS">
             <objects>
                 <navigationController id="kva-TT-ACB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="d96-15-0Mo"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="footernav_04" selectedImage="footernav_08" id="d96-15-0Mo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xQZ-lM-439">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -305,6 +308,27 @@
             </objects>
             <point key="canvasLocation" x="2430" y="1904"/>
         </scene>
+        <!--搜索-->
+        <scene sceneID="Pl1-49-YMf">
+            <objects>
+                <viewController storyboardIdentifier="Search" title="搜索" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="8Sk-dl-eGf" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BQM-G8-BkZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qCJ-TZ-1dx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bjg-Jr-83a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EHu-Vj-eE9"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rd-tc-Yda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3124" y="1900"/>
+        </scene>
         <!--My View Controller-->
         <scene sceneID="3M7-S4-jcA">
             <objects>
@@ -343,4 +367,14 @@
             <point key="canvasLocation" x="2050" y="1182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="footernav_01" width="25" height="25"/>
+        <image name="footernav_02" width="25" height="25"/>
+        <image name="footernav_03" width="25" height="25"/>
+        <image name="footernav_04" width="25" height="25"/>
+        <image name="footernav_05" width="25" height="25"/>
+        <image name="footernav_06" width="25" height="25"/>
+        <image name="footernav_07" width="25" height="25"/>
+        <image name="footernav_08" width="25" height="25"/>
+    </resources>
 </document>

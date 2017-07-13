@@ -13,12 +13,21 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    // Configure the view for the selected state
+    self.lineH.constant = 0.5;
+    
+    scrollView = [[AutoRollingScrollView alloc] init];
+    scrollView.backgroundColor = [UIColor clearColor];
+    scrollView.frame = CGRectMake(120, 5, Main_Screen_Width-120, 39);
+    [self.contentView addSubview:scrollView];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
+
+
 
 @end
