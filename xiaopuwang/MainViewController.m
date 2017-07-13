@@ -15,9 +15,9 @@
 #import "UIButton+JKImagePosition.h"
 #import "UIButton+JKMiddleAligning.h"
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
-@property (nonatomic,strong)IBOutlet UISearchBar* searchBar;
-@property (nonatomic,strong)IBOutlet UIButton* rightButton;
-@property (nonatomic,strong)IBOutlet UIButton* leftButton;
+@property (nonatomic,strong) UISearchBar* searchBar;
+@property (nonatomic,strong) UIButton* rightButton;
+@property (nonatomic,strong) UIButton* leftButton;
 @end
 
 @implementation MainViewController
@@ -31,7 +31,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: YES];
-   
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -45,6 +45,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     
 }
+
 
 + (UIImage*) imageWithColor:(UIColor*)color andHeight:(CGFloat)height
 {
@@ -67,8 +68,6 @@
     [_leftButton setTitle:@"无锡" forState:0];
     [_leftButton setImage:V_IMAGE(@"map") forState:0];
     [_leftButton jk_setImagePosition:2 spacing:0];
-
-//    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 5, 44, <#CGFloat height#>)]
     
     NSString *content = _leftButton.titleLabel.text;
     UIFont *font = _leftButton.titleLabel.font;
