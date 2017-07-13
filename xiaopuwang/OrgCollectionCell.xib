@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OrgCollectionCell" id="gTV-IL-0wX" customClass="CollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OrgCollectionCell" id="gTV-IL-0wX" customClass="OrgCollectionCell">
             <rect key="frame" x="0.0" y="0.0" width="88" height="89"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -43,6 +43,10 @@
                 <constraint firstItem="0j0-7h-Iu4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rpr-Nz-AKY"/>
             </constraints>
             <size key="customSize" width="88" height="89"/>
+            <connections>
+                <outlet property="orgimg" destination="MOi-5K-Dor" id="vFa-KV-glo"/>
+                <outlet property="orgtitle" destination="0j0-7h-Iu4" id="hlQ-oZ-CFh"/>
+            </connections>
             <point key="canvasLocation" x="87" y="136.5"/>
         </collectionViewCell>
     </objects>

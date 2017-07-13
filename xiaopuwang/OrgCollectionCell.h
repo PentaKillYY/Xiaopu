@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OrgCollectionCell : UICollectionViewCell
-
+@property(nonatomic,weak)IBOutlet UIImageView* orgimg;
+@property(nonatomic,weak)IBOutlet UILabel* orgtitle;
 @end
