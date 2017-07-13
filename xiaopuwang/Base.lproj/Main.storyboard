@@ -33,7 +33,7 @@
         <scene sceneID="7Xp-xj-cKG">
             <objects>
                 <navigationController id="Y9b-lJ-u6C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="主页" id="u9w-xf-kEY"/>
+                    <tabBarItem key="tabBarItem" title="主页" image="footernav_01" selectedImage="footernav_05" id="u9w-xf-kEY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kKR-tF-UbL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -58,45 +58,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7U-Xh-xOa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7g-UZ-xdV">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="A5B-n3-i2b"/>
-                                        </constraints>
-                                        <state key="normal" title="定位"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEu-dT-Wwi">
-                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="Fl2-9e-H5c"/>
-                                        </constraints>
-                                        <state key="normal" title="个人"/>
-                                    </button>
-                                    <searchBar contentMode="redraw" placeholder="输入机构、学校、课程名称                             " translatesAutoresizingMaskIntoConstraints="NO" id="aY7-PR-9Eb">
-                                        <rect key="frame" x="44" y="0.0" width="287" height="44"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="i7g-UZ-xdV" secondAttribute="bottom" id="4RT-zC-oL8"/>
-                                    <constraint firstAttribute="height" constant="44" id="5qy-e7-SaD"/>
-                                    <constraint firstAttribute="trailing" secondItem="lEu-dT-Wwi" secondAttribute="trailing" id="9XZ-vS-c6C"/>
-                                    <constraint firstItem="i7g-UZ-xdV" firstAttribute="top" secondItem="O7U-Xh-xOa" secondAttribute="top" id="DUA-In-juA"/>
-                                    <constraint firstItem="lEu-dT-Wwi" firstAttribute="top" secondItem="O7U-Xh-xOa" secondAttribute="top" id="Fzf-ti-9VM"/>
-                                    <constraint firstItem="lEu-dT-Wwi" firstAttribute="leading" secondItem="aY7-PR-9Eb" secondAttribute="trailing" id="Xvx-dN-0ez"/>
-                                    <constraint firstAttribute="bottom" secondItem="aY7-PR-9Eb" secondAttribute="bottom" id="fMg-2k-6Ao"/>
-                                    <constraint firstItem="i7g-UZ-xdV" firstAttribute="leading" secondItem="O7U-Xh-xOa" secondAttribute="leading" id="gGx-XY-CFT"/>
-                                    <constraint firstItem="aY7-PR-9Eb" firstAttribute="top" secondItem="O7U-Xh-xOa" secondAttribute="top" id="mV7-Ya-ak6"/>
-                                    <constraint firstAttribute="bottom" secondItem="lEu-dT-Wwi" secondAttribute="bottom" id="nkj-Sr-wtx"/>
-                                    <constraint firstItem="aY7-PR-9Eb" firstAttribute="leading" secondItem="i7g-UZ-xdV" secondAttribute="trailing" id="rEW-rv-AS3"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2S3-IP-56e" id="EJa-oU-8Xu"/>
@@ -106,29 +69,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="O7U-Xh-xOa" firstAttribute="top" secondItem="z0D-hj-yt1" secondAttribute="bottom" id="0Jm-AS-dnh"/>
                             <constraint firstItem="vbg-n6-qoj" firstAttribute="leading" secondItem="P2J-9H-tHz" secondAttribute="leading" id="Sca-FE-0dS"/>
                             <constraint firstItem="44E-Oy-Hxc" firstAttribute="top" secondItem="vbg-n6-qoj" secondAttribute="bottom" id="aFu-Sl-0E6"/>
                             <constraint firstAttribute="trailing" secondItem="vbg-n6-qoj" secondAttribute="trailing" id="dXZ-pL-5lK"/>
-                            <constraint firstAttribute="trailing" secondItem="O7U-Xh-xOa" secondAttribute="trailing" id="jCf-eH-SMa"/>
-                            <constraint firstItem="vbg-n6-qoj" firstAttribute="top" secondItem="z0D-hj-yt1" secondAttribute="bottom" constant="44" id="w6c-zD-ePQ"/>
-                            <constraint firstItem="O7U-Xh-xOa" firstAttribute="leading" secondItem="P2J-9H-tHz" secondAttribute="leading" id="y2h-B5-iRH"/>
+                            <constraint firstItem="vbg-n6-qoj" firstAttribute="top" secondItem="z0D-hj-yt1" secondAttribute="bottom" id="w6c-zD-ePQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WNY-ck-eeQ"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="8Sk-dl-eGf" kind="push" identifier="MainSearch" id="hc7-hA-kQF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997.5999999999999" y="-797.45127436281871"/>
+            <point key="canvasLocation" x="2186" y="-797"/>
         </scene>
         <!--机构-->
         <scene sceneID="cTG-h4-w1b">
             <objects>
                 <navigationController id="zqf-B2-uYY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="机构" id="JHi-Cy-P7W"/>
+                    <tabBarItem key="tabBarItem" title="机构" image="footernav_02" selectedImage="footernav_06" id="JHi-Cy-P7W"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qfh-wR-X28">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -204,7 +167,7 @@
         <scene sceneID="WaC-mN-rM2">
             <objects>
                 <navigationController id="fZh-4R-eml" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="学校" id="sCf-iN-Acg"/>
+                    <tabBarItem key="tabBarItem" title="学校" image="footernav_03" selectedImage="footernav_07" id="sCf-iN-Acg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f7u-Gg-kif">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -278,7 +241,7 @@
         <scene sceneID="XCv-XS-aFS">
             <objects>
                 <navigationController id="kva-TT-ACB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="d96-15-0Mo"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="footernav_04" selectedImage="footernav_08" id="d96-15-0Mo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xQZ-lM-439">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -345,6 +308,27 @@
             </objects>
             <point key="canvasLocation" x="2430" y="1904"/>
         </scene>
+        <!--搜索-->
+        <scene sceneID="Pl1-49-YMf">
+            <objects>
+                <viewController storyboardIdentifier="Search" title="搜索" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="8Sk-dl-eGf" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BQM-G8-BkZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qCJ-TZ-1dx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bjg-Jr-83a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EHu-Vj-eE9"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rd-tc-Yda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3124" y="1900"/>
+        </scene>
         <!--My View Controller-->
         <scene sceneID="3M7-S4-jcA">
             <objects>
@@ -383,4 +367,14 @@
             <point key="canvasLocation" x="2050" y="1182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="footernav_01" width="25" height="25"/>
+        <image name="footernav_02" width="25" height="25"/>
+        <image name="footernav_03" width="25" height="25"/>
+        <image name="footernav_04" width="25" height="25"/>
+        <image name="footernav_05" width="25" height="25"/>
+        <image name="footernav_06" width="25" height="25"/>
+        <image name="footernav_07" width="25" height="25"/>
+        <image name="footernav_08" width="25" height="25"/>
+    </resources>
 </document>

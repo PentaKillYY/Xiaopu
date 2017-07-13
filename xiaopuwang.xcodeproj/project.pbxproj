@@ -12,6 +12,9 @@
 		04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */; };
 		04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */; };
 		04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */; };
+		04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F401F17189200FFBC3E /* UIButton+JKMiddleAligning.m */; };
+		04267F441F17189200FFBC3E /* UIButton+JKImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F421F17189200FFBC3E /* UIButton+JKImagePosition.m */; };
+		04267F481F17398400FFBC3E /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F471F17398400FFBC3E /* SearchViewController.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -36,10 +39,6 @@
 		0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9E21F14A0F7003A9C8B /* MyViewController.m */; };
 		0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA001F14B07C003A9C8B /* MyBannerCell.m */; };
 		0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA011F14B07C003A9C8B /* MyBannerCell.xib */; };
-		0478BA071F14B08D003A9C8B /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA051F14B08D003A9C8B /* MyOrderCell.m */; };
-		0478BA081F14B08D003A9C8B /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA061F14B08D003A9C8B /* MyOrderCell.xib */; };
-		0478BA0C1F14B0A6003A9C8B /* MyApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA0A1F14B0A6003A9C8B /* MyApplyCell.m */; };
-		0478BA0D1F14B0A6003A9C8B /* MyApplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA0B1F14B0A6003A9C8B /* MyApplyCell.xib */; };
 		0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA0F1F14B0C0003A9C8B /* MyTableCell.m */; };
 		0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA101F14B0C0003A9C8B /* MyTableCell.xib */; };
 		0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA191F14BBC9003A9C8B /* MainViewController.m */; };
@@ -68,6 +67,12 @@
 		04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
 		04267EDE1F16179700FFBC3E /* AutoRollingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoRollingScrollView.h; sourceTree = "<group>"; };
 		04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoRollingScrollView.m; sourceTree = "<group>"; };
+		04267F3F1F17189200FFBC3E /* UIButton+JKMiddleAligning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKMiddleAligning.h"; sourceTree = "<group>"; };
+		04267F401F17189200FFBC3E /* UIButton+JKMiddleAligning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKMiddleAligning.m"; sourceTree = "<group>"; };
+		04267F411F17189200FFBC3E /* UIButton+JKImagePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKImagePosition.h"; sourceTree = "<group>"; };
+		04267F421F17189200FFBC3E /* UIButton+JKImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKImagePosition.m"; sourceTree = "<group>"; };
+		04267F461F17398400FFBC3E /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		04267F471F17398400FFBC3E /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,12 +115,6 @@
 		0478B9FF1F14B07C003A9C8B /* MyBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBannerCell.h; sourceTree = "<group>"; };
 		0478BA001F14B07C003A9C8B /* MyBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBannerCell.m; sourceTree = "<group>"; };
 		0478BA011F14B07C003A9C8B /* MyBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBannerCell.xib; sourceTree = "<group>"; };
-		0478BA041F14B08D003A9C8B /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
-		0478BA051F14B08D003A9C8B /* MyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderCell.m; sourceTree = "<group>"; };
-		0478BA061F14B08D003A9C8B /* MyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
-		0478BA091F14B0A6003A9C8B /* MyApplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplyCell.h; sourceTree = "<group>"; };
-		0478BA0A1F14B0A6003A9C8B /* MyApplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplyCell.m; sourceTree = "<group>"; };
-		0478BA0B1F14B0A6003A9C8B /* MyApplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyApplyCell.xib; sourceTree = "<group>"; };
 		0478BA0E1F14B0C0003A9C8B /* MyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableCell.h; sourceTree = "<group>"; };
 		0478BA0F1F14B0C0003A9C8B /* MyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableCell.m; sourceTree = "<group>"; };
 		0478BA101F14B0C0003A9C8B /* MyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableCell.xib; sourceTree = "<group>"; };
@@ -172,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04267F451F17392B00FFBC3E /* SearchSection */ = {
+			isa = PBXGroup;
+			children = (
+				04267F461F17398400FFBC3E /* SearchViewController.h */,
+				04267F471F17398400FFBC3E /* SearchViewController.m */,
+			);
+			name = SearchSection;
+			sourceTree = "<group>";
+		};
 		04573F611F13725F00B52C76 = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +282,7 @@
 		0478B9901F147A79003A9C8B /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				04267F451F17392B00FFBC3E /* SearchSection */,
 				0478BA381F14CA63003A9C8B /* SchoolSection */,
 				0478BA371F14CA54003A9C8B /* OrginizationSection */,
 				0478BA131F14BB7C003A9C8B /* MainSection */,
@@ -315,6 +324,10 @@
 		0478B9941F147AC5003A9C8B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				04267F3F1F17189200FFBC3E /* UIButton+JKMiddleAligning.h */,
+				04267F401F17189200FFBC3E /* UIButton+JKMiddleAligning.m */,
+				04267F411F17189200FFBC3E /* UIButton+JKImagePosition.h */,
+				04267F421F17189200FFBC3E /* UIButton+JKImagePosition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -428,12 +441,6 @@
 				0478B9FF1F14B07C003A9C8B /* MyBannerCell.h */,
 				0478BA001F14B07C003A9C8B /* MyBannerCell.m */,
 				0478BA011F14B07C003A9C8B /* MyBannerCell.xib */,
-				0478BA041F14B08D003A9C8B /* MyOrderCell.h */,
-				0478BA051F14B08D003A9C8B /* MyOrderCell.m */,
-				0478BA061F14B08D003A9C8B /* MyOrderCell.xib */,
-				0478BA091F14B0A6003A9C8B /* MyApplyCell.h */,
-				0478BA0A1F14B0A6003A9C8B /* MyApplyCell.m */,
-				0478BA0B1F14B0A6003A9C8B /* MyApplyCell.xib */,
 				0478BA0E1F14B0C0003A9C8B /* MyTableCell.h */,
 				0478BA0F1F14B0C0003A9C8B /* MyTableCell.m */,
 				0478BA101F14B0C0003A9C8B /* MyTableCell.xib */,
@@ -677,7 +684,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0478BA081F14B08D003A9C8B /* MyOrderCell.xib in Resources */,
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
@@ -685,7 +691,6 @@
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
-				0478BA0D1F14B0A6003A9C8B /* MyApplyCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
@@ -754,21 +759,22 @@
 				0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */,
 				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
 				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
+				04267F441F17189200FFBC3E /* UIButton+JKImagePosition.m in Sources */,
+				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
+				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
 				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
 				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
-				0478BA0C1F14B0A6003A9C8B /* MyApplyCell.m in Sources */,
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,
-				0478BA071F14B08D003A9C8B /* MyOrderCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 			);
