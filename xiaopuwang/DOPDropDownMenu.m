@@ -106,7 +106,7 @@
 //data source
 @property (nonatomic, copy) NSArray *array;
 //layers array
-@property (nonatomic, copy) NSArray *titles;
+
 @property (nonatomic, copy) NSArray *indicators;
 @property (nonatomic, copy) NSArray *bgLayers;
 

@@ -15,6 +15,8 @@
     // Initialization code
     
     [self bingdingViewModel];
+    
+    self.sepH.constant = 0.5;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

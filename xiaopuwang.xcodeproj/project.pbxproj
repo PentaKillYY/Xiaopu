@@ -18,6 +18,8 @@
 		04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F511F1859A700FFBC3E /* DOPDropDownMenu.m */; };
 		04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */; };
 		04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */; };
+		04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F591F18A9D000FFBC3E /* SchoolBannerTableViewCell.m */; };
+		04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F5A1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -82,6 +84,9 @@
 		04267F531F1871FC00FFBC3E /* OrginizationBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationBannerTableViewCell.h; sourceTree = "<group>"; };
 		04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationBannerTableViewCell.m; sourceTree = "<group>"; };
 		04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrginizationBannerTableViewCell.xib; sourceTree = "<group>"; };
+		04267F581F18A9D000FFBC3E /* SchoolBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolBannerTableViewCell.h; sourceTree = "<group>"; };
+		04267F591F18A9D000FFBC3E /* SchoolBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolBannerTableViewCell.m; sourceTree = "<group>"; };
+		04267F5A1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolBannerTableViewCell.xib; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -570,6 +575,9 @@
 				04267ED01F15D1D900FFBC3E /* SchoolTableViewCell.h */,
 				04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */,
 				04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */,
+				04267F581F18A9D000FFBC3E /* SchoolBannerTableViewCell.h */,
+				04267F591F18A9D000FFBC3E /* SchoolBannerTableViewCell.m */,
+				04267F5A1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -708,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
+				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
@@ -788,6 +797,7 @@
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
 				04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */,
+				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,

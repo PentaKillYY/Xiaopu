@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="130.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bes-fp-rPy">
@@ -141,6 +141,7 @@
                 <outlet property="orgLogo" destination="Bes-fp-rPy" id="i7i-5T-nOA"/>
                 <outlet property="orgName" destination="V9p-vt-kX2" id="BTN-L4-ZPv"/>
                 <outlet property="rightTag" destination="IRW-sy-PTt" id="a9k-wM-2vD"/>
+                <outlet property="sepH" destination="zbf-XI-3gP" id="WYS-gF-FEh"/>
                 <outlet property="sepLabel" destination="VGh-Cw-M5H" id="TJZ-os-fjT"/>
                 <outlet property="starView" destination="1yB-zZ-XNz" id="Zme-kE-C7n"/>
                 <outlet property="tagH" destination="rqK-Tm-w06" id="nhh-XW-jUT"/>

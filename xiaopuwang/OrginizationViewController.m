@@ -155,8 +155,7 @@
         menu.delegate = self;
         menu.dataSource = self;
         _menu = menu;
-        
-        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
+//        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
         [menu selectDefalutIndexPath];
         
         return menu;
