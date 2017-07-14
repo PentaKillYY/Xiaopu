@@ -9,22 +9,20 @@
 #import "OrginizationViewController.h"
 #import "OrginizationTableViewCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
-#import "OrgCollectionCell.h"
 #import "DOPDropDownMenu.h"
+#import "OrginizationBannerTableViewCell.h"
 
-@interface OrginizationViewController ()<UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate>
+@interface OrginizationViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSArray* orgDistrictAry;
     NSArray* orgTypeAry;
     NSArray* orgSortAry;
     NSArray* orgDistanceFilterAry;
     NSArray* orgTypeDetailAry;
-    
 }
+
 @property (nonatomic,strong) UISearchBar* searchBar;
 @property (nonatomic,strong) IBOutlet UITableView* tableView;
-@property (nonatomic,strong) IBOutlet UICollectionView* collctionView;
-@property (nonatomic,strong) IBOutlet UILabel* topSep;
 @property (nonatomic, weak) DOPDropDownMenu *menu;
 @end
 
@@ -37,10 +35,8 @@
     [self addNavTitleView];
     
     [self loadFilterSortData];
-    self.topSep.backgroundColor = [UIColor colorWithRed:219.0/255 green:224.0/255 blue:228.0/255 alpha:1.0];
-    [self.tableView registerNib:[UINib nibWithNibName:@"OrginizationTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgCell"];
     
-    [self.collctionView registerNib:[UINib nibWithNibName:@"OrgCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"OrgCollectionCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"OrginizationTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgCell"];
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
@@ -82,24 +78,19 @@
     orgTypeAry = OrginizationTypeFilter;
     orgSortAry = OrginizationSort;
     orgDistanceFilterAry = OrgDistanceFilter;
-    
-    // 添加下拉菜单
-    DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50];
-    menu.delegate = self;
-    menu.dataSource = self;
-    
-    [self.view addSubview:menu];
-    _menu = menu;
-    
-    // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
-    [menu selectDefalutIndexPath];
-
 }
 
 - (void)loadNewData{
-    sleep(2);
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 耗时的操作
+        sleep(1);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 更新界面
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
+        });
+    });
+   
 }
 
 
@@ -129,59 +120,77 @@
 }
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (section == 0) {
+        return 1;
+    }else{
+        return 10;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    OrginizationTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationTableViewCell" owner:self options:nil].firstObject;
+    if (indexPath.section == 0) {
+      OrginizationBannerTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationBannerTableViewCell" owner:self options:nil].firstObject;
+        
+        return cell;
+    }else{
     
+        OrginizationTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationTableViewCell" owner:self options:nil].firstObject;
     
-    return cell;
+        return cell;
+    }
 }
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return nil;
+    }else{
+        // 添加下拉菜单
+        DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50];
+        menu.delegate = self;
+        menu.dataSource = self;
+        _menu = menu;
+        
+        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
+        [menu selectDefalutIndexPath];
+        
+        return menu;
+
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+
+{
+    if (section == 0) {
+        return 0;
+    }else{
+        return 50.0;
+    }
+}
+
 
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView fd_heightForCellWithIdentifier:@"OrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-        // configurations
-    }];
+    if (indexPath.section == 0) {
+        return 180.0;
+    }else{
+        return [tableView fd_heightForCellWithIdentifier:@"OrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            // configurations
+        }];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
-#pragma mark - UICollectionViewDataSource
-// 指定Section个数
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
-}
-
-// 指定section中的collectionViewCell的个数
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
-}
-
-// 配置section中的collectionViewCell的显示
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    OrgCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OrgCollectionCell" forIndexPath:indexPath];
-    cell.orgtitle.text = OrginizationTypeAry[indexPath.section*4+indexPath.row];
-    cell.orgimg.image = V_IMAGE(OrginizationImageAry[indexPath.section*4+indexPath.row]);
-    return cell;
-}
-
-//定义每个UICollectionView 的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake((Main_Screen_Width-10)/4, 86);
-}
-//定义每个UICollectionView 的 margin
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(2, 2, 2, 2);
-}
 
 #pragma mark - KeyboardNotification
 - (void)keyboardWillShow:(NSNotification *)notification
