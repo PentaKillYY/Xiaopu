@@ -151,10 +151,12 @@
         return nil;
     }else{
         // 添加下拉菜单
-        DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50];
+        DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
         menu.delegate = self;
         menu.dataSource = self;
         _menu = menu;
+        
+        _menu.menuWidth = Main_Screen_Width;
 //        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
         [menu selectDefalutIndexPath];
         

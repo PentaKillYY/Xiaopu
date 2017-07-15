@@ -126,6 +126,9 @@
 @property (nonatomic, strong) NSMutableArray  *currentSelectItemArray; // 恢复之前所选Unit
 @property (nonatomic, copy) NSArray *titles;
 
+@property CGFloat menuWidth;
+
+@property NSInteger type;
 /**
  *  the width of menu will be set to screen width defaultly
  *
@@ -134,7 +137,12 @@
  *
  *  @return menu
  */
-- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height;
+- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height andWidth:(CGFloat)width;
+
+
+//@property BOOL isSow;
+
+
 
 // 获取title
 - (NSString *)titleForRowAtIndexPath:(DOPIndexPath *)indexPath;

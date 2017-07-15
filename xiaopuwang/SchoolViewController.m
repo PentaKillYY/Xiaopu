@@ -11,11 +11,13 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "DOPDropDownMenu.h"
 #import "SchoolBannerTableViewCell.h"
+
 @interface SchoolViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSArray* countryAry;
     NSArray* provinceAry;
     NSArray* cityAry;
+    
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -32,6 +34,7 @@
     [self addNavTitleView];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolTableViewCell"];
+    
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
@@ -143,13 +146,14 @@
         return nil;
     }else{
         // 添加下拉菜单
-        DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50];
+        DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
         menu.delegate = self;
         menu.dataSource = self;
         _menu = menu;
+        _menu.menuWidth = Main_Screen_Width;
         //        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
+        menu.type = 1;
         [menu selectDefalutIndexPath];
-        
         return menu;
         
     }
@@ -193,7 +197,7 @@
 #pragma mark - DropDownMenuDatasource
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)menu:(DOPDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column
@@ -201,7 +205,7 @@
     if (column == 0) {
         return countryAry.count;
     }
-    return 0;
+    return 1;
 }
 
 - (NSString *)menu:(DOPDropDownMenu *)menu titleForRowAtIndexPath:(DOPIndexPath *)indexPath
@@ -209,14 +213,14 @@
     if (indexPath.column == 0) {
          return countryAry[indexPath.row];
     }
-    return 0;
+    return @"类别";
 }
 
 - (NSInteger)menu:(DOPDropDownMenu *)menu numberOfItemsInRow:(NSInteger)row column:(NSInteger)column
 {
     if (column == 0) {
         NSInteger count =provinceAry.count;
-        return arc4random()%count+1;
+        return 3;
     }
     return 0;
 }
@@ -232,7 +236,7 @@
 - (NSInteger)menu:(DOPDropDownMenu *)menu numberOfUnitsInItem:(NSInteger)item row:(NSInteger)row column:(NSInteger)column {
     if (column == 0) {
         NSInteger count =cityAry.count;
-        return arc4random()%count+1;
+        return 3;
     }
     return 0;
 }

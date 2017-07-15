@@ -21,4 +21,5 @@
 
 #define OrgDistanceFilter @[@"全城搜索",@"<1km",@"<3km",@"<5km"]
 
+
 #endif /* ConstantMarco_h */

@@ -8,6 +8,9 @@
 //
 
 #import "DOPDropDownMenu.h"
+#import "TagTableViewCell.h"
+#import "TagFooterTableViewCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
 @implementation DOPIndexPath
 - (instancetype)initWithColumn:(NSInteger)column row:(NSInteger)row {
@@ -100,6 +103,8 @@
 @property (nonatomic, strong) UITableView *firstTableView;   // 一级列表
 @property (nonatomic, strong) UITableView *secendTableView;  // 二级列表
 @property (nonatomic, strong) UITableView *thirdTableView;  // 三级列表
+@property (nonatomic, strong) UITableView *tagTableView;   // tag列表
+
 @property (nonatomic, strong) UIImageView *buttomImageView; // 底部imageView
 @property (nonatomic, weak) UIView *bottomShadow;
 
@@ -335,9 +340,9 @@
 }
 
 #pragma mark - init method
-- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height {
+- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height andWidth:(CGFloat)width{
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    self = [self initWithFrame:CGRectMake(origin.x, origin.y, screenSize.width, height)];
+    self = [self initWithFrame:CGRectMake(origin.x, origin.y, width, height)];
     if (self) {
         _origin = origin;
         _currentSelectedMenudIndex = -1;
@@ -355,7 +360,7 @@
         _isClickHaveUnitValid = YES;
         
         //firstTableView init
-        _firstTableView = [[UITableView alloc] initWithFrame:CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, 0) style:UITableViewStylePlain];
+        _firstTableView = [[UITableView alloc] initWithFrame:CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, 0) style:UITableViewStylePlain];
         _firstTableView.rowHeight = kTableViewCellHeight;
         _firstTableView.dataSource = self;
         _firstTableView.delegate = self;
@@ -364,7 +369,7 @@
         _firstTableView.tableFooterView = [[UIView alloc]init];
         
         //secendTableView init
-        _secendTableView = [[UITableView alloc] initWithFrame:CGRectMake(origin.x + self.frame.size.width/2, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, 0) style:UITableViewStylePlain];
+        _secendTableView = [[UITableView alloc] initWithFrame:CGRectMake(origin.x + Main_Screen_Width/2, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, 0) style:UITableViewStylePlain];
         _secendTableView.rowHeight = kTableViewCellHeight;
         _secendTableView.dataSource = self;
         _secendTableView.delegate = self;
@@ -372,12 +377,24 @@
         _secendTableView.separatorInset = UIEdgeInsetsZero;
         
         // _thirdTableView
-        _thirdTableView = [[UITableView alloc] initWithFrame:CGRectMake(origin.x + self.frame.size.width/2, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, 0) style:UITableViewStylePlain];
+        _thirdTableView = [[UITableView alloc] initWithFrame:CGRectMake(origin.x + Main_Screen_Width/2, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, 0) style:UITableViewStylePlain];
         _thirdTableView.rowHeight = kTableViewCellHeight;
         _thirdTableView.dataSource = self;
         _thirdTableView.delegate = self;
         _thirdTableView.separatorColor = kSeparatorColor;
         _thirdTableView.separatorInset = UIEdgeInsetsZero;
+        
+        // _tagTableView
+
+
+        _tagTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 + self.frame.size.height, Main_Screen_Width, 60*2) style:UITableViewStylePlain];
+        [_tagTableView registerNib:[UINib nibWithNibName:@"TagTableViewCell" bundle:nil] forCellReuseIdentifier:@"TagTableViewCell"];
+        _tagTableView.rowHeight = 60;
+        _tagTableView.dataSource = self;
+        _tagTableView.delegate = self;
+        _tagTableView.separatorStyle = 0;
+        _tagTableView.separatorInset = UIEdgeInsetsZero;
+        _tagTableView.tableFooterView = [[UIView alloc]init];
         
         _buttomImageView = [[UIImageView alloc]initWithFrame:CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, kButtomImageViewHeight)];
         _buttomImageView.image = [UIImage imageNamed:@"icon_chose_bottom"];
@@ -468,7 +485,6 @@
     layer.foregroundColor = color.CGColor;
     
     layer.contentsScale = [[UIScreen mainScreen] scale];
-    
     layer.position = point;
     
     return layer;
@@ -484,12 +500,18 @@
 
 #pragma mark - gesture handle
 - (void)menuTapped:(UITapGestureRecognizer *)paramSender {
+    
     if (_dataSource == nil) {
         return;
     }
     CGPoint touchPoint = [paramSender locationInView:self];
     //calculate index
+    DLog(@"%f",self.frame.size.width);
+
+    
     NSInteger tapIndex = touchPoint.x / (self.frame.size.width / _numOfMenu);
+
+    
     
     if (_currentSelectedMenudIndex != tapIndex) {
         _currentSelectItemArray = [NSMutableArray array];
@@ -515,17 +537,25 @@
         }];
     } else {
         _currentSelectedMenudIndex = tapIndex;
-        [_firstTableView reloadData];
-        if (_dataSource && _dataSourceFlags.numberOfItemsInRow) {
-            [_secendTableView reloadData];
+        if (_type == 0) {
+            [_firstTableView reloadData];
+            if (_dataSource && _dataSourceFlags.numberOfItemsInRow) {
+                [_secendTableView reloadData];
+            }
+            
+            if (_dataSource && _dataSourceFlags.numberOfUnitsInItem) {
+                [_thirdTableView reloadData];
+            }
+            [self animateIdicator:_indicators[tapIndex] background:_backGroundView tableView:_firstTableView title:_titles[tapIndex] forward:YES complecte:^{
+                _show = YES;
+            }];
+        }else{
+            [self animateIdicator:_indicators[tapIndex] background:_backGroundView tableView:_firstTableView title:_titles[tapIndex] forward:YES complecte:^{
+                _show = YES;
+            }];
         }
         
-        if (_dataSource && _dataSourceFlags.numberOfUnitsInItem) {
-            [_thirdTableView reloadData];
-        }
-        [self animateIdicator:_indicators[tapIndex] background:_backGroundView tableView:_firstTableView title:_titles[tapIndex] forward:YES complecte:^{
-            _show = YES;
-        }];
+       
     }
 }
 
@@ -588,100 +618,121 @@
 }
 
 - (void)animateTableView:(UITableView *)tableView show:(BOOL)show complete:(void(^)())complete {
-    BOOL haveItems = NO;
-    BOOL haveUnits = NO;
-    if (_dataSource) {
-        NSInteger num = [_firstTableView numberOfRowsInSection:0];
-        
-        for (NSInteger i = 0; i<num;++i) {
-            if (_dataSourceFlags.numberOfItemsInRow
-                && [_dataSource menu:self numberOfItemsInRow:i column:_currentSelectedMenudIndex] > 0) {
-                haveItems = YES;
-                break;
-            }
+    
+    if (self.type == 1 && _currentSelectedMenudIndex == 1) {
+        if (show) {
+            
+            _tagTableView.frame = CGRectMake(self.origin.x , self.frame.origin.y + self.frame.size.height, Main_Screen_Width, 0);
+            [self.superview addSubview:_tagTableView];
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                _tagTableView.frame = CGRectMake(self.origin.x , self.frame.origin.y + self.frame.size.height, Main_Screen_Width, 150);
+            }];
+        }else{
+            [_tagTableView removeFromSuperview];
         }
-        if (haveItems) {
+
+    }else{
+        BOOL haveItems = NO;
+        BOOL haveUnits = NO;
+        if (_dataSource) {
             NSInteger num = [_firstTableView numberOfRowsInSection:0];
-            for (NSInteger i = 0; i < num; ++i) {
-                NSInteger units = [_dataSource menu:self numberOfItemsInRow:i column:_currentSelectedMenudIndex];
-                for (NSInteger j = 0; j < units; ++j) {
-                    if (_dataSourceFlags.numberOfUnitsInItem
-                        && [_dataSource menu:self numberOfUnitsInItem:j row:i column:_currentSelectedMenudIndex] > 0) {
-                        haveUnits = YES;
-                        break;
-                    }
-                }
-                if (haveUnits) {
+            
+            for (NSInteger i = 0; i<num;++i) {
+                if (_dataSourceFlags.numberOfItemsInRow
+                    && [_dataSource menu:self numberOfItemsInRow:i column:_currentSelectedMenudIndex] > 0) {
+                    
+                    haveItems = YES;
                     break;
                 }
             }
+            if (haveItems) {
+                NSInteger num = [_firstTableView numberOfRowsInSection:0];
+                for (NSInteger i = 0; i < num; ++i) {
+                    NSInteger units = [_dataSource menu:self numberOfItemsInRow:i column:_currentSelectedMenudIndex];
+                    for (NSInteger j = 0; j < units; ++j) {
+                        if (_dataSourceFlags.numberOfUnitsInItem
+                            && [_dataSource menu:self numberOfUnitsInItem:j row:i column:_currentSelectedMenudIndex] > 0) {
+                            haveUnits = YES;
+                            break;
+                        }
+                    }
+                    if (haveUnits) {
+                        break;
+                    }
+                }
+            }
         }
-    }
-    
-    if (show) {
-        if (haveItems && !haveUnits) {
-            _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, 0);
-            _secendTableView.frame = CGRectMake(self.origin.x + self.frame.size.width/2, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, 0);
-            [self.superview addSubview:_firstTableView];
-            [self.superview addSubview:_secendTableView];
-        } else if (haveItems && haveUnits) {
-            _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, 0);
-            _secendTableView.frame = CGRectMake(self.origin.x + self.frame.size.width/3, self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, 0);
-            _thirdTableView.frame = CGRectMake(self.origin.x + (self.frame.size.width/3 * 2), self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, 0);
-            [self.superview addSubview:_firstTableView];
-            [self.superview addSubview:_secendTableView];
-            [self.superview addSubview:_thirdTableView];
-        } else {
-            _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
-            [self.superview addSubview:_firstTableView];
+        
+        if (show) {
+            if (haveItems && !haveUnits) {
+                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, 0);
+                _secendTableView.frame = CGRectMake(self.origin.x + Main_Screen_Width/2, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, 0);
+                
+                [self.superview addSubview:_firstTableView];
+                [self.superview addSubview:_secendTableView];
+                
+            } else if (haveItems && haveUnits) {
+                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, 0);
+                _secendTableView.frame = CGRectMake(self.origin.x + Main_Screen_Width/3, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, 0);
+                _thirdTableView.frame = CGRectMake(self.origin.x + (Main_Screen_Width/3 * 2), self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, 0);
+                
+                [self.superview addSubview:_firstTableView];
+                [self.superview addSubview:_secendTableView];
+                [self.superview addSubview:_thirdTableView];
+                
+            } else {
+                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width, 0);
+                
+                [self.superview addSubview:_firstTableView];
+            }
+            _buttomImageView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width, kButtomImageViewHeight);
+            [self.superview addSubview:_buttomImageView];
             
+            NSInteger num = [_firstTableView numberOfRowsInSection:0];
+            CGFloat tableViewHeight = num * kTableViewCellHeight > _tableViewHeight+1 ? _tableViewHeight:num*kTableViewCellHeight+1;
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                if (haveItems && !haveUnits) {
+                    _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, tableViewHeight);
+                    
+                    _secendTableView.frame = CGRectMake(self.origin.x + Main_Screen_Width/2, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, tableViewHeight);
+                } else if (haveItems && haveUnits) {
+                    _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, tableViewHeight);
+                    
+                    _secendTableView.frame = CGRectMake(self.origin.x + Main_Screen_Width/3, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, tableViewHeight);
+                    _thirdTableView.frame = CGRectMake(self.origin.x + (Main_Screen_Width/3 * 2), self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, tableViewHeight);
+                } else {
+                    _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width, tableViewHeight);
+                }
+                _buttomImageView.frame = CGRectMake(self.origin.x, CGRectGetMaxY(_firstTableView.frame)-2, Main_Screen_Width, kButtomImageViewHeight);
+            }];
+        } else {
+            [UIView animateWithDuration:0.2 animations:^{
+                if (haveItems && !haveUnits) {
+                    _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, 0);
+                    
+                    _secendTableView.frame = CGRectMake(self.origin.x + Main_Screen_Width/2, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/2, 0);
+                } else if (haveItems && haveUnits) {
+                    _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, 0);
+                    
+                    _secendTableView.frame = CGRectMake(self.origin.x + Main_Screen_Width/3, self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, 0);
+                    _thirdTableView.frame = CGRectMake(self.origin.x + (Main_Screen_Width/3 * 2), self.frame.origin.y + self.frame.size.height, Main_Screen_Width/3, 0);
+                } else {
+                    _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, Main_Screen_Width, 0);
+                }
+                _buttomImageView.frame = CGRectMake(self.origin.x, CGRectGetMaxY(_firstTableView.frame)-2, Main_Screen_Width, kButtomImageViewHeight);
+            } completion:^(BOOL finished) {
+                if (_secendTableView.superview) {
+                    [_secendTableView removeFromSuperview];
+                }
+                if (_thirdTableView.superview) {
+                    [_thirdTableView removeFromSuperview];
+                }
+                [_firstTableView removeFromSuperview];
+                [_buttomImageView removeFromSuperview];
+            }];
         }
-        _buttomImageView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, kButtomImageViewHeight);
-        [self.superview addSubview:_buttomImageView];
-        
-        NSInteger num = [_firstTableView numberOfRowsInSection:0];
-        CGFloat tableViewHeight = num * kTableViewCellHeight > _tableViewHeight+1 ? _tableViewHeight:num*kTableViewCellHeight+1;
-        
-        [UIView animateWithDuration:0.2 animations:^{
-            if (haveItems && !haveUnits) {
-                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, tableViewHeight);
-                
-                _secendTableView.frame = CGRectMake(self.origin.x + self.frame.size.width/2, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, tableViewHeight);
-            } else if (haveItems && haveUnits) {
-                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, tableViewHeight);
-                
-                _secendTableView.frame = CGRectMake(self.origin.x + self.frame.size.width/3, self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, tableViewHeight);
-                _thirdTableView.frame = CGRectMake(self.origin.x + (self.frame.size.width/3 * 2), self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, tableViewHeight);
-            } else {
-                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, tableViewHeight);
-            }
-            _buttomImageView.frame = CGRectMake(self.origin.x, CGRectGetMaxY(_firstTableView.frame)-2, self.frame.size.width, kButtomImageViewHeight);
-        }];
-    } else {
-        [UIView animateWithDuration:0.2 animations:^{
-            if (haveItems && !haveUnits) {
-                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, 0);
-                
-                _secendTableView.frame = CGRectMake(self.origin.x + self.frame.size.width/2, self.frame.origin.y + self.frame.size.height, self.frame.size.width/2, 0);
-            } else if (haveItems && haveUnits) {
-                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, 0);
-                
-                _secendTableView.frame = CGRectMake(self.origin.x + self.frame.size.width/3, self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, 0);
-                _thirdTableView.frame = CGRectMake(self.origin.x + (self.frame.size.width/3 * 2), self.frame.origin.y + self.frame.size.height, self.frame.size.width/3, 0);
-            } else {
-                _firstTableView.frame = CGRectMake(self.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
-            }
-            _buttomImageView.frame = CGRectMake(self.origin.x, CGRectGetMaxY(_firstTableView.frame)-2, self.frame.size.width, kButtomImageViewHeight);
-        } completion:^(BOOL finished) {
-            if (_secendTableView.superview) {
-                [_secendTableView removeFromSuperview];
-            }
-            if (_thirdTableView.superview) {
-                [_thirdTableView removeFromSuperview];
-            }
-            [_firstTableView removeFromSuperview];
-            [_buttomImageView removeFromSuperview];
-        }];
     }
     complete();
 }
@@ -713,10 +764,19 @@
 }
 
 #pragma mark - table datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (_tagTableView == tableView) {
+        return 2;
+    }else{
+        return 1;
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //NSAssert(_dataSource != nil, @"menu's dataSource shouldn't be nil");
     if (_firstTableView == tableView) {
         if (_dataSourceFlags.numberOfRowsInColumn) {
+            
             return [_dataSource menu:self
                 numberOfRowsInColumn:_currentSelectedMenudIndex];
         } else {
@@ -732,7 +792,7 @@
             //NSAssert(0 == 1, @"required method of dataSource protocol should be implemented");
             return 0;
         }
-    } else {
+    } else if(_thirdTableView == tableView ) {
         if (_dataSourceFlags.numberOfUnitsInItem) {
             NSInteger currentSelectedMenudRow = [_currentSelectRowArray[_currentSelectedMenudIndex] integerValue];
             NSInteger currentSelectedMenudItem = [_currentSelectItemArray[currentSelectedMenudRow] integerValue];
@@ -746,7 +806,31 @@
 //            NSAssert(0 == 1, @"required method of dataSource protocol should be implemented");
             return 0;
         }
+    }else{
+        if (section == 0) {
+            return 2;
+        }else{
+            return 1;
+        }
+        
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_tagTableView == tableView) {
+        
+        if (indexPath.section == 0) {
+            return [tableView fd_heightForCellWithIdentifier:@"TagTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+                // configurations
+            }];
+        }else{
+            return 44.0;
+        }
+       
+    }else{
+        return 44.0;
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -807,8 +891,10 @@
         }
         
         cell.backgroundColor = kCellBgColor;
+         return cell;
         
-    } else if (_secendTableView == tableView) {
+    }
+    else if (_secendTableView == tableView) {
         NSInteger currentSelectedMenudRow = [_currentSelectRowArray[_currentSelectedMenudIndex] integerValue];
         if (_dataSourceFlags.titleForItemsInRowAtIndexPath) {
             cell.textLabel.text = [_dataSource menu:self titleForItemsInRowAtIndexPath:[DOPIndexPath indexPathWithCol:_currentSelectedMenudIndex row:currentSelectedMenudRow item:indexPath.row]];
@@ -849,8 +935,10 @@
             }
         }
         cell.backgroundColor = kCellBgColor;
+         return cell;
         
-    } else {
+    }
+    else if (_thirdTableView == tableView) {
         NSInteger currentSelectedMenudRow = [_currentSelectRowArray[_currentSelectedMenudIndex] integerValue];
         NSInteger currentSelectedMenudItem = [_currentSelectItemArray[currentSelectedMenudRow] integerValue];
         if ([_dataSource menu:self numberOfItemsInRow:currentSelectedMenudRow column:_currentSelectedMenudIndex] > 0) {
@@ -866,8 +954,17 @@
         }
         cell.backgroundColor = [UIColor whiteColor];
         cell.accessoryView = nil;
+         return cell;
+    }else{
+        if (indexPath.section == 0) {
+            TagTableViewCell* tagcell = [[NSBundle mainBundle] loadNibNamed:@"TagTableViewCell" owner:self options:nil].firstObject;
+            return tagcell;
+        }else{
+            TagFooterTableViewCell* tagcell = [[NSBundle mainBundle] loadNibNamed:@"TagFooterTableViewCell" owner:self options:nil].firstObject;
+            return tagcell;
+        }
     }
-    return cell;
+   
 }
 
 #pragma mark - tableview delegate
