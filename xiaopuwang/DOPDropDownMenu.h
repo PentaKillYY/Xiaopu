@@ -124,6 +124,11 @@
 @property (nonatomic, getter=isRemainMenuTitle) BOOL remainMenuTitle; // 切换条件时是否更改menu title
 @property (nonatomic, strong) NSMutableArray  *currentSelectRowArray; // 恢复之前所选行
 @property (nonatomic, strong) NSMutableArray  *currentSelectItemArray; // 恢复之前所选Unit
+@property (nonatomic, copy) NSArray *titles;
+
+@property CGFloat menuWidth;
+
+@property NSInteger type;
 /**
  *  the width of menu will be set to screen width defaultly
  *
@@ -132,7 +137,12 @@
  *
  *  @return menu
  */
-- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height;
+- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height andWidth:(CGFloat)width;
+
+
+//@property BOOL isSow;
+
+
 
 // 获取title
 - (NSString *)titleForRowAtIndexPath:(DOPIndexPath *)indexPath;
@@ -146,5 +156,7 @@
 - (void)selectIndexPath:(DOPIndexPath *)indexPath; // 默认trigger delegate
 
 - (void)selectIndexPath:(DOPIndexPath *)indexPath triggerDelegate:(BOOL)trigger; // 调用代理
+
+- (void)animateTitle:(CATextLayer *)title show:(BOOL)show complete:(void(^)())complete;
 @end
 

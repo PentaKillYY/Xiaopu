@@ -21,4 +21,5 @@
 @property(nonatomic,weak)IBOutlet UILabel* rightTag;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* tagH;
 @property(nonatomic,weak)IBOutlet StarRatingView* starView;
+@property(nonatomic,weak)IBOutlet NSLayoutConstraint* sepH;
 @end

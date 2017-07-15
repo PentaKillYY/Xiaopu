@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0/255.0 green:144.0/255.0 blue:240.0/255.0 alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
     
     [self changeStatusBarStyle:UIStatusBarStyleLightContent statusBarHidden:NO changeStatusBarAnimated:YES];
     

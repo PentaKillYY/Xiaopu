@@ -15,9 +15,15 @@
 		04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F401F17189200FFBC3E /* UIButton+JKMiddleAligning.m */; };
 		04267F441F17189200FFBC3E /* UIButton+JKImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F421F17189200FFBC3E /* UIButton+JKImagePosition.m */; };
 		04267F481F17398400FFBC3E /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F471F17398400FFBC3E /* SearchViewController.m */; };
-		04267F4C1F177B4600FFBC3E /* OrgCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F4A1F177B4600FFBC3E /* OrgCollectionCell.m */; };
-		04267F4D1F177B4600FFBC3E /* OrgCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F4B1F177B4600FFBC3E /* OrgCollectionCell.xib */; };
 		04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F511F1859A700FFBC3E /* DOPDropDownMenu.m */; };
+		04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */; };
+		04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */; };
+		04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F591F18A9D000FFBC3E /* SchoolBannerTableViewCell.m */; };
+		04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F5A1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib */; };
+		04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F651F19AF5E00FFBC3E /* TagTableViewCell.m */; };
+		04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F661F19AF5E00FFBC3E /* TagTableViewCell.xib */; };
+		04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F6A1F19E64200FFBC3E /* TagFooterTableViewCell.m */; };
+		04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -76,12 +82,21 @@
 		04267F421F17189200FFBC3E /* UIButton+JKImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKImagePosition.m"; sourceTree = "<group>"; };
 		04267F461F17398400FFBC3E /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		04267F471F17398400FFBC3E /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		04267F491F177B4600FFBC3E /* OrgCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgCollectionCell.h; sourceTree = "<group>"; };
-		04267F4A1F177B4600FFBC3E /* OrgCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgCollectionCell.m; sourceTree = "<group>"; };
-		04267F4B1F177B4600FFBC3E /* OrgCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgCollectionCell.xib; sourceTree = "<group>"; };
 		04267F4E1F1850EC00FFBC3E /* ConstantMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantMarco.h; sourceTree = "<group>"; };
 		04267F501F1859A700FFBC3E /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
 		04267F511F1859A700FFBC3E /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
+		04267F531F1871FC00FFBC3E /* OrginizationBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationBannerTableViewCell.h; sourceTree = "<group>"; };
+		04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationBannerTableViewCell.m; sourceTree = "<group>"; };
+		04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrginizationBannerTableViewCell.xib; sourceTree = "<group>"; };
+		04267F581F18A9D000FFBC3E /* SchoolBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolBannerTableViewCell.h; sourceTree = "<group>"; };
+		04267F591F18A9D000FFBC3E /* SchoolBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolBannerTableViewCell.m; sourceTree = "<group>"; };
+		04267F5A1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolBannerTableViewCell.xib; sourceTree = "<group>"; };
+		04267F641F19AF5E00FFBC3E /* TagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewCell.h; sourceTree = "<group>"; };
+		04267F651F19AF5E00FFBC3E /* TagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewCell.m; sourceTree = "<group>"; };
+		04267F661F19AF5E00FFBC3E /* TagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagTableViewCell.xib; sourceTree = "<group>"; };
+		04267F691F19E64200FFBC3E /* TagFooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagFooterTableViewCell.h; sourceTree = "<group>"; };
+		04267F6A1F19E64200FFBC3E /* TagFooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagFooterTableViewCell.m; sourceTree = "<group>"; };
+		04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagFooterTableViewCell.xib; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,6 +211,13 @@
 				04267F511F1859A700FFBC3E /* DOPDropDownMenu.m */,
 			);
 			name = DropDownView;
+			sourceTree = "<group>";
+		};
+		04267F601F19AE1300FFBC3E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		04573F611F13725F00B52C76 = {
@@ -375,6 +397,7 @@
 		0478B9981F147AEB003A9C8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04267F601F19AE1300FFBC3E /* Cell */,
 				04267F4F1F18599800FFBC3E /* DropDownView */,
 			);
 			name = Views;
@@ -567,9 +590,18 @@
 		0478BA3B1F14CB7B003A9C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04267F641F19AF5E00FFBC3E /* TagTableViewCell.h */,
+				04267F651F19AF5E00FFBC3E /* TagTableViewCell.m */,
+				04267F661F19AF5E00FFBC3E /* TagTableViewCell.xib */,
+				04267F691F19E64200FFBC3E /* TagFooterTableViewCell.h */,
+				04267F6A1F19E64200FFBC3E /* TagFooterTableViewCell.m */,
+				04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */,
 				04267ED01F15D1D900FFBC3E /* SchoolTableViewCell.h */,
 				04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */,
 				04267ED21F15D1D900FFBC3E /* SchoolTableViewCell.xib */,
+				04267F581F18A9D000FFBC3E /* SchoolBannerTableViewCell.h */,
+				04267F591F18A9D000FFBC3E /* SchoolBannerTableViewCell.m */,
+				04267F5A1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -603,9 +635,9 @@
 				04267ECB1F15CE5F00FFBC3E /* OrginizationTableViewCell.h */,
 				04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */,
 				04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */,
-				04267F491F177B4600FFBC3E /* OrgCollectionCell.h */,
-				04267F4A1F177B4600FFBC3E /* OrgCollectionCell.m */,
-				04267F4B1F177B4600FFBC3E /* OrgCollectionCell.xib */,
+				04267F531F1871FC00FFBC3E /* OrginizationBannerTableViewCell.h */,
+				04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */,
+				04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -708,16 +740,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
+				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
+				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
+				04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
-				04267F4D1F177B4600FFBC3E /* OrgCollectionCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
+				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
 				0478BA2E1F14BC74003A9C8B /* MainActivityTableViewCell.xib in Resources */,
@@ -784,13 +819,16 @@
 				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
 				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
 				04267F441F17189200FFBC3E /* UIButton+JKImagePosition.m in Sources */,
+				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
+				04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */,
+				04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */,
+				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
-				04267F4C1F177B4600FFBC3E /* OrgCollectionCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
 				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
