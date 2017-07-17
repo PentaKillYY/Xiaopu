@@ -21,5 +21,5 @@
 
 #define OrgDistanceFilter @[@"全城搜索",@"<1km",@"<3km",@"<5km"]
 
-
+#define MyCellTitle @[@[@"培训学校订单",@"海外学校申请进度",@"国内学校申请进度"],@[@"我的钱包",@"我的优惠券",@"公益基金"],@[@"我的关注",@"邀请好友",@"个人信息"]]
 #endif /* ConstantMarco_h */

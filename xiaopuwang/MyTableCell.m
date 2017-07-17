@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.cellDetail.textColor = MAINCOLOR;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

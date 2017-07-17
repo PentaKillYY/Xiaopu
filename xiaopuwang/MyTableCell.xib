@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,9 +16,43 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ofa-9d-phm">
+                        <rect key="frame" x="8" y="11" width="21.5" height="21.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ofa-9d-phm" secondAttribute="height" multiplier="1:1" id="ceO-Gg-7YN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-hI-drt">
+                        <rect key="frame" x="37.5" y="14" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-64-IHe">
+                        <rect key="frame" x="254" y="14.5" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ofa-9d-phm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="4V3-eD-I38"/>
+                    <constraint firstAttribute="trailing" secondItem="2tD-64-IHe" secondAttribute="trailing" id="5lC-K4-Pcf"/>
+                    <constraint firstItem="BpI-hI-drt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="86l-2v-YQP"/>
+                    <constraint firstAttribute="bottom" secondItem="ofa-9d-phm" secondAttribute="bottom" constant="11" id="Px2-uS-cCC"/>
+                    <constraint firstItem="ofa-9d-phm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="RUJ-Sp-kBC"/>
+                    <constraint firstItem="2tD-64-IHe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Zrz-ko-Tnr"/>
+                    <constraint firstItem="BpI-hI-drt" firstAttribute="leading" secondItem="ofa-9d-phm" secondAttribute="trailing" constant="8" id="tt9-Ol-BEF"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cellDetail" destination="2tD-64-IHe" id="oTT-Zd-GhB"/>
+                <outlet property="cellImage" destination="ofa-9d-phm" id="E0v-8x-37R"/>
+                <outlet property="cellTitle" destination="BpI-hI-drt" id="tMO-GM-pBN"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
