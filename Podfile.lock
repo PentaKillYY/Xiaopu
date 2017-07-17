@@ -52,88 +52,9 @@ PODS:
   - UIActionSheet+Block (1.0.2)
   - UITableView+FDTemplateLayoutCell (1.6)
   - UMengAnalytics (4.2.4)
-  - UMengUShare (6.4.5):
-    - UMengUShare/Core (= 6.4.5)
-    - UMengUShare/Network (= 6.4.5)
-    - UMengUShare/Plugin (= 6.4.5)
-    - UMengUShare/Social (= 6.4.5)
-    - UMengUShare/UI (= 6.4.5)
   - UMengUShare/Core (6.4.5):
     - UMengUShare/Network
   - UMengUShare/Network (6.4.5)
-  - UMengUShare/Plugin (6.4.5):
-    - UMengUShare/Core
-    - UMengUShare/Plugin/IDFA (= 6.4.5)
-  - UMengUShare/Plugin/IDFA (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social (6.4.5):
-    - UMengUShare/Core
-    - UMengUShare/Social/AlipayShare (= 6.4.5)
-    - UMengUShare/Social/DingDing (= 6.4.5)
-    - UMengUShare/Social/Douban (= 6.4.5)
-    - UMengUShare/Social/DropBox (= 6.4.5)
-    - UMengUShare/Social/Email (= 6.4.5)
-    - UMengUShare/Social/EverNote (= 6.4.5)
-    - UMengUShare/Social/Facebook (= 6.4.5)
-    - UMengUShare/Social/FaceBookMessenger (= 6.4.5)
-    - UMengUShare/Social/Flickr (= 6.4.5)
-    - UMengUShare/Social/GooglePlus (= 6.4.5)
-    - UMengUShare/Social/Instagram (= 6.4.5)
-    - UMengUShare/Social/Kakao (= 6.4.5)
-    - UMengUShare/Social/LaiWang (= 6.4.5)
-    - UMengUShare/Social/Line (= 6.4.5)
-    - UMengUShare/Social/Linkedin (= 6.4.5)
-    - UMengUShare/Social/Pinterest (= 6.4.5)
-    - UMengUShare/Social/Pocket (= 6.4.5)
-    - UMengUShare/Social/QQ (= 6.4.5)
-    - UMengUShare/Social/ReducedQQ (= 6.4.5)
-    - UMengUShare/Social/ReducedSina (= 6.4.5)
-    - UMengUShare/Social/ReducedWeChat (= 6.4.5)
-    - UMengUShare/Social/Renren (= 6.4.5)
-    - UMengUShare/Social/Sina (= 6.4.5)
-    - UMengUShare/Social/SMS (= 6.4.5)
-    - UMengUShare/Social/TencentWeibo (= 6.4.5)
-    - UMengUShare/Social/Tumblr (= 6.4.5)
-    - UMengUShare/Social/Twitter (= 6.4.5)
-    - UMengUShare/Social/VKontakte (= 6.4.5)
-    - UMengUShare/Social/WeChat (= 6.4.5)
-    - UMengUShare/Social/WhatsApp (= 6.4.5)
-    - UMengUShare/Social/YiXin (= 6.4.5)
-    - UMengUShare/Social/YouDao (= 6.4.5)
-  - UMengUShare/Social/AlipayShare (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/DingDing (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Douban (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/DropBox (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Email (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/EverNote (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Facebook (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/FaceBookMessenger (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Flickr (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/GooglePlus (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Instagram (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Kakao (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/LaiWang (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Line (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Linkedin (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Pinterest (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Pocket (6.4.5):
-    - UMengUShare/Core
   - UMengUShare/Social/QQ (6.4.5):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedQQ
@@ -143,30 +64,12 @@ PODS:
     - UMengUShare/Core
   - UMengUShare/Social/ReducedWeChat (6.4.5):
     - UMengUShare/Core
-  - UMengUShare/Social/Renren (6.4.5):
-    - UMengUShare/Core
   - UMengUShare/Social/Sina (6.4.5):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedSina
-  - UMengUShare/Social/SMS (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/TencentWeibo (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Tumblr (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/Twitter (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/VKontakte (6.4.5):
-    - UMengUShare/Core
   - UMengUShare/Social/WeChat (6.4.5):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
-  - UMengUShare/Social/WhatsApp (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/YiXin (6.4.5):
-    - UMengUShare/Core
-  - UMengUShare/Social/YouDao (6.4.5):
-    - UMengUShare/Core
   - UMengUShare/UI (6.4.5):
     - UMengUShare/Core
 
@@ -184,7 +87,10 @@ DEPENDENCIES:
   - UIActionSheet+Block (~> 1.0.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6)
   - UMengAnalytics (~> 4.2.4)
-  - UMengUShare (~> 6.4.5)
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/Sina
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -205,6 +111,6 @@ SPEC CHECKSUMS:
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
 
-PODFILE CHECKSUM: 728237d361a55a975825dae9a56447b87c6f7e31
+PODFILE CHECKSUM: 71b537335b36a35ca945738de89dac708a0c2e3f
 
 COCOAPODS: 1.2.1

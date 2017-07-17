@@ -11,6 +11,7 @@
 #import "MyTableCell.h"
 #import "UIActionSheet+Block.h"
 
+
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource,UserLogoDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
 @end
@@ -110,7 +111,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.section == 3 && indexPath.row == 1) {
+        //显示分享面板
+        [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+            // 根据获取的platformType确定所选平台进行下一步操作
+            
+            [self shareWebPageToPlatformType:platformType];
+            
+        }];
+    }
 }
 
 
@@ -119,7 +128,7 @@
 }
 
 -(void)settingPush:(id)sender{
-
+    
 }
 
 -(void)changeUserLogo:(id)sender{
@@ -128,7 +137,7 @@
     [sheet showInView:self.view];
 }
 
-
+#pragma mark - ActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
@@ -151,11 +160,9 @@
         [self presentViewController:imagePicker animated:YES completion:nil];
 
     }
-    
-   
-    
 }
 
+#pragma mark - ImagePickerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -166,5 +173,31 @@
     MyBannerCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [cell.userLogo setImage:image forState:UIControlStateNormal];
     [cell layoutSubviews];
+}
+
+
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    //创建网页内容对象
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:ShareDetailTitle descr:nil thumImage:[UIImage imageNamed:@"ShareLogo"]];
+    //设置网页地址
+    shareObject.webpageUrl =@"http://www.admin.ings.org.cn/UserRegister/GetCoupon?userId=&couponId=";
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
+        }
+    }];
 }
 @end

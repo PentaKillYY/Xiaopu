@@ -30,4 +30,7 @@
 #import "UtilsMacro.h"
 #import "VendorMarco.h"
 #import "ConstantMarco.h"
+
+#import <UShareUI/UShareUI.h>
+
 #endif /* PrefixHeader_pch */
