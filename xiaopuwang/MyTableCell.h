@@ -9,5 +9,7 @@
 #import "BaseTableViewCell.h"
 
 @interface MyTableCell : BaseTableViewCell
-
+@property(nonatomic,weak)IBOutlet UILabel* cellTitle;
+@property(nonatomic,weak)IBOutlet UIImageView* cellImage;
+@property(nonatomic,weak)IBOutlet UILabel* cellDetail;
 @end

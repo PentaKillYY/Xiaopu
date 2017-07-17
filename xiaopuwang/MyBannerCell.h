@@ -7,7 +7,22 @@
 //
 
 #import "BaseTableViewCell.h"
+@protocol UserLogoDelegate <NSObject>
 
-@interface MyBannerCell : BaseTableViewCell
+-(void)changeUserLogo:(id)sender;
 
 @end
+
+@interface MyBannerCell : BaseTableViewCell
+@property(nonatomic,weak)IBOutlet UIImageView* bgImage;
+@property(nonatomic,weak)IBOutlet UIButton* userLogo;
+@property(nonatomic,weak)IBOutlet UILabel* userName;
+@property(nonatomic,assign)id<UserLogoDelegate>delegate;
+@property(nonatomic,weak)IBOutlet UILabel* balance;
+@property(nonatomic,weak)IBOutlet UILabel* fund;
+@property(nonatomic,weak)IBOutlet UILabel* coupon;
+
+-(IBAction)userLogoAction:(id)sender;
+
+@end
+

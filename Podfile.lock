@@ -49,6 +49,7 @@ PODS:
   - SDWebImage/Core (4.0.0)
   - SKTagView (0.9.2)
   - StarRatingView (1.3.0)
+  - UIActionSheet+Block (1.0.2)
   - UITableView+FDTemplateLayoutCell (1.6)
   - UMengAnalytics (4.2.4)
   - UMengUShare (6.4.5):
@@ -180,6 +181,7 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.61)
   - SKTagView (~> 0.9.2)
   - StarRatingView (~> 1.3.0)
+  - UIActionSheet+Block (~> 1.0.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6)
   - UMengAnalytics (~> 4.2.4)
   - UMengUShare (~> 6.4.5)
@@ -198,10 +200,11 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SKTagView: 59cdadcd16e4a09300746ad1811a72371e1327f7
   StarRatingView: 6b6e0e762bbcce3aae8bdbde97dab54342333f7b
+  UIActionSheet+Block: b7860f7c20e8bb860ea996e0cb0301e59bb9f604
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
 
-PODFILE CHECKSUM: 2c61d3200cabae910c5bc660f95c9adf585005fd
+PODFILE CHECKSUM: 728237d361a55a975825dae9a56447b87c6f7e31
 
 COCOAPODS: 1.2.1

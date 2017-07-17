@@ -9,10 +9,10 @@
 #import "MyViewController.h"
 #import "MyBannerCell.h"
 #import "MyTableCell.h"
+#import "UIActionSheet+Block.h"
 
-@interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
-
-
+@interface MyViewController ()<UITableViewDelegate,UITableViewDataSource,UserLogoDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
+@property(nonatomic,weak)IBOutlet UITableView *tableView;
 @end
 
 @implementation MyViewController
@@ -20,14 +20,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self hideNavigationBar:YES animated:YES];
-    [self changeStatusBarStyle:UIStatusBarStyleLightContent statusBarHidden:NO changeStatusBarAnimated:YES];
+     [self.tableView registerNib:[UINib nibWithNibName:@"MyBannerCell" bundle:nil] forCellReuseIdentifier:@"MyBannerCell"];
+    
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+        
+    UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"message") style:UIBarButtonItemStylePlain target:self action:@selector(messagePush:)];
+    
+    UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(settingPush:)];
+    
+    
+    [self layoutNavigationBar:nil titleColor:nil titleFont:nil leftBarButtonItem:leftitem rightBarButtonItem:rightItm];
+
+    [self.navigationItem.rightBarButtonItem setTintColor:MAINCOLOR];
+    
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    
+    
+   
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -46,10 +63,28 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        MyBannerCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyBannerCell" owner:self options:nil].firstObject;
+        MyBannerCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyBannerCell" forIndexPath:indexPath];
+        
+        cell.bgImage.image =V_IMAGE(@"top");
+        cell.delegate = self;
         return cell;
     }else {
         MyTableCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyTableCell" owner:self options:nil].firstObject;
+        cell.cellTitle.text = MyCellTitle[indexPath.section-1][indexPath.row];
+        NSString* imageName = [NSString stringWithFormat:@"My-%ld-%ld",indexPath.section,indexPath.row];
+        
+        
+        cell.cellImage.image = V_IMAGE(imageName);
+        
+        if (indexPath.section == 2 && indexPath.row == 0) {
+            cell.cellDetail.text = @"0.00元";
+        }else if (indexPath.section == 2 && indexPath.row == 1){
+            cell.cellDetail.text = @"0张";
+        }else if (indexPath.section == 2 && indexPath.row == 2){
+            cell.cellDetail.text = @"0.00元";
+        }else{
+            cell.cellDetail.text = @"";
+        }
         return cell;
     }
 }
@@ -58,7 +93,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 180;
+        return Main_Screen_Width/1080*533+1;
     }else{
         return 44;
     }
@@ -79,4 +114,57 @@
 }
 
 
+-(void)messagePush:(id)sender{
+
+}
+
+-(void)settingPush:(id)sender{
+
+}
+
+-(void)changeUserLogo:(id)sender{
+    UIActionSheet* sheet = [[UIActionSheet alloc] initWithTitle:@"更换头像" cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"拍照",@"从手机相册选择"]];
+    sheet.delegate = self;
+    [sheet showInView:self.view];
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    //选择相机时，设置UIImagePickerController对象相关属性
+    if (buttonIndex == 0) {
+       
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
+        imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
+        imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+        //跳转到UIImagePickerController控制器弹出相机
+        [self presentViewController:imagePicker animated:YES completion:nil];
+
+    }else if (buttonIndex == 1){
+        
+        //选择相册时，设置UIImagePickerController对象相关属性
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        //跳转到UIImagePickerController控制器弹出相机
+        [self presentViewController:imagePicker animated:YES completion:nil];
+
+    }
+    
+   
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    //获取到的图片
+    UIImage * image = [info valueForKey:UIImagePickerControllerEditedImage];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    MyBannerCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [cell.userLogo setImage:image forState:UIControlStateNormal];
+    [cell layoutSubviews];
+}
 @end

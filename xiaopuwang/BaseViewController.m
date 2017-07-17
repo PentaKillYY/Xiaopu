@@ -30,7 +30,7 @@
     
     self.navigationController.navigationBar.barTintColor = MAINCOLOR;
     
-    [self changeStatusBarStyle:UIStatusBarStyleLightContent statusBarHidden:NO changeStatusBarAnimated:YES];
+//    [self changeStatusBarStyle:UIStatusBarStyleLightContent statusBarHidden:NO changeStatusBarAnimated:YES];
     
 }
 
@@ -48,7 +48,7 @@
         return self.statusBarStyle;
     } else {
         
-        return UIStatusBarStyleLightContent;
+        return UIStatusBarStyleDefault;
     }
 }
 
