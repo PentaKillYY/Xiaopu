@@ -24,6 +24,7 @@
 		04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F661F19AF5E00FFBC3E /* TagTableViewCell.xib */; };
 		04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F6A1F19E64200FFBC3E /* TagFooterTableViewCell.m */; };
 		04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */; };
+		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -97,6 +98,8 @@
 		04267F691F19E64200FFBC3E /* TagFooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagFooterTableViewCell.h; sourceTree = "<group>"; };
 		04267F6A1F19E64200FFBC3E /* TagFooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagFooterTableViewCell.m; sourceTree = "<group>"; };
 		04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagFooterTableViewCell.xib; sourceTree = "<group>"; };
+		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
+		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -545,6 +548,8 @@
 			children = (
 				0478BA181F14BBC9003A9C8B /* MainViewController.h */,
 				0478BA191F14BBC9003A9C8B /* MainViewController.m */,
+				0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */,
+				0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -831,6 +836,7 @@
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
 				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
+				0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */,
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
 				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,

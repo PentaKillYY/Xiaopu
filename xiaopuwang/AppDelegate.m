@@ -101,7 +101,7 @@
     /* 设置新浪的appKey和appSecret
      */
     
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:SINAAPPKEY  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:SINAAPPKEY  appSecret:SINASECRET redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
     
     /* 移除多余的分享平台（QQ收藏、QQ空间）
      */
