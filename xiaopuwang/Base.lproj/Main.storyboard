@@ -209,6 +209,7 @@
             <objects>
                 <navigationController id="kva-TT-ACB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="footernav_04" selectedImage="footernav_08" id="d96-15-0Mo"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xQZ-lM-439">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -309,7 +310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-oE-hC9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-44" width="375" height="711"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bZN-OK-cEx" id="flG-5s-AtE"/>
@@ -319,16 +320,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WxS-oE-hC9" firstAttribute="top" secondItem="CAp-b4-Ebz" secondAttribute="bottom" id="Lwr-w7-ZhE"/>
+                            <constraint firstItem="WxS-oE-hC9" firstAttribute="top" secondItem="CAp-b4-Ebz" secondAttribute="bottom" constant="-64" id="Lwr-w7-ZhE"/>
                             <constraint firstItem="WxS-oE-hC9" firstAttribute="leading" secondItem="MSZ-ld-fgo" secondAttribute="leading" id="Z2f-vs-KpF"/>
                             <constraint firstAttribute="trailing" secondItem="WxS-oE-hC9" secondAttribute="trailing" id="gFE-Mr-0Bf"/>
                             <constraint firstItem="HsO-YJ-PbF" firstAttribute="top" secondItem="WxS-oE-hC9" secondAttribute="bottom" id="qf7-Cl-j20"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j8I-Pq-b7S"/>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="WxS-oE-hC9" id="vbD-nb-F5G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIL-eg-rsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
