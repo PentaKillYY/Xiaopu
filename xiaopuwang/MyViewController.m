@@ -63,9 +63,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-//        MyBannerCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyBannerCell" owner:self options:nil].firstObject;
-//        MyBannerCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyBannerCell"];
-        
         MyBannerCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyBannerCell" forIndexPath:indexPath];
         
         cell.bgImage.image =V_IMAGE(@"top");
@@ -169,6 +166,5 @@
     MyBannerCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [cell.userLogo setImage:image forState:UIControlStateNormal];
     [cell layoutSubviews];
-//    [self.tableView reloadData];
 }
 @end
