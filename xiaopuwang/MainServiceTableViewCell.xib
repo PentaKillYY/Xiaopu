@@ -20,9 +20,15 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh6-eU-Gra">
                         <rect key="frame" x="8" y="5" width="146.5" height="33.5"/>
+                        <connections>
+                            <action selector="serviceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3WT-2a-ap8"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY6-Bc-Nsd">
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY6-Bc-Nsd">
                         <rect key="frame" x="165.5" y="5" width="146.5" height="33.5"/>
+                        <connections>
+                            <action selector="serviceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3ii-e7-Y6f"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vj-dg-gOi">
                         <rect key="frame" x="159.5" y="5" width="1" height="33.5"/>

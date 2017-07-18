@@ -25,6 +25,9 @@
 		04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F6A1F19E64200FFBC3E /* TagFooterTableViewCell.m */; };
 		04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
+		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
+		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
+		0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE6E1F1CA78500E9DAB3 /* CustomAlertTableView.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -100,6 +103,11 @@
 		04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagFooterTableViewCell.xib; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
+		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
+		0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolTypeTableViewCell.m; sourceTree = "<group>"; };
+		0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolTypeTableViewCell.xib; sourceTree = "<group>"; };
+		0445EE6D1F1CA78500E9DAB3 /* CustomAlertTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertTableView.h; sourceTree = "<group>"; };
+		0445EE6E1F1CA78500E9DAB3 /* CustomAlertTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlertTableView.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -221,6 +229,42 @@
 			children = (
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		0445EE401F1C9AD000E9DAB3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0478BA1B1F14BC05003A9C8B /* MainCycleTableViewCell.h */,
+				0478BA1C1F14BC05003A9C8B /* MainCycleTableViewCell.m */,
+				0478BA1D1F14BC05003A9C8B /* MainCycleTableViewCell.xib */,
+				0478BA201F14BC40003A9C8B /* MainRollingTableViewCell.h */,
+				0478BA211F14BC40003A9C8B /* MainRollingTableViewCell.m */,
+				0478BA221F14BC40003A9C8B /* MainRollingTableViewCell.xib */,
+				0478BA251F14BC55003A9C8B /* MainServiceTableViewCell.h */,
+				0478BA261F14BC55003A9C8B /* MainServiceTableViewCell.m */,
+				0478BA271F14BC55003A9C8B /* MainServiceTableViewCell.xib */,
+				0478BA2A1F14BC74003A9C8B /* MainActivityTableViewCell.h */,
+				0478BA2B1F14BC74003A9C8B /* MainActivityTableViewCell.m */,
+				0478BA2C1F14BC74003A9C8B /* MainActivityTableViewCell.xib */,
+				0478BA2F1F14BCA1003A9C8B /* MainPreferedTableViewCell.h */,
+				0478BA301F14BCA1003A9C8B /* MainPreferedTableViewCell.m */,
+				0478BA311F14BCA1003A9C8B /* MainPreferedTableViewCell.xib */,
+				04267EDE1F16179700FFBC3E /* AutoRollingScrollView.h */,
+				04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		0445EE411F1C9ADC00E9DAB3 /* PersonalChoose */ = {
+			isa = PBXGroup;
+			children = (
+				0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */,
+				0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */,
+				0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */,
+				0445EE6D1F1CA78500E9DAB3 /* CustomAlertTableView.h */,
+				0445EE6E1F1CA78500E9DAB3 /* CustomAlertTableView.m */,
+			);
+			name = PersonalChoose;
 			sourceTree = "<group>";
 		};
 		04573F611F13725F00B52C76 = {
@@ -515,23 +559,8 @@
 		0478BA151F14BB97003A9C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0478BA1B1F14BC05003A9C8B /* MainCycleTableViewCell.h */,
-				0478BA1C1F14BC05003A9C8B /* MainCycleTableViewCell.m */,
-				0478BA1D1F14BC05003A9C8B /* MainCycleTableViewCell.xib */,
-				0478BA201F14BC40003A9C8B /* MainRollingTableViewCell.h */,
-				0478BA211F14BC40003A9C8B /* MainRollingTableViewCell.m */,
-				0478BA221F14BC40003A9C8B /* MainRollingTableViewCell.xib */,
-				0478BA251F14BC55003A9C8B /* MainServiceTableViewCell.h */,
-				0478BA261F14BC55003A9C8B /* MainServiceTableViewCell.m */,
-				0478BA271F14BC55003A9C8B /* MainServiceTableViewCell.xib */,
-				0478BA2A1F14BC74003A9C8B /* MainActivityTableViewCell.h */,
-				0478BA2B1F14BC74003A9C8B /* MainActivityTableViewCell.m */,
-				0478BA2C1F14BC74003A9C8B /* MainActivityTableViewCell.xib */,
-				0478BA2F1F14BCA1003A9C8B /* MainPreferedTableViewCell.h */,
-				0478BA301F14BCA1003A9C8B /* MainPreferedTableViewCell.m */,
-				0478BA311F14BCA1003A9C8B /* MainPreferedTableViewCell.xib */,
-				04267EDE1F16179700FFBC3E /* AutoRollingScrollView.h */,
-				04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */,
+				0445EE411F1C9ADC00E9DAB3 /* PersonalChoose */,
+				0445EE401F1C9AD000E9DAB3 /* Main */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -747,6 +776,7 @@
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
+				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
@@ -840,11 +870,13 @@
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
 				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
+				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,
+				0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 			);
