@@ -9,7 +9,7 @@
 #import "PersonalChooseViewController.h"
 #import "CustomAlertTableView.h"
 
-@interface PersonalChooseViewController ()<RowSelectDelegate>
+@interface PersonalChooseViewController ()<RowSelectDelegate,UIAlertViewDelegate>
 {
     CustomAlertTableView* ct;
 }
@@ -69,8 +69,16 @@
     }
 }
 
+#pragma  mark - RowSelectDelegate
 -(void)selectRow:(NSInteger)rowIndex{
     DLog(@"%ld",rowIndex);
     [ct dismiss];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex  == 1) {
+        [self schoolTypeAction:self.schoolButton];
+    }
 }
 @end
