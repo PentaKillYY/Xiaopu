@@ -14,7 +14,7 @@
 #import "MainPreferedTableViewCell.h"
 #import "UIButton+JKImagePosition.h"
 #import "UIButton+JKMiddleAligning.h"
-@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate>
 @property (nonatomic,strong) UISearchBar* searchBar;
 @property (nonatomic,strong) UIButton* rightButton;
 @property (nonatomic,strong) UIButton* leftButton;
@@ -137,6 +137,7 @@
         return cell;
     }else if (indexPath.section == 2){
         MainServiceTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainServiceTableViewCell" owner:self options:nil].firstObject;
+        cell.delegate = self;
         return cell;
     }else if (indexPath.section == 5){
         MainPreferedTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainPreferedTableViewCell" owner:self options:nil].firstObject;
@@ -202,5 +203,16 @@
 {
     [_searchBar resignFirstResponder];
     [self performSegueWithIdentifier:@"MainSearch" sender:self];
+}
+
+#pragma mark - ServiceDelegate
+-(void)pushToServicePage:(id)sender{
+    UIButton* currentButton = (UIButton*)sender;
+    
+    if (currentButton.tag == 0) {
+        
+    }else{
+        [self performSegueWithIdentifier:@"MainToPersonalChoose" sender:self];
+    }
 }
 @end

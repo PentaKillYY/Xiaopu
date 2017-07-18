@@ -27,10 +27,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+
     self.navigationController.navigationBar.barTintColor = MAINCOLOR;
+
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-//    [self changeStatusBarStyle:UIStatusBarStyleLightContent statusBarHidden:NO changeStatusBarAnimated:YES];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc]
+                                          initWithTitle:@""
+                                          style:UIBarButtonItemStylePlain
+                                          target:self
+                                          action:@selector(doClickBackAction:)];
+    self.navigationItem.backBarButtonItem = leftBarButtonItem;
+
     
 }
 
@@ -162,4 +172,8 @@
     }
 }
 
+
+- (void)doClickBackAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

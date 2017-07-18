@@ -7,6 +7,11 @@
 //
 
 #import "BaseTableViewCell.h"
+@protocol ServiceDelegate <NSObject>
+
+-(void)pushToServicePage:(id)sender;
+
+@end
 
 @interface MainServiceTableViewCell : BaseTableViewCell
 @property (nonatomic,weak)IBOutlet UIButton* specialistBtn;
@@ -15,4 +20,9 @@
 @property (nonatomic,weak)IBOutlet UILabel* topLine;
 @property (nonatomic,strong)IBOutlet NSLayoutConstraint* lineH;
 @property (nonatomic,strong)IBOutlet NSLayoutConstraint* lineH2;
+@property (nonatomic,assign)id<ServiceDelegate>delegate;
+
+-(IBAction)serviceAction:(id)sender;
+
 @end
+
