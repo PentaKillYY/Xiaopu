@@ -168,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="3802" y="-809"/>
         </scene>
-        <!--Activity Web Controller-->
+        <!--Activity Web View Controller-->
         <scene sceneID="Dxc-vn-gI6">
             <objects>
-                <viewController storyboardIdentifier="ActivityWeb" id="l5b-5c-vCU" customClass="ActivityWebController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityWeb" id="l5b-5c-vCU" customClass="ActivityWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TJu-jk-iSl"/>
                         <viewControllerLayoutGuide type="bottom" id="EJM-ro-3se"/>
