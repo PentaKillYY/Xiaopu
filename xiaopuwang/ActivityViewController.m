@@ -35,12 +35,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if([segue.identifier isEqualToString:@"ActivityToWeb"]) //"goView2"是SEGUE连线的标识
-    {
-        id theSegue = segue.destinationViewController;
-        [theSegue setValue:[NSString stringWithFormat:@"%ld",currentType] forKey:@"activityType"];
-    }
-}
+   }
 
 
 

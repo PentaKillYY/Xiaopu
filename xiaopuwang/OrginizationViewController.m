@@ -8,7 +8,7 @@
 
 #import "OrginizationViewController.h"
 #import "OrginizationTableViewCell.h"
-#import "UITableView+FDTemplateLayoutCell.h"
+
 #import "DOPDropDownMenu.h"
 #import "OrginizationBannerTableViewCell.h"
 

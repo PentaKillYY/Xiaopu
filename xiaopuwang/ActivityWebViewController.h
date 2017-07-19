@@ -2,17 +2,12 @@
 //  ActivityWebViewController.h
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/7/18.
+//  Created by TonyJiang on 2017/7/19.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ActivityWebViewController : UITableViewController<UITextFieldDelegate>
-{
-    UIDatePicker* picker;
-    UIPickerView* singlePicker;
-}
-@property (nonatomic,weak) NSString* activityType;
+@interface ActivityWebViewController : BaseViewController
 
 @end

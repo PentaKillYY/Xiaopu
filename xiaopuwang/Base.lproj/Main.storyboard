@@ -84,7 +84,7 @@
                         <segue destination="8Sk-dl-eGf" kind="push" identifier="MainSearch" id="hc7-hA-kQF"/>
                         <segue destination="gZY-og-RO1" kind="push" identifier="MainToPersonalChoose" id="gcv-0Y-zjc"/>
                         <segue destination="3Vn-iH-BZo" kind="push" identifier="MainToSubTidy" id="JDZ-ga-NdA"/>
-                        <segue destination="VSb-Ud-1My" kind="push" identifier="MainToActivity" id="eqv-fi-pHj"/>
+                        <segue destination="VSb-Ud-1My" kind="push" identifier="MainToActivity" id="XOb-nr-ceQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,41 +161,31 @@
                     <navigationItem key="navigationItem" id="cMu-XM-g8C"/>
                     <connections>
                         <outlet property="tableView" destination="hDF-rJ-d2k" id="WZf-Z4-Ew8"/>
-                        <segue destination="xIS-3B-V5Z" kind="push" identifier="ActivityToWeb" id="uC8-xG-WEH"/>
+                        <segue destination="l5b-5c-vCU" kind="push" identifier="ActivityToWeb" id="Tx4-Tw-U7m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ux7-IO-kJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3785" y="-809"/>
+            <point key="canvasLocation" x="3802" y="-809"/>
         </scene>
-        <!--Activity Web View Controller-->
-        <scene sceneID="FGG-nb-Imj">
+        <!--Activity Web Controller-->
+        <scene sceneID="Dxc-vn-gI6">
             <objects>
-                <tableViewController storyboardIdentifier="ActivityWeb" id="xIS-3B-V5Z" customClass="ActivityWebViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fNG-4x-TiM">
+                <viewController storyboardIdentifier="ActivityWeb" id="l5b-5c-vCU" customClass="ActivityWebController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TJu-jk-iSl"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJM-ro-3se"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a30-v7-ixz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cPU-X1-zWo">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cPU-X1-zWo" id="9Xn-TI-JAG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xIS-3B-V5Z" id="a6s-wm-1w5"/>
-                            <outlet property="delegate" destination="xIS-3B-V5Z" id="eH9-29-CeG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="2Pb-Vg-3iU"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="11K-ix-gUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rg2-P0-EnG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDf-5a-He6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4534" y="-809"/>
+            <point key="canvasLocation" x="4734" y="-809"/>
         </scene>
         <!--Personal Choose View Controller-->
         <scene sceneID="9kR-V8-kce">

@@ -32,23 +32,7 @@
 		0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE751F1D9E4800E9DAB3 /* ActivityViewController.m */; };
 		0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE7D1F1DA01000E9DAB3 /* ActivityTableViewCell.m */; };
 		0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE7E1F1DA01000E9DAB3 /* ActivityTableViewCell.xib */; };
-		0445EE871F1DD20B00E9DAB3 /* ActivityBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE851F1DD20B00E9DAB3 /* ActivityBannerCell.m */; };
-		0445EE881F1DD20B00E9DAB3 /* ActivityBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE861F1DD20B00E9DAB3 /* ActivityBannerCell.xib */; };
-		0445EE8B1F1DD32300E9DAB3 /* ActivityWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE8A1F1DD32300E9DAB3 /* ActivityWebViewController.m */; };
-		0445EE8F1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE8D1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.m */; };
-		0445EE901F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE8E1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.xib */; };
-		0445EE941F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE921F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.m */; };
-		0445EE951F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE931F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.xib */; };
-		0445EE991F1DD7D600E9DAB3 /* ActivityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE971F1DD7D600E9DAB3 /* ActivityDetailCell.m */; };
-		0445EE9A1F1DD7D600E9DAB3 /* ActivityDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE981F1DD7D600E9DAB3 /* ActivityDetailCell.xib */; };
-		0445EE9E1F1DD83100E9DAB3 /* ActivityTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE9C1F1DD83100E9DAB3 /* ActivityTextFieldCell.m */; };
-		0445EE9F1F1DD83100E9DAB3 /* ActivityTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE9D1F1DD83100E9DAB3 /* ActivityTextFieldCell.xib */; };
-		0445EEA31F1DDBCB00E9DAB3 /* ActivityPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEA11F1DDBCB00E9DAB3 /* ActivityPickerCell.m */; };
-		0445EEA41F1DDBCB00E9DAB3 /* ActivityPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEA21F1DDBCB00E9DAB3 /* ActivityPickerCell.xib */; };
-		0445EEAD1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEAB1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.m */; };
-		0445EEAE1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEAC1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.xib */; };
-		0445EEB21F1DF57400E9DAB3 /* ActivityGenderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEB01F1DF57400E9DAB3 /* ActivityGenderTableViewCell.m */; };
-		0445EEB31F1DF57400E9DAB3 /* ActivityGenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEB11F1DF57400E9DAB3 /* ActivityGenderTableViewCell.xib */; };
+		0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEB51F1EFAA800E9DAB3 /* ActivityWebViewController.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -136,32 +120,8 @@
 		0445EE7C1F1DA01000E9DAB3 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
 		0445EE7D1F1DA01000E9DAB3 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
 		0445EE7E1F1DA01000E9DAB3 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
-		0445EE841F1DD20B00E9DAB3 /* ActivityBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityBannerCell.h; sourceTree = "<group>"; };
-		0445EE851F1DD20B00E9DAB3 /* ActivityBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityBannerCell.m; sourceTree = "<group>"; };
-		0445EE861F1DD20B00E9DAB3 /* ActivityBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityBannerCell.xib; sourceTree = "<group>"; };
-		0445EE891F1DD32300E9DAB3 /* ActivityWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityWebViewController.h; sourceTree = "<group>"; };
-		0445EE8A1F1DD32300E9DAB3 /* ActivityWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityWebViewController.m; sourceTree = "<group>"; };
-		0445EE8C1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityEmptyTextFieldCell.h; sourceTree = "<group>"; };
-		0445EE8D1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityEmptyTextFieldCell.m; sourceTree = "<group>"; };
-		0445EE8E1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityEmptyTextFieldCell.xib; sourceTree = "<group>"; };
-		0445EE911F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityEmptyTextViewCell.h; sourceTree = "<group>"; };
-		0445EE921F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityEmptyTextViewCell.m; sourceTree = "<group>"; };
-		0445EE931F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityEmptyTextViewCell.xib; sourceTree = "<group>"; };
-		0445EE961F1DD7D600E9DAB3 /* ActivityDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailCell.h; sourceTree = "<group>"; };
-		0445EE971F1DD7D600E9DAB3 /* ActivityDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailCell.m; sourceTree = "<group>"; };
-		0445EE981F1DD7D600E9DAB3 /* ActivityDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityDetailCell.xib; sourceTree = "<group>"; };
-		0445EE9B1F1DD83100E9DAB3 /* ActivityTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTextFieldCell.h; sourceTree = "<group>"; };
-		0445EE9C1F1DD83100E9DAB3 /* ActivityTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTextFieldCell.m; sourceTree = "<group>"; };
-		0445EE9D1F1DD83100E9DAB3 /* ActivityTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTextFieldCell.xib; sourceTree = "<group>"; };
-		0445EEA01F1DDBCB00E9DAB3 /* ActivityPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityPickerCell.h; sourceTree = "<group>"; };
-		0445EEA11F1DDBCB00E9DAB3 /* ActivityPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityPickerCell.m; sourceTree = "<group>"; };
-		0445EEA21F1DDBCB00E9DAB3 /* ActivityPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityPickerCell.xib; sourceTree = "<group>"; };
-		0445EEAA1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTextViewTableViewCell.h; sourceTree = "<group>"; };
-		0445EEAB1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTextViewTableViewCell.m; sourceTree = "<group>"; };
-		0445EEAC1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTextViewTableViewCell.xib; sourceTree = "<group>"; };
-		0445EEAF1F1DF57400E9DAB3 /* ActivityGenderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityGenderTableViewCell.h; sourceTree = "<group>"; };
-		0445EEB01F1DF57400E9DAB3 /* ActivityGenderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityGenderTableViewCell.m; sourceTree = "<group>"; };
-		0445EEB11F1DF57400E9DAB3 /* ActivityGenderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityGenderTableViewCell.xib; sourceTree = "<group>"; };
+		0445EEB41F1EFAA800E9DAB3 /* ActivityWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityWebViewController.h; sourceTree = "<group>"; };
+		0445EEB51F1EFAA800E9DAB3 /* ActivityWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityWebViewController.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -327,30 +287,6 @@
 				0445EE7C1F1DA01000E9DAB3 /* ActivityTableViewCell.h */,
 				0445EE7D1F1DA01000E9DAB3 /* ActivityTableViewCell.m */,
 				0445EE7E1F1DA01000E9DAB3 /* ActivityTableViewCell.xib */,
-				0445EE841F1DD20B00E9DAB3 /* ActivityBannerCell.h */,
-				0445EE851F1DD20B00E9DAB3 /* ActivityBannerCell.m */,
-				0445EE861F1DD20B00E9DAB3 /* ActivityBannerCell.xib */,
-				0445EE8C1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.h */,
-				0445EE8D1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.m */,
-				0445EE8E1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.xib */,
-				0445EE911F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.h */,
-				0445EE921F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.m */,
-				0445EE931F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.xib */,
-				0445EEAF1F1DF57400E9DAB3 /* ActivityGenderTableViewCell.h */,
-				0445EEB01F1DF57400E9DAB3 /* ActivityGenderTableViewCell.m */,
-				0445EEB11F1DF57400E9DAB3 /* ActivityGenderTableViewCell.xib */,
-				0445EE961F1DD7D600E9DAB3 /* ActivityDetailCell.h */,
-				0445EE971F1DD7D600E9DAB3 /* ActivityDetailCell.m */,
-				0445EE981F1DD7D600E9DAB3 /* ActivityDetailCell.xib */,
-				0445EE9B1F1DD83100E9DAB3 /* ActivityTextFieldCell.h */,
-				0445EE9C1F1DD83100E9DAB3 /* ActivityTextFieldCell.m */,
-				0445EE9D1F1DD83100E9DAB3 /* ActivityTextFieldCell.xib */,
-				0445EEA01F1DDBCB00E9DAB3 /* ActivityPickerCell.h */,
-				0445EEA11F1DDBCB00E9DAB3 /* ActivityPickerCell.m */,
-				0445EEA21F1DDBCB00E9DAB3 /* ActivityPickerCell.xib */,
-				0445EEAA1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.h */,
-				0445EEAB1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.m */,
-				0445EEAC1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.xib */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -387,8 +323,8 @@
 			children = (
 				0445EE741F1D9E4800E9DAB3 /* ActivityViewController.h */,
 				0445EE751F1D9E4800E9DAB3 /* ActivityViewController.m */,
-				0445EE891F1DD32300E9DAB3 /* ActivityWebViewController.h */,
-				0445EE8A1F1DD32300E9DAB3 /* ActivityWebViewController.m */,
+				0445EEB41F1EFAA800E9DAB3 /* ActivityWebViewController.h */,
+				0445EEB51F1EFAA800E9DAB3 /* ActivityWebViewController.m */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -904,27 +840,19 @@
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
-				0445EE951F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */,
-				0445EE9F1F1DD83100E9DAB3 /* ActivityTextFieldCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
-				0445EE901F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.xib in Resources */,
-				0445EE9A1F1DD7D600E9DAB3 /* ActivityDetailCell.xib in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
 				04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */,
-				0445EEA41F1DDBCB00E9DAB3 /* ActivityPickerCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
-				0445EEAE1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.xib in Resources */,
-				0445EE881F1DD20B00E9DAB3 /* ActivityBannerCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
-				0445EEB31F1DF57400E9DAB3 /* ActivityGenderTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
 				0478BA2E1F14BC74003A9C8B /* MainActivityTableViewCell.xib in Resources */,
 			);
@@ -991,40 +919,32 @@
 				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
 				04267F441F17189200FFBC3E /* UIButton+JKImagePosition.m in Sources */,
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
-				0445EE8B1F1DD32300E9DAB3 /* ActivityWebViewController.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				0445EE731F1D9BE500E9DAB3 /* SubTidyViewController.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
+				0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */,
 				04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */,
-				0445EE8F1F1DD62F00E9DAB3 /* ActivityEmptyTextFieldCell.m in Sources */,
 				0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */,
-				0445EEAD1F1DDD5500E9DAB3 /* ActivityTextViewTableViewCell.m in Sources */,
 				04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */,
 				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
-				0445EE871F1DD20B00E9DAB3 /* ActivityBannerCell.m in Sources */,
 				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
 				0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */,
-				0445EE9E1F1DD83100E9DAB3 /* ActivityTextFieldCell.m in Sources */,
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
 				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
-				0445EE941F1DD71100E9DAB3 /* ActivityEmptyTextViewCell.m in Sources */,
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,
-				0445EEA31F1DDBCB00E9DAB3 /* ActivityPickerCell.m in Sources */,
 				0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */,
-				0445EEB21F1DF57400E9DAB3 /* ActivityGenderTableViewCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
-				0445EE991F1DD7D600E9DAB3 /* ActivityDetailCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
 			);
