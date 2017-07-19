@@ -188,6 +188,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 3 ) {
+        [self performSegueWithIdentifier:@"MainToSubTidy" sender:self];
+    }else if (indexPath.section == 4){
+        [self performSegueWithIdentifier:@"MainToActivity" sender:self];
+    }
 }
 
 - (void)leftItemAction:(id)sender{

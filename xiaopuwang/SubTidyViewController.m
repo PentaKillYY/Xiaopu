@@ -1,18 +1,18 @@
 //
-//  OrginizationViewController.m
+//  SubTidyViewController.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/7/11.
+//  Created by TonyJiang on 2017/7/18.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "OrginizationViewController.h"
+#import "SubTidyViewController.h"
 #import "OrginizationTableViewCell.h"
-
+#import "UITableView+FDTemplateLayoutCell.h"
 #import "DOPDropDownMenu.h"
 #import "OrginizationBannerTableViewCell.h"
 
-@interface OrginizationViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface SubTidyViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSArray* orgDistrictAry;
     NSArray* orgTypeAry;
@@ -26,8 +26,7 @@
 @property (nonatomic, weak) DOPDropDownMenu *menu;
 @end
 
-@implementation OrginizationViewController
-
+@implementation SubTidyViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -42,11 +41,11 @@
         //Call this Block When enter the refresh status automatically
         [self loadNewData];
     }];
-
+    
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
         [self loadNewData];
-
+        
     }];
     
     [self.tableView.mj_header beginRefreshing];
@@ -90,13 +89,13 @@
             [self.tableView.mj_footer endRefreshing];
         });
     });
-   
+    
 }
 
 
 - (void)addNavTitleView{
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width-20, 44)];
-    UIImage* clearImg = [OrginizationViewController imageWithColor:[UIColor clearColor] andHeight:44.0f];
+    UIImage* clearImg = [SubTidyViewController imageWithColor:[UIColor clearColor] andHeight:44.0f];
     [_searchBar setBackgroundImage:clearImg];
     _searchBar.placeholder = @"请输入机构、学校、课程名称 ";
     [_searchBar setBackgroundColor:[UIColor clearColor]];
@@ -135,13 +134,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-      OrginizationBannerTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationBannerTableViewCell" owner:self options:nil].firstObject;
+        OrginizationBannerTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationBannerTableViewCell" owner:self options:nil].firstObject;
         
         return cell;
     }else{
-    
+        
         OrginizationTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationTableViewCell" owner:self options:nil].firstObject;
-    
+        
         return cell;
     }
 }
@@ -157,11 +156,11 @@
         _menu = menu;
         
         _menu.menuWidth = Main_Screen_Width;
-//        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
+        //        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
         [menu selectDefalutIndexPath];
         
         return menu;
-
+        
     }
 }
 

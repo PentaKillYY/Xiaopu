@@ -31,6 +31,8 @@
 #import "VendorMarco.h"
 #import "ConstantMarco.h"
 
+#import "UITableView+FDTemplateLayoutCell.h"
+
 #import <UShareUI/UShareUI.h>
 
 #endif /* PrefixHeader_pch */
