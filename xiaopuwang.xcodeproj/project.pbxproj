@@ -43,6 +43,16 @@
 		0445EEDB1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EED91F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m */; };
 		0445EEDC1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEDA1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib */; };
 		0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEDE1F20800000E9DAB3 /* OrginizationDetailViewController.m */; };
+		0445EF061F20926600E9DAB3 /* OrgInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EF041F20926600E9DAB3 /* OrgInfoTableViewCell.m */; };
+		0445EF071F20926600E9DAB3 /* OrgInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF051F20926600E9DAB3 /* OrgInfoTableViewCell.xib */; };
+		0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EF091F20933400E9DAB3 /* OrgHouseRateTableViewCell.m */; };
+		0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF0A1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib */; };
+		0445EF151F2093A800E9DAB3 /* OrgProportionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EF131F2093A800E9DAB3 /* OrgProportionTableViewCell.m */; };
+		0445EF161F2093A800E9DAB3 /* OrgProportionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF141F2093A800E9DAB3 /* OrgProportionTableViewCell.xib */; };
+		0445EF1A1F2093DD00E9DAB3 /* OrgMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EF181F2093DD00E9DAB3 /* OrgMapTableViewCell.m */; };
+		0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF191F2093DD00E9DAB3 /* OrgMapTableViewCell.xib */; };
+		0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EF1D1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m */; };
+		0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -148,6 +158,21 @@
 		0445EEDA1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiCheckBoxTableViewCell.xib; sourceTree = "<group>"; };
 		0445EEDD1F20800000E9DAB3 /* OrginizationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationDetailViewController.h; sourceTree = "<group>"; };
 		0445EEDE1F20800000E9DAB3 /* OrginizationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationDetailViewController.m; sourceTree = "<group>"; };
+		0445EF031F20926600E9DAB3 /* OrgInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgInfoTableViewCell.h; sourceTree = "<group>"; };
+		0445EF041F20926600E9DAB3 /* OrgInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgInfoTableViewCell.m; sourceTree = "<group>"; };
+		0445EF051F20926600E9DAB3 /* OrgInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgInfoTableViewCell.xib; sourceTree = "<group>"; };
+		0445EF081F20933400E9DAB3 /* OrgHouseRateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgHouseRateTableViewCell.h; sourceTree = "<group>"; };
+		0445EF091F20933400E9DAB3 /* OrgHouseRateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgHouseRateTableViewCell.m; sourceTree = "<group>"; };
+		0445EF0A1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgHouseRateTableViewCell.xib; sourceTree = "<group>"; };
+		0445EF121F2093A800E9DAB3 /* OrgProportionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgProportionTableViewCell.h; sourceTree = "<group>"; };
+		0445EF131F2093A800E9DAB3 /* OrgProportionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgProportionTableViewCell.m; sourceTree = "<group>"; };
+		0445EF141F2093A800E9DAB3 /* OrgProportionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgProportionTableViewCell.xib; sourceTree = "<group>"; };
+		0445EF171F2093DD00E9DAB3 /* OrgMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMapTableViewCell.h; sourceTree = "<group>"; };
+		0445EF181F2093DD00E9DAB3 /* OrgMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMapTableViewCell.m; sourceTree = "<group>"; };
+		0445EF191F2093DD00E9DAB3 /* OrgMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgMapTableViewCell.xib; sourceTree = "<group>"; };
+		0445EF1C1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgAlbumVideoTableViewCell.h; sourceTree = "<group>"; };
+		0445EF1D1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgAlbumVideoTableViewCell.m; sourceTree = "<group>"; };
+		0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgAlbumVideoTableViewCell.xib; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -793,6 +818,21 @@
 				04267F531F1871FC00FFBC3E /* OrginizationBannerTableViewCell.h */,
 				04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */,
 				04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */,
+				0445EF031F20926600E9DAB3 /* OrgInfoTableViewCell.h */,
+				0445EF041F20926600E9DAB3 /* OrgInfoTableViewCell.m */,
+				0445EF051F20926600E9DAB3 /* OrgInfoTableViewCell.xib */,
+				0445EF081F20933400E9DAB3 /* OrgHouseRateTableViewCell.h */,
+				0445EF091F20933400E9DAB3 /* OrgHouseRateTableViewCell.m */,
+				0445EF0A1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib */,
+				0445EF121F2093A800E9DAB3 /* OrgProportionTableViewCell.h */,
+				0445EF131F2093A800E9DAB3 /* OrgProportionTableViewCell.m */,
+				0445EF141F2093A800E9DAB3 /* OrgProportionTableViewCell.xib */,
+				0445EF171F2093DD00E9DAB3 /* OrgMapTableViewCell.h */,
+				0445EF181F2093DD00E9DAB3 /* OrgMapTableViewCell.m */,
+				0445EF191F2093DD00E9DAB3 /* OrgMapTableViewCell.xib */,
+				0445EF1C1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.h */,
+				0445EF1D1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m */,
+				0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -898,18 +938,23 @@
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
+				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
+				0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */,
+				0445EF071F20926600E9DAB3 /* OrgInfoTableViewCell.xib in Resources */,
 				0445EEC01F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
+				0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
 				04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */,
 				0445EECA1F1F321900E9DAB3 /* TextViewTableViewCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
+				0445EF161F2093A800E9DAB3 /* OrgProportionTableViewCell.xib in Resources */,
 				0445EED71F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
@@ -980,6 +1025,7 @@
 				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
 				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
 				04267F441F17189200FFBC3E /* UIButton+JKImagePosition.m in Sources */,
+				0445EF1A1F2093DD00E9DAB3 /* OrgMapTableViewCell.m in Sources */,
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
@@ -989,8 +1035,10 @@
 				04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */,
 				0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */,
 				04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */,
+				0445EF061F20926600E9DAB3 /* OrgInfoTableViewCell.m in Sources */,
 				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
+				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
 				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
@@ -1013,7 +1061,9 @@
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
 				0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */,
 				0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */,
+				0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */,
 				0445EECD1F1F330800E9DAB3 /* EducationPlanController.m in Sources */,
+				0445EF151F2093A800E9DAB3 /* OrgProportionTableViewCell.m in Sources */,
 				0445EED61F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
