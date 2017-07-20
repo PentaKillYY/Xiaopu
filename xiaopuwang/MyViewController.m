@@ -33,6 +33,7 @@
     [self layoutNavigationBar:nil titleColor:nil titleFont:nil leftBarButtonItem:leftitem rightBarButtonItem:rightItm];
 
     [self.navigationItem.rightBarButtonItem setTintColor:MAINCOLOR];
+    [self.navigationItem.leftBarButtonItem setTintColor:MAINCOLOR];
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
     
