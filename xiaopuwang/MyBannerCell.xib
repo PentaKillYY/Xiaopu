@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL6-PT-zRX">
-                        <rect key="frame" x="132" y="70" width="56" height="56"/>
+                        <rect key="frame" x="132" y="44" width="56" height="56"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="UL6-PT-zRX" secondAttribute="height" multiplier="1:1" id="rGI-Du-0ag"/>
                             <constraint firstAttribute="width" constant="56" id="ywK-HJ-Pnx"/>
@@ -34,7 +34,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="啦啦啦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-Mv-vM6">
-                        <rect key="frame" x="142" y="134" width="37" height="14.5"/>
+                        <rect key="frame" x="142" y="108" width="37" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -83,7 +83,6 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="GkT-Cg-E1F" secondAttribute="bottom" id="00q-IJ-r8B"/>
                     <constraint firstAttribute="bottom" secondItem="IRR-FH-0w1" secondAttribute="bottom" constant="10" id="54P-sD-2t7"/>
@@ -104,7 +103,7 @@
                     <constraint firstItem="UL6-PT-zRX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="n6g-Nz-x1U"/>
                     <constraint firstItem="c2i-NA-TKa" firstAttribute="leading" secondItem="zk5-7W-StR" secondAttribute="trailing" id="uxE-aA-j8g"/>
                     <constraint firstAttribute="bottom" secondItem="tDW-Mn-ffQ" secondAttribute="bottom" constant="5" id="vOb-Ai-zRi"/>
-                    <constraint firstItem="UL6-PT-zRX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="70" id="x9i-p5-jNf"/>
+                    <constraint firstItem="UL6-PT-zRX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="44" id="x9i-p5-jNf"/>
                     <constraint firstAttribute="bottom" secondItem="J1V-iy-PQE" secondAttribute="bottom" constant="10" id="yvs-og-58z"/>
                 </constraints>
             </tableViewCellContentView>
