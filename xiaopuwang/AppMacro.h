@@ -11,10 +11,13 @@
  */
 
 //内网
-#define REQUEST_URL @"https://www.baidu.com"
+#define REQUEST_URL @"http://www.api.ings.org.cn"
+#define IMAGE_URL @"http://www.ings.org.cn"
 
 // 正式
-//#define REQUEST_URL @"http://api.qijiwang.cn/app_v1.0/"
+//#define REQUEST_URL @"http://www.api.ings.org.cn"
+//#define IMAGE_URL @"http://www.ings.org.cn"
+
 
 // 首次启动判断
 #define CM_FIRST_LAUNCHED @"firstLaunch"

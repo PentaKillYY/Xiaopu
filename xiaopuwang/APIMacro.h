@@ -12,6 +12,14 @@
 
 // *******************************王隆帅**************************
 
+//获取广告位
+#define GetAdvertisement @"/user/GetAdvertisement"
+
+//获取机构列表（分页）
+#define GetOrginfo @"/cousertrain/orgInfo"
+
+//学校搜索页-分页查询
+#define SchoolSearchList @"/school/schoolsearchList"
 
 
 
