@@ -152,7 +152,7 @@
         _menu = menu;
         _menu.menuWidth = Main_Screen_Width;
         //        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
-        menu.type = 1;
+
         [menu selectDefalutIndexPath];
         return menu;
         
@@ -219,10 +219,9 @@
 - (NSInteger)menu:(DOPDropDownMenu *)menu numberOfItemsInRow:(NSInteger)row column:(NSInteger)column
 {
     if (column == 0) {
-        NSInteger count =provinceAry.count;
-        return 3;
+        return provinceAry.count;
     }
-    return 0;
+    return 1;
 }
 
 - (NSString *)menu:(DOPDropDownMenu *)menu titleForItemsInRowAtIndexPath:(DOPIndexPath *)indexPath
@@ -230,21 +229,20 @@
     if (indexPath.column == 0) {
         return provinceAry[indexPath.item];
     }
-    return nil;
+    return @"";
 }
 
 - (NSInteger)menu:(DOPDropDownMenu *)menu numberOfUnitsInItem:(NSInteger)item row:(NSInteger)row column:(NSInteger)column {
     if (column == 0) {
-        NSInteger count =cityAry.count;
-        return 3;
+        return cityAry.count;
     }
-    return 0;
+    return 1;
 }
 
 - (NSString *)menu:(DOPDropDownMenu *)menu titleForUnitsInItemAtIndexPath:(DOPIndexPath *)indexPath {
     if (indexPath.column == 0) {
         return cityAry[indexPath.unit];
     }
-    return nil;
+    return @"";
 }
 @end

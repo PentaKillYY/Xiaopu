@@ -550,6 +550,14 @@
                 _show = YES;
             }];
         }else{
+            [_firstTableView reloadData];
+            if (_dataSource && _dataSourceFlags.numberOfItemsInRow) {
+                [_secendTableView reloadData];
+            }
+            
+            if (_dataSource && _dataSourceFlags.numberOfUnitsInItem) {
+                [_thirdTableView reloadData];
+            }
             [self animateIdicator:_indicators[tapIndex] background:_backGroundView tableView:_firstTableView title:_titles[tapIndex] forward:YES complecte:^{
                 _show = YES;
             }];
