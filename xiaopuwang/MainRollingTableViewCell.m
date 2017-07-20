@@ -18,7 +18,7 @@
     
     scrollView = [[AutoRollingScrollView alloc] init];
     scrollView.backgroundColor = [UIColor clearColor];
-    scrollView.frame = CGRectMake(120, 5, Main_Screen_Width-120, 39);
+    scrollView.frame = CGRectMake(62, 5, Main_Screen_Width-62, 39);
     [self.contentView addSubview:scrollView];
 
 }

@@ -41,12 +41,12 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     
     CGFloat VIEW_H =39;
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0, Main_Screen_Width-120, VIEW_H)];
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0, Main_Screen_Width-62, VIEW_H)];
     [_scrollView setDelegate:self];
     [_scrollView setBounces:NO];
     _scrollView.backgroundColor = [UIColor clearColor];
     [_scrollView setShowsHorizontalScrollIndicator:NO];
-    [_scrollView setContentSize:CGSizeMake(Main_Screen_Width-120,VIEW_H*3)];
+    [_scrollView setContentSize:CGSizeMake(Main_Screen_Width-62,VIEW_H*3)];
     [_scrollView setPagingEnabled:YES];
     [_scrollView setContentOffset:CGPointMake(0,VIEW_H)];
     _scrollView.userInteractionEnabled = NO;
@@ -54,17 +54,17 @@
     
     
     //初始化三个UIImageView，并固定他们位于_scrollView中的位置
-    _leftImageView = [[UITextView alloc]initWithFrame:CGRectMake(0,0, Main_Screen_Width-120, VIEW_H)];
+    _leftImageView = [[UITextView alloc]initWithFrame:CGRectMake(0,0, Main_Screen_Width-62, VIEW_H)];
     _leftImageView.font = [UIFont systemFontOfSize:11];
     _leftImageView.backgroundColor = [UIColor clearColor];
     _leftImageView.userInteractionEnabled = NO;
     
-    _currentImageView = [[UITextView alloc]initWithFrame:CGRectMake(0,VIEW_H, Main_Screen_Width-120, VIEW_H)];
+    _currentImageView = [[UITextView alloc]initWithFrame:CGRectMake(0,VIEW_H, Main_Screen_Width-62, VIEW_H)];
     _currentImageView.font = [UIFont systemFontOfSize:11];
     _currentImageView.userInteractionEnabled = NO;
      _currentImageView.backgroundColor = [UIColor clearColor];
     
-    _rightImageView = [[UITextView alloc]initWithFrame:CGRectMake(0,VIEW_H*2, Main_Screen_Width-120, VIEW_H)];
+    _rightImageView = [[UITextView alloc]initWithFrame:CGRectMake(0,VIEW_H*2, Main_Screen_Width-62, VIEW_H)];
     _rightImageView.font = [UIFont systemFontOfSize:11];
     _rightImageView.userInteractionEnabled = NO;
     _rightImageView.backgroundColor = [UIColor clearColor];
