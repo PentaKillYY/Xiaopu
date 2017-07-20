@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"自助择校";
+    self.title = @"自主选校";
     
     [self.searchButton.layer setCornerRadius:3.0];
     self.searchButton.backgroundColor  = MAINCOLOR;
@@ -71,7 +71,6 @@
 
 #pragma  mark - RowSelectDelegate
 -(void)selectRow:(NSInteger)rowIndex{
-    DLog(@"%ld",rowIndex);
     [ct dismiss];
 }
 

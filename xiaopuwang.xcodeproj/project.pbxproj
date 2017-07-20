@@ -33,6 +33,15 @@
 		0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE7D1F1DA01000E9DAB3 /* ActivityTableViewCell.m */; };
 		0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE7E1F1DA01000E9DAB3 /* ActivityTableViewCell.xib */; };
 		0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEB51F1EFAA800E9DAB3 /* ActivityWebViewController.m */; };
+		0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEBD1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m */; };
+		0445EEC01F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEBE1F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib */; };
+		0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEC71F1F321900E9DAB3 /* TextViewTableViewCell.m */; };
+		0445EECA1F1F321900E9DAB3 /* TextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEC81F1F321900E9DAB3 /* TextViewTableViewCell.xib */; };
+		0445EECD1F1F330800E9DAB3 /* EducationPlanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EECC1F1F330800E9DAB3 /* EducationPlanController.m */; };
+		0445EED61F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EED41F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m */; };
+		0445EED71F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EED51F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib */; };
+		0445EEDB1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EED91F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m */; };
+		0445EEDC1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEDA1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -122,6 +131,20 @@
 		0445EE7E1F1DA01000E9DAB3 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		0445EEB41F1EFAA800E9DAB3 /* ActivityWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityWebViewController.h; sourceTree = "<group>"; };
 		0445EEB51F1EFAA800E9DAB3 /* ActivityWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityWebViewController.m; sourceTree = "<group>"; };
+		0445EEBC1F1F2EE800E9DAB3 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		0445EEBD1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		0445EEBE1F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		0445EEC61F1F321900E9DAB3 /* TextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewTableViewCell.h; sourceTree = "<group>"; };
+		0445EEC71F1F321900E9DAB3 /* TextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewTableViewCell.m; sourceTree = "<group>"; };
+		0445EEC81F1F321900E9DAB3 /* TextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewTableViewCell.xib; sourceTree = "<group>"; };
+		0445EECB1F1F330800E9DAB3 /* EducationPlanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationPlanController.h; sourceTree = "<group>"; };
+		0445EECC1F1F330800E9DAB3 /* EducationPlanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationPlanController.m; sourceTree = "<group>"; };
+		0445EED31F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleCheckBoxTableViewCell.h; sourceTree = "<group>"; };
+		0445EED41F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleCheckBoxTableViewCell.m; sourceTree = "<group>"; };
+		0445EED51F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleCheckBoxTableViewCell.xib; sourceTree = "<group>"; };
+		0445EED81F20469200E9DAB3 /* MultiCheckBoxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiCheckBoxTableViewCell.h; sourceTree = "<group>"; };
+		0445EED91F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiCheckBoxTableViewCell.m; sourceTree = "<group>"; };
+		0445EEDA1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiCheckBoxTableViewCell.xib; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -327,6 +350,34 @@
 				0445EEB51F1EFAA800E9DAB3 /* ActivityWebViewController.m */,
 			);
 			name = Activity;
+			sourceTree = "<group>";
+		};
+		0445EEB71F1F031500E9DAB3 /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				0445EECB1F1F330800E9DAB3 /* EducationPlanController.h */,
+				0445EECC1F1F330800E9DAB3 /* EducationPlanController.m */,
+			);
+			name = Specialist;
+			sourceTree = "<group>";
+		};
+		0445EEBB1F1F2ED100E9DAB3 /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				0445EEBC1F1F2EE800E9DAB3 /* TextFieldTableViewCell.h */,
+				0445EEBD1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m */,
+				0445EEBE1F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib */,
+				0445EEC61F1F321900E9DAB3 /* TextViewTableViewCell.h */,
+				0445EEC71F1F321900E9DAB3 /* TextViewTableViewCell.m */,
+				0445EEC81F1F321900E9DAB3 /* TextViewTableViewCell.xib */,
+				0445EED31F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.h */,
+				0445EED41F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m */,
+				0445EED51F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib */,
+				0445EED81F20469200E9DAB3 /* MultiCheckBoxTableViewCell.h */,
+				0445EED91F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m */,
+				0445EEDA1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib */,
+			);
+			name = Specialist;
 			sourceTree = "<group>";
 		};
 		04573F611F13725F00B52C76 = {
@@ -621,6 +672,7 @@
 		0478BA151F14BB97003A9C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0445EEBB1F1F2ED100E9DAB3 /* Specialist */,
 				0445EE771F1D9FC000E9DAB3 /* Activity */,
 				0445EE411F1C9ADC00E9DAB3 /* PersonalChoose */,
 				0445EE401F1C9AD000E9DAB3 /* Main */,
@@ -638,6 +690,7 @@
 		0478BA171F14BBA5003A9C8B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0445EEB71F1F031500E9DAB3 /* Specialist */,
 				0445EE7B1F1D9FF400E9DAB3 /* Activity */,
 				0445EE7A1F1D9FE100E9DAB3 /* SubTidy */,
 				0445EE791F1D9FD200E9DAB3 /* PersonalChoose */,
@@ -836,6 +889,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0445EEDC1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib in Resources */,
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
@@ -843,12 +897,15 @@
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */,
+				0445EEC01F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
 				04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */,
+				0445EECA1F1F321900E9DAB3 /* TextViewTableViewCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
+				0445EED71F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
@@ -939,6 +996,7 @@
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
+				0445EEDB1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
@@ -947,6 +1005,10 @@
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
+				0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */,
+				0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */,
+				0445EECD1F1F330800E9DAB3 /* EducationPlanController.m in Sources */,
+				0445EED61F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

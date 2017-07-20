@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh6-eU-Gra">
@@ -86,8 +86,8 @@
                 <outlet property="bottomLine" destination="fpK-bW-gb7" id="gyq-Dd-c3U"/>
                 <outlet property="lineH" destination="E68-Nn-Iww" id="2ct-kv-1Cm"/>
                 <outlet property="lineH2" destination="JxL-do-XLd" id="Kyc-2t-o6p"/>
-                <outlet property="personalBtn" destination="tY6-Bc-Nsd" id="2DQ-Ao-meW"/>
-                <outlet property="specialistBtn" destination="hh6-eU-Gra" id="kFu-yb-wHU"/>
+                <outlet property="personalBtn" destination="hh6-eU-Gra" id="Vj5-4N-Gar"/>
+                <outlet property="specialistBtn" destination="tY6-Bc-Nsd" id="Ync-hB-fZF"/>
                 <outlet property="topLine" destination="kX9-Bg-ub5" id="zE4-o0-VJk"/>
             </connections>
         </tableViewCell>

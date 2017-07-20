@@ -214,8 +214,8 @@
 -(void)pushToServicePage:(id)sender{
     UIButton* currentButton = (UIButton*)sender;
     
-    if (currentButton.tag == 0) {
-        
+    if (currentButton.tag == 1) {
+        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
     }else{
         [self performSegueWithIdentifier:@"MainToPersonalChoose" sender:self];
     }

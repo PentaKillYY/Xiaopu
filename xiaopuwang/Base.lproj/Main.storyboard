@@ -45,7 +45,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqm-BN-b5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="-796"/>
+            <point key="canvasLocation" x="1518" y="-797"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="jRR-ka-Kp2">
@@ -85,6 +85,7 @@
                         <segue destination="gZY-og-RO1" kind="push" identifier="MainToPersonalChoose" id="gcv-0Y-zjc"/>
                         <segue destination="3Vn-iH-BZo" kind="push" identifier="MainToSubTidy" id="JDZ-ga-NdA"/>
                         <segue destination="VSb-Ud-1My" kind="push" identifier="MainToActivity" id="XOb-nr-ceQ"/>
+                        <segue destination="rVy-5l-OQ8" kind="push" identifier="MainToEducationPlan" id="pWt-O0-gxy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDf-5a-He6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4734" y="-809"/>
+            <point key="canvasLocation" x="4574" y="-809"/>
         </scene>
         <!--Personal Choose View Controller-->
         <scene sceneID="9kR-V8-kce">
@@ -304,6 +305,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MP5-Bf-e5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3124" y="-1638.5307346326838"/>
+        </scene>
+        <!--Education Plan Controller-->
+        <scene sceneID="66m-Xq-Gnh">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="rVy-5l-OQ8" customClass="EducationPlanController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="l8F-Un-4wh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ykw-n2-yYh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ykw-n2-yYh" id="O0H-wN-P2X">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rVy-5l-OQ8" id="zU7-KE-Sho"/>
+                            <outlet property="delegate" destination="rVy-5l-OQ8" id="Vr1-gt-Jdj"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="LgM-4u-2z2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3x-FS-AX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3953" y="-1728"/>
         </scene>
         <!--机构-->
         <scene sceneID="cTG-h4-w1b">
