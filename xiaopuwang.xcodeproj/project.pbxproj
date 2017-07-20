@@ -42,6 +42,7 @@
 		0445EED71F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EED51F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib */; };
 		0445EEDB1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EED91F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m */; };
 		0445EEDC1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EEDA1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib */; };
+		0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EEDE1F20800000E9DAB3 /* OrginizationDetailViewController.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -145,6 +146,8 @@
 		0445EED81F20469200E9DAB3 /* MultiCheckBoxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiCheckBoxTableViewCell.h; sourceTree = "<group>"; };
 		0445EED91F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiCheckBoxTableViewCell.m; sourceTree = "<group>"; };
 		0445EEDA1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiCheckBoxTableViewCell.xib; sourceTree = "<group>"; };
+		0445EEDD1F20800000E9DAB3 /* OrginizationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationDetailViewController.h; sourceTree = "<group>"; };
+		0445EEDE1F20800000E9DAB3 /* OrginizationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationDetailViewController.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -768,6 +771,8 @@
 			children = (
 				0478BA411F14CCFE003A9C8B /* OrginizationViewController.h */,
 				0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */,
+				0445EEDD1F20800000E9DAB3 /* OrginizationDetailViewController.h */,
+				0445EEDE1F20800000E9DAB3 /* OrginizationDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -998,6 +1003,7 @@
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				0445EEDB1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
+				0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,

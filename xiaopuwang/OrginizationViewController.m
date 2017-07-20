@@ -189,7 +189,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self performSegueWithIdentifier:@"OrginizationDetail" sender:self];
 }
 
 
