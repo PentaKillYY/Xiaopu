@@ -11,5 +11,5 @@
 
 @interface MainCycleTableViewCell : BaseTableViewCell<SDCycleScrollViewDelegate>
 @property(nonatomic,strong)IBOutlet SDCycleScrollView* cycleScrollView;
-
+@property(nonatomic,strong)DataResult* dataresult;
 @end

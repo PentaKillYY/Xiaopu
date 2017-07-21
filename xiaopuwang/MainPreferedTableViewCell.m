@@ -25,15 +25,24 @@
 - (void)setupUI{
     CGFloat imgW = (Main_Screen_Width-14)/3; // 图片的宽度
     CGFloat imgH = (Main_Screen_Width-14)/3; // 图片的高度
+    NSMutableArray* array = [[NSMutableArray alloc] init];
 
-    
-    for (int i = 0; i< 4; i++) {
+    for (int i = 0; i < self.dataResult.items.size; i++) {
+        DataItem* item = [self.dataResult.items getItem:i];
+        
+        if ([item getInt:@"AdvType"] == 2) {
+            [array addObject:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"AdvImage"]]];
+        }
+    }
+    for (int i = 0; i< array.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.ings.org.cn/Uploads/Organization/20170606174503715932_Logo.png"] placeholderImage:nil];
+        [imageView.layer setCornerRadius:3.0];
+        [imageView.layer setMasksToBounds:YES];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:array[i]] placeholderImage:nil];
                 imageView.frame = CGRectMake((imgW+2)*i, 0, imgW, imgH);
         [self.scrollView addSubview:imageView];
 
     }
-    self.scrollView.contentSize = CGSizeMake(imgW*4, imgH);
+    self.scrollView.contentSize = CGSizeMake(imgW*array.count, imgH);
 }
 @end

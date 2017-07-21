@@ -11,4 +11,5 @@
 @interface MainPreferedTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UIImageView* atitleView;
 @property(nonatomic,weak)IBOutlet UIScrollView* scrollView;
+@property(nonatomic,strong)DataResult* dataResult;
 @end

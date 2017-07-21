@@ -19,7 +19,10 @@
 @property(nonatomic,weak)IBOutlet UILabel* leftTag;
 @property(nonatomic,weak)IBOutlet UILabel* middleTag;
 @property(nonatomic,weak)IBOutlet UILabel* rightTag;
-@property(nonatomic,weak)IBOutlet NSLayoutConstraint* tagH;
 @property(nonatomic,weak)IBOutlet StarRatingView* starView;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* sepH;
+@property(nonatomic,weak)IBOutlet NSLayoutConstraint* leftTagW;
+@property(nonatomic,weak)IBOutlet NSLayoutConstraint* middleTagW;
+
+-(void)bingdingViewModel:(DataItem*)item;
 @end

@@ -32,36 +32,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-2b-PVQ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-2b-PVQ">
                         <rect key="frame" x="103" y="42" width="209" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-zZ-XNz" customClass="StarRatingView">
+                    <view contentMode="scaleToFill" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-zZ-XNz" customClass="StarRatingView">
                         <rect key="frame" x="103" y="24" width="209" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="EXn-Ri-4kW"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e85-yl-9a8" customClass="SKTagView">
-                        <rect key="frame" x="103" y="59" width="209" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="rqK-Tm-w06"/>
-                        </constraints>
+                        <rect key="frame" x="103" y="60.5" width="209" height="24"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addres" translatesAutoresizingMaskIntoConstraints="NO" id="z70-yi-Anp">
-                        <rect key="frame" x="103" y="85" width="8" height="11"/>
+                        <rect key="frame" x="103" y="86" width="8" height="11"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="z70-yi-Anp" secondAttribute="height" multiplier="5:7" id="Vde-G7-qhG"/>
                             <constraint firstAttribute="width" constant="8" id="qiW-bn-u0s"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="江苏省-无锡市-梁溪区 距您0.4公里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bj-RD-AMl">
-                        <rect key="frame" x="114" y="83" width="198" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="Fb6-79-A3t"/>
-                        </constraints>
+                        <rect key="frame" x="114" y="84.5" width="198" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -79,7 +73,8 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  官方入驻  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhH-fF-Pbh">
                         <rect key="frame" x="103" y="104.5" width="63" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="yqt-PP-bfL"/>
+                            <constraint firstAttribute="height" constant="21" id="7kJ-Tk-zfW"/>
+                            <constraint firstAttribute="width" constant="63" id="Nao-jY-OSj"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -87,6 +82,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  学费补贴  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIw-Ys-INZ">
                         <rect key="frame" x="169" y="104.5" width="63" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="mf9-e7-fuv"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -103,9 +101,8 @@
                     <constraint firstItem="e85-yl-9a8" firstAttribute="leading" secondItem="Bes-fp-rPy" secondAttribute="trailing" constant="8" id="558-GS-Cf4"/>
                     <constraint firstItem="jIw-Ys-INZ" firstAttribute="bottom" secondItem="BhH-fF-Pbh" secondAttribute="bottom" id="69N-7d-q55"/>
                     <constraint firstItem="IRW-sy-PTt" firstAttribute="leading" secondItem="jIw-Ys-INZ" secondAttribute="trailing" constant="3" id="7V0-xA-N4g"/>
-                    <constraint firstItem="e85-yl-9a8" firstAttribute="top" secondItem="fDv-2b-PVQ" secondAttribute="bottom" constant="3" id="9DW-4z-uyf"/>
+                    <constraint firstItem="e85-yl-9a8" firstAttribute="top" secondItem="fDv-2b-PVQ" secondAttribute="bottom" constant="5" id="9DW-4z-uyf"/>
                     <constraint firstAttribute="trailing" secondItem="V9p-vt-kX2" secondAttribute="trailing" constant="8" id="9Ss-Zs-KLE"/>
-                    <constraint firstItem="3bj-RD-AMl" firstAttribute="top" secondItem="e85-yl-9a8" secondAttribute="bottom" constant="3" id="DUS-Or-uJr"/>
                     <constraint firstItem="VGh-Cw-M5H" firstAttribute="leading" secondItem="e85-yl-9a8" secondAttribute="leading" id="KOy-MH-odg"/>
                     <constraint firstItem="jIw-Ys-INZ" firstAttribute="top" secondItem="BhH-fF-Pbh" secondAttribute="top" id="KZX-nX-kZU"/>
                     <constraint firstAttribute="trailing" secondItem="VGh-Cw-M5H" secondAttribute="trailing" constant="8" id="MVI-mx-oeN"/>
@@ -122,20 +119,23 @@
                     <constraint firstItem="Bes-fp-rPy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="bbN-Cz-31m"/>
                     <constraint firstItem="IRW-sy-PTt" firstAttribute="top" secondItem="BhH-fF-Pbh" secondAttribute="top" id="gGe-YN-Xmn"/>
                     <constraint firstItem="fDv-2b-PVQ" firstAttribute="top" secondItem="1yB-zZ-XNz" secondAttribute="bottom" constant="3" id="gii-bw-5NO"/>
+                    <constraint firstItem="3bj-RD-AMl" firstAttribute="top" secondItem="e85-yl-9a8" secondAttribute="bottom" id="i8J-bA-FEC"/>
                     <constraint firstItem="1yB-zZ-XNz" firstAttribute="top" secondItem="V9p-vt-kX2" secondAttribute="bottom" constant="3" id="iDy-WS-Cd8"/>
                     <constraint firstItem="3bj-RD-AMl" firstAttribute="leading" secondItem="z70-yi-Anp" secondAttribute="trailing" constant="3" id="kVc-47-TPn"/>
                     <constraint firstAttribute="bottom" secondItem="BhH-fF-Pbh" secondAttribute="bottom" constant="5" id="klo-Uf-NfL"/>
+                    <constraint firstItem="fDv-2b-PVQ" firstAttribute="leading" secondItem="V9p-vt-kX2" secondAttribute="leading" id="oXo-ar-eBy"/>
                     <constraint firstItem="IRW-sy-PTt" firstAttribute="bottom" secondItem="BhH-fF-Pbh" secondAttribute="bottom" id="oeW-CG-Bq9"/>
                     <constraint firstItem="z70-yi-Anp" firstAttribute="leading" secondItem="Bes-fp-rPy" secondAttribute="trailing" constant="8" id="pBR-T2-8Px"/>
-                    <constraint firstItem="3bj-RD-AMl" firstAttribute="centerY" secondItem="z70-yi-Anp" secondAttribute="centerY" id="rQC-zn-fUx"/>
-                    <constraint firstItem="fDv-2b-PVQ" firstAttribute="leading" secondItem="Bes-fp-rPy" secondAttribute="trailing" constant="8" id="vQX-yr-E6T"/>
                     <constraint firstAttribute="trailing" secondItem="e85-yl-9a8" secondAttribute="trailing" constant="8" id="wBW-WY-vaW"/>
+                    <constraint firstItem="3bj-RD-AMl" firstAttribute="centerY" secondItem="z70-yi-Anp" secondAttribute="centerY" id="yb5-5j-H6d"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="distance" destination="3bj-RD-AMl" id="kjp-WQ-acG"/>
                 <outlet property="leftTag" destination="BhH-fF-Pbh" id="Rjs-UT-D9x"/>
+                <outlet property="leftTagW" destination="Nao-jY-OSj" id="ytk-Gx-GBO"/>
                 <outlet property="middleTag" destination="jIw-Ys-INZ" id="m7S-VR-6Z6"/>
+                <outlet property="middleTagW" destination="mf9-e7-fuv" id="55m-e7-BJN"/>
                 <outlet property="orgClassView" destination="e85-yl-9a8" id="0Li-oS-cV4"/>
                 <outlet property="orgContent" destination="fDv-2b-PVQ" id="dnD-Y3-OYT"/>
                 <outlet property="orgLogo" destination="Bes-fp-rPy" id="i7i-5T-nOA"/>
@@ -144,7 +144,6 @@
                 <outlet property="sepH" destination="zbf-XI-3gP" id="WYS-gF-FEh"/>
                 <outlet property="sepLabel" destination="VGh-Cw-M5H" id="TJZ-os-fjT"/>
                 <outlet property="starView" destination="1yB-zZ-XNz" id="Zme-kE-C7n"/>
-                <outlet property="tagH" destination="rqK-Tm-w06" id="nhh-XW-jUT"/>
             </connections>
             <point key="canvasLocation" x="60" y="129"/>
         </tableViewCell>

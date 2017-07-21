@@ -14,7 +14,13 @@
 #import "MainPreferedTableViewCell.h"
 #import "UIButton+JKImagePosition.h"
 #import "UIButton+JKMiddleAligning.h"
+#import "MainService.h"
+
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate>
+{
+    DataResult* advertisementResult;
+}
+@property (nonatomic,weak)IBOutlet UITableView* tableView;
 @property (nonatomic,strong) UISearchBar* searchBar;
 @property (nonatomic,strong) UIButton* rightButton;
 @property (nonatomic,strong) UIButton* leftButton;
@@ -27,6 +33,8 @@
     // Do any additional setup after loading the view.
     
     [self changeNavTitleView];
+    
+    [self getMainData];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -131,6 +139,7 @@
     
     if (indexPath.section == 0) {
         MainCycleTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainCycleTableViewCell" owner:self options:nil].firstObject;
+        cell.dataresult = advertisementResult;
         return cell;
     }else if (indexPath.section == 1){
         MainRollingTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainRollingTableViewCell" owner:self options:nil].firstObject;
@@ -142,6 +151,7 @@
     }else if (indexPath.section == 5){
         MainPreferedTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainPreferedTableViewCell" owner:self options:nil].firstObject;
         cell.atitleView.image = V_IMAGE(@"校谱优选");
+        cell.dataResult = advertisementResult;
         return cell;
     }else{
         MainActivityTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainActivityTableViewCell" owner:self options:nil].firstObject;
@@ -219,5 +229,15 @@
     }else{
         [self performSegueWithIdentifier:@"MainToPersonalChoose" sender:self];
     }
+}
+
+-(void)getMainData{
+    [[MainService sharedMainService] mainGetAdvertisementWithParameters:nil onCompletion:^(id json) {
+        advertisementResult = json;
+        
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
 }
 @end

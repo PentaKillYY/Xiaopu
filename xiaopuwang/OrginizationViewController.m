@@ -12,6 +12,7 @@
 #import "DOPDropDownMenu.h"
 #import "OrginizationBannerTableViewCell.h"
 
+#import "OrginizationService.h"
 @interface OrginizationViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSArray* orgDistrictAry;
@@ -19,6 +20,15 @@
     NSArray* orgSortAry;
     NSArray* orgDistanceFilterAry;
     NSArray* orgTypeDetailAry;
+    
+    NSInteger currentPage;
+    NSInteger size;
+    
+    DataItemArray* orgListArray;
+    
+    NSString* selectCourseType;
+    NSString* selectCourseKind;
+    NSString* selectArea;
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -31,6 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    size = 10;
+    orgListArray = [DataItemArray new];
     
     [self addNavTitleView];
     
@@ -40,12 +52,14 @@
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self loadNewData];
+        currentPage = 0;
+        [self getCourseList];
     }];
 
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self loadNewData];
+        currentPage +=1;
+        [self getCourseList];
 
     }];
     
@@ -79,20 +93,6 @@
     orgSortAry = OrginizationSort;
     orgDistanceFilterAry = OrgDistanceFilter;
 }
-
-- (void)loadNewData{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // 耗时的操作
-        sleep(1);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // 更新界面
-            [self.tableView.mj_header endRefreshing];
-            [self.tableView.mj_footer endRefreshing];
-        });
-    });
-   
-}
-
 
 - (void)addNavTitleView{
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width-20, 44)];
@@ -129,7 +129,7 @@
     if (section == 0) {
         return 1;
     }else{
-        return 10;
+        return orgListArray.size;
     }
 }
 
@@ -141,7 +141,9 @@
     }else{
     
         OrginizationTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationTableViewCell" owner:self options:nil].firstObject;
-    
+        DataItem* item = [orgListArray getItem:indexPath.row];
+        [cell bingdingViewModel:item] ;
+        [self configCell:cell indexpath:indexPath];
         return cell;
     }
 }
@@ -182,14 +184,42 @@
     if (indexPath.section == 0) {
         return 180.0;
     }else{
+
         return [tableView fd_heightForCellWithIdentifier:@"OrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations
+            
+            [self configCell:cell indexpath:indexPath];
         }];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"OrginizationDetail" sender:self];
+}
+
+
+- (void)configCell:(OrginizationTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {
+    
+    [cell.orgClassView removeAllTags];
+    
+    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-103;
+    cell.orgClassView.singleLine = NO;
+    cell.orgClassView.padding = UIEdgeInsetsMake(0, 0, 0, 0);
+    cell.orgClassView.interitemSpacing = 5;
+    cell.orgClassView.lineSpacing = 5;
+    //Add Tags
+    [@[@"Python", @"Javascript", @"HTML", @"Go", @"Objective-C", @"C", @"PHP"] enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
+        SKTag *tag = [[SKTag alloc] initWithText:text];
+        
+        tag.textColor = [UIColor grayColor];
+        tag.cornerRadius = 3;
+        tag.fontSize = 12;
+        tag.borderColor = [UIColor grayColor];
+        tag.borderWidth = 0.5;
+       tag.padding = UIEdgeInsetsMake(3, 6, 3, 6);
+        [cell.orgClassView addTag:tag];
+    }];
+
 }
 
 
@@ -263,6 +293,52 @@
         }
     }
     return nil;
+}
+
+- (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath{
+    
+    if (indexPath.column == 0) {
+        if (indexPath.row == 0) {
+            
+        }else if (indexPath.row ==1){
+        
+        }else{
+            selectArea = orgDistrictAry[indexPath.row];
+        }
+    }else if (indexPath.column == 1){
+        if (indexPath.row == 0) {
+            
+        }else{
+            selectCourseType = orgTypeAry[indexPath.row];
+        }
+    }else{
+        
+    }
+ //   [self getCourseList];
+    
+}
+
+-(void)getCourseList{
+    NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":@"",@"CourseType":@"",@"CourseKind":@"",@"City":@"",@"Field":@"",@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0)};
+    
+    [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:currentPage Size:size Parameters:parameters onCompletion:^(id json) {
+        DataResult* result = json;
+        
+        [orgListArray append:[result.detailinfo getDataItemArray:@"orglist"]];
+        
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+        
+        if (currentPage* size < [result.detailinfo getInt:@"TotalCount"]) {
+            [self.tableView.mj_footer endRefreshing];
+            
+        }else{
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+    } onFailure:^(id json) {
+        
+    }];
 }
 
 @end

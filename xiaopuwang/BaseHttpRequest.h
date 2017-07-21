@@ -8,18 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+typedef void(^JSONResponse)(id json);
 
-@class CMRequest;
-@protocol CMRequestDelegate <NSObject>
+@class BaseHttpRequest;
+@interface BaseHttpRequest : NSObject
 
-- (void)CMRequest:(CMRequest *)request finished:(NSString *)response;
-- (void)CMRequest:(CMRequest *)request Error:(NSString *)error;
+{
+    DataResult* _result;
+}
 
-@end
-
-@interface CMRequest : NSObject
-
-@property (assign) id <CMRequestDelegate> delegate;
 
 /**
  *[AFNetWorking]的operationManager对象
@@ -34,7 +31,7 @@
 /**
  *功能: 创建CMRequest的对象方法
  */
-+ (instancetype)request;
++ (instancetype)sharedBaseHttpRequest;
 
 /**
  *功能：GET请求
@@ -44,8 +41,8 @@
  */
 - (void)GET:(NSString *)URLString
  parameters:(NSDictionary*)parameters
-    success:(void (^)(CMRequest *, NSString *))success
-    failure:(void (^)(CMRequest *, NSError *))failure;
+    success:(JSONResponse)success
+    failure:(JSONResponse)failure;
 
 /**
  *功能：POST请求
@@ -56,23 +53,8 @@
  */
 - (void)POST:(NSString *)URLString
   parameters:(NSDictionary*)parameters
-     success:(void (^)(CMRequest *request, NSString* responseString))success
-     failure:(void (^)(CMRequest *request, NSError *error))failure;
-
-/**
- *  post请求
- *
- *  @param URLString  请求网址
- *  @param parameters 请求参数
- */
-- (void)postWithURL:(NSString *)URLString parameters:(NSDictionary *)parameters;
-
-/**
- *  get 请求
- *
- *  @param URLString 请求网址
- */
-- (void)getWithURL:(NSString *)URLString;
+     success:(JSONResponse)success
+     failure:(JSONResponse)failure;
 
 /**
  *取消当前请求队列的所有请求

@@ -100,6 +100,8 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>www.api.ings.org.cn</key>
@@ -108,7 +110,7 @@
 				<false/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 			<key>www.ings.org.cn</key>
@@ -117,7 +119,7 @@
 				<false/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 		</dict>

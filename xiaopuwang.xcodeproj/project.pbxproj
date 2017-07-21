@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
+		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
+		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
 		04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */; };
 		04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */; };
 		04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267ED11F15D1D900FFBC3E /* SchoolTableViewCell.m */; };
@@ -73,7 +76,7 @@
 		0478B9B71F148CA0003A9C8B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B61F148CA0003A9C8B /* CoreMotion.framework */; };
 		0478B9BC1F148D51003A9C8B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B81F148D51003A9C8B /* libWeChatSDK.a */; };
 		0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9BE1F149346003A9C8B /* BaseViewController.m */; };
-		0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9C91F149613003A9C8B /* CMRequest.m */; };
+		0478B9CA1F149613003A9C8B /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9C91F149613003A9C8B /* BaseHttpRequest.m */; };
 		0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9E21F14A0F7003A9C8B /* MyViewController.m */; };
 		0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA001F14B07C003A9C8B /* MyBannerCell.m */; };
 		0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0478BA011F14B07C003A9C8B /* MyBannerCell.xib */; };
@@ -96,7 +99,29 @@
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0425A2491F219DA200A18739 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D8821CE196AA6A00036EF41;
+			remoteInfo = XTDemoKitV1;
+		};
+		0425A24B1F219DB400A18739 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D8821CD196AA6A00036EF41;
+			remoteInfo = XTDemoKitV1;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
+		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
+		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
+		0425A2521F21CD0D00A18739 /* OrginizationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationService.h; sourceTree = "<group>"; };
+		0425A2531F21CD0D00A18739 /* OrginizationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationService.m; sourceTree = "<group>"; };
 		04267ECB1F15CE5F00FFBC3E /* OrginizationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrginizationTableViewCell.h; sourceTree = "<group>"; };
 		04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationTableViewCell.m; sourceTree = "<group>"; };
 		04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrginizationTableViewCell.xib; sourceTree = "<group>"; };
@@ -200,8 +225,8 @@
 		0478B9BB1F148D51003A9C8B /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		0478B9BD1F149346003A9C8B /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0478B9BE1F149346003A9C8B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		0478B9C81F149613003A9C8B /* CMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRequest.h; sourceTree = "<group>"; };
-		0478B9C91F149613003A9C8B /* CMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRequest.m; sourceTree = "<group>"; };
+		0478B9C81F149613003A9C8B /* BaseHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpRequest.h; sourceTree = "<group>"; };
+		0478B9C91F149613003A9C8B /* BaseHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpRequest.m; sourceTree = "<group>"; };
 		0478B9CB1F1496A2003A9C8B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0478B9D51F149AC7003A9C8B /* ACMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
 		0478B9D61F149AC7003A9C8B /* APIMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMacro.h; sourceTree = "<group>"; };
@@ -251,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */,
 				0478B9BC1F148D51003A9C8B /* libWeChatSDK.a in Frameworks */,
 				0478B9B71F148CA0003A9C8B /* CoreMotion.framework in Frameworks */,
 				0478B9B51F148C98003A9C8B /* CFNetwork.framework in Frameworks */,
@@ -271,6 +297,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0425A2441F219D7000A18739 /* BaseProj */ = {
+			isa = PBXGroup;
+			children = (
+				0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */,
+			);
+			name = BaseProj;
+			sourceTree = "<group>";
+		};
+		0425A2461F219DA200A18739 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		04267F451F17392B00FFBC3E /* SearchSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +516,7 @@
 		0478B98D1F147A5D003A9C8B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				0425A2441F219D7000A18739 /* BaseProj */,
 				0478B9931F147ABD003A9C8B /* Base */,
 				0478B9981F147AEB003A9C8B /* Views */,
 				0478B9971F147AE3003A9C8B /* Public */,
@@ -487,8 +530,8 @@
 		0478B98E1F147A65003A9C8B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0478B9C81F149613003A9C8B /* CMRequest.h */,
-				0478B9C91F149613003A9C8B /* CMRequest.m */,
+				0478B9C81F149613003A9C8B /* BaseHttpRequest.h */,
+				0478B9C91F149613003A9C8B /* BaseHttpRequest.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -711,6 +754,8 @@
 		0478BA161F14BB9E003A9C8B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0425A24F1F21A6E100A18739 /* MainService.h */,
+				0425A2501F21A6E100A18739 /* MainService.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -805,6 +850,8 @@
 		0478BA3E1F14CCAF003A9C8B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0425A2521F21CD0D00A18739 /* OrginizationService.h */,
+				0425A2531F21CD0D00A18739 /* OrginizationService.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -889,6 +936,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0425A24C1F219DB400A18739 /* PBXTargetDependency */,
 			);
 			name = xiaopuwang;
 			productName = xiaopuwang;
@@ -922,12 +970,28 @@
 			mainGroup = 04573F611F13725F00B52C76;
 			productRefGroup = 04573F6B1F13725F00B52C76 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0425A2461F219DA200A18739 /* Products */;
+					ProjectRef = 0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				04573F691F13725F00B52C76 /* xiaopuwang */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libXTDemoKitV1.a;
+			remoteRef = 0425A2491F219DA200A18739 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		04573F681F13725F00B52C76 /* Resources */ = {
@@ -1039,7 +1103,8 @@
 				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
-				0478B9CA1F149613003A9C8B /* CMRequest.m in Sources */,
+				0478B9CA1F149613003A9C8B /* BaseHttpRequest.m in Sources */,
+				0425A2511F21A6E100A18739 /* MainService.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
 				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
@@ -1059,6 +1124,7 @@
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
+				0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */,
 				0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */,
 				0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */,
 				0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */,
@@ -1069,6 +1135,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0425A24C1F219DB400A18739 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XTDemoKitV1;
+			targetProxy = 0425A24B1F219DB400A18739 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04573F761F13725F00B52C76 /* Main.storyboard */ = {
@@ -1197,8 +1271,146 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/xiaopuwang",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"SocialQQ\"",
+					"-l\"SocialSina\"",
+					"-l\"SocialWeChat\"",
+					"-l\"UMSocialLog\"",
+					"-l\"WeChatSDK\"",
+					"-l\"WeiboSDK\"",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"jcore-ios-1.1.5\"",
+					"-l\"jpush-ios-3.0.6\"",
+					"-l\"opencore-amrnb\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AgoraRtcEngineKit\"",
+					"-framework",
+					"\"AlipaySDK\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BQMMRongCloudExt\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreAudio\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JYangToolKit\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"JrmfPacketKit\"",
+					"-framework",
+					"\"JrmfWalletKit\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"PNChart\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RadioButton\"",
+					"-framework",
+					"\"RongCallKit\"",
+					"-framework",
+					"\"RongCallLib\"",
+					"-framework",
+					"\"RongIMKit\"",
+					"-framework",
+					"\"RongIMLib\"",
+					"-framework",
+					"\"SDCycleScrollView\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SKTagView\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StarRatingView\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UIActionSheet_Block\"",
+					"-framework",
+					"\"UICountingLabel\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UITableView_FDTemplateLayoutCell\"",
+					"-framework",
+					"\"UMMobClick\"",
+					"-framework",
+					"\"UMSocialCore\"",
+					"-framework",
+					"\"UMSocialNetwork\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-weak_framework",
+					"\"UserNotifications\"",
+					"-all_load",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ings.xiaopuwang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../XTDemoKitV1/XTDemoKitV1/Classes/**";
 			};
 			name = Debug;
 		};
@@ -1221,8 +1433,146 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/xiaopuwang",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"SocialQQ\"",
+					"-l\"SocialSina\"",
+					"-l\"SocialWeChat\"",
+					"-l\"UMSocialLog\"",
+					"-l\"WeChatSDK\"",
+					"-l\"WeiboSDK\"",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"jcore-ios-1.1.5\"",
+					"-l\"jpush-ios-3.0.6\"",
+					"-l\"opencore-amrnb\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AgoraRtcEngineKit\"",
+					"-framework",
+					"\"AlipaySDK\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BQMMRongCloudExt\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreAudio\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JYangToolKit\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"JrmfPacketKit\"",
+					"-framework",
+					"\"JrmfWalletKit\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"PNChart\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RadioButton\"",
+					"-framework",
+					"\"RongCallKit\"",
+					"-framework",
+					"\"RongCallLib\"",
+					"-framework",
+					"\"RongIMKit\"",
+					"-framework",
+					"\"RongIMLib\"",
+					"-framework",
+					"\"SDCycleScrollView\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SKTagView\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StarRatingView\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UIActionSheet_Block\"",
+					"-framework",
+					"\"UICountingLabel\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UITableView_FDTemplateLayoutCell\"",
+					"-framework",
+					"\"UMMobClick\"",
+					"-framework",
+					"\"UMSocialCore\"",
+					"-framework",
+					"\"UMSocialNetwork\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-weak_framework",
+					"\"UserNotifications\"",
+					"-all_load",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ings.xiaopuwang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../XTDemoKitV1/XTDemoKitV1/Classes/**";
 			};
 			name = Release;
 		};

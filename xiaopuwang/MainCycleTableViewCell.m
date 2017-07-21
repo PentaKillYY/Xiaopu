@@ -25,7 +25,16 @@
 - (void)bingdingViewModel{
     
     _cycleScrollView.delegate = self;
-    _cycleScrollView.imageURLStringsGroup = @[@"http://www.ings.org.cn/Uploads/Organization/20170606174414155577_Logo.png",@"http://www.ings.org.cn/Uploads/Organization/20170606174359987157_Logo.png"];
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < self.dataresult.items.size; i++) {
+        DataItem* item = [self.dataresult.items getItem:i];
+        
+        if ([item getInt:@"AdvType"] == 1) {
+            [array addObject:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"AdvImage"]]];
+        }
+    }
+    _cycleScrollView.imageURLStringsGroup = array;
     
     _cycleScrollView.autoScrollTimeInterval = 3.;// 自动滚动时间间隔
 

@@ -14,7 +14,6 @@
     [super awakeFromNib];
     // Initialization code
     
-    [self bingdingViewModel];
     
     self.sepH.constant = 0.5;
 }
@@ -26,32 +25,35 @@
     
 }
 
--(void)bingdingViewModel{
+-(void)bingdingViewModel:(DataItem*)item{
     [self setupTagView];
+
+    
+    [self.orgLogo sd_setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"Logo"]] ] placeholderImage:nil];
+
+    self.orgContent.text = [item getString:@"TeachCourses"];
+    
+    self.orgName.text = [item getString:@"OrganizationName"];
+    self.leftTag.hidden = ![item getBool:@"IsOfficiallySettled"];
+    
+    self.distance.text = [NSString stringWithFormat:@"%@-%@-%@",[item getString:@"Area"],[item getString:@"City"],[item getString:@"Field"]];
+    
+    if (![item getBool:@"IsOfficiallySettled"]) {
+        self.leftTagW = 0;
+    }
+    
+    if (![item getBool:@"IsOfficiallySettled"]) {
+        self.middleTagW = 0;
+    }
+    
+    self.middleTag.hidden = ![item getBool:@"IsTuitionSubsidy"];
+    self.rightTag.hidden = ![item getBool:@"IsCourseGrading"];
+    
 }
 
 - (void)setupTagView
 {
     
-    //Add Tags
-    [@[@"Python", @"Javascript", @"HTML", @"Go", @"Objective-C", @"C", @"PHP"] enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
-        SKTag *tag = [SKTag tagWithText:text];
-        tag.textColor = [UIColor grayColor];
-        tag.cornerRadius = 3;
-        tag.fontSize = 11;
-        tag.borderColor = [UIColor grayColor];
-        tag.borderWidth = 0.5;
-        tag.padding = UIEdgeInsetsMake(2, 2, 2, 2);
-        [self.orgClassView addTag:tag];
-    }];
-    self.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-111;
-
-    self.orgClassView.padding = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.orgClassView.interitemSpacing = 3;
-    self.orgClassView.lineSpacing = 3;
-    
-    CGFloat tagHeight = self.orgClassView.intrinsicContentSize.height;
-    self.tagH.constant =tagHeight;
     self.leftTag.backgroundColor = MAINCOLOR;
     self.middleTag.backgroundColor = MAINCOLOR;
     self.rightTag.backgroundColor = MAINCOLOR;
@@ -79,6 +81,5 @@
     }];
 
 }
-
 
 @end

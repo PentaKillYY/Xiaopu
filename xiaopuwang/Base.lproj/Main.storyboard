@@ -81,6 +81,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableView" destination="vbg-n6-qoj" id="KmH-bU-UHF"/>
                         <segue destination="8Sk-dl-eGf" kind="push" identifier="MainSearch" id="hc7-hA-kQF"/>
                         <segue destination="gZY-og-RO1" kind="push" identifier="MainToPersonalChoose" id="gcv-0Y-zjc"/>
                         <segue destination="3Vn-iH-BZo" kind="push" identifier="MainToSubTidy" id="JDZ-ga-NdA"/>
@@ -706,6 +707,6 @@
         <image name="footernav_08" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gVy-dS-Wik"/>
+        <segue reference="hc7-hA-kQF"/>
     </inferredMetricsTieBreakers>
 </document>
