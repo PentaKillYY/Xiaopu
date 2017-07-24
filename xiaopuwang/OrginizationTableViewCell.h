@@ -9,6 +9,7 @@
 #import "BaseTableViewCell.h"
 #import "SKTagView.h"
 #import "StarRatingView.h"
+
 @interface OrginizationTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* orgName;
 @property(nonatomic,weak)IBOutlet UIImageView* orgLogo;
@@ -23,6 +24,5 @@
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* sepH;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* leftTagW;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* middleTagW;
-
 -(void)bingdingViewModel:(DataItem*)item;
 @end

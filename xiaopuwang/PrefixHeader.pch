@@ -35,5 +35,7 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 
 #import <UShareUI/UShareUI.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
+
 
 #endif /* PrefixHeader_pch */

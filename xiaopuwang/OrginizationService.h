@@ -17,4 +17,19 @@
                   Parameters:(NSDictionary *)parameters
                 onCompletion:(JSONResponse)completionBlock
                    onFailure:(JSONResponse)failureBlock;
+
+//获取班级课程列表
+-(void)getCourseClassTypeWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
+
+//获取课程种类
+-(void)getCoursetypeParameters:(NSDictionary *)parameters
+                  onCompletion:(JSONResponse)completionBlock
+                     onFailure:(JSONResponse)failureBlock;
+
+//获取科目种类
+-(void)getGroupTypeParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock;
 @end

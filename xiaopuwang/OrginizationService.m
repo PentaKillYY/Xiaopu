@@ -25,10 +25,40 @@
                    onFailure:(JSONResponse)failureBlock{
     
     
-    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?pageIndex=%d&pageSize=%d",GetOrginfo,page,size]  parameters:parameters success:^(id json) {
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?pageIndex=%ld&pageSize=%ld",GetOrginfo,(long)page,(long)size]  parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
+    }];
+}
+
+-(void)getCourseClassTypeWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock{
+   [[BaseHttpRequest sharedBaseHttpRequest] GET:CourseClassType parameters:parameters success:^(id json) {
+       completionBlock(json);
+   } failure:^(id json) {
+       failureBlock(json);
+   }];
+}
+
+-(void)getCoursetypeParameters:(NSDictionary *)parameters
+                  onCompletion:(JSONResponse)completionBlock
+                     onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:CourseType parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getGroupTypeParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:Grouptype parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
     }];
 }
 @end

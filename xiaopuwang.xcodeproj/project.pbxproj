@@ -450,6 +450,13 @@
 			name = Specialist;
 			sourceTree = "<group>";
 		};
+		045632861F25F235005E04CB /* Amap */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Amap;
+			sourceTree = "<group>";
+		};
 		04573F611F13725F00B52C76 = {
 			isa = PBXGroup;
 			children = (
@@ -566,6 +573,7 @@
 		0478B9911F147A7F003A9C8B /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				045632861F25F235005E04CB /* Amap */,
 				0478B99D1F14852D003A9C8B /* WexinPaySDK */,
 				0478B99C1F148521003A9C8B /* AliPaySDK */,
 			);

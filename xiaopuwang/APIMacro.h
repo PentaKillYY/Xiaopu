@@ -21,9 +21,14 @@
 //学校搜索页-分页查询
 #define SchoolSearchList @"/school/schoolsearchList"
 
+//获取班级课程列表
+#define CourseClassType @"/cousertrain/CourseClassType"
 
+//获取课程种类
+#define CourseType @"/cousertrain/CourseType"
 
-
+//获取科目种类
+#define Grouptype @"/cousertrain/GroupType"
 
 
 

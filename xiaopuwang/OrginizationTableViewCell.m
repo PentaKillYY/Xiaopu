@@ -13,8 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    
+
+
     self.sepH.constant = 0.5;
 }
 
@@ -32,6 +32,8 @@
     [self.orgLogo sd_setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"Logo"]] ] placeholderImage:nil];
 
     self.orgContent.text = [item getString:@"TeachCourses"];
+    self.orgContent.preferredMaxLayoutWidth = Main_Screen_Width-111;
+    
     
     self.orgName.text = [item getString:@"OrganizationName"];
     self.leftTag.hidden = ![item getBool:@"IsOfficiallySettled"];

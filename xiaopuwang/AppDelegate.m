@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 @interface AppDelegate ()
 
@@ -28,7 +29,8 @@
     
     [self confitUShareSettings];
 
-    
+    /* 设置高德key */
+    [self configAmap];
     
     
     // Override point for customization after application launch.
@@ -61,6 +63,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)configAmap{
+    [AMapServices sharedServices].apiKey = AMAPKEY;
 }
 
 - (void)confitUShareSettings
