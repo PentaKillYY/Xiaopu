@@ -52,7 +52,6 @@
 
 @property (nonatomic,strong) NSMutableDictionary *dataSource;
 
-@property (nonatomic,strong) AMapLocationManager* locationManager;
 @end
 
 @implementation OrginizationViewController
@@ -67,7 +66,7 @@
     tagDic = [[NSMutableDictionary alloc] init];
     groupDic = [[NSMutableDictionary alloc] init];
     
-    [self setupLoaction];
+  
     
     [self setUpSearchFilter];
     
@@ -486,35 +485,5 @@
     [self.tableView.mj_header beginRefreshing];
 }
 
--(void)setupLoaction{
-    // 带逆地理信息的一次定位（返回坐标和地址信息）
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-    //   定位超时时间，最低2s，此处设置为2s
-    self.locationManager.locationTimeout =2;
-    //   逆地理请求超时时间，最低2s，此处设置为2s
-    self.locationManager.reGeocodeTimeout = 2;
-    
-    // 带逆地理（返回坐标和地址信息）。将下面代码中的 YES 改成 NO ，则不会返回地址信息。
-    [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
-        
-        if (error)
-        {
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
-            
-            if (error.code == AMapLocationErrorLocateFailed)
-            {
-                return;
-            }
-        }
-        
-        NSLog(@"location:%@", location);
-        
-        if (regeocode)
-        {
-            NSLog(@"reGeocode:%@", regeocode);
-        }
-    }];
-
-}
 
 @end

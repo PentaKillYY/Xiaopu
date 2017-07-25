@@ -16,7 +16,7 @@
 #import "UIButton+JKMiddleAligning.h"
 #import "MainService.h"
 
-@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate>
 {
     DataResult* advertisementResult;
 }
@@ -24,6 +24,9 @@
 @property (nonatomic,strong) UISearchBar* searchBar;
 @property (nonatomic,strong) UIButton* rightButton;
 @property (nonatomic,strong) UIButton* leftButton;
+
+
+@property (nonatomic,strong) AMapLocationManager* locationManager;
 @end
 
 @implementation MainViewController
@@ -35,6 +38,9 @@
     [self changeNavTitleView];
     
     [self getMainData];
+ 
+    [self configLocationManager];
+    [self startSerialLocation];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -239,5 +245,39 @@
     } onFailure:^(id json) {
         
     }];
+}
+
+- (void)configLocationManager
+{
+    self.locationManager = [[AMapLocationManager alloc] init];
+    
+    [self.locationManager setDelegate:self];
+    
+    [self.locationManager setPausesLocationUpdatesAutomatically:NO];
+    
+}
+
+- (void)startSerialLocation
+{
+    //开始定位
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)stopSerialLocation
+{
+    //停止定位
+    [self.locationManager stopUpdatingLocation];
+}
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error
+{
+    //定位错误
+    NSLog(@"%s, amapLocationManager = %@, error = %@", __func__, [manager class], error);
+}
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location
+{
+    //定位结果
+    NSLog(@"location:{lat:%f; lon:%f; accuracy:%f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
 }
 @end
