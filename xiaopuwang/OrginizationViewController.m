@@ -14,7 +14,6 @@
 
 #import "OrginizationService.h"
 
-
 @interface OrginizationViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource,BannerDelegate>
 {
     NSArray* orgDistrictAry;

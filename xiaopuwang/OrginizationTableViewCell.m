@@ -38,7 +38,10 @@
     self.orgName.text = [item getString:@"OrganizationName"];
     self.leftTag.hidden = ![item getBool:@"IsOfficiallySettled"];
     
-    self.distance.text = [NSString stringWithFormat:@"%@-%@-%@",[item getString:@"Area"],[item getString:@"City"],[item getString:@"Field"]];
+    double nowDistance =  [self calculateWithX:[item getDouble:@"X"] Y:[item getDouble:@"Y"]];
+    
+    self.distance.text = [NSString stringWithFormat:@"%@-%@-%@ 距您%.1f km",[item getString:@"Area"],[item getString:@"City"],[item getString:@"Field"],nowDistance];
+
     
     if (![item getBool:@"IsOfficiallySettled"]) {
         self.leftTagW = 0;
@@ -84,4 +87,12 @@
 
 }
 
+-(double)calculateWithX:(double)x Y:(double)y{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[info.userLatitude floatValue] longitude:[info.userLongitude floatValue]];
+    CLLocation *orgLocation = [[CLLocation alloc] initWithLatitude:fabs(y) longitude:fabs(x)];
+    double distance = [currentLocation distanceFromLocation:orgLocation]/1000.0;
+    return distance;
+}
 @end

@@ -37,6 +37,8 @@
         decodeObject(userCityname);
         decodeObject(userBalance);
         decodeObject(role);
+        decodeObject(userLongitude);
+        decodeObject(userLatitude);
     }
     
     return self;
@@ -53,6 +55,8 @@
     encodeObject(userCityname);
     encodeObject(userBalance);
     encodeObject(role);
+    encodeObject(userLongitude);
+    encodeObject(userLatitude);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
@@ -66,6 +70,8 @@
     self.userCityname=dict[@"userCityname"];
     self.userBalance=dict[@"userBalance"];
     self.role=dict[@"role"];
+    self.userLongitude=dict[@"userLongitude"];
+    self.userLatitude=dict[@"userLatitude"];
 }
 
 - (void)logout{

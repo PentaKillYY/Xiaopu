@@ -19,7 +19,10 @@
 
 @property (copy, nonatomic) NSString* userCityCode;
 @property (copy, nonatomic) NSString* userCityname;
+
 @property (copy, nonatomic) NSString* userBalance;
+@property (copy, nonatomic) NSString* userLongitude;
+@property (copy, nonatomic) NSString* userLatitude;
 
 +(instancetype)sharedUserInfo;
 -(void)logout;
