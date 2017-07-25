@@ -42,6 +42,7 @@
     
     NSMutableDictionary* groupDic;
     
+    NSInteger selectIndex;
     
 }
 
@@ -126,6 +127,18 @@
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"OrginizationDetail"]) //"goView2"是SEGUE连线的标识
+    {
+        id theSegue = segue.destinationViewController;
+        
+        DataItem* item = [orgListArray getItem:selectIndex];
+        [theSegue setValue:[item getString:@"Organization_Application_ID"] forKey:@"orgID"];
+    }
+}
+
+
 -(void)loadFilterSortData{
     orgDistrictAry = OrginizationDistrictFilter;
     orgTypeAry = OrginizationTypeFilter;
@@ -199,7 +212,6 @@
         _menu = menu;
         
         _menu.menuWidth = Main_Screen_Width;
-//        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
 //        [menu selectDefalutIndexPath];
         
         return menu;
@@ -233,6 +245,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    selectIndex = indexPath.row;
     [self performSegueWithIdentifier:@"OrginizationDetail" sender:self];
 }
 
@@ -347,7 +360,6 @@
 }
 
 - (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath{
-    DLog(@"column:%d,row:%d,item:%d",indexPath.column,indexPath.row,indexPath.item);
     if (indexPath.column == 0) {
         if (indexPath.row == 0) {
            selectArea = @"";

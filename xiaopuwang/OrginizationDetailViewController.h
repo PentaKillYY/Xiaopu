@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface OrginizationDetailViewController : BaseViewController
-
+@property(nonatomic,weak)NSString *orgID;
 @end

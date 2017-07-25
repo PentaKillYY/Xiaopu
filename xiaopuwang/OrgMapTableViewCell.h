@@ -7,7 +7,10 @@
 //
 
 #import "BaseTableViewCell.h"
+#import <MAMapKit/MAMapKit.h>
 
-@interface OrgMapTableViewCell : BaseTableViewCell
+@interface OrgMapTableViewCell : BaseTableViewCell<MAMapViewDelegate>
+@property(nonatomic,weak)IBOutlet MAMapView* mapView;
 
+-(void)bingdingViewModel:(DataItem*)item;
 @end

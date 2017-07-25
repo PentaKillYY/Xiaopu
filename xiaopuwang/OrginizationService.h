@@ -32,4 +32,9 @@
 -(void)getGroupTypeParameters:(NSDictionary *)parameters
                  onCompletion:(JSONResponse)completionBlock
                     onFailure:(JSONResponse)failureBlock;
+
+//获取培训机构详细信息
+-(void)getOrgDetailInfoParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock;
 @end

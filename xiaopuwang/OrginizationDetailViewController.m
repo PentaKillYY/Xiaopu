@@ -15,9 +15,13 @@
 #import "UIButton+JKImagePosition.h"
 #import "UIButton+JKMiddleAligning.h"
 #import "HMSegmentedControl.h"
+#import "OrginizationService.h"
+#import "StarRatingView.h"
 
 @interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger currentSegIndex;
+    
+    DataResult* _detailInfoResult;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -25,6 +29,9 @@
 @property(nonatomic,weak)IBOutlet UIButton* followButton;
 @property(nonatomic,weak)IBOutlet UIButton* contactButton;
 
+@property(nonatomic,weak)IBOutlet UIImageView* logoView;
+@property(nonatomic,weak)IBOutlet UILabel* orgName;
+@property(nonatomic,weak)IBOutlet StarRatingView* ratingView;
 @end
 
 @implementation OrginizationDetailViewController
@@ -33,14 +40,38 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"机构详情";
-    
+    self.view.backgroundColor = [UIColor lightGrayColor];
+   
     [self setupBottomView];
     [self setupInfoSeg];
+    
+    [self getOrgDetailInfoRequest];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setupInfoView{
+    [self.logoView sd_setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@",IMAGE_URL,[_detailInfoResult.detailinfo getString:@"Logo"]] ] placeholderImage:nil];
+    
+    self.orgName.text = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
+    
+    StarRatingViewConfiguration *conf = [[StarRatingViewConfiguration alloc] init];
+    conf.rateEnabled = NO;
+    conf.starWidth = 15.0f;
+    conf.fullImage = @"fullstar.png";
+    conf.halfImage = @"halfstar.png";
+    conf.emptyImage = @"emptystar.png";
+    
+    _ratingView.configuration = conf;
+    [_ratingView setStarConfiguration];
+    
+    [_ratingView setRating:4.5 completion:^{
+        NSLog(@"rate done");
+    }];
+
 }
 
 -(void)setupBottomView{
@@ -97,14 +128,28 @@
     return 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 90;
+    }else if (indexPath.section == 1){
+        return 218;
+    }else if (indexPath.section == 2){
+        return 220;
+    }else if (indexPath.section == 6){
+        return 200.0;
+    }else{
+        return 44;
+    }
+}
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         OrgInfoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgInfoTableViewCell" owner:self options:nil].firstObject;
-        
+        [cell bingdingViewModel:_detailInfoResult.detailinfo];
         return cell;
     }else if (indexPath.section == 1){
         OrgHouseRateTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgHouseRateTableViewCell" owner:self options:nil].firstObject;
-        
+        [cell bingdingViewModel:_detailInfoResult.detailinfo];
         return cell;
     }else if (indexPath.section == 2){
         OrgProportionTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgProportionTableViewCell" owner:self options:nil].firstObject;
@@ -112,7 +157,7 @@
         return cell;
     }else if (indexPath.section == 6){
         OrgMapTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgMapTableViewCell" owner:self options:nil].firstObject;
-        
+        [cell bingdingViewModel:_detailInfoResult.detailinfo];
         return cell;
     }else{
         OrgAlbumVideoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgAlbumVideoTableViewCell" owner:self options:nil].firstObject;
@@ -130,5 +175,17 @@
 -(IBAction)followOrginization:(id)sender{
     UIButton* currentButton = (UIButton*)sender;
     currentButton.selected = !currentButton.selected;
+}
+
+-(void)getOrgDetailInfoRequest{
+    [[OrginizationService sharedOrginizationService] getOrgDetailInfoParameters:@{@"orgApplication_ID":self.orgID} onCompletion:^(id json) {
+        _detailInfoResult = json;
+        
+        [self setupInfoView];
+        
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
 }
 @end

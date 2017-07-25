@@ -280,10 +280,14 @@
     //定位结果
     NSLog(@"location:{lat:%f; lon:%f; accuracy:%f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
     
+   
+    
     UserInfo* info = [UserInfo sharedUserInfo];
     info.userLongitude = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
     info.userLatitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
     
     [info synchronize];
+    
+    [self stopSerialLocation];
 }
 @end

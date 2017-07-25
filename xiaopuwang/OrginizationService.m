@@ -61,4 +61,14 @@
         failureBlock(json);
     }];
 }
+
+-(void)getOrgDetailInfoParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgDetailInfo parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

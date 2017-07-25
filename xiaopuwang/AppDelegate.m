@@ -67,6 +67,8 @@
 
 - (void)configAmap{
     [AMapServices sharedServices].apiKey = AMAPKEY;
+    [AMapServices sharedServices].enableHTTPS = YES;
+
 }
 
 - (void)confitUShareSettings

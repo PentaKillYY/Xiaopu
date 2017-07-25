@@ -30,8 +30,11 @@
 //获取科目种类
 #define Grouptype @"/cousertrain/GroupType"
 
+//获取培训机构详细信息
+#define OrgDetailInfo @"/cousertrain/OrgDetailInfo"
 
 // *******************************学校**************************
+
 
 //学校搜索页-分页查询
 #define SchoolSearchList @"/school/schoolsearchList"
