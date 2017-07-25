@@ -16,6 +16,7 @@
 
 #import "XTDemoKitV1.h"
 #import "BaseHttpRequest.h"
+#import "UserInfo.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>

@@ -10,16 +10,16 @@
  *  本文件可放请求API 拼接的路径
  */
 
-// *******************************王隆帅**************************
+// *******************************首页**************************
 
 //获取广告位
 #define GetAdvertisement @"/user/GetAdvertisement"
 
+
+// *******************************机构**************************
+
 //获取机构列表（分页）
 #define GetOrginfo @"/cousertrain/orgInfo"
-
-//学校搜索页-分页查询
-#define SchoolSearchList @"/school/schoolsearchList"
 
 //获取班级课程列表
 #define CourseClassType @"/cousertrain/CourseClassType"
@@ -31,6 +31,23 @@
 #define Grouptype @"/cousertrain/GroupType"
 
 
+// *******************************学校**************************
+
+//学校搜索页-分页查询
+#define SchoolSearchList @"/school/schoolsearchList"
 
 
+// *******************************我的**************************
+
+//用户登录 返回用户UserId
+#define Login @"/user/Login"
+
+//获取用户余额
+#define UserBalance @"/user/UserBalance"
+
+//通过用户UserId 查询单个用户
+#define GetUserOnly @"/users/getUserOnly"
+
+//更新用户头像
+#define UpdateUserHead @"/user/updateUserHeadSculpture"
 

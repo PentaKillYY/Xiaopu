@@ -35,7 +35,7 @@
         decodeObject(idCard);
         decodeObject(userCityCode);
         decodeObject(userCityname);
-        decodeObject(serviceTel);
+        decodeObject(userBalance);
         decodeObject(role);
     }
     
@@ -51,7 +51,7 @@
     encodeObject(idCard);
     encodeObject(userCityCode);
     encodeObject(userCityname);
-    encodeObject(serviceTel);
+    encodeObject(userBalance);
     encodeObject(role);
 }
 
@@ -64,7 +64,7 @@
     self.idCard=dict[@"idCard"];
     self.userCityCode=dict[@"userCityCode"];
     self.userCityname=dict[@"userCityname"];
-    self.serviceTel=dict[@"serviceTel"];
+    self.userBalance=dict[@"userBalance"];
     self.role=dict[@"role"];
 }
 

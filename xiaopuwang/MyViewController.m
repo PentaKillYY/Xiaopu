@@ -10,7 +10,7 @@
 #import "MyBannerCell.h"
 #import "MyTableCell.h"
 #import "UIActionSheet+Block.h"
-
+#import "MyService.h"
 
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource,UserLogoDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
@@ -37,9 +37,9 @@
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
     
-    
+    [self getUserOnlyRequest];
    
-
+    [self getUserBalanceRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,9 +68,22 @@
         MyBannerCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyBannerCell" forIndexPath:indexPath];
         
         cell.bgImage.image =V_IMAGE(@"top");
+        
+        UserInfo* info = [UserInfo sharedUserInfo];
+        if (info.headPicUrl != nil) {
+            NSData *_decodedImageData   = [[NSData alloc] initWithBase64EncodedString:info.headPicUrl options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            
+            UIImage *_decodedImage      = [UIImage imageWithData:_decodedImageData];
+            [cell.userLogo setImage:_decodedImage forState:UIControlStateNormal];
+        }
+        
+        cell.userName.text = info.username;
+        cell.balance.text = [NSString stringWithFormat:@"账户余额:%.2f",[info.userBalance doubleValue]];
+        
         cell.delegate = self;
         return cell;
     }else {
+        UserInfo* info = [UserInfo sharedUserInfo];
         MyTableCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyTableCell" owner:self options:nil].firstObject;
         cell.cellTitle.text = MyCellTitle[indexPath.section-1][indexPath.row];
         NSString* imageName = [NSString stringWithFormat:@"My-%ld-%ld",indexPath.section,indexPath.row];
@@ -79,7 +92,7 @@
         cell.cellImage.image = V_IMAGE(imageName);
         
         if (indexPath.section == 2 && indexPath.row == 0) {
-            cell.cellDetail.text = @"0.00元";
+            cell.cellDetail.text = [NSString stringWithFormat:@"%.2f元",[info.userBalance doubleValue]];
         }else if (indexPath.section == 2 && indexPath.row == 1){
             cell.cellDetail.text = @"0张";
         }else if (indexPath.section == 2 && indexPath.row == 2){
@@ -169,11 +182,19 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     //获取到的图片
     UIImage * image = [info valueForKey:UIImagePickerControllerEditedImage];
-    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
-    MyBannerCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    [cell.userLogo setImage:image forState:UIControlStateNormal];
-    [cell layoutSubviews];
+    
+    NSData *_data = UIImageJPEGRepresentation(image, 1.0f);
+    
+    NSString *_encodedImageStr = [NSString stringWithFormat:@"data:image/jpg;base64,%@",[_data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength]];
+    
+    
+    [self updateUserHeadRequest:_encodedImageStr];
+//    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+//    MyBannerCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//    [cell.userLogo setImage:image forState:UIControlStateNormal];
+//    [cell layoutSubviews];
 }
 
 
@@ -199,6 +220,60 @@
         }else{
             NSLog(@"response data is %@",data);
         }
+    }];
+}
+
+#pragma mark - NetWorkRequest
+-(void)getUserOnlyRequest{
+    [[MyService sharedMyService] getUserOnlyWithParameters:@{@"userId":@"47c68ae6-7705-4aa8-b272-ac7ea768601c"} onCompletion:^(id json) {
+        DataResult* result = json;
+        
+        UserInfo* info = [UserInfo sharedUserInfo];
+        NSString* UserBase64Image = [result.detailinfo getString:@"UserImage"];
+        NSRange range = [UserBase64Image rangeOfString:@"base64,"];
+        NSInteger location = range.location;
+        NSInteger leight = range.length;
+        UserBase64Image = [UserBase64Image substringFromIndex:location+leight];
+    
+        info.headPicUrl = UserBase64Image;
+        info.username = [result.detailinfo getString:@"UserName"];
+        
+        [info synchronize];
+        
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
+        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)getUserBalanceRequest{
+    [[MyService sharedMyService] getUserBalanceWithParameters:@{@"userId":@"47c68ae6-7705-4aa8-b272-ac7ea768601c"} onCompletion:^(id json) {
+        DataResult* result = json;
+        
+        UserInfo* info = [UserInfo sharedUserInfo];
+        info.userBalance = [NSString stringWithFormat:@"%f",[result.detailinfo getDouble:@"TotalPrice"]];
+        [info synchronize];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)updateUserHeadRequest:(NSString*)imageBase64{
+    [[MyService sharedMyService] postUserHeadWithParameters:@{@"UserID":@"47c68ae6-7705-4aa8-b272-ac7ea768601c",@"ImageBase":imageBase64} onCompletion:^(id json) {
+        DataResult* result = json;
+        UserInfo* info = [UserInfo sharedUserInfo];
+        
+        NSRange range = [imageBase64 rangeOfString:@"base64,"];
+        NSInteger location = range.location;
+        NSInteger leight = range.length;
+        info.headPicUrl = [imageBase64 substringFromIndex:location+leight];
+        [info synchronize];
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
+        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+    } onFailure:^(id json) {
+        
     }];
 }
 @end

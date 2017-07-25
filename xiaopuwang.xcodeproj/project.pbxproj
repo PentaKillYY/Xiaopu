@@ -58,6 +58,7 @@
 		0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */; };
 		0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456328C1F26D442005E04CB /* BaseUserInfo.m */; };
 		045632901F26D442005E04CB /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456328E1F26D442005E04CB /* UserInfo.m */; };
+		045632B61F26DE80005E04CB /* MyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632B51F26DE80005E04CB /* MyService.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -204,6 +205,8 @@
 		0456328C1F26D442005E04CB /* BaseUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserInfo.m; sourceTree = "<group>"; };
 		0456328D1F26D442005E04CB /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		0456328E1F26D442005E04CB /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		045632B41F26DE80005E04CB /* MyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyService.h; sourceTree = "<group>"; };
+		045632B51F26DE80005E04CB /* MyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyService.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -723,6 +726,8 @@
 		0478B9DF1F14A0B3003A9C8B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				045632B41F26DE80005E04CB /* MyService.h */,
+				045632B51F26DE80005E04CB /* MyService.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1111,6 +1116,7 @@
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
+				045632B61F26DE80005E04CB /* MyService.m in Sources */,
 				0445EE731F1D9BE500E9DAB3 /* SubTidyViewController.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
 				0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */,
