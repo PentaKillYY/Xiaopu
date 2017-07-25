@@ -56,6 +56,8 @@
 		0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF191F2093DD00E9DAB3 /* OrgMapTableViewCell.xib */; };
 		0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EF1D1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m */; };
 		0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */; };
+		0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456328C1F26D442005E04CB /* BaseUserInfo.m */; };
+		045632901F26D442005E04CB /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456328E1F26D442005E04CB /* UserInfo.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -198,6 +200,10 @@
 		0445EF1C1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgAlbumVideoTableViewCell.h; sourceTree = "<group>"; };
 		0445EF1D1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgAlbumVideoTableViewCell.m; sourceTree = "<group>"; };
 		0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgAlbumVideoTableViewCell.xib; sourceTree = "<group>"; };
+		0456328B1F26D442005E04CB /* BaseUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserInfo.h; sourceTree = "<group>"; };
+		0456328C1F26D442005E04CB /* BaseUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserInfo.m; sourceTree = "<group>"; };
+		0456328D1F26D442005E04CB /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		0456328E1F26D442005E04CB /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -537,6 +543,10 @@
 		0478B98E1F147A65003A9C8B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0456328B1F26D442005E04CB /* BaseUserInfo.h */,
+				0456328C1F26D442005E04CB /* BaseUserInfo.m */,
+				0456328D1F26D442005E04CB /* UserInfo.h */,
+				0456328E1F26D442005E04CB /* UserInfo.m */,
 				0478B9C81F149613003A9C8B /* BaseHttpRequest.h */,
 				0478B9C91F149613003A9C8B /* BaseHttpRequest.m */,
 			);
@@ -1112,6 +1122,7 @@
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
 				0478B9CA1F149613003A9C8B /* BaseHttpRequest.m in Sources */,
+				045632901F26D442005E04CB /* UserInfo.m in Sources */,
 				0425A2511F21A6E100A18739 /* MainService.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
@@ -1123,6 +1134,7 @@
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				0445EEDB1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m in Sources */,
+				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
