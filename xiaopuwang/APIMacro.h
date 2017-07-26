@@ -33,6 +33,12 @@
 //获取培训机构详细信息
 #define OrgDetailInfo @"/cousertrain/OrgDetailInfo"
 
+//获取机构在线试听课程列表(分页)
+#define OrgVideo @"/cousertrain/OrgVideoList"
+
+//获取机构相册信息
+#define OrgAlbum @"/cousertrain/OrganizationAlbum"
+
 // *******************************学校**************************
 
 
@@ -53,4 +59,7 @@
 
 //更新用户头像
 #define UpdateUserHead @"/user/updateUserHeadSculpture"
+
+//获取机构在线试听课程列表(分页)
+#define OrgVideoList @"/cousertrain/OrgVideoList"
 

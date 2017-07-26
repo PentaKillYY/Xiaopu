@@ -62,6 +62,12 @@
 		045632BE1F282141005E04CB /* OrgInfoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632BD1F282141005E04CB /* OrgInfoContentViewController.m */; };
 		045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632C01F2822A1005E04CB /* OrgContentTableViewCell.m */; };
 		045632C31F2822A1005E04CB /* OrgContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045632C11F2822A1005E04CB /* OrgContentTableViewCell.xib */; };
+		045632D11F282896005E04CB /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632C61F282896005E04CB /* UUBar.m */; };
+		045632D21F282896005E04CB /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632C81F282896005E04CB /* UUBarChart.m */; };
+		045632D31F282896005E04CB /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632CA1F282896005E04CB /* UUChart.m */; };
+		045632D41F282896005E04CB /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632CC1F282896005E04CB /* UUChartLabel.m */; };
+		045632D51F282896005E04CB /* UUChartConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632CE1F282896005E04CB /* UUChartConst.m */; };
+		045632D61F282896005E04CB /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632D01F282896005E04CB /* UULineChart.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -215,6 +221,18 @@
 		045632BF1F2822A1005E04CB /* OrgContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgContentTableViewCell.h; sourceTree = "<group>"; };
 		045632C01F2822A1005E04CB /* OrgContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgContentTableViewCell.m; sourceTree = "<group>"; };
 		045632C11F2822A1005E04CB /* OrgContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgContentTableViewCell.xib; sourceTree = "<group>"; };
+		045632C51F282896005E04CB /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
+		045632C61F282896005E04CB /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
+		045632C71F282896005E04CB /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
+		045632C81F282896005E04CB /* UUBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBarChart.m; sourceTree = "<group>"; };
+		045632C91F282896005E04CB /* UUChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChart.h; sourceTree = "<group>"; };
+		045632CA1F282896005E04CB /* UUChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChart.m; sourceTree = "<group>"; };
+		045632CB1F282896005E04CB /* UUChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartLabel.h; sourceTree = "<group>"; };
+		045632CC1F282896005E04CB /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
+		045632CD1F282896005E04CB /* UUChartConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartConst.h; sourceTree = "<group>"; };
+		045632CE1F282896005E04CB /* UUChartConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartConst.m; sourceTree = "<group>"; };
+		045632CF1F282896005E04CB /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
+		045632D01F282896005E04CB /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -474,6 +492,25 @@
 			name = Amap;
 			sourceTree = "<group>";
 		};
+		045632C41F282885005E04CB /* UUChartView */ = {
+			isa = PBXGroup;
+			children = (
+				045632C51F282896005E04CB /* UUBar.h */,
+				045632C61F282896005E04CB /* UUBar.m */,
+				045632C71F282896005E04CB /* UUBarChart.h */,
+				045632C81F282896005E04CB /* UUBarChart.m */,
+				045632C91F282896005E04CB /* UUChart.h */,
+				045632CA1F282896005E04CB /* UUChart.m */,
+				045632CB1F282896005E04CB /* UUChartLabel.h */,
+				045632CC1F282896005E04CB /* UUChartLabel.m */,
+				045632CD1F282896005E04CB /* UUChartConst.h */,
+				045632CE1F282896005E04CB /* UUChartConst.m */,
+				045632CF1F282896005E04CB /* UULineChart.h */,
+				045632D01F282896005E04CB /* UULineChart.m */,
+			);
+			name = UUChartView;
+			sourceTree = "<group>";
+		};
 		04573F611F13725F00B52C76 = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +694,7 @@
 		0478B9981F147AEB003A9C8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				045632C41F282885005E04CB /* UUChartView */,
 				04267F601F19AE1300FFBC3E /* Cell */,
 				04267F4F1F18599800FFBC3E /* DropDownView */,
 			);
@@ -1122,6 +1160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */,
+				045632D31F282896005E04CB /* UUChart.m in Sources */,
 				0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */,
 				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
 				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
@@ -1129,15 +1168,18 @@
 				0445EF1A1F2093DD00E9DAB3 /* OrgMapTableViewCell.m in Sources */,
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
+				045632D21F282896005E04CB /* UUBarChart.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				045632B61F26DE80005E04CB /* MyService.m in Sources */,
 				0445EE731F1D9BE500E9DAB3 /* SubTidyViewController.m in Sources */,
+				045632D41F282896005E04CB /* UUChartLabel.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
 				0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */,
 				04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */,
 				0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */,
 				04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */,
 				0445EF061F20926600E9DAB3 /* OrgInfoTableViewCell.m in Sources */,
+				045632D61F282896005E04CB /* UULineChart.m in Sources */,
 				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
@@ -1147,6 +1189,7 @@
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
 				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
+				045632D51F282896005E04CB /* UUChartConst.m in Sources */,
 				0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */,
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
 				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
@@ -1157,6 +1200,7 @@
 				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */,
+				045632D11F282896005E04CB /* UUBar.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */,

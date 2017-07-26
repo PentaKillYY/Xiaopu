@@ -18,10 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTG-4f-Fz3" customClass="MAMapView">
-                        <rect key="frame" x="0.0" y="34" width="320" height="108"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-9a-8DD">
                         <rect key="frame" x="8" y="8" width="5" height="21"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,19 +37,12 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TTG-4f-Fz3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="43D-CF-2YF"/>
                     <constraint firstItem="fOc-pe-93Y" firstAttribute="centerY" secondItem="Na5-9a-8DD" secondAttribute="centerY" id="AE0-aU-cHq"/>
                     <constraint firstItem="Na5-9a-8DD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="B8B-y0-6Df"/>
-                    <constraint firstAttribute="trailing" secondItem="TTG-4f-Fz3" secondAttribute="trailing" id="Twr-7T-Ed0"/>
-                    <constraint firstItem="TTG-4f-Fz3" firstAttribute="top" secondItem="Na5-9a-8DD" secondAttribute="bottom" constant="5" id="UIn-4T-DbZ"/>
-                    <constraint firstAttribute="bottom" secondItem="TTG-4f-Fz3" secondAttribute="bottom" id="Ww2-ee-9IQ"/>
                     <constraint firstItem="fOc-pe-93Y" firstAttribute="leading" secondItem="Na5-9a-8DD" secondAttribute="trailing" constant="8" id="clw-vU-kEW"/>
                     <constraint firstItem="Na5-9a-8DD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="j5Y-o3-51R"/>
                 </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="mapView" destination="TTG-4f-Fz3" id="AB0-ti-MSM"/>
-            </connections>
             <point key="canvasLocation" x="33" y="141.5"/>
         </tableViewCell>
     </objects>

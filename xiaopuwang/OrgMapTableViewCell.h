@@ -10,7 +10,7 @@
 #import <MAMapKit/MAMapKit.h>
 
 @interface OrgMapTableViewCell : BaseTableViewCell<MAMapViewDelegate>
-@property(nonatomic,weak)IBOutlet MAMapView* mapView;
+@property(nonatomic,strong) MAMapView* mapView;
 
 -(void)bingdingViewModel:(DataItem*)item;
 @end

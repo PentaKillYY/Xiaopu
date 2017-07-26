@@ -22,6 +22,8 @@
     NSInteger currentSegIndex;
     
     DataResult* _detailInfoResult;
+    DataResult* _albumRequest;
+    DataResult* _videoRequest;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -40,12 +42,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"机构详情";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:228.0/255.0 blue:233.0/255.0 alpha:1.0];
    
     [self setupBottomView];
     [self setupInfoSeg];
     
     [self getOrgDetailInfoRequest];
+    [self gerOrgAlbumRequest];
+    [self getVideoAlbumRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,7 +126,52 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    if (section == 0 || section == 1 || section == 2 || section == 6) {
+        if (_detailInfoResult) {
+            return 1;
+        }else{
+            return 0;
+        }
+    }else if (section == 3){
+        if (_albumRequest.items.size) {
+            return 1;
+        }else{
+            return 0;
+        }
+    }else if (section == 4){
+        DataItemArray* itemArray = [_videoRequest.detailinfo getDataItemArray:@"videoList"];
+        NSInteger number = 0;
+        for (int i = 0; i < itemArray.size; i++) {
+            DataItem* item = [itemArray getItem:i];
+            if ([item getInt:@"VideoType"] == 0) {
+                number++;
+            }
+        }
+        
+        if (number > 0) {
+            return 1;
+        }else{
+            return 0;
+        }
+    }else{
+        
+        
+        DataItemArray* itemArray = [_videoRequest.detailinfo getDataItemArray:@"videoList"];
+        NSInteger number = 0;
+        for (int i = 0; i < itemArray.size; i++) {
+            DataItem* item = [itemArray getItem:i];
+            if ([item getInt:@"VideoType"] == 1) {
+                number++;
+            }
+        }
+        
+        if (number > 0) {
+            return 1;
+        }else{
+            return 0;
+        }
+
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -148,9 +197,9 @@
     }else if (indexPath.section == 2){
         return 220;
     }else if (indexPath.section == 6){
-        return 220.0;
+        return 230.0;
     }else{
-        return 44;
+        return (Main_Screen_Width-14)/3+43;
     }
 }
 
@@ -165,7 +214,7 @@
         return cell;
     }else if (indexPath.section == 2){
         OrgProportionTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgProportionTableViewCell" owner:self options:nil].firstObject;
-        
+        [cell bingdingViewModel:_detailInfoResult.detailinfo];
         return cell;
     }else if (indexPath.section == 6){
         OrgMapTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgMapTableViewCell" owner:self options:nil].firstObject;
@@ -173,6 +222,16 @@
         return cell;
     }else{
         OrgAlbumVideoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgAlbumVideoTableViewCell" owner:self options:nil].firstObject;
+        if (indexPath.section == 3) {
+            cell.orgTitle.text = @"相册";
+            [cell setupUI:_albumRequest Type:0];
+        }else if (indexPath.section == 4){
+            cell.orgTitle.text = @"学校视频";
+            [cell setupUI:_videoRequest Type:1];
+        }else{
+            cell.orgTitle.text = @"在线试听";
+            [cell setupUI:_videoRequest Type:2];
+        }
         
         return cell;
     }
@@ -195,11 +254,35 @@
     currentButton.selected = !currentButton.selected;
 }
 
+#pragma mark - NetWorkRequest
+
 -(void)getOrgDetailInfoRequest{
     [[OrginizationService sharedOrginizationService] getOrgDetailInfoParameters:@{@"orgApplication_ID":self.orgID} onCompletion:^(id json) {
         _detailInfoResult = json;
         
         [self setupInfoView];
+        
+        [self.tableView reloadData];
+        
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)gerOrgAlbumRequest{
+    [[OrginizationService sharedOrginizationService] getAlbumWithParameters:@{@"orgId":self.orgID} onCompletion:^(id json) {
+        _albumRequest = json;
+        
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)getVideoAlbumRequest{
+    [[OrginizationService sharedOrginizationService] getVideoWithParameters:@{@"orgApplicationID":self.orgID,@"pageIndex":@(1),@"pageSize":@(20)} onCompletion:^(id json) {
+        _videoRequest = json;
         
         [self.tableView reloadData];
     } onFailure:^(id json) {

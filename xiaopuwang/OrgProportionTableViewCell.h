@@ -7,7 +7,12 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "UUChart.h"
+@interface OrgProportionTableViewCell : BaseTableViewCell<UUChartDataSource>{
+    UUChart *chartView;
+    DataItem* sourceitem;
+}
 
-@interface OrgProportionTableViewCell : BaseTableViewCell
+-(void)bingdingViewModel:(DataItem*)item;
 
 @end

@@ -37,4 +37,14 @@
 -(void)getOrgDetailInfoParameters:(NSDictionary *)parameters
                  onCompletion:(JSONResponse)completionBlock
                     onFailure:(JSONResponse)failureBlock;
+
+//获取机构相册信息
+-(void)getAlbumWithParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock;
+
+//获取机构在线试听课程列表（分页）
+-(void)getVideoWithParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock;
 @end
