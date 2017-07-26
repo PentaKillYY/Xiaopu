@@ -554,11 +554,50 @@
                         <outlet property="ratingView" destination="5ox-rF-fYq" id="Ylz-Fh-Y5H"/>
                         <outlet property="segmentedControl" destination="W7Z-ZC-AfQ" id="a7j-eZ-x3W"/>
                         <outlet property="tableView" destination="k1U-eD-OlA" id="s3H-iW-8pt"/>
+                        <segue destination="ae3-Hd-1SA" kind="push" identifier="DetailToContent" id="ybP-af-2Ro"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp6-vb-6Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2716" y="-141.67916041979012"/>
+        </scene>
+        <!--Org Info Content View Controller-->
+        <scene sceneID="3bZ-Jf-cPg">
+            <objects>
+                <viewController storyboardIdentifier="OrgInfoContent" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="ae3-Hd-1SA" customClass="OrgInfoContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jUc-ji-qg3"/>
+                        <viewControllerLayoutGuide type="bottom" id="0RP-Yh-4He"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kzj-Ti-TCx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNh-gW-6uw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ae3-Hd-1SA" id="MLS-ZW-QwX"/>
+                                    <outlet property="delegate" destination="ae3-Hd-1SA" id="wPX-oh-Yvu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oNh-gW-6uw" firstAttribute="leading" secondItem="Kzj-Ti-TCx" secondAttribute="leading" id="5ED-ho-PM4"/>
+                            <constraint firstItem="oNh-gW-6uw" firstAttribute="top" secondItem="jUc-ji-qg3" secondAttribute="bottom" id="Dhv-4a-1LE"/>
+                            <constraint firstItem="0RP-Yh-4He" firstAttribute="top" secondItem="oNh-gW-6uw" secondAttribute="bottom" id="bBJ-gj-H1G"/>
+                            <constraint firstAttribute="trailing" secondItem="oNh-gW-6uw" secondAttribute="trailing" id="mS7-Lu-xBH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iIB-Em-5cb"/>
+                    <connections>
+                        <outlet property="tableView" destination="oNh-gW-6uw" id="x5W-CL-0Y6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFe-Wm-jFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3423" y="-143"/>
         </scene>
         <!--学校-->
         <scene sceneID="WaC-mN-rM2">

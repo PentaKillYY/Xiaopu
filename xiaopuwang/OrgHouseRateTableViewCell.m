@@ -40,7 +40,7 @@
     
     self.pieChart.descriptionTextFont = [UIFont fontWithName:@"Avenir-Medium" size:11.0];
     self.pieChart.descriptionTextShadowColor = [UIColor clearColor];
-    self.pieChart.showAbsoluteValues = YES;
+    self.pieChart.showAbsoluteValues = NO;
     self.pieChart.showOnlyValues = YES;
     
     [self.pieChart strokeChart];

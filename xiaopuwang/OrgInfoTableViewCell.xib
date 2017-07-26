@@ -41,8 +41,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIv-SM-5rx">
+                        <rect key="frame" x="298.5" y="6" width="13.5" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="lIv-SM-5rx" secondAttribute="trailing" constant="8" id="Pi6-GN-zyd"/>
+                    <constraint firstItem="lIv-SM-5rx" firstAttribute="centerY" secondItem="QeR-pA-gE3" secondAttribute="centerY" id="RvJ-gm-PrX"/>
                     <constraint firstItem="QeR-pA-gE3" firstAttribute="centerY" secondItem="3db-u3-HUD" secondAttribute="centerY" id="Spf-sE-GYx"/>
                     <constraint firstItem="MGW-fR-2GL" firstAttribute="top" secondItem="QeR-pA-gE3" secondAttribute="bottom" constant="8" id="Ziu-e2-mA7"/>
                     <constraint firstItem="3db-u3-HUD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fFy-sh-rYg"/>

@@ -13,7 +13,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-
+    self.mapView.delegate = self;
+    
+    [self.mapView setZoomLevel:15];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -25,9 +27,7 @@
 -(void)bingdingViewModel:(DataItem*)item{
 
     if (item) {
-        self.mapView.delegate = self;
         
-        [self.mapView setZoomLevel:15];
         [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake([item getDouble:@"Y"], [item getDouble:@"X"])];
         
         MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];

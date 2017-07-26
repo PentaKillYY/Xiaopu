@@ -53,6 +53,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"DetailToContent"]) //"goView2"是SEGUE连线的标识
+    {
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:[_detailInfoResult.detailinfo getString:@"Introduction"] forKey:@"orgContent"];
+    }
+}
+
+
 -(void)setupInfoView{
     [self.logoView sd_setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@",IMAGE_URL,[_detailInfoResult.detailinfo getString:@"Logo"]] ] placeholderImage:nil];
     
@@ -136,7 +148,7 @@
     }else if (indexPath.section == 2){
         return 220;
     }else if (indexPath.section == 6){
-        return 200.0;
+        return 220.0;
     }else{
         return 44;
     }
@@ -163,6 +175,12 @@
         OrgAlbumVideoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgAlbumVideoTableViewCell" owner:self options:nil].firstObject;
         
         return cell;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:@"DetailToContent" sender:self];
     }
 }
 
