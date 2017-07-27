@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface OrgVideoViewController : BaseViewController
-
+@property(nonatomic,weak)NSString *orgID;
+@property(nonatomic,weak)NSString *videoType;
 @end

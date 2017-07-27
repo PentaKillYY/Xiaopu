@@ -694,7 +694,7 @@
         <!--Org Video View Controller-->
         <scene sceneID="V48-hP-JAr">
             <objects>
-                <viewController storyboardIdentifier="OrgVideo" id="uCF-It-hNQ" customClass="OrgVideoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrgVideo" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="uCF-It-hNQ" customClass="OrgVideoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lln-fU-iep"/>
                         <viewControllerLayoutGuide type="bottom" id="MnM-OD-c75"/>
@@ -702,13 +702,62 @@
                     <view key="view" contentMode="scaleToFill" id="qll-kc-bpZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gbL-FW-Xg5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uCF-It-hNQ" id="wLj-oq-Ehn"/>
+                                    <outlet property="delegate" destination="uCF-It-hNQ" id="fgu-cs-ORN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gbL-FW-Xg5" secondAttribute="trailing" id="GTK-99-ukz"/>
+                            <constraint firstItem="gbL-FW-Xg5" firstAttribute="top" secondItem="lln-fU-iep" secondAttribute="bottom" id="PLB-sl-iMU"/>
+                            <constraint firstItem="gbL-FW-Xg5" firstAttribute="leading" secondItem="qll-kc-bpZ" secondAttribute="leading" id="iZ9-yO-Pwv"/>
+                            <constraint firstItem="MnM-OD-c75" firstAttribute="top" secondItem="gbL-FW-Xg5" secondAttribute="bottom" id="nHq-mM-6Uy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BN0-cX-jcL"/>
+                    <connections>
+                        <outlet property="tableView" destination="gbL-FW-Xg5" id="0zC-HK-fTf"/>
+                        <segue destination="Kut-kc-9Yh" kind="push" identifier="VideoListToPlayer" id="p3t-bs-7HK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRN-4E-bZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4686" y="-149"/>
+            <point key="canvasLocation" x="4844" y="-150"/>
+        </scene>
+        <!--Org Video Player View Controller-->
+        <scene sceneID="qk5-kM-8H6">
+            <objects>
+                <viewController storyboardIdentifier="OrgVideoPlayer" id="Kut-kc-9Yh" customClass="OrgVideoPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jIL-c7-yea"/>
+                        <viewControllerLayoutGuide type="bottom" id="a28-8l-52o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZJi-Qz-t33">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knP-PJ-qra">
+                                <rect key="frame" x="0.0" y="100" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1UU-Dy-eTf"/>
+                    <connections>
+                        <outlet property="playerFatherView" destination="knP-PJ-qra" id="eVz-52-oUO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vV3-tc-3tF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5576.8000000000002" y="-150.67466266866569"/>
         </scene>
         <!--学校-->
         <scene sceneID="WaC-mN-rM2">
@@ -913,6 +962,6 @@
         <image name="footernav_08" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hc7-hA-kQF"/>
+        <segue reference="gVy-dS-Wik"/>
     </inferredMetricsTieBreakers>
 </document>

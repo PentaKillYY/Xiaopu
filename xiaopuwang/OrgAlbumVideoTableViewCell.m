@@ -73,7 +73,18 @@
         [imageView.layer setMasksToBounds:YES];
         [imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,array[i]] ] placeholderImage:nil];
         imageView.frame = CGRectMake((imgW+2)*i, 0, imgW, imgH);
+        
+        
+        
         [self.contentScroll addSubview:imageView];
+        
+        if (albumType !=0) {
+            UIImageView* playLogo = [[UIImageView alloc] initWithFrame:CGRectMake((imgW+2)*i+imgW/2-15, imgH/2-15, 30, 30)];
+            
+            [playLogo setImage:V_IMAGE(@"play")];
+            
+            [self.contentScroll addSubview:playLogo];
+        }
         
     }
     self.contentScroll.contentSize = CGSizeMake(imgW*array.count, imgH);

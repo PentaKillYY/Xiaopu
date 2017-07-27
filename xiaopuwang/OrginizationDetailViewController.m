@@ -38,6 +38,9 @@
     NSMutableArray* stuent1Aray;
     NSMutableArray* stuent2Aray;
     NSMutableArray* stuent3Aray;
+    
+    NSString* videoType;
+    
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -95,6 +98,10 @@
     }else if ([segue.identifier isEqualToString:@"DetailToPhotoBrowser"]){
         id theSegue = segue.destinationViewController;
         [theSegue setValue:_albumRequest forKey:@"AlbumResult"];
+    }else if ([segue.identifier isEqualToString:@"DetailToVideo"]){
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:self.orgID forKey:@"orgID"];
+        [theSegue setValue:videoType forKey:@"videoType"];
     }
 }
 
@@ -142,15 +149,11 @@
     [self.contactButton.layer setCornerRadius:3.0];
     [self.contactButton.layer setMasksToBounds:YES];
     
-    [self.followButton setTitle:@"关注" forState:0];
     [self.followButton setImage:V_IMAGE(@"unfollowed") forState:0];
     [self.followButton setImage:V_IMAGE(@"followed") forState:UIControlStateSelected];
     
     [self.followButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [self.followButton setTitle:@"已关注" forState:UIControlStateSelected];
 
-    [self.followButton jk_setImagePosition:2 spacing:0];
-    [self.followButton jk_middleAlignButtonWithSpacing:0];
 }
 
 -(void)setupInfoSeg{
@@ -561,6 +564,10 @@
         }else if (indexPath.section == 3){
             [self performSegueWithIdentifier:@"DetailToPhotoBrowser" sender:self];
         }else if(indexPath.section == 4){
+            videoType = @"0";
+            [self performSegueWithIdentifier:@"DetailToVideo" sender:self];
+        }else if(indexPath.section == 5){
+            videoType = @"1";
             [self performSegueWithIdentifier:@"DetailToVideo" sender:self];
         }
     }
@@ -649,7 +656,7 @@
 }
 
 -(void)getVideoAlbumRequest{
-    [[OrginizationService sharedOrginizationService] getVideoWithParameters:@{@"orgApplicationID":self.orgID,@"pageIndex":@(1),@"pageSize":@(20)} onCompletion:^(id json) {
+    [[OrginizationService sharedOrginizationService] getVideoWithParameters:@{@"orgApplicationID":self.orgID,@"pageIndex":@(1),@"pageSize":@(100)} onCompletion:^(id json) {
         _videoRequest = json;
         
         [self.tableView reloadData];

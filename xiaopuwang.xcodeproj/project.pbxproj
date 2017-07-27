@@ -87,6 +87,10 @@
 		045633191F29BE1C005E04CB /* SRPictureHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633121F29BE1C005E04CB /* SRPictureHUD.m */; };
 		0456331D1F29BE8F005E04CB /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456331B1F29BE8F005E04CB /* ImageCollectionViewCell.m */; };
 		0456331E1F29BE8F005E04CB /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0456331C1F29BE8F005E04CB /* ImageCollectionViewCell.xib */; };
+		045633221F29D0FD005E04CB /* VideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633201F29D0FD005E04CB /* VideoTableViewCell.m */; };
+		045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045633211F29D0FD005E04CB /* VideoTableViewCell.xib */; };
+		045633271F29E1F7005E04CB /* OrgVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633261F29E1F7005E04CB /* OrgVideoPlayerViewController.m */; };
+		0456332A1F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633291F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -285,6 +289,13 @@
 		0456331A1F29BE8F005E04CB /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
 		0456331B1F29BE8F005E04CB /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
 		0456331C1F29BE8F005E04CB /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		0456331F1F29D0FD005E04CB /* VideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewCell.h; sourceTree = "<group>"; };
+		045633201F29D0FD005E04CB /* VideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewCell.m; sourceTree = "<group>"; };
+		045633211F29D0FD005E04CB /* VideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		045633251F29E1F7005E04CB /* OrgVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgVideoPlayerViewController.h; sourceTree = "<group>"; };
+		045633261F29E1F7005E04CB /* OrgVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgVideoPlayerViewController.m; sourceTree = "<group>"; };
+		045633281F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ZFFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		045633291F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ZFFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -727,6 +738,8 @@
 		0478B9941F147AC5003A9C8B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				045633281F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.h */,
+				045633291F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m */,
 				04267F3F1F17189200FFBC3E /* UIButton+JKMiddleAligning.h */,
 				04267F401F17189200FFBC3E /* UIButton+JKMiddleAligning.m */,
 				04267F411F17189200FFBC3E /* UIButton+JKImagePosition.h */,
@@ -978,12 +991,14 @@
 				0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */,
 				0445EEDD1F20800000E9DAB3 /* OrginizationDetailViewController.h */,
 				0445EEDE1F20800000E9DAB3 /* OrginizationDetailViewController.m */,
+				045632BC1F282141005E04CB /* OrgInfoContentViewController.h */,
+				045632BD1F282141005E04CB /* OrgInfoContentViewController.m */,
 				045632EC1F29B121005E04CB /* OrgPhotoBrowserViewController.h */,
 				045632ED1F29B121005E04CB /* OrgPhotoBrowserViewController.m */,
 				045632EF1F29B415005E04CB /* OrgVideoViewController.h */,
 				045632F01F29B415005E04CB /* OrgVideoViewController.m */,
-				045632BC1F282141005E04CB /* OrgInfoContentViewController.h */,
-				045632BD1F282141005E04CB /* OrgInfoContentViewController.m */,
+				045633251F29E1F7005E04CB /* OrgVideoPlayerViewController.h */,
+				045633261F29E1F7005E04CB /* OrgVideoPlayerViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1039,6 +1054,9 @@
 				0456331A1F29BE8F005E04CB /* ImageCollectionViewCell.h */,
 				0456331B1F29BE8F005E04CB /* ImageCollectionViewCell.m */,
 				0456331C1F29BE8F005E04CB /* ImageCollectionViewCell.xib */,
+				0456331F1F29D0FD005E04CB /* VideoTableViewCell.h */,
+				045633201F29D0FD005E04CB /* VideoTableViewCell.m */,
+				045633211F29D0FD005E04CB /* VideoTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1185,6 +1203,7 @@
 				0445EED71F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
+				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
@@ -1279,6 +1298,7 @@
 				0445EF061F20926600E9DAB3 /* OrgInfoTableViewCell.m in Sources */,
 				045632D61F282896005E04CB /* UULineChart.m in Sources */,
 				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
+				045633221F29D0FD005E04CB /* VideoTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				045632DF1F2867ED005E04CB /* OrgTeacherTableViewCell.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
@@ -1308,6 +1328,7 @@
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */,
 				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,
+				0456332A1F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m in Sources */,
 				0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
@@ -1318,6 +1339,7 @@
 				0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */,
 				045632BE1F282141005E04CB /* OrgInfoContentViewController.m in Sources */,
 				0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */,
+				045633271F29E1F7005E04CB /* OrgVideoPlayerViewController.m in Sources */,
 				0445EECD1F1F330800E9DAB3 /* EducationPlanController.m in Sources */,
 				0445EF151F2093A800E9DAB3 /* OrgProportionTableViewCell.m in Sources */,
 				0445EED61F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m in Sources */,

@@ -22,6 +22,7 @@ pod 'RadioButton'
 pod 'HMSegmentedControl'
 pod 'PNChart'
 pod 'UIActionSheet+Block', '~> 1.0.2'
+pod 'ZFPlayer', '~> 2.1.5'
 
 pod 'UMengUShare/UI'
 pod 'UMengUShare/Social/WeChat'
