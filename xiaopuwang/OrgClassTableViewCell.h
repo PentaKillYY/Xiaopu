@@ -6,9 +6,9 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface OrgClassTableViewCell : UITableViewCell
+@interface OrgClassTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* className;
 @property(nonatomic,weak)IBOutlet UILabel* classinfo;
 @property(nonatomic,weak)IBOutlet UIImageView* classLogo;

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface OrgContentTableViewCell : UITableViewCell
+@interface OrgContentTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* orgContent;
 @end

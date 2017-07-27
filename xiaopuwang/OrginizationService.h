@@ -62,4 +62,14 @@
 -(void)getStudentListWithParameters:(NSDictionary *)parameters
                        onCompletion:(JSONResponse)completionBlock
                           onFailure:(JSONResponse)failureBlock;
+
+//获取机构评价内容(分页)
+-(void)getOrgRelyContentListWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock;
+
+//判断用户是否预约
+-(void)getUserAppointMentStateWithParameters:(NSDictionary *)parameters
+                                onCompletion:(JSONResponse)completionBlock
+                                   onFailure:(JSONResponse)failureBlock;
 @end

@@ -50,6 +50,13 @@
 //获取机构优秀学院列表(分页)
 #define OrgStudentList @"/cousertrain/OrgStudentList"
 
+//获取机构评价内容(分页)
+#define OrgRelyContent @"/cousertrain/OrganizationRelyContent"
+
+//判断用户是否预约
+#define IsUserAppoint @"/userOrder/UserIsAppointment"
+
+
 // *******************************学校**************************
 
 //学校搜索页-分页查询

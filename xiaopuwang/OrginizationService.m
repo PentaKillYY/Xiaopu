@@ -121,4 +121,25 @@
         failureBlock(json);
     }];
 }
+
+-(void)getOrgRelyContentListWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgRelyContent parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getUserAppointMentStateWithParameters:(NSDictionary *)parameters
+                                onCompletion:(JSONResponse)completionBlock
+                                   onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:IsUserAppoint parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
 @end

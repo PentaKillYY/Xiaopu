@@ -6,10 +6,10 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 #import "SKTagView.h"
 
-@interface OrgTeacherTableViewCell : UITableViewCell
+@interface OrgTeacherTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UIImageView* teacherLogo;
 @property(nonatomic,weak)IBOutlet UILabel* teacherName;
 @property(nonatomic,weak)IBOutlet UILabel* teacherGoodCourse;

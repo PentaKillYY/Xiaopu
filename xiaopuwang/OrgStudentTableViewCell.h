@@ -6,9 +6,9 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface OrgStudentTableViewCell : UITableViewCell
+@interface OrgStudentTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UIImageView* studentLogo;
 @property(nonatomic,weak)IBOutlet UILabel* studentName;
 @property(nonatomic,weak)IBOutlet UILabel* studentContent;

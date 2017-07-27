@@ -20,6 +20,7 @@
 #import "OrgClassTableViewCell.h"
 #import "OrgTeacherTableViewCell.h"
 #import "OrgStudentTableViewCell.h"
+#import "OrgEvaluateTableViewCell.h"
 
 @interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger currentSegIndex;
@@ -30,6 +31,8 @@
     DataResult* _classResult;
     DataResult* _teacherResult;
     DataResult* _studentResult;
+    DataResult* _relyResult;
+    DataResult* _appointStateResult;
     
     NSMutableArray* stuent0Aray;
     NSMutableArray* stuent1Aray;
@@ -45,6 +48,11 @@
 @property(nonatomic,weak)IBOutlet UIImageView* logoView;
 @property(nonatomic,weak)IBOutlet UILabel* orgName;
 @property(nonatomic,weak)IBOutlet StarRatingView* ratingView;
+
+@property(nonatomic,weak)IBOutlet UIButton* contactTeacherBtn;
+@property(nonatomic,weak)IBOutlet UIButton* askPriceBtn;
+@property(nonatomic,weak)IBOutlet UIButton* payBtn;
+
 @end
 
 @implementation OrginizationDetailViewController
@@ -66,6 +74,9 @@
     [self getOrgDetailInfoRequest];
     [self gerOrgAlbumRequest];
     [self getVideoAlbumRequest];
+    
+    [self getAppointStateRequest];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,6 +118,22 @@
 }
 
 -(void)setupBottomView{
+    
+    [self.contactTeacherBtn setBackgroundColor:MAINCOLOR];
+    [self.contactTeacherBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.contactTeacherBtn.layer setCornerRadius:3.0];
+    [self.contactTeacherBtn.layer setMasksToBounds:YES];
+    
+    [self.askPriceBtn setBackgroundColor:MAINCOLOR];
+    [self.askPriceBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.askPriceBtn.layer setCornerRadius:3.0];
+    [self.askPriceBtn.layer setMasksToBounds:YES];
+    
+    [self.payBtn setBackgroundColor:MAINCOLOR];
+    [self.payBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.payBtn.layer setCornerRadius:3.0];
+    [self.payBtn.layer setMasksToBounds:YES];
+    
     [self.contactButton setBackgroundColor:MAINCOLOR];
     [self.contactButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.contactButton.layer setCornerRadius:3.0];
@@ -135,6 +162,21 @@
     [self.segmentedControl setSelectedSegmentIndex:currentSegIndex];
 }
 
+
+-(void)changeAppointState{
+    if (_appointStateResult.statusCode == 1) {
+        self.contactButton.hidden = YES;
+        self.contactTeacherBtn.hidden = NO;
+        self.payBtn.hidden = NO;
+        self.askPriceBtn.hidden = NO;
+    }else{
+        self.contactButton.hidden = NO;
+        self.contactTeacherBtn.hidden = YES;
+        self.payBtn.hidden = YES;
+        self.askPriceBtn.hidden = YES;
+    }
+}
+
 #pragma mark - UITableViewDatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -142,11 +184,12 @@
         return 7;
     }else if (currentSegIndex == 1){
         return [_classResult.detailinfo getDataItemArray:@"list"].size >5 ? 5:[_classResult.detailinfo getDataItemArray:@"list"].size;
+    }else if (currentSegIndex == 2){
+        return [_teacherResult.detailinfo getDataItemArray:@"teacherList"].size >5 ? 5:[_teacherResult.detailinfo getDataItemArray:@"teacherList"].size;
     }else if (currentSegIndex == 3){
         return 4;
-    }
-    else{
-        return [_teacherResult.detailinfo getDataItemArray:@"teacherList"].size >5 ? 5:[_teacherResult.detailinfo getDataItemArray:@"teacherList"].size;
+    }else{
+        return [_relyResult.detailinfo getDataItemArray:@"replyList"].size >5 ? 5:[_relyResult.detailinfo getDataItemArray:@"replyList"].size;
     }
 }
 
@@ -206,8 +249,6 @@
             
         }
 
-    }else if (currentSegIndex == 1){
-        return 1;
     }else if (currentSegIndex == 3){
         if (section == 0) {
             return stuent0Aray.count>2?2:stuent0Aray.count;
@@ -289,7 +330,13 @@
             }
             
         }else{
-            return 44;
+            NSInteger maxSection = [_relyResult.detailinfo getDataItemArray:@"replyList"].size >5 ? 5:[_relyResult.detailinfo getDataItemArray:@"replyList"].size;
+            
+            if (section+1 == maxSection) {
+                return 44;
+            }else{
+                return 0.1;
+            }
         }
     }
 }
@@ -310,10 +357,6 @@
             return (Main_Screen_Width-14)/3+43;
         }
         
-    }
-    else if (currentSegIndex == 1){
-        //课程 seg=1
-        return 80.0;
     }else if (currentSegIndex == 2){
         return  [tableView fd_heightForCellWithIdentifier:@"OrgTeacher" cacheByIndexPath:indexPath configuration:^(id cell) {
             [self configCell:cell indexpath:indexPath];
@@ -357,8 +400,11 @@
             return cell;
         }
 
-    }
-    else if (currentSegIndex == 2){
+    }else if (currentSegIndex == 1){
+        OrgClassTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgClassTableViewCell" owner:self options:nil].firstObject;
+        [cell bingdingVieModel:[[_classResult.detailinfo getDataItemArray:@"list"] getItem:indexPath.section]];
+        return cell;
+    }else if (currentSegIndex == 2){
         OrgTeacherTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgTeacherTableViewCell" owner:self options:nil].firstObject;
         [self configCell:cell indexpath:indexPath];
         [cell bingdingViewModel:[[_teacherResult.detailinfo getDataItemArray:@"teacherList"] getItem:indexPath.section]];
@@ -374,12 +420,10 @@
         }else{
             [cell bingdingViewModel:stuent3Aray[indexPath.row]];
         }
-        
-        
         return cell;
     }else{
-        OrgClassTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgClassTableViewCell" owner:self options:nil].firstObject;
-        [cell bingdingVieModel:[[_classResult.detailinfo getDataItemArray:@"list"] getItem:indexPath.section]];
+        OrgEvaluateTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgEvaluateTableViewCell" owner:self options:nil].firstObject;
+        [cell bingdingViewModel:[[_relyResult.detailinfo getDataItemArray:@"replyList"] getItem:indexPath.section]];
         return cell;
     }
     
@@ -387,8 +431,6 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (currentSegIndex == 3) {
-        
-        
         UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
         headerView.backgroundColor = [UIColor whiteColor];
         UILabel* logoLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, 5, 21)];
@@ -424,7 +466,7 @@
         
         if (currentSegIndex == 1) {
             NSInteger maxSection = [_classResult.detailinfo getDataItemArray:@"list"].size >5 ? 5:[_classResult.detailinfo getDataItemArray:@"list"].size;
-            if (section+1 == maxSection ) {
+            if (section+1 == maxSection && maxSection == 5) {
                 UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
                 seeMoreFooter.text = @"查看更多";
                 seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
@@ -436,7 +478,7 @@
             }
         }else if(currentSegIndex == 2){
             NSInteger maxSection = [_teacherResult.detailinfo getDataItemArray:@"teacherList"].size >5 ? 5:[_teacherResult.detailinfo getDataItemArray:@"teacherList"].size;
-            if (section+1 == maxSection ) {
+            if (section+1 == maxSection && maxSection == 5) {
                 UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
                 seeMoreFooter.text = @"查看更多";
                 seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
@@ -492,9 +534,18 @@
                     return nil;
                 }
             }
-        }
-        else{
-            return nil;
+        }else{
+            NSInteger maxSection = [_relyResult.detailinfo getDataItemArray:@"replyList"].size >5 ? 5:[_relyResult.detailinfo getDataItemArray:@"replyList"].size;
+            if (section+1 == maxSection && maxSection == 5) {
+                UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
+                seeMoreFooter.text = @"查看更多";
+                seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
+                seeMoreFooter.textAlignment = NSTextAlignmentCenter;
+                seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                return seeMoreFooter;
+            }else{
+                return nil;
+            }
         }
         
     }
@@ -554,6 +605,8 @@
         [self getTeacherListRequest];
     }else if (currentSegIndex == 3){
         [self getStudentListRequest];
+    }else if (currentSegIndex == 4){
+        [self getRelyContentListRequest];
     }
 }
 
@@ -650,4 +703,27 @@
         
     }];
 }
+
+-(void)getRelyContentListRequest{
+    [[OrginizationService sharedOrginizationService] getOrgRelyContentListWithParameters:@{@"orgId":self.orgID,@"pageIndex":@(1),@"pageSize":@(10),@"replyflag":@"全部"} onCompletion:^(id json) {
+        _relyResult = json;
+        
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
+
+}
+
+-(void)getAppointStateRequest{
+    [[OrginizationService sharedOrginizationService] getUserAppointMentStateWithParameters:@{@"orgApplication_ID":self.orgID,@"userId":@"47c68ae6-7705-4aa8-b272-ac7ea768601c"} onCompletion:^(id json) {
+        _appointStateResult = json;
+        [self changeAppointState];
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+
 @end

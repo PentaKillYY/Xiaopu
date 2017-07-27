@@ -445,20 +445,53 @@
                                         <rect key="frame" x="56" y="5" width="314" height="40"/>
                                         <state key="normal" title="联系机构课程顾问"/>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-lp-3BI">
+                                        <rect key="frame" x="59" y="5" width="97.5" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="联系老师">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNh-gP-Cao">
+                                        <rect key="frame" x="164.5" y="5" width="97" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="叫人砍价">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3Q-JH-5b0">
+                                        <rect key="frame" x="269.5" y="5" width="97.5" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="立即支付">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="XNh-gP-Cao" firstAttribute="width" secondItem="7zJ-lp-3BI" secondAttribute="width" id="3IE-xa-GUA"/>
+                                    <constraint firstItem="7zJ-lp-3BI" firstAttribute="leading" secondItem="lui-DW-0QH" secondAttribute="trailing" constant="8" id="5Kh-RH-ydQ"/>
+                                    <constraint firstItem="XNh-gP-Cao" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" constant="5" id="BTJ-I9-ZWl"/>
+                                    <constraint firstAttribute="bottom" secondItem="h3Q-JH-5b0" secondAttribute="bottom" constant="5" id="DNQ-wa-P2g"/>
                                     <constraint firstItem="5aL-JD-7yh" firstAttribute="leading" secondItem="F7w-Hx-Yz8" secondAttribute="leading" id="ECb-AW-uKQ"/>
+                                    <constraint firstItem="XNh-gP-Cao" firstAttribute="leading" secondItem="7zJ-lp-3BI" secondAttribute="trailing" constant="8" id="Gfa-fY-b09"/>
+                                    <constraint firstItem="h3Q-JH-5b0" firstAttribute="leading" secondItem="XNh-gP-Cao" secondAttribute="trailing" constant="8" id="GxJ-Ze-Umk"/>
                                     <constraint firstItem="5aL-JD-7yh" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" id="KdP-M7-vBW"/>
+                                    <constraint firstAttribute="trailing" secondItem="h3Q-JH-5b0" secondAttribute="trailing" constant="8" id="ONJ-Zr-7cg"/>
                                     <constraint firstItem="Kdp-fY-GZh" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" constant="5" id="UhI-l7-mTC"/>
                                     <constraint firstAttribute="bottom" secondItem="5aL-JD-7yh" secondAttribute="bottom" id="Vxf-SN-FSE"/>
+                                    <constraint firstAttribute="bottom" secondItem="XNh-gP-Cao" secondAttribute="bottom" constant="5" id="ZBc-gu-Kl2"/>
                                     <constraint firstItem="lui-DW-0QH" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" id="a4n-2L-D1t"/>
+                                    <constraint firstItem="h3Q-JH-5b0" firstAttribute="width" secondItem="7zJ-lp-3BI" secondAttribute="width" id="axQ-Fx-492"/>
                                     <constraint firstAttribute="bottom" secondItem="lui-DW-0QH" secondAttribute="bottom" id="bVf-pK-99X"/>
                                     <constraint firstAttribute="height" constant="50" id="c10-K9-sys"/>
                                     <constraint firstItem="Kdp-fY-GZh" firstAttribute="leading" secondItem="lui-DW-0QH" secondAttribute="trailing" constant="5" id="d36-v9-Iic"/>
+                                    <constraint firstItem="7zJ-lp-3BI" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" constant="5" id="dvl-xN-Fy2"/>
                                     <constraint firstAttribute="bottom" secondItem="Kdp-fY-GZh" secondAttribute="bottom" constant="5" id="ekK-p3-gPw"/>
                                     <constraint firstAttribute="trailing" secondItem="Kdp-fY-GZh" secondAttribute="trailing" constant="5" id="eqe-4L-htw"/>
                                     <constraint firstItem="lui-DW-0QH" firstAttribute="leading" secondItem="5aL-JD-7yh" secondAttribute="trailing" id="tEe-b0-nl9"/>
+                                    <constraint firstAttribute="bottom" secondItem="7zJ-lp-3BI" secondAttribute="bottom" constant="5" id="te7-Ki-DOU"/>
+                                    <constraint firstItem="h3Q-JH-5b0" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" constant="5" id="xZ6-ng-Ywt"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13y-1I-rIg">
@@ -547,10 +580,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="4mk-k4-0zO"/>
                     <connections>
+                        <outlet property="askPriceBtn" destination="XNh-gP-Cao" id="jS2-pI-ypf"/>
                         <outlet property="contactButton" destination="Kdp-fY-GZh" id="Qik-s0-2dp"/>
+                        <outlet property="contactTeacherBtn" destination="7zJ-lp-3BI" id="6Uo-Lc-sb8"/>
                         <outlet property="followButton" destination="5aL-JD-7yh" id="wcE-9S-hGu"/>
                         <outlet property="logoView" destination="I4l-mZ-Asa" id="ii7-RW-bIj"/>
                         <outlet property="orgName" destination="Pia-69-XEk" id="gpo-tj-b0a"/>
+                        <outlet property="payBtn" destination="h3Q-JH-5b0" id="q93-nL-aoE"/>
                         <outlet property="ratingView" destination="5ox-rF-fYq" id="Ylz-Fh-Y5H"/>
                         <outlet property="segmentedControl" destination="W7Z-ZC-AfQ" id="a7j-eZ-x3W"/>
                         <outlet property="tableView" destination="k1U-eD-OlA" id="s3H-iW-8pt"/>
