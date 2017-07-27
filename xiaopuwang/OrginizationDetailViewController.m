@@ -87,11 +87,14 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"DetailToContent"]) //"goView2"是SEGUE连线的标识
+    if([segue.identifier isEqualToString:@"DetailToContent"])
     {
         id theSegue = segue.destinationViewController;
         
         [theSegue setValue:[_detailInfoResult.detailinfo getString:@"Introduction"] forKey:@"orgContent"];
+    }else if ([segue.identifier isEqualToString:@"DetailToPhotoBrowser"]){
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:_albumRequest forKey:@"AlbumResult"];
     }
 }
 

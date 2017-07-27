@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface OrgPhotoBrowserViewController : BaseViewController
-
+@property(nonatomic,strong)DataResult *AlbumResult;
 @end
