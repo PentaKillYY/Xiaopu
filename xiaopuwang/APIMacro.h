@@ -15,7 +15,6 @@
 //获取广告位
 #define GetAdvertisement @"/user/GetAdvertisement"
 
-
 // *******************************机构**************************
 
 //获取机构列表（分页）
@@ -39,12 +38,22 @@
 //获取机构相册信息
 #define OrgAlbum @"/cousertrain/OrganizationAlbum"
 
-// *******************************学校**************************
+//获取机构在线试听课程列表(分页)
+#define OrgVideoList @"/cousertrain/OrgVideoList"
 
+//获取机构课程列表(分页)
+#define OrgCourseList @"/cousertrain/OrgCourseList"
+
+//获取机构教师列表(分页)
+#define OrgTeacherList @"/cousertrain/OrgTeacherList"
+
+//获取机构优秀学院列表(分页)
+#define OrgStudentList @"/cousertrain/OrgStudentList"
+
+// *******************************学校**************************
 
 //学校搜索页-分页查询
 #define SchoolSearchList @"/school/schoolsearchList"
-
 
 // *******************************我的**************************
 
@@ -60,6 +69,4 @@
 //更新用户头像
 #define UpdateUserHead @"/user/updateUserHeadSculpture"
 
-//获取机构在线试听课程列表(分页)
-#define OrgVideoList @"/cousertrain/OrgVideoList"
 

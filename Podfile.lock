@@ -19,6 +19,7 @@ PODS:
   - AMapFoundation (1.4.1)
   - AMapLocation (2.4.0):
     - AMapFoundation (~> 1.4)
+  - BaiduMapKit (3.3.2)
   - HMSegmentedControl (1.5.4)
   - JCore (1.1.5)
   - JPush (3.0.6):
@@ -84,6 +85,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AMap3DMap (~> 5.2.1)
   - AMapLocation (~> 2.4.0)
+  - BaiduMapKit (~> 3.3.2)
   - HMSegmentedControl
   - JPush (~> 3.0.6)
   - MBProgressHUD (~> 1.0.0)
@@ -108,6 +110,7 @@ SPEC CHECKSUMS:
   AMap3DMap: 5a98d7c08d23a7f07853e7ee2fa7650057b75896
   AMapFoundation: 9cc5198980873cca29bb70466a84b3bd922c0e65
   AMapLocation: 47b62b5381a66e4d0c2931b70ffde72682427896
+  BaiduMapKit: 5118390d63b375483bd64c963e8e32a40fd9ddb5
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
   JCore: 9bd9c770c877c583d98b90a68792b8361974c231
   JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
@@ -127,6 +130,6 @@ SPEC CHECKSUMS:
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
 
-PODFILE CHECKSUM: da39d5e4e32e67226a255bef874969ed4847da13
+PODFILE CHECKSUM: 2c209cb9715f061d98282e9977861e7d56ebf256
 
 COCOAPODS: 1.2.1

@@ -8,6 +8,7 @@
 
 #import "OrgMapTableViewCell.h"
 
+
 @implementation OrgMapTableViewCell
 
 - (void)awakeFromNib {
@@ -28,8 +29,8 @@
         self.mapView = nil;
     }
     
-    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 34, Main_Screen_Width, 186)];
-    MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
+    self.mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 34, Main_Screen_Width, 186)];
+    BMKPointAnnotation *pointAnnotation = [[BMKPointAnnotation alloc] init];
     pointAnnotation.coordinate = CLLocationCoordinate2DMake([item getDouble:@"Y"], [item getDouble:@"X"]);
     
     self.mapView.delegate = self;
@@ -47,22 +48,4 @@
     [self.contentView addSubview:self.mapView];
 }
 
-- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id <MAAnnotation>)annotation
-{
-    if ([annotation isKindOfClass:[MAPointAnnotation class]])
-    {
-        static NSString *pointReuseIndentifier = @"pointReuseIndentifier";
-        MAPinAnnotationView*annotationView = (MAPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
-        if (annotationView == nil)
-        {
-            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
-        }
-        annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO
-        annotationView.animatesDrop = YES;        //设置标注动画显示，默认为NO
-        annotationView.draggable = YES;        //设置标注可以拖动，默认为NO
-        annotationView.pinColor = MAPinAnnotationColorRed;
-        return annotationView;
-    }
-    return nil;
-}
 @end

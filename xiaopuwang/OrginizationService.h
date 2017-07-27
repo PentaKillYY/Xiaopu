@@ -47,4 +47,19 @@
 -(void)getVideoWithParameters:(NSDictionary *)parameters
                  onCompletion:(JSONResponse)completionBlock
                     onFailure:(JSONResponse)failureBlock;
+
+//获取机构课程列表(分页)
+-(void)getOrgCourseListWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock;
+
+//获取机构教师列表(分页)
+-(void)getCourseTeacherListWithParameters:(NSDictionary *)parameters
+                             onCompletion:(JSONResponse)completionBlock
+                                onFailure:(JSONResponse)failureBlock;
+
+//获取机构优秀学院列表(分页)
+-(void)getStudentListWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
 @end
