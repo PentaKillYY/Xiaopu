@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface OrgVideoPlayerViewController : BaseViewController
-
+@property(nonatomic,strong)DataItem* currenrItem;
 @end

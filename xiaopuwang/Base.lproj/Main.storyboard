@@ -723,7 +723,7 @@
                     <navigationItem key="navigationItem" id="BN0-cX-jcL"/>
                     <connections>
                         <outlet property="tableView" destination="gbL-FW-Xg5" id="0zC-HK-fTf"/>
-                        <segue destination="Kut-kc-9Yh" kind="push" identifier="VideoListToPlayer" id="p3t-bs-7HK"/>
+                        <segue destination="Kut-kc-9Yh" kind="modal" identifier="VideoListToPlayer" id="lfi-vY-Nx2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRN-4E-bZI" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -42,14 +42,30 @@
     return NO;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+    
+{
+    
+    return UIInterfaceOrientationMaskLandscape;
+
+}
+    
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+    
+{
+        
+    return UIInterfaceOrientationLandscapeRight;
+}
+    
+    
 #pragma mark - Getter
 
 - (ZFPlayerModel *)playerModel {
     if (!_playerModel) {
         _playerModel                  = [[ZFPlayerModel alloc] init];
-        _playerModel.title            = @"这里设置视频标题";
-        _playerModel.videoURL         = [NSURL URLWithString:@"http://www.ings.org.cn/Uploads/OrganizationPhoto/20170620233049134651_Video.mp4"];
-        _playerModel.placeholderImage = [UIImage imageNamed:@"loading_bgView1"];
+        _playerModel.title            = [self.currenrItem getString:@"VideoName"];
+        _playerModel.videoURL         = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[self.currenrItem getString:@"VideoURL"]] ];
+        _playerModel.placeholderImage = nil;
         _playerModel.fatherView       = self.view;
     }
     return _playerModel;
@@ -76,9 +92,15 @@
         
         
         // 打开预览图
-        self.playerView.hasPreviewView = YES;
+        self.playerView.hasPreviewView = NO;
         
     }
     return _playerView;
+}
+    
+- (void)zf_playerBackAction{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 @end

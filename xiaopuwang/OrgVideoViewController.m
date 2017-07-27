@@ -13,6 +13,7 @@
     DataResult* _videoRequest;
     NSMutableArray* videoItemArray;
     NSInteger pageIndex;
+    NSInteger currentRow;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -52,6 +53,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+    {
+        if([segue.identifier isEqualToString:@"VideoListToPlayer"])
+        {
+            id theSegue = segue.destinationViewController;
+            
+            DataItemArray* itemArray =  [_videoRequest.detailinfo getDataItemArray:@"videoList"];
+            
+            [theSegue setValue:[itemArray getItem:currentRow] forKey:@"currenrItem"];
+        }
+    
+    }
+
+    
+#pragma mark - UITableDataSource
+    
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -69,14 +86,18 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 160;
+    return 176;
 }
 
-
+#pragma mark - UITableViewDelegate
+    
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    currentRow = indexPath.row;
     [self performSegueWithIdentifier:@"VideoListToPlayer" sender:self];
 }
 
+#pragma mark - NetWorkRequest
+    
 -(void)getVideoAlbumRequest{
     [[OrginizationService sharedOrginizationService] getVideoWithParameters:@{@"orgApplicationID":self.orgID,@"pageIndex":@(pageIndex),@"pageSize":@(10)} onCompletion:^(id json) {
         _videoRequest = json;
