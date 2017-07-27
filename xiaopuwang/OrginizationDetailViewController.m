@@ -555,6 +555,10 @@
     if (currentSegIndex == 0) {
         if (indexPath.section == 0) {
             [self performSegueWithIdentifier:@"DetailToContent" sender:self];
+        }else if (indexPath.section == 3){
+            [self performSegueWithIdentifier:@"DetailToPhotoBrowser" sender:self];
+        }else if(indexPath.section == 4){
+            [self performSegueWithIdentifier:@"DetailToVideo" sender:self];
         }
     }
 }

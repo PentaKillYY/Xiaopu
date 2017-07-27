@@ -591,6 +591,8 @@
                         <outlet property="segmentedControl" destination="W7Z-ZC-AfQ" id="a7j-eZ-x3W"/>
                         <outlet property="tableView" destination="k1U-eD-OlA" id="s3H-iW-8pt"/>
                         <segue destination="ae3-Hd-1SA" kind="push" identifier="DetailToContent" id="ybP-af-2Ro"/>
+                        <segue destination="SJn-6Q-NjO" kind="push" identifier="DetailToPhotoBrowser" id="xds-U8-HLI"/>
+                        <segue destination="uCF-It-hNQ" kind="push" identifier="DetailToVideo" id="Ec3-fe-bpg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp6-vb-6Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -634,6 +636,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFe-Wm-jFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3423" y="-143"/>
+        </scene>
+        <!--Org Photo Browser View Controller-->
+        <scene sceneID="q9w-Bd-uQa">
+            <objects>
+                <viewController storyboardIdentifier="OrgPhotoBrowser" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="SJn-6Q-NjO" customClass="OrgPhotoBrowserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uVx-WJ-49p"/>
+                        <viewControllerLayoutGuide type="bottom" id="QL0-0p-EaB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MfH-5j-bri">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9IB-UY-8ke"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mm3-xZ-Law" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4061" y="-149"/>
+        </scene>
+        <!--Org Video View Controller-->
+        <scene sceneID="V48-hP-JAr">
+            <objects>
+                <viewController storyboardIdentifier="OrgVideo" id="uCF-It-hNQ" customClass="OrgVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lln-fU-iep"/>
+                        <viewControllerLayoutGuide type="bottom" id="MnM-OD-c75"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qll-kc-bpZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BN0-cX-jcL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRN-4E-bZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4686" y="-149"/>
         </scene>
         <!--学校-->
         <scene sceneID="WaC-mN-rM2">
