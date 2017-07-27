@@ -44,11 +44,13 @@
     
     NSInteger selectIndex;
     
+    NSInteger selectColumn;
+    NSInteger selectRow;
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
 @property (nonatomic,strong) IBOutlet UITableView* tableView;
-@property (nonatomic, weak) DOPDropDownMenu *menu;
+@property (nonatomic, strong) DOPDropDownMenu *menu;
 
 @property (nonatomic,strong) NSMutableDictionary *dataSource;
 
@@ -193,7 +195,7 @@
     }else{
         OrginizationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrgCell" forIndexPath:indexPath];
         
-       
+
 
         [self configCell:cell indexpath:indexPath];
         
@@ -205,16 +207,23 @@
     if (section == 0) {
         return nil;
     }else{
-        // 添加下拉菜单
-        DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
-        menu.delegate = self;
-        menu.dataSource = self;
-        _menu = menu;
         
-        _menu.menuWidth = Main_Screen_Width;
-//        [menu selectDefalutIndexPath];
+        if (!_menu) {
+            // 添加下拉菜单
+            DOPDropDownMenu*menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
+            menu.delegate = self;
+            menu.dataSource = self;
+            _menu = menu;
+            
+            _menu.menuWidth = Main_Screen_Width;
+            CATextLayer* title = [[CATextLayer alloc] init];
+            title.string = @[orgDistrictAry,orgTypeAry,orgSortAry][selectColumn][selectRow];
+        }
         
-        return menu;
+        
+//        CATextLayer *title = [self createTextLayerWithNSString:titleString withColor:self.textColor andPosition:titlePosition];
+
+        return _menu;
 
     }
 }
@@ -360,15 +369,20 @@
 }
 
 - (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath{
+    selectColumn = indexPath.column;
+    selectRow = indexPath.row;
+    
     if (indexPath.column == 0) {
         if (indexPath.row == 0) {
            selectArea = @"";
+             [self.tableView.mj_header beginRefreshing];
         }else if (indexPath.row ==1){
             
         }else{
             selectArea = orgDistrictAry[indexPath.row];
+             [self.tableView.mj_header beginRefreshing];
         }
-        [self.tableView.mj_header beginRefreshing];
+       
         
     }else if (indexPath.column == 1){
         if (indexPath.row == 0) {
