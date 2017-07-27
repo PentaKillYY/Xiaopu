@@ -7,7 +7,11 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "PNChart.h"
 
 @interface OrgHouseRateTableViewCell : BaseTableViewCell
+@property(nonatomic,strong) PNPieChart* pieChart;
+@property(nonatomic,weak)IBOutlet UILabel* totalLabel;
 
+-(void)bingdingViewModel:(DataItem*)item;
 @end

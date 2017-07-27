@@ -7,7 +7,11 @@
 //
 
 #import "BaseTableViewCell.h"
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+@interface OrgMapTableViewCell : BaseTableViewCell<BMKMapViewDelegate>
 
-@interface OrgMapTableViewCell : BaseTableViewCell
+@property(nonatomic,strong)BMKMapView* mapView;
 
+-(void)bingdingViewModel:(DataItem*)item;
 @end

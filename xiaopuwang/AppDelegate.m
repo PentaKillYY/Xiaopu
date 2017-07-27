@@ -10,6 +10,7 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 
+
 @interface AppDelegate ()
 
 @end
@@ -32,6 +33,8 @@
     /* 设置高德key */
     [self configAmap];
     
+    /* 设置高德key */
+    [self configBaiduMap];
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -67,6 +70,18 @@
 
 - (void)configAmap{
     [AMapServices sharedServices].apiKey = AMAPKEY;
+    [AMapServices sharedServices].enableHTTPS = YES;
+
+}
+
+- (void)configBaiduMap{
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:BAIDUMAPKEY  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+
 }
 
 - (void)confitUShareSettings

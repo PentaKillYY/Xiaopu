@@ -20,6 +20,8 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>
+#import <SDWebImage/SDWebImageManager.h>
+#import <SDWebImage/SDWebImageDownloader.h>
 
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>

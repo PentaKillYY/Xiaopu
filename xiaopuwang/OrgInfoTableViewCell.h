@@ -10,4 +10,6 @@
 
 @interface OrgInfoTableViewCell : BaseTableViewCell
 
+@property(nonatomic,weak)IBOutlet UILabel * orgDetail;
+-(void)bingdingViewModel:(DataItem*)item;
 @end

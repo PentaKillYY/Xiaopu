@@ -9,5 +9,8 @@
 #import "BaseTableViewCell.h"
 
 @interface OrgAlbumVideoTableViewCell : BaseTableViewCell
+@property(nonatomic,weak)IBOutlet UILabel* orgTitle;
+@property(nonatomic,weak)IBOutlet UIScrollView* contentScroll;
 
+- (void)setupUI:(DataResult*)dataresult Type:(NSInteger)albumType;
 @end

@@ -61,4 +61,85 @@
         failureBlock(json);
     }];
 }
+
+-(void)getOrgDetailInfoParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgDetailInfo parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getAlbumWithParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgAlbum parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getVideoWithParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgVideo parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getOrgCourseListWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgCourseList parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getCourseTeacherListWithParameters:(NSDictionary *)parameters
+                             onCompletion:(JSONResponse)completionBlock
+                                onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgTeacherList parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getStudentListWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgStudentList parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getOrgRelyContentListWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgRelyContent parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getUserAppointMentStateWithParameters:(NSDictionary *)parameters
+                                onCompletion:(JSONResponse)completionBlock
+                                   onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:IsUserAppoint parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
 @end
