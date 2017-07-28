@@ -170,6 +170,158 @@
             </objects>
             <point key="canvasLocation" x="3802" y="-809"/>
         </scene>
+        <!--Org More Course View Controller-->
+        <scene sceneID="SVo-zU-tKa">
+            <objects>
+                <viewController storyboardIdentifier="OrgMoreCourse" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="rpy-xV-BDO" customClass="OrgMoreCourseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hmQ-pK-ZRh"/>
+                        <viewControllerLayoutGuide type="bottom" id="ckU-5a-fj5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zQR-4c-FAh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3kC-1X-wYI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rpy-xV-BDO" id="ixc-25-l9v"/>
+                                    <outlet property="delegate" destination="rpy-xV-BDO" id="94t-Nd-gdy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3kC-1X-wYI" firstAttribute="leading" secondItem="zQR-4c-FAh" secondAttribute="leading" id="0hB-Cv-URX"/>
+                            <constraint firstAttribute="trailing" secondItem="3kC-1X-wYI" secondAttribute="trailing" id="5bi-EP-kvX"/>
+                            <constraint firstItem="ckU-5a-fj5" firstAttribute="top" secondItem="3kC-1X-wYI" secondAttribute="bottom" id="Ueq-v4-oAX"/>
+                            <constraint firstItem="3kC-1X-wYI" firstAttribute="top" secondItem="hmQ-pK-ZRh" secondAttribute="bottom" id="arm-11-t27"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dRa-Ux-27V"/>
+                    <connections>
+                        <outlet property="tableView" destination="3kC-1X-wYI" id="LYS-pR-8Zt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MvL-cg-HNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4092" y="-157"/>
+        </scene>
+        <!--Org More Teacher View Controller-->
+        <scene sceneID="QHc-T9-AQe">
+            <objects>
+                <viewController storyboardIdentifier="OrgMoreTeacher" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="vVH-3F-QLm" customClass="OrgMoreTeacherViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="emY-Zz-axe"/>
+                        <viewControllerLayoutGuide type="bottom" id="WVq-xg-ryz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NAt-km-W4N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ig8-eN-PGN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vVH-3F-QLm" id="kzZ-pE-iys"/>
+                                    <outlet property="delegate" destination="vVH-3F-QLm" id="Tjt-gm-VGZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ig8-eN-PGN" firstAttribute="top" secondItem="emY-Zz-axe" secondAttribute="bottom" id="A7K-Ru-mBb"/>
+                            <constraint firstItem="WVq-xg-ryz" firstAttribute="top" secondItem="ig8-eN-PGN" secondAttribute="bottom" id="CMy-r7-ICT"/>
+                            <constraint firstAttribute="trailing" secondItem="ig8-eN-PGN" secondAttribute="trailing" id="Rwu-jZ-Wtd"/>
+                            <constraint firstItem="ig8-eN-PGN" firstAttribute="leading" secondItem="NAt-km-W4N" secondAttribute="leading" id="lSM-2R-kkX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vTX-8m-0zA"/>
+                    <connections>
+                        <outlet property="tableView" destination="ig8-eN-PGN" id="Qob-iz-BPl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSs-wc-cPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4734" y="-157"/>
+        </scene>
+        <!--Org More Student View Controller-->
+        <scene sceneID="Biv-P9-9mi">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="8rr-3M-0Yd" customClass="OrgMoreStudentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m0u-AH-a3W"/>
+                        <viewControllerLayoutGuide type="bottom" id="vaw-Mf-D0k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GOy-wW-CWU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sPp-pF-dsq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rr-3M-0Yd" id="Dwh-ly-W8w"/>
+                                    <outlet property="delegate" destination="8rr-3M-0Yd" id="YCg-H0-ykF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sPp-pF-dsq" secondAttribute="trailing" id="89X-ZD-Ugp"/>
+                            <constraint firstItem="sPp-pF-dsq" firstAttribute="leading" secondItem="GOy-wW-CWU" secondAttribute="leading" id="Duf-Wj-Hfr"/>
+                            <constraint firstItem="vaw-Mf-D0k" firstAttribute="top" secondItem="sPp-pF-dsq" secondAttribute="bottom" id="mKg-k1-b6M"/>
+                            <constraint firstItem="sPp-pF-dsq" firstAttribute="top" secondItem="m0u-AH-a3W" secondAttribute="bottom" id="wfP-TN-Wym"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tdt-b8-AWx"/>
+                    <connections>
+                        <outlet property="tableView" destination="sPp-pF-dsq" id="Lh2-Me-WZe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnV-HV-o5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5362" y="-153"/>
+        </scene>
+        <!--Org More Evaluate View Controller-->
+        <scene sceneID="PdY-1x-Caz">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="PbP-mi-eef" customClass="OrgMoreEvaluateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Acs-3O-Dyc"/>
+                        <viewControllerLayoutGuide type="bottom" id="wXn-U4-vkj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8wP-Qf-1Lf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ab3-D7-gd2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PbP-mi-eef" id="YKK-cE-o9P"/>
+                                    <outlet property="delegate" destination="PbP-mi-eef" id="bsw-2D-Lzc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ab3-D7-gd2" secondAttribute="trailing" id="4Zq-2s-hpc"/>
+                            <constraint firstItem="wXn-U4-vkj" firstAttribute="top" secondItem="ab3-D7-gd2" secondAttribute="bottom" id="BZS-Fn-uYf"/>
+                            <constraint firstItem="ab3-D7-gd2" firstAttribute="top" secondItem="Acs-3O-Dyc" secondAttribute="bottom" id="WvN-Uw-pBd"/>
+                            <constraint firstItem="ab3-D7-gd2" firstAttribute="leading" secondItem="8wP-Qf-1Lf" secondAttribute="leading" id="au0-L8-x4E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hMK-1p-Fcc"/>
+                    <connections>
+                        <outlet property="tableView" destination="ab3-D7-gd2" id="hLP-Lg-099"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QbV-4b-6zF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6001" y="-160"/>
+        </scene>
         <!--Activity Web View Controller-->
         <scene sceneID="Dxc-vn-gI6">
             <objects>
@@ -593,6 +745,10 @@
                         <segue destination="ae3-Hd-1SA" kind="push" identifier="DetailToContent" id="ybP-af-2Ro"/>
                         <segue destination="SJn-6Q-NjO" kind="push" identifier="DetailToPhotoBrowser" id="xds-U8-HLI"/>
                         <segue destination="uCF-It-hNQ" kind="push" identifier="DetailToVideo" id="Ec3-fe-bpg"/>
+                        <segue destination="rpy-xV-BDO" kind="push" identifier="DetailToMoreCourse" id="zW1-wO-hgq"/>
+                        <segue destination="vVH-3F-QLm" kind="push" identifier="DetailToMoreTeacher" id="Bpf-Aw-FB4"/>
+                        <segue destination="8rr-3M-0Yd" kind="push" identifier="DetailToMoreStudent" id="WPM-fW-JBH"/>
+                        <segue destination="PbP-mi-eef" kind="push" identifier="DetailToMoreEvaluate" id="DNz-LL-W6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp6-vb-6Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,7 +791,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFe-Wm-jFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3423" y="-143"/>
+            <point key="canvasLocation" x="2716" y="520"/>
         </scene>
         <!--Org Photo Browser View Controller-->
         <scene sceneID="q9w-Bd-uQa">
@@ -689,7 +845,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mm3-xZ-Law" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4061" y="-149"/>
+            <point key="canvasLocation" x="3374" y="484"/>
         </scene>
         <!--Org Video View Controller-->
         <scene sceneID="V48-hP-JAr">
@@ -728,7 +884,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRN-4E-bZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4844" y="-150"/>
+            <point key="canvasLocation" x="4015" y="519"/>
         </scene>
         <!--Org Video Player View Controller-->
         <scene sceneID="qk5-kM-8H6">
@@ -757,7 +913,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vV3-tc-3tF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5576.8000000000002" y="-150.67466266866569"/>
+            <point key="canvasLocation" x="4718" y="520"/>
         </scene>
         <!--学校-->
         <scene sceneID="WaC-mN-rM2">

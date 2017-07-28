@@ -34,10 +34,18 @@
     DataResult* _relyResult;
     DataResult* _appointStateResult;
     
+    NSMutableArray* teacher0Aray;
+    NSMutableArray* teacher1Aray;
+    NSMutableArray* teacher2Aray;
+    NSMutableArray* teacher3Aray;
+    
     NSMutableArray* stuent0Aray;
     NSMutableArray* stuent1Aray;
     NSMutableArray* stuent2Aray;
     NSMutableArray* stuent3Aray;
+    
+    NSString* teacherType;
+    NSString* studentType;
     
     NSString* videoType;
     
@@ -102,9 +110,45 @@
         id theSegue = segue.destinationViewController;
         [theSegue setValue:self.orgID forKey:@"orgID"];
         [theSegue setValue:videoType forKey:@"videoType"];
+    }else if ([segue.identifier isEqualToString:@"DetailToMoreCourse"]){
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:self.orgID forKey:@"orgID"];
+    }else if ([segue.identifier isEqualToString:@"DetailToMoreTeacher"]){
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:self.orgID forKey:@"orgID"];
+        [theSegue setValue:teacherType forKey:@"teacherType"];
+    }else if ([segue.identifier isEqualToString:@"DetailToMoreStudent"]){
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:self.orgID forKey:@"orgID"];
+        [theSegue setValue:studentType forKey:@"studentType"];
+    }else if ([segue.identifier isEqualToString:@"DetailToMoreEvaluate"]){
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:self.orgID forKey:@"orgID"];
     }
 }
 
+-(void)pushToMoreCourse{
+    [self performSegueWithIdentifier:@"DetailToMoreCourse" sender:self];
+}
+
+
+-(void)pushToMoreTeacher:(id)sender{
+    UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
+    teacherType = [NSString stringWithFormat:@"%ld",(long)tap.view.tag];
+    [self performSegueWithIdentifier:@"DetailToMoreTeacher" sender:self];
+}
+
+-(void)pushToMoreStudent:(id)sender{
+    UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
+    studentType = [NSString stringWithFormat:@"%ld",(long)tap.view.tag];
+    [self performSegueWithIdentifier:@"DetailToMoreStudent" sender:self];
+}
+
+-(void)pushToMoreEvaluate{
+    [self performSegueWithIdentifier:@"DetailToMoreEvaluate" sender:self];
+}
+
+#pragma mark - SetUpUI
 
 -(void)setupInfoView{
     [self.logoView sd_setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@",IMAGE_URL,[_detailInfoResult.detailinfo getString:@"Logo"]] ] placeholderImage:nil];
@@ -190,9 +234,7 @@
         return 7;
     }else if (currentSegIndex == 1){
         return [_classResult.detailinfo getDataItemArray:@"list"].size >5 ? 5:[_classResult.detailinfo getDataItemArray:@"list"].size;
-    }else if (currentSegIndex == 2){
-        return [_teacherResult.detailinfo getDataItemArray:@"teacherList"].size >5 ? 5:[_teacherResult.detailinfo getDataItemArray:@"teacherList"].size;
-    }else if (currentSegIndex == 3){
+    }else if (currentSegIndex == 2 || currentSegIndex == 3){
         return 4;
     }else{
         return [_relyResult.detailinfo getDataItemArray:@"replyList"].size >5 ? 5:[_relyResult.detailinfo getDataItemArray:@"replyList"].size;
@@ -255,15 +297,28 @@
             
         }
 
-    }else if (currentSegIndex == 3){
+    }else if (currentSegIndex == 2){
         if (section == 0) {
-            return stuent0Aray.count>2?2:stuent0Aray.count;
+            return teacher0Aray.count>4?4:teacher0Aray.count;
         }else if (section ==1){
-            return stuent1Aray.count>2?2:stuent1Aray.count;
+            return teacher1Aray.count>4?4:teacher1Aray.count;
         }else if (section == 2){
-            return stuent2Aray.count>2?2:stuent2Aray.count;
+            return teacher2Aray.count>4?4:teacher2Aray.count;
         }else if (section == 3){
-            return stuent3Aray.count>2?2:stuent3Aray.count;
+            return teacher3Aray.count>4?4:teacher3Aray.count;
+        }else{
+            return 0;
+        }
+    }
+    else if (currentSegIndex == 3){
+        if (section == 0) {
+            return stuent0Aray.count>4?4:stuent0Aray.count;
+        }else if (section ==1){
+            return stuent1Aray.count>4?4:stuent1Aray.count;
+        }else if (section == 2){
+            return stuent2Aray.count>4?4:stuent2Aray.count;
+        }else if (section == 3){
+            return stuent3Aray.count>4?4:stuent3Aray.count;
         }else{
             return 0;
         }
@@ -285,6 +340,17 @@
             return  stuent3Aray.count >0 ? 44 :0.1;
         }
         
+    }else if (currentSegIndex == 2){
+        if (section == 0) {
+            return  teacher0Aray.count >0 ? 44 :0.1;
+        }else if (section == 1){
+            return  teacher1Aray.count >0 ? 44 :0.1;
+        }else if (section == 2){
+            return  teacher2Aray.count >0 ? 44 :0.1;
+        }else {
+            return  teacher3Aray.count >0 ? 44 :0.1;
+        }
+
     }else{
         if (section == 0) {
             return 5;
@@ -316,23 +382,26 @@
             }
 
         }else if (currentSegIndex == 2){
-            NSInteger maxSection = [_teacherResult.detailinfo getDataItemArray:@"teacherList"].size >5 ? 5:[_teacherResult.detailinfo getDataItemArray:@"teacherList"].size;
-            
-            if (section+1 == maxSection) {
-                return 44;
+            if (section == 0) {
+                return teacher0Aray.count >4 ? 44:0;
+            }else if (section == 1){
+                return teacher1Aray.count >4 ? 44:0;
+            }else if (section == 2){
+                return teacher2Aray.count >4 ? 44:0;
             }else{
-                return 0.1;
+                return teacher3Aray.count >4 ? 44:0;
             }
+            
         }else if (currentSegIndex == 3){
             
             if (section == 0) {
-                return stuent0Aray.count >2 ? 44:0;
+                return stuent0Aray.count >4 ? 44:0;
             }else if (section == 1){
-                return stuent1Aray.count >2 ? 44:0;
+                return stuent1Aray.count >4 ? 44:0;
             }else if (section == 2){
-                return stuent2Aray.count >2 ? 44:0;
+                return stuent2Aray.count >4 ? 44:0;
             }else{
-                return stuent3Aray.count >2 ? 44:0;
+                return stuent3Aray.count >4 ? 44:0;
             }
             
         }else{
@@ -413,7 +482,16 @@
     }else if (currentSegIndex == 2){
         OrgTeacherTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgTeacherTableViewCell" owner:self options:nil].firstObject;
         [self configCell:cell indexpath:indexPath];
-        [cell bingdingViewModel:[[_teacherResult.detailinfo getDataItemArray:@"teacherList"] getItem:indexPath.section]];
+        
+        if (indexPath.section == 0) {
+            [cell bingdingViewModel:teacher0Aray[indexPath.row]];
+        }else if (indexPath.section == 1){
+            [cell bingdingViewModel:teacher1Aray[indexPath.row]];
+        }else if (indexPath.section == 2){
+            [cell bingdingViewModel:teacher2Aray[indexPath.row]];
+        }else{
+            [cell bingdingViewModel:teacher3Aray[indexPath.row]];
+        }
         return cell;
     }else if (currentSegIndex == 3){
         OrgStudentTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgStudentTableViewCell" owner:self options:nil].firstObject;
@@ -436,7 +514,31 @@
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (currentSegIndex == 3) {
+    if (currentSegIndex == 2) {
+        UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
+        headerView.backgroundColor = [UIColor whiteColor];
+        UILabel* logoLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, 5, 21)];
+        logoLabel.backgroundColor = MAINCOLOR;
+        [headerView addSubview:logoLabel];
+        
+        UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(21, 8, 200, 21)];
+        titleLabel.text = OrgTeacherTitle[section];
+        titleLabel.font = [UIFont systemFontOfSize:13.0];
+        titleLabel.textColor = [UIColor blackColor];
+        [headerView addSubview:titleLabel];
+        
+        if (section == 0) {
+            return teacher0Aray.count > 0 ? headerView :nil;
+            
+        }else if (section == 1){
+            return teacher1Aray.count > 0 ? headerView :nil;
+        }else if (section == 2){
+            return teacher2Aray.count > 0 ? headerView :nil;
+        }else{
+            return teacher3Aray.count > 0 ? headerView :nil;
+        }
+        
+    }else if (currentSegIndex == 3) {
         UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
         headerView.backgroundColor = [UIColor whiteColor];
         UILabel* logoLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, 5, 21)];
@@ -478,63 +580,143 @@
                 seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
                 seeMoreFooter.textAlignment = NSTextAlignmentCenter;
                 seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                seeMoreFooter.userInteractionEnabled = YES;
+                UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreCourse)];
+                
+                [seeMoreFooter addGestureRecognizer:tap];
+                
                 return seeMoreFooter;
             }else{
                 return nil;
             }
         }else if(currentSegIndex == 2){
-            NSInteger maxSection = [_teacherResult.detailinfo getDataItemArray:@"teacherList"].size >5 ? 5:[_teacherResult.detailinfo getDataItemArray:@"teacherList"].size;
-            if (section+1 == maxSection && maxSection == 5) {
-                UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
-                seeMoreFooter.text = @"查看更多";
-                seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
-                seeMoreFooter.textAlignment = NSTextAlignmentCenter;
-                seeMoreFooter.backgroundColor = [UIColor whiteColor];
-                return seeMoreFooter;
-            }else{
-                return nil;
-            }
-        }else if (currentSegIndex ==3){
             if (section == 0) {
-                if (stuent0Aray.count > 2) {
+                if (teacher0Aray.count > 4) {
                     UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
                     seeMoreFooter.text = @"查看更多";
                     seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
                     seeMoreFooter.textAlignment = NSTextAlignmentCenter;
                     seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreTeacher:)];
+                    
+                    [seeMoreFooter addGestureRecognizer:tap];
                     return seeMoreFooter;
                 }else{
                     return nil;
                 }
             }else if (section == 1){
-                if (stuent1Aray.count > 2) {
+                if (teacher1Aray.count > 4) {
                     UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
                     seeMoreFooter.text = @"查看更多";
                     seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
                     seeMoreFooter.textAlignment = NSTextAlignmentCenter;
                     seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreTeacher:)];
+                    
+                    [seeMoreFooter addGestureRecognizer:tap];
                     return seeMoreFooter;
                 }else{
                     return nil;
                 }
             }else if (section == 2){
-                if (stuent2Aray.count > 2) {
+                if (teacher2Aray.count > 4) {
                     UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
                     seeMoreFooter.text = @"查看更多";
                     seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
                     seeMoreFooter.textAlignment = NSTextAlignmentCenter;
                     seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreTeacher:)];
+                    
+                    [seeMoreFooter addGestureRecognizer:tap];
                     return seeMoreFooter;
                 }else{
                     return nil;
                 }
             }else{
-                if (stuent3Aray.count > 2) {
+                if (teacher3Aray.count > 4) {
                     UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
                     seeMoreFooter.text = @"查看更多";
                     seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
                     seeMoreFooter.textAlignment = NSTextAlignmentCenter;
                     seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreTeacher:)];
+                    [seeMoreFooter addGestureRecognizer:tap];
+                    return seeMoreFooter;
+                }else{
+                    return nil;
+                }
+            }
+
+            
+        }else if (currentSegIndex ==3){
+            if (section == 0) {
+                if (stuent0Aray.count > 4) {
+                    UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
+                    seeMoreFooter.text = @"查看更多";
+                    seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
+                    seeMoreFooter.textAlignment = NSTextAlignmentCenter;
+                    seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreStudent:)];
+                    
+                    [seeMoreFooter addGestureRecognizer:tap];
+                    return seeMoreFooter;
+                }else{
+                    return nil;
+                }
+            }else if (section == 1){
+                if (stuent1Aray.count > 4) {
+                    UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
+                    seeMoreFooter.text = @"查看更多";
+                    seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
+                    seeMoreFooter.textAlignment = NSTextAlignmentCenter;
+                    seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreStudent:)];
+                    
+                    [seeMoreFooter addGestureRecognizer:tap];
+                    return seeMoreFooter;
+                }else{
+                    return nil;
+                }
+            }else if (section == 2){
+                if (stuent2Aray.count > 4) {
+                    UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
+                    seeMoreFooter.text = @"查看更多";
+                    seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
+                    seeMoreFooter.textAlignment = NSTextAlignmentCenter;
+                    seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreStudent:)];
+                    
+                    [seeMoreFooter addGestureRecognizer:tap];
+                    return seeMoreFooter;
+                }else{
+                    return nil;
+                }
+            }else{
+                if (stuent3Aray.count > 4) {
+                    UILabel* seeMoreFooter = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
+                    seeMoreFooter.text = @"查看更多";
+                    seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
+                    seeMoreFooter.textAlignment = NSTextAlignmentCenter;
+                    seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                    seeMoreFooter.userInteractionEnabled = YES;
+                    seeMoreFooter.tag = section+1;
+                    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreStudent:)];
+                    
+                    [seeMoreFooter addGestureRecognizer:tap];
                     return seeMoreFooter;
                 }else{
                     return nil;
@@ -548,6 +730,10 @@
                 seeMoreFooter.font = [UIFont systemFontOfSize:13.0];
                 seeMoreFooter.textAlignment = NSTextAlignmentCenter;
                 seeMoreFooter.backgroundColor = [UIColor whiteColor];
+                seeMoreFooter.userInteractionEnabled = YES;
+                UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreEvaluate)];
+                
+                [seeMoreFooter addGestureRecognizer:tap];
                 return seeMoreFooter;
             }else{
                 return nil;
@@ -676,8 +862,30 @@
 }
 
 -(void)getTeacherListRequest{
-    [[OrginizationService sharedOrginizationService] getCourseTeacherListWithParameters:@{@"orgApplicationID":self.orgID,@"pageIndex":@(1),@"pageSize":@(10)} onCompletion:^(id json) {
+    [[OrginizationService sharedOrginizationService] getCourseTeacherListWithParameters:@{@"orgApplicationID":self.orgID,@"pageIndex":@(1),@"pageSize":@(20)} onCompletion:^(id json) {
+        
+        teacher0Aray = [[NSMutableArray alloc] init];
+        teacher1Aray = [[NSMutableArray alloc] init];
+        teacher2Aray = [[NSMutableArray alloc] init];
+        teacher3Aray = [[NSMutableArray alloc] init];
+
+        
         _teacherResult = json;
+        DataItemArray* itemArray =  [_teacherResult.detailinfo getDataItemArray:@"teacherList"];
+
+        for (int i = 0 ; i < itemArray.size; i++) {
+            DataItem* item = [itemArray getItem:i];
+            if ([item getInt:@"TeacherType"] == 1) {
+                [teacher0Aray addObject:item];
+            }else if ([item getInt:@"TeacherType"] == 2){
+                [teacher1Aray addObject:item];
+            }else if ([item getInt:@"TeacherType"] == 3){
+                [teacher2Aray addObject:item];
+            }else if ([item getInt:@"TeacherType"] == 4){
+                [teacher3Aray addObject:item];
+            }
+        }
+
         
         [self.tableView reloadData];
     } onFailure:^(id json) {
@@ -700,13 +908,13 @@
         
         for (int i = 0 ; i < itemArray.size; i++) {
             DataItem* item = [itemArray getItem:i];
-            if ([item getInt:@"StudentType"] == 0) {
+            if ([item getInt:@"StudentType"] == 1) {
                 [stuent0Aray addObject:item];
-            }else if ([item getInt:@"StudentType"] == 1){
-                [stuent1Aray addObject:item];
             }else if ([item getInt:@"StudentType"] == 2){
-                [stuent2Aray addObject:item];
+                [stuent1Aray addObject:item];
             }else if ([item getInt:@"StudentType"] == 3){
+                [stuent2Aray addObject:item];
+            }else if ([item getInt:@"StudentType"] == 4){
                 [stuent3Aray addObject:item];
             }
         }

@@ -91,6 +91,12 @@
 		045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045633211F29D0FD005E04CB /* VideoTableViewCell.xib */; };
 		045633271F29E1F7005E04CB /* OrgVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633261F29E1F7005E04CB /* OrgVideoPlayerViewController.m */; };
 		0456332A1F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633291F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m */; };
+		0456332E1F2AC40A005E04CB /* OrgMoreCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456332D1F2AC40A005E04CB /* OrgMoreCourseViewController.m */; };
+		045633361F2AD195005E04CB /* OrgMoreTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633351F2AD195005E04CB /* OrgMoreTeacherViewController.m */; };
+		045633391F2AD1A7005E04CB /* OrgMoreStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633381F2AD1A7005E04CB /* OrgMoreStudentViewController.m */; };
+		0456333C1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456333B1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m */; };
+		045633401F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456333E1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m */; };
+		045633411F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0456333F1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -296,6 +302,17 @@
 		045633261F29E1F7005E04CB /* OrgVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgVideoPlayerViewController.m; sourceTree = "<group>"; };
 		045633281F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ZFFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		045633291F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ZFFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		0456332C1F2AC40A005E04CB /* OrgMoreCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMoreCourseViewController.h; sourceTree = "<group>"; };
+		0456332D1F2AC40A005E04CB /* OrgMoreCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMoreCourseViewController.m; sourceTree = "<group>"; };
+		045633341F2AD195005E04CB /* OrgMoreTeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMoreTeacherViewController.h; sourceTree = "<group>"; };
+		045633351F2AD195005E04CB /* OrgMoreTeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMoreTeacherViewController.m; sourceTree = "<group>"; };
+		045633371F2AD1A7005E04CB /* OrgMoreStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMoreStudentViewController.h; sourceTree = "<group>"; };
+		045633381F2AD1A7005E04CB /* OrgMoreStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMoreStudentViewController.m; sourceTree = "<group>"; };
+		0456333A1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMoreEvaluateViewController.h; sourceTree = "<group>"; };
+		0456333B1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMoreEvaluateViewController.m; sourceTree = "<group>"; };
+		0456333D1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMoreTeacherTableViewCell.h; sourceTree = "<group>"; };
+		0456333E1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMoreTeacherTableViewCell.m; sourceTree = "<group>"; };
+		0456333F1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgMoreTeacherTableViewCell.xib; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -999,6 +1016,14 @@
 				045632F01F29B415005E04CB /* OrgVideoViewController.m */,
 				045633251F29E1F7005E04CB /* OrgVideoPlayerViewController.h */,
 				045633261F29E1F7005E04CB /* OrgVideoPlayerViewController.m */,
+				0456332C1F2AC40A005E04CB /* OrgMoreCourseViewController.h */,
+				0456332D1F2AC40A005E04CB /* OrgMoreCourseViewController.m */,
+				045633341F2AD195005E04CB /* OrgMoreTeacherViewController.h */,
+				045633351F2AD195005E04CB /* OrgMoreTeacherViewController.m */,
+				045633371F2AD1A7005E04CB /* OrgMoreStudentViewController.h */,
+				045633381F2AD1A7005E04CB /* OrgMoreStudentViewController.m */,
+				0456333A1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.h */,
+				0456333B1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1057,6 +1082,9 @@
 				0456331F1F29D0FD005E04CB /* VideoTableViewCell.h */,
 				045633201F29D0FD005E04CB /* VideoTableViewCell.m */,
 				045633211F29D0FD005E04CB /* VideoTableViewCell.xib */,
+				0456333D1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.h */,
+				0456333E1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m */,
+				0456333F1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1197,6 +1225,7 @@
 				04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */,
 				045632E01F2867ED005E04CB /* OrgTeacherTableViewCell.xib in Resources */,
 				0445EECA1F1F321900E9DAB3 /* TextViewTableViewCell.xib in Resources */,
+				045633411F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
 				045632EA1F28682A005E04CB /* OrgEvaluateTableViewCell.xib in Resources */,
 				0445EF161F2093A800E9DAB3 /* OrgProportionTableViewCell.xib in Resources */,
@@ -1279,12 +1308,14 @@
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
 				045633141F29BE1C005E04CB /* SRPictureModel.m in Sources */,
 				045632EE1F29B121005E04CB /* OrgPhotoBrowserViewController.m in Sources */,
+				0456332E1F2AC40A005E04CB /* OrgMoreCourseViewController.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				045632D21F282896005E04CB /* UUBarChart.m in Sources */,
 				045633191F29BE1C005E04CB /* SRPictureHUD.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				045633171F29BE1C005E04CB /* SRPictureIndicator.m in Sources */,
 				045632B61F26DE80005E04CB /* MyService.m in Sources */,
+				045633401F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m in Sources */,
 				0445EE731F1D9BE500E9DAB3 /* SubTidyViewController.m in Sources */,
 				045632D41F282896005E04CB /* UUChartLabel.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
@@ -1305,6 +1336,7 @@
 				045633151F29BE1C005E04CB /* SRPictureCell.m in Sources */,
 				0478B9CA1F149613003A9C8B /* BaseHttpRequest.m in Sources */,
 				045632901F26D442005E04CB /* UserInfo.m in Sources */,
+				0456333C1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m in Sources */,
 				0425A2511F21A6E100A18739 /* MainService.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
@@ -1322,6 +1354,8 @@
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				045633181F29BE1C005E04CB /* SRPictureManager.m in Sources */,
 				0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */,
+				045633361F2AD195005E04CB /* OrgMoreTeacherViewController.m in Sources */,
+				045633391F2AD1A7005E04CB /* OrgMoreStudentViewController.m in Sources */,
 				045632D11F282896005E04CB /* UUBar.m in Sources */,
 				045632E91F28682A005E04CB /* OrgEvaluateTableViewCell.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,

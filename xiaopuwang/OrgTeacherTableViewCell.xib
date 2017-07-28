@@ -27,25 +27,25 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0N-SY-Nd7">
-                        <rect key="frame" x="85.5" y="8" width="25" height="14.5"/>
+                        <rect key="frame" x="85.5" y="8" width="226.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="擅长科目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvU-nP-aeA">
-                        <rect key="frame" x="85.5" y="25.5" width="49.5" height="14.5"/>
+                        <rect key="frame" x="85.5" y="25.5" width="226.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简介：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJG-TZ-5N9">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简介：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJG-TZ-5N9">
                         <rect key="frame" x="85.5" y="43" width="226.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海归背景：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edE-gT-43V">
-                        <rect key="frame" x="85.5" y="60.5" width="61.5" height="14.5"/>
+                        <rect key="frame" x="85.5" y="60.5" width="226.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -57,19 +57,22 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="KvU-nP-aeA" firstAttribute="leading" secondItem="3q1-El-Rf8" secondAttribute="trailing" constant="8" id="148-tl-r5j"/>
+                    <constraint firstAttribute="trailing" secondItem="KvU-nP-aeA" secondAttribute="trailing" constant="8" id="1Xv-XM-TTL"/>
                     <constraint firstItem="3q1-El-Rf8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="765-II-L3R"/>
                     <constraint firstItem="3q1-El-Rf8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="CnP-TQ-dhd"/>
                     <constraint firstAttribute="bottom" secondItem="6Ro-qf-sfR" secondAttribute="bottom" id="CqK-vl-t5A"/>
+                    <constraint firstItem="6Ro-qf-sfR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="86" id="H3V-mT-nyg"/>
                     <constraint firstItem="u0N-SY-Nd7" firstAttribute="leading" secondItem="3q1-El-Rf8" secondAttribute="trailing" constant="8" id="H7U-Fw-7HZ"/>
                     <constraint firstItem="RJG-TZ-5N9" firstAttribute="top" secondItem="KvU-nP-aeA" secondAttribute="bottom" constant="3" id="LdG-e4-cJx"/>
                     <constraint firstAttribute="trailing" secondItem="RJG-TZ-5N9" secondAttribute="trailing" constant="8" id="QkC-k1-nBS"/>
                     <constraint firstAttribute="trailing" secondItem="6Ro-qf-sfR" secondAttribute="trailing" constant="8" id="Rc2-Q8-XIg"/>
                     <constraint firstItem="KvU-nP-aeA" firstAttribute="top" secondItem="u0N-SY-Nd7" secondAttribute="bottom" constant="3" id="Rpd-SU-rcC"/>
-                    <constraint firstItem="6Ro-qf-sfR" firstAttribute="leading" secondItem="edE-gT-43V" secondAttribute="leading" id="Sjr-0c-HH4"/>
                     <constraint firstItem="edE-gT-43V" firstAttribute="leading" secondItem="3q1-El-Rf8" secondAttribute="trailing" constant="8" id="T50-WA-Z79"/>
                     <constraint firstItem="6Ro-qf-sfR" firstAttribute="top" secondItem="edE-gT-43V" secondAttribute="bottom" id="fX0-qV-6uf"/>
+                    <constraint firstAttribute="trailing" secondItem="edE-gT-43V" secondAttribute="trailing" constant="8" id="mgB-Ey-ovI"/>
                     <constraint firstItem="edE-gT-43V" firstAttribute="top" secondItem="RJG-TZ-5N9" secondAttribute="bottom" constant="3" id="myl-ZU-s4K"/>
                     <constraint firstItem="u0N-SY-Nd7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="oad-Li-BPJ"/>
+                    <constraint firstAttribute="trailing" secondItem="u0N-SY-Nd7" secondAttribute="trailing" constant="8" id="quP-rX-6Zd"/>
                     <constraint firstItem="RJG-TZ-5N9" firstAttribute="leading" secondItem="3q1-El-Rf8" secondAttribute="trailing" constant="8" id="vWd-lk-3ad"/>
                 </constraints>
             </tableViewCellContentView>
