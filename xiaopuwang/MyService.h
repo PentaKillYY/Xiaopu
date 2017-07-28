@@ -32,4 +32,9 @@
 -(void)postUserHeadWithParameters:(NSDictionary *)parameters
                        onCompletion:(JSONResponse)completionBlock
                         onFailure:(JSONResponse)failureBlock;
+
+//获取Token（融云）
+-(void)getTokenWithParameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock;
 @end

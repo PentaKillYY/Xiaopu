@@ -142,4 +142,43 @@
     }];
 }
 
+-(void)judgeFocusOrgWithParameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:JudgeFocusOrg parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)focusOrgWithOrgID:(NSString*)orgid Userid:(NSString*)userid
+            onCompletion:(JSONResponse)completionBlock
+               onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?organizationId=%@&userId=%@",FocusOrg,orgid,userid] parameters: nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)delfocusOrgWithOrgID:(NSString*)orgid Userid:(NSString*)userid
+               onCompletion:(JSONResponse)completionBlock
+                  onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?organizationId=%@&userId=%@",DelFocusOrg,orgid,userid] parameters: nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getOrgCourseDetailWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgCourseDetail parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

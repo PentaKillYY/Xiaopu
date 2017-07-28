@@ -23,6 +23,8 @@
 #import <SDWebImage/SDWebImageManager.h>
 #import <SDWebImage/SDWebImageDownloader.h>
 
+#import <RongIMKit/RongIMKit.h>
+
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>
 

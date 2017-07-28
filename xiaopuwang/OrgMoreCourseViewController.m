@@ -12,6 +12,7 @@
 
 @interface OrgMoreCourseViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSInteger currentIndex;
+    NSInteger selectIndex;
     NSMutableArray* dataSourceArray;
 }
 
@@ -48,6 +49,16 @@
     [self.tableView.mj_header beginRefreshing];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"CourseToDetail"])
+    {
+        id theSegue = segue.destinationViewController;
+        DataItem* item = dataSourceArray[selectIndex];
+        
+        [theSegue setValue:[item getString:@"Organization_Course_ID"] forKey:@"courseId"];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -70,6 +81,12 @@
     OrgClassTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgClassTableViewCell" owner:self options:nil].firstObject;
     [cell bingdingVieModel:dataSourceArray[indexPath.row]];
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    selectIndex = indexPath.row;
+    [self performSegueWithIdentifier:@"CourseToDetail" sender:self];
 }
 
 - (void)getCourseClassRequest{

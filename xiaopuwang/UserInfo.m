@@ -31,12 +31,9 @@
         decodeObject(password);
         decodeObject(telphone);
         decodeObject(headPicUrl);
-        decodeObject(id);
-        decodeObject(idCard);
-        decodeObject(userCityCode);
-        decodeObject(userCityname);
+        decodeObject(userID);
+
         decodeObject(userBalance);
-        decodeObject(role);
         decodeObject(userLongitude);
         decodeObject(userLatitude);
     }
@@ -49,12 +46,9 @@
     encodeObject(password);
     encodeObject(telphone);
     encodeObject(headPicUrl);
-    encodeObject(id);
-    encodeObject(idCard);
-    encodeObject(userCityCode);
-    encodeObject(userCityname);
+    encodeObject(userID);
+
     encodeObject(userBalance);
-    encodeObject(role);
     encodeObject(userLongitude);
     encodeObject(userLatitude);
 }
@@ -64,12 +58,9 @@
     self.password=dict[@"password"];
     self.telphone=dict[@"telephone"];
     self.headPicUrl=dict[@"headPicUrl"];
-    self.id=dict[@"id"];
-    self.idCard=dict[@"idCard"];
-    self.userCityCode=dict[@"userCityCode"];
-    self.userCityname=dict[@"userCityname"];
+    self.userID=dict[@"userID"];
+
     self.userBalance=dict[@"userBalance"];
-    self.role=dict[@"role"];
     self.userLongitude=dict[@"userLongitude"];
     self.userLatitude=dict[@"userLatitude"];
 }

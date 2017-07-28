@@ -97,6 +97,13 @@
 		0456333C1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456333B1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m */; };
 		045633401F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456333E1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m */; };
 		045633411F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0456333F1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib */; };
+		045633441F2B0FD6005E04CB /* OrgCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633431F2B0FD6005E04CB /* OrgCourseDetailViewController.m */; };
+		045633481F2B1228005E04CB /* CouseDetailImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633461F2B1228005E04CB /* CouseDetailImageTableViewCell.m */; };
+		045633491F2B1228005E04CB /* CouseDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045633471F2B1228005E04CB /* CouseDetailImageTableViewCell.xib */; };
+		045633501F2B1257005E04CB /* CourseDetailInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456334E1F2B1257005E04CB /* CourseDetailInfoTableViewCell.m */; };
+		045633511F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0456334F1F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib */; };
+		045633551F2B126C005E04CB /* CourseDetailContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633531F2B126C005E04CB /* CourseDetailContentTableViewCell.m */; };
+		045633561F2B126C005E04CB /* CourseDetailContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045633541F2B126C005E04CB /* CourseDetailContentTableViewCell.xib */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -313,6 +320,17 @@
 		0456333D1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMoreTeacherTableViewCell.h; sourceTree = "<group>"; };
 		0456333E1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMoreTeacherTableViewCell.m; sourceTree = "<group>"; };
 		0456333F1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgMoreTeacherTableViewCell.xib; sourceTree = "<group>"; };
+		045633421F2B0FD6005E04CB /* OrgCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgCourseDetailViewController.h; sourceTree = "<group>"; };
+		045633431F2B0FD6005E04CB /* OrgCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgCourseDetailViewController.m; sourceTree = "<group>"; };
+		045633451F2B1228005E04CB /* CouseDetailImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouseDetailImageTableViewCell.h; sourceTree = "<group>"; };
+		045633461F2B1228005E04CB /* CouseDetailImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouseDetailImageTableViewCell.m; sourceTree = "<group>"; };
+		045633471F2B1228005E04CB /* CouseDetailImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouseDetailImageTableViewCell.xib; sourceTree = "<group>"; };
+		0456334D1F2B1257005E04CB /* CourseDetailInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailInfoTableViewCell.h; sourceTree = "<group>"; };
+		0456334E1F2B1257005E04CB /* CourseDetailInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailInfoTableViewCell.m; sourceTree = "<group>"; };
+		0456334F1F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseDetailInfoTableViewCell.xib; sourceTree = "<group>"; };
+		045633521F2B126C005E04CB /* CourseDetailContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailContentTableViewCell.h; sourceTree = "<group>"; };
+		045633531F2B126C005E04CB /* CourseDetailContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailContentTableViewCell.m; sourceTree = "<group>"; };
+		045633541F2B126C005E04CB /* CourseDetailContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseDetailContentTableViewCell.xib; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1018,6 +1036,8 @@
 				045633261F29E1F7005E04CB /* OrgVideoPlayerViewController.m */,
 				0456332C1F2AC40A005E04CB /* OrgMoreCourseViewController.h */,
 				0456332D1F2AC40A005E04CB /* OrgMoreCourseViewController.m */,
+				045633421F2B0FD6005E04CB /* OrgCourseDetailViewController.h */,
+				045633431F2B0FD6005E04CB /* OrgCourseDetailViewController.m */,
 				045633341F2AD195005E04CB /* OrgMoreTeacherViewController.h */,
 				045633351F2AD195005E04CB /* OrgMoreTeacherViewController.m */,
 				045633371F2AD1A7005E04CB /* OrgMoreStudentViewController.h */,
@@ -1085,6 +1105,15 @@
 				0456333D1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.h */,
 				0456333E1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m */,
 				0456333F1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib */,
+				045633451F2B1228005E04CB /* CouseDetailImageTableViewCell.h */,
+				045633461F2B1228005E04CB /* CouseDetailImageTableViewCell.m */,
+				045633471F2B1228005E04CB /* CouseDetailImageTableViewCell.xib */,
+				0456334D1F2B1257005E04CB /* CourseDetailInfoTableViewCell.h */,
+				0456334E1F2B1257005E04CB /* CourseDetailInfoTableViewCell.m */,
+				0456334F1F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib */,
+				045633521F2B126C005E04CB /* CourseDetailContentTableViewCell.h */,
+				045633531F2B126C005E04CB /* CourseDetailContentTableViewCell.m */,
+				045633541F2B126C005E04CB /* CourseDetailContentTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1207,6 +1236,7 @@
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
 				0456331E1F29BE8F005E04CB /* ImageCollectionViewCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
+				045633561F2B126C005E04CB /* CourseDetailContentTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				045632C31F2822A1005E04CB /* OrgContentTableViewCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
@@ -1230,8 +1260,10 @@
 				045632EA1F28682A005E04CB /* OrgEvaluateTableViewCell.xib in Resources */,
 				0445EF161F2093A800E9DAB3 /* OrgProportionTableViewCell.xib in Resources */,
 				0445EED71F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib in Resources */,
+				045633511F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
+				045633491F2B1228005E04CB /* CouseDetailImageTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
@@ -1332,6 +1364,7 @@
 				045633221F29D0FD005E04CB /* VideoTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				045632DF1F2867ED005E04CB /* OrgTeacherTableViewCell.m in Sources */,
+				045633551F2B126C005E04CB /* CourseDetailContentTableViewCell.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
 				045633151F29BE1C005E04CB /* SRPictureCell.m in Sources */,
 				0478B9CA1F149613003A9C8B /* BaseHttpRequest.m in Sources */,
@@ -1357,7 +1390,9 @@
 				045633361F2AD195005E04CB /* OrgMoreTeacherViewController.m in Sources */,
 				045633391F2AD1A7005E04CB /* OrgMoreStudentViewController.m in Sources */,
 				045632D11F282896005E04CB /* UUBar.m in Sources */,
+				045633441F2B0FD6005E04CB /* OrgCourseDetailViewController.m in Sources */,
 				045632E91F28682A005E04CB /* OrgEvaluateTableViewCell.m in Sources */,
+				045633481F2B1228005E04CB /* CouseDetailImageTableViewCell.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */,
@@ -1368,6 +1403,7 @@
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 				045633131F29BE1C005E04CB /* SRPictureBrowser.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
+				045633501F2B1257005E04CB /* CourseDetailInfoTableViewCell.m in Sources */,
 				0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */,
 				0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */,
 				0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */,

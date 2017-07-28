@@ -56,6 +56,17 @@
 //判断用户是否预约
 #define IsUserAppoint @"/userOrder/UserIsAppointment"
 
+//判断此人是否关注过此机构
+#define JudgeFocusOrg @"/cousertrain/judgeFocusOrgIsExist"
+
+//用户关注机构
+#define FocusOrg @"/cousertrain/InFocusOrg"
+
+//取消关注机构
+#define DelFocusOrg @"/cousertrain/delFocusOrg"
+
+//获取课程详情
+#define OrgCourseDetail @"/cousertrain/CourseInfoDetail"
 
 // *******************************学校**************************
 
@@ -76,4 +87,5 @@
 //更新用户头像
 #define UpdateUserHead @"/user/updateUserHeadSculpture"
 
-
+//获取 Token
+#define GetToken @"/user/getToken"

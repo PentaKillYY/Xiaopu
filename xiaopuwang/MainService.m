@@ -28,4 +28,19 @@
         
     }];
 }
+
+-(void)loginWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:Login parameters:parameters success:^(id json) {
+        DataResult * result = json;
+        UserInfo* info = [UserInfo sharedUserInfo];
+        info.userID = result.message;
+        [info synchronize];
+        
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

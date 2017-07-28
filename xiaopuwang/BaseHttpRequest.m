@@ -62,7 +62,7 @@
     self.operationManager.requestSerializer = [AFHTTPRequestSerializer serializer];
     self.operationManager.requestSerializer.timeoutInterval = 15.0f;
    
-    DLog(@"%@",[NSString stringWithFormat:@"%@,%@",REQUEST_URL,URLString]);
+    DLog(@"%@",[NSString stringWithFormat:@"%@%@",REQUEST_URL,URLString]);
     
     [self.operationManager POST:[NSString stringWithFormat:@"%@%@",REQUEST_URL,URLString] parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         

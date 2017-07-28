@@ -15,6 +15,7 @@
 #import "UIButton+JKImagePosition.h"
 #import "UIButton+JKMiddleAligning.h"
 #import "MainService.h"
+#import "MyService.h"
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate>
 {
@@ -36,7 +37,7 @@
     // Do any additional setup after loading the view.
     
     [self changeNavTitleView];
-    
+    [self loginRequest];
     [self getMainData];
  
     [self configLocationManager];
@@ -226,16 +227,7 @@
     [self performSegueWithIdentifier:@"MainSearch" sender:self];
 }
 
-#pragma mark - ServiceDelegate
--(void)pushToServicePage:(id)sender{
-    UIButton* currentButton = (UIButton*)sender;
-    
-    if (currentButton.tag == 1) {
-        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
-    }else{
-        [self performSegueWithIdentifier:@"MainToPersonalChoose" sender:self];
-    }
-}
+#pragma mark - NetWorkRequest
 
 -(void)getMainData{
     [[MainService sharedMainService] mainGetAdvertisementWithParameters:nil onCompletion:^(id json) {
@@ -245,6 +237,35 @@
     } onFailure:^(id json) {
         
     }];
+}
+
+-(void)loginRequest{
+    [[MainService sharedMainService] loginWithParameters:@{@"loginName":@"13812283417",@"password":@"111111"} onCompletion:^(id json) {
+        [self tokenRequest];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)tokenRequest{
+//    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDEVKEY,@"appSecret":RONGCLOUDDEVSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].userID} onCompletion:^(id json) {
+//        DataResult* result = json;
+//    } onFailure:^(id json) {
+//        
+//    }];
+    
+    [self rongcloudConnect];
+}
+
+#pragma mark - ServiceDelegate
+-(void)pushToServicePage:(id)sender{
+    UIButton* currentButton = (UIButton*)sender;
+    
+    if (currentButton.tag == 1) {
+        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"MainToPersonalChoose" sender:self];
+    }
 }
 
 - (void)configLocationManager
@@ -289,5 +310,18 @@
     [info synchronize];
     
     [self stopSerialLocation];
+}
+
+-(void)rongcloudConnect{
+    [[RCIM sharedRCIM] connectWithToken:Token     success:^(NSString *userId) {
+        NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"登陆的错误码为:%d", status);
+    } tokenIncorrect:^{
+        //token过期或者不正确。
+        //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+        //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+        NSLog(@"token错误");
+    }];
 }
 @end

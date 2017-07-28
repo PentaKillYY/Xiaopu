@@ -13,12 +13,7 @@
 @property (copy, nonatomic) NSString *password;
 @property (copy, nonatomic) NSString *telphone;
 @property (copy, nonatomic) NSString *headPicUrl;
-@property (strong, nonatomic) NSNumber *id;
-@property (copy, nonatomic) NSString *idCard;
-@property (strong, nonatomic) NSNumber *role;
-
-@property (copy, nonatomic) NSString* userCityCode;
-@property (copy, nonatomic) NSString* userCityname;
+@property (copy, nonatomic) NSString *userID;
 
 @property (copy, nonatomic) NSString* userBalance;
 @property (copy, nonatomic) NSString* userLongitude;

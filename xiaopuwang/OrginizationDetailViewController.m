@@ -21,7 +21,6 @@
 #import "OrgTeacherTableViewCell.h"
 #import "OrgStudentTableViewCell.h"
 #import "OrgEvaluateTableViewCell.h"
-
 @interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger currentSegIndex;
     
@@ -33,6 +32,7 @@
     DataResult* _studentResult;
     DataResult* _relyResult;
     DataResult* _appointStateResult;
+    DataResult* _focusResult;
     
     NSMutableArray* teacher0Aray;
     NSMutableArray* teacher1Aray;
@@ -49,11 +49,13 @@
     
     NSString* videoType;
     
+    NSInteger selectCourseIndex;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property(nonatomic,weak)IBOutlet HMSegmentedControl *segmentedControl;
 @property(nonatomic,weak)IBOutlet UIButton* followButton;
+@property(nonatomic,weak)IBOutlet UILabel* followTitle;
 @property(nonatomic,weak)IBOutlet UIButton* contactButton;
 
 @property(nonatomic,weak)IBOutlet UIImageView* logoView;
@@ -77,8 +79,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"OrgTeacherTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgTeacher"];
     
     
-
-    
     [self setupBottomView];
     [self setupInfoSeg];
     
@@ -87,6 +87,7 @@
     [self getVideoAlbumRequest];
     
     [self getAppointStateRequest];
+    [self judgeFocusOrgRequest];
     
 }
 
@@ -124,6 +125,11 @@
     }else if ([segue.identifier isEqualToString:@"DetailToMoreEvaluate"]){
         id theSegue = segue.destinationViewController;
         [theSegue setValue:self.orgID forKey:@"orgID"];
+    }else if([segue.identifier isEqualToString:@"DetailToCourseDetail"])
+    {
+        id theSegue = segue.destinationViewController;
+        DLog(@"%@",[[[_classResult.detailinfo getDataItemArray:@"list"] getItem:selectCourseIndex] getString:@"Organization_Course_ID"]);
+        [theSegue setValue: [[[_classResult.detailinfo getDataItemArray:@"list"] getItem:selectCourseIndex] getString:@"Organization_Course_ID"] forKey:@"courseId"];
     }
 }
 
@@ -198,6 +204,8 @@
     
     [self.followButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
 
+    
+    self.followTitle.text = @"关注";
 }
 
 -(void)setupInfoSeg{
@@ -225,6 +233,23 @@
         self.payBtn.hidden = YES;
         self.askPriceBtn.hidden = YES;
     }
+}
+
+-(IBAction)rongcloudChat:(id)sender{
+    //新建一个聊天会话View Controller对象,建议这样初始化
+    RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
+    
+    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+    chat.conversationType = ConversationType_PRIVATE;
+    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+    chat.targetId = [_detailInfoResult.detailinfo getString:@"User_ID"];
+    
+    //设置聊天会话界面要显示的标题
+    chat.title = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
+    //显示聊天会话界面
+    [self.navigationController pushViewController:chat animated:YES];
+
+    
 }
 
 #pragma mark - UITableViewDatasource
@@ -756,6 +781,9 @@
             videoType = @"1";
             [self performSegueWithIdentifier:@"DetailToVideo" sender:self];
         }
+    }else if (currentSegIndex == 1){
+        selectCourseIndex = indexPath.section;
+        [self performSegueWithIdentifier:@"DetailToCourseDetail" sender:self];
     }
 }
 
@@ -812,7 +840,14 @@
 
 -(IBAction)followOrginization:(id)sender{
     UIButton* currentButton = (UIButton*)sender;
+    
     currentButton.selected = !currentButton.selected;
+    if (currentButton.selected) {
+        [self focusOrgRequest];
+        
+    }else{
+        [self delFocusOrgRequest];
+    }
 }
 
 #pragma mark - NetWorkRequest
@@ -938,7 +973,9 @@
 }
 
 -(void)getAppointStateRequest{
-    [[OrginizationService sharedOrginizationService] getUserAppointMentStateWithParameters:@{@"orgApplication_ID":self.orgID,@"userId":@"47c68ae6-7705-4aa8-b272-ac7ea768601c"} onCompletion:^(id json) {
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    [[OrginizationService sharedOrginizationService] getUserAppointMentStateWithParameters:@{@"orgApplication_ID":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
         _appointStateResult = json;
         [self changeAppointState];
         [self.tableView reloadData];
@@ -947,5 +984,40 @@
     }];
 }
 
+-(void)judgeFocusOrgRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[OrginizationService sharedOrginizationService] judgeFocusOrgWithParameters:@{@"organizationId":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
+        _focusResult = json;
+        if (_focusResult.statusCode == 0) {
+            self.followTitle.text = @"关注";
+            self.followButton.selected = NO;
+        }else{
+            self.followTitle.text = @"已关注";
+            self.followButton.selected = YES;
+        }
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)focusOrgRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    [[OrginizationService sharedOrginizationService] focusOrgWithOrgID:self.orgID Userid:info.userID onCompletion:^(id json) {
+        self.followTitle.text = @"已关注";
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)delFocusOrgRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[OrginizationService sharedOrginizationService] delfocusOrgWithOrgID:self.orgID Userid:info.userID onCompletion:^(id json) {
+        self.followTitle.text = @"关注";
+    } onFailure:^(id json) {
+        
+    }];
+
+}
 
 @end

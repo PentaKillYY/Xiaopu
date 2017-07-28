@@ -36,6 +36,9 @@
     /* 设置高德key */
     [self configBaiduMap];
     
+    /* 设置融云key */
+    [self configRongCloud];
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     return YES;
@@ -129,6 +132,9 @@
      [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
 }
 
+- (void)configRongCloud{
+    [[RCIM sharedRCIM] initWithAppKey:RONGCLOUDDEVKEY];
+}
 
 // 支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

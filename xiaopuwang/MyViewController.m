@@ -190,16 +190,12 @@
     
     
     [self updateUserHeadRequest:_encodedImageStr];
-//    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    
-//    MyBannerCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//    [cell.userLogo setImage:image forState:UIControlStateNormal];
-//    [cell layoutSubviews];
 }
 
 
 - (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
 {
+    UserInfo* info = [UserInfo sharedUserInfo];
     //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     
@@ -208,7 +204,7 @@
     //创建网页内容对象
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:ShareDetailTitle descr:nil thumImage:[UIImage imageNamed:@"ShareLogo"]];
     //设置网页地址
-    shareObject.webpageUrl =@"http://www.admin.ings.org.cn/UserRegister/GetCoupon?userId=&couponId=";
+    shareObject.webpageUrl =[NSString stringWithFormat:@"http://www.admin.ings.org.cn/UserRegister/GetCoupon?userId=%@&couponId=",info.userID];
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
@@ -225,10 +221,11 @@
 
 #pragma mark - NetWorkRequest
 -(void)getUserOnlyRequest{
-    [[MyService sharedMyService] getUserOnlyWithParameters:@{@"userId":@"47c68ae6-7705-4aa8-b272-ac7ea768601c"} onCompletion:^(id json) {
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] getUserOnlyWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
         DataResult* result = json;
         
-        UserInfo* info = [UserInfo sharedUserInfo];
+        
         NSString* UserBase64Image = [result.detailinfo getString:@"UserImage"];
         NSRange range = [UserBase64Image rangeOfString:@"base64,"];
         NSInteger location = range.location;
@@ -249,10 +246,10 @@
 }
 
 -(void)getUserBalanceRequest{
-    [[MyService sharedMyService] getUserBalanceWithParameters:@{@"userId":@"47c68ae6-7705-4aa8-b272-ac7ea768601c"} onCompletion:^(id json) {
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] getUserBalanceWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
         DataResult* result = json;
         
-        UserInfo* info = [UserInfo sharedUserInfo];
         info.userBalance = [NSString stringWithFormat:@"%f",[result.detailinfo getDouble:@"TotalPrice"]];
         [info synchronize];
     } onFailure:^(id json) {
@@ -261,9 +258,9 @@
 }
 
 -(void)updateUserHeadRequest:(NSString*)imageBase64{
-    [[MyService sharedMyService] postUserHeadWithParameters:@{@"UserID":@"47c68ae6-7705-4aa8-b272-ac7ea768601c",@"ImageBase":imageBase64} onCompletion:^(id json) {
-        DataResult* result = json;
-        UserInfo* info = [UserInfo sharedUserInfo];
+     UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] postUserHeadWithParameters:@{@"UserID":info.userID,@"ImageBase":imageBase64} onCompletion:^(id json) {
+       
         
         NSRange range = [imageBase64 rangeOfString:@"base64,"];
         NSInteger location = range.location;

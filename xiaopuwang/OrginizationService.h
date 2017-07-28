@@ -72,4 +72,24 @@
 -(void)getUserAppointMentStateWithParameters:(NSDictionary *)parameters
                                 onCompletion:(JSONResponse)completionBlock
                                    onFailure:(JSONResponse)failureBlock;
+
+//判断此人是否关注过此机构
+-(void)judgeFocusOrgWithParameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock;
+
+//用户关注机构
+-(void)focusOrgWithOrgID:(NSString*)orgid Userid:(NSString*)userid
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock;
+
+//取消关注机构
+-(void)delfocusOrgWithOrgID:(NSString*)orgid Userid:(NSString*)userid
+            onCompletion:(JSONResponse)completionBlock
+               onFailure:(JSONResponse)failureBlock;
+
+//获取课程详情
+-(void)getOrgCourseDetailWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
 @end
