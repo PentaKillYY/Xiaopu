@@ -33,6 +33,21 @@
                     onCompletion:(JSONResponse)completionBlock
                        onFailure:(JSONResponse)failureBlock{
     [[BaseHttpRequest sharedBaseHttpRequest] GET:GetUserOnly parameters:parameters success:^(id json) {
+        DataResult* result = json;
+        UserInfo* info = [UserInfo sharedUserInfo];
+        
+        
+        NSString* UserBase64Image = [result.detailinfo getString:@"UserImage"];
+        NSRange range = [UserBase64Image rangeOfString:@"base64,"];
+        NSInteger location = range.location;
+        NSInteger leight = range.length;
+        UserBase64Image = [UserBase64Image substringFromIndex:location+leight];
+        
+        info.headPicUrl = UserBase64Image;
+        info.telphone = [result.detailinfo getString:@"Phone"];
+        
+        [info synchronize];
+
         completionBlock(json);
     } failure:^(id json) {
         
@@ -86,6 +101,26 @@
         [info synchronize];
 
         
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)getUserBargainWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:UserBargain parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)sendMessageAfterBargainWithParameters:(NSDictionary *)parameters
+                                onCompletion:(JSONResponse)completionBlock
+                                   onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:SendMessageAfterBargain parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         

@@ -181,4 +181,15 @@
         failureBlock(json);
     }];
 }
+
+-(void)appointOrgWithParameters:(NSDictionary *)parameters
+                   onCompletion:(JSONResponse)completionBlock
+                      onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:AppointMentOrg parameters: parameters success:^(id json) {
+        
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

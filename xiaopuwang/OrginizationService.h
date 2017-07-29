@@ -92,4 +92,9 @@
 -(void)getOrgCourseDetailWithParameters:(NSDictionary *)parameters
                            onCompletion:(JSONResponse)completionBlock
                               onFailure:(JSONResponse)failureBlock;
+
+//用户机构预约
+-(void)appointOrgWithParameters:(NSDictionary *)parameters
+                   onCompletion:(JSONResponse)completionBlock
+                      onFailure:(JSONResponse)failureBlock;
 @end

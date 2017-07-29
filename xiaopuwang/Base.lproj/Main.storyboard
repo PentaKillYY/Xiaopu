@@ -597,6 +597,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-fY-GZh">
                                         <rect key="frame" x="56" y="5" width="314" height="40"/>
                                         <state key="normal" title="联系机构课程顾问"/>
+                                        <connections>
+                                            <action selector="chatOrg:" destination="N9O-2r-Z20" eventType="touchUpInside" id="JYp-c2-y1P"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-lp-3BI">
                                         <rect key="frame" x="59" y="5" width="97.5" height="40"/>
@@ -614,6 +617,9 @@
                                         <state key="normal" title="叫人砍价">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="userBargain:" destination="N9O-2r-Z20" eventType="touchUpInside" id="U6u-tt-xqN"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3Q-JH-5b0">
                                         <rect key="frame" x="269.5" y="5" width="97.5" height="40"/>

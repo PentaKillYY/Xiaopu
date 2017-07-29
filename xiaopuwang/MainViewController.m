@@ -38,6 +38,7 @@
     
     [self changeNavTitleView];
     [self loginRequest];
+    
     [self getMainData];
  
     [self configLocationManager];
@@ -242,6 +243,7 @@
 -(void)loginRequest{
     [[MainService sharedMainService] loginWithParameters:@{@"loginName":@"13812283417",@"password":@"111111"} onCompletion:^(id json) {
         [self getUserBasicInfoRequest];
+        [self getUserOnlyRequest];
     } onFailure:^(id json) {
         
     }];
@@ -256,6 +258,16 @@
         
     }];
 }
+
+-(void)getUserOnlyRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] getUserOnlyWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
+                
+    } onFailure:^(id json) {
+        
+    }];
+}
+
 
 -(void)tokenRequest{
     [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username} onCompletion:^(id json) {
@@ -278,6 +290,7 @@
     }
 }
 
+#pragma AmapLocation
 - (void)configLocationManager
 {
     self.locationManager = [[AMapLocationManager alloc] init];
@@ -322,6 +335,7 @@
     [self stopSerialLocation];
 }
 
+#pragma mark RongCloudConnect
 -(void)rongcloudConnect{
     UserInfo* info = [UserInfo sharedUserInfo];
     

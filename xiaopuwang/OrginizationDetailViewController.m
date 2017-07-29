@@ -21,7 +21,11 @@
 #import "OrgTeacherTableViewCell.h"
 #import "OrgStudentTableViewCell.h"
 #import "OrgEvaluateTableViewCell.h"
-@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate>{
+#import "MyService.h"
+#import <LGAlertView/LGAlertView.h>
+
+
+@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate>{
     NSInteger currentSegIndex;
     
     DataResult* _detailInfoResult;
@@ -249,6 +253,35 @@
     //显示聊天会话界面
     [self.navigationController pushViewController:chat animated:YES];
 
+}
+
+-(IBAction)userBargain:(id)sender{
+    [self getUserBargainRequest];
+}
+
+-(IBAction)chatOrg:(id)sender{
+    UITextView* textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 240, 100)];
+    [textView.layer setBorderWidth:0.5];
+    [textView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    
+  [[[LGAlertView alloc] initWithViewAndTitle:@"咨询信息"
+                                       message:nil
+                                         style:LGAlertViewStyleAlert
+                                          view:textView
+                                  buttonTitles:@[@"确认"]
+                             cancelButtonTitle:@"取消"
+                        destructiveButtonTitle:nil
+                                      delegate:self] showAnimated:YES completionHandler:nil];
+    
+    
+}
+
+#pragma mark - LGAlertViewDelegate
+- (void)alertView:(nonnull LGAlertView *)alertView clickedButtonAtIndex:(NSUInteger)index title:(nullable NSString *)title{
+    UITextView* textView = (UITextView*)alertView.innerView;
+    [self appointOrgRequest:textView.text];
+    DLog(@"lgalertview%@",textView.text);
+    
     
 }
 
@@ -860,7 +893,6 @@
         
         [self.tableView reloadData];
         
-        [self.tableView reloadData];
     } onFailure:^(id json) {
         
     }];
@@ -1020,4 +1052,32 @@
 
 }
 
+-(void)getUserBargainRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] getUserBargainWithParameters:@{@"userId":info.userID,@"orgId":self.orgID,@"userMobile":info.telphone,@"name":info.username} onCompletion:^(id json) {
+        
+        [self sendMessageAfterBargainRequest];
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)sendMessageAfterBargainRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] sendMessageAfterBargainWithParameters:@{@"mobile":info.telphone,@"userMobile":info.telphone,@"name":info.username} onCompletion:^(id json) {
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)appointOrgRequest:(NSString*)acontent{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[OrginizationService sharedOrginizationService] appointOrgWithParameters:@{@"orgApplicationID":self.orgID,@"userId":info.userID,@"peopleContent":acontent} onCompletion:^(id json) {
+        [self getAppointStateRequest];
+    } onFailure:^(id json) {
+        
+    }];
+}
 @end

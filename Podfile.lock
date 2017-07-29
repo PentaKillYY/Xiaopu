@@ -24,6 +24,7 @@ PODS:
   - JCore (1.1.5)
   - JPush (3.0.6):
     - JCore (~> 1.1.1)
+  - LGAlertView (2.4.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - BaiduMapKit (~> 3.3.2)
   - HMSegmentedControl
   - JPush (~> 3.0.6)
+  - LGAlertView (~> 2.4.0)
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
@@ -118,6 +120,7 @@ SPEC CHECKSUMS:
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
   JCore: 9bd9c770c877c583d98b90a68792b8361974c231
   JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
+  LGAlertView: 2f5e83dd5cc2537de57d98727650609e86197d1a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -136,6 +139,6 @@ SPEC CHECKSUMS:
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
 
-PODFILE CHECKSUM: b2a8ec529b500506717ce12ce1c5eb288b7ecc17
+PODFILE CHECKSUM: 8f3b5a46abc95f72e28cc35312cbd45aa0ee22ce
 
 COCOAPODS: 1.2.1

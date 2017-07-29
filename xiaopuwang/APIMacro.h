@@ -68,6 +68,9 @@
 //获取课程详情
 #define OrgCourseDetail @"/cousertrain/CourseInfoDetail"
 
+//用户机构预约
+#define AppointMentOrg @"/userOrder/AppointmentOrg"
+
 // *******************************学校**************************
 
 //学校搜索页-分页查询
@@ -92,3 +95,9 @@
 
 //获取用户基本信息
 #define GetUserBasicInfo @"/user/userBaseInfo"
+
+//用户砍价
+#define UserBargain @"/user/InsertUserBargain"
+
+//砍价成功短信提醒
+#define SendMessageAfterBargain @"/user/SendMessageAfterBargain"

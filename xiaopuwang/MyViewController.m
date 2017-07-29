@@ -37,7 +37,7 @@
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
     
-    [self getUserOnlyRequest];
+//    [self getUserOnlyRequest];
    
     [self getUserBalanceRequest];
 }
@@ -220,30 +220,6 @@
 }
 
 #pragma mark - NetWorkRequest
--(void)getUserOnlyRequest{
-    UserInfo* info = [UserInfo sharedUserInfo];
-    [[MyService sharedMyService] getUserOnlyWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
-        DataResult* result = json;
-        
-        
-        NSString* UserBase64Image = [result.detailinfo getString:@"UserImage"];
-        NSRange range = [UserBase64Image rangeOfString:@"base64,"];
-        NSInteger location = range.location;
-        NSInteger leight = range.length;
-        UserBase64Image = [UserBase64Image substringFromIndex:location+leight];
-    
-        info.headPicUrl = UserBase64Image;
-        info.username = [result.detailinfo getString:@"UserName"];
-        
-        [info synchronize];
-        
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
-        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
-        
-    } onFailure:^(id json) {
-        
-    }];
-}
 
 -(void)getUserBalanceRequest{
     UserInfo* info = [UserInfo sharedUserInfo];

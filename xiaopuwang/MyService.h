@@ -43,4 +43,14 @@
 -(void)getUserBasicInfoWithParameters:(NSDictionary *)parameters
                          onCompletion:(JSONResponse)completionBlock
                             onFailure:(JSONResponse)failureBlock;
+
+//用户砍价
+-(void)getUserBargainWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
+
+//砍价成功短信提醒
+-(void)sendMessageAfterBargainWithParameters:(NSDictionary *)parameters
+                                onCompletion:(JSONResponse)completionBlock
+                                   onFailure:(JSONResponse)failureBlock;
 @end
