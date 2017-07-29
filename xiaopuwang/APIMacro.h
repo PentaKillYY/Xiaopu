@@ -89,3 +89,6 @@
 
 //获取 Token
 #define GetToken @"/user/getToken"
+
+//获取用户基本信息
+#define GetUserBasicInfo @"/user/userBaseInfo"

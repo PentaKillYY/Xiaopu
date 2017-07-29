@@ -14,7 +14,7 @@
 @property (copy, nonatomic) NSString *telphone;
 @property (copy, nonatomic) NSString *headPicUrl;
 @property (copy, nonatomic) NSString *userID;
-
+@property (copy, nonatomic) NSString *token;
 @property (copy, nonatomic) NSString* userBalance;
 @property (copy, nonatomic) NSString* userLongitude;
 @property (copy, nonatomic) NSString* userLatitude;

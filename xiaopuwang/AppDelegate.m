@@ -133,7 +133,7 @@
 }
 
 - (void)configRongCloud{
-    [[RCIM sharedRCIM] initWithAppKey:RONGCLOUDDEVKEY];
+    [[RCIM sharedRCIM] initWithAppKey:RONGCLOUDDISKEY];
 }
 
 // 支持所有iOS系统

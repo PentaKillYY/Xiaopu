@@ -241,18 +241,28 @@
 
 -(void)loginRequest{
     [[MainService sharedMainService] loginWithParameters:@{@"loginName":@"13812283417",@"password":@"111111"} onCompletion:^(id json) {
+        [self getUserBasicInfoRequest];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)getUserBasicInfoRequest{
+    [[MyService sharedMyService] getUserBasicInfoWithParameters:@{@"userId":[UserInfo sharedUserInfo].userID} onCompletion:^(id json) {
+               
         [self tokenRequest];
+    
     } onFailure:^(id json) {
         
     }];
 }
 
 -(void)tokenRequest{
-//    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDEVKEY,@"appSecret":RONGCLOUDDEVSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].userID} onCompletion:^(id json) {
-//        DataResult* result = json;
-//    } onFailure:^(id json) {
-//        
-//    }];
+    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username} onCompletion:^(id json) {
+        
+    } onFailure:^(id json) {
+        
+    }];
     
     [self rongcloudConnect];
 }
@@ -313,10 +323,13 @@
 }
 
 -(void)rongcloudConnect{
-    [[RCIM sharedRCIM] connectWithToken:Token     success:^(NSString *userId) {
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    [[RCIM sharedRCIM] connectWithToken:info.token  success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+        
     } error:^(RCConnectErrorCode status) {
-        NSLog(@"登陆的错误码为:%d", status);
+        NSLog(@"登陆的错误码为:%ld", (long)status);
     } tokenIncorrect:^{
         //token过期或者不正确。
         //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
@@ -324,4 +337,5 @@
         NSLog(@"token错误");
     }];
 }
+
 @end

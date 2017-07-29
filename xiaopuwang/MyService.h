@@ -37,4 +37,10 @@
 -(void)getTokenWithParameters:(NSDictionary *)parameters
                  onCompletion:(JSONResponse)completionBlock
                     onFailure:(JSONResponse)failureBlock;
+
+
+//获取用户基本信息
+-(void)getUserBasicInfoWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock;
 @end

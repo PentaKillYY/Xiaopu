@@ -63,7 +63,29 @@
 -(void)getTokenWithParameters:(NSDictionary *)parameters
                  onCompletion:(JSONResponse)completionBlock
                     onFailure:(JSONResponse)failureBlock{
-    [[BaseHttpRequest sharedBaseHttpRequest] POST:UpdateUserHead parameters:parameters success:^(id json) {
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:GetToken parameters:parameters success:^(id json) {
+        DataResult* result = json;
+        
+        UserInfo* info = [UserInfo sharedUserInfo];
+        info.token = [result.detailinfo getString:@"token"];
+        [info synchronize];
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)getUserBasicInfoWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:GetUserBasicInfo parameters:parameters success:^(id json) {
+        DataResult* result = json;
+        
+        UserInfo* info = [UserInfo sharedUserInfo];
+        info.username = [result.detailinfo getString:@"User_name"];
+        [info synchronize];
+
+        
         completionBlock(json);
     } failure:^(id json) {
         

@@ -32,7 +32,7 @@
         decodeObject(telphone);
         decodeObject(headPicUrl);
         decodeObject(userID);
-
+        decodeObject(token);
         decodeObject(userBalance);
         decodeObject(userLongitude);
         decodeObject(userLatitude);
@@ -47,7 +47,7 @@
     encodeObject(telphone);
     encodeObject(headPicUrl);
     encodeObject(userID);
-
+    encodeObject(token);
     encodeObject(userBalance);
     encodeObject(userLongitude);
     encodeObject(userLatitude);
@@ -59,7 +59,7 @@
     self.telphone=dict[@"telephone"];
     self.headPicUrl=dict[@"headPicUrl"];
     self.userID=dict[@"userID"];
-
+    self.token=dict[@"token"];
     self.userBalance=dict[@"userBalance"];
     self.userLongitude=dict[@"userLongitude"];
     self.userLatitude=dict[@"userLatitude"];
