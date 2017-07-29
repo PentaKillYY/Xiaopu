@@ -104,6 +104,7 @@
 		045633511F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0456334F1F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib */; };
 		045633551F2B126C005E04CB /* CourseDetailContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045633531F2B126C005E04CB /* CourseDetailContentTableViewCell.m */; };
 		045633561F2B126C005E04CB /* CourseDetailContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045633541F2B126C005E04CB /* CourseDetailContentTableViewCell.xib */; };
+		0456335D1F2C6408005E04CB /* SchoolService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456335C1F2C6408005E04CB /* SchoolService.m */; };
 		04573F6F1F13725F00B52C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F6E1F13725F00B52C76 /* main.m */; };
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
@@ -331,6 +332,8 @@
 		045633521F2B126C005E04CB /* CourseDetailContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailContentTableViewCell.h; sourceTree = "<group>"; };
 		045633531F2B126C005E04CB /* CourseDetailContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailContentTableViewCell.m; sourceTree = "<group>"; };
 		045633541F2B126C005E04CB /* CourseDetailContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseDetailContentTableViewCell.xib; sourceTree = "<group>"; };
+		0456335B1F2C6408005E04CB /* SchoolService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolService.h; sourceTree = "<group>"; };
+		0456335C1F2C6408005E04CB /* SchoolService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolService.m; sourceTree = "<group>"; };
 		04573F6A1F13725F00B52C76 /* xiaopuwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaopuwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04573F6E1F13725F00B52C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04573F701F13725F00B52C76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -989,6 +992,8 @@
 		0478BA3A1F14CB70003A9C8B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0456335B1F2C6408005E04CB /* SchoolService.h */,
+				0456335C1F2C6408005E04CB /* SchoolService.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1411,6 +1416,7 @@
 				0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */,
 				045633271F29E1F7005E04CB /* OrgVideoPlayerViewController.m in Sources */,
 				0445EECD1F1F330800E9DAB3 /* EducationPlanController.m in Sources */,
+				0456335D1F2C6408005E04CB /* SchoolService.m in Sources */,
 				0445EF151F2093A800E9DAB3 /* OrgProportionTableViewCell.m in Sources */,
 				0445EED61F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.m in Sources */,
 			);

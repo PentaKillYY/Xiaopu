@@ -11,6 +11,7 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "DOPDropDownMenu.h"
 #import "SchoolBannerTableViewCell.h"
+#import "SchoolService.h"
 
 @interface SchoolViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 {
@@ -18,6 +19,10 @@
     NSArray* provinceAry;
     NSArray* cityAry;
     
+    NSInteger currentIndex;
+    NSInteger totalCount;
+    
+    DataItemArray* schoolListArray;
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -31,6 +36,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    schoolListArray = [DataItemArray new];
+    
     [self addNavTitleView];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolTableViewCell"];
@@ -38,12 +45,15 @@
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self loadNewData];
+        
+        currentIndex = 1;
+        [self getSchoolListRequest];
     }];
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self loadNewData];
+        currentIndex ++;
+        [self getSchoolListRequest];
         
     }];
     
@@ -98,19 +108,6 @@
     return image;
 }
 
-- (void)loadNewData{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // 耗时的操作
-        sleep(1);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // 更新界面
-            [self.tableView.mj_header endRefreshing];
-            [self.tableView.mj_footer endRefreshing];
-        });
-    });
-    
-}
-
 - (void)loadDropMenuData{
     countryAry = @[@"不限", @"中国",@"美国",@"加拿大",@"澳大利亚"];
     provinceAry = @[@"全部", @"江苏", @"浙江",@"广东",@"福建",@"新疆"];
@@ -127,7 +124,7 @@
     if (section == 0) {
         return 1;
     }else{
-        return 10;
+        return schoolListArray.size;
     }
 }
 
@@ -166,6 +163,7 @@
         return cell;
     }else{
         SchoolTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SchoolTableViewCell" owner:self options:nil].firstObject;
+        [self configCell:cell indexpath:indexPath];
         return cell;
     }
 }
@@ -178,6 +176,7 @@
     }else{
         return [tableView fd_heightForCellWithIdentifier:@"SchoolTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations
+            [self configCell:cell indexpath:indexPath];
         }];
 
     }
@@ -185,6 +184,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+
+- (void)configCell:(SchoolTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {
+
+    [cell.orgClassView removeAllTags];
+    
+    [cell bingdingViewModel:[schoolListArray getItem:indexpath.row]];
+    
+    [@[@"公立", @"大学", @"公立", @"大学",@"公立", @"大学", @"大学", @"大学", @"大学", @"大学", @"大学", @"大学"] enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
+        SKTag *tag = [SKTag tagWithText:text];
+        tag.textColor = [UIColor grayColor];
+        tag.cornerRadius = 3;
+        tag.fontSize = 11;
+        tag.borderColor = [UIColor grayColor];
+        tag.borderWidth = 0.5;
+        tag.padding = UIEdgeInsetsMake(2, 2, 2, 2);
+        [cell.orgClassView addTag:tag];
+    }];
+    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-111;
+    
+    cell.orgClassView.padding = UIEdgeInsetsMake(0, 0, 0, 0);
+    cell.orgClassView.interitemSpacing = 3;
+    cell.orgClassView.lineSpacing = 3;
 }
 
 #pragma mark - KeyboardNotification
@@ -244,5 +266,27 @@
         return cityAry[indexPath.unit];
     }
     return @"";
+}
+
+-(void)getSchoolListRequest{
+    [[SchoolService sharedSchoolService] getSchoolListWithPage:currentIndex Size:10 Parameters:@{@"ChineseName":@"",@"Country":@"",@"Province":@"",@"City":@"",@"CollegeNature":@"",@"CollegeType":@"",@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
+        DataResult* result = json;
+        
+        [schoolListArray append:[result.detailinfo getDataItemArray:@"list"]];
+        
+        totalCount = [result.detailinfo getInt:@"TotalCount"];
+        
+        [self.tableView.mj_header endRefreshing];
+        
+        
+        if (currentIndex*10 < totalCount) {
+            [self.tableView.mj_footer endRefreshing];
+        }else{
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
 }
 @end

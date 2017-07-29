@@ -13,43 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [self bingdingViewModel];
 
     self.sepH.constant = 0.5;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
--(void)bingdingViewModel{
-    [self setupTagView];
-}
-
-- (void)setupTagView
-{
-    
-    //Add Tags
-    [@[@"公立", @"大学", @"公立", @"大学",@"公立", @"大学"] enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
-        SKTag *tag = [SKTag tagWithText:text];
-        tag.textColor = [UIColor grayColor];
-        tag.cornerRadius = 3;
-        tag.fontSize = 11;
-        tag.borderColor = [UIColor grayColor];
-        tag.borderWidth = 0.5;
-        tag.padding = UIEdgeInsetsMake(2, 2, 2, 2);
-        [self.orgClassView addTag:tag];
-    }];
-    self.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-111;
-    
-    self.orgClassView.padding = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.orgClassView.interitemSpacing = 3;
-    self.orgClassView.lineSpacing = 3;
-    
-    CGFloat tagHeight = self.orgClassView.intrinsicContentSize.height;
-    self.tagH.constant =tagHeight;
     self.leftTag.backgroundColor = MAINCOLOR;
     self.middleTag.backgroundColor = MAINCOLOR;
     self.rightTag.backgroundColor = MAINCOLOR;
@@ -61,7 +26,21 @@
     [self.leftTag.layer setMasksToBounds:YES];
     [self.middleTag.layer setMasksToBounds:YES];
     [self.rightTag.layer setMasksToBounds:YES];
-    
+
 }
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+-(void)bingdingViewModel:(DataItem*)item{
+    
+    self.orgName.text = [item getString:@"ChineseName"];
+    self.orgContent.text = [item getString:@"EnglishName"];
+    [self.orgLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"Logo"]]] placeholderImage:nil];
+}
+
 
 @end

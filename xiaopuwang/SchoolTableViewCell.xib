@@ -32,17 +32,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-lh-YaV">
-                        <rect key="frame" x="103" y="24" width="209" height="31.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="花剑,佩剑,重剑,花剑,佩剑,重" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-lh-YaV">
+                        <rect key="frame" x="103" y="24" width="209" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btY-jp-Hvy" customClass="SKTagView">
-                        <rect key="frame" x="103" y="59" width="209" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="ZAF-Ym-qBd"/>
-                        </constraints>
+                        <rect key="frame" x="103" y="41" width="209" height="39"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addres" translatesAutoresizingMaskIntoConstraints="NO" id="W1u-MJ-Rp6">
                         <rect key="frame" x="103" y="85" width="8" height="11"/>
@@ -134,7 +131,6 @@
                 <outlet property="rightTag" destination="T7f-pg-wwC" id="nPo-2c-JH6"/>
                 <outlet property="sepH" destination="EkE-8U-pDu" id="rqr-AV-Olf"/>
                 <outlet property="sepLabel" destination="lpb-7n-c7L" id="FAC-Bd-JMh"/>
-                <outlet property="tagH" destination="ZAF-Ym-qBd" id="wGX-0o-evV"/>
             </connections>
             <point key="canvasLocation" x="127" y="-37"/>
         </tableViewCell>
