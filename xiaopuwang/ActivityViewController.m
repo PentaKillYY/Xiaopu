@@ -40,11 +40,12 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.activityArray.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ActivityTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"ActivityTableViewCell" owner:self options:nil].firstObject;
+    [cell bingdingViewModel:self.activityArray[indexPath.row]];
     return cell;
 }
 

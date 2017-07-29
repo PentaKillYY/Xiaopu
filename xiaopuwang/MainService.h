@@ -19,4 +19,11 @@
 -(void)loginWithParameters:(NSDictionary *)parameters
                               onCompletion:(JSONResponse)completionBlock
                                  onFailure:(JSONResponse)failureBlock;
+
+//获取大额补贴机构（分页）
+-(void)postSubtidyWithPage:(NSInteger)page
+                      Size:(NSInteger)size
+                Parameters:(NSDictionary *)parameters
+              onCompletion:(JSONResponse)completionBlock
+                 onFailure:(JSONResponse)failureBlock;
 @end

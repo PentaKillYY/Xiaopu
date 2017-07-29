@@ -40,9 +40,17 @@
         [imageView.layer setMasksToBounds:YES];
         [imageView sd_setImageWithURL:[NSURL URLWithString:array[i]] placeholderImage:nil];
                 imageView.frame = CGRectMake((imgW+2)*i, 0, imgW, imgH);
+        imageView.tag = i;
+        imageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
+        [imageView addGestureRecognizer:tap];
         [self.scrollView addSubview:imageView];
 
     }
     self.scrollView.contentSize = CGSizeMake(imgW*array.count, imgH);
+}
+
+-(void)imageTap:(id)sender{
+    [self.delegate preferredTap:sender];
 }
 @end

@@ -7,9 +7,16 @@
 //
 
 #import "BaseTableViewCell.h"
+@protocol PreferredTapDelegate <NSObject>
+
+-(void)preferredTap:(id)sender;
+
+@end
 
 @interface MainPreferedTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UIImageView* atitleView;
 @property(nonatomic,weak)IBOutlet UIScrollView* scrollView;
 @property(nonatomic,strong)DataResult* dataResult;
+@property(nonatomic,assign)id<PreferredTapDelegate>delegate;
 @end
+

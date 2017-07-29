@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface ActivityViewController : BaseViewController
+@property(nonatomic,strong)NSArray* activityArray;
 
 @end

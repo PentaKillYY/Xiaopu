@@ -43,4 +43,16 @@
         
     }];
 }
+
+-(void)postSubtidyWithPage:(NSInteger)page
+                         Size:(NSInteger)size
+                   Parameters:(NSDictionary *)parameters
+                 onCompletion:(JSONResponse)completionBlock
+                    onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?pageIndex=%ld&pageSize=%ld",GetSubtidyList,(long)page,(long)size] parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

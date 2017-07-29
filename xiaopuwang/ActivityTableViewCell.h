@@ -11,4 +11,6 @@
 @property(nonatomic,weak)IBOutlet UILabel* activityTime;
 @property(nonatomic,weak)IBOutlet UILabel* activityState;
 @property(nonatomic,weak)IBOutlet UIImageView* activityImage;
+
+-(void)bingdingViewModel:(DataItem*)item;
 @end

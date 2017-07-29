@@ -14,7 +14,6 @@
     [super awakeFromNib];
     // Initialization code
     
-    [self bingdingData];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,7 +22,23 @@
     // Configure the view for the selected state
 }
 
--(void)bingdingData{
-    [self.activityImage sd_setImageWithURL:[NSURL URLWithString:@"http://www.ings.org.cn/Uploads/Organization/20170715145035379927_Logo.png"] placeholderImage:nil];
+-(void)bingdingViewModel:(DataItem*)item{
+    [self.activityImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"AdvImage"]]] placeholderImage:nil];
+    self.activityTime.text = [[item getString:@"AdvExpirationDate"] substringToIndex:10];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [dateFormatter dateFromString:[[item getString:@"AdvExpirationDate"] substringToIndex:10]];
+    
+    NSDate *now = [NSDate date];
+    
+    
+    if ([now compare:date] == NSOrderedDescending) {
+        self.activityState.textColor = [UIColor redColor];
+        self.activityState.text = @"已结束";
+    }else{
+        self.activityState.textColor = [UIColor greenColor];
+        self.activityState.text = @"进行中";
+    }
 }
 @end

@@ -8,48 +8,105 @@
 
 #import "SubTidyViewController.h"
 #import "OrginizationTableViewCell.h"
-#import "UITableView+FDTemplateLayoutCell.h"
+
 #import "DOPDropDownMenu.h"
 #import "OrginizationBannerTableViewCell.h"
 
-@interface SubTidyViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
+#import "OrginizationService.h"
+#import "MainService.h"
+
+@interface SubTidyViewController ()<UISearchBarDelegate,DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource,BannerDelegate>
 {
     NSArray* orgDistrictAry;
     NSArray* orgTypeAry;
     NSArray* orgSortAry;
     NSArray* orgDistanceFilterAry;
     NSArray* orgTypeDetailAry;
+    
+    NSInteger currentPage;
+    NSInteger size;
+    NSInteger totalCount;
+    
+    DataItemArray* orgListArray;
+    
+    NSString* selectCourseType;
+    NSString* selectCourseKind;
+    NSString* selectArea;
+    
+    NSMutableDictionary* tagDic;
+    
+    NSString* orgTypeName;
+    NSString* orgGroupName;
+    
+    DataResult* courseTypeResult;
+    DataResult* groupTypeResult;
+    
+    NSMutableDictionary* groupDic;
+    
+    NSInteger selectIndex;
+    
+    NSInteger selectColumn;
+    NSInteger selectRow;
+
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
 @property (nonatomic,strong) IBOutlet UITableView* tableView;
-@property (nonatomic, weak) DOPDropDownMenu *menu;
+@property (nonatomic, strong) DOPDropDownMenu *menu;
+
+@property (nonatomic,strong) NSMutableDictionary *dataSource;
 @end
 
 @implementation SubTidyViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    size = 10;
+    currentPage = 1;
+    orgListArray = [DataItemArray new];
+    
+    tagDic = [[NSMutableDictionary alloc] init];
+    groupDic = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    [self setUpSearchFilter];
+    
+    [self getGroupList];
     
     [self addNavTitleView];
     
     [self loadFilterSortData];
     
+    [self getCourseTypeList];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"OrginizationTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgCell"];
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self loadNewData];
+        currentPage = 1;
+        [orgListArray clear];
+        [tagDic removeAllObjects];
+        [self getCourseList];
     }];
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self loadNewData];
+        currentPage +=1;
+        
+        [self getCourseList];
         
     }];
     
     [self.tableView.mj_header beginRefreshing];
 }
+
+-(void)setUpSearchFilter{
+    orgTypeName = @"";
+    orgGroupName = @"";
+    selectArea = @"";
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -72,26 +129,24 @@
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"SubTidyToOrgDetail"]) //"goView2"是SEGUE连线的标识
+    {
+        id theSegue = segue.destinationViewController;
+        
+        DataItem* item = [orgListArray getItem:selectIndex];
+        [theSegue setValue:[item getString:@"Organization_Application_ID"] forKey:@"orgID"];
+    }
+}
+
+
 -(void)loadFilterSortData{
     orgDistrictAry = OrginizationDistrictFilter;
     orgTypeAry = OrginizationTypeFilter;
     orgSortAry = OrginizationSort;
     orgDistanceFilterAry = OrgDistanceFilter;
 }
-
-- (void)loadNewData{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // 耗时的操作
-        sleep(1);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // 更新界面
-            [self.tableView.mj_header endRefreshing];
-            [self.tableView.mj_footer endRefreshing];
-        });
-    });
-    
-}
-
 
 - (void)addNavTitleView{
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width-20, 44)];
@@ -101,6 +156,10 @@
     [_searchBar setBackgroundColor:[UIColor clearColor]];
     
     self.navigationItem.titleView = _searchBar;
+    
+     UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:self action:nil];
+    
+    self.navigationItem.rightBarButtonItem = rightItm;
 }
 
 + (UIImage*) imageWithColor:(UIColor*)color andHeight:(CGFloat)height
@@ -128,18 +187,21 @@
     if (section == 0) {
         return 1;
     }else{
-        return 10;
+        return orgListArray.size;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         OrginizationBannerTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationBannerTableViewCell" owner:self options:nil].firstObject;
-        
+        cell.delegate = self;
         return cell;
     }else{
+        OrginizationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrgCell" forIndexPath:indexPath];
         
-        OrginizationTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrginizationTableViewCell" owner:self options:nil].firstObject;
+        
+        
+        [self configCell:cell indexpath:indexPath];
         
         return cell;
     }
@@ -149,17 +211,23 @@
     if (section == 0) {
         return nil;
     }else{
-        // 添加下拉菜单
-        DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
-        menu.delegate = self;
-        menu.dataSource = self;
-        _menu = menu;
         
-        _menu.menuWidth = Main_Screen_Width;
-        //        // 创建menu 第一次显示 不会调用点击代理，可以用这个手动调用
-        [menu selectDefalutIndexPath];
+        if (!_menu) {
+            // 添加下拉菜单
+            DOPDropDownMenu*menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
+            menu.delegate = self;
+            menu.dataSource = self;
+            _menu = menu;
+            
+            _menu.menuWidth = Main_Screen_Width;
+            CATextLayer* title = [[CATextLayer alloc] init];
+            title.string = @[orgDistrictAry,orgTypeAry,orgSortAry][selectColumn][selectRow];
+        }
         
-        return menu;
+        
+        //        CATextLayer *title = [self createTextLayerWithNSString:titleString withColor:self.textColor andPosition:titlePosition];
+        
+        return _menu;
         
     }
 }
@@ -181,16 +249,53 @@
     if (indexPath.section == 0) {
         return 180.0;
     }else{
-        return [tableView fd_heightForCellWithIdentifier:@"OrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            // configurations
+        
+        return  [tableView fd_heightForCellWithIdentifier:@"OrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            [self configCell:cell indexpath:indexPath];
         }];
+        
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    selectIndex = indexPath.row;
+    [self performSegueWithIdentifier:@"SubTidyToOrgDetail" sender:self];
 }
 
+- (void)configCell:(OrginizationTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {
+    
+    DataItem* item = [orgListArray getItem:indexpath.row];
+    
+    [cell bingdingViewModel:item] ;
+    
+    [cell.orgClassView removeAllTags];
+    
+    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-111;
+    
+    cell.orgClassView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
+    cell.orgClassView.lineSpacing = 5;
+    cell.orgClassView.interitemSpacing = 5;
+    cell.orgClassView.singleLine = NO;
+    
+    
+    DataItemArray* itemArray =   [[DataItemArray alloc] init];
+    [itemArray append:[tagDic objectForKey:[NSString stringWithFormat:@"%ld",(long)indexpath.row]]];
+    NSArray* array =  [NSArray arrayWithArray:[itemArray toArray]] ;
+    [array enumerateObjectsUsingBlock:^(DataItem* item, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        SKTag *tag = [[SKTag alloc] initWithText:[item getString:@"CourseClassType"]];
+        
+        tag.font = [UIFont systemFontOfSize:12];
+        tag.textColor = [UIColor lightGrayColor];
+        tag.bgColor =[UIColor whiteColor];
+        tag.borderColor = [UIColor lightGrayColor];
+        tag.borderWidth = 1.0;
+        tag.cornerRadius = 3;
+        tag.enable = YES;
+        tag.padding = UIEdgeInsetsMake(3, 3, 3, 3);
+        [cell.orgClassView addTag:tag];
+    }];
+}
 
 #pragma mark - KeyboardNotification
 - (void)keyboardWillShow:(NSNotification *)notification
@@ -239,7 +344,9 @@
         if (row == 0) {
             return 0;
         } else {
-            return arc4random()%10;
+            DataItemArray * array = [groupDic objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
+            
+            return array.size;
         };
         
     }
@@ -258,10 +365,154 @@
         if (indexPath.row == 0) {
             return 0;
         } else {
-            return @"英语";
+            DataItemArray * array = [groupDic objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+            return [[array getItem:indexPath.item] getString:@"Text"];
         }
     }
     return nil;
 }
+
+- (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath{
+    selectColumn = indexPath.column;
+    selectRow = indexPath.row;
+    
+    if (indexPath.column == 0) {
+        if (indexPath.row == 0) {
+            selectArea = @"";
+            [self.tableView.mj_header beginRefreshing];
+        }else if (indexPath.row ==1){
+            
+        }else{
+            selectArea = orgDistrictAry[indexPath.row];
+            [self.tableView.mj_header beginRefreshing];
+        }
+        
+        
+    }else if (indexPath.column == 1){
+        if (indexPath.row == 0) {
+            orgTypeName = @"";
+            [self.tableView.mj_header beginRefreshing];
+        }else{
+            if (indexPath.row == 3) {
+                orgTypeName = [[courseTypeResult.items getItem:3] getString:@"Text"];
+            }else if (indexPath.row  == 4){
+                orgTypeName = [[courseTypeResult.items getItem:2] getString:@"Text"];
+            }else{
+                orgTypeName = [[courseTypeResult.items getItem:indexPath.row-1] getString:@"Text"];
+            }
+            
+            if (indexPath.item == 0 || indexPath.item > 0) {
+                DataItemArray * array = [groupDic objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+                orgGroupName = [[array getItem:indexPath.item] getString:@"Text"];
+                [self.tableView.mj_header beginRefreshing];
+            }
+        }
+    }else{
+        [self.tableView.mj_header beginRefreshing];
+    }
+    
+}
+
+#pragma mark - NetWorkRequest
+-(void)getCourseList{
+    
+    NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":@"",@"CourseType":orgTypeName,@"CourseKind":orgGroupName,@"City":@"",@"Field":selectArea,@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0)};
+    
+    [[MainService sharedMainService] postSubtidyWithPage:currentPage Size:size Parameters:parameters onCompletion:^(id json) {
+        DataResult* result = json;
+        
+        [orgListArray append:[result.detailinfo getDataItemArray:@"orglist"]];
+        
+        totalCount =[result.detailinfo getInt:@"TotalCount"];
+        
+        int curretnIndex = (int)orgListArray.size - (int)[result.detailinfo getDataItemArray:@"orglist"].size;
+        
+        for ( int i=curretnIndex ; i< orgListArray.size ; i++) {
+            [self getCourseClassTypeWithindex:i];
+            
+        }
+        
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+- (void)getCourseClassTypeWithindex:(NSInteger)index {
+    DataItem* item = [orgListArray getItem:index];
+    
+    [[OrginizationService sharedOrginizationService] getCourseClassTypeWithParameters:@{@"orgId":[item getString:@"Organization_Application_ID"]} onCompletion:^(id json) {
+        
+        DataResult* result = json;
+        
+        
+        [tagDic setObject:result.items forKey:[NSString stringWithFormat:@"%ld",(long)index]];
+        
+        if ([tagDic allKeys].count == orgListArray.size) {
+            
+            [self.tableView reloadData];
+        }
+        
+        
+        [self.tableView.mj_header endRefreshing];
+        
+        if (currentPage* size < totalCount) {
+            [self.tableView.mj_footer endRefreshing];
+            
+        }else{
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+
+- (NSMutableDictionary *)dataSource
+{
+    if (_dataSource == nil) {
+        _dataSource = [[NSMutableDictionary alloc] initWithDictionary:tagDic];
+    }
+    return _dataSource;
+}
+
+
+-(void)getCourseTypeList{
+    [[OrginizationService sharedOrginizationService] getCoursetypeParameters:@{@"courseType":@"CourseType"} onCompletion:^(id json) {
+        courseTypeResult = json;
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)getGroupList{
+    for (int i = 0 ; i < 8; i++) {
+        [[OrginizationService sharedOrginizationService] getGroupTypeParameters:@{@"courseType":@"CourseType",@"value":@(i)} onCompletion:^(id json) {
+            groupTypeResult = json;
+            
+            [groupDic setObject:groupTypeResult.items forKey:[NSString stringWithFormat:@"%d",i]];
+            
+        } onFailure:^(id json) {
+            
+        }];
+    }
+}
+
+#pragma mark - BannerDelegate
+-(void)bannerBubttonClicked:(id)sender{
+    UIButton* button = (UIButton*)sender;
+    
+    if (button.tag == 2) {
+        orgTypeName = [[courseTypeResult.items getItem:3] getString:@"Text"];
+    }else if (button.tag == 3){
+        orgTypeName = [[courseTypeResult.items getItem:2] getString:@"Text"];
+    }else{
+        orgTypeName = [[courseTypeResult.items getItem:button.tag] getString:@"Text"];
+    }
+    [self.tableView.mj_header beginRefreshing];
+}
+
 
 @end

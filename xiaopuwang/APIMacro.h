@@ -15,6 +15,9 @@
 //获取广告位
 #define GetAdvertisement @"/user/GetAdvertisement"
 
+//获取大额补贴机构（分页）
+#define GetSubtidyList @"/cousertrain/orgInfoToExpertConsultation"
+
 // *******************************机构**************************
 
 //获取机构列表（分页）

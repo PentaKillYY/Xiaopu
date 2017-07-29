@@ -17,9 +17,10 @@
 #import "MainService.h"
 #import "MyService.h"
 
-@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate,PreferredTapDelegate>
 {
     DataResult* advertisementResult;
+    NSInteger currentOrgIndex;
 }
 @property (nonatomic,weak)IBOutlet UITableView* tableView;
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -133,6 +134,40 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"MainToOrgDetail"])
+    {
+        id theSegue = segue.destinationViewController;
+        
+        NSMutableArray* array = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < advertisementResult.items.size; i++) {
+            DataItem* item = [advertisementResult.items getItem:i];
+            
+            if ([item getInt:@"AdvType"] == 2) {
+                [array addObject:item];
+            }
+        }
+        DataItem* item = array[currentOrgIndex];
+        [theSegue setValue:[item getString:@"UserId"] forKey:@"orgID"];
+        
+    }else if ([segue.identifier isEqualToString:@"MainToActivity"]){
+        id theSegue = segue.destinationViewController;
+        
+        NSMutableArray* array = [[NSMutableArray alloc] init];
+        for (int i = 0; i < advertisementResult.items.size; i++) {
+            DataItem* item = [advertisementResult.items getItem:i];
+            
+            if ([item getInt:@"AdvType"] == 3) {
+                [array addObject:item];
+            }
+        }
+        [theSegue setValue:array forKey:@"activityArray"];
+ 
+    }
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -160,6 +195,7 @@
         MainPreferedTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainPreferedTableViewCell" owner:self options:nil].firstObject;
         cell.atitleView.image = V_IMAGE(@"校谱优选");
         cell.dataResult = advertisementResult;
+        cell.delegate = self;
         return cell;
     }else{
         MainActivityTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainActivityTableViewCell" owner:self options:nil].firstObject;
@@ -289,6 +325,13 @@
         [self performSegueWithIdentifier:@"MainToPersonalChoose" sender:self];
     }
 }
+#pragma mark - PreferredDelegate
+-(void)preferredTap:(id)sender{
+    UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
+    currentOrgIndex = tap.view.tag;
+    [self performSegueWithIdentifier:@"MainToOrgDetail" sender:self];
+}
+
 
 #pragma AmapLocation
 - (void)configLocationManager
