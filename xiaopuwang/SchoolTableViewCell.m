@@ -40,7 +40,7 @@
     self.orgName.text = [item getString:@"ChineseName"];
     self.orgContent.text = [item getString:@"EnglishName"];
     [self.orgLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"Logo"]]] placeholderImage:nil];
+    self.distance.text = [NSString stringWithFormat:@"%@-%@-%@",[item getString:@"country_name"],[item getString:@"provinces_name"],[item getString:@"city_name"]];
 }
-
 
 @end

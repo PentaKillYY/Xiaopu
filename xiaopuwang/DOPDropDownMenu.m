@@ -184,6 +184,20 @@
     
 }
 
+-(void)reloadFirstTable{
+    [self.firstTableView reloadData];
+}
+
+
+-(void)reloadSecondTable{
+    [self.secendTableView reloadData];
+}
+
+
+-(void)reloadThirdTable{
+    [self.thirdTableView reloadData];
+}
+
 - (void)selectDefalutIndexPath
 {
     [self selectIndexPath:[DOPIndexPath indexPathWithCol:0 row:0 item:0 unit:0]];

@@ -23,4 +23,7 @@
     // Configure the view for the selected state
 }
 
+-(IBAction)clickButton:(id)sender{
+    [self.delegate bannerBubttonClicked:sender];
+}
 @end

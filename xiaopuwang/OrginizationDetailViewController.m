@@ -1056,21 +1056,11 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     [[MyService sharedMyService] getUserBargainWithParameters:@{@"userId":info.userID,@"orgId":self.orgID,@"userMobile":info.telphone,@"name":info.username} onCompletion:^(id json) {
         
-        [self sendMessageAfterBargainRequest];
-        
     } onFailure:^(id json) {
         
     }];
 }
 
--(void)sendMessageAfterBargainRequest{
-    UserInfo* info = [UserInfo sharedUserInfo];
-    [[MyService sharedMyService] sendMessageAfterBargainWithParameters:@{@"mobile":info.telphone,@"userMobile":info.telphone,@"name":info.username} onCompletion:^(id json) {
-        
-    } onFailure:^(id json) {
-        
-    }];
-}
 
 -(void)appointOrgRequest:(NSString*)acontent{
     UserInfo* info = [UserInfo sharedUserInfo];

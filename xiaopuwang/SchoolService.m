@@ -29,4 +29,34 @@
         
     }];
 }
+
+-(void)getSchoolCountryListonCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:SchoolCountryList parameters:nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+
+}
+
+-(void)getSchoolProvinceListWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:SchoolProvinceList parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getSchoolCityListWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:SchoolCityList parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

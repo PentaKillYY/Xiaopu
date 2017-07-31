@@ -17,4 +17,19 @@
                    Parameters:(NSDictionary *)parameters
                  onCompletion:(JSONResponse)completionBlock
                     onFailure:(JSONResponse)failureBlock;
+
+//获取所有国家列表
+-(void)getSchoolCountryListonCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
+
+//根据国家获取相应的省份
+-(void)getSchoolProvinceListWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock;
+
+//获取城市列表
+-(void)getSchoolCityListWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
 @end

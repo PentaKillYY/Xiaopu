@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol BannerDelegate <NSObject>
+
+-(void)bannerBubttonClicked:(id)sender;
+
+@end
 
 @interface SchoolBannerTableViewCell : UITableViewCell
 @property (nonatomic,weak)IBOutlet UIButton* button1;
@@ -18,4 +23,8 @@
 @property (nonatomic,weak)IBOutlet UIButton* button7;
 @property (nonatomic,weak)IBOutlet UIButton* button8;
 @property (nonatomic,weak)IBOutlet NSLayoutConstraint* sepH;
+
+@property (nonatomic,assign)id<BannerDelegate>delegate;
+
+-(IBAction)clickButton:(id)sender;
 @end

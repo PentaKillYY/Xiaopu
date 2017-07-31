@@ -129,20 +129,14 @@
 @property CGFloat menuWidth;
 
 @property NSInteger type;
-/**
- *  the width of menu will be set to screen width defaultly
- *
- *  @param origin the origin of this view's frame
- *  @param height menu's height
- *
- *  @return menu
- */
+
 - (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height andWidth:(CGFloat)width;
 
+-(void)reloadFirstTable;
 
-//@property BOOL isSow;
+-(void)reloadSecondTable;
 
-
+-(void)reloadThirdTable;
 
 // 获取title
 - (NSString *)titleForRowAtIndexPath:(DOPIndexPath *)indexPath;
