@@ -32,4 +32,13 @@
                           onCompletion:(JSONResponse)completionBlock
                              onFailure:(JSONResponse)failureBlock;
 
+//获取学校类型
+-(void)getSchoolTypeListWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
+//获取学校性质
+-(void)getSchoolNatureListWithParameters:(NSDictionary *)parameters
+                            onCompletion:(JSONResponse)completionBlock
+                               onFailure:(JSONResponse)failureBlock;
 @end

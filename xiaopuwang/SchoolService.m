@@ -59,4 +59,24 @@
         failureBlock(json);
     }];
 }
+
+-(void)getSchoolTypeListWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:SchoolTypeList parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getSchoolNatureListWithParameters:(NSDictionary *)parameters
+                            onCompletion:(JSONResponse)completionBlock
+                               onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:SchoolNatureList parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

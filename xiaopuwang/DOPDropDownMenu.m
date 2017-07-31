@@ -980,6 +980,8 @@
     }else{
         if (indexPath.section == 0) {
             TagTableViewCell* tagcell = [[NSBundle mainBundle] loadNibNamed:@"TagTableViewCell" owner:self options:nil].firstObject;
+            tagcell.tagType.text = indexPath.row == 0 ? @"学校类别":@"学校性质";
+            
             return tagcell;
         }else{
             TagFooterTableViewCell* tagcell = [[NSBundle mainBundle] loadNibNamed:@"TagFooterTableViewCell" owner:self options:nil].firstObject;

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-Kd-V0S">
@@ -30,9 +30,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IY2-lU-9ZD" customClass="SKTagView">
                         <rect key="frame" x="8" y="37" width="304" height="43"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="43" id="ixp-Gk-pta"/>
-                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
@@ -46,7 +43,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="tagH" destination="ixp-Gk-pta" id="4NL-s6-Rdc"/>
                 <outlet property="tagType" destination="0wU-Kd-V0S" id="CfU-kf-7Qy"/>
                 <outlet property="tagView" destination="IY2-lU-9ZD" id="F44-gV-ZBY"/>
             </connections>

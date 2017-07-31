@@ -32,20 +32,21 @@
         SKTag *tag = [SKTag tagWithText:text];
         tag.textColor = [UIColor grayColor];
         tag.cornerRadius = 3;
-        tag.fontSize = 11;
+        tag.fontSize = 12;
         tag.borderColor = [UIColor grayColor];
         tag.borderWidth = 0.5;
-        tag.padding = UIEdgeInsetsMake(2, 2, 2, 2);
-        [self.tagView addTag:tag];
+        tag.padding = UIEdgeInsetsMake(3, 3, 3, 3);
+                [self.tagView addTag:tag];
     }];
     self.tagView.preferredMaxLayoutWidth = Main_Screen_Width-16;
     
-    self.tagView.padding = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.tagView.interitemSpacing = 3;
-    self.tagView.lineSpacing = 3;
+    self.tagView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
+    self.tagView.interitemSpacing = 5;
+    self.tagView.lineSpacing = 5;
     
-    CGFloat tagHeight = self.tagView.intrinsicContentSize.height;
-    self.tagH.constant =tagHeight;
+    self.tagView.didTapTagAtIndex  = ^(NSUInteger index){
+        NSLog(@"Tap");
+    };
 }
     
 

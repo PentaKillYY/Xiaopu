@@ -12,5 +12,4 @@
 @interface TagTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* tagType;
 @property(nonatomic,strong)IBOutlet SKTagView* tagView;
-@property(nonatomic,weak)IBOutlet NSLayoutConstraint* tagH;
 @end
