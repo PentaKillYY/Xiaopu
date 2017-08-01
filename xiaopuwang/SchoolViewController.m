@@ -27,9 +27,15 @@
     DataResult* countryResult;
     DataResult* provinceResult;
     DataResult* cityResult;
+    DataResult* typeResult;
+    DataResult* natureResult;
     
     NSString* selectCountryId;
     NSString* selectProvinceId;
+    
+    NSString* schoolType;
+    NSString* schoolNature;
+    
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -123,7 +129,10 @@
     schoolCountry = @"";
     schoolProvince = @"";
     schoolCity = @"";
+    schoolType = @"";
+    schoolNature = @"";
 }
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -328,6 +337,8 @@
     }
 }
 
+#pragma mark - DOPDropDownMenuDelegate
+
 - (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath{
     if (indexPath.column == 0) {
         [self getSchoolCountryListRequest];
@@ -336,10 +347,15 @@
             schoolCountry = @"";
             [self.tableView.mj_header beginRefreshing];
         }else if (indexPath.row == 1){
-        
+            [self.menu reloadData];
+            [self pushToChinaSChool];
         }else{
             selectCountryId = [[countryResult.items getItem:indexPath.row-1] getString:@"value"];
             schoolCountry = [[countryResult.items getItem:indexPath.row-1] getString:@"text"];
+            
+            [self getSchoolTypeRequest];
+            [self getSchoolNatureRequest];
+            
             
             [self getSchoolProvinceListRequest];
             
@@ -371,9 +387,33 @@
 
 }
 
+-(void)resetTag{
+    schoolType = @"";
+    schoolNature = @"";
+    
+    [_menu reloadData];
+    
+    [self.tableView.mj_header beginRefreshing];
+}
+
+-(void)confirmTag{    
+    if (_menu.selectTypeArray) {
+        schoolType = [[typeResult.items getItem:[[_menu.selectTypeArray firstObject] intValue]-1] getString:@"value"];
+    }
+    
+    if(_menu.selectNatureArray){
+        schoolNature = [[natureResult.items getItem:[[_menu.selectNatureArray firstObject] intValue]-1] getString:@"value"];
+    }
+    
+    [_menu reloadData];
+    
+    [self.tableView.mj_header beginRefreshing];
+}
+
+
 #pragma mark - NetWorkRequest
 -(void)getSchoolListRequest{
-    [[SchoolService sharedSchoolService] getSchoolListWithPage:currentIndex Size:10 Parameters:@{@"ChineseName":@"",@"Country":schoolCountry,@"Province":schoolProvince,@"City":schoolCity,@"CollegeNature":@"",@"CollegeType":@"",@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
+    [[SchoolService sharedSchoolService] getSchoolListWithPage:currentIndex Size:10 Parameters:@{@"ChineseName":@"",@"Country":schoolCountry,@"Province":schoolProvince,@"City":schoolCity,@"CollegeNature":schoolNature,@"CollegeType":schoolType,@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
         DataResult* result = json;
         
         [schoolListArray append:[result.detailinfo getDataItemArray:@"list"]];
@@ -432,10 +472,50 @@
     }];
 }
 
+-(void)getSchoolTypeRequest{
+    schoolType = @"";
+    [[SchoolService sharedSchoolService] getSchoolTypeListWithParameters:@{@"countryName":schoolCountry} onCompletion:^(id json) {
+        typeResult = json;
+        
+        NSMutableArray* typeName = [[NSMutableArray alloc] init];
+        [typeName addObject:@"不限"];
+        for (int i = 0; i<typeResult.items.size; i++) {
+            DataItem* item = [typeResult.items getItem:i];
+            [typeName addObject:[item getString:@"text"]];
+        }
+        
+        _menu.typeArray = [NSArray arrayWithArray:typeName];
+        [_menu reloadTagTable];
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)getSchoolNatureRequest{
+    schoolNature = @"";
+    [[SchoolService sharedSchoolService] getSchoolNatureListWithParameters:@{@"countryName":schoolCountry} onCompletion:^(id json) {
+        natureResult= json;
+        
+        NSMutableArray* natureName = [[NSMutableArray alloc] init];
+        [natureName addObject:@"不限"];
+        for (int i =0; i<natureResult.items.size; i++) {
+            DataItem* item = [natureResult.items getItem:i];
+            [natureName addObject:[item getString:@"text"]];
+        }
+        
+        _menu.natureArray = [NSArray arrayWithArray:natureName];
+         [_menu reloadTagTable];
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
 #pragma mark - BannerDelegate
 -(void)bannerBubttonClicked:(id)sender{
     UIButton* button = (UIButton*)sender;
-    if (button.tag != 7) {
+    if (button.tag != 7 && button.tag !=0 ) {
         if (button.tag == 1) {
             schoolCountry = [[countryResult.items getItem:4] getString:@"text"];
         }else if (button.tag == 4){
@@ -447,8 +527,17 @@
         }else{
             schoolCountry = [[countryResult.items getItem:button.tag] getString:@"text"];
         }
-
+        [self getSchoolTypeRequest];
+        [self getSchoolNatureRequest];
+        
+        
         [self.tableView.mj_header beginRefreshing];
+    }else if (button.tag == 0){
+        [self pushToChinaSChool];
     }
+}
+
+-(void)pushToChinaSChool{
+    [self performSegueWithIdentifier:@"SchoolToChina" sender:self];
 }
 @end

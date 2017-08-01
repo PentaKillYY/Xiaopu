@@ -41,4 +41,9 @@
 -(void)getSchoolNatureListWithParameters:(NSDictionary *)parameters
                             onCompletion:(JSONResponse)completionBlock
                                onFailure:(JSONResponse)failureBlock;
+
+//获取中国学校列表(分页)
+-(void)postChinaSchoolListWithParameters:(NSDictionary *)parameters
+                            onCompletion:(JSONResponse)completionBlock
+                               onFailure:(JSONResponse)failureBlock;
 @end

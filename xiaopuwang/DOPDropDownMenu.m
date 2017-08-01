@@ -77,7 +77,7 @@
 
 #pragma mark - menu implementation
 
-@interface DOPDropDownMenu (){
+@interface DOPDropDownMenu ()<SelectButtonDelegate,TextTagDelegate>{
     struct {
         unsigned int numberOfRowsInColumn :1;
         unsigned int numberOfItemsInRow :1;
@@ -197,6 +197,28 @@
 -(void)reloadThirdTable{
     [self.thirdTableView reloadData];
 }
+
+
+-(void)reloadTagTable{
+    [self.tagTableView reloadData];
+    
+//    [self resetTagTable];
+}
+
+-(void)resetTagTable{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    TagTableViewCell* tagcell = [self.tagTableView dequeueReusableCellWithIdentifier:@"TagTableViewCell" forIndexPath:indexPath];
+    [tagcell resetAllTag];
+    
+    NSIndexPath *indexPath2 = [NSIndexPath indexPathForRow:1 inSection:0];
+    TagTableViewCell* tagcell2 = [self.tagTableView dequeueReusableCellWithIdentifier:@"TagTableViewCell" forIndexPath:indexPath2];
+    [tagcell2 resetAllTag];
+    
+    
+    [self reloadTagTable];
+
+}
+
 
 - (void)selectDefalutIndexPath
 {
@@ -844,6 +866,8 @@
         if (indexPath.section == 0) {
             return [tableView fd_heightForCellWithIdentifier:@"TagTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
                 // configurations
+                [self configCell:cell indexPath:indexPath];
+                
             }];
         }else{
             return 44.0;
@@ -979,16 +1003,71 @@
          return cell;
     }else{
         if (indexPath.section == 0) {
-            TagTableViewCell* tagcell = [[NSBundle mainBundle] loadNibNamed:@"TagTableViewCell" owner:self options:nil].firstObject;
-            tagcell.tagType.text = indexPath.row == 0 ? @"学校类别":@"学校性质";
+            TagTableViewCell* tagcell = [tableView dequeueReusableCellWithIdentifier:@"TagTableViewCell" forIndexPath:indexPath];
+            tagcell.deletage = self;
+            
+            [self configCell:tagcell indexPath:indexPath];
             
             return tagcell;
         }else{
-            TagFooterTableViewCell* tagcell = [[NSBundle mainBundle] loadNibNamed:@"TagFooterTableViewCell" owner:self options:nil].firstObject;
-            return tagcell;
+            TagFooterTableViewCell* tagFootercell = [[NSBundle mainBundle] loadNibNamed:@"TagFooterTableViewCell" owner:self options:nil].firstObject;
+            tagFootercell.delegate = self;
+            return tagFootercell;
         }
     }
    
+}
+
+
+-(void)configCell:(TagTableViewCell*)cell indexPath:(NSIndexPath*)path{
+    cell.tagType.text = path.row == 0 ? @"学校类别":@"学校性质";
+    
+    if (path.row == 0) {
+        [cell resetAllTag];
+        if (self.typeArray) {
+           [cell setTags:self.typeArray];
+        }else{
+            [cell setTags:@[]];
+        }
+        
+    }else{
+        [cell resetAllTag];
+        if (self.natureArray) {
+            [cell setTags:self.natureArray];
+        }else{
+            [cell setTags:@[]];
+        }
+
+    }
+
+}
+
+-(void)clearDelegate:(id)sender{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    TagTableViewCell* tagcell = [self.tagTableView dequeueReusableCellWithIdentifier:@"TagTableViewCell" forIndexPath:indexPath];
+    [tagcell resetAllTag];
+    
+    NSIndexPath *indexPath2 = [NSIndexPath indexPathForRow:1 inSection:0];
+    TagTableViewCell* tagcell2 = [self.tagTableView dequeueReusableCellWithIdentifier:@"TagTableViewCell" forIndexPath:indexPath2];
+    [tagcell2 resetAllTag];
+    
+    
+    [self reloadTagTable];
+    
+    [self.delegate resetTag];
+}
+
+-(void)selectTextTag:(NSArray *)tagArray TagType:(NSString *)tagtype{
+    if ([tagtype isEqualToString:@"学校类别"]) {
+        self.selectTypeArray = [NSArray arrayWithArray:tagArray];
+    }else{
+        self.selectNatureArray = [NSArray arrayWithArray:tagArray];
+    }
+    
+}
+
+-(void)confirmDelegate:(id)sender{
+    [self.delegate confirmTag];
 }
 
 #pragma mark - tableview delegate
@@ -1109,6 +1188,7 @@
         }];
     }
 }
+
 
 @end
 

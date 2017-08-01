@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-Kd-V0S">
@@ -27,24 +27,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IY2-lU-9ZD" customClass="SKTagView">
-                        <rect key="frame" x="8" y="37" width="304" height="43"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xK2-tQ-9pq" customClass="TTGTextTagCollectionView">
+                        <rect key="frame" x="8" y="37" width="304" height="42.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="IY2-lU-9ZD" secondAttribute="bottom" constant="8" id="81i-tS-hGn"/>
+                    <constraint firstItem="xK2-tQ-9pq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="3IL-Ib-NTR"/>
                     <constraint firstAttribute="trailing" secondItem="0wU-Kd-V0S" secondAttribute="trailing" constant="8" id="CWN-iq-iE7"/>
-                    <constraint firstAttribute="trailing" secondItem="IY2-lU-9ZD" secondAttribute="trailing" constant="8" id="DET-6A-tQo"/>
-                    <constraint firstItem="IY2-lU-9ZD" firstAttribute="top" secondItem="0wU-Kd-V0S" secondAttribute="bottom" constant="8" id="cjq-JR-tFp"/>
+                    <constraint firstItem="xK2-tQ-9pq" firstAttribute="top" secondItem="0wU-Kd-V0S" secondAttribute="bottom" constant="8" id="OZE-ST-NrR"/>
                     <constraint firstItem="0wU-Kd-V0S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="n2Y-io-gBh"/>
-                    <constraint firstItem="IY2-lU-9ZD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pMZ-3Y-OGl"/>
+                    <constraint firstAttribute="bottom" secondItem="xK2-tQ-9pq" secondAttribute="bottom" constant="8" id="tQl-jk-5lP"/>
                     <constraint firstItem="0wU-Kd-V0S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xNs-sY-pwl"/>
+                    <constraint firstAttribute="trailing" secondItem="xK2-tQ-9pq" secondAttribute="trailing" constant="8" id="yuP-2R-FVb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="tagType" destination="0wU-Kd-V0S" id="CfU-kf-7Qy"/>
-                <outlet property="tagView" destination="IY2-lU-9ZD" id="F44-gV-ZBY"/>
+                <outlet property="tagView" destination="xK2-tQ-9pq" id="xox-QA-bcQ"/>
             </connections>
             <point key="canvasLocation" x="33" y="125"/>
         </tableViewCell>

@@ -145,6 +145,9 @@
 		0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA351F14C489003A9C8B /* BaseTableViewCell.m */; };
 		0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */; };
 		0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA451F14CD0F003A9C8B /* SchoolViewController.m */; };
+		04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */; };
+		04A1D46C1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D46A1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m */; };
+		04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D46B1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib */; };
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
@@ -402,6 +405,11 @@
 		0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationViewController.m; sourceTree = "<group>"; };
 		0478BA441F14CD0F003A9C8B /* SchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolViewController.h; sourceTree = "<group>"; };
 		0478BA451F14CD0F003A9C8B /* SchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolViewController.m; sourceTree = "<group>"; };
+		04A1D4661F30769000EACEA8 /* ChinaSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaSchoolViewController.h; sourceTree = "<group>"; };
+		04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaSchoolViewController.m; sourceTree = "<group>"; };
+		04A1D4691F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaSchoolBannerTableViewCell.h; sourceTree = "<group>"; };
+		04A1D46A1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaSchoolBannerTableViewCell.m; sourceTree = "<group>"; };
+		04A1D46B1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChinaSchoolBannerTableViewCell.xib; sourceTree = "<group>"; };
 		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
@@ -985,6 +993,8 @@
 			children = (
 				0478BA441F14CD0F003A9C8B /* SchoolViewController.h */,
 				0478BA451F14CD0F003A9C8B /* SchoolViewController.m */,
+				04A1D4661F30769000EACEA8 /* ChinaSchoolViewController.h */,
+				04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1013,6 +1023,9 @@
 				04267F581F18A9D000FFBC3E /* SchoolBannerTableViewCell.h */,
 				04267F591F18A9D000FFBC3E /* SchoolBannerTableViewCell.m */,
 				04267F5A1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib */,
+				04A1D4691F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.h */,
+				04A1D46A1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m */,
+				04A1D46B1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1248,6 +1261,7 @@
 				0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
+				04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */,
 				0445EF071F20926600E9DAB3 /* OrgInfoTableViewCell.xib in Resources */,
@@ -1388,6 +1402,7 @@
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				0445EEDB1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.m in Sources */,
+				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
 				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				045633181F29BE1C005E04CB /* SRPictureManager.m in Sources */,
@@ -1409,6 +1424,7 @@
 				045633131F29BE1C005E04CB /* SRPictureBrowser.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
 				045633501F2B1257005E04CB /* CourseDetailInfoTableViewCell.m in Sources */,
+				04A1D46C1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m in Sources */,
 				0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */,
 				0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */,
 				0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */,

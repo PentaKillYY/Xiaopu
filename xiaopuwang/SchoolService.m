@@ -79,4 +79,14 @@
         failureBlock(json);
     }];
 }
+
+-(void)postChinaSchoolListWithParameters:(NSDictionary *)parameters
+                            onCompletion:(JSONResponse)completionBlock
+                               onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:ChinaSchoolList parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

@@ -94,6 +94,9 @@
 //获取学校性质
 #define SchoolNatureList @"/school/collegeNature"
 
+//获取中国学校列表(分页)
+#define ChinaSchoolList @"/school/chinaSchoolInfoList"
+
 // *******************************我的**************************
 
 //用户登录 返回用户UserId

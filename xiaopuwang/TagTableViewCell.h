@@ -7,9 +7,24 @@
 //
 
 #import "BaseTableViewCell.h"
-#import "SKTagView.h"
+#import <TTGTagCollectionView/TTGTextTagCollectionView.h>
+@protocol TextTagDelegate <NSObject>
 
-@interface TagTableViewCell : BaseTableViewCell
-@property(nonatomic,weak)IBOutlet UILabel* tagType;
-@property(nonatomic,strong)IBOutlet SKTagView* tagView;
+-(void)selectTextTag:(NSArray*)tagArray TagType:(NSString*)tagtype;
+
 @end
+
+@interface TagTableViewCell : BaseTableViewCell<TTGTextTagCollectionViewDelegate>
+
+@property(nonatomic,weak)IBOutlet UILabel* tagType;
+@property (weak, nonatomic) IBOutlet TTGTextTagCollectionView *tagView;
+
+@property(nonatomic,strong)NSMutableArray* selectIndexAray;
+@property(nonatomic,assign)id<TextTagDelegate>deletage;
+
+- (void)setTags:(NSArray <NSString *> *)tags;
+
+- (void)resetAllTag;
+
+@end
+

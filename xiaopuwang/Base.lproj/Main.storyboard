@@ -814,7 +814,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFe-Wm-jFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2716" y="520"/>
+            <point key="canvasLocation" x="3081" y="-142"/>
+        </scene>
+        <!--China School View Controller-->
+        <scene sceneID="l3Q-ue-weu">
+            <objects>
+                <viewController storyboardIdentifier="ChinaSchool" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="25M-Rd-FQn" customClass="ChinaSchoolViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gYP-C4-ihI"/>
+                        <viewControllerLayoutGuide type="bottom" id="opI-mL-tgB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nzz-eF-7hq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-a1-WrH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="25M-Rd-FQn" id="4Bc-gM-uu4"/>
+                                    <outlet property="delegate" destination="25M-Rd-FQn" id="e1x-ok-8Vw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dlx-a1-WrH" firstAttribute="top" secondItem="gYP-C4-ihI" secondAttribute="bottom" id="ag6-Yy-wc5"/>
+                            <constraint firstItem="opI-mL-tgB" firstAttribute="top" secondItem="Dlx-a1-WrH" secondAttribute="bottom" id="aib-F0-CTy"/>
+                            <constraint firstItem="Dlx-a1-WrH" firstAttribute="leading" secondItem="Nzz-eF-7hq" secondAttribute="leading" id="jiU-Th-eWg"/>
+                            <constraint firstAttribute="trailing" secondItem="Dlx-a1-WrH" secondAttribute="trailing" id="yK3-JK-DD4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JHw-eM-cbe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n94-6P-7Z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2699" y="522"/>
         </scene>
         <!--Org Photo Browser View Controller-->
         <scene sceneID="q9w-Bd-uQa">
@@ -1028,6 +1063,7 @@
                     <connections>
                         <outlet property="tableView" destination="pX2-jD-VX4" id="tmz-M3-xcA"/>
                         <segue destination="8Sk-dl-eGf" kind="push" identifier="SchoolSearch" id="n00-pH-8fZ"/>
+                        <segue destination="25M-Rd-FQn" kind="push" identifier="SchoolToChina" id="bwO-bU-bf2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQh-HJ-i37" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1180,7 +1216,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="llO-WO-2wA"/>
-        <segue reference="hc7-hA-kQF"/>
+        <segue reference="n00-pH-8fZ"/>
         <segue reference="dFW-sS-bdb"/>
     </inferredMetricsTieBreakers>
 </document>
