@@ -846,6 +846,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JHw-eM-cbe"/>
+                    <connections>
+                        <outlet property="tableView" destination="Dlx-a1-WrH" id="feI-ii-Psg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n94-6P-7Z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

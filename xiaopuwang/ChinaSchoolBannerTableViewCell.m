@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.sepH.constant = 0.5;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -21,4 +22,7 @@
     // Configure the view for the selected state
 }
 
+-(IBAction)clickButton:(id)sender{
+    [self.delegate bannerBubttonClicked:sender];
+}
 @end

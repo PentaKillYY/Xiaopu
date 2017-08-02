@@ -1024,7 +1024,9 @@
     
     if (path.row == 0) {
         [cell resetAllTag];
+        DLog(@"selectTypeArray:%@",self.selectTypeArray);
         if (self.typeArray) {
+            cell.selectIndexAray = [NSMutableArray arrayWithArray:self.selectTypeArray];
            [cell setTags:self.typeArray];
         }else{
             [cell setTags:@[]];
@@ -1034,6 +1036,7 @@
         [cell resetAllTag];
         if (self.natureArray) {
             [cell setTags:self.natureArray];
+             cell.selectIndexAray = [NSMutableArray arrayWithArray:self.self.natureArray];
         }else{
             [cell setTags:@[]];
         }

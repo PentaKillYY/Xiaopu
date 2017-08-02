@@ -70,11 +70,13 @@
         [self.selectIndexAray removeAllObjects];
         [self.selectIndexAray addObject:currentIndex];
    
-    if (currentIndex == 0) {
-        [self.deletage selectTextTag:nil TagType:self.tagType.text];
-    }else{
-        [self.deletage selectTextTag:self.selectIndexAray TagType:self.tagType.text];
-    }
+//    if (currentIndex == 0) {
+//        [self.deletage selectTextTag:nil TagType:self.tagType.text];
+//    }else{
+//        [self.deletage selectTextTag:self.selectIndexAray TagType:self.tagType.text];
+//    }
+    
+    [self.deletage selectTextTag:self.selectIndexAray TagType:self.tagType.text];
 }
 
 

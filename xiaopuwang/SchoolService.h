@@ -43,7 +43,9 @@
                                onFailure:(JSONResponse)failureBlock;
 
 //获取中国学校列表(分页)
--(void)postChinaSchoolListWithParameters:(NSDictionary *)parameters
-                            onCompletion:(JSONResponse)completionBlock
-                               onFailure:(JSONResponse)failureBlock;
+-(void)postChinaSchoolListWithPage:(NSInteger)page
+                              Size:(NSInteger)size
+                        Parameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock;
 @end

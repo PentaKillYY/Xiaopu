@@ -48,4 +48,7 @@
 
 #define OrgTeacherTitle @[@"顾问老师",@"授课老师",@"学管老师",@"其他老师"]
 #define OrgStudentTitle @[@"试听学员",@"在读学员",@"毕业学员",@"其他学员"]
+
+#define ChinaSchoolType @[@"不限",@"幼儿园",@"小学",@"初中",@"高中",@"技术/专科学校",@"大学"]
+#define ChinaSchoolNature @[@"不限",@"公立",@"私立"]
 #endif /* ConstantMarco_h */

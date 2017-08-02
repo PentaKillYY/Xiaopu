@@ -80,10 +80,12 @@
     }];
 }
 
--(void)postChinaSchoolListWithParameters:(NSDictionary *)parameters
+-(void)postChinaSchoolListWithPage:(NSInteger)page
+                                  Size:(NSInteger)size
+                        Parameters:(NSDictionary *)parameters
                             onCompletion:(JSONResponse)completionBlock
                                onFailure:(JSONResponse)failureBlock{
-    [[BaseHttpRequest sharedBaseHttpRequest] POST:ChinaSchoolList parameters:parameters success:^(id json) {
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?pageIndex=%ld&pageSize=%ld",ChinaSchoolList,(long)page,(long)size] parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         failureBlock(json);

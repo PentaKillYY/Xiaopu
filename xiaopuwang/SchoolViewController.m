@@ -48,6 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     schoolListArray = [DataItemArray new];
     
@@ -398,11 +399,21 @@
 
 -(void)confirmTag{    
     if (_menu.selectTypeArray) {
-        schoolType = [[typeResult.items getItem:[[_menu.selectTypeArray firstObject] intValue]-1] getString:@"value"];
+        if ([[_menu.selectTypeArray firstObject] intValue]==0) {
+            schoolType = @"";
+        }else{
+        
+            schoolType = [[typeResult.items getItem:[[_menu.selectTypeArray firstObject] intValue]-1] getString:@"value"];
+        }
     }
     
     if(_menu.selectNatureArray){
-        schoolNature = [[natureResult.items getItem:[[_menu.selectNatureArray firstObject] intValue]-1] getString:@"value"];
+        if ([[_menu.selectNatureArray firstObject] intValue] == 0) {
+            schoolNature = @"";
+        }else{
+        
+            schoolNature = [[natureResult.items getItem:[[_menu.selectNatureArray firstObject] intValue]-1] getString:@"value"];
+        }
     }
     
     [_menu reloadData];
