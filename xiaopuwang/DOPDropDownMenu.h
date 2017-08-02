@@ -96,6 +96,10 @@
  */
 - (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath;
 
+
+- (void)resetTag;
+
+- (void)confirmTag;
 @end
 
 #pragma mark - interface
@@ -126,24 +130,27 @@
 @property (nonatomic, strong) NSMutableArray  *currentSelectItemArray; // 恢复之前所选Unit
 @property (nonatomic, copy) NSArray *titles;
 
+@property (nonatomic, copy) NSArray* typeArray;
+@property (nonatomic, copy) NSArray* natureArray;
+
+@property (nonatomic, copy) NSArray* selectTypeArray;
+@property (nonatomic, copy) NSArray* selectNatureArray;
+
 @property CGFloat menuWidth;
 
 @property NSInteger type;
-/**
- *  the width of menu will be set to screen width defaultly
- *
- *  @param origin the origin of this view's frame
- *  @param height menu's height
- *
- *  @return menu
- */
+
 - (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height andWidth:(CGFloat)width;
 
+-(void)reloadFirstTable;
 
-//@property BOOL isSow;
+-(void)reloadSecondTable;
 
+-(void)reloadThirdTable;
 
+-(void)reloadTagTable;
 
+-(void)resetTagTable;
 // 获取title
 - (NSString *)titleForRowAtIndexPath:(DOPIndexPath *)indexPath;
 
@@ -158,5 +165,7 @@
 - (void)selectIndexPath:(DOPIndexPath *)indexPath triggerDelegate:(BOOL)trigger; // 调用代理
 
 - (void)animateTitle:(CATextLayer *)title show:(BOOL)show complete:(void(^)())complete;
+
+
 @end
 

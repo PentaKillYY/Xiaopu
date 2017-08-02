@@ -18,6 +18,7 @@
 @property(nonatomic,weak)IBOutlet UILabel* leftTag;
 @property(nonatomic,weak)IBOutlet UILabel* middleTag;
 @property(nonatomic,weak)IBOutlet UILabel* rightTag;
-@property(nonatomic,weak)IBOutlet NSLayoutConstraint* tagH;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* sepH;
+
+-(void)bingdingViewModel:(DataItem*)item;
 @end

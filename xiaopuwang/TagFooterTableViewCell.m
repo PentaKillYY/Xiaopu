@@ -34,4 +34,12 @@
     // Configure the view for the selected state
 }
 
+-(IBAction)clearButtonAction:(id)sender{
+    [self.delegate clearDelegate:sender];
+}
+
+-(IBAction)confirmButtonAction:(id)sender{
+    [self.delegate confirmDelegate:sender];
+}
+
 @end

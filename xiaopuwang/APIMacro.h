@@ -79,6 +79,24 @@
 //学校搜索页-分页查询
 #define SchoolSearchList @"/school/schoolsearchList"
 
+//获取所有国家列表
+#define SchoolCountryList @"/school/countryList"
+
+//根据国家获取相应的省份
+#define SchoolProvinceList @"/school/provinceList"
+
+//获取城市列表
+#define SchoolCityList @"/school/cityList"
+
+//获取学校类型
+#define SchoolTypeList @"/school/schoolCollegeType"
+
+//获取学校性质
+#define SchoolNatureList @"/school/collegeNature"
+
+//获取中国学校列表(分页)
+#define ChinaSchoolList @"/school/chinaSchoolInfoList"
+
 // *******************************我的**************************
 
 //用户登录 返回用户UserId

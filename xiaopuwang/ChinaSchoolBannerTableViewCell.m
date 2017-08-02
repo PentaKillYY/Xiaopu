@@ -1,20 +1,19 @@
 //
-//  SchoolBannerTableViewCell.m
+//  ChinaSchoolBannerTableViewCell.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/7/14.
+//  Created by TonyJiang on 2017/8/1.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "SchoolBannerTableViewCell.h"
+#import "ChinaSchoolBannerTableViewCell.h"
 
-@implementation SchoolBannerTableViewCell
+@implementation ChinaSchoolBannerTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
     self.sepH.constant = 0.5;
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

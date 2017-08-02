@@ -61,6 +61,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     size = 10;
     currentPage = 1;
     orgListArray = [DataItemArray new];

@@ -44,6 +44,14 @@
 				<string>wb3202412701</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>xiaopu</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -106,31 +114,31 @@
 		<dict>
 			<key>www.api.ings.org.cn</key>
 			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
 				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 			<key>www.ings.org.cn</key>
 			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
 				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>是否允许打开摄像头</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>是否允许使用相册照片</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>我们需要通过您的地理位置信息获取您周边的相关数据 
 </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>是否允许使用相册照片</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
