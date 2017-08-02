@@ -848,11 +848,50 @@
                     <navigationItem key="navigationItem" id="JHw-eM-cbe"/>
                     <connections>
                         <outlet property="tableView" destination="Dlx-a1-WrH" id="feI-ii-Psg"/>
+                        <segue destination="kOm-uz-ieO" kind="push" identifier="ChinaSchoolToDetail" id="CcT-O5-KWk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n94-6P-7Z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2699" y="522"/>
+        </scene>
+        <!--School Detail View Controller-->
+        <scene sceneID="IZZ-mG-yPa">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="HTF-MC-NrZ" customClass="SchoolDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="quT-cC-FCC"/>
+                        <viewControllerLayoutGuide type="bottom" id="RQv-n6-dQJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LMg-Qs-z48">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gVH-jN-cPA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8G-Uo-y1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3376" y="525"/>
+        </scene>
+        <!--China School Detail View Controller-->
+        <scene sceneID="c2O-yP-FAr">
+            <objects>
+                <viewController id="kOm-uz-ieO" customClass="ChinaSchoolDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hHG-A5-52G"/>
+                        <viewControllerLayoutGuide type="bottom" id="wqn-My-9Ao"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FH7-w2-Y7N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fce-Xx-4C7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NeX-PB-wky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4134" y="520"/>
         </scene>
         <!--Org Photo Browser View Controller-->
         <scene sceneID="q9w-Bd-uQa">
@@ -906,7 +945,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mm3-xZ-Law" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3374" y="484"/>
+            <point key="canvasLocation" x="3458" y="-153"/>
         </scene>
         <!--Org Video View Controller-->
         <scene sceneID="V48-hP-JAr">
@@ -945,7 +984,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRN-4E-bZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4015" y="519"/>
+            <point key="canvasLocation" x="3601" y="-153"/>
         </scene>
         <!--Org Video Player View Controller-->
         <scene sceneID="qk5-kM-8H6">
@@ -974,7 +1013,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vV3-tc-3tF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4718" y="520"/>
+            <point key="canvasLocation" x="4631" y="-153"/>
         </scene>
         <!--Org Course Detail View Controller-->
         <scene sceneID="qwF-r9-dvL">
@@ -1067,6 +1106,7 @@
                         <outlet property="tableView" destination="pX2-jD-VX4" id="tmz-M3-xcA"/>
                         <segue destination="8Sk-dl-eGf" kind="push" identifier="SchoolSearch" id="n00-pH-8fZ"/>
                         <segue destination="25M-Rd-FQn" kind="push" identifier="SchoolToChina" id="bwO-bU-bf2"/>
+                        <segue destination="HTF-MC-NrZ" kind="push" identifier="SchoolToDetail" id="fxG-hC-O2c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQh-HJ-i37" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -204,7 +204,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self performSegueWithIdentifier:@"SchoolToDetail" sender:self];
 }
 
 - (void)configCell:(SchoolTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {

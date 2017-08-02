@@ -176,6 +176,11 @@
     cell.orgClassView.lineSpacing = 5;
 }
 
+#pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"ChinaSchoolToDetail" sender:self];
+}
+
 #pragma mark - DropDownMenuDatasource
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
 {
