@@ -942,6 +942,7 @@
                     <navigationItem key="navigationItem" id="gVH-jN-cPA"/>
                     <connections>
                         <outlet property="tableView" destination="erb-ic-bZo" id="wkT-wo-7Wq"/>
+                        <segue destination="Yyl-d1-RHD" kind="push" identifier="SchoolDetailToIntro" id="yMd-Mq-27f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8G-Uo-y1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1088,6 +1089,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vV3-tc-3tF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4631" y="-153"/>
+        </scene>
+        <!--School Intro View Controller-->
+        <scene sceneID="rjb-tL-LrO">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Yyl-d1-RHD" customClass="SchoolIntroViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tfj-yS-z7W"/>
+                        <viewControllerLayoutGuide type="bottom" id="jR6-bo-MzT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vvr-5c-EzC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-rK-LZW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6IK-rK-LZW" secondAttribute="trailing" id="SXG-OR-S5f"/>
+                            <constraint firstItem="6IK-rK-LZW" firstAttribute="top" secondItem="Tfj-yS-z7W" secondAttribute="bottom" id="d5n-Wc-pv1"/>
+                            <constraint firstItem="jR6-bo-MzT" firstAttribute="top" secondItem="6IK-rK-LZW" secondAttribute="bottom" id="nXi-N1-de6"/>
+                            <constraint firstItem="6IK-rK-LZW" firstAttribute="leading" secondItem="vvr-5c-EzC" secondAttribute="leading" id="ztG-u8-02h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pMq-JG-YHZ"/>
+                    <connections>
+                        <outlet property="webView" destination="6IK-rK-LZW" id="HQk-Sy-TgQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ujm-9d-x0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4819" y="523"/>
         </scene>
         <!--Org Course Detail View Controller-->
         <scene sceneID="qwF-r9-dvL">

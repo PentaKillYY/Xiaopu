@@ -147,6 +147,13 @@
     
 }
 
+#pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+       [self performSegueWithIdentifier:@"SchoolDetailToIntro" sender:self];
+    }
+}
+
 - (void)configCell:(SchoolDetailTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {
     
     [cell.orgClassView removeAllTags];
