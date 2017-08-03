@@ -1,14 +1,14 @@
 //
-//  SchoolCourseTableViewCell.m
+//  SchoolCourseTitleTableViewCell.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/8/2.
+//  Created by TonyJiang on 2017/8/3.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "SchoolCourseTableViewCell.h"
+#import "SchoolCourseTitleTableViewCell.h"
 
-@implementation SchoolCourseTableViewCell
+@implementation SchoolCourseTitleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -21,8 +21,5 @@
     // Configure the view for the selected state
 }
 
--(void)bingdingViewModel:(DataItem*)item{
-    self.courseName.text = [item getString:@"CourseName"];
-}
 
 @end

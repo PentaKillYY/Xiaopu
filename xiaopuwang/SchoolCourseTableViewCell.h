@@ -6,8 +6,10 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface SchoolCourseTableViewCell : UITableViewCell
+@interface SchoolCourseTableViewCell : BaseTableViewCell
+@property(nonatomic,weak)IBOutlet UILabel* courseName;
 
+-(void)bingdingViewModel:(DataItem*)item;
 @end

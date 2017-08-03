@@ -6,8 +6,10 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface SchoolGradeTableViewCell : UITableViewCell
+@interface SchoolGradeTableViewCell : BaseTableViewCell
+@property(nonatomic,weak)IBOutlet UIScrollView* gradeScrollView;
 
+-(void)bingdingViewModel:(DataItem*)item;
 @end

@@ -36,6 +36,7 @@
     NSString* schoolType;
     NSString* schoolNature;
     
+    NSInteger currentSelectRow;
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -99,6 +100,19 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"SchoolToDetail"]) //"goView2"是SEGUE连线的标识
+    {
+        id theSegue = segue.destinationViewController;
+        
+         DataItem* item =[schoolListArray getItem:currentSelectRow];
+        
+        [theSegue setValue:[item getString:@"School_BasicInfo_ID"] forKey:@"basicID"];
+        [theSegue setValue:[item getString:@"School_Application_ID"] forKey:@"applicationID"];
+    }
 }
 
 - (void)addNavTitleView{
@@ -204,6 +218,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    currentSelectRow = indexPath.row;
+    
     [self performSegueWithIdentifier:@"SchoolToDetail" sender:self];
 }
 
