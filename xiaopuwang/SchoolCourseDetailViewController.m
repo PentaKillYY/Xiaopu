@@ -20,6 +20,7 @@
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property (strong, nonatomic) NSMutableArray <UIView *> *tagViews;
+
 @end
 
 @implementation SchoolCourseDetailViewController
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"课程介绍";
+    
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SChoolCourseAcceptGradeCell" bundle:nil] forCellReuseIdentifier:@"SChoolCourseAcceptGradeCell"];
     
@@ -48,6 +50,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+#pragma mark - UITableViewDatasource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 6;

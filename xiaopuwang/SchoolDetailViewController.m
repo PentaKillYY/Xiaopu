@@ -18,11 +18,17 @@
 #import "SchoolService.h"
 @interface SchoolDetailViewController ()<UITableViewDataSource,UITableViewDelegate>{
     DataResult* detailResult;
+    DataResult* _focusResult;
+
     NSMutableArray* courseArray ;
     DataResult* professionalResult;
     NSInteger currentCourseIndex;
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
+@property (nonatomic,weak)IBOutlet UIButton* contactTeacherButton;
+@property(nonatomic,weak)IBOutlet UIButton* followButton;
+@property(nonatomic,weak)IBOutlet UILabel* followTitle;
+
 @end
 
 @implementation SchoolDetailViewController
@@ -31,6 +37,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"学校详情";
+   
+    [self setupContactButtonUI];
+    [self setupFollowButtonUI];
     
     courseArray = [[NSMutableArray alloc] init];
     
@@ -41,6 +50,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolAdvantageTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolAdvantageTableViewCell"];
     
     [self getSchoolDetailRequest];
+    [self judgeSchoolFollowStateRequest];
     
     if (!detailResult) {
         self.tableView.hidden = YES;
@@ -67,6 +77,48 @@
     }
 }
 
+-(IBAction)followOrginization:(id)sender{
+    UIButton* currentButton = (UIButton*)sender;
+    
+    currentButton.selected = !currentButton.selected;
+    if (currentButton.selected) {
+        [self followSchoolRequest];
+        
+    }else{
+        [self delFollowSchoolRequest];
+    }
+}
+
+-(void)setupContactButtonUI{
+    [self.contactTeacherButton.layer setCornerRadius:3.0];
+    [self.contactTeacherButton.layer setMasksToBounds:YES];
+}
+
+-(void)setupFollowButtonUI{
+    [self.followButton setImage:V_IMAGE(@"unfollowed") forState:0];
+    [self.followButton setImage:V_IMAGE(@"followed") forState:UIControlStateSelected];
+    
+    [self.followButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    
+    
+    self.followTitle.text = @"关注";
+
+}
+
+-(IBAction)contactTeacher:(id)sender{
+    //新建一个聊天会话View Controller对象,建议这样初始化
+    RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:SchoolRongCloudId];
+    
+    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+    chat.conversationType = ConversationType_PRIVATE;
+    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+    chat.targetId = SchoolRongCloudId;
+    
+    //设置聊天会话界面要显示的标题
+    chat.title = @"国际学校顾问";
+    //显示聊天会话界面
+    [self.navigationController pushViewController:chat animated:YES];
+}
 
 #pragma mark - UITableViewDatasource
 
@@ -272,6 +324,40 @@
     }];
 }
 
+-(void)judgeSchoolFollowStateRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[SchoolService sharedSchoolService] judgeSchoolFollowStateWithParameters:@{@"schoolId":self.applicationID,@"userId":info.userID} onCompletion:^(id json) {
+        _focusResult = json;
+        if (_focusResult.statusCode == 0) {
+            self.followTitle.text = @"关注";
+            self.followButton.selected = NO;
+        }else{
+            self.followTitle.text = @"已关注";
+            self.followButton.selected = YES;
+        }
 
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)followSchoolRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[SchoolService sharedSchoolService] followSchoolWithParameters:@{@"schoolId":self.applicationID,@"userId":info.userID} onCompletion:^(id json) {
+         self.followTitle.text = @"已关注";
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)delFollowSchoolRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    [[SchoolService sharedSchoolService] delFollowSchoolWithParameters:@{@"schoolId":self.applicationID,@"userId":info.userID} onCompletion:^(id json) {
+        self.followTitle.text = @"关注";
+    } onFailure:^(id json) {
+        
+    }];
+}
 
 @end

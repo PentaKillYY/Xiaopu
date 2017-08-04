@@ -69,4 +69,18 @@
                                onCompletion:(JSONResponse)completionBlock
                                   onFailure:(JSONResponse)failureBlock;
 
+//判断用户是否已关注该学校
+-(void)judgeSchoolFollowStateWithParameters:(NSDictionary *)parameters
+                               onCompletion:(JSONResponse)completionBlock
+                                  onFailure:(JSONResponse)failureBlock;
+
+//用户关注学校
+-(void)followSchoolWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock;
+
+//取消关注的学校
+-(void)delFollowSchoolWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock;
 @end

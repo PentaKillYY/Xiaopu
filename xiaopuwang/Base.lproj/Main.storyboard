@@ -878,11 +878,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbA-tB-r3C">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LU-A1-H1a">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LU-A1-H1a">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="QOd-E1-kKc"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="followOrginization:" destination="HTF-MC-NrZ" eventType="touchUpInside" id="cOM-Em-7i0"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkN-7f-58x">
                                         <rect key="frame" x="0.0" y="34.5" width="50" height="13.5"/>
@@ -907,6 +913,9 @@
                                         <state key="normal" title="联系学校招生官老师">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="contactTeacher:" destination="HTF-MC-NrZ" eventType="touchUpInside" id="37s-6L-HFX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -941,6 +950,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="gVH-jN-cPA"/>
                     <connections>
+                        <outlet property="contactTeacherButton" destination="PjG-sV-w78" id="VKE-sr-fEP"/>
+                        <outlet property="followButton" destination="4LU-A1-H1a" id="G0P-b4-khC"/>
+                        <outlet property="followTitle" destination="DkN-7f-58x" id="uNR-2B-45O"/>
                         <outlet property="tableView" destination="erb-ic-bZo" id="wkT-wo-7Wq"/>
                         <segue destination="Yyl-d1-RHD" kind="push" identifier="SchoolDetailToIntro" id="yMd-Mq-27f"/>
                         <segue destination="dR3-fV-ZHn" kind="push" identifier="SchoolDetailToCourseDetail" id="xrK-Cp-6RL"/>

@@ -109,6 +109,15 @@
 //查询可接收年级
 #define SchoolAcceptedGrade @"/school/acceptGradeList"
 
+//判断用户是否已关注该学校
+#define JudgeSChoolFollowState @"/school/JudgeFocusIsExist"
+
+//用户关注学校
+#define FollowSchool @"/school/InsertFocusSchool"
+
+//取消关注的学校
+#define DelFollowSchool @"/school/DeleteFocusSchool"
+
 // *******************************我的**************************
 
 //用户登录 返回用户UserId

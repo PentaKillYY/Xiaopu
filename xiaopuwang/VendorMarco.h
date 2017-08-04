@@ -20,3 +20,6 @@
 #define BAIDUMAPKEY @"s6ab4Z5anBib7azEolBdxusl5QyZ3YGp"
 #define RONGCLOUDDISKEY @"4z3hlwrv47mbt"
 #define RONGCLOUDDISSECRET @"W524DaQFWZse"
+
+#define SchoolRongCloudId @"b0299d68-ccf4-4c4b-9e66-e0277ad877f6"
+#define ChinaSchoolRongCloudId @"60f99c76-c33d-4443-8197-4aa3ba8cf34c"
