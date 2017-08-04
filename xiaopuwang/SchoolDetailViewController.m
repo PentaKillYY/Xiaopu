@@ -319,6 +319,8 @@
     [[SchoolService sharedSchoolService] getSChoolProfessionalListWithParameters:@{@"schoolId":[[detailResult.items getItem:0] getString:@"School_Application_ID"]} onCompletion:^(id json) {
         professionalResult = json;
         [self.tableView reloadData];
+//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+
     } onFailure:^(id json) {
         
     }];

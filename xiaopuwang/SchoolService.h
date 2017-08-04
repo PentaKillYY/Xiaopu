@@ -83,4 +83,9 @@
 -(void)delFollowSchoolWithParameters:(NSDictionary *)parameters
                      onCompletion:(JSONResponse)completionBlock
                         onFailure:(JSONResponse)failureBlock;
+
+//获取中国学校基本信息
+-(void)getChinaSchoolDetailWithParameters:(NSDictionary *)parameters
+                             onCompletion:(JSONResponse)completionBlock
+                                onFailure:(JSONResponse)failureBlock;
 @end

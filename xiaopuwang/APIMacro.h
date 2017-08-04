@@ -118,6 +118,15 @@
 //取消关注的学校
 #define DelFollowSchool @"/school/DeleteFocusSchool"
 
+//获取中国学校基本信息
+#define ChinaSchoolBasicInfo @"/school/chinaSchoolBasicInfo"
+
+//获取中国学校课程
+#define ChinaSchoolCourse @"/school/ChinaSchoolCourse"
+
+//获取中国学校师生列表
+#define ChinaSchoolTeacherandStudent @"/school/ChinaSchoolTeacherAndStudent"
+
 // *******************************我的**************************
 
 //用户登录 返回用户UserId
