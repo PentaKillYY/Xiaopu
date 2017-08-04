@@ -943,6 +943,7 @@
                     <connections>
                         <outlet property="tableView" destination="erb-ic-bZo" id="wkT-wo-7Wq"/>
                         <segue destination="Yyl-d1-RHD" kind="push" identifier="SchoolDetailToIntro" id="yMd-Mq-27f"/>
+                        <segue destination="dR3-fV-ZHn" kind="push" identifier="SchoolDetailToCourseDetail" id="xrK-Cp-6RL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8G-Uo-y1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1124,6 +1125,44 @@
             </objects>
             <point key="canvasLocation" x="4819" y="523"/>
         </scene>
+        <!--School Course Detail View Controller-->
+        <scene sceneID="0Jh-f3-XYX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="dR3-fV-ZHn" customClass="SchoolCourseDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n5i-YB-Vf1"/>
+                        <viewControllerLayoutGuide type="bottom" id="FLs-DG-4lJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="57c-UJ-MBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-Du-hyS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dR3-fV-ZHn" id="EwT-fo-Arf"/>
+                                    <outlet property="delegate" destination="dR3-fV-ZHn" id="pqU-gk-SfN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y8s-Du-hyS" firstAttribute="top" secondItem="n5i-YB-Vf1" secondAttribute="bottom" id="3CX-j6-w1Y"/>
+                            <constraint firstAttribute="trailing" secondItem="y8s-Du-hyS" secondAttribute="trailing" id="Iy8-wD-8fQ"/>
+                            <constraint firstItem="FLs-DG-4lJ" firstAttribute="top" secondItem="y8s-Du-hyS" secondAttribute="bottom" id="geR-ga-4ZL"/>
+                            <constraint firstItem="y8s-Du-hyS" firstAttribute="leading" secondItem="57c-UJ-MBL" secondAttribute="leading" id="nfI-st-uIj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="foO-y8-r2Q"/>
+                    <connections>
+                        <outlet property="tableView" destination="y8s-Du-hyS" id="Vs4-ey-Isy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEU-wZ-VEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5530" y="523"/>
+        </scene>
         <!--Org Course Detail View Controller-->
         <scene sceneID="qwF-r9-dvL">
             <objects>
@@ -1160,7 +1199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bW5-3o-Gk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5366" y="507"/>
+            <point key="canvasLocation" x="5570" y="-158"/>
         </scene>
         <!--学校-->
         <scene sceneID="WaC-mN-rM2">

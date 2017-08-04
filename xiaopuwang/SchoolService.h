@@ -63,4 +63,10 @@
 -(void)getSChoolProfessionalListWithParameters:(NSDictionary *)parameters
                                   onCompletion:(JSONResponse)completionBlock
                                      onFailure:(JSONResponse)failureBlock;
+
+//查询可接收年级
+-(void)getSchoolAcceptedGradeWithParameters:(NSDictionary *)parameters
+                               onCompletion:(JSONResponse)completionBlock
+                                  onFailure:(JSONResponse)failureBlock;
+
 @end

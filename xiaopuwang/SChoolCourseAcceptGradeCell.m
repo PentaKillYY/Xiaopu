@@ -1,14 +1,14 @@
 //
-//  SchoolCourseTitleTableViewCell.m
+//  SChoolCourseAcceptGradeCell.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/8/3.
+//  Created by TonyJiang on 2017/8/4.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "SchoolCourseTitleTableViewCell.h"
+#import "SChoolCourseAcceptGradeCell.h"
 
-@implementation SchoolCourseTitleTableViewCell
+@implementation SChoolCourseAcceptGradeCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,5 +20,8 @@
 
     // Configure the view for the selected state
 }
+
+
+
 
 @end

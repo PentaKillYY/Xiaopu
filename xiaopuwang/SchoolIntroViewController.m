@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"学校介绍";
+    
+    NSString * htmlcontent = [NSString stringWithFormat:@"<div id=\"webview_content_wrapper\">%@</div>", self.intro];
+    [_webView loadHTMLString:htmlcontent baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning {

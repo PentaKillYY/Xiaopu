@@ -1,14 +1,14 @@
 //
-//  SchoolCourseTitleTableViewCell.m
+//  SchoolCourseTestCell.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/8/3.
+//  Created by TonyJiang on 2017/8/4.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "SchoolCourseTitleTableViewCell.h"
+#import "SchoolCourseTestCell.h"
 
-@implementation SchoolCourseTitleTableViewCell
+@implementation SchoolCourseTestCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,5 +20,8 @@
 
     // Configure the view for the selected state
 }
-
+-(void)bindingViewModelWithTitle:(NSString*)coursetitle Score:(NSString*)score{
+    self.courseTestTitle.text = coursetitle;
+    self.courseTestScore.text = score;
+}
 @end

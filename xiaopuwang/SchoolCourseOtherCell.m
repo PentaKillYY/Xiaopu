@@ -1,14 +1,14 @@
 //
-//  SchoolCourseTitleTableViewCell.m
+//  SchoolCourseOtherCell.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/8/3.
+//  Created by TonyJiang on 2017/8/4.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "SchoolCourseTitleTableViewCell.h"
+#import "SchoolCourseOtherCell.h"
 
-@implementation SchoolCourseTitleTableViewCell
+@implementation SchoolCourseOtherCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

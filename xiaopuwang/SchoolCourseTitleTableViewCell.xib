@@ -43,6 +43,9 @@
                     <constraint firstItem="wv2-WC-VRv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tvf-Ox-4aL"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="courseTitleLabel" destination="3UU-wb-ehE" id="tA7-Mn-FSa"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

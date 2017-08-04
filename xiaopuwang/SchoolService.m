@@ -121,4 +121,14 @@
         failureBlock(json);
     }];
 }
+
+-(void)getSchoolAcceptedGradeWithParameters:(NSDictionary *)parameters
+                               onCompletion:(JSONResponse)completionBlock
+                                  onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:SchoolAcceptedGrade parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

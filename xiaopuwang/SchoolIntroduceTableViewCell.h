@@ -10,5 +10,6 @@
 @interface SchoolIntroduceTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel * schoolDetail;
 @property(nonatomic,weak)IBOutlet UILabel* schoolIntro;
+@property(nonatomic,weak)IBOutlet UILabel* indicatorLabel;
 -(void)bingdingViewModel:(DataItem*)item;
 @end

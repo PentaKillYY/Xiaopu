@@ -20,6 +20,7 @@
     DataResult* detailResult;
     NSMutableArray* courseArray ;
     DataResult* professionalResult;
+    NSInteger currentCourseIndex;
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @end
@@ -51,6 +52,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"SchoolDetailToIntro"])
+    {
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:[[detailResult.items getItem:0] getString:@"Introduction"] forKey:@"intro"];
+    }else if ([segue.identifier isEqualToString:@"SchoolDetailToCourseDetail"]){
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:[professionalResult.items getItem:currentCourseIndex-1]  forKey:@"courseItem"];
+    }
+}
+
 
 #pragma mark - UITableViewDatasource
 
@@ -151,6 +167,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
        [self performSegueWithIdentifier:@"SchoolDetailToIntro" sender:self];
+    }if (indexPath.section == 5) {
+        if (indexPath.row != 0) {
+            currentCourseIndex = indexPath.row;
+            [self performSegueWithIdentifier:@"SchoolDetailToCourseDetail" sender:self];
+        }
     }
 }
 
@@ -213,7 +234,7 @@
 -(void)getSchoolDetailRequest{
     [[SchoolService sharedSchoolService] getSchoolDetailWithParameters:@{@"schoolIDs":self.basicID} onCompletion:^(id json) {
         detailResult = json;
-        self.tableView.hidden = NO;
+       
 
         NSArray* array = [[[detailResult.items getItem:0] getString:@"ProfessionalCourse"] componentsSeparatedByString:@","];
         for (int i =0; i < array.count; i++) {
@@ -233,6 +254,7 @@
         [courseArray addObject:[[result.items getItem:0] getString:@"Text"]];
         
         if (courseArray.count == [[[detailResult.items getItem:0] getString:@"ProfessionalCourse"] componentsSeparatedByString:@","].count) {
+             self.tableView.hidden = NO;
             [self.tableView reloadData];
         }
         

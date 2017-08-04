@@ -106,6 +106,9 @@
 //获取学校专业课程
 #define SchoolProfessionalList @"/school/SchoolProfessionalCourse"
 
+//查询可接收年级
+#define SchoolAcceptedGrade @"/school/acceptGradeList"
+
 // *******************************我的**************************
 
 //用户登录 返回用户UserId
