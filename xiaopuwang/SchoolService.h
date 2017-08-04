@@ -48,4 +48,25 @@
                         Parameters:(NSDictionary *)parameters
                       onCompletion:(JSONResponse)completionBlock
                          onFailure:(JSONResponse)failureBlock;
+
+//获取学校所有基础信息
+-(void)getSchoolDetailWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
+
+//查询专业课程
+-(void)getSchoolCourseWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
+
+//获取学校专业课程
+-(void)getSChoolProfessionalListWithParameters:(NSDictionary *)parameters
+                                  onCompletion:(JSONResponse)completionBlock
+                                     onFailure:(JSONResponse)failureBlock;
+
+//查询可接收年级
+-(void)getSchoolAcceptedGradeWithParameters:(NSDictionary *)parameters
+                               onCompletion:(JSONResponse)completionBlock
+                                  onFailure:(JSONResponse)failureBlock;
+
 @end

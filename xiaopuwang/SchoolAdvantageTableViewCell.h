@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface SchoolAdvantageTableViewCell : UITableViewCell
-
+#import "BaseTableViewCell.h"
+#import "SKTagView.h"
+@interface SchoolAdvantageTableViewCell : BaseTableViewCell
+@property(nonatomic,strong)IBOutlet SKTagView* schoolCourseView;
 @end

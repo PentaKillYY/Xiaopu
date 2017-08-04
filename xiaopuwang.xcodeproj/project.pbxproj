@@ -160,6 +160,18 @@
 		04A1D4891F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4871F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib */; };
 		04A1D48D1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D48B1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.m */; };
 		04A1D48E1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D48C1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib */; };
+		04A1D4921F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4901F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m */; };
+		04A1D4931F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4911F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib */; };
+		04A1D4971F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4951F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m */; };
+		04A1D4981F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4961F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib */; };
+		04A1D4BE1F33237900EACEA8 /* SchoolIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4BD1F33237800EACEA8 /* SchoolIntroViewController.m */; };
+		04A1D4C11F34031700EACEA8 /* SchoolCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4C01F34031700EACEA8 /* SchoolCourseDetailViewController.m */; };
+		04A1D4C51F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4C31F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.m */; };
+		04A1D4C61F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4C41F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib */; };
+		04A1D4CA1F340ADB00EACEA8 /* SchoolCourseTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4C81F340ADB00EACEA8 /* SchoolCourseTestCell.m */; };
+		04A1D4CB1F340ADB00EACEA8 /* SchoolCourseTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4C91F340ADB00EACEA8 /* SchoolCourseTestCell.xib */; };
+		04A1D4CF1F340B0200EACEA8 /* SchoolCourseOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4CD1F340B0200EACEA8 /* SchoolCourseOtherCell.m */; };
+		04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4CE1F340B0200EACEA8 /* SchoolCourseOtherCell.xib */; };
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
@@ -441,6 +453,25 @@
 		04A1D48A1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolAdvantageTableViewCell.h; sourceTree = "<group>"; };
 		04A1D48B1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolAdvantageTableViewCell.m; sourceTree = "<group>"; };
 		04A1D48C1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolAdvantageTableViewCell.xib; sourceTree = "<group>"; };
+		04A1D48F1F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolIntroduceTableViewCell.h; sourceTree = "<group>"; };
+		04A1D4901F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolIntroduceTableViewCell.m; sourceTree = "<group>"; };
+		04A1D4911F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolIntroduceTableViewCell.xib; sourceTree = "<group>"; };
+		04A1D4941F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolCourseTitleTableViewCell.h; sourceTree = "<group>"; };
+		04A1D4951F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolCourseTitleTableViewCell.m; sourceTree = "<group>"; };
+		04A1D4961F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolCourseTitleTableViewCell.xib; sourceTree = "<group>"; };
+		04A1D4BC1F33237800EACEA8 /* SchoolIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolIntroViewController.h; sourceTree = "<group>"; };
+		04A1D4BD1F33237800EACEA8 /* SchoolIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolIntroViewController.m; sourceTree = "<group>"; };
+		04A1D4BF1F34031700EACEA8 /* SchoolCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolCourseDetailViewController.h; sourceTree = "<group>"; };
+		04A1D4C01F34031700EACEA8 /* SchoolCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolCourseDetailViewController.m; sourceTree = "<group>"; };
+		04A1D4C21F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChoolCourseAcceptGradeCell.h; sourceTree = "<group>"; };
+		04A1D4C31F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SChoolCourseAcceptGradeCell.m; sourceTree = "<group>"; };
+		04A1D4C41F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SChoolCourseAcceptGradeCell.xib; sourceTree = "<group>"; };
+		04A1D4C71F340ADB00EACEA8 /* SchoolCourseTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolCourseTestCell.h; sourceTree = "<group>"; };
+		04A1D4C81F340ADB00EACEA8 /* SchoolCourseTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolCourseTestCell.m; sourceTree = "<group>"; };
+		04A1D4C91F340ADB00EACEA8 /* SchoolCourseTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolCourseTestCell.xib; sourceTree = "<group>"; };
+		04A1D4CC1F340B0200EACEA8 /* SchoolCourseOtherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolCourseOtherCell.h; sourceTree = "<group>"; };
+		04A1D4CD1F340B0200EACEA8 /* SchoolCourseOtherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolCourseOtherCell.m; sourceTree = "<group>"; };
+		04A1D4CE1F340B0200EACEA8 /* SchoolCourseOtherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolCourseOtherCell.xib; sourceTree = "<group>"; };
 		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
@@ -1022,14 +1053,15 @@
 		0478BA391F14CAA1003A9C8B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04A1D4D11F340B6700EACEA8 /* ChinaSchool */,
 				0478BA441F14CD0F003A9C8B /* SchoolViewController.h */,
 				0478BA451F14CD0F003A9C8B /* SchoolViewController.m */,
-				04A1D4661F30769000EACEA8 /* ChinaSchoolViewController.h */,
-				04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */,
 				04A1D4701F31A3AA00EACEA8 /* SchoolDetailViewController.h */,
 				04A1D4711F31A3AA00EACEA8 /* SchoolDetailViewController.m */,
-				04A1D4731F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.h */,
-				04A1D4741F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.m */,
+				04A1D4BC1F33237800EACEA8 /* SchoolIntroViewController.h */,
+				04A1D4BD1F33237800EACEA8 /* SchoolIntroViewController.m */,
+				04A1D4BF1F34031700EACEA8 /* SchoolCourseDetailViewController.h */,
+				04A1D4C01F34031700EACEA8 /* SchoolCourseDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1064,6 +1096,9 @@
 				04A1D4761F31ABAD00EACEA8 /* SchoolDetailTableViewCell.h */,
 				04A1D4771F31ABAD00EACEA8 /* SchoolDetailTableViewCell.m */,
 				04A1D4781F31ABAD00EACEA8 /* SchoolDetailTableViewCell.xib */,
+				04A1D48F1F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.h */,
+				04A1D4901F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m */,
+				04A1D4911F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib */,
 				04A1D47B1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.h */,
 				04A1D47C1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.m */,
 				04A1D47D1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.xib */,
@@ -1076,6 +1111,18 @@
 				04A1D4851F31AC2400EACEA8 /* SchoolCourseTableViewCell.h */,
 				04A1D4861F31AC2400EACEA8 /* SchoolCourseTableViewCell.m */,
 				04A1D4871F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib */,
+				04A1D4941F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.h */,
+				04A1D4951F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m */,
+				04A1D4961F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib */,
+				04A1D4C21F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.h */,
+				04A1D4C31F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.m */,
+				04A1D4C41F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib */,
+				04A1D4C71F340ADB00EACEA8 /* SchoolCourseTestCell.h */,
+				04A1D4C81F340ADB00EACEA8 /* SchoolCourseTestCell.m */,
+				04A1D4C91F340ADB00EACEA8 /* SchoolCourseTestCell.xib */,
+				04A1D4CC1F340B0200EACEA8 /* SchoolCourseOtherCell.h */,
+				04A1D4CD1F340B0200EACEA8 /* SchoolCourseOtherCell.m */,
+				04A1D4CE1F340B0200EACEA8 /* SchoolCourseOtherCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1193,6 +1240,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		04A1D4D11F340B6700EACEA8 /* ChinaSchool */ = {
+			isa = PBXGroup;
+			children = (
+				04A1D4731F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.h */,
+				04A1D4741F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.m */,
+				04A1D4661F30769000EACEA8 /* ChinaSchoolViewController.h */,
+				04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */,
+			);
+			name = ChinaSchool;
+			sourceTree = "<group>";
+		};
 		2CB1636ADA4F1070C9964D16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1304,14 +1362,17 @@
 				0445EEDC1F20469200E9DAB3 /* MultiCheckBoxTableViewCell.xib in Resources */,
 				0478BA1F1F14BC05003A9C8B /* MainCycleTableViewCell.xib in Resources */,
 				0456331E1F29BE8F005E04CB /* ImageCollectionViewCell.xib in Resources */,
+				04A1D4CB1F340ADB00EACEA8 /* SchoolCourseTestCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				045633561F2B126C005E04CB /* CourseDetailContentTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				045632C31F2822A1005E04CB /* OrgContentTableViewCell.xib in Resources */,
+				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
 				0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
+				04A1D4C61F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib in Resources */,
 				04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				04A1D47A1F31ABAD00EACEA8 /* SchoolDetailTableViewCell.xib in Resources */,
@@ -1333,7 +1394,9 @@
 				0445EED71F20461A00E9DAB3 /* DoubleCheckBoxTableViewCell.xib in Resources */,
 				045633511F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
+				04A1D4981F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib in Resources */,
 				04A1D47F1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.xib in Resources */,
+				04A1D4931F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib in Resources */,
 				04A1D48E1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
 				045633491F2B1228005E04CB /* CouseDetailImageTableViewCell.xib in Resources */,
@@ -1409,6 +1472,7 @@
 				04A1D47E1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.m in Sources */,
 				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
 				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
+				04A1D4C51F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.m in Sources */,
 				045632E41F2867FC005E04CB /* OrgStudentTableViewCell.m in Sources */,
 				04A1D48D1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.m in Sources */,
 				04267F441F17189200FFBC3E /* UIButton+JKImagePosition.m in Sources */,
@@ -1416,8 +1480,10 @@
 				0445EF1A1F2093DD00E9DAB3 /* OrgMapTableViewCell.m in Sources */,
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
 				045633141F29BE1C005E04CB /* SRPictureModel.m in Sources */,
+				04A1D4CA1F340ADB00EACEA8 /* SchoolCourseTestCell.m in Sources */,
 				045632EE1F29B121005E04CB /* OrgPhotoBrowserViewController.m in Sources */,
 				0456332E1F2AC40A005E04CB /* OrgMoreCourseViewController.m in Sources */,
+				04A1D4CF1F340B0200EACEA8 /* SchoolCourseOtherCell.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				045632D21F282896005E04CB /* UUBarChart.m in Sources */,
 				045633191F29BE1C005E04CB /* SRPictureHUD.m in Sources */,
@@ -1467,6 +1533,7 @@
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				045633181F29BE1C005E04CB /* SRPictureManager.m in Sources */,
 				0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */,
+				04A1D4C11F34031700EACEA8 /* SchoolCourseDetailViewController.m in Sources */,
 				045633361F2AD195005E04CB /* OrgMoreTeacherViewController.m in Sources */,
 				045633391F2AD1A7005E04CB /* OrgMoreStudentViewController.m in Sources */,
 				045632D11F282896005E04CB /* UUBar.m in Sources */,
@@ -1474,6 +1541,8 @@
 				045632E91F28682A005E04CB /* OrgEvaluateTableViewCell.m in Sources */,
 				04A1D4751F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.m in Sources */,
 				045633481F2B1228005E04CB /* CouseDetailImageTableViewCell.m in Sources */,
+				04A1D4921F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m in Sources */,
+				04A1D4BE1F33237900EACEA8 /* SchoolIntroViewController.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */,
@@ -1484,6 +1553,7 @@
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 				045633131F29BE1C005E04CB /* SRPictureBrowser.m in Sources */,
+				04A1D4971F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
 				045633501F2B1257005E04CB /* CourseDetailInfoTableViewCell.m in Sources */,
 				04A1D46C1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m in Sources */,

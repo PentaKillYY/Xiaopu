@@ -97,6 +97,18 @@
 //获取中国学校列表(分页)
 #define ChinaSchoolList @"/school/chinaSchoolInfoList"
 
+//获取学校所有基础信息
+#define SchoolDetail @"/school/schoolBasicInfo"
+
+//查询专业课程
+#define SchoolCourseList @"/school/professionalCourseList"
+
+//获取学校专业课程
+#define SchoolProfessionalList @"/school/SchoolProfessionalCourse"
+
+//查询可接收年级
+#define SchoolAcceptedGrade @"/school/acceptGradeList"
+
 // *******************************我的**************************
 
 //用户登录 返回用户UserId

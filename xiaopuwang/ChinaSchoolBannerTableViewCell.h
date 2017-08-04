@@ -6,14 +6,14 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 @protocol ChinaBannerDelegate <NSObject>
 
 -(void)bannerBubttonClicked:(id)sender;
 
 @end
 
-@interface ChinaSchoolBannerTableViewCell : UITableViewCell
+@interface ChinaSchoolBannerTableViewCell : BaseTableViewCell
 @property (nonatomic,weak)IBOutlet UIButton* button1;
 @property (nonatomic,weak)IBOutlet UIButton* button2;
 @property (nonatomic,weak)IBOutlet UIButton* button3;

@@ -11,13 +11,49 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SchoolGradeTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="187" id="KGk-i7-Jjw" customClass="SchoolGradeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kt-EG-sXD">
+                        <rect key="frame" x="8" y="8" width="5" height="21"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="Cbg-XW-ijN"/>
+                            <constraint firstAttribute="height" constant="21" id="oOB-2a-yXl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可接受中国申请者所在年级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t5-YN-VMc">
+                        <rect key="frame" x="21" y="11" width="159.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKz-ln-cet">
+                        <rect key="frame" x="16" y="35" width="296" height="56.5"/>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uKz-ln-cet" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7oz-Lp-FgG"/>
+                    <constraint firstItem="1kt-EG-sXD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="LxS-rt-obt"/>
+                    <constraint firstItem="uKz-ln-cet" firstAttribute="top" secondItem="3t5-YN-VMc" secondAttribute="bottom" constant="8" id="NbF-HK-ZJ2"/>
+                    <constraint firstItem="1kt-EG-sXD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="R7R-ek-HxI"/>
+                    <constraint firstItem="3t5-YN-VMc" firstAttribute="leading" secondItem="1kt-EG-sXD" secondAttribute="trailing" constant="8" id="UcJ-jd-wJP"/>
+                    <constraint firstAttribute="bottom" secondItem="uKz-ln-cet" secondAttribute="bottom" constant="8" id="YTJ-nz-1sc"/>
+                    <constraint firstAttribute="trailing" secondItem="uKz-ln-cet" secondAttribute="trailing" constant="8" id="i0h-Zr-WAf"/>
+                    <constraint firstItem="3t5-YN-VMc" firstAttribute="centerY" secondItem="1kt-EG-sXD" secondAttribute="centerY" id="yQn-O2-Y8B"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="gradeScrollView" destination="uKz-ln-cet" id="hrD-h7-MNe"/>
+            </connections>
+            <point key="canvasLocation" x="50" y="137.5"/>
         </tableViewCell>
     </objects>
 </document>

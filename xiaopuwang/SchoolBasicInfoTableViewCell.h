@@ -6,8 +6,13 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface SchoolBasicInfoTableViewCell : UITableViewCell
+@interface SchoolBasicInfoTableViewCell : BaseTableViewCell
+@property(nonatomic,weak)IBOutlet UILabel* scoreTitleLabel;
+@property(nonatomic,weak)IBOutlet UILabel* scoreLabel;
+@property(nonatomic,weak)IBOutlet UILabel* applyStartLabel;
+@property(nonatomic,weak)IBOutlet UILabel* applyEndLabel;
 
+-(void)bingdngViewModel:(DataItem*)item;
 @end
