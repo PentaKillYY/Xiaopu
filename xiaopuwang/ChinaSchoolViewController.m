@@ -27,6 +27,8 @@
     NSString* schoolNature;
     
     NSString* selectProvinceId;
+    
+    NSInteger currentSelectSchoolIndex;
 }
 @property (nonatomic, strong) DOPDropDownMenu *menu;
 @property (nonatomic,weak)IBOutlet UITableView* tableView;
@@ -76,8 +78,18 @@
     schoolCity = @"";
     schoolType = @"";
     schoolNature = @"";
-    
-    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"ChinaSchoolToDetail"])
+    {
+        id theSegue = segue.destinationViewController;
+        
+        DataItem* item =[schoolListArray getItem:currentSelectSchoolIndex];
+        
+        [theSegue setValue:[item getString:@"Id"] forKey:@"schoolID"];
+    }
 }
 
 
@@ -178,6 +190,7 @@
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    currentSelectSchoolIndex = indexPath.row;
     [self performSegueWithIdentifier:@"ChinaSchoolToDetail" sender:self];
 }
 

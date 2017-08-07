@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface ChinaSchoolDetailViewController : BaseViewController
-
+@property(nonatomic,weak)NSString *schoolID;
 @end

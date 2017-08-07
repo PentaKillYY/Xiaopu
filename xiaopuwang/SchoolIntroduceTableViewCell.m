@@ -22,12 +22,17 @@
 }
 
 -(void)bingdingViewModel:(DataItem*)item{
-    if ([item getString:@"Introduction"].length>0) {
+    if ([item getString:@"Introduction"].length) {
         NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[[item getString:@"Introduction"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
         
         
         self.schoolIntro.attributedText = attrStr;
 
+    }else if ([item getString:@"SchoolIntroduce"].length){
+        NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[[item getString:@"SchoolIntroduce"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+        
+        
+        self.schoolIntro.attributedText = attrStr;
     }else{
         NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[[item getString:@"CourseIntroduce"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
         

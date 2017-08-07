@@ -146,7 +146,7 @@
 -(void)followSchoolWithParameters:(NSDictionary *)parameters
                      onCompletion:(JSONResponse)completionBlock
                         onFailure:(JSONResponse)failureBlock{
-    [[BaseHttpRequest sharedBaseHttpRequest] GET:FollowSchool parameters:parameters success:^(id json) {
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:FollowSchool parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         failureBlock(json);
@@ -157,6 +157,36 @@
                         onCompletion:(JSONResponse)completionBlock
                            onFailure:(JSONResponse)failureBlock{
     [[BaseHttpRequest sharedBaseHttpRequest] GET:DelFollowSchool parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getChinaSchoolDetailWithParameters:(NSDictionary *)parameters
+                             onCompletion:(JSONResponse)completionBlock
+                                onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:ChinaSchoolBasicInfo parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getChinaSchoolCourseWithParameters:(NSDictionary *)parameters
+                             onCompletion:(JSONResponse)completionBlock
+                                onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:ChinaSchoolCourse parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getChinaSchoolTeacherAndStudentWithParameters:(NSDictionary *)parameters
+                                        onCompletion:(JSONResponse)completionBlock
+                                           onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:ChinaSchoolTeacherandStudent parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         failureBlock(json);

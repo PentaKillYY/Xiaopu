@@ -10,6 +10,6 @@
 
 @interface SchoolCourseTitleTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* courseTitleLabel;
-
+@property(nonatomic,weak)IBOutlet UILabel* indicatorLabel;
 
 @end

@@ -35,16 +35,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHd-EP-ja3">
+                        <rect key="frame" x="298.5" y="9" width="13.5" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="3UU-wb-ehE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="A7Y-Yd-dTb"/>
                     <constraint firstItem="wv2-WC-VRv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Jcd-Wo-ePM"/>
                     <constraint firstItem="3UU-wb-ehE" firstAttribute="leading" secondItem="wv2-WC-VRv" secondAttribute="trailing" constant="8" id="RMj-jY-nKL"/>
                     <constraint firstItem="wv2-WC-VRv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tvf-Ox-4aL"/>
+                    <constraint firstItem="gHd-EP-ja3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fRT-zW-fJZ"/>
+                    <constraint firstAttribute="trailing" secondItem="gHd-EP-ja3" secondAttribute="trailing" constant="8" id="rSo-dK-NMx"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="courseTitleLabel" destination="3UU-wb-ehE" id="tA7-Mn-FSa"/>
+                <outlet property="indicatorLabel" destination="gHd-EP-ja3" id="C1j-Pt-uLV"/>
             </connections>
         </tableViewCell>
     </objects>

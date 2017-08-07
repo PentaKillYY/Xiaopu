@@ -973,13 +973,63 @@
                     <view key="view" contentMode="scaleToFill" id="FH7-w2-Y7N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohL-ug-DoY">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M27-A8-UWO">
+                                        <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="联系学校招生官老师">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chatWithTeacher:" destination="kOm-uz-ieO" eventType="touchUpInside" id="zav-kg-VHf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="M27-A8-UWO" secondAttribute="trailing" constant="8" id="0bk-Uq-keQ"/>
+                                    <constraint firstItem="M27-A8-UWO" firstAttribute="leading" secondItem="ohL-ug-DoY" secondAttribute="leading" constant="8" id="4El-N7-pIr"/>
+                                    <constraint firstAttribute="height" constant="50" id="KSL-tn-epa"/>
+                                    <constraint firstAttribute="bottom" secondItem="M27-A8-UWO" secondAttribute="bottom" constant="8" id="Txm-6m-HJ7"/>
+                                    <constraint firstItem="M27-A8-UWO" firstAttribute="top" secondItem="ohL-ug-DoY" secondAttribute="top" constant="8" id="ftS-cl-Bf8"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fgt-lc-NUR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kOm-uz-ieO" id="cON-lm-whm"/>
+                                    <outlet property="delegate" destination="kOm-uz-ieO" id="RoN-dL-iZ2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ohL-ug-DoY" secondAttribute="trailing" id="D0m-6T-xVx"/>
+                            <constraint firstItem="fgt-lc-NUR" firstAttribute="leading" secondItem="FH7-w2-Y7N" secondAttribute="leading" id="FCP-a4-Xai"/>
+                            <constraint firstItem="ohL-ug-DoY" firstAttribute="top" secondItem="fgt-lc-NUR" secondAttribute="bottom" id="P01-lS-8lt"/>
+                            <constraint firstItem="fgt-lc-NUR" firstAttribute="top" secondItem="hHG-A5-52G" secondAttribute="bottom" id="bli-N6-DgJ"/>
+                            <constraint firstAttribute="trailing" secondItem="fgt-lc-NUR" secondAttribute="trailing" id="lxF-Vx-eLj"/>
+                            <constraint firstItem="wqn-My-9Ao" firstAttribute="top" secondItem="ohL-ug-DoY" secondAttribute="bottom" id="vET-FX-1fX"/>
+                            <constraint firstItem="ohL-ug-DoY" firstAttribute="leading" secondItem="FH7-w2-Y7N" secondAttribute="leading" id="yMB-ah-AZw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fce-Xx-4C7"/>
+                    <connections>
+                        <outlet property="chatButton" destination="M27-A8-UWO" id="k4W-3U-yI6"/>
+                        <outlet property="tableView" destination="fgt-lc-NUR" id="uTO-LR-53k"/>
+                        <segue destination="Yyl-d1-RHD" kind="push" identifier="ChinaDetaiToIntro" id="xcV-3d-LJO"/>
+                        <segue destination="dR3-fV-ZHn" kind="push" identifier="ChinaDetailToCourseDetail" id="C9X-s8-weM"/>
+                        <segue destination="e61-8q-YkP" kind="push" identifier="ChinaDetailToTeacherAndStudent" id="8ab-BH-9Zk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NeX-PB-wky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4134" y="520"/>
+            <point key="canvasLocation" x="4133.6000000000004" y="519.49025487256381"/>
         </scene>
         <!--Org Photo Browser View Controller-->
         <scene sceneID="q9w-Bd-uQa">
@@ -1174,6 +1224,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEU-wZ-VEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5530" y="523"/>
+        </scene>
+        <!--China Shool Teacher And Student View Controller-->
+        <scene sceneID="wie-Ke-JY8">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="e61-8q-YkP" customClass="ChinaShoolTeacherAndStudentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iN8-sp-X2N"/>
+                        <viewControllerLayoutGuide type="bottom" id="ohN-e6-IdB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="16k-Yo-vI4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nC5-ou-Qmd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="e61-8q-YkP" id="Ure-2e-2Ti"/>
+                                    <outlet property="delegate" destination="e61-8q-YkP" id="Lbc-Gw-7lx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nC5-ou-Qmd" firstAttribute="top" secondItem="iN8-sp-X2N" secondAttribute="bottom" id="FUK-cl-Hho"/>
+                            <constraint firstAttribute="trailing" secondItem="nC5-ou-Qmd" secondAttribute="trailing" id="VfA-FD-SV1"/>
+                            <constraint firstItem="nC5-ou-Qmd" firstAttribute="leading" secondItem="16k-Yo-vI4" secondAttribute="leading" id="iZQ-BD-2pf"/>
+                            <constraint firstItem="ohN-e6-IdB" firstAttribute="top" secondItem="nC5-ou-Qmd" secondAttribute="bottom" id="njc-9C-i8O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ku2-pC-4of"/>
+                    <connections>
+                        <outlet property="tableView" destination="nC5-ou-Qmd" id="P08-oC-wPQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7o-bf-O5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6183" y="517"/>
         </scene>
         <!--Org Course Detail View Controller-->
         <scene sceneID="qwF-r9-dvL">
@@ -1420,6 +1508,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="llO-WO-2wA"/>
         <segue reference="n00-pH-8fZ"/>
+        <segue reference="C9X-s8-weM"/>
+        <segue reference="xcV-3d-LJO"/>
         <segue reference="dFW-sS-bdb"/>
     </inferredMetricsTieBreakers>
 </document>
