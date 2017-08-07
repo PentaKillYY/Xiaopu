@@ -26,4 +26,19 @@
                 Parameters:(NSDictionary *)parameters
               onCompletion:(JSONResponse)completionBlock
                  onFailure:(JSONResponse)failureBlock;
+
+//录入专家咨询-机构
+-(void)postSpecialistOrgWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
+//录入专家咨询-国内学校
+-(void)postSpecialistChinaSchoolWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
+//录入专家咨询-国外学校
+-(void)postSpecialistOverseaSchoolWithParameters:(NSDictionary *)parameters
+                                  onCompletion:(JSONResponse)completionBlock
+                                     onFailure:(JSONResponse)failureBlock;
 @end

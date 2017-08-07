@@ -55,4 +55,35 @@
         
     }];
 }
+
+-(void)postSpecialistOrgWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:SpecialistOrg parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+
+-(void)postSpecialistChinaSchoolWithParameters:(NSDictionary *)parameters
+                                  onCompletion:(JSONResponse)completionBlock
+                                     onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:SpecialistChinaSchool parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)postSpecialistOverseaSchoolWithParameters:(NSDictionary *)parameters
+                                    onCompletion:(JSONResponse)completionBlock
+                                       onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:SpecialistOverseaSchool parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

@@ -18,6 +18,15 @@
 //获取大额补贴机构（分页）
 #define GetSubtidyList @"/cousertrain/orgInfoToExpertConsultation"
 
+//录入专家咨询-机构
+#define SpecialistOrg @"/user/OrgExpertConsultationInsert"
+
+//录入专家咨询-国内学校
+#define SpecialistChinaSchool @"/user/ChinaSchoolExpertConsultationInsert"
+
+//录入专家咨询-国外学校
+#define SpecialistOverseaSchool @"/user/OverSeasSchoolExpertConsultationInsert"
+
 // *******************************机构**************************
 
 //获取机构列表（分页）

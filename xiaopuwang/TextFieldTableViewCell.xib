@@ -18,8 +18,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sa7-zq-RmS">
-                        <rect key="frame" x="8" y="27.5" width="304" height="21"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sa7-zq-RmS">
+                        <rect key="frame" x="12" y="27.5" width="300" height="21"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="y4O-JP-i4Q"/>
                         </constraints>
@@ -28,7 +29,10 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前在读的学校类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-yy-D7P">
-                        <rect key="frame" x="8" y="8.5" width="304" height="11"/>
+                        <rect key="frame" x="12" y="8.5" width="300" height="11"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="11" id="8yp-bm-pB1"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,9 +40,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Sa7-zq-RmS" secondAttribute="bottom" constant="8" id="CDz-Eb-vBI"/>
-                    <constraint firstItem="Sa7-zq-RmS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Ivj-fZ-IuC"/>
+                    <constraint firstItem="Sa7-zq-RmS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ivj-fZ-IuC"/>
                     <constraint firstAttribute="trailing" secondItem="Sa7-zq-RmS" secondAttribute="trailing" constant="8" id="Pyb-5h-ISi"/>
-                    <constraint firstItem="cbE-yy-D7P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Sah-G7-AhN"/>
+                    <constraint firstItem="cbE-yy-D7P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Sah-G7-AhN"/>
                     <constraint firstItem="cbE-yy-D7P" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="rUb-DE-4m3"/>
                     <constraint firstAttribute="trailing" secondItem="cbE-yy-D7P" secondAttribute="trailing" constant="8" id="ygu-jh-yuf"/>
                     <constraint firstItem="Sa7-zq-RmS" firstAttribute="top" secondItem="cbE-yy-D7P" secondAttribute="bottom" constant="8" id="yhe-AO-jwa"/>

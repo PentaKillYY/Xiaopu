@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQE-dJ-abi">
-                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                        <rect key="frame" x="12" y="8" width="300" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="6G3-z2-mUg"/>
                         </constraints>
@@ -28,19 +28,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请输入建议活动结束发货快" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dzH-Iu-k22">
-                        <rect key="frame" x="8" y="37" width="304" height="44.5"/>
+                        <rect key="frame" x="12" y="37" width="300" height="44.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MQE-dJ-abi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="FGt-ig-1RY"/>
+                    <constraint firstItem="MQE-dJ-abi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="FGt-ig-1RY"/>
                     <constraint firstItem="dzH-Iu-k22" firstAttribute="top" secondItem="MQE-dJ-abi" secondAttribute="bottom" constant="8" id="G7h-bX-Mna"/>
                     <constraint firstItem="MQE-dJ-abi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="PzZ-pd-kw6"/>
                     <constraint firstAttribute="trailing" secondItem="MQE-dJ-abi" secondAttribute="trailing" constant="8" id="cXg-Qy-jW0"/>
-                    <constraint firstItem="dzH-Iu-k22" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="rsF-Nm-i4c"/>
+                    <constraint firstItem="dzH-Iu-k22" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="rsF-Nm-i4c"/>
                     <constraint firstAttribute="trailing" secondItem="dzH-Iu-k22" secondAttribute="trailing" constant="8" id="sZd-kc-gzu"/>
                     <constraint firstAttribute="bottom" secondItem="dzH-Iu-k22" secondAttribute="bottom" constant="8" id="uzp-Hp-6wA"/>
                 </constraints>

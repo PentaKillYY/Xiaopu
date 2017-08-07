@@ -65,6 +65,8 @@
 
 #define MAIN_BLACK_TEXT_COLOR COLOR(38, 38, 38, 1)
 
+#define TEXTFIELD_BG_COLOR [UIColor colorWithRed:244.0/255.0 green:244.0/255.0 blue:244.0/255.0 alpha:1.0]
+
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 

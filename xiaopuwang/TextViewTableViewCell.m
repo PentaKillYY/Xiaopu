@@ -13,6 +13,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [self.contentTextView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [self.contentTextView.layer setBorderWidth:0.5];
+    [self.contentTextView.layer setCornerRadius:3.0];
+    [self.contentTextView.layer setMasksToBounds:YES];
+    self.contentTextView.backgroundColor = TEXTFIELD_BG_COLOR;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

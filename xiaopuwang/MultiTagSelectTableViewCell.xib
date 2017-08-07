@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="MultiTagSelectTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="意向留学国家(多选)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCZ-S6-OkS">
+                        <rect key="frame" x="8" y="8" width="115.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjk-kp-iZl" customClass="TTGTextTagCollectionView">
+                        <rect key="frame" x="8" y="32" width="304" height="67.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oCZ-S6-OkS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1i1-Cm-bIo"/>
+                    <constraint firstItem="sjk-kp-iZl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="32d-Bq-4LZ"/>
+                    <constraint firstItem="oCZ-S6-OkS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MLi-kB-TVF"/>
+                    <constraint firstAttribute="bottom" secondItem="sjk-kp-iZl" secondAttribute="bottom" id="ULd-y4-k4s"/>
+                    <constraint firstItem="sjk-kp-iZl" firstAttribute="top" secondItem="oCZ-S6-OkS" secondAttribute="bottom" constant="8" id="X5Z-vZ-fw0"/>
+                    <constraint firstAttribute="trailing" secondItem="sjk-kp-iZl" secondAttribute="trailing" constant="8" id="hy6-6C-5GB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tagView" destination="sjk-kp-iZl" id="Vo3-g5-iKx"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="103"/>
+        </tableViewCell>
+    </objects>
+</document>
