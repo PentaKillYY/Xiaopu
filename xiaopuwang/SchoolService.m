@@ -172,4 +172,24 @@
         failureBlock(json);
     }];
 }
+
+-(void)getChinaSchoolCourseWithParameters:(NSDictionary *)parameters
+                             onCompletion:(JSONResponse)completionBlock
+                                onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:ChinaSchoolCourse parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)getChinaSchoolTeacherAndStudentWithParameters:(NSDictionary *)parameters
+                                        onCompletion:(JSONResponse)completionBlock
+                                           onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:ChinaSchoolTeacherandStudent parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

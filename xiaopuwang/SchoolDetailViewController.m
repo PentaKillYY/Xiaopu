@@ -123,28 +123,21 @@
 #pragma mark - UITableViewDatasource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (detailResult) {
-        return 6;
-    }else{
-        return 0;
-    }
+    return 6;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (detailResult) {
-        if (section == 5) {
-            if (professionalResult) {
-               return professionalResult.items.size+1;
-            }else{
-                return 0;
-            }
+
+    if (section == 5) {
+        if (professionalResult) {
+            return professionalResult.items.size+1;
         }else{
-            return 1;
+            return 0;
         }
     }else{
-        return 0;
+        return 1;
     }
-    
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -228,7 +221,6 @@
 }
 
 - (void)configCell:(SchoolDetailTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {
-    
     [cell.orgClassView removeAllTags];
     
     
@@ -250,6 +242,7 @@
         cell.orgClassView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
         cell.orgClassView.interitemSpacing = 5;
         cell.orgClassView.lineSpacing = 5;
+        
     }
 }
 
@@ -294,6 +287,7 @@
         }
         
         [self getSchoolProfessionalRequest];
+
     } onFailure:^(id json) {
     
     }];
@@ -307,7 +301,12 @@
         
         if (courseArray.count == [[[detailResult.items getItem:0] getString:@"ProfessionalCourse"] componentsSeparatedByString:@","].count) {
              self.tableView.hidden = NO;
-            [self.tableView reloadData];
+            
+            NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
+            
+            [idxSet addIndexesInRange:NSMakeRange(0, 5)];
+            
+             [self.tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationNone];
         }
         
     } onFailure:^(id json) {
@@ -318,8 +317,8 @@
 -(void)getSchoolProfessionalRequest{
     [[SchoolService sharedSchoolService] getSChoolProfessionalListWithParameters:@{@"schoolId":[[detailResult.items getItem:0] getString:@"School_Application_ID"]} onCompletion:^(id json) {
         professionalResult = json;
-        [self.tableView reloadData];
-//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+//        [self.tableView reloadData];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
 
     } onFailure:^(id json) {
         

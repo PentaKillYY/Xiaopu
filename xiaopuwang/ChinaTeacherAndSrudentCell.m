@@ -21,4 +21,9 @@
     // Configure the view for the selected state
 }
 
+-(void)bingdingViewModel:(DataItem*)item{
+    self.nameLabel.text = [item getString:@"Name"];
+    self.infoLabel.text = [item getString:@"Content"];
+    [self.logoView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,[item getString:@"ImageUrl"]]] placeholderImage:nil];
+}
 @end

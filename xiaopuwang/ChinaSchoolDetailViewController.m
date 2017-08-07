@@ -21,9 +21,18 @@
     DataResult* detailResult;
     NSMutableArray* courseArray ;
     DataResult* professionalResult;
+    DataResult* teacherAndStudentResult;
+    NSMutableArray* studentArray;
+    NSMutableArray* schoolFellowArray;
+    NSMutableArray* teacherArray;
+    
+    NSInteger currentCourseIndex;
+    NSString* titleName;
+    
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
+@property(nonatomic,weak)IBOutlet UIButton* chatButton;
 @end
 
 @implementation ChinaSchoolDetailViewController
@@ -32,13 +41,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"中国学校详情";
-    courseArray = [[NSMutableArray alloc] init];
+    
+    courseArray = [NSMutableArray new];
+    studentArray = [NSMutableArray new];
+    schoolFellowArray = [NSMutableArray new];
+    teacherArray = [NSMutableArray new];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolDetailTableViewCell"];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolBasicInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolBasicInfoTableViewCell"];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolAdvantageTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolAdvantageTableViewCell"];
+    
+    [self setupChatUI];
     
     [self getSchoolDetailRequest];
     
@@ -47,35 +62,78 @@
     }
 }
 
+-(void)setupChatUI{
+    [self.chatButton.layer setCornerRadius:3.0];
+    [self.chatButton.layer setMasksToBounds:YES];
+}
+
+-(IBAction)chatWithTeacher:(id)sender{
+    //新建一个聊天会话View Controller对象,建议这样初始化
+    RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:SchoolRongCloudId];
+    
+    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+    chat.conversationType = ConversationType_PRIVATE;
+    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+    chat.targetId = ChinaSchoolRongCloudId;
+    
+    //设置聊天会话界面要显示的标题
+    chat.title = @"中国学校顾问";
+    //显示聊天会话界面
+    [self.navigationController pushViewController:chat animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (detailResult) {
-        return 9;
-    }else{
-        return 0;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"ChinaDetaiToIntro"])
+    {
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:[detailResult.detailinfo getString:@"SchoolIntroduce"] forKey:@"intro"];
+    }else if ([segue.identifier isEqualToString:@"ChinaDetailToCourseDetail"]){
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:[professionalResult.items getItem:currentCourseIndex-1]  forKey:@"courseItem"];
+        
+    }else if ([segue.identifier isEqualToString:@"ChinaDetailToTeacherAndStudent"]){
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:self.schoolID  forKey:@"schoolID"];
+        
+        [theSegue setValue:titleName forKey:@"titlename"];
+        
+        
     }
 }
 
+#pragma mark - UITableViewDatasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 9;
+
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (detailResult){
-        if (section == 5) {
-            return 1+3;
-        }else if(section == 6){
-            return 1+2;
-        }else if(section == 7){
-            return 1+2;
-        }else if (section == 8){
-            return 1+2;
+    if (section == 5) {
+        if (professionalResult) {
+            return professionalResult.items.size+1;
         }else{
             return 1;
         }
 
+    }else if(section == 6){
+        
+        return studentArray.count >3 ? 4:1+studentArray.count;
+    }else if(section == 7){
+        return schoolFellowArray.count>3 ? 4:schoolFellowArray.count+1;
+    }else if (section == 8){
+        return 1+teacherArray.count>3 ? 4:1+teacherArray.count;
     }else{
-        return 0;
+        return 1;
     }
 }
 
@@ -101,6 +159,12 @@
             [self configSchoolAdvantageCourseCell:cell indexpath:indexPath];
         }];
         
+    }else if (indexPath.section == 6 || indexPath.section == 7 || indexPath.section == 8){
+        if (indexPath.row !=0) {
+            return 80;
+        }else{
+            return 44;
+        }
     }else{
         return 44;
     }
@@ -132,22 +196,87 @@
     }else if (indexPath.section == 5){
         if(indexPath.row == 0){
             SchoolCourseTitleTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SchoolCourseTitleTableViewCell" owner:self options:nil].firstObject;
+            cell.courseTitleLabel.text = @"开设课程";
             return cell;
         }else{
             
             SchoolCourseTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SchoolCourseTableViewCell" owner:self options:nil].firstObject;
             
-//            [cell bingdingViewModel:[professionalResult.items getItem:indexPath.row-1]];
+            [cell bingdingViewModel:[professionalResult.items getItem:indexPath.row-1]];
             return cell;
+
         }
     }else{
+        if (indexPath.row == 0) {
+            SchoolCourseTitleTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SchoolCourseTitleTableViewCell" owner:self options:nil].firstObject;
+            if (indexPath.section == 6) {
+                cell.courseTitleLabel.text = @"优秀学生";
+            }else if(indexPath.section == 7){
+                cell.courseTitleLabel.text = @"杰出校友";
+            }else{
+                cell.courseTitleLabel.text = @"优秀老师";
+            }
+            cell.indicatorLabel.hidden = NO;
+            return cell;
+        }else{
+        
         ChinaTeacherAndSrudentCell* cell = [[NSBundle mainBundle] loadNibNamed:@"ChinaTeacherAndSrudentCell" owner:self options:nil].firstObject;
+            if (indexPath.section == 6 ) {
+                [cell bingdingViewModel:studentArray[indexPath.row-1]];
+  
+            }else if (indexPath.section == 7){
+                [cell bingdingViewModel:schoolFellowArray[indexPath.row-1]];
+
+            }else{
+                [cell bingdingViewModel:teacherArray[indexPath.row-1]];
+
+            }
         return cell;
+        }
+    }
+}
+
+#pragma mark - UItableViewDelegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        [self performSegueWithIdentifier:@"ChinaDetaiToIntro" sender:self];
+        
+    }else if (indexPath.section == 5){
+        if (indexPath.row == 0) {
+            currentCourseIndex = indexPath.row;
+            [self performSegueWithIdentifier:@"ChinaDetailToCourseDetail" sender:self];
+        }
+
+    }else if (indexPath.section == 6 || indexPath.section ==7 || indexPath.section == 8){
+        
+        if (indexPath.row == 0) {
+            if (studentArray.count > 0 && indexPath.section == 6) {
+                SchoolCourseTitleTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+                
+                titleName = cell.courseTitleLabel.text;
+                [self performSegueWithIdentifier:@"ChinaDetailToTeacherAndStudent" sender:self];
+            }else if (schoolFellowArray.count > 0 && indexPath.section == 7){
+                SchoolCourseTitleTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+                
+                titleName = cell.courseTitleLabel.text;
+                [self performSegueWithIdentifier:@"ChinaDetailToTeacherAndStudent" sender:self];
+            }else if (teacherArray.count > 0 && indexPath.section == 8){
+                SchoolCourseTitleTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+                
+                titleName = cell.courseTitleLabel.text;
+                [self performSegueWithIdentifier:@"ChinaDetailToTeacherAndStudent" sender:self];
+            }
+            
+            
+
+        }
+        
     }
 }
 
 - (void)configCell:(SchoolDetailTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {
-    
+
     [cell.orgClassView removeAllTags];
     
     
@@ -169,6 +298,8 @@
         cell.orgClassView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
         cell.orgClassView.interitemSpacing = 5;
         cell.orgClassView.lineSpacing = 5;
+        
+
     }
 }
 
@@ -213,6 +344,9 @@
         }
         
         [self getSchoolProfessionalRequest];
+
+        [self getSchoolTeacherAndStudent];
+        
     } onFailure:^(id json) {
         
     }];
@@ -225,8 +359,15 @@
         [courseArray addObject:[[result.items getItem:0] getString:@"Text"]];
         
         if (courseArray.count == [[detailResult.detailinfo getString:@"ProfessionalCourse"] componentsSeparatedByString:@","].count) {
+            
+
+            NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
+
+            [idxSet addIndexesInRange:NSMakeRange(0, 5)];
+            
+            [self.tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationNone];
+
             self.tableView.hidden = NO;
-            [self.tableView reloadData];
         }
         
     } onFailure:^(id json) {
@@ -235,13 +376,39 @@
 }
 
 -(void)getSchoolProfessionalRequest{
-    [[SchoolService sharedSchoolService] getSChoolProfessionalListWithParameters:@{@"schoolId":self.schoolID} onCompletion:^(id json) {
+    [[SchoolService sharedSchoolService] getChinaSchoolCourseWithParameters:@{@"schoolId":self.schoolID} onCompletion:^(id json) {
         professionalResult = json;
         
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+    
     } onFailure:^(id json) {
         
     }];
 }
 
+-(void)getSchoolTeacherAndStudent{
+    [[SchoolService sharedSchoolService] getChinaSchoolTeacherAndStudentWithParameters:@{@"schoolId":self.schoolID} onCompletion:^(id json) {
+        teacherAndStudentResult = json;
+        
+        for (int i = 0; i< teacherAndStudentResult.items.size; i++) {
+          DataItem* item=  [teacherAndStudentResult.items getItem:i];
+            int type = [item getInt:@"Type"];
+            if (type == 1) {
+                [studentArray addObject:item];
+            }else if (type == 2){
+                [schoolFellowArray addObject:item];
+            }else{
+                [teacherArray addObject:item];
+            }
+        }
+        
+        NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
+        
+        [idxSet addIndexesInRange:NSMakeRange(6, 3)];
+        
+        [self.tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationNone];
+    } onFailure:^(id json) {
+        
+    }];
+}
 @end

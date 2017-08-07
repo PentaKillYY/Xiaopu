@@ -109,7 +109,7 @@
             NSString* testScore ;
             
             if (range.length == 0) {
-                testTitle = test;
+                testTitle = @"暂无";
                  testScore = @"无";
             }else{
                 testTitle =  [test substringToIndex:range.location];
