@@ -56,16 +56,13 @@
 
 - (void)textTagCollectionView:(TTGTextTagCollectionView *)textTagCollectionView didTapTag:(NSString *)tagText atIndex:(NSUInteger)index selected:(BOOL)selected{
     NSString* currentIndex = [NSString stringWithFormat:@"%lu",(unsigned long)index];
-    for (int i = 0; i < textTagCollectionView.allTags.count; i++) {
-        if (i ==  index) {
-            [textTagCollectionView setTagAtIndex:i selected:YES];
-        }else{
-            [textTagCollectionView setTagAtIndex:i selected:NO];
-        }
+    if (selected) {
+        [self.selectIndexAray addObject:currentIndex];
+    }else{
+        [self.selectIndexAray removeObject:currentIndex];
     }
     
-    [self.selectIndexAray removeAllObjects];
-    [self.selectIndexAray addObject:currentIndex];
+    
     
     [self.deletage selectTextTag:self.selectIndexAray];
 }

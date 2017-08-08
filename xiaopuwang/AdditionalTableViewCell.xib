@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="81" id="KGk-i7-Jjw" customClass="AdditionalTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgV-Ho-8J2">
+                        <rect key="frame" x="12" y="8" width="0.0" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M2-EO-890">
+                        <rect key="frame" x="268" y="8" width="44" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="aaL-J9-ON1"/>
+                            <constraint firstAttribute="width" constant="44" id="k6R-ci-4dG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="删除">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="deleteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P9A-BP-ZZd"/>
+                        </connections>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCX-CL-yZ8">
+                        <rect key="frame" x="12" y="37" width="300" height="35.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6M2-EO-890" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3VE-Ic-68F"/>
+                    <constraint firstItem="WCX-CL-yZ8" firstAttribute="top" secondItem="6M2-EO-890" secondAttribute="bottom" constant="8" id="7Fr-13-YJK"/>
+                    <constraint firstItem="WCX-CL-yZ8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Y0L-BF-5A9"/>
+                    <constraint firstItem="6M2-EO-890" firstAttribute="bottom" secondItem="xgV-Ho-8J2" secondAttribute="bottom" id="Yb1-9z-ZCE"/>
+                    <constraint firstItem="xgV-Ho-8J2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bxL-od-PL2"/>
+                    <constraint firstAttribute="bottom" secondItem="WCX-CL-yZ8" secondAttribute="bottom" constant="8" id="ffJ-aL-RGI"/>
+                    <constraint firstAttribute="trailing" secondItem="6M2-EO-890" secondAttribute="trailing" constant="8" id="roS-a7-Fbh"/>
+                    <constraint firstAttribute="trailing" secondItem="WCX-CL-yZ8" secondAttribute="trailing" constant="8" id="rvW-aq-m9L"/>
+                    <constraint firstItem="xgV-Ho-8J2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="taX-q1-HqT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addTitle" destination="xgV-Ho-8J2" id="aOR-7y-phf"/>
+                <outlet property="contentTextField" destination="WCX-CL-yZ8" id="P8Y-5n-091"/>
+                <outlet property="deleteButton" destination="6M2-EO-890" id="zyZ-Ks-1S4"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="93.5"/>
+        </tableViewCell>
+    </objects>
+</document>
