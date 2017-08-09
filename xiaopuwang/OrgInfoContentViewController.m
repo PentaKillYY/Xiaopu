@@ -7,9 +7,8 @@
 //
 
 #import "OrgInfoContentViewController.h"
-#import "OrgContentTableViewCell.h"
-@interface OrgInfoContentViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,weak)IBOutlet UITableView* tableView;
+@interface OrgInfoContentViewController ()<UIWebViewDelegate>
+@property(nonatomic,weak)IBOutlet UIWebView* webView;
 @end
 
 @implementation OrgInfoContentViewController
@@ -20,7 +19,21 @@
     
     self.title = @"机构信息";
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"OrgContentTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgContent"];
+    NSString * htmlcontent = [NSString stringWithFormat:@"<div id=\"webview_content_wrapper\">%@</div>", self.orgContent];
+    
+    NSString *BookStr = [NSString stringWithFormat:@"<html> \n"
+                         "<head> \n"
+                         "<style type=\"text/css\"> \n"
+                         "body {margin:0;font-size: %f;}\n"
+                         "</style> \n"
+                         "</head> \n"
+                         "<body>%@</body> \n"
+                         "</html>",13.0,htmlcontent];
+    
+    _webView.scrollView.showsVerticalScrollIndicator = NO;
+    _webView.delegate = self;
+    _webView.backgroundColor = [UIColor whiteColor];
+    [_webView loadHTMLString:BookStr baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,30 +41,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *js = @"function imgAutoFit() { \
+    var imgs = document.getElementsByTagName('img'); \
+    for (var i = 0; i < imgs.length; ++i) {\
+    var img = imgs[i];   \
+    img.style.maxWidth = %f;   \
+    } \
+    }";
+    js = [NSString stringWithFormat:js, [UIScreen mainScreen].bounds.size.width - 20];
     
-    return  [tableView fd_heightForCellWithIdentifier:@"OrgContent" cacheByIndexPath:indexPath configuration:^(id cell) {
-        [self configCell:cell Index:indexPath];
-    }];
-}
-
--(void)configCell:(OrgContentTableViewCell*)cell Index:(NSIndexPath*)indexPath{
-    
-    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[self.orgContent dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
-    cell.orgContent.attributedText = attrStr;
-}
-
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    OrgContentTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgContentTableViewCell" owner:self options:nil].firstObject;
-    [self configCell:cell Index:indexPath];
-    return cell;
-
+    [webView stringByEvaluatingJavaScriptFromString:js];
+    [webView stringByEvaluatingJavaScriptFromString:@"imgAutoFit()"];
 }
 
 

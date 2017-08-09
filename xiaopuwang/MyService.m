@@ -36,14 +36,7 @@
         DataResult* result = json;
         UserInfo* info = [UserInfo sharedUserInfo];
         
-        
-//        NSString* UserBase64Image = [result.detailinfo getString:@"UserImage"];
-//        NSRange range = [UserBase64Image rangeOfString:@"base64,"];
-//        NSInteger location = range.location;
-//        NSInteger leight = range.length;
-//        UserBase64Image = [UserBase64Image substringFromIndex:location+leight];
-        
-//        info.headPicUrl = UserBase64Image;
+        info.headPicUrl = [result.detailinfo getString:@"UserImage"];
         info.telphone = [result.detailinfo getString:@"Phone"];
         
         [info synchronize];
@@ -133,6 +126,35 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:GetUserAdscription parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
+        
+    }];
+}
+
+-(void)uploadFileInfoWithImage:(UIImage*)image
+                    Parameters:(NSString *)imageName
+                  onCompletion:(JSONResponse)completionBlock
+                     onFailure:(JSONResponse)failureBlock{
+    AFHTTPSessionManager* operationManager = [AFHTTPSessionManager manager];
+    operationManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    operationManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    operationManager.requestSerializer.timeoutInterval = 15.0f;
+    
+    
+    [operationManager POST:[NSString stringWithFormat:@"%@%@",REQUEST_URL,UpLoadFileInfo] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSData* data = UIImagePNGRepresentation(image);
+        [formData appendPartWithFileData:data name:@"file" fileName:[NSString stringWithFormat:@"%@.png",imageName] mimeType:@"image/png"];
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        
+        DataResult* result = [DataResult new];
+        [result appendDictionary:responseDict];
+        
+        completionBlock(result);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
 }

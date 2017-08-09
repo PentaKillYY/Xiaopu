@@ -11,8 +11,16 @@
 #import "MyTableCell.h"
 #import "UIActionSheet+Block.h"
 #import "MyService.h"
+#import <AssetsLibrary/ALAsset.h>
+#import <AssetsLibrary/ALAssetsLibrary.h>
+#import <AssetsLibrary/ALAssetsGroup.h>
+#import <AssetsLibrary/ALAssetRepresentation.h>
 
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource,UserLogoDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
+{
+    NSString* uploadImageName;
+    DataResult* uploadResult;
+}
 @property(nonatomic,weak)IBOutlet UITableView *tableView;
 @end
 
@@ -71,10 +79,8 @@
         
         UserInfo* info = [UserInfo sharedUserInfo];
         if (info.headPicUrl != nil) {
-            NSData *_decodedImageData   = [[NSData alloc] initWithBase64EncodedString:info.headPicUrl options:NSDataBase64DecodingIgnoreUnknownCharacters];
             
-            UIImage *_decodedImage      = [UIImage imageWithData:_decodedImageData];
-            [cell.userLogo setImage:_decodedImage forState:UIControlStateNormal];
+            [cell.userLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,info.headPicUrl ]] forState:UIControlStateNormal placeholderImage:nil];
         }
         
         cell.userName.text = info.username;
@@ -182,14 +188,25 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     //获取到的图片
     UIImage * image = [info valueForKey:UIImagePickerControllerEditedImage];
+    NSURL *imageURL = [info valueForKey:UIImagePickerControllerReferenceURL];
+
+    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+    {
+        ALAssetRepresentation *representation = [myasset defaultRepresentation];
+        NSString* str = [[representation url] absoluteString];
+        NSArray *nameArray = [str componentsSeparatedByString:@"="];
+        NSString* tempname = [nameArray objectAtIndex:1];
+        uploadImageName = [tempname substringToIndex:tempname.length-4];
+        DLog(@"uploadImageName:%@",str);
+        
+        [self updateUserHeadRequest:image];
+    };
     
-    
-    NSData *_data = UIImageJPEGRepresentation(image, 1.0f);
-    
-    NSString *_encodedImageStr = [NSString stringWithFormat:@"data:image/jpg;base64,%@",[_data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength]];
-    
-    
-    [self updateUserHeadRequest:_encodedImageStr];
+    ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init] ;
+    [assetslibrary assetForURL:imageURL
+                   resultBlock:resultblock
+                  failureBlock:nil];
+
 }
 
 
@@ -233,16 +250,24 @@
     }];
 }
 
--(void)updateUserHeadRequest:(NSString*)imageBase64{
-     UserInfo* info = [UserInfo sharedUserInfo];
-    [[MyService sharedMyService] postUserHeadWithParameters:@{@"UserID":info.userID,@"ImageBase":imageBase64} onCompletion:^(id json) {
-       
+-(void)updateUserHeadRequest:(UIImage*)image{
+    
+    
+    [[MyService  sharedMyService] uploadFileInfoWithImage:image Parameters:uploadImageName onCompletion:^(id json) {
+        uploadResult = json;
+        [self updateUsrLogoRequest];
+    } onFailure:^(id json) {
         
-        NSRange range = [imageBase64 rangeOfString:@"base64,"];
-        NSInteger location = range.location;
-        NSInteger leight = range.length;
-        info.headPicUrl = [imageBase64 substringFromIndex:location+leight];
+    }];
+}
+
+-(void)updateUsrLogoRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    [[MyService sharedMyService] postUserHeadWithParameters:@{@"UserID":info.userID,@"ImageBase":[uploadResult.detailinfo getString:@"UrlPath"]} onCompletion:^(id json) {
+        info.headPicUrl = [uploadResult.detailinfo getString:@"UrlPath"];
         [info synchronize];
+        
         NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {

@@ -58,4 +58,10 @@
 -(void)GetUserAdscriptionWithParameters:(NSDictionary *)parameters
                            onCompletion:(JSONResponse)completionBlock
                               onFailure:(JSONResponse)failureBlock;
+
+//获取上传文件信息
+-(void)uploadFileInfoWithImage:(UIImage*)image
+                    Parameters:(NSString *)imageName
+                  onCompletion:(JSONResponse)completionBlock
+                     onFailure:(JSONResponse)failureBlock;
 @end

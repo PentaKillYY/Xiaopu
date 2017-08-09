@@ -164,3 +164,6 @@
 
 //判断用户归属问题
 #define GetUserAdscription @"/userOrder/GetUserAdscription"
+
+//获取上传文件信息
+#define UpLoadFileInfo @"/user/uploadFiles?floderName=user&action=add"

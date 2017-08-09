@@ -790,26 +790,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNh-gW-6uw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ae3-Hd-1SA" id="MLS-ZW-QwX"/>
-                                    <outlet property="delegate" destination="ae3-Hd-1SA" id="wPX-oh-Yvu"/>
-                                </connections>
-                            </tableView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2N-hl-GEN">
+                                <rect key="frame" x="8" y="0.0" width="359" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oNh-gW-6uw" firstAttribute="leading" secondItem="Kzj-Ti-TCx" secondAttribute="leading" id="5ED-ho-PM4"/>
-                            <constraint firstItem="oNh-gW-6uw" firstAttribute="top" secondItem="jUc-ji-qg3" secondAttribute="bottom" id="Dhv-4a-1LE"/>
-                            <constraint firstItem="0RP-Yh-4He" firstAttribute="top" secondItem="oNh-gW-6uw" secondAttribute="bottom" id="bBJ-gj-H1G"/>
-                            <constraint firstAttribute="trailing" secondItem="oNh-gW-6uw" secondAttribute="trailing" id="mS7-Lu-xBH"/>
+                            <constraint firstItem="0RP-Yh-4He" firstAttribute="top" secondItem="S2N-hl-GEN" secondAttribute="bottom" id="SZZ-EW-bCg"/>
+                            <constraint firstAttribute="trailing" secondItem="S2N-hl-GEN" secondAttribute="trailing" constant="8" id="Uat-Ht-rVa"/>
+                            <constraint firstItem="S2N-hl-GEN" firstAttribute="top" secondItem="jUc-ji-qg3" secondAttribute="bottom" id="VYI-kE-aR1"/>
+                            <constraint firstItem="S2N-hl-GEN" firstAttribute="leading" secondItem="Kzj-Ti-TCx" secondAttribute="leading" constant="8" id="pJV-PZ-fJ4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iIB-Em-5cb"/>
                     <connections>
-                        <outlet property="tableView" destination="oNh-gW-6uw" id="x5W-CL-0Y6"/>
+                        <outlet property="webView" destination="S2N-hl-GEN" id="MJ3-zl-GfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFe-Wm-jFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
