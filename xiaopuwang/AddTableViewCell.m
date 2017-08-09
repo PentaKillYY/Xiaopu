@@ -1,14 +1,14 @@
 //
-//  DoubleCheckBoxTableViewCell.m
+//  AddTableViewCell.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/7/20.
+//  Created by TonyJiang on 2017/8/8.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "DoubleCheckBoxTableViewCell.h"
+#import "AddTableViewCell.h"
 
-@implementation DoubleCheckBoxTableViewCell
+@implementation AddTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

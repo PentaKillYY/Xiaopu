@@ -13,6 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.contentField.backgroundColor = TEXTFIELD_BG_COLOR;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

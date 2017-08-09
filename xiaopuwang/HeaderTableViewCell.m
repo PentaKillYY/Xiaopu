@@ -1,14 +1,14 @@
 //
-//  MultiCheckBoxTableViewCell.m
+//  HeaderTableViewCell.m
 //  xiaopuwang
 //
-//  Created by TonyJiang on 2017/7/20.
+//  Created by TonyJiang on 2017/8/7.
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import "MultiCheckBoxTableViewCell.h"
+#import "HeaderTableViewCell.h"
 
-@implementation MultiCheckBoxTableViewCell
+@implementation HeaderTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

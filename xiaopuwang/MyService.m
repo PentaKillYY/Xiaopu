@@ -37,13 +37,13 @@
         UserInfo* info = [UserInfo sharedUserInfo];
         
         
-        NSString* UserBase64Image = [result.detailinfo getString:@"UserImage"];
-        NSRange range = [UserBase64Image rangeOfString:@"base64,"];
-        NSInteger location = range.location;
-        NSInteger leight = range.length;
-        UserBase64Image = [UserBase64Image substringFromIndex:location+leight];
+//        NSString* UserBase64Image = [result.detailinfo getString:@"UserImage"];
+//        NSRange range = [UserBase64Image rangeOfString:@"base64,"];
+//        NSInteger location = range.location;
+//        NSInteger leight = range.length;
+//        UserBase64Image = [UserBase64Image substringFromIndex:location+leight];
         
-        info.headPicUrl = UserBase64Image;
+//        info.headPicUrl = UserBase64Image;
         info.telphone = [result.detailinfo getString:@"Phone"];
         
         [info synchronize];
