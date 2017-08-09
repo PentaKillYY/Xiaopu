@@ -37,6 +37,7 @@
     DataResult* _relyResult;
     DataResult* _appointStateResult;
     DataResult* _focusResult;
+    DataResult* _userAdsResult;
     
     NSMutableArray* teacher0Aray;
     NSMutableArray* teacher1Aray;
@@ -240,23 +241,31 @@
 }
 
 -(IBAction)rongcloudChat:(id)sender{
-    //新建一个聊天会话View Controller对象,建议这样初始化
-    RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
-    
-    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
-    chat.conversationType = ConversationType_PRIVATE;
-    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
-    chat.targetId = [_detailInfoResult.detailinfo getString:@"User_ID"];
-    
-    //设置聊天会话界面要显示的标题
-    chat.title = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
-    //显示聊天会话界面
-    [self.navigationController pushViewController:chat animated:YES];
-
+    if ([_userAdsResult.message isEqualToString:@"1"]) {
+        //新建一个聊天会话View Controller对象,建议这样初始化
+        RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
+        
+        //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+        chat.conversationType = ConversationType_PRIVATE;
+        //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+        chat.targetId = [_detailInfoResult.detailinfo getString:@"User_ID"];
+        
+        //设置聊天会话界面要显示的标题
+        chat.title = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
+        //显示聊天会话界面
+        [self.navigationController pushViewController:chat animated:YES];
+    }
 }
 
 -(IBAction)userBargain:(id)sender{
-    [self getUserBargainRequest];
+    
+    double distance = [self calculateWithX:[_detailInfoResult.detailinfo getDouble:@"X"] Y:[_detailInfoResult.detailinfo getDouble:@"Y"]];
+    if (distance < 0.3) {
+        [self getUserBargainRequest];
+    }else{
+        [[AppCustomHud sharedEKZCustomHud] showTextHud:BarginDistanceOutside];
+    }
+    
 }
 
 -(IBAction)chatOrg:(id)sender{
@@ -1070,4 +1079,23 @@
         
     }];
 }
+
+-(void)getUserAdscriptionRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] GetUserAdscriptionWithParameters:@{@"orgId":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
+        _userAdsResult = json;
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(double)calculateWithX:(double)x Y:(double)y{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[info.userLatitude floatValue] longitude:[info.userLongitude floatValue]];
+    CLLocation *orgLocation = [[CLLocation alloc] initWithLatitude:fabs(y) longitude:fabs(x)];
+    double distance = [currentLocation distanceFromLocation:orgLocation]/1000.0;
+    return distance;
+}
+
 @end

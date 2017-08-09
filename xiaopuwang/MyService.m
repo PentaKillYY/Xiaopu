@@ -126,4 +126,14 @@
         
     }];
 }
+
+-(void)GetUserAdscriptionWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:GetUserAdscription parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

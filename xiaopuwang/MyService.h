@@ -53,4 +53,9 @@
 -(void)sendMessageAfterBargainWithParameters:(NSDictionary *)parameters
                                 onCompletion:(JSONResponse)completionBlock
                                    onFailure:(JSONResponse)failureBlock;
+
+//判断用户归属问题
+-(void)GetUserAdscriptionWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
 @end
