@@ -161,3 +161,6 @@
 
 //砍价成功短信提醒
 #define SendMessageAfterBargain @"/user/SendMessageAfterBargain"
+
+//判断用户归属问题
+#define GetUserAdscription @"/userOrder/GetUserAdscription"

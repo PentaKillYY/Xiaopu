@@ -10,3 +10,4 @@
  *  本类放一些通知的宏定义
  */
 
+#define BarginDistanceOutside @"距离机构300米以内可发送砍价请求"

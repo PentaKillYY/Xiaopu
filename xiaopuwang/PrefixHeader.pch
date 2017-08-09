@@ -36,6 +36,7 @@
 #import "UtilsMacro.h"
 #import "VendorMarco.h"
 #import "ConstantMarco.h"
+#import "AppCustomHud.h"
 
 #import "UITableView+FDTemplateLayoutCell.h"
 
