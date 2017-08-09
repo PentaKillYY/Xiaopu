@@ -17,7 +17,7 @@
 #import "AdditionalTableViewCell.h"
 #import <LGAlertView/LGAlertView.h>
 
-@interface EducationPlanController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,LGAlertViewDelegate,DeleteAdditionalCellDelegate>{
+@interface EducationPlanController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,LGAlertViewDelegate,DeleteAdditionalCellDelegate,TextTagDelegate>{
     NSInteger currentSegIndex;
     
     NSString* pickerString;
@@ -25,7 +25,10 @@
     NSMutableArray* internationalArray;
     NSMutableArray* internationalScoreArray;
     NSMutableArray* boardArray;
+    NSMutableArray* boardScoreArray;
+    NSMutableArray* overseaCountryArray;
     
+    NSString* trainingName;
     NSString* trainingGender;
     NSString* trainingCharacter;
     NSString* trainingInGrade;
@@ -39,6 +42,7 @@
     NSString* trainingLearningContent;
     NSString* trainingRemarks;
     
+    NSString* internationalName;
     NSString* internationalGender;
     NSString* internationalCharacter;
     NSString* internationalInGrade;
@@ -50,6 +54,19 @@
     NSString* internationalInternationalCurriculum;
     NSString* internationalRemarks;
     
+    NSString* overseaName;
+    NSString* overseaGender;
+    NSString* overseaCharacter;
+    NSString* overseaInGrade;
+    NSString* overseaEnglishAchievement;
+    NSMutableString* overseaForeignLanguageAchievement;
+    NSString* overseaAverageScoresOfSubjects;
+    NSString* overseaExtracurricularPractice;
+    NSString* overseaInternationalExamination;
+    NSString* overseaIntentionStudyCountry;
+    NSString* overseaIntentionToStudyAbroad;
+    NSString* overseaTimeToGoAbroad;
+    NSString* overseaRemarks;
     
     
 }
@@ -66,14 +83,16 @@
     internationalScoreArray = [NSMutableArray new];
     
     boardArray = [NSMutableArray new];
+    boardScoreArray = [NSMutableArray new];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"MultiTagSelectTableViewCell" bundle:nil] forCellReuseIdentifier:@"MultiTagSelectTableViewCell"];
 
     [self setUpTableView];
-    self.tableView.contentOffset = CGPointMake(0, -45);
+    
    
     [self setupTrainingParameter];
     [self setupInternationalParameter];
+    [self setupOverseaParameter];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,6 +102,8 @@
 
 -(void)setUpTableView
 {
+    self.tableView.contentOffset = CGPointMake(0, -45);
+    
     UIView* footerView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 70)];
     
     UIButton* sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -129,6 +150,21 @@
     internationalInternationalCurriculumGrade = @"";
     internationalInternationalCurriculum = @"";
     internationalRemarks = @"";
+}
+
+-(void)setupOverseaParameter{
+    overseaGender = @"";
+    overseaCharacter = @"";
+    overseaInGrade = @"";
+    overseaEnglishAchievement = @"";
+    overseaForeignLanguageAchievement = [NSMutableString new];
+    overseaAverageScoresOfSubjects = @"";
+    overseaExtracurricularPractice = @"";
+    overseaInternationalExamination = @"";
+    overseaIntentionStudyCountry = @"";
+    overseaIntentionToStudyAbroad = @"";
+    overseaTimeToGoAbroad = @"";
+    overseaRemarks = @"";
 }
 
 #pragma mark - Table view data source
@@ -261,7 +297,9 @@
                 cell.contentField.inputView = picker;
             }
             
-            if (indexPath.row ==2) {
+            if (indexPath.row == 1) {
+                cell.contentField.text = trainingName;
+            }else if (indexPath.row ==2) {
                 cell.contentField.text = trainingGender;
             }else if (indexPath.row == 3){
                 cell.contentField.text = trainingCharacter;
@@ -302,6 +340,15 @@
             cell.contentTitle.text = EducationInternationalSchoolTitle[indexPath.row-internationalArray.count-1];
             cell.contentTextView.text = EducationInternationalSchoolPlaceHolder[indexPath.row-internationalArray.count-1];
             cell.contentTextView.text = internationalRemarks;
+            
+            UIToolbar*customAccessoryView = [[UIToolbar alloc]initWithFrame:(CGRect){0,0,Main_Screen_Width,40}];
+            customAccessoryView.barTintColor = [UIColor whiteColor];
+            UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            UIBarButtonItem *finish = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(dismissTextViewInput:)];
+            finish.tag = indexPath.row;
+            [customAccessoryView setItems:@[space,space,finish]];
+            cell.contentTextView.inputAccessoryView =customAccessoryView;
+
             return cell;
         }else if (indexPath.row == 5+internationalArray.count+1){
             AddTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"AddTableViewCell" owner:self options:nil].firstObject;
@@ -360,8 +407,9 @@
                 cell.contentField.inputAccessoryView = customAccessoryView;
                 cell.contentField.inputView = picker;
             }
-            
-            if (indexPath.row == 2) {
+            if (indexPath.row == 1) {
+                cell.contentField.text = internationalName;
+            }else if (indexPath.row == 2) {
                 cell.contentField.text = internationalGender;
             }else if (indexPath.row ==3){
                 cell.contentField.text = internationalCharacter;
@@ -392,9 +440,20 @@
             TextViewTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"TextViewTableViewCell" owner:self options:nil].firstObject;
             cell.contentTitle.text = EducationBoardSchoolTitle[indexPath.row-boardArray.count-1];
             cell.contentTextView.text = EducationBoardSchoolPlaceHolder[indexPath.row-boardArray.count-1];
+            cell.contentTextView.text = overseaRemarks;
+
+            UIToolbar*customAccessoryView = [[UIToolbar alloc]initWithFrame:(CGRect){0,0,Main_Screen_Width,40}];
+            customAccessoryView.barTintColor = [UIColor whiteColor];
+            UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            UIBarButtonItem *finish = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(dismissTextViewInput:)];
+            finish.tag = indexPath.row;
+            [customAccessoryView setItems:@[space,space,finish]];
+            cell.contentTextView.inputAccessoryView =customAccessoryView;
+            
             return cell;
         }else if (indexPath.row == 10+boardArray.count+1){
             MultiTagSelectTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MultiTagSelectTableViewCell" owner:self options:nil].firstObject;
+            cell.deletage = self;
             [self configCell:cell indexPath:indexPath];
             return cell;
         }else if (indexPath.row == 5+boardArray.count+1){
@@ -403,12 +462,31 @@
             return cell;
         }else if (indexPath.row > 5 && indexPath.row < 5+boardArray.count+1){
             AdditionalTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"AdditionalTableViewCell" owner:self options:nil].firstObject;
-            cell.addTitle.text = boardArray[indexPath.row-6];
             cell.delegate = self;
             cell.deleteButton.tag = indexPath.row;
+            
+            UIPickerView* picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 180)];
+            picker.delegate = self;
+            picker.dataSource = self;
+            picker.backgroundColor = [UIColor whiteColor];
+            picker.tag = indexPath.row;
+            UIToolbar*customAccessoryView = [[UIToolbar alloc]initWithFrame:(CGRect){0,0,Main_Screen_Width,40}];
+            customAccessoryView.barTintColor = [UIColor whiteColor];
+            UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            UIBarButtonItem *finish = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(dismissInput:)];
+            finish.tag = indexPath.row;
+            [customAccessoryView setItems:@[space,space,finish]];
+            
+            cell.contentTextField.inputAccessoryView = customAccessoryView;
+            cell.contentTextField.inputView = picker;
+            
+            cell.addTitle.text = boardArray[indexPath.row-6];
+            cell.contentTextField.text = boardScoreArray[indexPath.row-6];
+
             return cell;
         }else{
             TextFieldTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldTableViewCell" owner:self options:nil].firstObject;
+            cell.contentField.tag = indexPath.row;
             cell.contentField.delegate = self;
             if (indexPath.row < 6) {
                 cell.contentTitle.text = EducationBoardSchoolTitle[indexPath.row];
@@ -418,7 +496,7 @@
                 cell.contentField.placeholder = EducationBoardSchoolPlaceHolder[indexPath.row-boardArray.count-1];
             }
             
-            if (indexPath.row != 1 && indexPath.row !=8) {
+            if (indexPath.row != 1 && indexPath.row != 7+boardArray.count+1 && indexPath.row != 7+boardArray.count+2) {
                 UIPickerView* picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 180)];
                 picker.delegate = self;
                 picker.dataSource = self;
@@ -435,6 +513,28 @@
                 cell.contentField.inputView = picker;
             }
             
+            if (indexPath.row == 1) {
+                cell.contentField.text = overseaName;
+            }else if (indexPath.row == 2) {
+                cell.contentField.text = overseaGender;
+            }else if (indexPath.row ==3){
+                cell.contentField.text = overseaCharacter;
+            }else if (indexPath.row == 4){
+                cell.contentField.text = overseaInGrade;
+            }else if (indexPath.row == 5){
+                cell.contentField.text = overseaEnglishAchievement;
+            }else if (indexPath.row == 5+1+boardArray.count+1){
+                cell.contentField.text = overseaAverageScoresOfSubjects;
+            }else if (indexPath.row == 5+1+boardArray.count+2){
+                cell.contentField.text = overseaExtracurricularPractice;
+            }else if (indexPath.row == 5+1+boardArray.count+3){
+                cell.contentField.text = overseaInternationalExamination;
+            }else if (indexPath.row == 5+1+boardArray.count+6){
+                cell.contentField.text = overseaIntentionToStudyAbroad;
+            }else if (indexPath.row == 5+1+boardArray.count+7){
+                cell.contentField.text = overseaTimeToGoAbroad;
+            }
+
             return cell;
         }
     }
@@ -488,7 +588,8 @@
                 [internationalScoreArray addObject:@""];
                 
             }else{
-                [boardArray insertObject:currentTextField.text atIndex:0];
+                [boardArray addObject:currentTextField.text];
+                [boardScoreArray addObject:@""];
             }
             [self.tableView reloadData];
         }
@@ -497,7 +598,7 @@
 
 
 -(void)configCell:(MultiTagSelectTableViewCell*)cell indexPath:(NSIndexPath*)indexPath{
-    [cell setTags:@[@"美国",@"加拿大",@"英国",@"澳大利亚",@"新加坡",@"日本",@"其他国家"]];
+    [cell setTags:EducationOverSeaCountry];
 }
 
 #pragma mark - SegmentControlChangeValue
@@ -529,7 +630,9 @@
             return pickerData.count;
         }
     }else{
-        if (pickerView.tag < 6) {
+        if (pickerView.tag > 5 && pickerView.tag < 5+boardArray.count+1+1){
+            return EducationInternationalForeignScore.count;
+        }else if (pickerView.tag < 6) {
             NSArray* pickerData = [NSArray arrayWithArray:EducationBoardPickerData[pickerView.tag]];
             return pickerData.count;
         }else{
@@ -551,7 +654,9 @@
             return EducationInternationalPickerData[pickerView.tag-internationalArray.count-1][row];
         }
     }else{
-        if (pickerView.tag < 6) {
+        if (pickerView.tag > 5 && pickerView.tag < 5+boardArray.count+1+1){
+        return EducationInternationalForeignScore[row];
+        }else if (pickerView.tag < 6) {
             return EducationBoardPickerData[pickerView.tag][row];
         }else{
             return EducationBoardPickerData[pickerView.tag-boardArray.count-1][row];
@@ -587,7 +692,13 @@
             pickerString = EducationInternationalPickerData[pickerView.tag-internationalArray.count-1][row];
         }
     }else{
-        pickerString = EducationBoardPickerData[pickerView.tag][row];
+        if (pickerView.tag > 5 && pickerView.tag < 5+boardArray.count+1+1){
+            pickerString = EducationInternationalForeignScore[row];
+        }else if(pickerView.tag <6){
+            pickerString = EducationBoardPickerData[pickerView.tag][row];
+        }else{
+            pickerString = EducationBoardPickerData[pickerView.tag-boardArray.count-1][row];
+        }
     }
 }
 
@@ -603,14 +714,24 @@
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    if (currentSegIndex == 0 && textField.tag == 8) {
+    if (currentSegIndex == 0 && textField.tag == 1) {
+        trainingName = textField.text;
+    }else if (currentSegIndex == 1 && textField.tag == 1){
+        internationalName = textField.text;
+    }else if (currentSegIndex == 0 && textField.tag == 8) {
         trainigMoreInterested = textField.text;
     }else if (currentSegIndex == 0 && textField.tag == 9){
         trainingReadingtrainingCourse = textField.text;
     }else if (currentSegIndex == 1 && textField.tag == 7+internationalArray.count +1){
         internationalInternationalExamination = textField.text;
+    }else if (currentSegIndex ==2 && textField.tag ==1){
+        overseaName = textField.text;
+    }else if (currentSegIndex == 2 && textField.tag == 7+internationalArray.count +1){
+        overseaExtracurricularPractice = textField.text;
+    }else if (currentSegIndex == 2 && textField.tag == 8+boardArray.count +1){
+        overseaInternationalExamination = textField.text;
     }
+    
     [textField resignFirstResponder];
     
     
@@ -626,9 +747,8 @@
     }else if (currentSegIndex == 1){
         internationalRemarks = cell.contentTextView.text;
     }else{
-    
+        overseaRemarks = cell.contentTextView.text;
     }
-    
     
     [cell.contentTextView resignFirstResponder];
 }
@@ -748,6 +868,45 @@
             [cell.contentField resignFirstResponder];
         }
         
+    }else{
+        if (indexPath.row >5 && indexPath.row < 5+boardArray.count+1){
+            
+            AdditionalTableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            if (pickerString.length) {
+                cell.contentTextField.text = pickerString;
+                [boardScoreArray replaceObjectAtIndex:indexPath.row-6 withObject:pickerString];
+            }
+            pickerString = @"";
+            [cell.contentTextField resignFirstResponder];
+        }else{
+            TextFieldTableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            
+            if (pickerString.length) {
+                cell.contentField.text = pickerString;
+            }
+            
+            if (indexPath.row == 2) {
+                overseaGender =  cell.contentField.text;
+            }else if (indexPath.row == 3){
+                overseaCharacter =  cell.contentField.text;
+            }else if (indexPath.row == 4){
+                overseaInGrade =  cell.contentField.text;
+            }else if (indexPath.row == 5){
+                overseaEnglishAchievement = cell.contentField.text;
+            }else{
+                if (indexPath.row == 5+boardArray.count+1+1) {
+                    overseaAverageScoresOfSubjects = cell.contentField.text;
+                }else if (indexPath.row == 5+boardArray.count+1+6){
+                    overseaIntentionToStudyAbroad = cell.contentField.text;
+                }else if (indexPath.row == 5+boardArray.count+1+7){
+                    overseaTimeToGoAbroad = cell.contentField.text;
+                }
+            }
+            
+            pickerString = @"";
+            [cell.contentField resignFirstResponder];
+
+        }
     }
 
 }
@@ -760,36 +919,48 @@
         [internationalScoreArray removeObjectAtIndex:button.tag-6];
     }else{
         [boardArray removeObjectAtIndex:button.tag-6];
+        [boardScoreArray removeObjectAtIndex:button.tag-6];
     }
     
     [self.tableView reloadData];
 }
 
+#pragma mark - MultiTagSelectDelegte
+-(void)selectTextTag:(NSArray*)tagArray{
+    overseaCountryArray = [NSMutableArray arrayWithArray:tagArray];
+}
+
 #pragma mark - NetworkRequest
 -(void)postTrainingSchoolRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
-    [[MainService sharedMainService] postSpecialistOrgWithParameters:@{@"Id":@"",
-                                                                       @"UserId":info.userID,
-                                                                       @"Gender":@"",
-                                                                       @"Character":@"",
-                                                                       @"InGrade":@"",
-                                                                       @"SchoolLearningAtmosphere":@"",
-                                                                       @"IndependentLearningAttitude":@"",
-                                                                       @"AcademicRecord":@"",
-                                                                       @"MoreInterested":@"",
-                                                                       @"ReadingtrainingCourse":@"",
-                                                                       @"ChildCareEducation":@"",
-                                                                       @"CommunicationFrequency":@"",
-                                                                       @"LearningContent":@"",
-                                                                       @"Remarks":@"",
-                                                                       @"CreateTime":@"2017-08-07T02:55:28.111Z",
-                                                                       @"IsState":@(0)
-                                                                       }
-                                                        onCompletion:^(id json) {
-        
-    } onFailure:^(id json) {
-        
-    }];
+    
+    if (trainingGender.length && trainingCharacter.length && trainingInGrade.length && trainingSchoolLearningAtmosphere.length && trainingIndependentLearningAttitude.length && trainingAcademicRecord.length && trainigMoreInterested.length && trainingReadingtrainingCourse.length && trainingChildCareEducation.length && trainingCommunicationFrequency.length && trainingLearningContent.length && trainingRemarks.length) {
+        [[MainService sharedMainService] postSpecialistOrgWithParameters:@{@"Id":@"",
+                                                                           @"UserId":info.userID,
+                                                                           @"Gender":trainingGender,
+                                                                           @"Character":trainingCharacter,
+                                                                           @"InGrade":trainingInGrade,
+                                                                           @"SchoolLearningAtmosphere":trainingSchoolLearningAtmosphere,
+                                                                           @"IndependentLearningAttitude":trainingIndependentLearningAttitude,
+                                                                           @"AcademicRecord":trainingAcademicRecord,
+                                                                           @"MoreInterested":trainigMoreInterested,
+                                                                           @"ReadingtrainingCourse":trainingReadingtrainingCourse,
+                                                                           @"ChildCareEducation":trainingChildCareEducation,
+                                                                           @"CommunicationFrequency":trainingCommunicationFrequency,
+                                                                           @"LearningContent":trainingLearningContent,
+                                                                           @"Remarks":trainingRemarks,
+                                                                           @"CreateTime":@"2017-08-07T02:55:28.111Z",
+                                                                           @"IsState":@(0)
+                                                                           }
+                                                            onCompletion:^(id json) {
+                                                                
+                                                            } onFailure:^(id json) {
+                                                                
+                                                            }];
+
+    }
+    
+    
 }
 
 -(void)postInternationalSchoolRequest{
@@ -828,27 +999,56 @@
 -(void)postOverseaSchoolRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
     
-    [[MainService sharedMainService] postSpecialistOverseaSchoolWithParameters:@{@"Id":@"",
-                                                                                 @"UserId":info.userID,
-                                                                                 @"Gender":@"",
-                                                                                 @"Character":@"",
-                                                                                 @"InGrade":@"",
-                                                                                 @"ForeignLanguageAchievement":@"",
-                                                                                 @"AverageScoresOfSubjects":@"",
-                                                                                 @"ExtracurricularPractice":@"",
-                                                                                 @"InternationalExamination":@"",
-                                                                                 @"IntentionStudyCountry":@"",
-                                                                                 @"IntentionToStudyAbroad":@"",
-                                                                                 @"TimeToGoAbroad":@"",
-                                                                                 @"Remarks":@"",
-                                                                                 @"CreateTime":@"2017-08-07T02:55:28.167Z",
-                                                                                 @"IsState": @(0)
-                                                                                 }
-     
-    onCompletion:^(id json) {
+    if (overseaEnglishAchievement.length) {
+        [overseaForeignLanguageAchievement appendString:[NSString stringWithFormat:@"英语:%@",overseaEnglishAchievement]];
+    }
+    
+    for (int i = 6; i<5+boardArray.count+1; i++) {
+        [overseaForeignLanguageAchievement appendString:[NSString stringWithFormat:@",%@:%@",boardArray[i-6],boardScoreArray[i-6]]];
+    }
+    
+    if (overseaCountryArray.count >0) {
+        overseaIntentionStudyCountry = [overseaCountryArray componentsJoinedByString:@","];
+    }
+    
+    if (overseaCountryArray.count>0) {
+        NSMutableString* astring = [NSMutableString new];
         
-    } onFailure:^(id json) {
+        for (NSString*string in overseaCountryArray) {
+            [astring appendString:EducationOverSeaCountry[[string intValue]]];
+            [astring appendString:@","];
+        }
+       overseaIntentionStudyCountry = [astring substringToIndex:astring.length-1];
         
-    }];
+    }
+    
+    
+    if (overseaGender.length && overseaCharacter.length && overseaInGrade.length && overseaForeignLanguageAchievement.length && overseaAverageScoresOfSubjects.length && overseaExtracurricularPractice.length && overseaInternationalExamination.length && overseaIntentionStudyCountry.length && overseaIntentionToStudyAbroad.length && overseaTimeToGoAbroad.length && overseaRemarks.length) {
+        [[MainService sharedMainService] postSpecialistOverseaSchoolWithParameters:@{@"Id":@"",
+                                                                                     @"UserId":info.userID,
+                                                                                     @"Gender":overseaGender,
+                                                                                     @"Character":overseaCharacter,
+                                                                                     @"InGrade":overseaInGrade,
+                                                                                     @"ForeignLanguageAchievement":overseaForeignLanguageAchievement,
+                                                                                     @"AverageScoresOfSubjects":overseaAverageScoresOfSubjects,
+                                                                                     @"ExtracurricularPractice":overseaExtracurricularPractice,
+                                                                                     @"InternationalExamination":overseaInternationalExamination,
+                                                                                     @"IntentionStudyCountry":overseaIntentionStudyCountry,
+                                                                                     @"IntentionToStudyAbroad":overseaIntentionToStudyAbroad,
+                                                                                     @"TimeToGoAbroad":overseaTimeToGoAbroad,
+                                                                                     @"Remarks":overseaRemarks,
+                                                                                     @"CreateTime":@"2017-08-07T02:55:28.167Z",
+                                                                                     @"IsState": @(0)
+                                                                                     }
+         
+                                                                      onCompletion:^(id json) {
+                                                                          
+                                                                      } onFailure:^(id json) {
+                                                                          
+                                                                      }];
+ 
+    }
+    
+    
 }
 @end
