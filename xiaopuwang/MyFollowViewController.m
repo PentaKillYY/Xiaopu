@@ -21,6 +21,9 @@
     DataResult* schoolResult;
     NSInteger selectOrgIndex;
     NSInteger selectSchoolIndex;
+    
+    NSInteger detailOrgIndex;
+    NSInteger detailSchoolIndex;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -67,6 +70,27 @@
     
     [self.view addSubview:segmentedControl];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"MyFollowToOrgDetail"]) //"goView2"是SEGUE连线的标识
+    {
+        id theSegue = segue.destinationViewController;
+        
+        DataItem* item = [orgResult.items getItem:detailOrgIndex];
+        [theSegue setValue:[item getString:@"Organization_ID"] forKey:@"orgID"];
+    }else if ([segue.identifier isEqualToString:@"MyFollowToSchoolDetail"]){
+        id theSegue = segue.destinationViewController;
+        
+        DataItem* item =[schoolResult getItem:detailSchoolIndex];
+        
+        [theSegue setValue:[item getString:@"School_BasicInfo_ID"] forKey:@"basicID"];
+        [theSegue setValue:[item getString:@"School_Application_ID"] forKey:@"applicationID"];
+    
+    }
+    
+}
+
 
 #pragma mark - SegChange
 -(void)segmentedControlChangedValue:(HMSegmentedControl*)seg{
@@ -118,6 +142,16 @@
         return cell;
     }
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (currentSegIndex == 0) {
+        detailOrgIndex = indexPath.row;
+        [self performSegueWithIdentifier:@"MyFollowToOrgDetail" sender:self];
+    }else{
+        detailSchoolIndex = indexPath.row;
+        [self performSegueWithIdentifier:@"MyFollowToSchoolDetail" sender:self];
+    }
 }
 
 -(void)configOrgCell:(MyFollowOrgCell*)cell indexpath:(NSIndexPath*)indexpath{
