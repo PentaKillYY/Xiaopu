@@ -31,22 +31,8 @@
     
      [self.tableView registerNib:[UINib nibWithNibName:@"MyBannerCell" bundle:nil] forCellReuseIdentifier:@"MyBannerCell"];
     
-    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
-        
-    UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"message") style:UIBarButtonItemStylePlain target:self action:@selector(messagePush:)];
-    
-    UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(settingPush:)];
-    
-    
-    [self layoutNavigationBar:nil titleColor:nil titleFont:nil leftBarButtonItem:leftitem rightBarButtonItem:rightItm];
 
-    [self.navigationItem.rightBarButtonItem setTintColor:MAINCOLOR];
-    [self.navigationItem.leftBarButtonItem setTintColor:MAINCOLOR];
-    
-    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
-    
-//    [self getUserOnlyRequest];
-   
+       
     [self getUserBalanceRequest];
 }
 
@@ -55,19 +41,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+    
+    UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"message") style:UIBarButtonItemStylePlain target:self action:@selector(messagePush:)];
+    
+    UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(settingPush:)];
+    
+    
+    [self layoutNavigationBar:nil titleColor:nil titleFont:nil leftBarButtonItem:leftitem rightBarButtonItem:rightItm];
+    
+    [self.navigationItem.rightBarButtonItem setTintColor:MAINCOLOR];
+    [self.navigationItem.leftBarButtonItem setTintColor:MAINCOLOR];
+    
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [super viewWillAppear:YES];
+}
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 4;
+    return MyCellTitle.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0 || section == 1) {
-        return 1;
-    }else{
-        return 3;
-    }
+    NSArray *array = [NSArray arrayWithArray:MyCellTitle[section]];
+    return array.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -91,7 +91,7 @@
     }else {
         UserInfo* info = [UserInfo sharedUserInfo];
         MyTableCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyTableCell" owner:self options:nil].firstObject;
-        cell.cellTitle.text = MyCellTitle[indexPath.section-1][indexPath.row];
+        cell.cellTitle.text = MyCellTitle[indexPath.section][indexPath.row];
         NSString* imageName = [NSString stringWithFormat:@"My-%ld-%ld",indexPath.section,indexPath.row];
         
         
@@ -131,7 +131,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 3 && indexPath.row == 1) {
+    if (indexPath.section ==3 && indexPath.row == 0) {
+        [self performSegueWithIdentifier:@"MyToFollow" sender:self];
+    }else if (indexPath.section == 3 && indexPath.row == 2) {
         //显示分享面板
         [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
             // 根据获取的platformType确定所选平台进行下一步操作
@@ -255,7 +257,12 @@
     
     [[MyService  sharedMyService] uploadFileInfoWithImage:image Parameters:uploadImageName onCompletion:^(id json) {
         uploadResult = json;
-        [self updateUsrLogoRequest];
+        if (uploadResult.statusCode == 0) {
+            
+        }else if (uploadResult.statusCode == 1){
+            [self updateUsrLogoRequest];
+        }
+        
     } onFailure:^(id json) {
         
     }];

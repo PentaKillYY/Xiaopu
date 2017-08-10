@@ -158,4 +158,25 @@
         
     }];
 }
+
+-(void)getUserFocusOrgWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:[NSString stringWithFormat:@"%@?userId=%@",GetUserFocusOrg,[parameters objectForKey:@"userId"]]  parameters:nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+
+-(void)getUserFocusSchoolWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:[NSString stringWithFormat:@"%@?userId=%@",GetUserFocusSchool,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

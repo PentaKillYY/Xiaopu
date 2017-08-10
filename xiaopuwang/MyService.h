@@ -64,4 +64,14 @@
                     Parameters:(NSString *)imageName
                   onCompletion:(JSONResponse)completionBlock
                      onFailure:(JSONResponse)failureBlock;
+
+//获取用户关注机构信息
+-(void)getUserFocusOrgWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
+
+//获取用户关注学校信息
+-(void)getUserFocusSchoolWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
 @end

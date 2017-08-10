@@ -27,6 +27,7 @@ PODS:
   - LGAlertView (2.4.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MGSwipeTableCell (1.5.6)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - PNChart (0.8.9):
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - JPush (~> 3.0.6)
   - LGAlertView (~> 2.4.0)
   - MBProgressHUD (~> 1.0.0)
+  - MGSwipeTableCell (~> 1.5.6)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - PNChart
@@ -127,6 +129,7 @@ SPEC CHECKSUMS:
   LGAlertView: 2f5e83dd5cc2537de57d98727650609e86197d1a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
@@ -145,6 +148,6 @@ SPEC CHECKSUMS:
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
 
-PODFILE CHECKSUM: ea941f65fba3febbd1b741860ec067a5db5bce69
+PODFILE CHECKSUM: 78cfc4d4641c389350f21f66f90616bb3677066f
 
 COCOAPODS: 1.2.1

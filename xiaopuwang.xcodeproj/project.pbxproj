@@ -28,6 +28,11 @@
 		04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267F6A1F19E64200FFBC3E /* TagFooterTableViewCell.m */; };
 		04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */; };
 		0432AA3A1F3ACEA000783ED2 /* AppCustomHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA391F3ACEA000783ED2 /* AppCustomHud.m */; };
+		0432AA411F3BEEF400783ED2 /* MyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA401F3BEEF400783ED2 /* MyFollowViewController.m */; };
+		0432AA451F3BF69500783ED2 /* MyFollowOrgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA431F3BF69500783ED2 /* MyFollowOrgCell.m */; };
+		0432AA461F3BF69500783ED2 /* MyFollowOrgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA441F3BF69500783ED2 /* MyFollowOrgCell.xib */; };
+		0432AA4A1F3BF77600783ED2 /* MyFollowSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA481F3BF77600783ED2 /* MyFollowSchoolCell.m */; };
+		0432AA4B1F3BF77600783ED2 /* MyFollowSchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA491F3BF77600783ED2 /* MyFollowSchoolCell.xib */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
 		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
@@ -237,6 +242,14 @@
 		04267F6B1F19E64200FFBC3E /* TagFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagFooterTableViewCell.xib; sourceTree = "<group>"; };
 		0432AA381F3ACEA000783ED2 /* AppCustomHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCustomHud.h; sourceTree = "<group>"; };
 		0432AA391F3ACEA000783ED2 /* AppCustomHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCustomHud.m; sourceTree = "<group>"; };
+		0432AA3F1F3BEEF400783ED2 /* MyFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowViewController.h; sourceTree = "<group>"; };
+		0432AA401F3BEEF400783ED2 /* MyFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowViewController.m; sourceTree = "<group>"; };
+		0432AA421F3BF69500783ED2 /* MyFollowOrgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowOrgCell.h; sourceTree = "<group>"; };
+		0432AA431F3BF69500783ED2 /* MyFollowOrgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowOrgCell.m; sourceTree = "<group>"; };
+		0432AA441F3BF69500783ED2 /* MyFollowOrgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFollowOrgCell.xib; sourceTree = "<group>"; };
+		0432AA471F3BF77600783ED2 /* MyFollowSchoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowSchoolCell.h; sourceTree = "<group>"; };
+		0432AA481F3BF77600783ED2 /* MyFollowSchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowSchoolCell.m; sourceTree = "<group>"; };
+		0432AA491F3BF77600783ED2 /* MyFollowSchoolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFollowSchoolCell.xib; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
@@ -981,6 +994,8 @@
 			children = (
 				0478B9E11F14A0F7003A9C8B /* MyViewController.h */,
 				0478B9E21F14A0F7003A9C8B /* MyViewController.m */,
+				0432AA3F1F3BEEF400783ED2 /* MyFollowViewController.h */,
+				0432AA401F3BEEF400783ED2 /* MyFollowViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1003,6 +1018,12 @@
 				0478BA0E1F14B0C0003A9C8B /* MyTableCell.h */,
 				0478BA0F1F14B0C0003A9C8B /* MyTableCell.m */,
 				0478BA101F14B0C0003A9C8B /* MyTableCell.xib */,
+				0432AA421F3BF69500783ED2 /* MyFollowOrgCell.h */,
+				0432AA431F3BF69500783ED2 /* MyFollowOrgCell.m */,
+				0432AA441F3BF69500783ED2 /* MyFollowOrgCell.xib */,
+				0432AA471F3BF77600783ED2 /* MyFollowSchoolCell.h */,
+				0432AA481F3BF77600783ED2 /* MyFollowSchoolCell.m */,
+				0432AA491F3BF77600783ED2 /* MyFollowSchoolCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1433,6 +1454,7 @@
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				045633561F2B126C005E04CB /* CourseDetailContentTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
+				0432AA461F3BF69500783ED2 /* MyFollowOrgCell.xib in Resources */,
 				045632C31F2822A1005E04CB /* OrgContentTableViewCell.xib in Resources */,
 				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
@@ -1475,6 +1497,7 @@
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
+				0432AA4B1F3BF77600783ED2 /* MyFollowSchoolCell.xib in Resources */,
 				045632E51F2867FC005E04CB /* OrgStudentTableViewCell.xib in Resources */,
 				0478BA2E1F14BC74003A9C8B /* MainActivityTableViewCell.xib in Resources */,
 			);
@@ -1579,6 +1602,7 @@
 				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				045633221F29D0FD005E04CB /* VideoTableViewCell.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
+				0432AA411F3BEEF400783ED2 /* MyFollowViewController.m in Sources */,
 				045632DF1F2867ED005E04CB /* OrgTeacherTableViewCell.m in Sources */,
 				045633551F2B126C005E04CB /* CourseDetailContentTableViewCell.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
@@ -1607,6 +1631,7 @@
 				045633181F29BE1C005E04CB /* SRPictureManager.m in Sources */,
 				0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */,
 				04B93CFE1F385BE500B2DA19 /* HeaderTableViewCell.m in Sources */,
+				0432AA4A1F3BF77600783ED2 /* MyFollowSchoolCell.m in Sources */,
 				04A1D4C11F34031700EACEA8 /* SchoolCourseDetailViewController.m in Sources */,
 				045633361F2AD195005E04CB /* OrgMoreTeacherViewController.m in Sources */,
 				045633391F2AD1A7005E04CB /* OrgMoreStudentViewController.m in Sources */,
@@ -1631,6 +1656,7 @@
 				04A1D4971F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
 				045633501F2B1257005E04CB /* CourseDetailInfoTableViewCell.m in Sources */,
+				0432AA451F3BF69500783ED2 /* MyFollowOrgCell.m in Sources */,
 				04A1D46C1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m in Sources */,
 				0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */,
 				0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */,

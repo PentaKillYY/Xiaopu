@@ -49,7 +49,7 @@
 */
 
 - (IBAction)schoolTypeAction:(id)sender{
-    ct = [[CustomAlertTableView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height) rowCount:10 title:@"请选择学校类型"];
+    ct = [[CustomAlertTableView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height) rowCount:PersonChooseSchoolType.count title:@"请选择学校类型"];
     ct.delegate = self;
 
     [self.view addSubview:ct];

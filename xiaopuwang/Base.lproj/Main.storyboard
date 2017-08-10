@@ -1484,11 +1484,50 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="WxS-oE-hC9" id="vbD-nb-F5G"/>
+                        <segue destination="MV8-J8-7Ym" kind="push" identifier="MyToFollow" id="5qM-be-Goo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIL-eg-rsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2050" y="1182"/>
+        </scene>
+        <!--My Follow View Controller-->
+        <scene sceneID="Dve-rC-Eds">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="MV8-J8-7Ym" customClass="MyFollowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xSc-aD-Dzq"/>
+                        <viewControllerLayoutGuide type="bottom" id="OGZ-rf-DLc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bgb-DO-N3J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cjA-LQ-MyX">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MV8-J8-7Ym" id="I0x-HQ-CW8"/>
+                                    <outlet property="delegate" destination="MV8-J8-7Ym" id="u0C-Nv-DFq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OGZ-rf-DLc" firstAttribute="top" secondItem="cjA-LQ-MyX" secondAttribute="bottom" id="CgR-8y-CYl"/>
+                            <constraint firstItem="cjA-LQ-MyX" firstAttribute="top" secondItem="xSc-aD-Dzq" secondAttribute="bottom" constant="40" id="Lg2-vj-6FI"/>
+                            <constraint firstItem="cjA-LQ-MyX" firstAttribute="leading" secondItem="bgb-DO-N3J" secondAttribute="leading" id="fjd-Bw-oSo"/>
+                            <constraint firstAttribute="trailing" secondItem="cjA-LQ-MyX" secondAttribute="trailing" id="gu4-0j-o9B"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BOJ-Wk-YtB"/>
+                    <connections>
+                        <outlet property="tableView" destination="cjA-LQ-MyX" id="lZn-np-AWM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Amx-xf-Cm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2730" y="1178"/>
         </scene>
     </scenes>
     <resources>

@@ -167,3 +167,9 @@
 
 //获取上传文件信息
 #define UpLoadFileInfo @"/user/uploadFiles?floderName=user&action=add"
+
+//获取用户关注机构信息
+#define GetUserFocusOrg @"/user/orgFocusInfo"
+
+//获取用户关注学校信息
+#define GetUserFocusSchool @"/user/SchoolFocusInfo"
