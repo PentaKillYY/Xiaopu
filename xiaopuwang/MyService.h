@@ -74,4 +74,19 @@
 -(void)getUserFocusSchoolWithParameters:(NSDictionary *)parameters
                         onCompletion:(JSONResponse)completionBlock
                               onFailure:(JSONResponse)failureBlock;
+
+//通过userId获取专家咨询内容-机构
+-(void)getSpecialistOrgWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock;
+
+//通过userId获取专家咨询内容-中国学校
+-(void)getSpecialistChinaSchoolWithParameters:(NSDictionary *)parameters
+                                 onCompletion:(JSONResponse)completionBlock
+                                    onFailure:(JSONResponse)failureBlock;
+
+//通过userId获取专家咨询内容-海外学校
+-(void)getSpecialistOverseaSchoolWithParameters:(NSDictionary *)parameters
+                                   onCompletion:(JSONResponse)completionBlock
+                                      onFailure:(JSONResponse)failureBlock;
 @end

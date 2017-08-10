@@ -179,4 +179,34 @@
         
     }];
 }
+
+-(void)getSpecialistOrgWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@",GetSpecialistOrg,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)getSpecialistChinaSchoolWithParameters:(NSDictionary *)parameters
+                                 onCompletion:(JSONResponse)completionBlock
+                                    onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@",GetSpecialstChinaSchool,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)getSpecialistOverseaSchoolWithParameters:(NSDictionary *)parameters
+                                   onCompletion:(JSONResponse)completionBlock
+                                      onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@",GetSpecialistOverseaSchool,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

@@ -173,3 +173,12 @@
 
 //获取用户关注学校信息
 #define GetUserFocusSchool @"/user/SchoolFocusInfo"
+
+//通过userId获取专家咨询内容-机构
+#define GetSpecialistOrg @"/user/GetOrgExpertConsultation"
+
+//通过userId获取专家咨询内容-中国学校
+#define GetSpecialstChinaSchool @"/user/GetChinaSchoolExpertConsultation"
+
+//通过userId获取专家咨询内容-海外学校
+#define GetSpecialistOverseaSchool @"/user/GetOverSeasSchoolExpertConsultation"

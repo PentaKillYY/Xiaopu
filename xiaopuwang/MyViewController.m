@@ -133,6 +133,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section ==3 && indexPath.row == 0) {
         [self performSegueWithIdentifier:@"MyToFollow" sender:self];
+    }else if (indexPath.section == 3 && indexPath.row == 1){
+        [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
     }else if (indexPath.section == 3 && indexPath.row == 2) {
         //显示分享面板
         [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {

@@ -33,6 +33,9 @@
 		0432AA461F3BF69500783ED2 /* MyFollowOrgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA441F3BF69500783ED2 /* MyFollowOrgCell.xib */; };
 		0432AA4A1F3BF77600783ED2 /* MyFollowSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA481F3BF77600783ED2 /* MyFollowSchoolCell.m */; };
 		0432AA4B1F3BF77600783ED2 /* MyFollowSchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA491F3BF77600783ED2 /* MyFollowSchoolCell.xib */; };
+		0432AA4F1F3C29E300783ED2 /* MySpecialistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA4E1F3C29E300783ED2 /* MySpecialistViewController.m */; };
+		0432AA531F3C2E1000783ED2 /* MySpecialistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA511F3C2E1000783ED2 /* MySpecialistTableViewCell.m */; };
+		0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
 		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
@@ -250,6 +253,11 @@
 		0432AA471F3BF77600783ED2 /* MyFollowSchoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowSchoolCell.h; sourceTree = "<group>"; };
 		0432AA481F3BF77600783ED2 /* MyFollowSchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowSchoolCell.m; sourceTree = "<group>"; };
 		0432AA491F3BF77600783ED2 /* MyFollowSchoolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFollowSchoolCell.xib; sourceTree = "<group>"; };
+		0432AA4D1F3C29E300783ED2 /* MySpecialistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySpecialistViewController.h; sourceTree = "<group>"; };
+		0432AA4E1F3C29E300783ED2 /* MySpecialistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySpecialistViewController.m; sourceTree = "<group>"; };
+		0432AA501F3C2E1000783ED2 /* MySpecialistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySpecialistTableViewCell.h; sourceTree = "<group>"; };
+		0432AA511F3C2E1000783ED2 /* MySpecialistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySpecialistTableViewCell.m; sourceTree = "<group>"; };
+		0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySpecialistTableViewCell.xib; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
@@ -996,6 +1004,8 @@
 				0478B9E21F14A0F7003A9C8B /* MyViewController.m */,
 				0432AA3F1F3BEEF400783ED2 /* MyFollowViewController.h */,
 				0432AA401F3BEEF400783ED2 /* MyFollowViewController.m */,
+				0432AA4D1F3C29E300783ED2 /* MySpecialistViewController.h */,
+				0432AA4E1F3C29E300783ED2 /* MySpecialistViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1024,6 +1034,9 @@
 				0432AA471F3BF77600783ED2 /* MyFollowSchoolCell.h */,
 				0432AA481F3BF77600783ED2 /* MyFollowSchoolCell.m */,
 				0432AA491F3BF77600783ED2 /* MyFollowSchoolCell.xib */,
+				0432AA501F3C2E1000783ED2 /* MySpecialistTableViewCell.h */,
+				0432AA511F3C2E1000783ED2 /* MySpecialistTableViewCell.m */,
+				0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1493,6 +1506,7 @@
 				04B93D041F38914600B2DA19 /* MultiTagSelectTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
+				0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */,
 				04A1D4891F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
@@ -1615,6 +1629,7 @@
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				04B93D031F38914600B2DA19 /* MultiTagSelectTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
+				0432AA4F1F3C29E300783ED2 /* MySpecialistViewController.m in Sources */,
 				045632DA1F2867DC005E04CB /* OrgClassTableViewCell.m in Sources */,
 				0478BA321F14BCA1003A9C8B /* MainPreferedTableViewCell.m in Sources */,
 				045632D51F282896005E04CB /* UUChartConst.m in Sources */,
@@ -1624,6 +1639,7 @@
 				04A1D4D71F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.m in Sources */,
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
+				0432AA531F3C2E1000783ED2 /* MySpecialistTableViewCell.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
 				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
