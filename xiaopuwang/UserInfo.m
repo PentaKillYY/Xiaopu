@@ -36,6 +36,10 @@
         decodeObject(userBalance);
         decodeObject(userLongitude);
         decodeObject(userLatitude);
+        decodeObject(isReadIntro);
+        decodeObject(selectOrgTypeName);
+        decodeObject(selectSchoolTypeName);
+        decodeObject(selectCountryname);
     }
     
     return self;
@@ -51,6 +55,10 @@
     encodeObject(userBalance);
     encodeObject(userLongitude);
     encodeObject(userLatitude);
+    encodeObject(isReadIntro);
+    encodeObject(selectOrgTypeName);
+    encodeObject(selectSchoolTypeName);
+    encodeObject(selectCountryname);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
@@ -63,6 +71,10 @@
     self.userBalance=dict[@"userBalance"];
     self.userLongitude=dict[@"userLongitude"];
     self.userLatitude=dict[@"userLatitude"];
+    self.isReadIntro=dict[@"isReadIntro"];
+    self.selectOrgTypeName=dict[@"selectOrgTypeName"];
+    self.selectSchoolTypeName=dict[@"selectSchoolTypeName"];
+    self.selectCountryname=dict[@"selectCountryname"];
 }
 
 - (void)logout{

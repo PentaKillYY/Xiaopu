@@ -62,5 +62,5 @@
 #define EducationOverSeaCountry @[@"美国",@"加拿大",@"英国",@"澳大利亚",@"新加坡",@"日本",@"其他国家"]
 
 #define PersonChooseSchoolType @[@"教育机构",@"国内学校",@"美国学校",@"加拿大学校",@"英国学校",@"澳大利亚学校",@"新加坡学校",@"日本学校"]
-
+#define PersonChooseChinaCourseType @[@"幼儿园",@"小学",@"初中",@"高中",@"技术/专科学院",@"大学"]
 #endif /* ConstantMarco_h */

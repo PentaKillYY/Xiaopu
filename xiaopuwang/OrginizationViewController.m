@@ -70,8 +70,6 @@
     tagDic = [[NSMutableDictionary alloc] init];
     groupDic = [[NSMutableDictionary alloc] init];
     
-  
-    
     [self setUpSearchFilter];
     
     [self getGroupList];
@@ -104,7 +102,11 @@
 }
 
 -(void)setUpSearchFilter{
-    orgTypeName = @"";
+    if ([UserInfo sharedUserInfo].selectOrgTypeName.length) {
+       orgTypeName = [UserInfo sharedUserInfo].selectOrgTypeName;
+    }else{
+       orgTypeName = @"";
+    }
     orgGroupName = @"";
     selectArea = @"";
 }
@@ -117,7 +119,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: YES];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -126,6 +127,8 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
+    
+   
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     
@@ -388,7 +391,11 @@
         
     }else if (indexPath.column == 1){
         if (indexPath.row == 0) {
-            orgTypeName = @"";
+            if ([UserInfo sharedUserInfo].selectOrgTypeName.length) {
+                orgTypeName = [UserInfo sharedUserInfo].selectOrgTypeName;
+            }else{
+                orgTypeName = @"";
+            }
             [self.tableView.mj_header beginRefreshing];
         }else{
             if (indexPath.row == 3) {
@@ -417,6 +424,11 @@
     NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":@"",@"CourseType":orgTypeName,@"CourseKind":orgGroupName,@"City":@"",@"Field":selectArea,@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0)};
     
     [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:currentPage Size:size Parameters:parameters onCompletion:^(id json) {
+        
+        UserInfo* info = [UserInfo sharedUserInfo];
+        info.selectOrgTypeName = @"";
+        [info synchronize];
+        
         DataResult* result = json;
         
         [orgListArray append:[result.detailinfo getDataItemArray:@"orglist"]];

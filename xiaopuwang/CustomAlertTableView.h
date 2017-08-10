@@ -22,6 +22,7 @@
 @property NSInteger rowCount;
 @property(nonatomic,assign)id<RowSelectDelegate>delegate;
 @property(nonatomic,copy)NSString* tableTitle;
+@property(nonatomic,strong)NSArray* cellTitleArray;
 
 -(instancetype)initWithFrame:(CGRect)frame rowCount:(NSInteger)count title:(NSString*)title;
 -(void)show:(UIView*)changeOutView dur:(CFTimeInterval)dur;

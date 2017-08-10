@@ -105,13 +105,17 @@
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width-88, 44)];
     UIImage* clearImg = [MainViewController imageWithColor:[UIColor clearColor] andHeight:44.0f];
     [_searchBar setBackgroundImage:clearImg];
-    _searchBar.placeholder = @"请输入机构、学校、课程名称 ";
+    _searchBar.placeholder = @"请输入机构、学校、课程名称";
     [_searchBar setBackgroundColor:[UIColor clearColor]];
     
     _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_rightButton setFrame:CGRectMake(0, 0, 44, 44)];
     [_rightButton setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
-    [_rightButton setImage:V_IMAGE(@"email") forState:0];
+    if ([[UserInfo sharedUserInfo].isReadIntro isEqualToString:@"read"]) {
+        [_rightButton setImage:V_IMAGE(@"IntroRead") forState:0];
+    }else{
+        [_rightButton setImage:V_IMAGE(@"IntroUnread") forState:0];
+    }
     
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
                                        initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace

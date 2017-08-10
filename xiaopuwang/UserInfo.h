@@ -18,7 +18,10 @@
 @property (copy, nonatomic) NSString* userBalance;
 @property (copy, nonatomic) NSString* userLongitude;
 @property (copy, nonatomic) NSString* userLatitude;
-
+@property (copy, nonatomic) NSString* isReadIntro;
+@property (copy, nonatomic) NSString* selectOrgTypeName;
+@property (copy, nonatomic) NSString* selectCountryname;
+@property (copy, nonatomic) NSString* selectSchoolTypeName;
 +(instancetype)sharedUserInfo;
 -(void)logout;
 @end
