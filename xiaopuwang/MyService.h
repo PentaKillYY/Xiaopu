@@ -89,4 +89,9 @@
 -(void)getSpecialistOverseaSchoolWithParameters:(NSDictionary *)parameters
                                    onCompletion:(JSONResponse)completionBlock
                                       onFailure:(JSONResponse)failureBlock;
+
+//更新用户基本信息
+-(void)updateUserInfoWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
 @end

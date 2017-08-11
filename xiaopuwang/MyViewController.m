@@ -32,18 +32,6 @@
      [self.tableView registerNib:[UINib nibWithNibName:@"MyBannerCell" bundle:nil] forCellReuseIdentifier:@"MyBannerCell"];
     
 
-       
-    [self getUserBalanceRequest];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
-    
     UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"message") style:UIBarButtonItemStylePlain target:self action:@selector(messagePush:)];
     
     UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(settingPush:)];
@@ -55,6 +43,19 @@
     [self.navigationItem.leftBarButtonItem setTintColor:MAINCOLOR];
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    
+    [self getUserBalanceRequest];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+    
+    
     [super viewWillAppear:YES];
 }
 
@@ -143,6 +144,8 @@
             [self shareWebPageToPlatformType:platformType];
             
         }];
+    }else if (indexPath.section == 3 && indexPath.row == 3){
+        [self performSegueWithIdentifier:@"MyToUpdateInfo" sender:self];
     }
 }
 

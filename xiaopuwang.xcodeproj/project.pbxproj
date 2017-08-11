@@ -37,6 +37,10 @@
 		0432AA531F3C2E1000783ED2 /* MySpecialistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA511F3C2E1000783ED2 /* MySpecialistTableViewCell.m */; };
 		0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */; };
 		0432AA571F3C431600783ED2 /* UserIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA561F3C431600783ED2 /* UserIntroViewController.m */; };
+		0432AA5D1F3D423300783ED2 /* MyInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA5C1F3D423300783ED2 /* MyInfoTableViewController.m */; };
+		0432AA611F3D42A700783ED2 /* MyInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */; };
+		0432AA621F3D42A700783ED2 /* MyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */; };
+		0432AA651F3D4D5700783ED2 /* allprovinces.json in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA641F3D4D5700783ED2 /* allprovinces.json */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
 		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
@@ -261,6 +265,12 @@
 		0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySpecialistTableViewCell.xib; sourceTree = "<group>"; };
 		0432AA551F3C431600783ED2 /* UserIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIntroViewController.h; sourceTree = "<group>"; };
 		0432AA561F3C431600783ED2 /* UserIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIntroViewController.m; sourceTree = "<group>"; };
+		0432AA5B1F3D423300783ED2 /* MyInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoTableViewController.h; sourceTree = "<group>"; };
+		0432AA5C1F3D423300783ED2 /* MyInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoTableViewController.m; sourceTree = "<group>"; };
+		0432AA5E1F3D42A700783ED2 /* MyInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoTableViewCell.h; sourceTree = "<group>"; };
+		0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoTableViewCell.m; sourceTree = "<group>"; };
+		0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInfoTableViewCell.xib; sourceTree = "<group>"; };
+		0432AA641F3D4D5700783ED2 /* allprovinces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allprovinces.json; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
@@ -589,6 +599,14 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		0432AA631F3D4D3900783ED2 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				0432AA641F3D4D5700783ED2 /* allprovinces.json */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
 		0445EE401F1C9AD000E9DAB3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -878,6 +896,7 @@
 		0478B9921F147A94003A9C8B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0432AA631F3D4D3900783ED2 /* File */,
 				0478B9991F147B38003A9C8B /* Fonts */,
 				0478B99A1F147B46003A9C8B /* Sounds */,
 				0478B99B1F147B4C003A9C8B /* Videos */,
@@ -1011,6 +1030,8 @@
 				0432AA401F3BEEF400783ED2 /* MyFollowViewController.m */,
 				0432AA4D1F3C29E300783ED2 /* MySpecialistViewController.h */,
 				0432AA4E1F3C29E300783ED2 /* MySpecialistViewController.m */,
+				0432AA5B1F3D423300783ED2 /* MyInfoTableViewController.h */,
+				0432AA5C1F3D423300783ED2 /* MyInfoTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1042,6 +1063,9 @@
 				0432AA501F3C2E1000783ED2 /* MySpecialistTableViewCell.h */,
 				0432AA511F3C2E1000783ED2 /* MySpecialistTableViewCell.m */,
 				0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */,
+				0432AA5E1F3D42A700783ED2 /* MyInfoTableViewCell.h */,
+				0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */,
+				0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1500,6 +1524,7 @@
 				045632EA1F28682A005E04CB /* OrgEvaluateTableViewCell.xib in Resources */,
 				0445EF161F2093A800E9DAB3 /* OrgProportionTableViewCell.xib in Resources */,
 				045633511F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib in Resources */,
+				0432AA651F3D4D5700783ED2 /* allprovinces.json in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				04B93D121F39465500B2DA19 /* AdditionalTableViewCell.xib in Resources */,
 				04A1D4981F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib in Resources */,
@@ -1516,6 +1541,7 @@
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
+				0432AA621F3D42A700783ED2 /* MyInfoTableViewCell.xib in Resources */,
 				0432AA4B1F3BF77600783ED2 /* MyFollowSchoolCell.xib in Resources */,
 				045632E51F2867FC005E04CB /* OrgStudentTableViewCell.xib in Resources */,
 				0478BA2E1F14BC74003A9C8B /* MainActivityTableViewCell.xib in Resources */,
@@ -1598,6 +1624,7 @@
 				045632EE1F29B121005E04CB /* OrgPhotoBrowserViewController.m in Sources */,
 				0456332E1F2AC40A005E04CB /* OrgMoreCourseViewController.m in Sources */,
 				04B93D0C1F39463300B2DA19 /* AddTableViewCell.m in Sources */,
+				0432AA611F3D42A700783ED2 /* MyInfoTableViewCell.m in Sources */,
 				04A1D4CF1F340B0200EACEA8 /* SchoolCourseOtherCell.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				045632D21F282896005E04CB /* UUBarChart.m in Sources */,
@@ -1664,6 +1691,7 @@
 				045633481F2B1228005E04CB /* CouseDetailImageTableViewCell.m in Sources */,
 				04A1D4921F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m in Sources */,
 				04A1D4BE1F33237900EACEA8 /* SchoolIntroViewController.m in Sources */,
+				0432AA5D1F3D423300783ED2 /* MyInfoTableViewController.m in Sources */,
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */,

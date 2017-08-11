@@ -63,4 +63,6 @@
 
 #define PersonChooseSchoolType @[@"教育机构",@"国内学校",@"美国学校",@"加拿大学校",@"英国学校",@"澳大利亚学校",@"新加坡学校",@"日本学校"]
 #define PersonChooseChinaCourseType @[@"幼儿园",@"小学",@"初中",@"高中",@"技术/专科学院",@"大学"]
+#define MyInfoTitle @[@"姓名:",@"性别:",@"国家:",@"省:",@"市:"]
+#define Gender @[@"男",@"女"]
 #endif /* ConstantMarco_h */

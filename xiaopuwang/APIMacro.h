@@ -182,3 +182,6 @@
 
 //通过userId获取专家咨询内容-海外学校
 #define GetSpecialistOverseaSchool @"/user/GetOverSeasSchoolExpertConsultation"
+
+//更新用户基本信息
+#define UpdateUserInfo @"/user/UpdateOrInsertUserBaseInfo"

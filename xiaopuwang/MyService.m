@@ -91,8 +91,11 @@
         
         UserInfo* info = [UserInfo sharedUserInfo];
         info.username = [result.detailinfo getString:@"User_name"];
+        info.userGender= [result.detailinfo getString:@"Sex"];
+        info.userCountry = [result.detailinfo getString:@"CountryName"];
+        info.userProvince = [result.detailinfo getString:@"ProvinceName"];
+        info.userCity = [result.detailinfo getString:@"CityName"];
         [info synchronize];
-
         
         completionBlock(json);
     } failure:^(id json) {
@@ -204,6 +207,17 @@
                                    onCompletion:(JSONResponse)completionBlock
                                       onFailure:(JSONResponse)failureBlock{
     [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@",GetSpecialistOverseaSchool,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)updateUserInfoWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:UpdateUserInfo parameters:parameters success:^(id json) {
+
         completionBlock(json);
     } failure:^(id json) {
         

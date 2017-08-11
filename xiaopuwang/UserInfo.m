@@ -29,6 +29,7 @@
     if (self=[super init]) {
         decodeObject(username);
         decodeObject(password);
+        decodeObject(userGender);
         decodeObject(telphone);
         decodeObject(headPicUrl);
         decodeObject(userID);
@@ -40,6 +41,9 @@
         decodeObject(selectOrgTypeName);
         decodeObject(selectSchoolTypeName);
         decodeObject(selectCountryname);
+        decodeObject(userCountry);
+        decodeObject(userProvince);
+        decodeObject(userCity);
     }
     
     return self;
@@ -48,6 +52,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     encodeObject(username);
     encodeObject(password);
+    encodeObject(userGender);
     encodeObject(telphone);
     encodeObject(headPicUrl);
     encodeObject(userID);
@@ -59,11 +64,15 @@
     encodeObject(selectOrgTypeName);
     encodeObject(selectSchoolTypeName);
     encodeObject(selectCountryname);
+    encodeObject(userCountry);
+    encodeObject(userProvince);
+    encodeObject(userCity);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
     self.username=dict[@"username"];
     self.password=dict[@"password"];
+    self.userGender=dict[@"userGender"];
     self.telphone=dict[@"telephone"];
     self.headPicUrl=dict[@"headPicUrl"];
     self.userID=dict[@"userID"];
@@ -75,6 +84,9 @@
     self.selectOrgTypeName=dict[@"selectOrgTypeName"];
     self.selectSchoolTypeName=dict[@"selectSchoolTypeName"];
     self.selectCountryname=dict[@"selectCountryname"];
+    self.userCountry=dict[@"userCountry"];
+    self.userProvince=dict[@"userProvince"];
+    self.userCity=dict[@"userCity"];
 }
 
 - (void)logout{
