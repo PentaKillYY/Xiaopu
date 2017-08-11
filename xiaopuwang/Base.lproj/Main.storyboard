@@ -459,6 +459,7 @@
                         <outlet property="courseButton" destination="62X-tS-Zqb" id="9LC-Kj-gr6"/>
                         <outlet property="schoolButton" destination="aWV-BB-Uwa" id="UzY-Fp-ZZz"/>
                         <outlet property="searchButton" destination="bJs-Ft-rsZ" id="8p8-LO-DNy"/>
+                        <segue destination="25M-Rd-FQn" kind="push" identifier="PersonChooseToChinaSchool" id="KY4-T0-m3K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MP5-Bf-e5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -828,7 +829,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-a1-WrH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="25M-Rd-FQn" id="4Bc-gM-uu4"/>
@@ -1199,7 +1200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-Du-hyS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="dR3-fV-ZHn" id="EwT-fo-Arf"/>
@@ -1237,7 +1238,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nC5-ou-Qmd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="e61-8q-YkP" id="Ure-2e-2Ti"/>
@@ -1585,10 +1586,11 @@
         <image name="footernav_08" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dxN-wl-VKM"/>
+        <segue reference="KY4-T0-m3K"/>
         <segue reference="tkJ-ED-xoa"/>
+        <segue reference="gVy-dS-Wik"/>
+        <segue reference="5r5-mt-ds2"/>
         <segue reference="dFW-sS-bdb"/>
-        <segue reference="n00-pH-8fZ"/>
         <segue reference="C9X-s8-weM"/>
         <segue reference="xcV-3d-LJO"/>
     </inferredMetricsTieBreakers>

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="108.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id7-ox-d6S">
@@ -25,35 +25,35 @@
                             <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VHR-Af-pKQ"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua1-Pb-JTv">
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua1-Pb-JTv">
                         <rect key="frame" x="106.5" y="0.0" width="107" height="46.5"/>
                         <state key="normal" image="sprite_chicon_02"/>
                         <connections>
                             <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Kzd-Xa-IjN"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfb-f1-StJ">
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfb-f1-StJ">
                         <rect key="frame" x="213.5" y="0.0" width="106.5" height="46.5"/>
                         <state key="normal" image="sprite_chicon_03"/>
                         <connections>
                             <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BjY-iL-D9w"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGM-si-ijL">
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGM-si-ijL">
                         <rect key="frame" x="0.0" y="54.5" width="106.5" height="46"/>
                         <state key="normal" image="sprite_chicon_04"/>
                         <connections>
                             <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z4a-u5-qlL"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-Qe-xdj">
+                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-Qe-xdj">
                         <rect key="frame" x="106.5" y="54.5" width="107" height="46"/>
                         <state key="normal" image="sprite_chicon_05"/>
                         <connections>
                             <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jtc-vl-IyH"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiH-wX-9eW">
+                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiH-wX-9eW">
                         <rect key="frame" x="213.5" y="54.5" width="106.5" height="46"/>
                         <state key="normal" image="sprite_chicon_06"/>
                         <connections>

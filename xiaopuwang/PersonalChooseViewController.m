@@ -47,6 +47,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"PersonChooseToChinaSchool"])
+    {
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:PersonChooseChinaCourseType[selectCourseIndex] forKey:@"chinaType"];
+    }
+}
+
 - (IBAction)schoolTypeAction:(id)sender{
     ct = [[CustomAlertTableView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height) rowCount:PersonChooseSchoolType.count title:@"请选择学校类型"];
     ct.delegate = self;
@@ -68,7 +78,7 @@
             ct.delegate = self;
             [self.view addSubview:ct];
         }else if ([self.schoolButton.titleLabel.text isEqualToString:@"国内学校"]){
-            ct = [[CustomAlertTableView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height) rowCount:OrginizationTypeAry.count title:@"请选择课程类型"];
+            ct = [[CustomAlertTableView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height) rowCount:PersonChooseChinaCourseType.count title:@"请选择课程类型"];
             ct.cellTitleArray = PersonChooseChinaCourseType;
             ct.delegate = self;
             [self.view addSubview:ct];
@@ -101,7 +111,7 @@
             
             [self.tabBarController setSelectedIndex:1];
         }else if ([self.schoolButton.titleLabel.text isEqualToString:@"国内学校"]){
-            
+            [self performSegueWithIdentifier:@"PersonChooseToChinaSchool" sender:self];
         }else{
             UserInfo* info = [UserInfo sharedUserInfo];
             DataItem* item = [typeResult.items getItem:selectCourseIndex];
