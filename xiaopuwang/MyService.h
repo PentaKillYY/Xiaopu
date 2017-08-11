@@ -94,4 +94,9 @@
 -(void)updateUserInfoWithParameters:(NSDictionary *)parameters
                        onCompletion:(JSONResponse)completionBlock
                           onFailure:(JSONResponse)failureBlock;
+
+//获取用户银行卡
+-(void)getUserBankCardWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
 @end

@@ -185,3 +185,6 @@
 
 //更新用户基本信息
 #define UpdateUserInfo @"/user/UpdateOrInsertUserBaseInfo"
+
+//获取用户银行卡
+#define GetUserBankCard @"/user/userBankCardList"

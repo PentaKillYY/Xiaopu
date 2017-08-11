@@ -223,4 +223,15 @@
         
     }];
 }
+
+-(void)getUserBankCardWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:[NSString stringWithFormat:@"%@?userId=%@",GetUserBankCard,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+
+}
 @end

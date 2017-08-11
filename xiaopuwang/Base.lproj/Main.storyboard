@@ -1491,6 +1491,7 @@
                         <segue destination="MV8-J8-7Ym" kind="push" identifier="MyToFollow" id="5qM-be-Goo"/>
                         <segue destination="LBY-6W-6gi" kind="push" identifier="MyToSpecialist" id="Aoe-qa-RUC"/>
                         <segue destination="fBt-CZ-SeM" kind="push" identifier="MyToUpdateInfo" id="NSA-wr-ruI"/>
+                        <segue destination="he2-qS-y0c" kind="push" identifier="MyToSetting" id="JZR-oJ-tTp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIL-eg-rsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1604,6 +1605,134 @@
             </objects>
             <point key="canvasLocation" x="4033" y="1182"/>
         </scene>
+        <!--My Setting View Controller-->
+        <scene sceneID="STa-MG-iym">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="he2-qS-y0c" customClass="MySettingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aHs-G6-gCu"/>
+                        <viewControllerLayoutGuide type="bottom" id="XNo-aP-LQe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RRH-fc-H5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iDb-CZ-iia">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="he2-qS-y0c" id="Vz6-AJ-6fa"/>
+                                    <outlet property="delegate" destination="he2-qS-y0c" id="fmI-2l-yvT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iDb-CZ-iia" firstAttribute="top" secondItem="aHs-G6-gCu" secondAttribute="bottom" id="N6h-nO-BTa"/>
+                            <constraint firstAttribute="trailing" secondItem="iDb-CZ-iia" secondAttribute="trailing" id="chO-b3-qKt"/>
+                            <constraint firstItem="iDb-CZ-iia" firstAttribute="leading" secondItem="RRH-fc-H5Z" secondAttribute="leading" id="n0k-qa-itU"/>
+                            <constraint firstItem="XNo-aP-LQe" firstAttribute="top" secondItem="iDb-CZ-iia" secondAttribute="bottom" id="sha-Le-63i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iUl-Mf-ZSi"/>
+                    <connections>
+                        <outlet property="tableView" destination="iDb-CZ-iia" id="i17-d7-rz6"/>
+                        <segue destination="RTa-3v-Bl7" kind="push" identifier="MyToBankCard" id="90U-Nk-N0B"/>
+                        <segue destination="mGM-3Q-o4q" kind="push" identifier="MyToAbout" id="Of2-au-vjq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWo-IJ-UF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4718" y="1179"/>
+        </scene>
+        <!--My Bank Card View Controller-->
+        <scene sceneID="yPv-FA-eGA">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="RTa-3v-Bl7" customClass="MyBankCardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XUB-6C-h7j"/>
+                        <viewControllerLayoutGuide type="bottom" id="HSb-99-X4V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FfU-rW-YKM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-aZ-FBl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RTa-3v-Bl7" id="Mi8-Pa-73L"/>
+                                    <outlet property="delegate" destination="RTa-3v-Bl7" id="Rxl-MX-PdK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d3g-aZ-FBl" firstAttribute="leading" secondItem="FfU-rW-YKM" secondAttribute="leading" id="707-4a-Abq"/>
+                            <constraint firstItem="d3g-aZ-FBl" firstAttribute="top" secondItem="XUB-6C-h7j" secondAttribute="bottom" id="my4-Zt-GeB"/>
+                            <constraint firstItem="HSb-99-X4V" firstAttribute="top" secondItem="d3g-aZ-FBl" secondAttribute="bottom" id="vcP-XL-0NR"/>
+                            <constraint firstAttribute="trailing" secondItem="d3g-aZ-FBl" secondAttribute="trailing" id="zVJ-6A-KGU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e9J-eb-ihz"/>
+                    <connections>
+                        <outlet property="tableView" destination="d3g-aZ-FBl" id="sUH-kY-x47"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJ2-HR-AR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5386" y="1172"/>
+        </scene>
+        <!--My About View Controller-->
+        <scene sceneID="sRr-Ny-Wrf">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="mGM-3Q-o4q" customClass="MyAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l3y-W7-le1"/>
+                        <viewControllerLayoutGuide type="bottom" id="OHg-Zs-OUQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QBZ-qu-7Rq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GTB-21-paV">
+                                <rect key="frame" x="0.0" y="20" width="375" height="635"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mGM-3Q-o4q" id="aR5-6T-pba"/>
+                                    <outlet property="delegate" destination="mGM-3Q-o4q" id="LIq-em-Avo"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ Ings.online.All rights reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWE-EM-Lif">
+                                <rect key="frame" x="0.0" y="655" width="375" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="JGQ-ZQ-IVY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OHg-Zs-OUQ" firstAttribute="top" secondItem="GTB-21-paV" secondAttribute="bottom" constant="12" id="9xg-Iy-WcK"/>
+                            <constraint firstItem="GTB-21-paV" firstAttribute="top" secondItem="l3y-W7-le1" secondAttribute="bottom" id="DBt-pS-wiS"/>
+                            <constraint firstItem="OHg-Zs-OUQ" firstAttribute="top" secondItem="lWE-EM-Lif" secondAttribute="bottom" constant="2" id="TGf-ML-YGO"/>
+                            <constraint firstAttribute="trailing" secondItem="lWE-EM-Lif" secondAttribute="trailing" id="UQb-No-L8n"/>
+                            <constraint firstItem="GTB-21-paV" firstAttribute="leading" secondItem="QBZ-qu-7Rq" secondAttribute="leading" id="ayV-Ha-rKe"/>
+                            <constraint firstAttribute="trailing" secondItem="GTB-21-paV" secondAttribute="trailing" id="juV-mp-ffn"/>
+                            <constraint firstItem="lWE-EM-Lif" firstAttribute="leading" secondItem="QBZ-qu-7Rq" secondAttribute="leading" id="umC-fG-zgS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IKF-1O-rq8"/>
+                    <connections>
+                        <outlet property="tableView" destination="GTB-21-paV" id="ZIQ-3C-Kzg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWe-m5-BFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6046" y="1164"/>
+        </scene>
     </scenes>
     <resources>
         <image name="footernav_01" width="25" height="25"/>
@@ -1617,10 +1746,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KY4-T0-m3K"/>
+        <segue reference="dxN-wl-VKM"/>
         <segue reference="tkJ-ED-xoa"/>
-        <segue reference="gVy-dS-Wik"/>
-        <segue reference="5r5-mt-ds2"/>
         <segue reference="dFW-sS-bdb"/>
+        <segue reference="gVy-dS-Wik"/>
         <segue reference="C9X-s8-weM"/>
         <segue reference="xcV-3d-LJO"/>
     </inferredMetricsTieBreakers>

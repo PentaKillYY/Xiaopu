@@ -146,6 +146,8 @@
         }];
     }else if (indexPath.section == 3 && indexPath.row == 3){
         [self performSegueWithIdentifier:@"MyToUpdateInfo" sender:self];
+    }else if (indexPath.section == 3 && indexPath.row == 4){
+        [self performSegueWithIdentifier:@"MyToSetting" sender:self];
     }
 }
 

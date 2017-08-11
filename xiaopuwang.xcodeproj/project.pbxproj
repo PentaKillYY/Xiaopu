@@ -41,6 +41,17 @@
 		0432AA611F3D42A700783ED2 /* MyInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */; };
 		0432AA621F3D42A700783ED2 /* MyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */; };
 		0432AA651F3D4D5700783ED2 /* allprovinces.json in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA641F3D4D5700783ED2 /* allprovinces.json */; };
+		0432AA681F3D867C00783ED2 /* MySettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA671F3D867C00783ED2 /* MySettingViewController.m */; };
+		0432AA6C1F3D88A900783ED2 /* MySettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA6A1F3D88A900783ED2 /* MySettingTableViewCell.m */; };
+		0432AA6D1F3D88A900783ED2 /* MySettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA6B1F3D88A900783ED2 /* MySettingTableViewCell.xib */; };
+		0432AA731F3D90C300783ED2 /* MyBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA721F3D90C300783ED2 /* MyBankCardViewController.m */; };
+		0432AA761F3D911100783ED2 /* MyAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA751F3D911100783ED2 /* MyAboutViewController.m */; };
+		0432AA7A1F3D968600783ED2 /* MyCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA781F3D968600783ED2 /* MyCardTableViewCell.m */; };
+		0432AA7B1F3D968600783ED2 /* MyCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA791F3D968600783ED2 /* MyCardTableViewCell.xib */; };
+		0432AA7F1F3DA95000783ED2 /* MyAboutInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA7D1F3DA95000783ED2 /* MyAboutInfoTableViewCell.m */; };
+		0432AA801F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA7E1F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib */; };
+		0432AA841F3DB06400783ED2 /* MyAboutDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA821F3DB06400783ED2 /* MyAboutDetailTableViewCell.m */; };
+		0432AA851F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA831F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
 		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
@@ -271,6 +282,24 @@
 		0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoTableViewCell.m; sourceTree = "<group>"; };
 		0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		0432AA641F3D4D5700783ED2 /* allprovinces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allprovinces.json; sourceTree = "<group>"; };
+		0432AA661F3D867C00783ED2 /* MySettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingViewController.h; sourceTree = "<group>"; };
+		0432AA671F3D867C00783ED2 /* MySettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingViewController.m; sourceTree = "<group>"; };
+		0432AA691F3D88A900783ED2 /* MySettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingTableViewCell.h; sourceTree = "<group>"; };
+		0432AA6A1F3D88A900783ED2 /* MySettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingTableViewCell.m; sourceTree = "<group>"; };
+		0432AA6B1F3D88A900783ED2 /* MySettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySettingTableViewCell.xib; sourceTree = "<group>"; };
+		0432AA711F3D90C300783ED2 /* MyBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBankCardViewController.h; sourceTree = "<group>"; };
+		0432AA721F3D90C300783ED2 /* MyBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBankCardViewController.m; sourceTree = "<group>"; };
+		0432AA741F3D911100783ED2 /* MyAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAboutViewController.h; sourceTree = "<group>"; };
+		0432AA751F3D911100783ED2 /* MyAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAboutViewController.m; sourceTree = "<group>"; };
+		0432AA771F3D968600783ED2 /* MyCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCardTableViewCell.h; sourceTree = "<group>"; };
+		0432AA781F3D968600783ED2 /* MyCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCardTableViewCell.m; sourceTree = "<group>"; };
+		0432AA791F3D968600783ED2 /* MyCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCardTableViewCell.xib; sourceTree = "<group>"; };
+		0432AA7C1F3DA95000783ED2 /* MyAboutInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAboutInfoTableViewCell.h; sourceTree = "<group>"; };
+		0432AA7D1F3DA95000783ED2 /* MyAboutInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAboutInfoTableViewCell.m; sourceTree = "<group>"; };
+		0432AA7E1F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAboutInfoTableViewCell.xib; sourceTree = "<group>"; };
+		0432AA811F3DB06400783ED2 /* MyAboutDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAboutDetailTableViewCell.h; sourceTree = "<group>"; };
+		0432AA821F3DB06400783ED2 /* MyAboutDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAboutDetailTableViewCell.m; sourceTree = "<group>"; };
+		0432AA831F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAboutDetailTableViewCell.xib; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
@@ -1032,6 +1061,12 @@
 				0432AA4E1F3C29E300783ED2 /* MySpecialistViewController.m */,
 				0432AA5B1F3D423300783ED2 /* MyInfoTableViewController.h */,
 				0432AA5C1F3D423300783ED2 /* MyInfoTableViewController.m */,
+				0432AA661F3D867C00783ED2 /* MySettingViewController.h */,
+				0432AA671F3D867C00783ED2 /* MySettingViewController.m */,
+				0432AA711F3D90C300783ED2 /* MyBankCardViewController.h */,
+				0432AA721F3D90C300783ED2 /* MyBankCardViewController.m */,
+				0432AA741F3D911100783ED2 /* MyAboutViewController.h */,
+				0432AA751F3D911100783ED2 /* MyAboutViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1066,6 +1101,18 @@
 				0432AA5E1F3D42A700783ED2 /* MyInfoTableViewCell.h */,
 				0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */,
 				0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */,
+				0432AA691F3D88A900783ED2 /* MySettingTableViewCell.h */,
+				0432AA6A1F3D88A900783ED2 /* MySettingTableViewCell.m */,
+				0432AA6B1F3D88A900783ED2 /* MySettingTableViewCell.xib */,
+				0432AA771F3D968600783ED2 /* MyCardTableViewCell.h */,
+				0432AA781F3D968600783ED2 /* MyCardTableViewCell.m */,
+				0432AA791F3D968600783ED2 /* MyCardTableViewCell.xib */,
+				0432AA7C1F3DA95000783ED2 /* MyAboutInfoTableViewCell.h */,
+				0432AA7D1F3DA95000783ED2 /* MyAboutInfoTableViewCell.m */,
+				0432AA7E1F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib */,
+				0432AA811F3DB06400783ED2 /* MyAboutDetailTableViewCell.h */,
+				0432AA821F3DB06400783ED2 /* MyAboutDetailTableViewCell.m */,
+				0432AA831F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1501,6 +1548,7 @@
 				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
 				0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */,
+				0432AA6D1F3D88A900783ED2 /* MySettingTableViewCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
 				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04A1D4C61F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib in Resources */,
@@ -1512,6 +1560,7 @@
 				0445EF071F20926600E9DAB3 /* OrgInfoTableViewCell.xib in Resources */,
 				0445EEC01F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
+				0432AA851F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib in Resources */,
 				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
 				0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
@@ -1527,6 +1576,7 @@
 				0432AA651F3D4D5700783ED2 /* allprovinces.json in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				04B93D121F39465500B2DA19 /* AdditionalTableViewCell.xib in Resources */,
+				0432AA801F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib in Resources */,
 				04A1D4981F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib in Resources */,
 				04A1D47F1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.xib in Resources */,
 				04A1D4931F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib in Resources */,
@@ -1541,6 +1591,7 @@
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
+				0432AA7B1F3D968600783ED2 /* MyCardTableViewCell.xib in Resources */,
 				0432AA621F3D42A700783ED2 /* MyInfoTableViewCell.xib in Resources */,
 				0432AA4B1F3BF77600783ED2 /* MyFollowSchoolCell.xib in Resources */,
 				045632E51F2867FC005E04CB /* OrgStudentTableViewCell.xib in Resources */,
@@ -1628,10 +1679,13 @@
 				04A1D4CF1F340B0200EACEA8 /* SchoolCourseOtherCell.m in Sources */,
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				045632D21F282896005E04CB /* UUBarChart.m in Sources */,
+				0432AA7A1F3D968600783ED2 /* MyCardTableViewCell.m in Sources */,
 				045633191F29BE1C005E04CB /* SRPictureHUD.m in Sources */,
+				0432AA6C1F3D88A900783ED2 /* MySettingTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				045633171F29BE1C005E04CB /* SRPictureIndicator.m in Sources */,
 				045632B61F26DE80005E04CB /* MyService.m in Sources */,
+				0432AA681F3D867C00783ED2 /* MySettingViewController.m in Sources */,
 				04A1D4791F31ABAD00EACEA8 /* SchoolDetailTableViewCell.m in Sources */,
 				045633401F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m in Sources */,
 				0445EE731F1D9BE500E9DAB3 /* SubTidyViewController.m in Sources */,
@@ -1651,6 +1705,7 @@
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0432AA411F3BEEF400783ED2 /* MyFollowViewController.m in Sources */,
 				045632DF1F2867ED005E04CB /* OrgTeacherTableViewCell.m in Sources */,
+				0432AA761F3D911100783ED2 /* MyAboutViewController.m in Sources */,
 				045633551F2B126C005E04CB /* CourseDetailContentTableViewCell.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
 				045633151F29BE1C005E04CB /* SRPictureCell.m in Sources */,
@@ -1676,6 +1731,7 @@
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
 				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
+				0432AA7F1F3DA95000783ED2 /* MyAboutInfoTableViewCell.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				045633181F29BE1C005E04CB /* SRPictureManager.m in Sources */,
 				0445EEDF1F20800000E9DAB3 /* OrginizationDetailViewController.m in Sources */,
@@ -1688,7 +1744,9 @@
 				045633441F2B0FD6005E04CB /* OrgCourseDetailViewController.m in Sources */,
 				045632E91F28682A005E04CB /* OrgEvaluateTableViewCell.m in Sources */,
 				04A1D4751F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.m in Sources */,
+				0432AA731F3D90C300783ED2 /* MyBankCardViewController.m in Sources */,
 				045633481F2B1228005E04CB /* CouseDetailImageTableViewCell.m in Sources */,
+				0432AA841F3DB06400783ED2 /* MyAboutDetailTableViewCell.m in Sources */,
 				04A1D4921F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m in Sources */,
 				04A1D4BE1F33237900EACEA8 /* SchoolIntroViewController.m in Sources */,
 				0432AA5D1F3D423300783ED2 /* MyInfoTableViewController.m in Sources */,
