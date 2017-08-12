@@ -99,4 +99,24 @@
 -(void)getUserBankCardWithParameters:(NSDictionary *)parameters
                         onCompletion:(JSONResponse)completionBlock
                            onFailure:(JSONResponse)failureBlock;
+
+//删除指定银行卡
+-(void)deleteBankcardWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
+
+//判断用户是否已添加该银行卡
+-(void)judgeCardIsAddWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
+
+//添加银行卡
+-(void)addCardWithParameters:(NSDictionary *)parameters
+                onCompletion:(JSONResponse)completionBlock
+                   onFailure:(JSONResponse)failureBlock;
+
+//更新密码
+-(void)changePasswordWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
 @end

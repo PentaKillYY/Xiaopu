@@ -188,3 +188,15 @@
 
 //获取用户银行卡
 #define GetUserBankCard @"/user/userBankCardList"
+
+//删除指定银行卡
+#define DeleteUserbankCard @"/user/DeleteBankCard"
+
+//判断用户是否已添加该银行卡
+#define JudgeCardIsAdd @"/user/isExsistBankCard"
+
+//添加银行卡
+#define AddCard @"/user/addBankCard"
+
+//更新密码
+#define ChangePassword @"/user/updatePassword"

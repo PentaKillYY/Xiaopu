@@ -234,4 +234,44 @@
     }];
 
 }
+
+-(void)changePasswordWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:ChangePassword parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)deleteBankcardWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:DeleteUserbankCard parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)judgeCardIsAddWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:JudgeCardIsAdd parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)addCardWithParameters:(NSDictionary *)parameters
+                onCompletion:(JSONResponse)completionBlock
+                   onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:AddCard parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

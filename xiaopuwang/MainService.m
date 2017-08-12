@@ -36,6 +36,8 @@
         DataResult * result = json;
         UserInfo* info = [UserInfo sharedUserInfo];
         info.userID = result.message;
+        info.telphone = [parameters objectForKey:@"loginName"];
+        info.password = [parameters objectForKey:@"password"];
         [info synchronize];
         
         completionBlock(json);

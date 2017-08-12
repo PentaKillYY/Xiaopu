@@ -60,6 +60,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         [self performSegueWithIdentifier:@"MyToBankCard" sender:self];
+        
+    }else if (indexPath.row == 1){
+        [self performSegueWithIdentifier:@"MyToChangePassword" sender:self];
     }else if (indexPath.row == 2) {
         [[SDImageCache sharedImageCache] clearMemory];
         [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{

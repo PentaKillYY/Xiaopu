@@ -7,6 +7,11 @@
 //
 
 #import "BaseTableViewCell.h"
+@protocol DeleteCardDelegate <NSObject>
+
+-(void)deleteCard:(id)sender;
+
+@end
 
 @interface MyCardTableViewCell : BaseTableViewCell
 
@@ -15,6 +20,9 @@
 @property(nonatomic,weak)IBOutlet UIImageView* cardImage;
 @property(nonatomic,weak)IBOutlet UIButton* cancelButton;
 @property(nonatomic,weak)IBOutlet UIView* cardBGView;
+@property(nonatomic,assign)id<DeleteCardDelegate>delegate;
 
+-(IBAction)deleteCardAction:(id)sender;
 -(void)bingdingViewModel:(DataItem*)item;
 @end
+

@@ -28,4 +28,8 @@
     [self.cardBGView.layer setCornerRadius:3.0];
     [self.cardBGView.layer setMasksToBounds:YES];
 }
+
+-(IBAction)deleteCardAction:(id)sender{
+    [self.delegate deleteCard:sender];
+}
 @end

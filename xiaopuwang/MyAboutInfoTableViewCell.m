@@ -22,7 +22,7 @@
 }
 
 -(void)setupCellContent{
-    [self.appLogo.layer setCornerRadius:2.0];
+    [self.appLogo.layer setCornerRadius:3.0];
     [self.appLogo.layer setMasksToBounds:YES];
     
     self.appVersion.text =  [NSString stringWithFormat:@"版本号:%@",[[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"]];

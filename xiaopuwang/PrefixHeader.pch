@@ -37,7 +37,7 @@
 #import "VendorMarco.h"
 #import "ConstantMarco.h"
 #import "AppCustomHud.h"
-
+#import "VerifyRegexTool.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 
 #import <UShareUI/UShareUI.h>

@@ -52,6 +52,9 @@
 		0432AA801F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA7E1F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib */; };
 		0432AA841F3DB06400783ED2 /* MyAboutDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA821F3DB06400783ED2 /* MyAboutDetailTableViewCell.m */; };
 		0432AA851F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432AA831F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib */; };
+		0432AA881F3E8DBF00783ED2 /* MyChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA871F3E8DBF00783ED2 /* MyChangePasswordViewController.m */; };
+		0432AA8D1F3EA52C00783ED2 /* MyAddBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA8C1F3EA52C00783ED2 /* MyAddBankCardViewController.m */; };
+		0432AA911F3ECEAB00783ED2 /* VerifyRegexTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA901F3ECEAB00783ED2 /* VerifyRegexTool.m */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
 		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
@@ -300,6 +303,12 @@
 		0432AA811F3DB06400783ED2 /* MyAboutDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAboutDetailTableViewCell.h; sourceTree = "<group>"; };
 		0432AA821F3DB06400783ED2 /* MyAboutDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAboutDetailTableViewCell.m; sourceTree = "<group>"; };
 		0432AA831F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAboutDetailTableViewCell.xib; sourceTree = "<group>"; };
+		0432AA861F3E8DBF00783ED2 /* MyChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyChangePasswordViewController.h; sourceTree = "<group>"; };
+		0432AA871F3E8DBF00783ED2 /* MyChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyChangePasswordViewController.m; sourceTree = "<group>"; };
+		0432AA8B1F3EA52C00783ED2 /* MyAddBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddBankCardViewController.h; sourceTree = "<group>"; };
+		0432AA8C1F3EA52C00783ED2 /* MyAddBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddBankCardViewController.m; sourceTree = "<group>"; };
+		0432AA8F1F3ECEAB00783ED2 /* VerifyRegexTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyRegexTool.h; sourceTree = "<group>"; };
+		0432AA901F3ECEAB00783ED2 /* VerifyRegexTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyRegexTool.m; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
@@ -882,6 +891,8 @@
 				0456328E1F26D442005E04CB /* UserInfo.m */,
 				0478B9C81F149613003A9C8B /* BaseHttpRequest.h */,
 				0478B9C91F149613003A9C8B /* BaseHttpRequest.m */,
+				0432AA8F1F3ECEAB00783ED2 /* VerifyRegexTool.h */,
+				0432AA901F3ECEAB00783ED2 /* VerifyRegexTool.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1065,8 +1076,12 @@
 				0432AA671F3D867C00783ED2 /* MySettingViewController.m */,
 				0432AA711F3D90C300783ED2 /* MyBankCardViewController.h */,
 				0432AA721F3D90C300783ED2 /* MyBankCardViewController.m */,
+				0432AA8B1F3EA52C00783ED2 /* MyAddBankCardViewController.h */,
+				0432AA8C1F3EA52C00783ED2 /* MyAddBankCardViewController.m */,
 				0432AA741F3D911100783ED2 /* MyAboutViewController.h */,
 				0432AA751F3D911100783ED2 /* MyAboutViewController.m */,
+				0432AA861F3E8DBF00783ED2 /* MyChangePasswordViewController.h */,
+				0432AA871F3E8DBF00783ED2 /* MyChangePasswordViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1691,6 +1706,7 @@
 				0445EE731F1D9BE500E9DAB3 /* SubTidyViewController.m in Sources */,
 				045632D41F282896005E04CB /* UUChartLabel.m in Sources */,
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
+				0432AA8D1F3EA52C00783ED2 /* MyAddBankCardViewController.m in Sources */,
 				045632F11F29B415005E04CB /* OrgVideoViewController.m in Sources */,
 				0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */,
 				0456331D1F29BE8F005E04CB /* ImageCollectionViewCell.m in Sources */,
@@ -1731,6 +1747,7 @@
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
 				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
+				0432AA911F3ECEAB00783ED2 /* VerifyRegexTool.m in Sources */,
 				0432AA7F1F3DA95000783ED2 /* MyAboutInfoTableViewCell.m in Sources */,
 				0478BA111F14B0C0003A9C8B /* MyTableCell.m in Sources */,
 				045633181F29BE1C005E04CB /* SRPictureManager.m in Sources */,
@@ -1742,6 +1759,7 @@
 				045633391F2AD1A7005E04CB /* OrgMoreStudentViewController.m in Sources */,
 				045632D11F282896005E04CB /* UUBar.m in Sources */,
 				045633441F2B0FD6005E04CB /* OrgCourseDetailViewController.m in Sources */,
+				0432AA881F3E8DBF00783ED2 /* MyChangePasswordViewController.m in Sources */,
 				045632E91F28682A005E04CB /* OrgEvaluateTableViewCell.m in Sources */,
 				04A1D4751F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.m in Sources */,
 				0432AA731F3D90C300783ED2 /* MyBankCardViewController.m in Sources */,

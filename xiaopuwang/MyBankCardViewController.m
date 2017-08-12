@@ -10,9 +10,10 @@
 #import "MyService.h"
 #import "MyCardTableViewCell.h"
 
-@interface MyBankCardViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MyBankCardViewController ()<UITableViewDelegate,UITableViewDataSource,DeleteCardDelegate>
 {
     DataResult* cardRequest;
+    NSInteger selectCardIndex;
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @end
@@ -37,6 +38,11 @@
     [self getCardListRequest];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
+    [super viewWillAppear:YES];    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -57,8 +63,18 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MyCardTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyCardTableViewCell" owner:self options:nil].firstObject;
+    cell.delegate = self;
+    cell.cancelButton.tag = indexPath.section;
     [cell bingdingViewModel:[cardRequest.items getItem:indexPath.section]];
     return cell;
+}
+
+#pragma mark - DeleteCardDelegate
+
+-(void)deleteCard:(id)sender{
+    UIButton* button = (UIButton*)sender;
+    selectCardIndex = button.tag;
+    [self deleteCardRequest];
 }
 
 -(void)getCardListRequest{
@@ -72,7 +88,16 @@
 }
 
 -(void)addCardRequest{
-
+    [self performSegueWithIdentifier:@"BankCardToAddCard" sender:self];
 }
 
+
+-(void)deleteCardRequest{
+    [[MyService sharedMyService] deleteBankcardWithParameters:@{@"userId":[UserInfo sharedUserInfo].userID,@"cardNum":[[cardRequest.items getItem:selectCardIndex] getString:@"CardNum"]} onCompletion:^(id json) {
+        
+        [self getCardListRequest];
+    } onFailure:^(id json) {
+        
+    }];
+}
 @end
