@@ -28,9 +28,9 @@
     self.appVersion.text =  [NSString stringWithFormat:@"版本号:%@",[[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
 
     self.appContent.preferredMaxLayoutWidth = Main_Screen_Width-16;
-    
     NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[MyAboutInfo dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
     self.appContent.attributedText = attrStr;
+    self.appContent.textColor = [UIColor lightGrayColor];
 
 }
 @end
