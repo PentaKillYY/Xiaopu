@@ -23,8 +23,16 @@
 
 -(void)bingdingViewModel:(DataItem*)item{
     self.cardName.text = [item getString:@"BankName"];
+    NSInteger cardIndex;
+    if ([AddCardBankName containsObject:[item getString:@"BankName"]]) {
+        cardIndex = [AddCardBankName indexOfObject:[item getString:@"BankName"]];
+    }else{
+        cardIndex = 0;
+    }
+    
+    self.cardBGView.backgroundColor = [UIColor colorWithHexString:CardBGColor[cardIndex][0]] ;
+    
     self.cardLastNumber.text =  [NSString stringWithFormat:@"尾号 %@",[[item getString:@"CardNum"] substringWithRange:NSMakeRange([item getString:@"CardNum"].length-4, 4)]] ;
-    self.cardBGView.backgroundColor = [UIColor redColor];
     [self.cardBGView.layer setCornerRadius:3.0];
     [self.cardBGView.layer setMasksToBounds:YES];
 }

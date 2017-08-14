@@ -39,6 +39,7 @@
 #import "AppCustomHud.h"
 #import "VerifyRegexTool.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "UIColor+HexColor.h"
 
 #import <UShareUI/UShareUI.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>

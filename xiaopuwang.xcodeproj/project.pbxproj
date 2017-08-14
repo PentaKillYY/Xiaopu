@@ -55,6 +55,7 @@
 		0432AA881F3E8DBF00783ED2 /* MyChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA871F3E8DBF00783ED2 /* MyChangePasswordViewController.m */; };
 		0432AA8D1F3EA52C00783ED2 /* MyAddBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA8C1F3EA52C00783ED2 /* MyAddBankCardViewController.m */; };
 		0432AA911F3ECEAB00783ED2 /* VerifyRegexTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA901F3ECEAB00783ED2 /* VerifyRegexTool.m */; };
+		0432AA941F3EE03400783ED2 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432AA931F3EE03400783ED2 /* UIColor+HexColor.m */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
 		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
@@ -134,8 +135,6 @@
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
 		04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04573F791F13725F00B52C76 /* Assets.xcassets */; };
 		04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F7B1F13725F00B52C76 /* LaunchScreen.storyboard */; };
-		0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0478B99E1F148C16003A9C8B /* AlipaySDK.bundle */; };
-		0478B9A11F148C16003A9C8B /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B99F1F148C16003A9C8B /* AlipaySDK.framework */; };
 		0478B9A31F148C40003A9C8B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A21F148C40003A9C8B /* libc++.tbd */; };
 		0478B9A51F148C48003A9C8B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A41F148C48003A9C8B /* libz.tbd */; };
 		0478B9A71F148C4F003A9C8B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A61F148C4F003A9C8B /* SystemConfiguration.framework */; };
@@ -147,7 +146,6 @@
 		0478B9B31F148C91003A9C8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B21F148C91003A9C8B /* Foundation.framework */; };
 		0478B9B51F148C98003A9C8B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B41F148C98003A9C8B /* CFNetwork.framework */; };
 		0478B9B71F148CA0003A9C8B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B61F148CA0003A9C8B /* CoreMotion.framework */; };
-		0478B9BC1F148D51003A9C8B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9B81F148D51003A9C8B /* libWeChatSDK.a */; };
 		0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9BE1F149346003A9C8B /* BaseViewController.m */; };
 		0478B9CA1F149613003A9C8B /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9C91F149613003A9C8B /* BaseHttpRequest.m */; };
 		0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478B9E21F14A0F7003A9C8B /* MyViewController.m */; };
@@ -309,6 +307,8 @@
 		0432AA8C1F3EA52C00783ED2 /* MyAddBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddBankCardViewController.m; sourceTree = "<group>"; };
 		0432AA8F1F3ECEAB00783ED2 /* VerifyRegexTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyRegexTool.h; sourceTree = "<group>"; };
 		0432AA901F3ECEAB00783ED2 /* VerifyRegexTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyRegexTool.m; sourceTree = "<group>"; };
+		0432AA921F3EE03400783ED2 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
+		0432AA931F3EE03400783ED2 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
@@ -445,8 +445,6 @@
 		04573F791F13725F00B52C76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04573F7C1F13725F00B52C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04573F7E1F13725F00B52C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0478B99E1F148C16003A9C8B /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		0478B99F1F148C16003A9C8B /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		0478B9A21F148C40003A9C8B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		0478B9A41F148C48003A9C8B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0478B9A61F148C4F003A9C8B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -458,10 +456,6 @@
 		0478B9B21F148C91003A9C8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0478B9B41F148C98003A9C8B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0478B9B61F148CA0003A9C8B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		0478B9B81F148D51003A9C8B /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		0478B9B91F148D51003A9C8B /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		0478B9BA1F148D51003A9C8B /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		0478B9BB1F148D51003A9C8B /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		0478B9BD1F149346003A9C8B /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0478B9BE1F149346003A9C8B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0478B9C81F149613003A9C8B /* BaseHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpRequest.h; sourceTree = "<group>"; };
@@ -576,7 +570,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */,
-				0478B9BC1F148D51003A9C8B /* libWeChatSDK.a in Frameworks */,
 				0478B9B71F148CA0003A9C8B /* CoreMotion.framework in Frameworks */,
 				0478B9B51F148C98003A9C8B /* CFNetwork.framework in Frameworks */,
 				0478B9B31F148C91003A9C8B /* Foundation.framework in Frameworks */,
@@ -589,7 +582,6 @@
 				0478B9A51F148C48003A9C8B /* libz.tbd in Frameworks */,
 				0478B9A31F148C40003A9C8B /* libc++.tbd in Frameworks */,
 				B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */,
-				0478B9A11F148C16003A9C8B /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,6 +950,8 @@
 		0478B9941F147AC5003A9C8B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				0432AA921F3EE03400783ED2 /* UIColor+HexColor.h */,
+				0432AA931F3EE03400783ED2 /* UIColor+HexColor.m */,
 				0432AA381F3ACEA000783ED2 /* AppCustomHud.h */,
 				0432AA391F3ACEA000783ED2 /* AppCustomHud.m */,
 				045633281F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.h */,
@@ -1026,8 +1020,6 @@
 		0478B99C1F148521003A9C8B /* AliPaySDK */ = {
 			isa = PBXGroup;
 			children = (
-				0478B99E1F148C16003A9C8B /* AlipaySDK.bundle */,
-				0478B99F1F148C16003A9C8B /* AlipaySDK.framework */,
 			);
 			name = AliPaySDK;
 			sourceTree = "<group>";
@@ -1035,10 +1027,6 @@
 		0478B99D1F14852D003A9C8B /* WexinPaySDK */ = {
 			isa = PBXGroup;
 			children = (
-				0478B9B81F148D51003A9C8B /* libWeChatSDK.a */,
-				0478B9B91F148D51003A9C8B /* WechatAuthSDK.h */,
-				0478B9BA1F148D51003A9C8B /* WXApi.h */,
-				0478B9BB1F148D51003A9C8B /* WXApiObject.h */,
 			);
 			name = WexinPaySDK;
 			sourceTree = "<group>";
@@ -1576,7 +1564,6 @@
 				0445EEC01F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0432AA851F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib in Resources */,
-				0478B9A01F148C16003A9C8B /* AlipaySDK.bundle in Resources */,
 				0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
@@ -1741,6 +1728,7 @@
 				0478B9BF1F149346003A9C8B /* BaseViewController.m in Sources */,
 				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
 				04A1D4D71F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.m in Sources */,
+				0432AA941F3EE03400783ED2 /* UIColor+HexColor.m in Sources */,
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
 				0432AA531F3C2E1000783ED2 /* MySpecialistTableViewCell.m in Sources */,
