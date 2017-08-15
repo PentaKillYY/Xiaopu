@@ -285,6 +285,23 @@
     
 }
 
+-(IBAction)userAppointOrg:(id)sender{
+
+}
+
+
+-(IBAction)followOrginization:(id)sender{
+    UIButton* currentButton = (UIButton*)sender;
+    
+    currentButton.selected = !currentButton.selected;
+    if (currentButton.selected) {
+        [self focusOrgRequest];
+        
+    }else{
+        [self delFocusOrgRequest];
+    }
+}
+
 #pragma mark - LGAlertViewDelegate
 - (void)alertView:(nonnull LGAlertView *)alertView clickedButtonAtIndex:(NSUInteger)index title:(nullable NSString *)title{
     UITextView* textView = (UITextView*)alertView.innerView;
@@ -880,17 +897,7 @@
     }
 }
 
--(IBAction)followOrginization:(id)sender{
-    UIButton* currentButton = (UIButton*)sender;
-    
-    currentButton.selected = !currentButton.selected;
-    if (currentButton.selected) {
-        [self focusOrgRequest];
-        
-    }else{
-        [self delFocusOrgRequest];
-    }
-}
+
 
 #pragma mark - NetWorkRequest
 

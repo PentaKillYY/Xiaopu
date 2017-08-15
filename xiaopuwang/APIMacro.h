@@ -200,3 +200,26 @@
 
 //更新密码
 #define ChangePassword @"/user/updatePassword"
+
+// *******************************订单**************************
+
+//获取用户预约信息（预约列表）
+#define UserAppointList @"/userOrder/AppointmentInfoInfo"
+
+//获取用户订单信息（待支付、待评价、全部列表）
+#define UsreOrderList @"/userOrder/GetUserOrderListInfo"
+
+//取消用户预约信息
+#define DeleteUserAppointment @"/userOrder/DeleteUserAppointment"
+
+//用户下单
+#define UserMakeOrder @"/userOrder/UserOrder"
+
+//更新用户预约信息
+#define UpdataUserAppointment @"/userOrder/UpdateUserAppointmentInfo"
+
+//用户取消订单
+#define CancelUserOrder @"/userOrder/CancelUserOrderInfo"
+
+//获取订单信息
+#define UserOrderInfo @"/userOrder/OrderInfoList"

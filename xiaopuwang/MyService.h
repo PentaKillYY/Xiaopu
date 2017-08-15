@@ -119,4 +119,39 @@
 -(void)changePasswordWithParameters:(NSDictionary *)parameters
                        onCompletion:(JSONResponse)completionBlock
                           onFailure:(JSONResponse)failureBlock;
+
+//获取用户预约信息（预约列表）
+-(void)getUserAppointListWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
+
+//获取用户订单信息(待支付、待评价、全部列表)
+-(void)getUserOrderListWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock;
+
+//取消用户预约信息
+-(void)deleteUserAppointmentWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock;
+
+//用户下单
+-(void)userMakeOrderWithParameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock;
+
+//更新用户预约信息
+-(void)updateUserAppointmentWithParameters:(NSDictionary *)parameters
+                              onCompletion:(JSONResponse)completionBlock
+                                 onFailure:(JSONResponse)failureBlock;
+
+//用户取消订单
+-(void)cancelUserOrderWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
+
+//获取订单信息
+-(void)getUserOrderInfoWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock;
 @end

@@ -196,6 +196,23 @@
 		04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4CE1F340B0200EACEA8 /* SchoolCourseOtherCell.xib */; };
 		04A1D4D71F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4D51F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.m */; };
 		04A1D4D81F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D4D61F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.xib */; };
+		04B7CF731F413EB200108915 /* SGTopTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF701F413EB200108915 /* SGTopTitleView.m */; };
+		04B7CF741F413EB200108915 /* UIView+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF721F413EB200108915 /* UIView+SGExtension.m */; };
+		04B7CF771F41401400108915 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF761F41401400108915 /* MyOrderViewController.m */; };
+		04B7CF7A1F41486200108915 /* AllOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF791F41486200108915 /* AllOrderViewController.m */; };
+		04B7CF7D1F4148B700108915 /* OrderAppointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF7C1F4148B700108915 /* OrderAppointViewController.m */; };
+		04B7CF801F4148DC00108915 /* OrderPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF7F1F4148DC00108915 /* OrderPayViewController.m */; };
+		04B7CF831F4148F400108915 /* OrderEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF821F4148F400108915 /* OrderEvaluateViewController.m */; };
+		04B7CF871F41552D00108915 /* MyAppiontOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF851F41552D00108915 /* MyAppiontOrderTableViewCell.m */; };
+		04B7CF881F41552D00108915 /* MyAppiontOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B7CF861F41552D00108915 /* MyAppiontOrderTableViewCell.xib */; };
+		04B7CF8C1F41553C00108915 /* MyPayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF8A1F41553C00108915 /* MyPayTableViewCell.m */; };
+		04B7CF8D1F41553C00108915 /* MyPayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B7CF8B1F41553C00108915 /* MyPayTableViewCell.xib */; };
+		04B7CF911F41554F00108915 /* MyEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF8F1F41554F00108915 /* MyEvaluateTableViewCell.m */; };
+		04B7CF921F41554F00108915 /* MyEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B7CF901F41554F00108915 /* MyEvaluateTableViewCell.xib */; };
+		04B7CF9B1F419B4600108915 /* MyAllOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CF991F419B4600108915 /* MyAllOrderTableViewCell.m */; };
+		04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B7CF9A1F419B4600108915 /* MyAllOrderTableViewCell.xib */; };
+		04B7CFA21F4288C000108915 /* UserDealOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CFA11F4288C000108915 /* UserDealOrderTableViewController.m */; };
+		04B7CFA51F42DE2D00108915 /* UserConfirmOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7CFA41F42DE2D00108915 /* UserConfirmOrderViewController.m */; };
 		04B93CF91F383B1300B2DA19 /* ChinaShoolTeacherAndStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B93CF81F383B1300B2DA19 /* ChinaShoolTeacherAndStudentViewController.m */; };
 		04B93CFE1F385BE500B2DA19 /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B93CFC1F385BE500B2DA19 /* HeaderTableViewCell.m */; };
 		04B93CFF1F385BE500B2DA19 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B93CFD1F385BE500B2DA19 /* HeaderTableViewCell.xib */; };
@@ -545,6 +562,36 @@
 		04A1D4D41F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaTeacherAndSrudentCell.h; sourceTree = "<group>"; };
 		04A1D4D51F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaTeacherAndSrudentCell.m; sourceTree = "<group>"; };
 		04A1D4D61F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChinaTeacherAndSrudentCell.xib; sourceTree = "<group>"; };
+		04B7CF6F1F413EB200108915 /* SGTopTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTopTitleView.h; sourceTree = "<group>"; };
+		04B7CF701F413EB200108915 /* SGTopTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTopTitleView.m; sourceTree = "<group>"; };
+		04B7CF711F413EB200108915 /* UIView+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGExtension.h"; sourceTree = "<group>"; };
+		04B7CF721F413EB200108915 /* UIView+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGExtension.m"; sourceTree = "<group>"; };
+		04B7CF751F41401400108915 /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		04B7CF761F41401400108915 /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
+		04B7CF781F41486200108915 /* AllOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllOrderViewController.h; sourceTree = "<group>"; };
+		04B7CF791F41486200108915 /* AllOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllOrderViewController.m; sourceTree = "<group>"; };
+		04B7CF7B1F4148B700108915 /* OrderAppointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderAppointViewController.h; sourceTree = "<group>"; };
+		04B7CF7C1F4148B700108915 /* OrderAppointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderAppointViewController.m; sourceTree = "<group>"; };
+		04B7CF7E1F4148DC00108915 /* OrderPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPayViewController.h; sourceTree = "<group>"; };
+		04B7CF7F1F4148DC00108915 /* OrderPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPayViewController.m; sourceTree = "<group>"; };
+		04B7CF811F4148F400108915 /* OrderEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderEvaluateViewController.h; sourceTree = "<group>"; };
+		04B7CF821F4148F400108915 /* OrderEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderEvaluateViewController.m; sourceTree = "<group>"; };
+		04B7CF841F41552D00108915 /* MyAppiontOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAppiontOrderTableViewCell.h; sourceTree = "<group>"; };
+		04B7CF851F41552D00108915 /* MyAppiontOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAppiontOrderTableViewCell.m; sourceTree = "<group>"; };
+		04B7CF861F41552D00108915 /* MyAppiontOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAppiontOrderTableViewCell.xib; sourceTree = "<group>"; };
+		04B7CF891F41553C00108915 /* MyPayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPayTableViewCell.h; sourceTree = "<group>"; };
+		04B7CF8A1F41553C00108915 /* MyPayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPayTableViewCell.m; sourceTree = "<group>"; };
+		04B7CF8B1F41553C00108915 /* MyPayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPayTableViewCell.xib; sourceTree = "<group>"; };
+		04B7CF8E1F41554F00108915 /* MyEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEvaluateTableViewCell.h; sourceTree = "<group>"; };
+		04B7CF8F1F41554F00108915 /* MyEvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEvaluateTableViewCell.m; sourceTree = "<group>"; };
+		04B7CF901F41554F00108915 /* MyEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyEvaluateTableViewCell.xib; sourceTree = "<group>"; };
+		04B7CF981F419B4600108915 /* MyAllOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAllOrderTableViewCell.h; sourceTree = "<group>"; };
+		04B7CF991F419B4600108915 /* MyAllOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAllOrderTableViewCell.m; sourceTree = "<group>"; };
+		04B7CF9A1F419B4600108915 /* MyAllOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAllOrderTableViewCell.xib; sourceTree = "<group>"; };
+		04B7CFA01F4288C000108915 /* UserDealOrderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDealOrderTableViewController.h; sourceTree = "<group>"; };
+		04B7CFA11F4288C000108915 /* UserDealOrderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDealOrderTableViewController.m; sourceTree = "<group>"; };
+		04B7CFA31F42DE2C00108915 /* UserConfirmOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserConfirmOrderViewController.h; sourceTree = "<group>"; };
+		04B7CFA41F42DE2D00108915 /* UserConfirmOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserConfirmOrderViewController.m; sourceTree = "<group>"; };
 		04B93CF71F383B1300B2DA19 /* ChinaShoolTeacherAndStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaShoolTeacherAndStudentViewController.h; sourceTree = "<group>"; };
 		04B93CF81F383B1300B2DA19 /* ChinaShoolTeacherAndStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaShoolTeacherAndStudentViewController.m; sourceTree = "<group>"; };
 		04B93CFB1F385BE500B2DA19 /* HeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderTableViewCell.h; sourceTree = "<group>"; };
@@ -988,6 +1035,7 @@
 		0478B9981F147AEB003A9C8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04B7CF6E1F413EA100108915 /* SGTopTitle */,
 				045632F21F29B590005E04CB /* PhotoBrowser */,
 				045632C41F282885005E04CB /* UUChartView */,
 				04267F601F19AE1300FFBC3E /* Cell */,
@@ -1070,6 +1118,20 @@
 				0432AA751F3D911100783ED2 /* MyAboutViewController.m */,
 				0432AA861F3E8DBF00783ED2 /* MyChangePasswordViewController.h */,
 				0432AA871F3E8DBF00783ED2 /* MyChangePasswordViewController.m */,
+				04B7CF751F41401400108915 /* MyOrderViewController.h */,
+				04B7CF761F41401400108915 /* MyOrderViewController.m */,
+				04B7CFA01F4288C000108915 /* UserDealOrderTableViewController.h */,
+				04B7CFA11F4288C000108915 /* UserDealOrderTableViewController.m */,
+				04B7CF7B1F4148B700108915 /* OrderAppointViewController.h */,
+				04B7CF7C1F4148B700108915 /* OrderAppointViewController.m */,
+				04B7CF7E1F4148DC00108915 /* OrderPayViewController.h */,
+				04B7CF7F1F4148DC00108915 /* OrderPayViewController.m */,
+				04B7CFA31F42DE2C00108915 /* UserConfirmOrderViewController.h */,
+				04B7CFA41F42DE2D00108915 /* UserConfirmOrderViewController.m */,
+				04B7CF811F4148F400108915 /* OrderEvaluateViewController.h */,
+				04B7CF821F4148F400108915 /* OrderEvaluateViewController.m */,
+				04B7CF781F41486200108915 /* AllOrderViewController.h */,
+				04B7CF791F41486200108915 /* AllOrderViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1116,6 +1178,18 @@
 				0432AA811F3DB06400783ED2 /* MyAboutDetailTableViewCell.h */,
 				0432AA821F3DB06400783ED2 /* MyAboutDetailTableViewCell.m */,
 				0432AA831F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib */,
+				04B7CF841F41552D00108915 /* MyAppiontOrderTableViewCell.h */,
+				04B7CF851F41552D00108915 /* MyAppiontOrderTableViewCell.m */,
+				04B7CF861F41552D00108915 /* MyAppiontOrderTableViewCell.xib */,
+				04B7CF891F41553C00108915 /* MyPayTableViewCell.h */,
+				04B7CF8A1F41553C00108915 /* MyPayTableViewCell.m */,
+				04B7CF8B1F41553C00108915 /* MyPayTableViewCell.xib */,
+				04B7CF8E1F41554F00108915 /* MyEvaluateTableViewCell.h */,
+				04B7CF8F1F41554F00108915 /* MyEvaluateTableViewCell.m */,
+				04B7CF901F41554F00108915 /* MyEvaluateTableViewCell.xib */,
+				04B7CF981F419B4600108915 /* MyAllOrderTableViewCell.h */,
+				04B7CF991F419B4600108915 /* MyAllOrderTableViewCell.m */,
+				04B7CF9A1F419B4600108915 /* MyAllOrderTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1370,6 +1444,17 @@
 			name = School;
 			sourceTree = "<group>";
 		};
+		04B7CF6E1F413EA100108915 /* SGTopTitle */ = {
+			isa = PBXGroup;
+			children = (
+				04B7CF6F1F413EB200108915 /* SGTopTitleView.h */,
+				04B7CF701F413EB200108915 /* SGTopTitleView.m */,
+				04B7CF711F413EB200108915 /* UIView+SGExtension.h */,
+				04B7CF721F413EB200108915 /* UIView+SGExtension.m */,
+			);
+			name = SGTopTitle;
+			sourceTree = "<group>";
+		};
 		04B93D051F38932100B2DA19 /* TagSelect */ = {
 			isa = PBXGroup;
 			children = (
@@ -1548,6 +1633,8 @@
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				0432AA461F3BF69500783ED2 /* MyFollowOrgCell.xib in Resources */,
 				045632C31F2822A1005E04CB /* OrgContentTableViewCell.xib in Resources */,
+				04B7CF8D1F41553C00108915 /* MyPayTableViewCell.xib in Resources */,
+				04B7CF921F41554F00108915 /* MyEvaluateTableViewCell.xib in Resources */,
 				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
 				0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */,
@@ -1569,6 +1656,7 @@
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
 				04267F6D1F19E64200FFBC3E /* TagFooterTableViewCell.xib in Resources */,
 				045632E01F2867ED005E04CB /* OrgTeacherTableViewCell.xib in Resources */,
+				04B7CF881F41552D00108915 /* MyAppiontOrderTableViewCell.xib in Resources */,
 				0445EECA1F1F321900E9DAB3 /* TextViewTableViewCell.xib in Resources */,
 				045633411F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib in Resources */,
 				0478BA331F14BCA1003A9C8B /* MainPreferedTableViewCell.xib in Resources */,
@@ -1588,6 +1676,7 @@
 				04B93D041F38914600B2DA19 /* MultiTagSelectTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
+				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
 				0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */,
 				04A1D4891F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
@@ -1686,6 +1775,7 @@
 				0432AA6C1F3D88A900783ED2 /* MySettingTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
 				045633171F29BE1C005E04CB /* SRPictureIndicator.m in Sources */,
+				04B7CF7A1F41486200108915 /* AllOrderViewController.m in Sources */,
 				045632B61F26DE80005E04CB /* MyService.m in Sources */,
 				0432AA681F3D867C00783ED2 /* MySettingViewController.m in Sources */,
 				04A1D4791F31ABAD00EACEA8 /* SchoolDetailTableViewCell.m in Sources */,
@@ -1695,8 +1785,10 @@
 				0478BA1E1F14BC05003A9C8B /* MainCycleTableViewCell.m in Sources */,
 				0432AA8D1F3EA52C00783ED2 /* MyAddBankCardViewController.m in Sources */,
 				045632F11F29B415005E04CB /* OrgVideoViewController.m in Sources */,
+				04B7CFA51F42DE2D00108915 /* UserConfirmOrderViewController.m in Sources */,
 				0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */,
 				0456331D1F29BE8F005E04CB /* ImageCollectionViewCell.m in Sources */,
+				04B7CF9B1F419B4600108915 /* MyAllOrderTableViewCell.m in Sources */,
 				04267F6C1F19E64200FFBC3E /* TagFooterTableViewCell.m in Sources */,
 				0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */,
 				045633161F29BE1C005E04CB /* SRPictureView.m in Sources */,
@@ -1705,17 +1797,21 @@
 				045632D61F282896005E04CB /* UULineChart.m in Sources */,
 				04267F5B1F18A9D000FFBC3E /* SchoolBannerTableViewCell.m in Sources */,
 				045633221F29D0FD005E04CB /* VideoTableViewCell.m in Sources */,
+				04B7CF801F4148DC00108915 /* OrderPayViewController.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				0432AA411F3BEEF400783ED2 /* MyFollowViewController.m in Sources */,
+				04B7CF771F41401400108915 /* MyOrderViewController.m in Sources */,
 				045632DF1F2867ED005E04CB /* OrgTeacherTableViewCell.m in Sources */,
 				0432AA761F3D911100783ED2 /* MyAboutViewController.m in Sources */,
 				045633551F2B126C005E04CB /* CourseDetailContentTableViewCell.m in Sources */,
 				0445EF0B1F20933400E9DAB3 /* OrgHouseRateTableViewCell.m in Sources */,
 				045633151F29BE1C005E04CB /* SRPictureCell.m in Sources */,
 				0478B9CA1F149613003A9C8B /* BaseHttpRequest.m in Sources */,
+				04B7CF731F413EB200108915 /* SGTopTitleView.m in Sources */,
 				045632901F26D442005E04CB /* UserInfo.m in Sources */,
 				0456333C1F2AD1CA005E04CB /* OrgMoreEvaluateViewController.m in Sources */,
 				04A1D4721F31A3AA00EACEA8 /* SchoolDetailViewController.m in Sources */,
+				04B7CF8C1F41553C00108915 /* MyPayTableViewCell.m in Sources */,
 				0425A2511F21A6E100A18739 /* MainService.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				04B93D031F38914600B2DA19 /* MultiTagSelectTableViewCell.m in Sources */,
@@ -1734,6 +1830,8 @@
 				0432AA531F3C2E1000783ED2 /* MySpecialistTableViewCell.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
+				04B7CFA21F4288C000108915 /* UserDealOrderTableViewController.m in Sources */,
+				04B7CF911F41554F00108915 /* MyEvaluateTableViewCell.m in Sources */,
 				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
 				0432AA911F3ECEAB00783ED2 /* VerifyRegexTool.m in Sources */,
 				0432AA7F1F3DA95000783ED2 /* MyAboutInfoTableViewCell.m in Sources */,
@@ -1751,6 +1849,7 @@
 				045632E91F28682A005E04CB /* OrgEvaluateTableViewCell.m in Sources */,
 				04A1D4751F31A3BC00EACEA8 /* ChinaSchoolDetailViewController.m in Sources */,
 				0432AA731F3D90C300783ED2 /* MyBankCardViewController.m in Sources */,
+				04B7CF871F41552D00108915 /* MyAppiontOrderTableViewCell.m in Sources */,
 				045633481F2B1228005E04CB /* CouseDetailImageTableViewCell.m in Sources */,
 				0432AA841F3DB06400783ED2 /* MyAboutDetailTableViewCell.m in Sources */,
 				04A1D4921F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.m in Sources */,
@@ -1759,14 +1858,17 @@
 				0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */,
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */,
+				04B7CF741F413EB200108915 /* UIView+SGExtension.m in Sources */,
 				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,
 				04B93CF91F383B1300B2DA19 /* ChinaShoolTeacherAndStudentViewController.m in Sources */,
 				0456332A1F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m in Sources */,
 				0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */,
 				04A1D4831F31AC0900EACEA8 /* SchoolGradeTableViewCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
+				04B7CF831F4148F400108915 /* OrderEvaluateViewController.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 				045633131F29BE1C005E04CB /* SRPictureBrowser.m in Sources */,
+				04B7CF7D1F4148B700108915 /* OrderAppointViewController.m in Sources */,
 				04A1D4971F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m in Sources */,
 				0445EE761F1D9E4800E9DAB3 /* ActivityViewController.m in Sources */,
 				045633501F2B1257005E04CB /* CourseDetailInfoTableViewCell.m in Sources */,

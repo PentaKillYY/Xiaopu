@@ -91,7 +91,7 @@
         UserInfo* info = [UserInfo sharedUserInfo];
         MyTableCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyTableCell" owner:self options:nil].firstObject;
         cell.cellTitle.text = MyCellTitle[indexPath.section][indexPath.row];
-        NSString* imageName = [NSString stringWithFormat:@"My-%ld-%ld",indexPath.section,indexPath.row];
+        NSString* imageName = [NSString stringWithFormat:@"My-%ld-%ld",(long)indexPath.section,(long)indexPath.row];
         
         
         cell.cellImage.image = V_IMAGE(imageName);
@@ -130,7 +130,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section ==3 && indexPath.row == 0) {
+    if (indexPath.section == 1 && indexPath.row ==0) {
+        [self performSegueWithIdentifier:@"MyToOrder" sender:self];
+    }else if (indexPath.section ==3 && indexPath.row == 0) {
         [self performSegueWithIdentifier:@"MyToFollow" sender:self];
     }else if (indexPath.section == 3 && indexPath.row == 1){
         [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
