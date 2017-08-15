@@ -65,13 +65,6 @@
     MyCardTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyCardTableViewCell" owner:self options:nil].firstObject;
     cell.delegate = self;
     cell.cancelButton.tag = indexPath.section;
-    
-//    CAGradientLayer *grad = [CAGradientLayer layer];
-//    grad.frame =  cell.cardBGView.bounds;
-//    grad.colors =  [NSArray arrayWithObjects:(id)[UIColor colorWithHexString:CardBGColor[indexPath.section][0]].CGColor, (id)[UIColor colorWithHexString:CardBGColor[indexPath.section][1]].CGColor, nil];
-    
-//    [cell.cardBGView.layer insertSublayer:grad atIndex:0];
-
     [cell bingdingViewModel:[cardRequest.items getItem:indexPath.section]];
     return cell;
 }

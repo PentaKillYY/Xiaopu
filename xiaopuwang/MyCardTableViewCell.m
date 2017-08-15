@@ -31,6 +31,10 @@
     }
     
     self.cardBGView.backgroundColor = [UIColor colorWithHexString:CardBGColor[cardIndex][0]] ;
+    self.cardImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"Bank_%d",cardIndex]];
+    
+    [self.circle.layer setCornerRadius:self.circle.frame.size.width/2];
+    [self.circle.layer setMasksToBounds:YES];
     
     self.cardLastNumber.text =  [NSString stringWithFormat:@"尾号 %@",[[item getString:@"CardNum"] substringWithRange:NSMakeRange([item getString:@"CardNum"].length-4, 4)]] ;
     [self.cardBGView.layer setCornerRadius:3.0];

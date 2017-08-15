@@ -20,6 +20,7 @@
 @property(nonatomic,weak)IBOutlet UIImageView* cardImage;
 @property(nonatomic,weak)IBOutlet UIButton* cancelButton;
 @property(nonatomic,weak)IBOutlet UIView* cardBGView;
+@property(nonatomic,weak)IBOutlet UILabel* circle;
 @property(nonatomic,assign)id<DeleteCardDelegate>delegate;
 
 -(IBAction)deleteCardAction:(id)sender;
