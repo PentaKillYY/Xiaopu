@@ -345,4 +345,44 @@
         
     }];
 }
+
+-(void)deleteUserOrderWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:DeleteUserOrder parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)getBackPriceWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:GetBackPrice parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)updateOrderShareWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:UpdateOrderShare parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)addBackPriceWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:AddBackPrice parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
 @end

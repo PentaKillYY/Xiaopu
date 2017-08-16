@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040C73441F43D3DD001F5318 /* EvaluateOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C73431F43D3DD001F5318 /* EvaluateOrderTableViewController.m */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -243,6 +244,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040C73421F43D3DD001F5318 /* EvaluateOrderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateOrderTableViewController.h; sourceTree = "<group>"; };
+		040C73431F43D3DD001F5318 /* EvaluateOrderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateOrderTableViewController.m; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -1130,6 +1133,8 @@
 				04B7CFA41F42DE2D00108915 /* UserConfirmOrderViewController.m */,
 				04B7CF811F4148F400108915 /* OrderEvaluateViewController.h */,
 				04B7CF821F4148F400108915 /* OrderEvaluateViewController.m */,
+				040C73421F43D3DD001F5318 /* EvaluateOrderTableViewController.h */,
+				040C73431F43D3DD001F5318 /* EvaluateOrderTableViewController.m */,
 				04B7CF781F41486200108915 /* AllOrderViewController.h */,
 				04B7CF791F41486200108915 /* AllOrderViewController.m */,
 			);
@@ -1799,6 +1804,7 @@
 				045633221F29D0FD005E04CB /* VideoTableViewCell.m in Sources */,
 				04B7CF801F4148DC00108915 /* OrderPayViewController.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
+				040C73441F43D3DD001F5318 /* EvaluateOrderTableViewController.m in Sources */,
 				0432AA411F3BEEF400783ED2 /* MyFollowViewController.m in Sources */,
 				04B7CF771F41401400108915 /* MyOrderViewController.m in Sources */,
 				045632DF1F2867ED005E04CB /* OrgTeacherTableViewCell.m in Sources */,

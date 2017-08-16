@@ -8,6 +8,13 @@
 
 #import "BaseTableViewCell.h"
 
+@protocol EvaluateCellDelegate <NSObject>
+
+-(void)cancelDelegate:(id)sender;
+-(void)evaluateDelegate:(id)sender;
+
+@end
+
 @interface MyEvaluateTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* orgName;
 @property(nonatomic,weak)IBOutlet UILabel* appointState;
@@ -22,6 +29,11 @@
 @property(nonatomic,weak)IBOutlet UILabel* originPrice;
 @property(nonatomic,weak)IBOutlet UILabel* realPrice;
 @property(nonatomic,weak)IBOutlet UILabel* totalPrice;
+@property(nonatomic,assign)id<EvaluateCellDelegate>delegate;
 
 -(void)bingdingViewModel:(DataItem*)item;
+
+-(IBAction)cancelAction:(id)sender;
+-(IBAction)dealAction:(id)sender;
 @end
+

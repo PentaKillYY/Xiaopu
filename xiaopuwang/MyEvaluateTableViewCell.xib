@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ue8-eb-IgD" id="K1p-xB-C3v">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="172.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lX-NL-NAc">
@@ -103,11 +103,17 @@
                         <rect key="frame" x="162" y="134" width="63" height="30.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="  删除订单  "/>
+                        <connections>
+                            <action selector="cancelAction:" destination="Ue8-eb-IgD" eventType="touchUpInside" id="ajN-Vl-vde"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMn-Vg-FVe">
                         <rect key="frame" x="241" y="134" width="63" height="30.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="  立即评价  "/>
+                        <connections>
+                            <action selector="dealAction:" destination="Ue8-eb-IgD" eventType="touchUpInside" id="jsY-Gf-Yzh"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -223,3 +223,15 @@
 
 //获取订单信息
 #define UserOrderInfo @"/userOrder/OrderInfoList"
+
+//用户删除订单
+#define DeleteUserOrder @"/userOrder/DeleteUserOrderInfo" 
+
+//获取折扣金额
+#define GetBackPrice @"/userOrder/GetDiscountPrice"
+
+//更新订单分享状态
+#define UpdateOrderShare @"/userOrder/UpdateIsShare"
+
+//增加返现金额
+#define AddBackPrice @"/userOrder/AddBackPrice"

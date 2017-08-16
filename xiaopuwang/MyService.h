@@ -154,4 +154,24 @@
 -(void)getUserOrderInfoWithParameters:(NSDictionary *)parameters
                          onCompletion:(JSONResponse)completionBlock
                             onFailure:(JSONResponse)failureBlock;
+
+//用户删除订单
+-(void)deleteUserOrderWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
+
+//获取折扣金额
+-(void)getBackPriceWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock;
+
+//更新订单分享状态
+-(void)updateOrderShareWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock;
+
+//增加返现金额
+-(void)addBackPriceWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock;
 @end

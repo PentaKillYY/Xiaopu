@@ -42,11 +42,6 @@
     self.studentName.text = [NSString stringWithFormat:@"学生姓名:%@",[item getString:@"StudentName"]];
     self.orderID.text = [NSString stringWithFormat:@"订单编号:%@",[item getString:@"OrderNum"]];
     
-    [self.cancelOrderButton.layer setCornerRadius:3.0];
-    [self.cancelOrderButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    [self.cancelOrderButton.layer setBorderWidth:0.5];
-    [self.cancelOrderButton.layer setMasksToBounds:YES];
-    [self.cancelOrderButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     
     [self.dealOrderButton.layer setCornerRadius:3.0];
@@ -62,6 +57,28 @@
         self.totalPrice.text = [NSString stringWithFormat:@"合计:%.2f(线下支付)",[item getDouble:@"TotalPrice"]];
     }
     
+    if ([item getInt:@"IsShare"] == 1) {
+        [self.cancelOrderButton.layer setCornerRadius:3.0];
+        [self.cancelOrderButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+        [self.cancelOrderButton.layer setBorderWidth:0.5];
+        [self.cancelOrderButton.layer setMasksToBounds:YES];
+        [self.cancelOrderButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+
+    }else{
+        [self.cancelOrderButton setTitle:@"  分享抽学费  " forState:UIControlStateNormal];
+        [self.cancelOrderButton.layer setCornerRadius:3.0];
+        [self.cancelOrderButton.layer setBorderColor:MAINCOLOR.CGColor];
+        [self.cancelOrderButton.layer setBorderWidth:0.5];
+        [self.cancelOrderButton.layer setMasksToBounds:YES];
+        [self.cancelOrderButton setTitleColor:MAINCOLOR forState:UIControlStateNormal];
+    }
 }
 
+-(IBAction)cancelAction:(id)sender{
+    [self.delegate cancelDelegate:sender];
+}
+
+-(IBAction)dealAction:(id)sender{
+    [self.delegate evaluateDelegate:sender];
+}
 @end
