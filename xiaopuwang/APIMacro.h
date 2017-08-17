@@ -235,3 +235,6 @@
 
 //增加返现金额
 #define AddBackPrice @"/userOrder/AddBackPrice"
+
+//用户评价
+#define UserEvaluate @"/userOrder/InsertUserReplyInfo"

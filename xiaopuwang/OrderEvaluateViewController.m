@@ -42,6 +42,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"EvaluateToPostEvaluate"]){
+        id theSegue = segue.destinationViewController;
+        
+        DataItem* item = [orderResult.items getItem:currentCellIndex];
+        [theSegue setValue:[item getString:@"Organization_Application_ID"] forKey:@"orgId"];
+        [theSegue setValue:[item getString:@"courseOrderID"] forKey:@"orderId"];
+    }
+}
+
+
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return orderResult.items.size;
@@ -93,6 +105,8 @@
 -(void)evaluateDelegate:(id)sender{
     UIButton* button = (UIButton*)sender;
     currentCellIndex = button.tag;
+    
+    [self performSegueWithIdentifier:@"EvaluateToPostEvaluate" sender:self];
 }
 
 #define UIAlertViewDelegate

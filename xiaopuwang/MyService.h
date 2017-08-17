@@ -174,4 +174,9 @@
 -(void)addBackPriceWithParameters:(NSDictionary *)parameters
                      onCompletion:(JSONResponse)completionBlock
                         onFailure:(JSONResponse)failureBlock;
+
+//用户评价
+-(void)userEvaluateWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock;
 @end

@@ -82,4 +82,5 @@
 
 #define PayType @[@"线上支付",@"线下支付"]
 
+#define EvaluateTag @[@"好评",@"中评",@"差评"]
 #endif /* ConstantMarco_h */

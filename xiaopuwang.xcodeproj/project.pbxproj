@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040C73441F43D3DD001F5318 /* EvaluateOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C73431F43D3DD001F5318 /* EvaluateOrderTableViewController.m */; };
+		040C73441F43D3DD001F5318 /* UserEvaluateOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C73431F43D3DD001F5318 /* UserEvaluateOrderTableViewController.m */; };
+		040C736C1F442B24001F5318 /* EvaluateTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C736A1F442B24001F5318 /* EvaluateTagTableViewCell.m */; };
+		040C736D1F442B24001F5318 /* EvaluateTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C736B1F442B24001F5318 /* EvaluateTagTableViewCell.xib */; };
+		040C73711F442B3B001F5318 /* EvaluateNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C736F1F442B3B001F5318 /* EvaluateNumberTableViewCell.m */; };
+		040C73721F442B3B001F5318 /* EvaluateNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C73701F442B3B001F5318 /* EvaluateNumberTableViewCell.xib */; };
+		040C73761F442B57001F5318 /* EvaluateContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C73741F442B57001F5318 /* EvaluateContentTableViewCell.m */; };
+		040C73771F442B57001F5318 /* EvaluateContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C73751F442B57001F5318 /* EvaluateContentTableViewCell.xib */; };
+		040C737B1F442B6B001F5318 /* EvaluatePicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C73791F442B6B001F5318 /* EvaluatePicTableViewCell.m */; };
+		040C737C1F442B6B001F5318 /* EvaluatePicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C737A1F442B6B001F5318 /* EvaluatePicTableViewCell.xib */; };
+		040C73921F444390001F5318 /* DLStarRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C738D1F444390001F5318 /* DLStarRatingControl.m */; };
+		040C73931F444390001F5318 /* DLStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C738F1F444390001F5318 /* DLStarView.m */; };
+		040C73941F444390001F5318 /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C73911F444390001F5318 /* UIView+Subviews.m */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -244,8 +255,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		040C73421F43D3DD001F5318 /* EvaluateOrderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateOrderTableViewController.h; sourceTree = "<group>"; };
-		040C73431F43D3DD001F5318 /* EvaluateOrderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateOrderTableViewController.m; sourceTree = "<group>"; };
+		040C73421F43D3DD001F5318 /* UserEvaluateOrderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEvaluateOrderTableViewController.h; sourceTree = "<group>"; };
+		040C73431F43D3DD001F5318 /* UserEvaluateOrderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEvaluateOrderTableViewController.m; sourceTree = "<group>"; };
+		040C73691F442B24001F5318 /* EvaluateTagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTagTableViewCell.h; sourceTree = "<group>"; };
+		040C736A1F442B24001F5318 /* EvaluateTagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateTagTableViewCell.m; sourceTree = "<group>"; };
+		040C736B1F442B24001F5318 /* EvaluateTagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTagTableViewCell.xib; sourceTree = "<group>"; };
+		040C736E1F442B3B001F5318 /* EvaluateNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateNumberTableViewCell.h; sourceTree = "<group>"; };
+		040C736F1F442B3B001F5318 /* EvaluateNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateNumberTableViewCell.m; sourceTree = "<group>"; };
+		040C73701F442B3B001F5318 /* EvaluateNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateNumberTableViewCell.xib; sourceTree = "<group>"; };
+		040C73731F442B57001F5318 /* EvaluateContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateContentTableViewCell.h; sourceTree = "<group>"; };
+		040C73741F442B57001F5318 /* EvaluateContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateContentTableViewCell.m; sourceTree = "<group>"; };
+		040C73751F442B57001F5318 /* EvaluateContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateContentTableViewCell.xib; sourceTree = "<group>"; };
+		040C73781F442B6B001F5318 /* EvaluatePicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluatePicTableViewCell.h; sourceTree = "<group>"; };
+		040C73791F442B6B001F5318 /* EvaluatePicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluatePicTableViewCell.m; sourceTree = "<group>"; };
+		040C737A1F442B6B001F5318 /* EvaluatePicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluatePicTableViewCell.xib; sourceTree = "<group>"; };
+		040C738C1F444390001F5318 /* DLStarRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStarRatingControl.h; sourceTree = "<group>"; };
+		040C738D1F444390001F5318 /* DLStarRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStarRatingControl.m; sourceTree = "<group>"; };
+		040C738E1F444390001F5318 /* DLStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStarView.h; sourceTree = "<group>"; };
+		040C738F1F444390001F5318 /* DLStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStarView.m; sourceTree = "<group>"; };
+		040C73901F444390001F5318 /* UIView+Subviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subviews.h"; sourceTree = "<group>"; };
+		040C73911F444390001F5318 /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -638,6 +667,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040C738B1F444388001F5318 /* Rate */ = {
+			isa = PBXGroup;
+			children = (
+				040C738C1F444390001F5318 /* DLStarRatingControl.h */,
+				040C738D1F444390001F5318 /* DLStarRatingControl.m */,
+				040C738E1F444390001F5318 /* DLStarView.h */,
+				040C738F1F444390001F5318 /* DLStarView.m */,
+				040C73901F444390001F5318 /* UIView+Subviews.h */,
+				040C73911F444390001F5318 /* UIView+Subviews.m */,
+			);
+			name = Rate;
+			sourceTree = "<group>";
+		};
 		0425A2441F219D7000A18739 /* BaseProj */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,6 +1080,7 @@
 		0478B9981F147AEB003A9C8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				040C738B1F444388001F5318 /* Rate */,
 				04B7CF6E1F413EA100108915 /* SGTopTitle */,
 				045632F21F29B590005E04CB /* PhotoBrowser */,
 				045632C41F282885005E04CB /* UUChartView */,
@@ -1133,8 +1176,8 @@
 				04B7CFA41F42DE2D00108915 /* UserConfirmOrderViewController.m */,
 				04B7CF811F4148F400108915 /* OrderEvaluateViewController.h */,
 				04B7CF821F4148F400108915 /* OrderEvaluateViewController.m */,
-				040C73421F43D3DD001F5318 /* EvaluateOrderTableViewController.h */,
-				040C73431F43D3DD001F5318 /* EvaluateOrderTableViewController.m */,
+				040C73421F43D3DD001F5318 /* UserEvaluateOrderTableViewController.h */,
+				040C73431F43D3DD001F5318 /* UserEvaluateOrderTableViewController.m */,
 				04B7CF781F41486200108915 /* AllOrderViewController.h */,
 				04B7CF791F41486200108915 /* AllOrderViewController.m */,
 			);
@@ -1195,6 +1238,18 @@
 				04B7CF981F419B4600108915 /* MyAllOrderTableViewCell.h */,
 				04B7CF991F419B4600108915 /* MyAllOrderTableViewCell.m */,
 				04B7CF9A1F419B4600108915 /* MyAllOrderTableViewCell.xib */,
+				040C73691F442B24001F5318 /* EvaluateTagTableViewCell.h */,
+				040C736A1F442B24001F5318 /* EvaluateTagTableViewCell.m */,
+				040C736B1F442B24001F5318 /* EvaluateTagTableViewCell.xib */,
+				040C736E1F442B3B001F5318 /* EvaluateNumberTableViewCell.h */,
+				040C736F1F442B3B001F5318 /* EvaluateNumberTableViewCell.m */,
+				040C73701F442B3B001F5318 /* EvaluateNumberTableViewCell.xib */,
+				040C73731F442B57001F5318 /* EvaluateContentTableViewCell.h */,
+				040C73741F442B57001F5318 /* EvaluateContentTableViewCell.m */,
+				040C73751F442B57001F5318 /* EvaluateContentTableViewCell.xib */,
+				040C73781F442B6B001F5318 /* EvaluatePicTableViewCell.h */,
+				040C73791F442B6B001F5318 /* EvaluatePicTableViewCell.m */,
+				040C737A1F442B6B001F5318 /* EvaluatePicTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1639,6 +1694,7 @@
 				0432AA461F3BF69500783ED2 /* MyFollowOrgCell.xib in Resources */,
 				045632C31F2822A1005E04CB /* OrgContentTableViewCell.xib in Resources */,
 				04B7CF8D1F41553C00108915 /* MyPayTableViewCell.xib in Resources */,
+				040C737C1F442B6B001F5318 /* EvaluatePicTableViewCell.xib in Resources */,
 				04B7CF921F41554F00108915 /* MyEvaluateTableViewCell.xib in Resources */,
 				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
@@ -1650,6 +1706,7 @@
 				04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				04A1D47A1F31ABAD00EACEA8 /* SchoolDetailTableViewCell.xib in Resources */,
+				040C73721F442B3B001F5318 /* EvaluateNumberTableViewCell.xib in Resources */,
 				0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */,
 				04B93CFF1F385BE500B2DA19 /* HeaderTableViewCell.xib in Resources */,
 				0445EF071F20926600E9DAB3 /* OrgInfoTableViewCell.xib in Resources */,
@@ -1678,10 +1735,12 @@
 				04A1D48E1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
 				045633491F2B1228005E04CB /* CouseDetailImageTableViewCell.xib in Resources */,
+				040C73771F442B57001F5318 /* EvaluateContentTableViewCell.xib in Resources */,
 				04B93D041F38914600B2DA19 /* MultiTagSelectTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
 				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
+				040C736D1F442B24001F5318 /* EvaluateTagTableViewCell.xib in Resources */,
 				0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */,
 				04A1D4891F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
@@ -1750,6 +1809,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040C73941F444390001F5318 /* UIView+Subviews.m in Sources */,
+				040C73711F442B3B001F5318 /* EvaluateNumberTableViewCell.m in Sources */,
 				0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */,
 				045632D31F282896005E04CB /* UUChart.m in Sources */,
 				0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */,
@@ -1765,6 +1826,8 @@
 				04B93D111F39465500B2DA19 /* AdditionalTableViewCell.m in Sources */,
 				0445EF1A1F2093DD00E9DAB3 /* OrgMapTableViewCell.m in Sources */,
 				0432AA571F3C431600783ED2 /* UserIntroViewController.m in Sources */,
+				040C73921F444390001F5318 /* DLStarRatingControl.m in Sources */,
+				040C737B1F442B6B001F5318 /* EvaluatePicTableViewCell.m in Sources */,
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
 				045633141F29BE1C005E04CB /* SRPictureModel.m in Sources */,
 				04A1D4CA1F340ADB00EACEA8 /* SchoolCourseTestCell.m in Sources */,
@@ -1804,7 +1867,7 @@
 				045633221F29D0FD005E04CB /* VideoTableViewCell.m in Sources */,
 				04B7CF801F4148DC00108915 /* OrderPayViewController.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
-				040C73441F43D3DD001F5318 /* EvaluateOrderTableViewController.m in Sources */,
+				040C73441F43D3DD001F5318 /* UserEvaluateOrderTableViewController.m in Sources */,
 				0432AA411F3BEEF400783ED2 /* MyFollowViewController.m in Sources */,
 				04B7CF771F41401400108915 /* MyOrderViewController.m in Sources */,
 				045632DF1F2867ED005E04CB /* OrgTeacherTableViewCell.m in Sources */,
@@ -1835,6 +1898,7 @@
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
 				0432AA531F3C2E1000783ED2 /* MySpecialistTableViewCell.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
+				040C73761F442B57001F5318 /* EvaluateContentTableViewCell.m in Sources */,
 				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
 				04B7CFA21F4288C000108915 /* UserDealOrderTableViewController.m in Sources */,
 				04B7CF911F41554F00108915 /* MyEvaluateTableViewCell.m in Sources */,
@@ -1865,6 +1929,8 @@
 				04573F6F1F13725F00B52C76 /* main.m in Sources */,
 				045632C21F2822A1005E04CB /* OrgContentTableViewCell.m in Sources */,
 				04B7CF741F413EB200108915 /* UIView+SGExtension.m in Sources */,
+				040C73931F444390001F5318 /* DLStarView.m in Sources */,
+				040C736C1F442B24001F5318 /* EvaluateTagTableViewCell.m in Sources */,
 				04267EE01F16179700FFBC3E /* AutoRollingScrollView.m in Sources */,
 				04B93CF91F383B1300B2DA19 /* ChinaShoolTeacherAndStudentViewController.m in Sources */,
 				0456332A1F29E34E005E04CB /* UINavigationController+ZFFullscreenPopGesture.m in Sources */,

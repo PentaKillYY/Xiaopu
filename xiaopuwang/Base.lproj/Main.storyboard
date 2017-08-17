@@ -1933,6 +1933,35 @@
             </objects>
             <point key="canvasLocation" x="9786" y="1836"/>
         </scene>
+        <!--User Evaluate Order Table View Controller-->
+        <scene sceneID="mYw-IK-Pv4">
+            <objects>
+                <tableViewController id="1eL-pY-2Xw" customClass="UserEvaluateOrderTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BOR-a1-8RC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e0m-eY-yYT">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e0m-eY-yYT" id="ee8-RC-frT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1eL-pY-2Xw" id="XbA-yr-Edo"/>
+                            <outlet property="delegate" destination="1eL-pY-2Xw" id="Npz-av-Oi1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Cr4-fa-I2S"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJx-MO-J5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10454" y="1829"/>
+        </scene>
         <!--All Order View Controller-->
         <scene sceneID="Zbi-kp-wJ4">
             <objects>
@@ -2077,6 +2106,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="GOY-A7-Iqz" id="oNI-sK-ltC"/>
+                        <segue destination="1eL-pY-2Xw" kind="push" identifier="EvaluateToPostEvaluate" id="das-9m-Knb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYo-XS-n0n" userLabel="First Responder" sceneMemberID="firstResponder"/>

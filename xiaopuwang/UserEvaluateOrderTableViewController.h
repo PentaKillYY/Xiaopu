@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EvaluateOrderTableViewController : UITableViewController
+@interface UserEvaluateOrderTableViewController : UITableViewController
+@property(nonatomic,weak)NSString* orgId;
+@property(nonatomic,weak)NSString* orderId;
 
 @end
