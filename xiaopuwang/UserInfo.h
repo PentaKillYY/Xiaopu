@@ -17,6 +17,7 @@
 @property (copy, nonatomic) NSString *userID;
 @property (copy, nonatomic) NSString *token;
 @property (copy, nonatomic) NSString* userBalance;
+@property (copy, nonatomic) NSString* userCoupon;
 
 @property (copy, nonatomic) NSString* userLongitude;
 @property (copy, nonatomic) NSString* userLatitude;

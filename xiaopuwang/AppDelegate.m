@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
-
+#import "OrginizationService.h"
 
 @interface AppDelegate ()
 
@@ -134,6 +134,8 @@
 
 - (void)configRongCloud{
     [[RCIM sharedRCIM] initWithAppKey:RONGCLOUDDISKEY];
+    [[RCIM sharedRCIM] setUserInfoDataSource:self];
+    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
 }
 
 // 支持所有iOS系统
@@ -147,5 +149,27 @@
         // 其他如支付等SDK的回调
     }
     return result;
+}
+
+- (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion{
+    
+    UserInfo* info =  [UserInfo sharedUserInfo];
+    
+    
+    if ([userId isEqualToString:info.userID]) {
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:userId name:info.username portrait:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,info.headPicUrl]];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:userId];
+    }else if ([userId isEqualToString:SchoolRongCloudId]){
+        NSString *newPath=[[NSBundle mainBundle] pathForResource:@"ShareLogo" ofType:@"png"];
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:userId name:@"留学顾问" portrait:newPath];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:userId];
+        
+    }else if ([userId isEqualToString:ChinaSchoolRongCloudId]){
+        NSString *newPath=[[NSBundle mainBundle] pathForResource:@"ShareLogo" ofType:@"png"];
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:userId name:@"国际留学顾问" portrait:newPath];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:userId];
+    }else{
+        [[RCIM sharedRCIM] getUserInfoCache:userId];
+    }
 }
 @end

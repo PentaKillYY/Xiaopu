@@ -227,7 +227,8 @@
 -(void)postEvaluateRequest{
     if (replyContent.length && replyTag.length && bewriteMatch.length ) {
         [[MyService sharedMyService] userEvaluateWithParameters:@{@"Organization_Application_ID":self.orgId,@"Organization_Course_ID":@"",@"Reply_User_ID":[UserInfo sharedUserInfo].userID,@"Reply_Content":replyContent,@"Reply_Tag":replyTag,@"BewriteMatch":bewriteMatch,@"Reply_Picture":uploadImageUrl,@"TagPictureUrl":@"",@"Reply_Flag":@"",@"CourseOrder_ID":self.orderId} onCompletion:^(id json) {
-            [self.navigationController popViewControllerAnimated:YES];
+            [self updateAfterEvauateRequest];
+            
         } onFailure:^(id json) {
             
         }];
@@ -252,5 +253,13 @@
         
     }];
 
+}
+
+-(void)updateAfterEvauateRequest{
+    [[MyService sharedMyService] updateAfterEvaluateWithParameters:@{@"Id":self.orderId} onCompletion:^(id json) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } onFailure:^(id json) {
+        
+    }];
 }
 @end

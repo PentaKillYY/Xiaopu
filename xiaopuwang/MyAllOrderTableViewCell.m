@@ -42,18 +42,9 @@
     self.studentName.text = [NSString stringWithFormat:@"学生姓名:%@",[item getString:@"StudentName"]];
     self.orderID.text = [NSString stringWithFormat:@"订单编号:%@",[item getString:@"OrderNum"]];
     
-    [self.cancelOrderButton.layer setCornerRadius:3.0];
-    [self.cancelOrderButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    [self.cancelOrderButton.layer setBorderWidth:0.5];
-    [self.cancelOrderButton.layer setMasksToBounds:YES];
-    [self.cancelOrderButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
+   
     
-    [self.dealOrderButton.layer setCornerRadius:3.0];
-    [self.dealOrderButton.layer setBorderColor:MAINCOLOR.CGColor];
-    [self.dealOrderButton.layer setBorderWidth:0.5];
-    [self.dealOrderButton.layer setMasksToBounds:YES];
-    [self.dealOrderButton setTitleColor:MAINCOLOR forState:UIControlStateNormal];
     
     if ([item getInt:@"PayType"] == 1) {
         self.totalPrice.text = [NSString stringWithFormat:@"合计:%.2f(线上支付)",[item getDouble:@"TotalPrice"]];
@@ -64,17 +55,25 @@
     if ([[item getString:@"TradeStatus1"] isEqualToString:@"已支付"]) {
         //已支付已评价
         self.appointState.text = [item getString:@"EvaluateStatus"];
-        self.dealOrderButton.hidden = YES;
+        [self.deleteOrderButton.layer setCornerRadius:3.0];
+        [self.deleteOrderButton.layer setBorderColor:MAINCOLOR.CGColor];
+        [self.deleteOrderButton.layer setBorderWidth:0.5];
+        [self.deleteOrderButton.layer setMasksToBounds:YES];
+        [self.deleteOrderButton setTitleColor:MAINCOLOR forState:UIControlStateNormal];
+        [self.deleteOrderButton setTitle:@"  分享抽学费  " forState:UIControlStateNormal];
     }else{
         //已取消未评价
         self.appointState.text = [item getString:@"TradeStatus1"];
-        self.dealOrderButton.hidden = NO;
+        [self.deleteOrderButton.layer setCornerRadius:3.0];
+        [self.deleteOrderButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+        [self.deleteOrderButton.layer setBorderWidth:0.5];
+        [self.deleteOrderButton.layer setMasksToBounds:YES];
+        [self.deleteOrderButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [self.deleteOrderButton setTitle:@"  删除订单  " forState:UIControlStateNormal];
     }
-    
-    
-    
-    
-    
 }
 
+-(IBAction)deleteButtonAction:(id)sender{
+    [self.delegate deleteOrShareOrderDelegate:sender];
+}
 @end

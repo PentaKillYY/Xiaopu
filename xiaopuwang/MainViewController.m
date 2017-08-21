@@ -310,7 +310,7 @@
 
 
 -(void)tokenRequest{
-    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username} onCompletion:^(id json) {
+    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username,@"portraitUri":[UserInfo sharedUserInfo].headPicUrl} onCompletion:^(id json) {
         
     } onFailure:^(id json) {
         
@@ -389,6 +389,10 @@
     [[RCIM sharedRCIM] connectWithToken:info.token  success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
         
+//        RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:userId
+//                                                         name:info.username
+//                                                     portrait:info];
+        
     } error:^(RCConnectErrorCode status) {
         NSLog(@"登陆的错误码为:%ld", (long)status);
     } tokenIncorrect:^{
@@ -398,5 +402,8 @@
         NSLog(@"token错误");
     }];
 }
+
+
+
 
 @end

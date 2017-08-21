@@ -179,4 +179,44 @@
 -(void)userEvaluateWithParameters:(NSDictionary *)parameters
                      onCompletion:(JSONResponse)completionBlock
                         onFailure:(JSONResponse)failureBlock;
+
+//用户评价完成后更新订单信息
+-(void)updateAfterEvaluateWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock;
+
+//获取用户优惠券列表
+-(void)getUserCouponListWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
+//用户优惠券失效
+-(void)invalidUserCouponWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
+//用户余额操作
+-(void)updateUserBalanceWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
+//用户优惠券赠送
+-(void)giveCouponWithParameters:(NSDictionary *)parameters
+                   onCompletion:(JSONResponse)completionBlock
+                      onFailure:(JSONResponse)failureBlock;
+
+//通过手机号码查询登录信息
+-(void)searchUserByPhoneWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
+//支付宝签名
+-(void)aliPaySignWithParameters:(NSDictionary *)parameters
+                   onCompletion:(JSONResponse)completionBlock
+                      onFailure:(JSONResponse)failureBlock;
+
+//微信签名
+-(void)wxPaySignWithParameters:(NSDictionary *)parameters
+                  onCompletion:(JSONResponse)completionBlock
+                     onFailure:(JSONResponse)failureBlock;
 @end

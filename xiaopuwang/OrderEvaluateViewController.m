@@ -89,7 +89,7 @@
 
 #pragma mark - EvaluateCellDelegate
 
--(void)cancelDelegate:(id)sender{
+-(void)cancelEvaluateDelegate:(id)sender{
     UIButton* button = (UIButton*)sender;
     currentCellIndex = button.tag;
 
@@ -157,7 +157,15 @@
 }
 
 -(void)addBackPriceRequest{
-    [[MyService sharedMyService] addBackPriceWithParameters:@{@"orderId":[[orderResult.items getItem:currentCellIndex] getString:@"courseOrderID"],@"price":@""} onCompletion:^(id json) {
+    [[MyService sharedMyService] addBackPriceWithParameters:@{@"orderId":[[orderResult.items getItem:currentCellIndex] getString:@"courseOrderID"],@"price":@([backPriceResult.message doubleValue])} onCompletion:^(id json) {
+        [self updateUserBalanceRequest];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)updateUserBalanceRequest{
+    [[MyService sharedMyService] updateUserBalanceWithParameters:@{@"UserId":[UserInfo sharedUserInfo].userID,@"Price":@([backPriceResult.message doubleValue]),@"ChannelName":@"订单返现",@"ChannelCode":[[orderResult.items getItem:currentCellIndex] getString:@"courseOrderID"],@"OperationType":@(0)} onCompletion:^(id json) {
         [self shareUIShow];
     } onFailure:^(id json) {
         

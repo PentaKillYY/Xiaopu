@@ -16,6 +16,7 @@
 #import <AssetsLibrary/ALAssetsGroup.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
 
+#import "MyChatListViewController.h"
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource,UserLogoDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
     NSString* uploadImageName;
@@ -45,6 +46,7 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     [self getUserBalanceRequest];
+    [self getUserCouponListRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,6 +86,7 @@
         
         cell.userName.text = info.username;
         cell.balance.text = [NSString stringWithFormat:@"账户余额:%.2f",[info.userBalance doubleValue]];
+        cell.coupon.text = [NSString stringWithFormat:@"优惠券:%d张",[info.userCoupon integerValue]];
         
         cell.delegate = self;
         return cell;
@@ -99,7 +102,7 @@
         if (indexPath.section == 2 && indexPath.row == 0) {
             cell.cellDetail.text = [NSString stringWithFormat:@"%.2f元",[info.userBalance doubleValue]];
         }else if (indexPath.section == 2 && indexPath.row == 1){
-            cell.cellDetail.text = @"0张";
+            cell.cellDetail.text = [NSString stringWithFormat:@"%d张",[info.userCoupon integerValue]];
         }else if (indexPath.section == 2 && indexPath.row == 2){
             cell.cellDetail.text = @"0.00元";
         }else{
@@ -132,6 +135,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1 && indexPath.row ==0) {
         [self performSegueWithIdentifier:@"MyToOrder" sender:self];
+    }else if (indexPath.section == 2 && indexPath.row == 1){
+        [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
     }else if (indexPath.section ==3 && indexPath.row == 0) {
         [self performSegueWithIdentifier:@"MyToFollow" sender:self];
     }else if (indexPath.section == 3 && indexPath.row == 1){
@@ -153,11 +158,14 @@
 
 
 -(void)messagePush:(id)sender{
+    MyChatListViewController *chatList = [[MyChatListViewController alloc] init];
+    chatList.hidesBottomBarWhenPushed = YES;
 
+    [self.navigationController pushViewController:chatList animated:YES];
 }
 
 -(void)settingPush:(id)sender{
-    
+    [self performSegueWithIdentifier:@"MyToSetting" sender:self];
 }
 
 -(void)changeUserLogo:(id)sender{
@@ -227,10 +235,10 @@
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     CFShow((__bridge CFTypeRef)(infoDictionary));
-    //创建网页内容对象
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:ShareDetailTitle descr:nil thumImage:[UIImage imageNamed:@"ShareLogo"]];
-    //设置网页地址
+
     shareObject.webpageUrl =[NSString stringWithFormat:@"http://www.admin.ings.org.cn/UserRegister/GetCoupon?userId=%@&couponId=",info.userID];
+    
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
@@ -280,6 +288,20 @@
     
     [[MyService sharedMyService] postUserHeadWithParameters:@{@"UserID":info.userID,@"ImageBase":[uploadResult.detailinfo getString:@"UrlPath"]} onCompletion:^(id json) {
         info.headPicUrl = [uploadResult.detailinfo getString:@"UrlPath"];
+        [info synchronize];
+        
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
+        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)getUserCouponListRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] getUserCouponListWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
+        DataResult* couponResult = json;
+        info.userCoupon = [NSString stringWithFormat:@"%ld",couponResult.items.size];
         [info synchronize];
         
         NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];

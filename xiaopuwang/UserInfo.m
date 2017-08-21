@@ -44,6 +44,7 @@
         decodeObject(userCountry);
         decodeObject(userProvince);
         decodeObject(userCity);
+        decodeObject(userCoupon);
     }
     
     return self;
@@ -67,6 +68,7 @@
     encodeObject(userCountry);
     encodeObject(userProvince);
     encodeObject(userCity);
+    encodeObject(userCoupon);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
@@ -87,6 +89,7 @@
     self.userCountry=dict[@"userCountry"];
     self.userProvince=dict[@"userProvince"];
     self.userCity=dict[@"userCity"];
+    self.userCoupon=dict[@"userCoupon"];
 }
 
 - (void)logout{

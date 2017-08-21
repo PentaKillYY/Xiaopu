@@ -99,15 +99,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd3-MO-DRx">
-                        <rect key="frame" x="162" y="134" width="63" height="30.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="  取消预约  "/>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sme-AB-Ug4">
                         <rect key="frame" x="241" y="134" width="63" height="30.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="  立即付款  "/>
+                        <state key="normal" title="  删除订单  "/>
+                        <connections>
+                            <action selector="deleteButtonAction:" destination="Er3-VC-PQW" eventType="touchUpInside" id="70d-7D-c9k"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -118,7 +116,6 @@
                     <constraint firstAttribute="trailing" secondItem="oc2-7i-8fs" secondAttribute="trailing" id="FKB-mw-naW"/>
                     <constraint firstItem="9Y7-mc-hnn" firstAttribute="top" secondItem="cpG-KR-8wO" secondAttribute="bottom" constant="16" id="Gsy-Hp-TRy"/>
                     <constraint firstItem="m6U-ax-GaA" firstAttribute="leading" secondItem="djw-NI-pKa" secondAttribute="leading" id="HoF-7a-x9S"/>
-                    <constraint firstItem="sme-AB-Ug4" firstAttribute="leading" secondItem="Dd3-MO-DRx" secondAttribute="trailing" constant="16" id="I9s-R1-kj2"/>
                     <constraint firstAttribute="trailing" secondItem="sme-AB-Ug4" secondAttribute="trailing" constant="16" id="M2S-nH-bHH"/>
                     <constraint firstAttribute="trailing" secondItem="8om-pY-JBM" secondAttribute="trailing" constant="8" id="NDC-sp-nZF"/>
                     <constraint firstItem="oc2-7i-8fs" firstAttribute="top" secondItem="Rqg-yM-TmW" secondAttribute="bottom" constant="8" id="Nc1-aU-FhF"/>
@@ -130,7 +127,6 @@
                     <constraint firstItem="cpG-KR-8wO" firstAttribute="leading" secondItem="djw-NI-pKa" secondAttribute="leading" constant="8" id="Zep-RG-C0K"/>
                     <constraint firstItem="PzC-Ot-ewn" firstAttribute="top" secondItem="9Rm-TH-Vc7" secondAttribute="bottom" constant="2" id="aDI-nW-BSS"/>
                     <constraint firstAttribute="trailing" secondItem="hrr-Bb-gVx" secondAttribute="trailing" constant="8" id="blL-VU-ISJ"/>
-                    <constraint firstItem="sme-AB-Ug4" firstAttribute="top" secondItem="Dd3-MO-DRx" secondAttribute="top" id="eEa-g7-zXp"/>
                     <constraint firstAttribute="trailing" secondItem="9Rm-TH-Vc7" secondAttribute="trailing" constant="8" id="enp-Tb-aMe"/>
                     <constraint firstItem="26K-7E-By3" firstAttribute="leading" secondItem="9Y7-mc-hnn" secondAttribute="trailing" constant="8" id="f91-Yv-8VD"/>
                     <constraint firstItem="cpG-KR-8wO" firstAttribute="top" secondItem="djw-NI-pKa" secondAttribute="top" constant="8" id="fm6-Uf-sdu"/>
@@ -141,7 +137,6 @@
                     <constraint firstItem="m6U-ax-GaA" firstAttribute="top" secondItem="8om-pY-JBM" secondAttribute="bottom" constant="8" id="lRJ-Bt-v86"/>
                     <constraint firstItem="tM2-Sa-5Yt" firstAttribute="top" secondItem="9Y7-mc-hnn" secondAttribute="bottom" constant="16" id="m91-9B-UHB"/>
                     <constraint firstAttribute="trailing" secondItem="Rqg-yM-TmW" secondAttribute="trailing" constant="8" id="mZo-Uj-67a"/>
-                    <constraint firstItem="sme-AB-Ug4" firstAttribute="bottom" secondItem="Dd3-MO-DRx" secondAttribute="bottom" id="n0P-fi-CD5"/>
                     <constraint firstItem="9Y7-mc-hnn" firstAttribute="leading" secondItem="djw-NI-pKa" secondAttribute="leading" constant="8" id="nQd-Yh-kfl"/>
                     <constraint firstItem="8om-pY-JBM" firstAttribute="top" secondItem="oc2-7i-8fs" secondAttribute="bottom" constant="8" id="pXR-wg-zoV"/>
                     <constraint firstItem="1yB-ch-pYF" firstAttribute="leading" secondItem="9Y7-mc-hnn" secondAttribute="trailing" constant="8" id="pbx-Jg-jA2"/>
@@ -151,8 +146,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="appointState" destination="Rqg-yM-TmW" id="8lC-Iy-leD"/>
-                <outlet property="cancelOrderButton" destination="Dd3-MO-DRx" id="N8h-CH-NML"/>
-                <outlet property="dealOrderButton" destination="sme-AB-Ug4" id="vhQ-bc-8ct"/>
+                <outlet property="deleteOrderButton" destination="sme-AB-Ug4" id="yCu-Ui-Ky8"/>
                 <outlet property="orderID" destination="tM2-Sa-5Yt" id="Yhj-OC-2wm"/>
                 <outlet property="orgChineseName" destination="1yB-ch-pYF" id="uVe-kT-cea"/>
                 <outlet property="orgContent" destination="PzC-Ot-ewn" id="ctI-Gj-mNm"/>
@@ -164,7 +158,7 @@
                 <outlet property="studentName" destination="hrr-Bb-gVx" id="fZk-xg-8do"/>
                 <outlet property="totalPrice" destination="8om-pY-JBM" id="Tgz-J8-7JM"/>
             </connections>
-            <point key="canvasLocation" x="62" y="23"/>
+            <point key="canvasLocation" x="62" y="22.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -75,7 +75,7 @@
 }
 
 -(IBAction)cancelAction:(id)sender{
-    [self.delegate cancelDelegate:sender];
+    [self.delegate cancelEvaluateDelegate:sender];
 }
 
 -(IBAction)dealAction:(id)sender{

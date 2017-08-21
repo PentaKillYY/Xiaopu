@@ -10,7 +10,7 @@
 
 @protocol EvaluateCellDelegate <NSObject>
 
--(void)cancelDelegate:(id)sender;
+-(void)cancelEvaluateDelegate:(id)sender;
 -(void)evaluateDelegate:(id)sender;
 
 @end

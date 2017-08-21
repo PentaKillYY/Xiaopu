@@ -238,3 +238,27 @@
 
 //用户评价
 #define UserEvaluate @"/userOrder/InsertUserReplyInfo"
+
+//用户评价完成后更新订单信息
+#define UpdateOrderAfterEvaluate @"/userOrder/UpdateOrderInfoAfterReply"
+
+//获取用户优惠券列表
+#define UserCouponList @"/user/UserCouponList"
+
+//用户优惠券失效
+#define UserCouponInvalid @"/user/UserCouponInvalid"
+
+//用户余额操作
+#define UpdateUserBalance @"/user/UserBalanceOperation"
+
+//用户优惠券赠送
+#define GiveCoupon @"/user/UserCouponGive"
+
+//通过手机号码查询登录信息
+#define SearchUserByPhone @"/user/GetUserInfoByPhone"
+
+//支付宝签名接口
+#define  AliPaySign @"/alipay/param"
+
+//微信签名接口
+#define WXPaySign @"/wechatpay/param"

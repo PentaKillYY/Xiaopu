@@ -93,7 +93,7 @@
     
     [self getAppointStateRequest];
     [self judgeFocusOrgRequest];
-    
+    [self getUserAdscriptionRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -252,6 +252,10 @@
         
         //设置聊天会话界面要显示的标题
         chat.title = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
+        
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:[_detailInfoResult.detailinfo getString:@"User_ID"] name:[_detailInfoResult.detailinfo getString:@"OrganizationName"] portrait:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[_detailInfoResult.detailinfo getString:@"Logo"]] ];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
+        
         //显示聊天会话界面
         [self.navigationController pushViewController:chat animated:YES];
     }
