@@ -16,7 +16,7 @@
     UIView* backPriceBgView;
 }
 
-@property(nonatomic,weak)IBOutlet UITableView* tableView;
+
 
 @end
 
@@ -50,9 +50,24 @@
         DataItem* item = [orderResult.items getItem:currentCellIndex];
         [theSegue setValue:[item getString:@"Organization_Application_ID"] forKey:@"orgId"];
         [theSegue setValue:[item getString:@"courseOrderID"] forKey:@"orderId"];
+        [theSegue setValue:@"no" forKey:@"isAll"];
+
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RefreshEvaluate" object:nil];
+    [super viewWillAppear:animated];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observerRefresh) name:@"RefreshEvaluate" object:nil];
+    [super viewWillDisappear:animated];
+}
+
+-(void)observerRefresh{
+    [self.tableView.mj_header beginRefreshing];
+}
 
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

@@ -11,5 +11,5 @@
 @interface UserEvaluateOrderTableViewController : UITableViewController
 @property(nonatomic,weak)NSString* orgId;
 @property(nonatomic,weak)NSString* orderId;
-
+@property(nonatomic,weak)NSString* isAll;
 @end

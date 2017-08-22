@@ -33,6 +33,25 @@
 		040C740C1F4AA7C9001F5318 /* Dashline.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C740B1F4AA7C9001F5318 /* Dashline.m */; };
 		040C74101F4AC62B001F5318 /* MyCouponSimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C740E1F4AC62B001F5318 /* MyCouponSimpleTableViewCell.m */; };
 		040C74111F4AC62B001F5318 /* MyCouponSimpleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C740F1F4AC62B001F5318 /* MyCouponSimpleTableViewCell.xib */; };
+		040C74151F4ADC47001F5318 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 040C74131F4ADC47001F5318 /* AlipaySDK.bundle */; };
+		040C74161F4ADC47001F5318 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C74141F4ADC47001F5318 /* AlipaySDK.framework */; };
+		040C741B1F4BB89F001F5318 /* MyWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C741A1F4BB89F001F5318 /* MyWalletViewController.m */; };
+		040C74251F4BB9BC001F5318 /* WalletBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74231F4BB9BC001F5318 /* WalletBannerTableViewCell.m */; };
+		040C74261F4BB9BC001F5318 /* WalletBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74241F4BB9BC001F5318 /* WalletBannerTableViewCell.xib */; };
+		040C742A1F4BBDCD001F5318 /* WalletBankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74281F4BBDCD001F5318 /* WalletBankCardTableViewCell.m */; };
+		040C742B1F4BBDCD001F5318 /* WalletBankCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74291F4BBDCD001F5318 /* WalletBankCardTableViewCell.xib */; };
+		040C742E1F4BC65A001F5318 /* TradeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C742D1F4BC65A001F5318 /* TradeDetailViewController.m */; };
+		040C74311F4BC66B001F5318 /* ReflectBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74301F4BC66B001F5318 /* ReflectBalanceViewController.m */; };
+		040C74351F4BD666001F5318 /* TredeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74331F4BD666001F5318 /* TredeDetailTableViewCell.m */; };
+		040C74361F4BD666001F5318 /* TredeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74341F4BD666001F5318 /* TredeDetailTableViewCell.xib */; };
+		040C743A1F4BDC29001F5318 /* ReflectBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74381F4BDC29001F5318 /* ReflectBannerTableViewCell.m */; };
+		040C743B1F4BDC2A001F5318 /* ReflectBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74391F4BDC29001F5318 /* ReflectBannerTableViewCell.xib */; };
+		040C743F1F4BDC43001F5318 /* ReflectPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C743D1F4BDC43001F5318 /* ReflectPriceTableViewCell.m */; };
+		040C74401F4BDC43001F5318 /* ReflectPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C743E1F4BDC43001F5318 /* ReflectPriceTableViewCell.xib */; };
+		040C74441F4BDC65001F5318 /* AddReflectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74421F4BDC65001F5318 /* AddReflectTableViewCell.m */; };
+		040C74451F4BDC65001F5318 /* AddReflectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74431F4BDC65001F5318 /* AddReflectTableViewCell.xib */; };
+		040C74491F4BDC9E001F5318 /* ReflectCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74471F4BDC9E001F5318 /* ReflectCardTableViewCell.m */; };
+		040C744A1F4BDC9E001F5318 /* ReflectCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74481F4BDC9E001F5318 /* ReflectCardTableViewCell.xib */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -312,6 +331,35 @@
 		040C740D1F4AC62B001F5318 /* MyCouponSimpleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCouponSimpleTableViewCell.h; sourceTree = "<group>"; };
 		040C740E1F4AC62B001F5318 /* MyCouponSimpleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCouponSimpleTableViewCell.m; sourceTree = "<group>"; };
 		040C740F1F4AC62B001F5318 /* MyCouponSimpleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCouponSimpleTableViewCell.xib; sourceTree = "<group>"; };
+		040C74131F4ADC47001F5318 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		040C74141F4ADC47001F5318 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		040C74191F4BB89F001F5318 /* MyWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletViewController.h; sourceTree = "<group>"; };
+		040C741A1F4BB89F001F5318 /* MyWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletViewController.m; sourceTree = "<group>"; };
+		040C74221F4BB9BC001F5318 /* WalletBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletBannerTableViewCell.h; sourceTree = "<group>"; };
+		040C74231F4BB9BC001F5318 /* WalletBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletBannerTableViewCell.m; sourceTree = "<group>"; };
+		040C74241F4BB9BC001F5318 /* WalletBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletBannerTableViewCell.xib; sourceTree = "<group>"; };
+		040C74271F4BBDCD001F5318 /* WalletBankCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletBankCardTableViewCell.h; sourceTree = "<group>"; };
+		040C74281F4BBDCD001F5318 /* WalletBankCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletBankCardTableViewCell.m; sourceTree = "<group>"; };
+		040C74291F4BBDCD001F5318 /* WalletBankCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletBankCardTableViewCell.xib; sourceTree = "<group>"; };
+		040C742C1F4BC65A001F5318 /* TradeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeDetailViewController.h; sourceTree = "<group>"; };
+		040C742D1F4BC65A001F5318 /* TradeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeDetailViewController.m; sourceTree = "<group>"; };
+		040C742F1F4BC66B001F5318 /* ReflectBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectBalanceViewController.h; sourceTree = "<group>"; };
+		040C74301F4BC66B001F5318 /* ReflectBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectBalanceViewController.m; sourceTree = "<group>"; };
+		040C74321F4BD666001F5318 /* TredeDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TredeDetailTableViewCell.h; sourceTree = "<group>"; };
+		040C74331F4BD666001F5318 /* TredeDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TredeDetailTableViewCell.m; sourceTree = "<group>"; };
+		040C74341F4BD666001F5318 /* TredeDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TredeDetailTableViewCell.xib; sourceTree = "<group>"; };
+		040C74371F4BDC29001F5318 /* ReflectBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectBannerTableViewCell.h; sourceTree = "<group>"; };
+		040C74381F4BDC29001F5318 /* ReflectBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectBannerTableViewCell.m; sourceTree = "<group>"; };
+		040C74391F4BDC29001F5318 /* ReflectBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReflectBannerTableViewCell.xib; sourceTree = "<group>"; };
+		040C743C1F4BDC43001F5318 /* ReflectPriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectPriceTableViewCell.h; sourceTree = "<group>"; };
+		040C743D1F4BDC43001F5318 /* ReflectPriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectPriceTableViewCell.m; sourceTree = "<group>"; };
+		040C743E1F4BDC43001F5318 /* ReflectPriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReflectPriceTableViewCell.xib; sourceTree = "<group>"; };
+		040C74411F4BDC65001F5318 /* AddReflectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReflectTableViewCell.h; sourceTree = "<group>"; };
+		040C74421F4BDC65001F5318 /* AddReflectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReflectTableViewCell.m; sourceTree = "<group>"; };
+		040C74431F4BDC65001F5318 /* AddReflectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReflectTableViewCell.xib; sourceTree = "<group>"; };
+		040C74461F4BDC9E001F5318 /* ReflectCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectCardTableViewCell.h; sourceTree = "<group>"; };
+		040C74471F4BDC9E001F5318 /* ReflectCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectCardTableViewCell.m; sourceTree = "<group>"; };
+		040C74481F4BDC9E001F5318 /* ReflectCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReflectCardTableViewCell.xib; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -692,6 +740,7 @@
 				0478B9B11F148C88003A9C8B /* UIKit.framework in Frameworks */,
 				0478B9AF1F148C7F003A9C8B /* CoreGraphics.framework in Frameworks */,
 				0478B9AD1F148C77003A9C8B /* CoreText.framework in Frameworks */,
+				040C74161F4ADC47001F5318 /* AlipaySDK.framework in Frameworks */,
 				0478B9AB1F148C6D003A9C8B /* QuartzCore.framework in Frameworks */,
 				0478B9A91F148C61003A9C8B /* CoreTelephony.framework in Frameworks */,
 				0478B9A71F148C4F003A9C8B /* SystemConfiguration.framework in Frameworks */,
@@ -722,10 +771,10 @@
 			children = (
 				04B7CF751F41401400108915 /* MyOrderViewController.h */,
 				04B7CF761F41401400108915 /* MyOrderViewController.m */,
-				04B7CFA01F4288C000108915 /* UserDealOrderTableViewController.h */,
-				04B7CFA11F4288C000108915 /* UserDealOrderTableViewController.m */,
 				04B7CF7B1F4148B700108915 /* OrderAppointViewController.h */,
 				04B7CF7C1F4148B700108915 /* OrderAppointViewController.m */,
+				04B7CFA01F4288C000108915 /* UserDealOrderTableViewController.h */,
+				04B7CFA11F4288C000108915 /* UserDealOrderTableViewController.m */,
 				04B7CF7E1F4148DC00108915 /* OrderPayViewController.h */,
 				04B7CF7F1F4148DC00108915 /* OrderPayViewController.m */,
 				04B7CFA31F42DE2C00108915 /* UserConfirmOrderViewController.h */,
@@ -873,6 +922,103 @@
 				040C740B1F4AA7C9001F5318 /* Dashline.m */,
 			);
 			name = DashLine;
+			sourceTree = "<group>";
+		};
+		040C74171F4BB801001F5318 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				0478B9E11F14A0F7003A9C8B /* MyViewController.h */,
+				0478B9E21F14A0F7003A9C8B /* MyViewController.m */,
+			);
+			name = My;
+			sourceTree = "<group>";
+		};
+		040C74181F4BB84B001F5318 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				040C74191F4BB89F001F5318 /* MyWalletViewController.h */,
+				040C741A1F4BB89F001F5318 /* MyWalletViewController.m */,
+				040C742C1F4BC65A001F5318 /* TradeDetailViewController.h */,
+				040C742D1F4BC65A001F5318 /* TradeDetailViewController.m */,
+				040C742F1F4BC66B001F5318 /* ReflectBalanceViewController.h */,
+				040C74301F4BC66B001F5318 /* ReflectBalanceViewController.m */,
+			);
+			name = Wallet;
+			sourceTree = "<group>";
+		};
+		040C741C1F4BB950001F5318 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				0432AA3F1F3BEEF400783ED2 /* MyFollowViewController.h */,
+				0432AA401F3BEEF400783ED2 /* MyFollowViewController.m */,
+			);
+			name = Follow;
+			sourceTree = "<group>";
+		};
+		040C741D1F4BB95C001F5318 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				0432AA5B1F3D423300783ED2 /* MyInfoTableViewController.h */,
+				0432AA5C1F3D423300783ED2 /* MyInfoTableViewController.m */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		040C741E1F4BB966001F5318 /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				0432AA4D1F3C29E300783ED2 /* MySpecialistViewController.h */,
+				0432AA4E1F3C29E300783ED2 /* MySpecialistViewController.m */,
+			);
+			name = Specialist;
+			sourceTree = "<group>";
+		};
+		040C741F1F4BB973001F5318 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				0432AA5E1F3D42A700783ED2 /* MyInfoTableViewCell.h */,
+				0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */,
+				0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		040C74201F4BB97D001F5318 /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				0432AA501F3C2E1000783ED2 /* MySpecialistTableViewCell.h */,
+				0432AA511F3C2E1000783ED2 /* MySpecialistTableViewCell.m */,
+				0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */,
+			);
+			name = Specialist;
+			sourceTree = "<group>";
+		};
+		040C74211F4BB98F001F5318 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				040C74221F4BB9BC001F5318 /* WalletBannerTableViewCell.h */,
+				040C74231F4BB9BC001F5318 /* WalletBannerTableViewCell.m */,
+				040C74241F4BB9BC001F5318 /* WalletBannerTableViewCell.xib */,
+				040C74271F4BBDCD001F5318 /* WalletBankCardTableViewCell.h */,
+				040C74281F4BBDCD001F5318 /* WalletBankCardTableViewCell.m */,
+				040C74291F4BBDCD001F5318 /* WalletBankCardTableViewCell.xib */,
+				040C74321F4BD666001F5318 /* TredeDetailTableViewCell.h */,
+				040C74331F4BD666001F5318 /* TredeDetailTableViewCell.m */,
+				040C74341F4BD666001F5318 /* TredeDetailTableViewCell.xib */,
+				040C74371F4BDC29001F5318 /* ReflectBannerTableViewCell.h */,
+				040C74381F4BDC29001F5318 /* ReflectBannerTableViewCell.m */,
+				040C74391F4BDC29001F5318 /* ReflectBannerTableViewCell.xib */,
+				040C743C1F4BDC43001F5318 /* ReflectPriceTableViewCell.h */,
+				040C743D1F4BDC43001F5318 /* ReflectPriceTableViewCell.m */,
+				040C743E1F4BDC43001F5318 /* ReflectPriceTableViewCell.xib */,
+				040C74411F4BDC65001F5318 /* AddReflectTableViewCell.h */,
+				040C74421F4BDC65001F5318 /* AddReflectTableViewCell.m */,
+				040C74431F4BDC65001F5318 /* AddReflectTableViewCell.xib */,
+				040C74461F4BDC9E001F5318 /* ReflectCardTableViewCell.h */,
+				040C74471F4BDC9E001F5318 /* ReflectCardTableViewCell.m */,
+				040C74481F4BDC9E001F5318 /* ReflectCardTableViewCell.xib */,
+			);
+			name = Wallet;
 			sourceTree = "<group>";
 		};
 		0425A2441F219D7000A18739 /* BaseProj */ = {
@@ -1206,7 +1352,6 @@
 		0478B9911F147A7F003A9C8B /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				0478B99D1F14852D003A9C8B /* WexinPaySDK */,
 				0478B99C1F148521003A9C8B /* AliPaySDK */,
 			);
 			name = Vendors;
@@ -1310,15 +1455,10 @@
 		0478B99C1F148521003A9C8B /* AliPaySDK */ = {
 			isa = PBXGroup;
 			children = (
+				040C74131F4ADC47001F5318 /* AlipaySDK.bundle */,
+				040C74141F4ADC47001F5318 /* AlipaySDK.framework */,
 			);
 			name = AliPaySDK;
-			sourceTree = "<group>";
-		};
-		0478B99D1F14852D003A9C8B /* WexinPaySDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = WexinPaySDK;
 			sourceTree = "<group>";
 		};
 		0478B9DC1F14A06A003A9C8B /* MySection */ = {
@@ -1342,19 +1482,16 @@
 		0478B9DE1F14A0A0003A9C8B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				040C741E1F4BB966001F5318 /* Specialist */,
+				040C741D1F4BB95C001F5318 /* Info */,
+				040C741C1F4BB950001F5318 /* Follow */,
+				040C74181F4BB84B001F5318 /* Wallet */,
+				040C74171F4BB801001F5318 /* My */,
 				040C73F61F4A68A7001F5318 /* Coupon */,
 				040C73E71F46C7AF001F5318 /* Setting */,
 				040C73E61F46C791001F5318 /* Order */,
-				0478B9E11F14A0F7003A9C8B /* MyViewController.h */,
-				0478B9E21F14A0F7003A9C8B /* MyViewController.m */,
 				040C73E21F4675D1001F5318 /* MyChatListViewController.h */,
 				040C73E31F4675D1001F5318 /* MyChatListViewController.m */,
-				0432AA3F1F3BEEF400783ED2 /* MyFollowViewController.h */,
-				0432AA401F3BEEF400783ED2 /* MyFollowViewController.m */,
-				0432AA4D1F3C29E300783ED2 /* MySpecialistViewController.h */,
-				0432AA4E1F3C29E300783ED2 /* MySpecialistViewController.m */,
-				0432AA5B1F3D423300783ED2 /* MyInfoTableViewController.h */,
-				0432AA5C1F3D423300783ED2 /* MyInfoTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1371,17 +1508,14 @@
 		0478B9E01F14A0C0003A9C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				040C74211F4BB98F001F5318 /* Wallet */,
+				040C74201F4BB97D001F5318 /* Specialist */,
+				040C741F1F4BB973001F5318 /* Info */,
 				040C73FA1F4A6C52001F5318 /* Coupon */,
 				040C73EB1F46C81B001F5318 /* My */,
 				040C73EA1F46C7FB001F5318 /* Follow */,
 				040C73E91F46C7E4001F5318 /* Setting */,
 				040C73E81F46C7C4001F5318 /* Order */,
-				0432AA501F3C2E1000783ED2 /* MySpecialistTableViewCell.h */,
-				0432AA511F3C2E1000783ED2 /* MySpecialistTableViewCell.m */,
-				0432AA521F3C2E1000783ED2 /* MySpecialistTableViewCell.xib */,
-				0432AA5E1F3D42A700783ED2 /* MyInfoTableViewCell.h */,
-				0432AA5F1F3D42A700783ED2 /* MyInfoTableViewCell.m */,
-				0432AA601F3D42A700783ED2 /* MyInfoTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1821,6 +1955,7 @@
 				04A1D4D81F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.xib in Resources */,
 				04B93D0D1F39463300B2DA19 /* AddTableViewCell.xib in Resources */,
 				040C73F01F46D98C001F5318 /* PaySelectCouponTableViewCell.xib in Resources */,
+				040C744A1F4BDC9E001F5318 /* ReflectCardTableViewCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
 				045633561F2B126C005E04CB /* CourseDetailContentTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
@@ -1839,14 +1974,17 @@
 				04A1D4C61F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib in Resources */,
 				04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
+				040C74401F4BDC43001F5318 /* ReflectPriceTableViewCell.xib in Resources */,
 				04A1D47A1F31ABAD00EACEA8 /* SchoolDetailTableViewCell.xib in Resources */,
 				040C73721F442B3B001F5318 /* EvaluateNumberTableViewCell.xib in Resources */,
 				0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */,
 				04B93CFF1F385BE500B2DA19 /* HeaderTableViewCell.xib in Resources */,
 				0445EF071F20926600E9DAB3 /* OrgInfoTableViewCell.xib in Resources */,
+				040C74151F4ADC47001F5318 /* AlipaySDK.bundle in Resources */,
 				0445EEC01F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0432AA851F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib in Resources */,
+				040C743B1F4BDC2A001F5318 /* ReflectBannerTableViewCell.xib in Resources */,
 				0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */,
 				04267ECF1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib in Resources */,
 				0478BA241F14BC40003A9C8B /* MainRollingTableViewCell.xib in Resources */,
@@ -1866,6 +2004,8 @@
 				0432AA801F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib in Resources */,
 				04A1D4981F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib in Resources */,
 				04A1D47F1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.xib in Resources */,
+				040C74361F4BD666001F5318 /* TredeDetailTableViewCell.xib in Resources */,
+				040C742B1F4BBDCD001F5318 /* WalletBankCardTableViewCell.xib in Resources */,
 				04A1D4931F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib in Resources */,
 				04A1D48E1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib in Resources */,
 				040C74041F4A8485001F5318 /* MyCouponDetailTableViewCell.xib in Resources */,
@@ -1881,11 +2021,13 @@
 				04A1D4891F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				0478BA291F14BC55003A9C8B /* MainServiceTableViewCell.xib in Resources */,
+				040C74261F4BB9BC001F5318 /* WalletBannerTableViewCell.xib in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
 				0432AA7B1F3D968600783ED2 /* MyCardTableViewCell.xib in Resources */,
 				040C74111F4AC62B001F5318 /* MyCouponSimpleTableViewCell.xib in Resources */,
 				0432AA621F3D42A700783ED2 /* MyInfoTableViewCell.xib in Resources */,
 				0432AA4B1F3BF77600783ED2 /* MyFollowSchoolCell.xib in Resources */,
+				040C74451F4BDC65001F5318 /* AddReflectTableViewCell.xib in Resources */,
 				045632E51F2867FC005E04CB /* OrgStudentTableViewCell.xib in Resources */,
 				0478BA2E1F14BC74003A9C8B /* MainActivityTableViewCell.xib in Resources */,
 			);
@@ -1952,6 +2094,7 @@
 				045632D31F282896005E04CB /* UUChart.m in Sources */,
 				0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */,
 				04A1D47E1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.m in Sources */,
+				040C74491F4BDC9E001F5318 /* ReflectCardTableViewCell.m in Sources */,
 				0478BA2D1F14BC74003A9C8B /* MainActivityTableViewCell.m in Sources */,
 				040C73E41F4675D1001F5318 /* MyChatListViewController.m in Sources */,
 				04267ECE1F15CE5F00FFBC3E /* OrginizationTableViewCell.m in Sources */,
@@ -1967,9 +2110,11 @@
 				040C73921F444390001F5318 /* DLStarRatingControl.m in Sources */,
 				040C737B1F442B6B001F5318 /* EvaluatePicTableViewCell.m in Sources */,
 				04267F671F19AF5E00FFBC3E /* TagTableViewCell.m in Sources */,
+				040C74441F4BDC65001F5318 /* AddReflectTableViewCell.m in Sources */,
 				045633141F29BE1C005E04CB /* SRPictureModel.m in Sources */,
 				04A1D4CA1F340ADB00EACEA8 /* SchoolCourseTestCell.m in Sources */,
 				040C740C1F4AA7C9001F5318 /* Dashline.m in Sources */,
+				040C742A1F4BBDCD001F5318 /* WalletBankCardTableViewCell.m in Sources */,
 				045632EE1F29B121005E04CB /* OrgPhotoBrowserViewController.m in Sources */,
 				040C74031F4A8485001F5318 /* MyCouponDetailTableViewCell.m in Sources */,
 				0456332E1F2AC40A005E04CB /* OrgMoreCourseViewController.m in Sources */,
@@ -1979,6 +2124,7 @@
 				04267F431F17189200FFBC3E /* UIButton+JKMiddleAligning.m in Sources */,
 				045632D21F282896005E04CB /* UUBarChart.m in Sources */,
 				0432AA7A1F3D968600783ED2 /* MyCardTableViewCell.m in Sources */,
+				040C741B1F4BB89F001F5318 /* MyWalletViewController.m in Sources */,
 				045633191F29BE1C005E04CB /* SRPictureHUD.m in Sources */,
 				0432AA6C1F3D88A900783ED2 /* MySettingTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
@@ -2008,6 +2154,7 @@
 				04B7CF801F4148DC00108915 /* OrderPayViewController.m in Sources */,
 				04267F481F17398400FFBC3E /* SearchViewController.m in Sources */,
 				040C74071F4A8D53001F5318 /* CouponGiveViewController.m in Sources */,
+				040C74251F4BB9BC001F5318 /* WalletBannerTableViewCell.m in Sources */,
 				040C73441F43D3DD001F5318 /* UserEvaluateOrderTableViewController.m in Sources */,
 				0432AA411F3BEEF400783ED2 /* MyFollowViewController.m in Sources */,
 				04B7CF771F41401400108915 /* MyOrderViewController.m in Sources */,
@@ -2023,6 +2170,7 @@
 				04A1D4721F31A3AA00EACEA8 /* SchoolDetailViewController.m in Sources */,
 				04B7CF8C1F41553C00108915 /* MyPayTableViewCell.m in Sources */,
 				0425A2511F21A6E100A18739 /* MainService.m in Sources */,
+				040C742E1F4BC65A001F5318 /* TradeDetailViewController.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				04B93D031F38914600B2DA19 /* MultiTagSelectTableViewCell.m in Sources */,
 				0478BA1A1F14BBC9003A9C8B /* MainViewController.m in Sources */,
@@ -2041,6 +2189,7 @@
 				0432AA531F3C2E1000783ED2 /* MySpecialistTableViewCell.m in Sources */,
 				04267F521F1859A700FFBC3E /* DOPDropDownMenu.m in Sources */,
 				040C73761F442B57001F5318 /* EvaluateContentTableViewCell.m in Sources */,
+				040C74311F4BC66B001F5318 /* ReflectBalanceViewController.m in Sources */,
 				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
 				04B7CFA21F4288C000108915 /* UserDealOrderTableViewController.m in Sources */,
 				04B7CF911F41554F00108915 /* MyEvaluateTableViewCell.m in Sources */,
@@ -2080,6 +2229,7 @@
 				0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */,
 				04A1D4831F31AC0900EACEA8 /* SchoolGradeTableViewCell.m in Sources */,
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
+				040C743A1F4BDC29001F5318 /* ReflectBannerTableViewCell.m in Sources */,
 				040C73F41F46E042001F5318 /* PayTypeTableViewCell.m in Sources */,
 				04B7CF831F4148F400108915 /* OrderEvaluateViewController.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
@@ -2095,11 +2245,13 @@
 				0445EEC91F1F321900E9DAB3 /* TextViewTableViewCell.m in Sources */,
 				0445EEBF1F1F2EE800E9DAB3 /* TextFieldTableViewCell.m in Sources */,
 				045632BE1F282141005E04CB /* OrgInfoContentViewController.m in Sources */,
+				040C74351F4BD666001F5318 /* TredeDetailTableViewCell.m in Sources */,
 				0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */,
 				045633271F29E1F7005E04CB /* OrgVideoPlayerViewController.m in Sources */,
 				040C74101F4AC62B001F5318 /* MyCouponSimpleTableViewCell.m in Sources */,
 				0445EECD1F1F330800E9DAB3 /* EducationPlanController.m in Sources */,
 				0456335D1F2C6408005E04CB /* SchoolService.m in Sources */,
+				040C743F1F4BDC43001F5318 /* ReflectPriceTableViewCell.m in Sources */,
 				0445EF151F2093A800E9DAB3 /* OrgProportionTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

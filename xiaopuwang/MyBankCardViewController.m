@@ -9,8 +9,8 @@
 #import "MyBankCardViewController.h"
 #import "MyService.h"
 #import "MyCardTableViewCell.h"
-
-@interface MyBankCardViewController ()<UITableViewDelegate,UITableViewDataSource,DeleteCardDelegate>
+#import "MyWalletViewController.h"
+@interface MyBankCardViewController ()<UITableViewDelegate,UITableViewDataSource,DeleteCardDelegate,UINavigationControllerDelegate>
 {
     DataResult* cardRequest;
     NSInteger selectCardIndex;
@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view.
     self.title = @"我的银行卡";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
+    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(addCardRequest)];
     
@@ -35,12 +35,12 @@
     
     self.navigationItem.rightBarButtonItem = rightItm;
     
-    [self getCardListRequest];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
-    [super viewWillAppear:YES];    
+    [super viewWillAppear:YES];
+    
+    [self getCardListRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,4 +100,6 @@
         
     }];
 }
+
+
 @end

@@ -21,3 +21,4 @@
 #define EmptyCardBankName @"您还未输入开户行"
 #define InvalidPhone @"手机号码格式不正确"
 #define InvalidUser @"无此注册用户"
+#define ReflectTip @"注：提现申请需要3-5个工作日可提帐"

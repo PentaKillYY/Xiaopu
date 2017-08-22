@@ -14,7 +14,9 @@
 #import "OrderEvaluateViewController.h"
 
 @interface MyOrderViewController ()<SGTopTitleViewDelegate, UIScrollViewDelegate>
-
+{
+    NSInteger currentVCIndex;
+}
 @property (nonatomic, strong) SGTopTitleView *topTitleView;
 @property (nonatomic, strong) UIScrollView *mainScrollView;
 @property (nonatomic, strong) NSArray *titles;
@@ -59,6 +61,7 @@
     OrderAppointViewController *oneVC = [self.storyboard instantiateViewControllerWithIdentifier:@"OrderAppoint"];
     [self.mainScrollView addSubview:oneVC.view];
     [self addChildViewController:oneVC];
+    
     oneVC.view.frame = CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height-64-44);
     
     [self.view insertSubview:_mainScrollView belowSubview:_topTitleView];
@@ -75,7 +78,7 @@
     // 1 计算滚动的位置
     CGFloat offsetX = index * Main_Screen_Width;
     self.mainScrollView.contentOffset = CGPointMake(offsetX, 0);
-    
+    currentVCIndex = index;
     // 2.给对应位置添加对应子控制器
     [self showVc:index];
 }
@@ -110,7 +113,7 @@
     [self.topTitleView scrollTitleLabelSelecteded:selLabel];
     // 3.让选中的标题居中
     //    [self.topTitleView scrollTitleLabelSelectededCenter:selLabel];
-    
+    currentVCIndex = index;
 }
 
 // 添加所有子控制器

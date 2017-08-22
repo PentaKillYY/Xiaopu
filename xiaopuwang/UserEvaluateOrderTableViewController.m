@@ -257,6 +257,11 @@
 
 -(void)updateAfterEvauateRequest{
     [[MyService sharedMyService] updateAfterEvaluateWithParameters:@{@"Id":self.orderId} onCompletion:^(id json) {
+        if ([self.isAll isEqualToString:@"no"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshEvaluate" object:nil];
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAll" object:nil];
+        }
         [self.navigationController popViewControllerAnimated:YES];
     } onFailure:^(id json) {
         

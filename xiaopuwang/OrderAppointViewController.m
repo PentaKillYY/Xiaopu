@@ -15,7 +15,7 @@
     NSInteger currentAppointIndex;
     NSString* appointmentId;
 }
-@property(nonatomic,weak)IBOutlet UITableView* tableView;
+
 @end
 
 @implementation OrderAppointViewController
@@ -41,6 +41,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RefreshAppointment" object:nil];
+    [super viewWillAppear:animated];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observerRefresh) name:@"RefreshAppointment" object:nil];
+    [super viewWillDisappear:animated];
+}
+
+-(void)observerRefresh{
+    [self.tableView.mj_header beginRefreshing];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"AppointToDealOrder"]){
@@ -48,6 +62,7 @@
         
         DataItem* item = [appointmentResult.items getItem:currentAppointIndex];
         [theSegue setValue:item forKey:@"item"];
+        [theSegue setValue:@"no" forKey:@"isAll"];
     }
 }
 

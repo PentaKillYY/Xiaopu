@@ -10,4 +10,5 @@
 
 @interface UserDealOrderTableViewController : UITableViewController
 @property(nonatomic,strong)DataItem* item;
+@property(nonatomic,weak)NSString* isAll;
 @end

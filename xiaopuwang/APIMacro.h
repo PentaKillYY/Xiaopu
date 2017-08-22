@@ -262,3 +262,17 @@
 
 //微信签名接口
 #define WXPaySign @"/wechatpay/param"
+
+//获取用户余额明细
+#define UserTradeDetail @"/user/BalanceDetail"
+
+//用户提现-新
+#define UserReflect @"/userOrder/UserWithdrawCashNew"
+
+//用户支付完成之后订单更新
+#define UpdateOrderAfterPay @"/userOrder/UpdateUserOrderInfo"
+
+//更新用户TotalPrice订单价格
+#define UpdateTotalPriceAfterPay @"/userOrder/UpdateUserOrderInfoToTotalPrice"
+
+

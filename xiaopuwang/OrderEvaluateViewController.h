@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface OrderEvaluateViewController : BaseViewController
-
+@property(nonatomic,weak)IBOutlet UITableView* tableView;
 @end

@@ -79,6 +79,19 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RefreshAll" object:nil];
+    [super viewWillAppear:animated];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observerRefresh) name:@"RefreshAll" object:nil];
+    [super viewWillDisappear:animated];
+}
+
+-(void)observerRefresh{
+    [self.tableView.mj_header beginRefreshing];
+}
 
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

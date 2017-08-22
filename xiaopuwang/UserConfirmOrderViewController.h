@@ -10,4 +10,5 @@
 
 @interface UserConfirmOrderViewController : BaseViewController
 @property(nonatomic,weak)NSString* orderNumber;
+@property(nonatomic,weak)NSString* isAll;
 @end

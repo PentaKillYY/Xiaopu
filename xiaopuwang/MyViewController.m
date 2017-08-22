@@ -56,6 +56,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+    [self.tableView reloadData];
+    
     [super viewWillAppear:YES];
 }
 
@@ -135,6 +137,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1 && indexPath.row ==0) {
         [self performSegueWithIdentifier:@"MyToOrder" sender:self];
+    }else if (indexPath.section == 2 && indexPath.row == 0){
+        [self performSegueWithIdentifier:@"MyToWallet" sender:self];
     }else if (indexPath.section == 2 && indexPath.row == 1){
         [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
     }else if (indexPath.section ==3 && indexPath.row == 0) {

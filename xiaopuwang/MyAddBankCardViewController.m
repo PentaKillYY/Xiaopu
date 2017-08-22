@@ -201,7 +201,7 @@
 
 - (void)addCardNumberRequest{
     [[MyService sharedMyService] addCardWithParameters:@{@"User_Id":[UserInfo sharedUserInfo].userID,@"UserType":@(0),@"UserName":cardUserName,@"CardNum":cardNumber,@"BankName":cardBankName,@"ClassName":@""} onCompletion:^(id json) {
-        
+        [self.navigationController popViewControllerAnimated:YES];
     } onFailure:^(id json) {
         
     }];

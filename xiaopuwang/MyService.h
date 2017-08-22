@@ -219,4 +219,25 @@
 -(void)wxPaySignWithParameters:(NSDictionary *)parameters
                   onCompletion:(JSONResponse)completionBlock
                      onFailure:(JSONResponse)failureBlock;
+
+//获取用户余额明细
+-(void)getUserTradeDetailWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
+
+//用户提现- 新
+-(void)userReflectWithParameters:(NSDictionary *)parameters
+                    onCompletion:(JSONResponse)completionBlock
+                       onFailure:(JSONResponse)failureBlock;
+
+//用户支付完成之后订单更新
+-(void)userUpdateOrderAfterPayWithParameters:(NSDictionary *)parameters
+                                onCompletion:(JSONResponse)completionBlock
+                                   onFailure:(JSONResponse)failureBlock;
+
+
+//更新用户TotalPrice订单价格
+-(void)userUpdateTotaoPriceAfterPayWithParameters:(NSDictionary *)parameters
+                                     onCompletion:(JSONResponse)completionBlock
+                                        onFailure:(JSONResponse)failureBlock;
 @end

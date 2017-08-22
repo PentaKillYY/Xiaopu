@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.title = @"个人信息";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
+    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
     
     UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(updateInfoRequest:)];

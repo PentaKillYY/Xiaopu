@@ -14,7 +14,7 @@
     NSInteger currentOrderIndex;
 }
 
-@property(nonatomic,weak)IBOutlet UITableView* tableView;
+
 @end
 
 @implementation OrderPayViewController
@@ -46,9 +46,24 @@
         
         DataItem* item = [orderResult.items getItem:currentOrderIndex];
         [theSegue setValue:[item getString:@"OrderNum"] forKey:@"orderNumber"];
+        [theSegue setValue:@"no" forKey:@"isAll"];
+
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RefreshPay" object:nil];
+    [super viewWillAppear:animated];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observerRefresh) name:@"RefreshPay" object:nil];
+    [super viewWillDisappear:animated];
+}
+
+-(void)observerRefresh{
+    [self.tableView.mj_header beginRefreshing];
+}
 
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

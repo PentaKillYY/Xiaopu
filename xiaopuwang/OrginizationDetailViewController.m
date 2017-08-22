@@ -290,7 +290,7 @@
 }
 
 -(IBAction)userAppointOrg:(id)sender{
-
+    [self performSegueWithIdentifier:@"DetailToMyOrder" sender:self];
 }
 
 

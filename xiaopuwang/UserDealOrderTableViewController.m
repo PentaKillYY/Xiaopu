@@ -65,6 +65,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 -(void)loadCelldata{
     NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
     [formatter setDateFormat:@"YYYYMMddHHmmssSSS"];
@@ -233,6 +235,12 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     
     [[MyService sharedMyService] updateUserAppointmentWithParameters:@{@"orgApplication_ID":orgID,@"userId":info.userID} onCompletion:^(id json) {
+        if ([self.isAll isEqualToString:@"no"]) {
+           [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAppointment" object:nil];
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAll" object:nil];
+        }
+        
         [self.navigationController popViewControllerAnimated:YES];
     } onFailure:^(id json) {
         

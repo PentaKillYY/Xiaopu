@@ -89,4 +89,8 @@
     
     
 }
+
+-(IBAction)changeAction:(id)sender{
+    [self changePasswordRequest];
+}
 @end

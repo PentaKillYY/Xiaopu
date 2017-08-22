@@ -38,7 +38,7 @@
         
         info.headPicUrl = [result.detailinfo getString:@"UserImage"];
         info.telphone = [result.detailinfo getString:@"Phone"];
-        
+        info.recommand = [result.detailinfo getString:@"Recommender"];
         [info synchronize];
 
         completionBlock(json);
@@ -95,6 +95,7 @@
         info.userCountry = [result.detailinfo getString:@"CountryName"];
         info.userProvince = [result.detailinfo getString:@"ProvinceName"];
         info.userCity = [result.detailinfo getString:@"CityName"];
+        info.headPicUrl = [result.detailinfo getString:@"Photo"];
         [info synchronize];
         
         completionBlock(json);
@@ -471,6 +472,46 @@
                   onCompletion:(JSONResponse)completionBlock
                      onFailure:(JSONResponse)failureBlock{
     [[BaseHttpRequest sharedBaseHttpRequest]POST:WXPaySign parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)getUserTradeDetailWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:[NSString stringWithFormat:@"%@?userId=%@",UserTradeDetail,[parameters objectForKey:@"userId"]]  parameters:nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)userReflectWithParameters:(NSDictionary *)parameters
+                    onCompletion:(JSONResponse)completionBlock
+                       onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]POST:[NSString stringWithFormat:@"%@?userId=%@&cardNum=%@",UserReflect,[parameters objectForKey:@"userId"],[parameters objectForKey:@"cardNum"]]  parameters:nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)userUpdateOrderAfterPayWithParameters:(NSDictionary *)parameters
+                                onCompletion:(JSONResponse)completionBlock
+                                   onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]POST:UpdateOrderAfterPay parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        
+    }];
+}
+
+-(void)userUpdateTotaoPriceAfterPayWithParameters:(NSDictionary *)parameters
+                                     onCompletion:(JSONResponse)completionBlock
+                                        onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]POST:UpdateTotalPriceAfterPay parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         

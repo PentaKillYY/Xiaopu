@@ -12,6 +12,9 @@
 #import "PaySelectCouponTableViewCell.h"
 #import "PayTypeTableViewCell.h"
 #import "MyCouponSimpleTableViewCell.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "WXApi.h"
+
 @interface UserConfirmOrderViewController ()<UITableViewDelegate,UITableViewDataSource, UITextFieldDelegate,UIPickerViewDelegate,PayTypeCellDelegate>{
     DataResult* orderResult;
     DataResult* couponResult;
@@ -21,6 +24,10 @@
     UIView* couponView;
     NSMutableArray* selectCouponArray;
     NSString* payType;
+    
+    
+    NSString* tradeNo;
+    NSInteger payMode;
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property(nonatomic,weak)IBOutlet UIButton* payButton;
@@ -58,6 +65,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payNotificationBack:) name:@"AliPay" object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payNotificationBack:) name:@"WXPay" object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AliPay" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WXPay" object:nil];
+}
+
 -(IBAction)payOrderAction:(id)sender{
     if ([payType isEqualToString:@"1"]) {
         [self alipaySignRequest];
@@ -77,7 +99,7 @@
     if (tableView.tag == 1) {
         return couponNumber+1;
     }else{
-        return DealOrderTitle.count+1+1;
+        return ConfirmOrderTitle.count+1+1;
     }
 }
 
@@ -115,7 +137,7 @@
             if (couponNumber == 0) {
                 cell.couponNumber.text = @"不使用优惠券";
             }else{
-                cell.couponNumber.text = [NSString stringWithFormat:@"节省%d元",selectCouponArray.count*100];
+                cell.couponNumber.text = [NSString stringWithFormat:@"节省%lu元",selectCouponArray.count*100];
             }
             return cell;
         }else if (indexPath.row == 5){
@@ -124,7 +146,7 @@
             return cell;
         }else{
             MyInfoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyInfoTableViewCell" owner:self options:nil].firstObject;
-            cell.cellTitle.text = DealOrderTitle[indexPath.row];
+            cell.cellTitle.text = ConfirmOrderTitle[indexPath.row];
             cell.cellContent.userInteractionEnabled = NO;
             if (orderResult) {
                 if (indexPath.row == 0) {
@@ -226,6 +248,8 @@
     }else{
         payType = @"2";
     }
+    payMode = [payType intValue];
+    
 }
 
 #pragma mark - NetwordRequest
@@ -278,18 +302,163 @@
 }
 
 -(void)alipaySignRequest{
-    [[MyService sharedMyService] aliPaySignWithParameters:@{@"title":[[orderResult.items getItem:0] getString:@"Subject"],@"orderNum":[[orderResult.items getItem:0] getString:@"OrderNum"],@"orderPirce":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]-selectCouponArray.count*100)} onCompletion:^(id json) {
+    [[MyService sharedMyService] aliPaySignWithParameters:@{@"Title":[[orderResult.items getItem:0] getString:@"Subject"],@"Order_no":[[orderResult.items getItem:0] getString:@"OrderNum"],@"Price":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]-selectCouponArray.count*100)} onCompletion:^(id json) {
         DataResult* alipayresult = json;
+        
+        [[AlipaySDK defaultService] payOrder:alipayresult.message fromScheme:@"xiaopuwang" callback:^(NSDictionary *resultDic) {
+
+            [self payBack:resultDic];
+        }];
+        
     } onFailure:^(id json) {
         
     }];
 }
 
 -(void)wxPaySignRequest{
-    [[MyService sharedMyService] wxPaySignWithParameters:@{@"title":[[orderResult.items getItem:0] getString:@"Subject"],@"orderNum":[[orderResult.items getItem:0] getString:@"OrderNum"],@"orderPirce":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]-selectCouponArray.count*100)} onCompletion:^(id json) {
+    [[MyService sharedMyService] wxPaySignWithParameters:@{@"Title":[[orderResult.items getItem:0] getString:@"Subject"],@"Order_no":[[orderResult.items getItem:0] getString:@"OrderNum"],@"Price":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]-selectCouponArray.count*100)} onCompletion:^(id json) {
+        DataResult* wxpayResult = json;
+        
+        PayReq *request = [[PayReq alloc] init] ;
+        
+        request.partnerId = [[wxpayResult.detailinfo getDataItem:@"PayParam"] getString:@"mch_id"];
+        request.prepayId= [[wxpayResult.detailinfo getDataItem:@"PayParam"] getString:@"prepayid"];
+        request.package = @"Sign=WXPay";
+        request.nonceStr = [[wxpayResult.detailinfo getDataItem:@"PayParam"] getString:@"nonce_str"];
+        request.timeStamp = (UInt32)[[[wxpayResult.detailinfo getDataItem:@"PayParam"] getString:@"timestamp"] integerValue];
+        request.sign = [[wxpayResult.detailinfo getDataItem:@"PayParam"] getString:@"sign"];
+        [WXApi sendReq:request];
+
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)updateOderAfterPayRequest{
+    //支付后处理1
+    
+    [[MyService sharedMyService] userUpdateOrderAfterPayWithParameters:@{
+        @"OrderNum":[[orderResult.items getItem:0] getString:@"OrderNum"],
+        @"Organization_Application_ID":[[orderResult.items getItem:0] getString:@"Organization_Application_ID"],
+        @"Purchaser":[UserInfo sharedUserInfo].userID,
+        @"TradeNo":@"",
+        @"PayMode":@(payMode),
+        @"TradeStatus1":@"TRADE_SUCCESS"
+    } onCompletion:^(id json) {
+        // 支付后处理2
+        [self updateUserBalanceRequest];
         
     } onFailure:^(id json) {
         
     }];
 }
+
+-(void)updateTotalPriceAfterRequest{
+    [[MyService sharedMyService] userUpdateTotaoPriceAfterPayWithParameters:@{
+        @"OrderNum":[[orderResult.items getItem:0] getString:@"OrderNum"],
+        @"CourseId":@"",
+        @"Organization_Application_ID":[[orderResult.items getItem:0] getString:@"Organization_Application_ID"],
+        @"Purchaser":[UserInfo sharedUserInfo].userID,
+        @"StudentName":[[orderResult.items getItem:0] getString:@"StudentName"],
+        @"TotalPrice":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]-selectCouponArray.count*100),
+        @"OriginalPrice":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]),
+        @"BackPrice":@([[orderResult.items getItem:0] getDouble:@"BackPrice"]),
+        @"Subject":[[orderResult.items getItem:0] getString:@"Subject"],
+        @"PayType":@([[orderResult.items getItem:0] getInt:@"PayType"])
+    } onCompletion:^(id json) {
+        if ([self.isAll isEqualToString:@"no"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshPay" object:nil];
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAll" object:nil];
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)invalidCouponRequest{
+    if (selectCouponArray.count >0) {
+        for (int i = 0 ; i < selectCouponArray.count; i++) {
+            [[MyService sharedMyService] invalidUserCouponWithParameters:@{@"id":[[couponResult.items getItem:i] getString:@"Id"]} onCompletion:^(id json) {
+                //支付后处理4
+                [self updateTotalPriceAfterRequest];
+                
+            } onFailure:^(id json) {
+                
+            }];
+        }
+ 
+    }else{
+        //支付后处理4
+        [self updateTotalPriceAfterRequest];
+    }
+    
+}
+
+-(void)updateUserBalanceRequest{
+    if ([[orderResult.items getItem:0] getDouble:@"TotalPrice"] > 1000 && [UserInfo sharedUserInfo].recommand.length) {
+        [[MyService sharedMyService] updateUserBalanceWithParameters:@{@"UserId":[UserInfo sharedUserInfo].userID,@"Price":@(55),@"ChannelName":@"邀请奖励",@"ChannelCode":@"",@"OperationType":@(0)} onCompletion:^(id json) {
+            //支付后处理3
+            [self invalidCouponRequest];
+        } onFailure:^(id json) {
+            
+        }];
+    }else{
+        //支付后处理3
+        [self invalidCouponRequest];
+    }
+    
+}
+
+#pragma PayCallBack
+
+-(void)payBack:(NSDictionary*)resultDic{
+    /*
+     1、更新订单信息
+     2、推荐人(Recommender)余额增加55
+     3、优惠券失效
+     4、更新订单TotalPrice
+    */
+    NSInteger resultCode = [[resultDic objectForKey:@"resultStatus"] intValue];
+    if (resultCode == 9000 ) {
+        // 1、更新订单信息
+        [self updateOderAfterPayRequest];
+    }else {
+        if ([self.isAll isEqualToString:@"no"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshPay" object:nil];
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAll" object:nil];
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+-(void)payNotificationBack:(NSNotification *)notification{
+    /*
+     1、更新订单信息
+     2、推荐人(Recommender)余额增加55
+     3、优惠券失效
+     4、更新订单TotalPrice
+     */
+    
+    
+    if ([notification.object isEqualToString:@"success"]){
+        // 1、更新订单信息
+        [self updateOderAfterPayRequest];
+        
+    }else{
+        if ([self.isAll isEqualToString:@"no"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshPay" object:nil];
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAll" object:nil];
+        }
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
+
+
 @end

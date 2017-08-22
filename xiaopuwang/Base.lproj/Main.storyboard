@@ -633,6 +633,9 @@
                                         <state key="normal" title="立即支付">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="userAppointOrg:" destination="N9O-2r-Z20" eventType="touchUpInside" id="KUd-hY-ath"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iR-nc-Co8">
                                         <rect key="frame" x="0.0" y="34.5" width="50" height="13.5"/>
@@ -776,6 +779,7 @@
                         <segue destination="8rr-3M-0Yd" kind="push" identifier="DetailToMoreStudent" id="WPM-fW-JBH"/>
                         <segue destination="PbP-mi-eef" kind="push" identifier="DetailToMoreEvaluate" id="DNz-LL-W6p"/>
                         <segue destination="b0z-uj-pwP" kind="push" identifier="DetailToCourseDetail" id="dFW-sS-bdb"/>
+                        <segue destination="XVB-0J-k9I" kind="push" identifier="DetailToMyOrder" id="U2m-as-IXV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp6-vb-6Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1494,6 +1498,7 @@
                         <segue destination="he2-qS-y0c" kind="push" identifier="MyToSetting" id="JZR-oJ-tTp"/>
                         <segue destination="XVB-0J-k9I" kind="push" identifier="MyToOrder" id="7yN-jC-nJ3"/>
                         <segue destination="meX-VB-sZf" kind="push" identifier="MyToCoupon" id="Jsj-9t-jwq"/>
+                        <segue destination="tgr-T2-Tpb" kind="push" identifier="MyToWallet" id="Lwm-1F-MTj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIL-eg-rsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1780,6 +1785,9 @@
                                 <state key="normal" title="确  认  提  交">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeAction:" destination="tg5-HL-vsG" eventType="touchUpInside" id="GkQ-0q-Rac"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2051,6 +2059,125 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Co-KF-PfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9744.7999999999993" y="2494.9025487256372"/>
+        </scene>
+        <!--My Wallet View Controller-->
+        <scene sceneID="wYV-2O-DTv">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="tgr-T2-Tpb" customClass="MyWalletViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="slx-gQ-HbH"/>
+                        <viewControllerLayoutGuide type="bottom" id="81P-3G-kTl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sh9-Hz-OmW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-km-IdD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tgr-T2-Tpb" id="arj-h5-5u2"/>
+                                    <outlet property="delegate" destination="tgr-T2-Tpb" id="iCf-P1-pc9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mKo-km-IdD" firstAttribute="top" secondItem="slx-gQ-HbH" secondAttribute="bottom" id="1a9-Jx-NVF"/>
+                            <constraint firstAttribute="trailing" secondItem="mKo-km-IdD" secondAttribute="trailing" id="BFf-hi-8Nd"/>
+                            <constraint firstItem="81P-3G-kTl" firstAttribute="top" secondItem="mKo-km-IdD" secondAttribute="bottom" id="PdT-XJ-TA6"/>
+                            <constraint firstItem="mKo-km-IdD" firstAttribute="leading" secondItem="sh9-Hz-OmW" secondAttribute="leading" id="q3z-yV-3CU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OYG-cs-iGM"/>
+                    <connections>
+                        <outlet property="tableView" destination="mKo-km-IdD" id="FAI-Rt-IAM"/>
+                        <segue destination="meX-VB-sZf" kind="push" identifier="WalletToCoupon" id="yad-da-8Nz"/>
+                        <segue destination="FDs-kp-g3w" kind="push" identifier="WalletToTradeDetail" id="xvK-bG-hgo"/>
+                        <segue destination="5ei-ui-P5U" kind="push" identifier="WalletToReflectBalance" id="RUK-Pg-cAB"/>
+                        <segue destination="RTa-3v-Bl7" kind="push" identifier="WalletToBankCard" id="h06-1T-d8P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrj-ln-nNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9868" y="3135"/>
+        </scene>
+        <!--Trade Detail View Controller-->
+        <scene sceneID="Djd-AE-HM3">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="FDs-kp-g3w" customClass="TradeDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bHp-6h-dE0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jlc-N6-UOu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="akP-2R-9Is">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Lt-XM-KRP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FDs-kp-g3w" id="dMt-xe-0rB"/>
+                                    <outlet property="delegate" destination="FDs-kp-g3w" id="kS8-sw-IPg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Lt-XM-KRP" firstAttribute="leading" secondItem="akP-2R-9Is" secondAttribute="leading" id="Atc-iu-3AL"/>
+                            <constraint firstAttribute="trailing" secondItem="7Lt-XM-KRP" secondAttribute="trailing" id="KeE-0Z-U1g"/>
+                            <constraint firstItem="7Lt-XM-KRP" firstAttribute="top" secondItem="bHp-6h-dE0" secondAttribute="bottom" id="pJx-7L-QE0"/>
+                            <constraint firstItem="Jlc-N6-UOu" firstAttribute="top" secondItem="7Lt-XM-KRP" secondAttribute="bottom" id="ykj-b3-QCR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YnP-eh-mAd"/>
+                    <connections>
+                        <outlet property="tableView" destination="7Lt-XM-KRP" id="PVy-Yp-4nV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M86-Qt-smA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9474" y="3827"/>
+        </scene>
+        <!--Reflect Balance View Controller-->
+        <scene sceneID="zJp-d9-Xxp">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="5ei-ui-P5U" customClass="ReflectBalanceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vvb-NO-S0t"/>
+                        <viewControllerLayoutGuide type="bottom" id="iRR-eg-r6G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VWO-Rr-f4n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-ej-ma5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5ei-ui-P5U" id="Khf-hV-h0V"/>
+                                    <outlet property="delegate" destination="5ei-ui-P5U" id="y8S-z7-NKE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fEO-ej-ma5" secondAttribute="trailing" id="Aeh-Kg-4d3"/>
+                            <constraint firstItem="fEO-ej-ma5" firstAttribute="leading" secondItem="VWO-Rr-f4n" secondAttribute="leading" id="XSc-sa-jzo"/>
+                            <constraint firstItem="iRR-eg-r6G" firstAttribute="top" secondItem="fEO-ej-ma5" secondAttribute="bottom" id="kte-od-qwM"/>
+                            <constraint firstItem="fEO-ej-ma5" firstAttribute="top" secondItem="Vvb-NO-S0t" secondAttribute="bottom" id="uL3-c3-ZCt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="S53-Fr-6nr"/>
+                    <connections>
+                        <outlet property="tableView" destination="fEO-ej-ma5" id="Psf-m7-5wG"/>
+                        <segue destination="h7G-1k-kDa" kind="push" identifier="ReflectToAddCard" id="sOd-j3-mVK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UB3-w0-wn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10169" y="3826"/>
         </scene>
         <!--User Confirm Order View Controller-->
         <scene sceneID="XqT-Q4-96n">
@@ -2324,15 +2451,19 @@
         <image name="footernav_08" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tkJ-ED-xoa"/>
+        <segue reference="gVy-dS-Wik"/>
         <segue reference="KY4-T0-m3K"/>
         <segue reference="xcV-3d-LJO"/>
         <segue reference="C9X-s8-weM"/>
-        <segue reference="gVy-dS-Wik"/>
-        <segue reference="tkJ-ED-xoa"/>
+        <segue reference="h06-1T-d8P"/>
+        <segue reference="yad-da-8Nz"/>
+        <segue reference="sOd-j3-mVK"/>
         <segue reference="dxN-wl-VKM"/>
+        <segue reference="U2m-as-IXV"/>
         <segue reference="dFW-sS-bdb"/>
-        <segue reference="YZ5-ra-U5E"/>
         <segue reference="P2M-WO-PHT"/>
         <segue reference="R0j-r9-wjC"/>
+        <segue reference="YZ5-ra-U5E"/>
     </inferredMetricsTieBreakers>
 </document>
