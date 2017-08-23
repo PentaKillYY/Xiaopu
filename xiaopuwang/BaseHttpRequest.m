@@ -45,8 +45,11 @@
         if (_result.statusCode ==1) {
             success(_result);
         }else{
-            [[AppCustomHud sharedEKZCustomHud] showTextHud:_result.message];
-            failure(_result);
+            if (_result.message.length) {
+                [[AppCustomHud sharedEKZCustomHud] showTextHud:_result.message];
+
+            }
+        failure(_result);
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

@@ -23,6 +23,10 @@
     NSMutableArray* courseArray ;
     DataResult* professionalResult;
     NSInteger currentCourseIndex;
+    
+    UIVisualEffectView *effectview;
+    UIButton* loginButton;
+
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property (nonatomic,weak)IBOutlet UIButton* contactTeacherButton;
@@ -50,7 +54,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolAdvantageTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolAdvantageTableViewCell"];
     
     [self getSchoolDetailRequest];
-    [self judgeSchoolFollowStateRequest];
+    
     
     if (!detailResult) {
         self.tableView.hidden = YES;
@@ -61,6 +65,41 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loginUI];
+}
+
+-(void)loginUI{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
+        [self judgeSchoolFollowStateRequest];
+        
+        if (effectview) {
+            [effectview removeFromSuperview];
+            [loginButton removeFromSuperview];
+        }
+    }else{
+        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+        
+        effectview.frame = CGRectMake(0, 250, self.tableView.frame.size.width,self.tableView.frame.size.height-250);
+    
+        
+        loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [loginButton setTitle:@"登录后查看" forState:0];
+        [loginButton setFrame:CGRectMake(Main_Screen_Width/2-40, 80, 80, 80)];
+        [loginButton setBackgroundColor:[UIColor clearColor]];
+        loginButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        loginButton.contentHorizontalAlignment=UIControlContentHorizontalAlignmentCenter ;
+        [loginButton setTitleColor:MAINCOLOR forState:0];
+        [loginButton addTarget:self action:@selector(needLogin) forControlEvents:UIControlEventTouchUpInside];
+        [effectview addSubview:loginButton];
+        
+        [self.tableView addSubview:effectview];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -78,15 +117,21 @@
 }
 
 -(IBAction)followOrginization:(id)sender{
-    UIButton* currentButton = (UIButton*)sender;
-    
-    currentButton.selected = !currentButton.selected;
-    if (currentButton.selected) {
-        [self followSchoolRequest];
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length){
+        UIButton* currentButton = (UIButton*)sender;
         
+        currentButton.selected = !currentButton.selected;
+        if (currentButton.selected) {
+            [self followSchoolRequest];
+            
+        }else{
+            [self delFollowSchoolRequest];
+        }
     }else{
-        [self delFollowSchoolRequest];
+        [self needLogin];
     }
+    
 }
 
 -(void)setupContactButtonUI{
@@ -106,18 +151,24 @@
 }
 
 -(IBAction)contactTeacher:(id)sender{
-    //新建一个聊天会话View Controller对象,建议这样初始化
-    RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:SchoolRongCloudId];
+    UserInfo* info = [UserInfo sharedUserInfo];
     
-    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
-    chat.conversationType = ConversationType_PRIVATE;
-    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
-    chat.targetId = SchoolRongCloudId;
-    
-    //设置聊天会话界面要显示的标题
-    chat.title = @"国际学校顾问";
-    //显示聊天会话界面
-    [self.navigationController pushViewController:chat animated:YES];
+    if (info.userID.length) {
+        //新建一个聊天会话View Controller对象,建议这样初始化
+        RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:SchoolRongCloudId];
+        
+        //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+        chat.conversationType = ConversationType_PRIVATE;
+        //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+        chat.targetId = SchoolRongCloudId;
+        
+        //设置聊天会话界面要显示的标题
+        chat.title = @"国际学校顾问";
+        //显示聊天会话界面
+        [self.navigationController pushViewController:chat animated:YES];
+    }else{
+        [self needLogin];
+    }
 }
 
 #pragma mark - UITableViewDatasource
@@ -358,4 +409,10 @@
     }];
 }
 
+-(void)needLogin{
+    UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+    [self presentViewController:login animated:YES completion:^{
+        
+    }];
+}
 @end

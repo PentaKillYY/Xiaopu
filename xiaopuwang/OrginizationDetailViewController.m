@@ -55,6 +55,9 @@
     NSString* videoType;
     
     NSInteger selectCourseIndex;
+    
+    UIVisualEffectView *effectview;
+    UIButton* loginButton;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -91,9 +94,7 @@
     [self gerOrgAlbumRequest];
     [self getVideoAlbumRequest];
     
-    [self getAppointStateRequest];
-    [self judgeFocusOrgRequest];
-    [self getUserAdscriptionRequest];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,6 +102,40 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self loginUI];
+}
+
+-(void)loginUI{
+    if ([UserInfo sharedUserInfo].userID.length) {
+        [self getAppointStateRequest];
+        [self judgeFocusOrgRequest];
+        [self getUserAdscriptionRequest];
+        if (effectview) {
+            [effectview removeFromSuperview];
+            [loginButton removeFromSuperview];
+        }
+        
+    }else{
+    
+        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+        effectview.frame = CGRectMake(0, 90, self.tableView.frame.size.width,self.tableView.frame.size.height);
+        
+        [self.tableView addSubview:effectview];
+        
+        loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [loginButton setTitle:@"登录后查看" forState:0];
+        [loginButton setFrame:CGRectMake(Main_Screen_Width/2-40, (self.tableView.frame.size.height-90)/2-40, 80, 80)];
+        [loginButton setBackgroundColor:[UIColor clearColor]];
+        loginButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        loginButton.contentHorizontalAlignment=UIControlContentHorizontalAlignmentCenter ;
+        [loginButton setTitleColor:MAINCOLOR forState:0];
+        [loginButton addTarget:self action:@selector(needLogin) forControlEvents:UIControlEventTouchUpInside];
+        [self.tableView addSubview:loginButton];
+    }
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -273,20 +308,25 @@
 }
 
 -(IBAction)chatOrg:(id)sender{
-    UITextView* textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 240, 100)];
-    [textView.layer setBorderWidth:0.5];
-    [textView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    UserInfo* info = [UserInfo sharedUserInfo];
     
-  [[[LGAlertView alloc] initWithViewAndTitle:@"咨询信息"
-                                       message:nil
-                                         style:LGAlertViewStyleAlert
-                                          view:textView
-                                  buttonTitles:@[@"确认"]
-                             cancelButtonTitle:@"取消"
-                        destructiveButtonTitle:nil
-                                      delegate:self] showAnimated:YES completionHandler:nil];
-    
-    
+    if (info.userID.length) {
+        UITextView* textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 240, 100)];
+        [textView.layer setBorderWidth:0.5];
+        [textView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+        
+        [[[LGAlertView alloc] initWithViewAndTitle:@"咨询信息"
+                                           message:nil
+                                             style:LGAlertViewStyleAlert
+                                              view:textView
+                                      buttonTitles:@[@"确认"]
+                                 cancelButtonTitle:@"取消"
+                            destructiveButtonTitle:nil
+                                          delegate:self] showAnimated:YES completionHandler:nil];
+    }else{
+        [self needLogin];
+        
+    }
 }
 
 -(IBAction)userAppointOrg:(id)sender{
@@ -295,14 +335,20 @@
 
 
 -(IBAction)followOrginization:(id)sender{
-    UIButton* currentButton = (UIButton*)sender;
-    
-    currentButton.selected = !currentButton.selected;
-    if (currentButton.selected) {
-        [self focusOrgRequest];
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
+        UIButton* currentButton = (UIButton*)sender;
         
+        currentButton.selected = !currentButton.selected;
+        if (currentButton.selected) {
+            [self focusOrgRequest];
+            
+        }else{
+            [self delFocusOrgRequest];
+        }
+ 
     }else{
-        [self delFocusOrgRequest];
+        [self needLogin];
     }
 }
 
@@ -1109,4 +1155,10 @@
     return distance;
 }
 
+-(void)needLogin{
+    UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+    [self presentViewController:login animated:YES completion:^{
+        
+    }];
+}
 @end
