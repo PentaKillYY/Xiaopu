@@ -29,6 +29,7 @@
     if (self=[super init]) {
         decodeObject(username);
         decodeObject(password);
+        decodeObject(userGender);
         decodeObject(telphone);
         decodeObject(headPicUrl);
         decodeObject(userID);
@@ -36,6 +37,15 @@
         decodeObject(userBalance);
         decodeObject(userLongitude);
         decodeObject(userLatitude);
+        decodeObject(isReadIntro);
+        decodeObject(selectOrgTypeName);
+        decodeObject(selectSchoolTypeName);
+        decodeObject(selectCountryname);
+        decodeObject(userCountry);
+        decodeObject(userProvince);
+        decodeObject(userCity);
+        decodeObject(userCoupon);
+        decodeObject(recommand);
     }
     
     return self;
@@ -44,6 +54,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     encodeObject(username);
     encodeObject(password);
+    encodeObject(userGender);
     encodeObject(telphone);
     encodeObject(headPicUrl);
     encodeObject(userID);
@@ -51,11 +62,21 @@
     encodeObject(userBalance);
     encodeObject(userLongitude);
     encodeObject(userLatitude);
+    encodeObject(isReadIntro);
+    encodeObject(selectOrgTypeName);
+    encodeObject(selectSchoolTypeName);
+    encodeObject(selectCountryname);
+    encodeObject(userCountry);
+    encodeObject(userProvince);
+    encodeObject(userCity);
+    encodeObject(userCoupon);
+    encodeObject(recommand);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
     self.username=dict[@"username"];
     self.password=dict[@"password"];
+    self.userGender=dict[@"userGender"];
     self.telphone=dict[@"telephone"];
     self.headPicUrl=dict[@"headPicUrl"];
     self.userID=dict[@"userID"];
@@ -63,6 +84,15 @@
     self.userBalance=dict[@"userBalance"];
     self.userLongitude=dict[@"userLongitude"];
     self.userLatitude=dict[@"userLatitude"];
+    self.isReadIntro=dict[@"isReadIntro"];
+    self.selectOrgTypeName=dict[@"selectOrgTypeName"];
+    self.selectSchoolTypeName=dict[@"selectSchoolTypeName"];
+    self.selectCountryname=dict[@"selectCountryname"];
+    self.userCountry=dict[@"userCountry"];
+    self.userProvince=dict[@"userProvince"];
+    self.userCity=dict[@"userCity"];
+    self.userCoupon=dict[@"userCoupon"];
+    self.recommand=dict[@"recommand"];
 }
 
 - (void)logout{

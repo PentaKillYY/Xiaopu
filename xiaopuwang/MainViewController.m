@@ -36,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBarController.delegate = self;
     
     [self changeNavTitleView];
     [self loginRequest];
@@ -105,13 +106,17 @@
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width-88, 44)];
     UIImage* clearImg = [MainViewController imageWithColor:[UIColor clearColor] andHeight:44.0f];
     [_searchBar setBackgroundImage:clearImg];
-    _searchBar.placeholder = @"请输入机构、学校、课程名称 ";
+    _searchBar.placeholder = @"请输入机构、学校、课程名称";
     [_searchBar setBackgroundColor:[UIColor clearColor]];
     
     _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_rightButton setFrame:CGRectMake(0, 0, 44, 44)];
     [_rightButton setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
-    [_rightButton setImage:V_IMAGE(@"email") forState:0];
+    if ([[UserInfo sharedUserInfo].isReadIntro isEqualToString:@"read"]) {
+        [_rightButton setImage:V_IMAGE(@"IntroRead") forState:0];
+    }else{
+        [_rightButton setImage:V_IMAGE(@"IntroUnread") forState:0];
+    }
     
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
                                        initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
@@ -277,12 +282,14 @@
 }
 
 -(void)loginRequest{
-    [[MainService sharedMainService] loginWithParameters:@{@"loginName":@"13812283417",@"password":@"111111"} onCompletion:^(id json) {
-        [self getUserBasicInfoRequest];
-        [self getUserOnlyRequest];
-    } onFailure:^(id json) {
-        
-    }];
+    if ([UserInfo sharedUserInfo].telphone.length) {
+        [[MainService sharedMainService] loginWithParameters:@{@"loginName":[UserInfo sharedUserInfo].telphone,@"password":[UserInfo sharedUserInfo].password} onCompletion:^(id json) {
+            [self getUserBasicInfoRequest];
+            [self getUserOnlyRequest];
+        } onFailure:^(id json) {
+            
+        }];
+    }
 }
 
 -(void)getUserBasicInfoRequest{
@@ -306,7 +313,7 @@
 
 
 -(void)tokenRequest{
-    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username} onCompletion:^(id json) {
+    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username,@"portraitUri":[UserInfo sharedUserInfo].headPicUrl} onCompletion:^(id json) {
         
     } onFailure:^(id json) {
         
@@ -385,6 +392,10 @@
     [[RCIM sharedRCIM] connectWithToken:info.token  success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
         
+//        RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:userId
+//                                                         name:info.username
+//                                                     portrait:info];
+        
     } error:^(RCConnectErrorCode status) {
         NSLog(@"登陆的错误码为:%ld", (long)status);
     } tokenIncorrect:^{
@@ -394,5 +405,9 @@
         NSLog(@"token错误");
     }];
 }
+
+#pragma mark - UITabbarControllerDelegate
+
+
 
 @end

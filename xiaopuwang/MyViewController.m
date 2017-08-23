@@ -16,6 +16,7 @@
 #import <AssetsLibrary/ALAssetsGroup.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
 
+#import "MyChatListViewController.h"
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource,UserLogoDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
     NSString* uploadImageName;
@@ -32,18 +33,6 @@
      [self.tableView registerNib:[UINib nibWithNibName:@"MyBannerCell" bundle:nil] forCellReuseIdentifier:@"MyBannerCell"];
     
 
-       
-    [self getUserBalanceRequest];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
-    
     UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"message") style:UIBarButtonItemStylePlain target:self action:@selector(messagePush:)];
     
     UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(settingPush:)];
@@ -55,6 +44,19 @@
     [self.navigationItem.leftBarButtonItem setTintColor:MAINCOLOR];
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+    [self getUserBalanceRequest];
+    
     [super viewWillAppear:YES];
 }
 
@@ -85,6 +87,7 @@
         
         cell.userName.text = info.username;
         cell.balance.text = [NSString stringWithFormat:@"账户余额:%.2f",[info.userBalance doubleValue]];
+        cell.coupon.text = [NSString stringWithFormat:@"优惠券:%d张",[info.userCoupon integerValue]];
         
         cell.delegate = self;
         return cell;
@@ -92,7 +95,7 @@
         UserInfo* info = [UserInfo sharedUserInfo];
         MyTableCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyTableCell" owner:self options:nil].firstObject;
         cell.cellTitle.text = MyCellTitle[indexPath.section][indexPath.row];
-        NSString* imageName = [NSString stringWithFormat:@"My-%ld-%ld",indexPath.section,indexPath.row];
+        NSString* imageName = [NSString stringWithFormat:@"My-%ld-%ld",(long)indexPath.section,(long)indexPath.row];
         
         
         cell.cellImage.image = V_IMAGE(imageName);
@@ -100,7 +103,7 @@
         if (indexPath.section == 2 && indexPath.row == 0) {
             cell.cellDetail.text = [NSString stringWithFormat:@"%.2f元",[info.userBalance doubleValue]];
         }else if (indexPath.section == 2 && indexPath.row == 1){
-            cell.cellDetail.text = @"0张";
+            cell.cellDetail.text = [NSString stringWithFormat:@"%d张",[info.userCoupon integerValue]];
         }else if (indexPath.section == 2 && indexPath.row == 2){
             cell.cellDetail.text = @"0.00元";
         }else{
@@ -131,8 +134,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section ==3 && indexPath.row == 0) {
+    if (indexPath.section == 1 && indexPath.row ==0) {
+        [self performSegueWithIdentifier:@"MyToOrder" sender:self];
+    }else if (indexPath.section == 2 && indexPath.row == 0){
+        [self performSegueWithIdentifier:@"MyToWallet" sender:self];
+    }else if (indexPath.section == 2 && indexPath.row == 1){
+        [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
+    }else if (indexPath.section ==3 && indexPath.row == 0) {
         [self performSegueWithIdentifier:@"MyToFollow" sender:self];
+    }else if (indexPath.section == 3 && indexPath.row == 1){
+        [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
     }else if (indexPath.section == 3 && indexPath.row == 2) {
         //显示分享面板
         [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
@@ -141,16 +152,23 @@
             [self shareWebPageToPlatformType:platformType];
             
         }];
+    }else if (indexPath.section == 3 && indexPath.row == 3){
+        [self performSegueWithIdentifier:@"MyToUpdateInfo" sender:self];
+    }else if (indexPath.section == 3 && indexPath.row == 4){
+        [self performSegueWithIdentifier:@"MyToSetting" sender:self];
     }
 }
 
 
 -(void)messagePush:(id)sender{
+    MyChatListViewController *chatList = [[MyChatListViewController alloc] init];
+    chatList.hidesBottomBarWhenPushed = YES;
 
+    [self.navigationController pushViewController:chatList animated:YES];
 }
 
 -(void)settingPush:(id)sender{
-    
+    [self performSegueWithIdentifier:@"MyToSetting" sender:self];
 }
 
 -(void)changeUserLogo:(id)sender{
@@ -220,10 +238,10 @@
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     CFShow((__bridge CFTypeRef)(infoDictionary));
-    //创建网页内容对象
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:ShareDetailTitle descr:nil thumImage:[UIImage imageNamed:@"ShareLogo"]];
-    //设置网页地址
+
     shareObject.webpageUrl =[NSString stringWithFormat:@"http://www.admin.ings.org.cn/UserRegister/GetCoupon?userId=%@&couponId=",info.userID];
+    
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
@@ -242,14 +260,23 @@
 
 -(void)getUserBalanceRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
-    [[MyService sharedMyService] getUserBalanceWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
-        DataResult* result = json;
-        
-        info.userBalance = [NSString stringWithFormat:@"%f",[result.detailinfo getDouble:@"TotalPrice"]];
-        [info synchronize];
-    } onFailure:^(id json) {
-        
-    }];
+    if (info.userID.length) {
+        [[MyService sharedMyService] getUserBalanceWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
+            DataResult* result = json;
+            
+            info.userBalance = [NSString stringWithFormat:@"%f",[result.detailinfo getDouble:@"TotalPrice"]];
+            [info synchronize];
+            
+            [self getUserCouponListRequest];
+        } onFailure:^(id json) {
+            
+        }];
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
 }
 
 -(void)updateUserHeadRequest:(UIImage*)image{
@@ -257,11 +284,7 @@
     
     [[MyService  sharedMyService] uploadFileInfoWithImage:image Parameters:uploadImageName onCompletion:^(id json) {
         uploadResult = json;
-        if (uploadResult.statusCode == 0) {
-            
-        }else if (uploadResult.statusCode == 1){
-            [self updateUsrLogoRequest];
-        }
+        [self updateUsrLogoRequest];
         
     } onFailure:^(id json) {
         
@@ -281,4 +304,19 @@
         
     }];
 }
+
+-(void)getUserCouponListRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[MyService sharedMyService] getUserCouponListWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
+        DataResult* couponResult = json;
+        info.userCoupon = [NSString stringWithFormat:@"%ld",couponResult.items.size];
+        [info synchronize];
+        
+        [self.tableView reloadData];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+
 @end

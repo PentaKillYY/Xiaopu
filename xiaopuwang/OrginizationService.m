@@ -182,10 +182,12 @@
     }];
 }
 
+
 -(void)appointOrgWithParameters:(NSDictionary *)parameters
                    onCompletion:(JSONResponse)completionBlock
                       onFailure:(JSONResponse)failureBlock{
-    [[BaseHttpRequest sharedBaseHttpRequest] POST:AppointMentOrg parameters: parameters success:^(id json) {
+    
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?orgApplicationID=%@&userId=%@&peopleContent=%@",AppointMentOrg,[parameters objectForKey:@"orgApplicationID"],[parameters objectForKey:@"userId"],[parameters objectForKey:@"peopleContent"]]  parameters: nil success:^(id json) {
         
         completionBlock(json);
     } failure:^(id json) {

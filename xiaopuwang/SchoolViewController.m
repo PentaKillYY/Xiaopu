@@ -51,6 +51,8 @@
     // Do any additional setup after loading the view.
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
+    DLog(@"[UserInfo sharedUserInfo].selectSchoolTypeName:%@ || [UserInfo sharedUserInfo].selectCountryname:%@",[UserInfo sharedUserInfo].selectSchoolTypeName,[UserInfo sharedUserInfo].selectCountryname);
+    
     schoolListArray = [DataItemArray new];
     
     [self addNavTitleView];
@@ -141,10 +143,21 @@
 }
 
 -(void)loadFilter{
-    schoolCountry = @"";
+    if ([UserInfo sharedUserInfo].selectCountryname.length) {
+       schoolCountry = [UserInfo sharedUserInfo].selectCountryname;
+    }else{
+        schoolCountry = @"";
+    }
+    
+    if ([UserInfo sharedUserInfo].selectSchoolTypeName.length) {
+        schoolType = [UserInfo sharedUserInfo].selectSchoolTypeName;
+    }else{
+        schoolType = @"";
+    }
+    
     schoolProvince = @"";
     schoolCity = @"";
-    schoolType = @"";
+    
     schoolNature = @"";
 }
 
@@ -361,7 +374,13 @@
         [self getSchoolCountryListRequest];
         
         if (indexPath.row == 0) {
-            schoolCountry = @"";
+            
+            if ([UserInfo sharedUserInfo].selectCountryname.length) {
+                schoolCountry = [UserInfo sharedUserInfo].selectCountryname;
+            }else{
+                schoolCountry = @"";
+            }
+            
             [self.tableView.mj_header beginRefreshing];
         }else if (indexPath.row == 1){
             [self.menu reloadData];
@@ -441,6 +460,12 @@
 #pragma mark - NetWorkRequest
 -(void)getSchoolListRequest{
     [[SchoolService sharedSchoolService] getSchoolListWithPage:currentIndex Size:10 Parameters:@{@"ChineseName":@"",@"Country":schoolCountry,@"Province":schoolProvince,@"City":schoolCity,@"CollegeNature":schoolNature,@"CollegeType":schoolType,@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
+        
+        UserInfo* info = [UserInfo sharedUserInfo];
+        info.selectSchoolTypeName = @"";
+        [info synchronize];
+
+        
         DataResult* result = json;
         
         [schoolListArray append:[result.detailinfo getDataItemArray:@"list"]];

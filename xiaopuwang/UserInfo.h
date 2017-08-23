@@ -10,14 +10,26 @@
 
 @interface UserInfo : BaseUserInfo
 @property (copy, nonatomic) NSString *username;
+@property (copy, nonatomic) NSString *userGender;
 @property (copy, nonatomic) NSString *password;
 @property (copy, nonatomic) NSString *telphone;
 @property (copy, nonatomic) NSString *headPicUrl;
 @property (copy, nonatomic) NSString *userID;
+@property (copy, nonatomic) NSString *recommand;
 @property (copy, nonatomic) NSString *token;
 @property (copy, nonatomic) NSString* userBalance;
+@property (copy, nonatomic) NSString* userCoupon;
+
 @property (copy, nonatomic) NSString* userLongitude;
 @property (copy, nonatomic) NSString* userLatitude;
+@property (copy, nonatomic) NSString* isReadIntro;
+@property (copy, nonatomic) NSString* selectOrgTypeName;
+@property (copy, nonatomic) NSString* selectCountryname;
+@property (copy, nonatomic) NSString* selectSchoolTypeName;
+
+@property (copy, nonatomic) NSString* userCountry;
+@property (copy, nonatomic) NSString* userProvince;
+@property (copy, nonatomic) NSString* userCity;
 
 +(instancetype)sharedUserInfo;
 -(void)logout;

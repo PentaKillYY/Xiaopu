@@ -74,9 +74,17 @@
 }
 
 -(void)loadFilter{
+    if (self.chinaType.length) {
+       schoolType = self.chinaType;
+    }else{
+        schoolType = @"";
+    }
+    
+    
+    
     schoolProvince = @"";
     schoolCity = @"";
-    schoolType = @"";
+    
     schoolNature = @"";
 }
 
@@ -381,7 +389,8 @@
 
 #pragma mark - ChinaBannerDelegate
 -(void)bannerBubttonClicked:(id)sender{
-
+    UIButton* button = (UIButton*)sender;
+    schoolType = ChinaSchoolType[button.tag+1];
     [self.tableView.mj_header beginRefreshing];
 }
 @end

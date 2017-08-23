@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface OrginizationViewController : BaseViewController
-
+@property(nonatomic,weak)NSString* typeName;
 @end

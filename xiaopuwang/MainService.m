@@ -25,7 +25,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:GetAdvertisement parameters:nil success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -36,11 +36,13 @@
         DataResult * result = json;
         UserInfo* info = [UserInfo sharedUserInfo];
         info.userID = result.message;
+        info.telphone = [parameters objectForKey:@"loginName"];
+        info.password = [parameters objectForKey:@"password"];
         [info synchronize];
         
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -52,7 +54,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?pageIndex=%ld&pageSize=%ld",GetSubtidyList,(long)page,(long)size] parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -62,7 +64,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:SpecialistOrg parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -73,7 +75,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:SpecialistChinaSchool parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -83,7 +85,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:SpecialistOverseaSchool parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 @end

@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface ChinaSchoolViewController : BaseViewController
-
+@property(nonatomic,weak)NSString* chinaType;
 @end

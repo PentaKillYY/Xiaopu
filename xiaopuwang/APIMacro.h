@@ -173,3 +173,119 @@
 
 //获取用户关注学校信息
 #define GetUserFocusSchool @"/user/SchoolFocusInfo"
+
+//通过userId获取专家咨询内容-机构
+#define GetSpecialistOrg @"/user/GetOrgExpertConsultation"
+
+//通过userId获取专家咨询内容-中国学校
+#define GetSpecialstChinaSchool @"/user/GetChinaSchoolExpertConsultation"
+
+//通过userId获取专家咨询内容-海外学校
+#define GetSpecialistOverseaSchool @"/user/GetOverSeasSchoolExpertConsultation"
+
+//更新用户基本信息
+#define UpdateUserInfo @"/user/UpdateOrInsertUserBaseInfo"
+
+//获取用户银行卡
+#define GetUserBankCard @"/user/userBankCardList"
+
+//删除指定银行卡
+#define DeleteUserbankCard @"/user/DeleteBankCard"
+
+//判断用户是否已添加该银行卡
+#define JudgeCardIsAdd @"/user/isExsistBankCard"
+
+//添加银行卡
+#define AddCard @"/user/addBankCard"
+
+//更新密码
+#define ChangePassword @"/user/updatePassword"
+
+// *******************************订单**************************
+
+//获取用户预约信息（预约列表）
+#define UserAppointList @"/userOrder/AppointmentInfoInfo"
+
+//获取用户订单信息（待支付、待评价、全部列表）
+#define UsreOrderList @"/userOrder/GetUserOrderListInfo"
+
+//取消用户预约信息
+#define DeleteUserAppointment @"/userOrder/DeleteUserAppointment"
+
+//用户下单
+#define UserMakeOrder @"/userOrder/UserOrder"
+
+//更新用户预约信息
+#define UpdataUserAppointment @"/userOrder/UpdateUserAppointmentInfo"
+
+//用户取消订单
+#define CancelUserOrder @"/userOrder/CancelUserOrderInfo"
+
+//获取订单信息
+#define UserOrderInfo @"/userOrder/OrderInfoList"
+
+//用户删除订单
+#define DeleteUserOrder @"/userOrder/DeleteUserOrderInfo" 
+
+//获取折扣金额
+#define GetBackPrice @"/userOrder/GetDiscountPrice"
+
+//更新订单分享状态
+#define UpdateOrderShare @"/userOrder/UpdateIsShare"
+
+//增加返现金额
+#define AddBackPrice @"/userOrder/AddBackPrice"
+
+//用户评价
+#define UserEvaluate @"/userOrder/InsertUserReplyInfo"
+
+//用户评价完成后更新订单信息
+#define UpdateOrderAfterEvaluate @"/userOrder/UpdateOrderInfoAfterReply"
+
+//获取用户优惠券列表
+#define UserCouponList @"/user/UserCouponList"
+
+//用户优惠券失效
+#define UserCouponInvalid @"/user/UserCouponInvalid"
+
+//用户余额操作
+#define UpdateUserBalance @"/user/UserBalanceOperation"
+
+//用户优惠券赠送
+#define GiveCoupon @"/user/UserCouponGive"
+
+//通过手机号码查询登录信息
+#define SearchUserByPhone @"/user/GetUserInfoByPhone"
+
+//支付宝签名接口
+#define  AliPaySign @"/alipay/param"
+
+//微信签名接口
+#define WXPaySign @"/wechatpay/param"
+
+//获取用户余额明细
+#define UserTradeDetail @"/user/BalanceDetail"
+
+//用户提现-新
+#define UserReflect @"/userOrder/UserWithdrawCashNew"
+
+//用户支付完成之后订单更新
+#define UpdateOrderAfterPay @"/userOrder/UpdateUserOrderInfo"
+
+//更新用户TotalPrice订单价格
+#define UpdateTotalPriceAfterPay @"/userOrder/UpdateUserOrderInfoToTotalPrice"
+
+//发送手机验证码
+#define SendValidCode @"/user/sendMessage"
+
+//用户注册验证码验证
+#define CheckValidcode @"/user/JudgePhoneOrEmailValidateData"
+
+//判断用户是否注册
+#define CheckIsRegister @"/user/IsExistLoginName"
+
+//用户注册
+#define UserRegister @"/user/InsertUserRegistrationData" 
+
+//更新密码
+#define ResetPassword @"/user/updatePassword"

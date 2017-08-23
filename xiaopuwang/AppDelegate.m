@@ -9,9 +9,11 @@
 #import "AppDelegate.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
+#import "OrginizationService.h"
+#import "WXApi.h"
+#import <AlipaySDK/AlipaySDK.h>
 
-
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -33,11 +35,13 @@
     /* 设置高德key */
     [self configAmap];
     
-    /* 设置高德key */
+    /* 设置百度地图key */
     [self configBaiduMap];
     
     /* 设置融云key */
     [self configRongCloud];
+    
+    [WXApi registerApp:WXAPIKEY enableMTA:YES];
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -134,18 +138,90 @@
 
 - (void)configRongCloud{
     [[RCIM sharedRCIM] initWithAppKey:RONGCLOUDDISKEY];
+    [[RCIM sharedRCIM] setUserInfoDataSource:self];
+    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
 }
 
 // 支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    
-    
     //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
         // 其他如支付等SDK的回调
+        
+        //微信支付回调
+        if ([[url absoluteString] rangeOfString:[NSString stringWithFormat:@"%@://pay",WXAPIKEY]].location == 0) {
+            return [WXApi handleOpenURL:url delegate:self];
+        }
+        //支付宝回调
+        if ([url.host isEqualToString:@"safepay"] || [url.host isEqualToString:@"platformapi"]) {
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                //【由于在跳转支付宝客户端支付的过程中，商户app在后台很可能被系统kill了，所以pay接口的callback就会失效，请商户对standbyCallback返回的回调结果进行处理,就是在这个方法里面处理跟callback一样的逻辑】
+                NSString * aliPayResult;
+
+                NSInteger resultCode = [[resultDic objectForKey:@"resultStatus"] intValue];
+                if (resultCode == 9000 ) {
+                    aliPayResult = @"success";
+                }else {
+                    aliPayResult = @"failure";
+                }
+
+                NSNotification * notification = [NSNotification notificationWithName:@"AliPay" object:aliPayResult];
+                [[NSNotificationCenter defaultCenter] postNotification:notification];
+            }];
+ 
+        }
+        
+
     }
     return result;
 }
+
+
+
+- (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion{
+    
+    UserInfo* info =  [UserInfo sharedUserInfo];
+    
+    
+    if ([userId isEqualToString:info.userID]) {
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:userId name:info.username portrait:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,info.headPicUrl]];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:userId];
+    }else if ([userId isEqualToString:SchoolRongCloudId]){
+        NSString *newPath=[[NSBundle mainBundle] pathForResource:@"ShareLogo" ofType:@"png"];
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:userId name:@"留学顾问" portrait:newPath];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:userId];
+        
+    }else if ([userId isEqualToString:ChinaSchoolRongCloudId]){
+        NSString *newPath=[[NSBundle mainBundle] pathForResource:@"ShareLogo" ofType:@"png"];
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:userId name:@"国际留学顾问" portrait:newPath];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:userId];
+    }else{
+        [[RCIM sharedRCIM] getUserInfoCache:userId];
+    }
+}
+
+-(void)onResp:(BaseResp*)resp{
+    NSString * wxPayResult;
+
+    if ([resp isKindOfClass:[PayResp class]]){
+        PayResp*response=(PayResp*)resp;
+        switch(response.errCode){
+            case WXSuccess:
+                //服务器端查询支付通知或查询API返回的结果再提示成功
+                wxPayResult = @"success";
+                break;
+            default:
+                wxPayResult = @"failure";
+                break;
+        }
+    }
+    
+    //发出通知 从微信回调回来之后,发一个通知,让请求支付的页面接收消息,并且展示出来,或者进行一些自定义的展示或者跳转
+    NSNotification * notification = [NSNotification notificationWithName:@"WXPay" object:wxPayResult];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+}
+
+
 @end

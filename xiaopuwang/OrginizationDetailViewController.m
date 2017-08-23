@@ -93,7 +93,7 @@
     
     [self getAppointStateRequest];
     [self judgeFocusOrgRequest];
-    
+    [self getUserAdscriptionRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -252,6 +252,10 @@
         
         //设置聊天会话界面要显示的标题
         chat.title = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
+        
+        RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:[_detailInfoResult.detailinfo getString:@"User_ID"] name:[_detailInfoResult.detailinfo getString:@"OrganizationName"] portrait:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[_detailInfoResult.detailinfo getString:@"Logo"]] ];
+        [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
+        
         //显示聊天会话界面
         [self.navigationController pushViewController:chat animated:YES];
     }
@@ -283,6 +287,23 @@
                                       delegate:self] showAnimated:YES completionHandler:nil];
     
     
+}
+
+-(IBAction)userAppointOrg:(id)sender{
+    [self performSegueWithIdentifier:@"DetailToMyOrder" sender:self];
+}
+
+
+-(IBAction)followOrginization:(id)sender{
+    UIButton* currentButton = (UIButton*)sender;
+    
+    currentButton.selected = !currentButton.selected;
+    if (currentButton.selected) {
+        [self focusOrgRequest];
+        
+    }else{
+        [self delFocusOrgRequest];
+    }
 }
 
 #pragma mark - LGAlertViewDelegate
@@ -880,17 +901,7 @@
     }
 }
 
--(IBAction)followOrginization:(id)sender{
-    UIButton* currentButton = (UIButton*)sender;
-    
-    currentButton.selected = !currentButton.selected;
-    if (currentButton.selected) {
-        [self focusOrgRequest];
-        
-    }else{
-        [self delFocusOrgRequest];
-    }
-}
+
 
 #pragma mark - NetWorkRequest
 
@@ -1021,7 +1032,9 @@
         [self changeAppointState];
         [self.tableView reloadData];
     } onFailure:^(id json) {
-        
+        _appointStateResult = json;
+        [self changeAppointState];
+        [self.tableView reloadData];
     }];
 }
 
@@ -1029,15 +1042,13 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     [[OrginizationService sharedOrginizationService] judgeFocusOrgWithParameters:@{@"organizationId":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
         _focusResult = json;
-        if (_focusResult.statusCode == 0) {
-            self.followTitle.text = @"关注";
-            self.followButton.selected = NO;
-        }else{
-            self.followTitle.text = @"已关注";
-            self.followButton.selected = YES;
-        }
+        self.followTitle.text = @"已关注";
+        self.followButton.selected = YES;
     } onFailure:^(id json) {
-        
+        _focusResult = json;
+        self.followTitle.text = @"关注";
+        self.followButton.selected = NO;
+
     }];
 }
 

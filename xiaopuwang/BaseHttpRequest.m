@@ -34,15 +34,20 @@
     
     
     
-    [self.operationManager GET:[NSString stringWithFormat:@"%@%@",REQUEST_URL,URLString] parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+    [self.operationManager GET:[NSString stringWithFormat:@"%@%@",REQUEST_URL,[URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
 
         _result = [DataResult new];
         [_result appendDictionary:responseDict];
-        success(_result);
-
+        
+        if (_result.statusCode ==1) {
+            success(_result);
+        }else{
+            [[AppCustomHud sharedEKZCustomHud] showTextHud:_result.message];
+            failure(_result);
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -64,7 +69,7 @@
    
     DLog(@"%@",[NSString stringWithFormat:@"%@%@",REQUEST_URL,URLString]);
     
-    [self.operationManager POST:[NSString stringWithFormat:@"%@%@",REQUEST_URL,URLString] parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    [self.operationManager POST:[NSString stringWithFormat:@"%@%@",REQUEST_URL,[URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         _result = [DataResult new];

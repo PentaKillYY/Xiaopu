@@ -20,7 +20,9 @@ PODS:
   - AMapLocation (2.4.0):
     - AMapFoundation (~> 1.4)
   - BaiduMapKit (3.3.2)
+  - BZGFormField (1.1.2)
   - HMSegmentedControl (1.5.4)
+  - IQKeyboardManager (4.0.10)
   - JCore (1.1.5)
   - JPush (3.0.6):
     - JCore (~> 1.1.1)
@@ -93,7 +95,9 @@ DEPENDENCIES:
   - AMap3DMap (~> 5.2.1)
   - AMapLocation (~> 2.4.0)
   - BaiduMapKit (~> 3.3.2)
+  - BZGFormField (~> 1.1.2)
   - HMSegmentedControl
+  - IQKeyboardManager (~> 4.0.10)
   - JPush (~> 3.0.6)
   - LGAlertView (~> 2.4.0)
   - MBProgressHUD (~> 1.0.0)
@@ -123,7 +127,9 @@ SPEC CHECKSUMS:
   AMapFoundation: 9cc5198980873cca29bb70466a84b3bd922c0e65
   AMapLocation: 47b62b5381a66e4d0c2931b70ffde72682427896
   BaiduMapKit: 5118390d63b375483bd64c963e8e32a40fd9ddb5
+  BZGFormField: 514c70504eaf51b7f9360ae1e34c39e6b8f5fd96
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
+  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
   JCore: 9bd9c770c877c583d98b90a68792b8361974c231
   JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
   LGAlertView: 2f5e83dd5cc2537de57d98727650609e86197d1a
@@ -148,6 +154,6 @@ SPEC CHECKSUMS:
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
 
-PODFILE CHECKSUM: 78cfc4d4641c389350f21f66f90616bb3677066f
+PODFILE CHECKSUM: 2c81b61151d29c54513340c9f7973c2cbee26fe2
 
 COCOAPODS: 1.2.1
