@@ -9,6 +9,7 @@
 #import "MySettingViewController.h"
 #import "MySettingTableViewCell.h"
 #import "MyService.h"
+#import "LoginViewController.h"
 @interface MySettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger cardNumber;
@@ -71,6 +72,19 @@
         
     }else if (indexPath.row == 3){
         [self performSegueWithIdentifier:@"MyToAbout" sender:self];
+    }else{
+        
+        //清空登录缓存信息
+        UserInfo* info = [UserInfo sharedUserInfo];
+        [info logout];
+        
+        //断开融云连接并不再接收通知
+        [[RCIM sharedRCIM] logout];
+        
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
     }
 }
 

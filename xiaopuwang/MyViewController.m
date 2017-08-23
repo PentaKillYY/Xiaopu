@@ -45,8 +45,7 @@
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
     
-    [self getUserBalanceRequest];
-    [self getUserCouponListRequest];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +55,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
-    [self.tableView reloadData];
+    [self getUserBalanceRequest];
     
     [super viewWillAppear:YES];
 }
@@ -261,14 +260,23 @@
 
 -(void)getUserBalanceRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
-    [[MyService sharedMyService] getUserBalanceWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
-        DataResult* result = json;
-        
-        info.userBalance = [NSString stringWithFormat:@"%f",[result.detailinfo getDouble:@"TotalPrice"]];
-        [info synchronize];
-    } onFailure:^(id json) {
-        
-    }];
+    if (info.userID.length) {
+        [[MyService sharedMyService] getUserBalanceWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
+            DataResult* result = json;
+            
+            info.userBalance = [NSString stringWithFormat:@"%f",[result.detailinfo getDouble:@"TotalPrice"]];
+            [info synchronize];
+            
+            [self getUserCouponListRequest];
+        } onFailure:^(id json) {
+            
+        }];
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
 }
 
 -(void)updateUserHeadRequest:(UIImage*)image{
@@ -276,11 +284,7 @@
     
     [[MyService  sharedMyService] uploadFileInfoWithImage:image Parameters:uploadImageName onCompletion:^(id json) {
         uploadResult = json;
-        if (uploadResult.statusCode == 0) {
-            
-        }else if (uploadResult.statusCode == 1){
-            [self updateUsrLogoRequest];
-        }
+        [self updateUsrLogoRequest];
         
     } onFailure:^(id json) {
         
@@ -308,10 +312,11 @@
         info.userCoupon = [NSString stringWithFormat:@"%ld",couponResult.items.size];
         [info synchronize];
         
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
-        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadData];
     } onFailure:^(id json) {
         
     }];
 }
+
+
 @end

@@ -24,7 +24,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:Login parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 
 }
@@ -43,7 +43,7 @@
 
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 
 }
@@ -54,7 +54,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:UserBalance parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -64,7 +64,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:UpdateUserHead parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -79,7 +79,7 @@
         [info synchronize];
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -100,7 +100,7 @@
         
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -110,7 +110,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:UserBargain parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -120,7 +120,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:SendMessageAfterBargain parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -130,7 +130,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:GetUserAdscription parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -155,9 +155,11 @@
         
         DataResult* result = [DataResult new];
         [result appendDictionary:responseDict];
-        
-        completionBlock(result);
-        
+        if (result.statusCode == 1) {
+           completionBlock(result);
+        }else{
+            failureBlock(result);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -169,7 +171,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:[NSString stringWithFormat:@"%@?userId=%@",GetUserFocusOrg,[parameters objectForKey:@"userId"]]  parameters:nil success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -180,7 +182,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:[NSString stringWithFormat:@"%@?userId=%@",GetUserFocusSchool,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -190,7 +192,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@",GetSpecialistOrg,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+       failureBlock(json);
     }];
 }
 
@@ -200,7 +202,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@",GetSpecialstChinaSchool,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -210,7 +212,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@",GetSpecialistOverseaSchool,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+       failureBlock(json);
     }];
 }
 
@@ -221,7 +223,7 @@
 
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -231,7 +233,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:[NSString stringWithFormat:@"%@?userId=%@",GetUserBankCard,[parameters objectForKey:@"userId"]] parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 
 }
@@ -242,7 +244,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:ChangePassword parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -252,7 +254,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:DeleteUserbankCard parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -262,7 +264,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] GET:JudgeCardIsAdd parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -272,7 +274,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest] POST:AddCard parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+       failureBlock(json);
     }];
 }
 
@@ -282,7 +284,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UserAppointList parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 
 }
@@ -293,7 +295,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UsreOrderList parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -303,7 +305,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:DeleteUserAppointment parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -313,7 +315,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:UserMakeOrder parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -323,7 +325,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UpdataUserAppointment parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -333,7 +335,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:CancelUserOrder parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -343,7 +345,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UserOrderInfo parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -353,7 +355,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:DeleteUserOrder parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -363,7 +365,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:GetBackPrice parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -373,7 +375,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UpdateOrderShare parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+       failureBlock(json);
     }];
 }
 
@@ -383,7 +385,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:AddBackPrice parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -393,7 +395,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:UserEvaluate parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -403,7 +405,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UpdateOrderAfterEvaluate parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -413,7 +415,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UserCouponList parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -423,7 +425,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:UserCouponInvalid parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 
 }
@@ -434,7 +436,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:UpdateUserBalance parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+       failureBlock(json);
     }];
 }
 
@@ -444,7 +446,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:GiveCoupon parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -454,7 +456,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:SearchUserByPhone parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -464,7 +466,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:AliPaySign parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+       failureBlock(json);
     }];
 }
 
@@ -474,7 +476,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:WXPaySign parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -484,7 +486,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]GET:[NSString stringWithFormat:@"%@?userId=%@",UserTradeDetail,[parameters objectForKey:@"userId"]]  parameters:nil success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -494,7 +496,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:[NSString stringWithFormat:@"%@?userId=%@&cardNum=%@",UserReflect,[parameters objectForKey:@"userId"],[parameters objectForKey:@"cardNum"]]  parameters:nil success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -504,7 +506,7 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:UpdateOrderAfterPay parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
     }];
 }
 
@@ -514,7 +516,57 @@
     [[BaseHttpRequest sharedBaseHttpRequest]POST:UpdateTotalPriceAfterPay parameters:parameters success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
-        
+        failureBlock(json);
+    }];
+}
+
+-(void)sendValidCodeWithParameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]POST: [NSString stringWithFormat:@"%@?name=%@&mobile=%@",SendValidCode,@"客户",[parameters objectForKey:@"mobile"]] parameters:nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)checkValidCodeWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:CheckValidcode parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)checkIsRegisterWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:CheckIsRegister parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)userRegisterWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]POST:UserRegister parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)resetPasswordWithParameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:ResetPassword parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
     }];
 }
 @end

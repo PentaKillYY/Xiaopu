@@ -329,16 +329,13 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     [[SchoolService sharedSchoolService] judgeSchoolFollowStateWithParameters:@{@"schoolId":self.applicationID,@"userId":info.userID} onCompletion:^(id json) {
         _focusResult = json;
-        if (_focusResult.statusCode == 0) {
-            self.followTitle.text = @"关注";
-            self.followButton.selected = NO;
-        }else{
-            self.followTitle.text = @"已关注";
-            self.followButton.selected = YES;
-        }
+        self.followTitle.text = @"已关注";
+        self.followButton.selected = YES;
 
     } onFailure:^(id json) {
-        
+        _focusResult = json;
+        self.followTitle.text = @"关注";
+        self.followButton.selected = NO;
     }];
 }
 

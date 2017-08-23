@@ -52,6 +52,12 @@
 		040C74451F4BDC65001F5318 /* AddReflectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74431F4BDC65001F5318 /* AddReflectTableViewCell.xib */; };
 		040C74491F4BDC9E001F5318 /* ReflectCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74471F4BDC9E001F5318 /* ReflectCardTableViewCell.m */; };
 		040C744A1F4BDC9E001F5318 /* ReflectCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C74481F4BDC9E001F5318 /* ReflectCardTableViewCell.xib */; };
+		040C74521F4C5B0F001F5318 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74511F4C5B0F001F5318 /* LoginViewController.m */; };
+		040C74561F4D1AFE001F5318 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74551F4D1AFE001F5318 /* RegisterViewController.m */; };
+		040C74591F4D1B16001F5318 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74581F4D1B16001F5318 /* ForgetPasswordViewController.m */; };
+		040C745C1F4D461F001F5318 /* UITextField+JKInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C745B1F4D461F001F5318 /* UITextField+JKInputLimit.m */; };
+		040C745F1F4D48EC001F5318 /* UIButton+JKCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C745E1F4D48EC001F5318 /* UIButton+JKCountDown.m */; };
+		040C74621F4D4916001F5318 /* UIButton+JKSubmitting.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74611F4D4916001F5318 /* UIButton+JKSubmitting.m */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -360,6 +366,18 @@
 		040C74461F4BDC9E001F5318 /* ReflectCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectCardTableViewCell.h; sourceTree = "<group>"; };
 		040C74471F4BDC9E001F5318 /* ReflectCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectCardTableViewCell.m; sourceTree = "<group>"; };
 		040C74481F4BDC9E001F5318 /* ReflectCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReflectCardTableViewCell.xib; sourceTree = "<group>"; };
+		040C74501F4C5B0F001F5318 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		040C74511F4C5B0F001F5318 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		040C74541F4D1AFE001F5318 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		040C74551F4D1AFE001F5318 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		040C74571F4D1B16001F5318 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		040C74581F4D1B16001F5318 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		040C745A1F4D461F001F5318 /* UITextField+JKInputLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JKInputLimit.h"; sourceTree = "<group>"; };
+		040C745B1F4D461F001F5318 /* UITextField+JKInputLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JKInputLimit.m"; sourceTree = "<group>"; };
+		040C745D1F4D48EC001F5318 /* UIButton+JKCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKCountDown.h"; sourceTree = "<group>"; };
+		040C745E1F4D48EC001F5318 /* UIButton+JKCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKCountDown.m"; sourceTree = "<group>"; };
+		040C74601F4D4916001F5318 /* UIButton+JKSubmitting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKSubmitting.h"; sourceTree = "<group>"; };
+		040C74611F4D4916001F5318 /* UIButton+JKSubmitting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKSubmitting.m"; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -1021,6 +1039,19 @@
 			name = Wallet;
 			sourceTree = "<group>";
 		};
+		040C744F1F4C5AD4001F5318 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				040C74501F4C5B0F001F5318 /* LoginViewController.h */,
+				040C74511F4C5B0F001F5318 /* LoginViewController.m */,
+				040C74541F4D1AFE001F5318 /* RegisterViewController.h */,
+				040C74551F4D1AFE001F5318 /* RegisterViewController.m */,
+				040C74571F4D1B16001F5318 /* ForgetPasswordViewController.h */,
+				040C74581F4D1B16001F5318 /* ForgetPasswordViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		0425A2441F219D7000A18739 /* BaseProj */ = {
 			isa = PBXGroup;
 			children = (
@@ -1382,6 +1413,12 @@
 		0478B9941F147AC5003A9C8B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				040C74601F4D4916001F5318 /* UIButton+JKSubmitting.h */,
+				040C74611F4D4916001F5318 /* UIButton+JKSubmitting.m */,
+				040C745D1F4D48EC001F5318 /* UIButton+JKCountDown.h */,
+				040C745E1F4D48EC001F5318 /* UIButton+JKCountDown.m */,
+				040C745A1F4D461F001F5318 /* UITextField+JKInputLimit.h */,
+				040C745B1F4D461F001F5318 /* UITextField+JKInputLimit.m */,
 				0432AA921F3EE03400783ED2 /* UIColor+HexColor.h */,
 				0432AA931F3EE03400783ED2 /* UIColor+HexColor.m */,
 				0432AA381F3ACEA000783ED2 /* AppCustomHud.h */,
@@ -1482,6 +1519,7 @@
 		0478B9DE1F14A0A0003A9C8B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				040C744F1F4C5AD4001F5318 /* Login */,
 				040C741E1F4BB966001F5318 /* Specialist */,
 				040C741D1F4BB95C001F5318 /* Info */,
 				040C741C1F4BB950001F5318 /* Follow */,
@@ -2105,6 +2143,7 @@
 				04A1D4881F31AC2400EACEA8 /* SchoolCourseTableViewCell.m in Sources */,
 				0432AA3A1F3ACEA000783ED2 /* AppCustomHud.m in Sources */,
 				04B93D111F39465500B2DA19 /* AdditionalTableViewCell.m in Sources */,
+				040C74561F4D1AFE001F5318 /* RegisterViewController.m in Sources */,
 				0445EF1A1F2093DD00E9DAB3 /* OrgMapTableViewCell.m in Sources */,
 				0432AA571F3C431600783ED2 /* UserIntroViewController.m in Sources */,
 				040C73921F444390001F5318 /* DLStarRatingControl.m in Sources */,
@@ -2113,6 +2152,7 @@
 				040C74441F4BDC65001F5318 /* AddReflectTableViewCell.m in Sources */,
 				045633141F29BE1C005E04CB /* SRPictureModel.m in Sources */,
 				04A1D4CA1F340ADB00EACEA8 /* SchoolCourseTestCell.m in Sources */,
+				040C74591F4D1B16001F5318 /* ForgetPasswordViewController.m in Sources */,
 				040C740C1F4AA7C9001F5318 /* Dashline.m in Sources */,
 				040C742A1F4BBDCD001F5318 /* WalletBankCardTableViewCell.m in Sources */,
 				045632EE1F29B121005E04CB /* OrgPhotoBrowserViewController.m in Sources */,
@@ -2183,6 +2223,8 @@
 				040C73FE1F4A6C68001F5318 /* MyCouponTableViewCell.m in Sources */,
 				0478BA281F14BC55003A9C8B /* MainServiceTableViewCell.m in Sources */,
 				04A1D4D71F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.m in Sources */,
+				040C745C1F4D461F001F5318 /* UITextField+JKInputLimit.m in Sources */,
+				040C745F1F4D48EC001F5318 /* UIButton+JKCountDown.m in Sources */,
 				0432AA941F3EE03400783ED2 /* UIColor+HexColor.m in Sources */,
 				0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */,
 				0445EE6F1F1CA78500E9DAB3 /* CustomAlertTableView.m in Sources */,
@@ -2192,6 +2234,7 @@
 				040C74311F4BC66B001F5318 /* ReflectBalanceViewController.m in Sources */,
 				04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */,
 				04B7CFA21F4288C000108915 /* UserDealOrderTableViewController.m in Sources */,
+				040C74521F4C5B0F001F5318 /* LoginViewController.m in Sources */,
 				04B7CF911F41554F00108915 /* MyEvaluateTableViewCell.m in Sources */,
 				0456328F1F26D442005E04CB /* BaseUserInfo.m in Sources */,
 				0432AA911F3ECEAB00783ED2 /* VerifyRegexTool.m in Sources */,
@@ -2203,6 +2246,7 @@
 				0432AA4A1F3BF77600783ED2 /* MyFollowSchoolCell.m in Sources */,
 				040C73EF1F46D98C001F5318 /* PaySelectCouponTableViewCell.m in Sources */,
 				04A1D4C11F34031700EACEA8 /* SchoolCourseDetailViewController.m in Sources */,
+				040C74621F4D4916001F5318 /* UIButton+JKSubmitting.m in Sources */,
 				045633361F2AD195005E04CB /* OrgMoreTeacherViewController.m in Sources */,
 				045633391F2AD1A7005E04CB /* OrgMoreStudentViewController.m in Sources */,
 				045632D11F282896005E04CB /* UUBar.m in Sources */,

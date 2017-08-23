@@ -22,3 +22,8 @@
 #define InvalidPhone @"手机号码格式不正确"
 #define InvalidUser @"无此注册用户"
 #define ReflectTip @"注：提现申请需要3-5个工作日可提帐"
+#define PasswordMinLenth @"密码长度至少六位"
+#define EmptyuserName @"您还未输入手机号"
+#define EmptyValid @"验证码不能为空"
+#define EmptyPassword @"密码不能为空"
+#define UserIsRegister @"该手机号已注册"

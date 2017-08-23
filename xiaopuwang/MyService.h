@@ -240,4 +240,30 @@
 -(void)userUpdateTotaoPriceAfterPayWithParameters:(NSDictionary *)parameters
                                      onCompletion:(JSONResponse)completionBlock
                                         onFailure:(JSONResponse)failureBlock;
+//发送手机验证码
+-(void)sendValidCodeWithParameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock;
+
+//用户注册验证码验证
+-(void)checkValidCodeWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
+
+//判断用户是否注册
+-(void)checkIsRegisterWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
+
+//用户注册
+-(void)userRegisterWithParameters:(NSDictionary *)parameters
+                     onCompletion:(JSONResponse)completionBlock
+                        onFailure:(JSONResponse)failureBlock;
+
+//更新密码
+-(void)resetPasswordWithParameters:(NSDictionary *)parameters
+                      onCompletion:(JSONResponse)completionBlock
+                         onFailure:(JSONResponse)failureBlock;
+
+
 @end

@@ -238,16 +238,11 @@
 -(void)uploadImageRequest:(UIImage*)image{
     [[MyService  sharedMyService] uploadFileInfoWithImage:image Parameters:uploadImageName onCompletion:^(id json) {
         uploadResult = json;
-        if (uploadResult.statusCode == 0) {
-            
-        }else if (uploadResult.statusCode == 1){
-
-            uploadImageUrl = [uploadResult.detailinfo getString:@"UrlPath"];
-            
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:3];
+        uploadImageUrl = [uploadResult.detailinfo getString:@"UrlPath"];
         
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:3];
+        
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         
     } onFailure:^(id json) {
         

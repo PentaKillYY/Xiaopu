@@ -275,4 +275,17 @@
 //更新用户TotalPrice订单价格
 #define UpdateTotalPriceAfterPay @"/userOrder/UpdateUserOrderInfoToTotalPrice"
 
+//发送手机验证码
+#define SendValidCode @"/user/sendMessage"
 
+//用户注册验证码验证
+#define CheckValidcode @"/user/JudgePhoneOrEmailValidateData"
+
+//判断用户是否注册
+#define CheckIsRegister @"/user/IsExistLoginName"
+
+//用户注册
+#define UserRegister @"/user/InsertUserRegistrationData" 
+
+//更新密码
+#define ResetPassword @"/user/updatePassword"

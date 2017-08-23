@@ -1032,7 +1032,9 @@
         [self changeAppointState];
         [self.tableView reloadData];
     } onFailure:^(id json) {
-        
+        _appointStateResult = json;
+        [self changeAppointState];
+        [self.tableView reloadData];
     }];
 }
 
@@ -1040,15 +1042,13 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     [[OrginizationService sharedOrginizationService] judgeFocusOrgWithParameters:@{@"organizationId":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
         _focusResult = json;
-        if (_focusResult.statusCode == 0) {
-            self.followTitle.text = @"关注";
-            self.followButton.selected = NO;
-        }else{
-            self.followTitle.text = @"已关注";
-            self.followButton.selected = YES;
-        }
+        self.followTitle.text = @"已关注";
+        self.followButton.selected = YES;
     } onFailure:^(id json) {
-        
+        _focusResult = json;
+        self.followTitle.text = @"关注";
+        self.followButton.selected = NO;
+
     }];
 }
 

@@ -36,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBarController.delegate = self;
     
     [self changeNavTitleView];
     [self loginRequest];
@@ -281,12 +282,14 @@
 }
 
 -(void)loginRequest{
-    [[MainService sharedMainService] loginWithParameters:@{@"loginName":@"13812283417",@"password":@"111111"} onCompletion:^(id json) {
-        [self getUserBasicInfoRequest];
-        [self getUserOnlyRequest];
-    } onFailure:^(id json) {
-        
-    }];
+    if ([UserInfo sharedUserInfo].telphone.length) {
+        [[MainService sharedMainService] loginWithParameters:@{@"loginName":[UserInfo sharedUserInfo].telphone,@"password":[UserInfo sharedUserInfo].password} onCompletion:^(id json) {
+            [self getUserBasicInfoRequest];
+            [self getUserOnlyRequest];
+        } onFailure:^(id json) {
+            
+        }];
+    }
 }
 
 -(void)getUserBasicInfoRequest{
@@ -403,6 +406,7 @@
     }];
 }
 
+#pragma mark - UITabbarControllerDelegate
 
 
 
