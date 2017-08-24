@@ -62,6 +62,14 @@
 		040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 040C74761F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png */; };
 		040C747B1F4EAA63001F5318 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74791F4EAA63001F5318 /* SearchTableViewCell.m */; };
 		040C747C1F4EAA63001F5318 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C747A1F4EAA63001F5318 /* SearchTableViewCell.xib */; };
+		040C74801F4EEC39001F5318 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C747F1F4EEC39001F5318 /* GuideViewController.m */; };
+		040C748C1F4EEF58001F5318 /* api.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C74881F4EEF58001F5318 /* api.css */; };
+		040C748D1F4EEF58001F5318 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C74891F4EEF58001F5318 /* bootstrap.min.css */; };
+		040C748E1F4EEF58001F5318 /* common.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C748A1F4EEF58001F5318 /* common.css */; };
+		040C748F1F4EEF58001F5318 /* newGuidance.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C748B1F4EEF58001F5318 /* newGuidance.css */; };
+		040C74911F4EEF60001F5318 /* newGuidance.html in Resources */ = {isa = PBXBuildFile; fileRef = 040C74901F4EEF60001F5318 /* newGuidance.html */; };
+		040C74941F4EEF6F001F5318 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 040C74921F4EEF6F001F5318 /* common.js */; };
+		040C74951F4EEF6F001F5318 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 040C74931F4EEF6F001F5318 /* jquery.min.js */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -388,6 +396,15 @@
 		040C74781F4EAA63001F5318 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		040C74791F4EAA63001F5318 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		040C747A1F4EAA63001F5318 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		040C747E1F4EEC39001F5318 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		040C747F1F4EEC39001F5318 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		040C74881F4EEF58001F5318 /* api.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = api.css; sourceTree = "<group>"; };
+		040C74891F4EEF58001F5318 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
+		040C748A1F4EEF58001F5318 /* common.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = common.css; sourceTree = "<group>"; };
+		040C748B1F4EEF58001F5318 /* newGuidance.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = newGuidance.css; sourceTree = "<group>"; };
+		040C74901F4EEF60001F5318 /* newGuidance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = newGuidance.html; sourceTree = "<group>"; };
+		040C74921F4EEF6F001F5318 /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
+		040C74931F4EEF6F001F5318 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -1062,6 +1079,20 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		040C74811F4EECE3001F5318 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				040C74921F4EEF6F001F5318 /* common.js */,
+				040C74931F4EEF6F001F5318 /* jquery.min.js */,
+				040C74901F4EEF60001F5318 /* newGuidance.html */,
+				040C74881F4EEF58001F5318 /* api.css */,
+				040C74891F4EEF58001F5318 /* bootstrap.min.css */,
+				040C748A1F4EEF58001F5318 /* common.css */,
+				040C748B1F4EEF58001F5318 /* newGuidance.css */,
+			);
+			name = Web;
+			sourceTree = "<group>";
+		};
 		0425A2441F219D7000A18739 /* BaseProj */ = {
 			isa = PBXGroup;
 			children = (
@@ -1404,6 +1435,7 @@
 		0478B9921F147A94003A9C8B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				040C74811F4EECE3001F5318 /* Web */,
 				0432AA631F3D4D3900783ED2 /* File */,
 				0478B9991F147B38003A9C8B /* Fonts */,
 				0478B99A1F147B46003A9C8B /* Sounds */,
@@ -1543,6 +1575,8 @@
 				040C73E61F46C791001F5318 /* Order */,
 				040C73E21F4675D1001F5318 /* MyChatListViewController.h */,
 				040C73E31F4675D1001F5318 /* MyChatListViewController.m */,
+				040C747E1F4EEC39001F5318 /* GuideViewController.h */,
+				040C747F1F4EEC39001F5318 /* GuideViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -2011,6 +2045,7 @@
 				040C73F01F46D98C001F5318 /* PaySelectCouponTableViewCell.xib in Resources */,
 				040C744A1F4BDC9E001F5318 /* ReflectCardTableViewCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
+				040C74941F4EEF6F001F5318 /* common.js in Resources */,
 				045633561F2B126C005E04CB /* CourseDetailContentTableViewCell.xib in Resources */,
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				0432AA461F3BF69500783ED2 /* MyFollowOrgCell.xib in Resources */,
@@ -2018,6 +2053,7 @@
 				04B7CF8D1F41553C00108915 /* MyPayTableViewCell.xib in Resources */,
 				040C737C1F442B6B001F5318 /* EvaluatePicTableViewCell.xib in Resources */,
 				04B7CF921F41554F00108915 /* MyEvaluateTableViewCell.xib in Resources */,
+				040C748F1F4EEF58001F5318 /* newGuidance.css in Resources */,
 				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				040C73F51F46E042001F5318 /* PayTypeTableViewCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
@@ -2031,11 +2067,13 @@
 				040C74401F4BDC43001F5318 /* ReflectPriceTableViewCell.xib in Resources */,
 				04A1D47A1F31ABAD00EACEA8 /* SchoolDetailTableViewCell.xib in Resources */,
 				040C73721F442B3B001F5318 /* EvaluateNumberTableViewCell.xib in Resources */,
+				040C748C1F4EEF58001F5318 /* api.css in Resources */,
 				0445EE801F1DA01000E9DAB3 /* ActivityTableViewCell.xib in Resources */,
 				04B93CFF1F385BE500B2DA19 /* HeaderTableViewCell.xib in Resources */,
 				0445EF071F20926600E9DAB3 /* OrgInfoTableViewCell.xib in Resources */,
 				040C74151F4ADC47001F5318 /* AlipaySDK.bundle in Resources */,
 				0445EEC01F1F2EE800E9DAB3 /* TextFieldTableViewCell.xib in Resources */,
+				040C74951F4EEF6F001F5318 /* jquery.min.js in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0432AA851F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib in Resources */,
 				040C743B1F4BDC2A001F5318 /* ReflectBannerTableViewCell.xib in Resources */,
@@ -2053,6 +2091,7 @@
 				045633511F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib in Resources */,
 				0432AA651F3D4D5700783ED2 /* allprovinces.json in Resources */,
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
+				040C748E1F4EEF58001F5318 /* common.css in Resources */,
 				040C73FF1F4A6C68001F5318 /* MyCouponTableViewCell.xib in Resources */,
 				04B93D121F39465500B2DA19 /* AdditionalTableViewCell.xib in Resources */,
 				040C747C1F4EAA63001F5318 /* SearchTableViewCell.xib in Resources */,
@@ -2065,12 +2104,14 @@
 				04A1D48E1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib in Resources */,
 				040C74041F4A8485001F5318 /* MyCouponDetailTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
+				040C748D1F4EEF58001F5318 /* bootstrap.min.css in Resources */,
 				045633491F2B1228005E04CB /* CouseDetailImageTableViewCell.xib in Resources */,
 				040C73771F442B57001F5318 /* EvaluateContentTableViewCell.xib in Resources */,
 				04B93D041F38914600B2DA19 /* MultiTagSelectTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
+				040C74911F4EEF60001F5318 /* newGuidance.html in Resources */,
 				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
 				040C736D1F442B24001F5318 /* EvaluateTagTableViewCell.xib in Resources */,
 				0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */,
@@ -2317,6 +2358,7 @@
 				0456335D1F2C6408005E04CB /* SchoolService.m in Sources */,
 				040C743F1F4BDC43001F5318 /* ReflectPriceTableViewCell.m in Sources */,
 				0445EF151F2093A800E9DAB3 /* OrgProportionTableViewCell.m in Sources */,
+				040C74801F4EEC39001F5318 /* GuideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

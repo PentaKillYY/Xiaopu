@@ -111,6 +111,7 @@
     _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_rightButton setFrame:CGRectMake(0, 0, 44, 44)];
     [_rightButton setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+    [_rightButton addTarget:self action:@selector(goToWeb) forControlEvents:UIControlEventTouchUpInside];
     if ([[UserInfo sharedUserInfo].isReadIntro isEqualToString:@"read"]) {
         [_rightButton setImage:V_IMAGE(@"IntroRead") forState:0];
     }else{
@@ -405,7 +406,9 @@
     }];
 }
 
-#pragma mark - UITabbarControllerDelegate
+-(void)goToWeb{
+    [self performSegueWithIdentifier:@"MainToGuide" sender:self];
+}
 
 
 
