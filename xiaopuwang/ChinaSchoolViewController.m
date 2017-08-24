@@ -339,7 +339,14 @@
 
 #pragma mark - NetWorkRequest
 -(void)getSchoolListRequest{
-    [[SchoolService sharedSchoolService] postChinaSchoolListWithPage:currentIndex Size:10 Parameters:@{@"SchoolName":@"",@"Province":schoolProvince,@"City":schoolCity,@"CollegeNature":schoolNature,@"CollegeType":schoolType,@"Area":@"",@"X":@(0),@"Y":@(0)} onCompletion:^(id json) {
+    NSString* schoolName;
+    if (self.searchName.length) {
+        schoolName = self.searchName;
+    }else{
+        schoolName = @"";
+    }
+    
+    [[SchoolService sharedSchoolService] postChinaSchoolListWithPage:currentIndex Size:10 Parameters:@{@"SchoolName":schoolName,@"Province":schoolProvince,@"City":schoolCity,@"CollegeNature":schoolNature,@"CollegeType":schoolType,@"Area":@"",@"X":@(0),@"Y":@(0)} onCompletion:^(id json) {
         DataResult* result = json;
         
         [schoolListArray append:[result.detailinfo getDataItemArray:@"ChinaSchoolList"]];

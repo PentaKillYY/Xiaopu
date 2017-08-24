@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface SchoolViewController : BaseViewController
-
+@property(nonatomic,weak)NSString* searchName;
+@property(nonatomic,weak)NSString* schoolTypeName;
+@property(nonatomic,copy)NSString* schoolCountryName;
 @end

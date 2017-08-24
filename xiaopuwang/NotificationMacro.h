@@ -27,3 +27,4 @@
 #define EmptyValid @"验证码不能为空"
 #define EmptyPassword @"密码不能为空"
 #define UserIsRegister @"该手机号已注册"
+#define EmptySearch @"您还未输入搜索内容"

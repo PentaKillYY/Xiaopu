@@ -34,6 +34,7 @@ PODS:
   - MJRefresh (3.1.12)
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
+  - Popover.OC (1.0)
   - RadioButton (1.0)
   - RongCloudIM (2.8.13):
     - RongCloudIM/CallKit (= 2.8.13)
@@ -105,6 +106,7 @@ DEPENDENCIES:
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - PNChart
+  - Popover.OC (~> 1.0)
   - RadioButton
   - RongCloudIM (~> 2.8.13)
   - SDCycleScrollView (~> 1.61)
@@ -139,6 +141,7 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
+  Popover.OC: b63f258fb9a9f480d23db9e486f9b165cce17ef8
   RadioButton: 7ef053baf6ff0e7f9e777016c28e9ba4e330edba
   RongCloudIM: bfaeb83dcfaf6b2039434f3692d328430de215c7
   SDCycleScrollView: e3ade90e9b3159bec04330b208fbfd81c3f3b671
@@ -154,6 +157,6 @@ SPEC CHECKSUMS:
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
 
-PODFILE CHECKSUM: 2c81b61151d29c54513340c9f7973c2cbee26fe2
+PODFILE CHECKSUM: fa4bfba94332ce2df7e190e72594e453f29fd4a6
 
 COCOAPODS: 1.2.1

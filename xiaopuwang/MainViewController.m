@@ -36,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tabBarController.delegate = self;
     
     [self changeNavTitleView];
     [self loginRequest];
@@ -106,7 +105,7 @@
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width-88, 44)];
     UIImage* clearImg = [MainViewController imageWithColor:[UIColor clearColor] andHeight:44.0f];
     [_searchBar setBackgroundImage:clearImg];
-    _searchBar.placeholder = @"请输入机构、学校、课程名称";
+    _searchBar.placeholder = @"机构、学校、课程名称";
     [_searchBar setBackgroundColor:[UIColor clearColor]];
     
     _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];

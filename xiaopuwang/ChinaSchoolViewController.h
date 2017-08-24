@@ -10,4 +10,5 @@
 
 @interface ChinaSchoolViewController : BaseViewController
 @property(nonatomic,weak)NSString* chinaType;
+@property(nonatomic,weak)NSString* searchName;
 @end

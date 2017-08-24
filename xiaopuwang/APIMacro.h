@@ -83,6 +83,9 @@
 //用户机构预约
 #define AppointMentOrg @"/userOrder/AppointmentOrg"
 
+//通过课程名称获取机构列表
+#define OrgByClass @"/cousertrain/orgInfoByCourseName"
+
 // *******************************学校**************************
 
 //学校搜索页-分页查询

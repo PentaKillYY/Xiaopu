@@ -102,11 +102,12 @@
 }
 
 -(void)setUpSearchFilter{
-    if ([UserInfo sharedUserInfo].selectOrgTypeName.length) {
-       orgTypeName = [UserInfo sharedUserInfo].selectOrgTypeName;
+    if (self.orgType.length) {
+       orgTypeName =self.orgType;
     }else{
        orgTypeName = @"";
     }
+    
     orgGroupName = @"";
     selectArea = @"";
 }
@@ -391,8 +392,8 @@
         
     }else if (indexPath.column == 1){
         if (indexPath.row == 0) {
-            if ([UserInfo sharedUserInfo].selectOrgTypeName.length) {
-                orgTypeName = [UserInfo sharedUserInfo].selectOrgTypeName;
+            if (self.orgType.length) {
+                orgTypeName = self.orgType;
             }else{
                 orgTypeName = @"";
             }
@@ -420,15 +421,20 @@
 
 #pragma mark - NetWorkRequest
 -(void)getCourseList{
+    NSString* orgname;
     
-    NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":@"",@"CourseType":orgTypeName,@"CourseKind":orgGroupName,@"City":@"",@"Field":selectArea,@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0)};
+    if (self.searchName.length>0) {
+        orgname = self.searchName;
+    }else{
+        orgname = @"";
+    }
+    
+    
+    NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":orgname,@"CourseType":orgTypeName,@"CourseKind":orgGroupName,@"City":@"",@"Field":selectArea,@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0)};
     
     [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:currentPage Size:size Parameters:parameters onCompletion:^(id json) {
         
-        UserInfo* info = [UserInfo sharedUserInfo];
-        info.selectOrgTypeName = @"";
-        [info synchronize];
-        
+    
         DataResult* result = json;
         
         [orgListArray append:[result.detailinfo getDataItemArray:@"orglist"]];
@@ -436,11 +442,25 @@
         totalCount =[result.detailinfo getInt:@"TotalCount"];
         
         int curretnIndex = (int)orgListArray.size - (int)[result.detailinfo getDataItemArray:@"orglist"].size;
-        
-        for ( int i=curretnIndex ; i< orgListArray.size ; i++) {
-            [self getCourseClassTypeWithindex:i];
-
+        if (totalCount > 0 ) {
+            for ( int i=curretnIndex ; i< orgListArray.size ; i++) {
+                [self getCourseClassTypeWithindex:i];
+                
+            }
+        }else{
+            
+            [self.tableView.mj_header endRefreshing];
+            
+            if (currentPage* size < totalCount) {
+                [self.tableView.mj_footer endRefreshing];
+                
+            }else{
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
+            [self.tableView reloadData];
         }
+        
+        
         
         
     } onFailure:^(id json) {
