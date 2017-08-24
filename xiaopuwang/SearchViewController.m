@@ -53,8 +53,9 @@
     UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 8, Main_Screen_Width, 28)];
     titleView.backgroundColor = [UIColor whiteColor];
     titleView.clipsToBounds = NO;
-    [titleView.layer setCornerRadius:3.0];
 
+    [titleView.layer setCornerRadius:3.0];
+    [titleView.layer setMasksToBounds:YES];
     
     _selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_selectButton setFrame:CGRectMake(0, 0, 65, 28)];
