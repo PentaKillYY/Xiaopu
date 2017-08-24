@@ -194,4 +194,14 @@
         failureBlock(json);
     }];
 }
+
+-(void)getOrgLisyByClassWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:OrgByClass parameters: parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

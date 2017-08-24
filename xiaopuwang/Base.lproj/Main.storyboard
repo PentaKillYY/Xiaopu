@@ -460,6 +460,8 @@
                         <outlet property="schoolButton" destination="aWV-BB-Uwa" id="UzY-Fp-ZZz"/>
                         <outlet property="searchButton" destination="bJs-Ft-rsZ" id="8p8-LO-DNy"/>
                         <segue destination="25M-Rd-FQn" kind="push" identifier="PersonChooseToChinaSchool" id="KY4-T0-m3K"/>
+                        <segue destination="3IF-KR-xqP" kind="push" identifier="PersonChooseToOrg" id="ndo-BD-TyK"/>
+                        <segue destination="65V-t9-4va" kind="push" identifier="PersonChooseToSchool" id="eWi-wM-yQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MP5-Bf-e5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -833,7 +835,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-a1-WrH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="25M-Rd-FQn" id="4Bc-gM-uu4"/>
@@ -1204,7 +1206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-Du-hyS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="dR3-fV-ZHn" id="EwT-fo-Arf"/>
@@ -1242,7 +1244,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nC5-ou-Qmd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="e61-8q-YkP" id="Ure-2e-2Ti"/>
@@ -1991,11 +1993,33 @@
                     <view key="view" contentMode="scaleToFill" id="bjg-Jr-83a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ysR-Ba-vaJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Sk-dl-eGf" id="zHb-Qa-7BI"/>
+                                    <outlet property="delegate" destination="8Sk-dl-eGf" id="aPp-A8-K2q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ysR-Ba-vaJ" secondAttribute="trailing" id="H9q-EQ-UPt"/>
+                            <constraint firstItem="ysR-Ba-vaJ" firstAttribute="top" secondItem="BQM-G8-BkZ" secondAttribute="bottom" id="Xor-Zk-Sa5"/>
+                            <constraint firstItem="qCJ-TZ-1dx" firstAttribute="top" secondItem="ysR-Ba-vaJ" secondAttribute="bottom" id="tBe-OK-n0L"/>
+                            <constraint firstItem="ysR-Ba-vaJ" firstAttribute="leading" secondItem="bjg-Jr-83a" secondAttribute="leading" id="yql-fM-f8m"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EHu-Vj-eE9"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="ysR-Ba-vaJ" id="iau-lM-HGi"/>
+                        <segue destination="3IF-KR-xqP" kind="push" identifier="SearchToOrg" id="gTw-Oa-gZE"/>
+                        <segue destination="65V-t9-4va" kind="push" identifier="SearchToSchool" id="TkN-lj-Fmx"/>
+                        <segue destination="25M-Rd-FQn" kind="push" identifier="SearchToChinaSchool" id="tN5-7Z-8z0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rd-tc-Yda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2998,17 +3022,19 @@
         <image name="登录背景" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tkJ-ED-xoa"/>
+        <segue reference="eWi-wM-yQJ"/>
+        <segue reference="ndo-BD-TyK"/>
         <segue reference="gVy-dS-Wik"/>
-        <segue reference="KY4-T0-m3K"/>
+        <segue reference="tN5-7Z-8z0"/>
         <segue reference="xcV-3d-LJO"/>
         <segue reference="C9X-s8-weM"/>
         <segue reference="h06-1T-d8P"/>
         <segue reference="yad-da-8Nz"/>
         <segue reference="sOd-j3-mVK"/>
+        <segue reference="tkJ-ED-xoa"/>
         <segue reference="dxN-wl-VKM"/>
-        <segue reference="U2m-as-IXV"/>
         <segue reference="dFW-sS-bdb"/>
+        <segue reference="U2m-as-IXV"/>
         <segue reference="P2M-WO-PHT"/>
         <segue reference="R0j-r9-wjC"/>
         <segue reference="YZ5-ra-U5E"/>

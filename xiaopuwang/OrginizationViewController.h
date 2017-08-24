@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface OrginizationViewController : BaseViewController
-@property(nonatomic,weak)NSString* typeName;
+@property(nonatomic,weak)NSString* orgType;
+@property(nonatomic,weak)NSString* searchName;
 @end

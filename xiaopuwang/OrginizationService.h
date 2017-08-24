@@ -97,4 +97,10 @@
 -(void)appointOrgWithParameters:(NSDictionary *)parameters
                    onCompletion:(JSONResponse)completionBlock
                       onFailure:(JSONResponse)failureBlock;
+
+//通过课程名称获取机构列表
+-(void)getOrgLisyByClassWithParameters:(NSDictionary *)parameters
+                          onCompletion:(JSONResponse)completionBlock
+                             onFailure:(JSONResponse)failureBlock;
+
 @end

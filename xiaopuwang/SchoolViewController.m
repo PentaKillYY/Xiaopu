@@ -51,8 +51,6 @@
     // Do any additional setup after loading the view.
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    DLog(@"[UserInfo sharedUserInfo].selectSchoolTypeName:%@ || [UserInfo sharedUserInfo].selectCountryname:%@",[UserInfo sharedUserInfo].selectSchoolTypeName,[UserInfo sharedUserInfo].selectCountryname);
-    
     schoolListArray = [DataItemArray new];
     
     [self addNavTitleView];
@@ -143,14 +141,14 @@
 }
 
 -(void)loadFilter{
-    if ([UserInfo sharedUserInfo].selectCountryname.length) {
-       schoolCountry = [UserInfo sharedUserInfo].selectCountryname;
+    if (self.schoolCountryName.length) {
+       schoolCountry = self.schoolCountryName;
     }else{
         schoolCountry = @"";
     }
     
-    if ([UserInfo sharedUserInfo].selectSchoolTypeName.length) {
-        schoolType = [UserInfo sharedUserInfo].selectSchoolTypeName;
+    if (self.schoolTypeName.length) {
+        schoolType = self.schoolTypeName;
     }else{
         schoolType = @"";
     }
@@ -375,8 +373,8 @@
         
         if (indexPath.row == 0) {
             
-            if ([UserInfo sharedUserInfo].selectCountryname.length) {
-                schoolCountry = [UserInfo sharedUserInfo].selectCountryname;
+            if (self.schoolCountryName.length) {
+                schoolCountry = self.schoolCountryName;
             }else{
                 schoolCountry = @"";
             }
@@ -459,13 +457,15 @@
 
 #pragma mark - NetWorkRequest
 -(void)getSchoolListRequest{
-    [[SchoolService sharedSchoolService] getSchoolListWithPage:currentIndex Size:10 Parameters:@{@"ChineseName":@"",@"Country":schoolCountry,@"Province":schoolProvince,@"City":schoolCity,@"CollegeNature":schoolNature,@"CollegeType":schoolType,@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
-        
-        UserInfo* info = [UserInfo sharedUserInfo];
-        info.selectSchoolTypeName = @"";
-        [info synchronize];
-
-        
+    NSString* schoolName;
+    if (self.searchName.length) {
+        schoolName = self.searchName;
+    }else{
+        schoolName = @"";
+    }
+    
+    [[SchoolService sharedSchoolService] getSchoolListWithPage:currentIndex Size:10 Parameters:@{@"ChineseName":schoolName,@"Country":schoolCountry,@"Province":schoolProvince,@"City":schoolCity,@"CollegeNature":schoolNature,@"CollegeType":schoolType,@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
+                
         DataResult* result = json;
         
         [schoolListArray append:[result.detailinfo getDataItemArray:@"list"]];

@@ -17,12 +17,11 @@
     DataResult*  typeResult;
     DataResult* courseTypeResult;
     NSInteger selectCourseIndex;
-    
+    DataItem* countryItem;
 }
 @property(nonatomic,weak)IBOutlet UIButton* searchButton;
 @property(nonatomic,weak)IBOutlet UIButton* schoolButton;
 @property(nonatomic,weak)IBOutlet UIButton* courseButton;
-
 @end
 
 @implementation PersonalChooseViewController
@@ -31,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"自主选校";
+    countryItem = [DataItem new];
     
     [self.searchButton.layer setCornerRadius:3.0];
     self.searchButton.backgroundColor  = MAINCOLOR;
@@ -54,6 +54,22 @@
         id theSegue = segue.destinationViewController;
         
         [theSegue setValue:PersonChooseChinaCourseType[selectCourseIndex] forKey:@"chinaType"];
+    }else if ([segue.identifier isEqualToString:@"PersonChooseToOrg"]){
+        id theSegue = segue.destinationViewController;
+        if (selectCourseIndex == 2) {
+            [theSegue setValue:[[courseTypeResult.items getItem:3] getString:@"Text"] forKey:@"orgType"];
+        }else if (selectCourseIndex ==3){
+            [theSegue setValue:[[courseTypeResult.items getItem:2] getString:@"Text"] forKey:@"orgType"];
+        }else{
+            [theSegue setValue:[[courseTypeResult.items getItem:selectCourseIndex] getString:@"Text"] forKey:@"orgType"];
+        }
+    }else if ([segue.identifier isEqualToString:@"PersonChooseToSchool"]){
+        DataItem* item = [typeResult.items getItem:selectCourseIndex];
+        
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:[item getString:@"value"] forKey:@"schoolTypeName"];
+//        NSString* countryName = [NSString stringWithFormat:@"%d",selectCountryIndex];
+        [theSegue setValue:[[countryItem getString:@"countryname"] substringToIndex:[countryItem getString:@"countryname"].length-2] forKey:@"schoolCountryName"];
     }
 }
 
@@ -98,29 +114,12 @@
         [[AppCustomHud sharedEKZCustomHud] showTextHud:@"请选择课程品类"];
     }else{
         if ([self.schoolButton.titleLabel.text isEqualToString:@"教育机构"]) {
-            
-            UserInfo* info = [UserInfo sharedUserInfo];
-            if (selectCourseIndex == 2) {
-                info.selectOrgTypeName = [[courseTypeResult.items getItem:3] getString:@"Text"];
-            }else if (selectCourseIndex ==3){
-                info.selectOrgTypeName = [[courseTypeResult.items getItem:3] getString:@"Text"];
-            }else{
-                info.selectOrgTypeName = [[courseTypeResult.items getItem:selectCourseIndex] getString:@"Text"];
-            }
-            [info synchronize];
-            
-            [self.tabBarController setSelectedIndex:1];
+            [self performSegueWithIdentifier:@"PersonChooseToOrg" sender:self];
         }else if ([self.schoolButton.titleLabel.text isEqualToString:@"国内学校"]){
             [self performSegueWithIdentifier:@"PersonChooseToChinaSchool" sender:self];
         }else{
-            UserInfo* info = [UserInfo sharedUserInfo];
-            DataItem* item = [typeResult.items getItem:selectCourseIndex];
-            NSString* countryName = [self.schoolButton.titleLabel.text substringWithRange:NSMakeRange(0, self.schoolButton.titleLabel.text.length-2)];
-            info.selectSchoolTypeName = [item getString:@"value"];
-            info.selectCountryname = countryName;
-            [info synchronize];
             
-            [self.tabBarController setSelectedIndex:2];
+            [self performSegueWithIdentifier:@"PersonChooseToSchool" sender:self];
         }
 
     }
@@ -131,6 +130,7 @@
 #pragma  mark - RowSelectDelegate
 -(void)selectRow:(NSInteger)rowIndex{
     if ([ct.tableTitle isEqualToString:@"请选择学校类型"]) {
+        [countryItem setString:PersonChooseSchoolType[rowIndex] forKey:@"countryname"];
         [self.schoolButton setTitle:PersonChooseSchoolType[rowIndex] forState:UIControlStateNormal];
     }else{
         selectCourseIndex = rowIndex;
@@ -144,7 +144,6 @@
                 DataItem* item = [typeResult.items getItem:i];
                 [typeName addObject:[item getString:@"text"]];
             }
-            
             [self.courseButton setTitle:typeName[rowIndex] forState:UIControlStateNormal];
         }
     }

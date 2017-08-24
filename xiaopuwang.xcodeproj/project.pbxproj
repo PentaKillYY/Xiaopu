@@ -58,6 +58,10 @@
 		040C745C1F4D461F001F5318 /* UITextField+JKInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C745B1F4D461F001F5318 /* UITextField+JKInputLimit.m */; };
 		040C745F1F4D48EC001F5318 /* UIButton+JKCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C745E1F4D48EC001F5318 /* UIButton+JKCountDown.m */; };
 		040C74621F4D4916001F5318 /* UIButton+JKSubmitting.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74611F4D4916001F5318 /* UIButton+JKSubmitting.m */; };
+		040C74751F4E9352001F5318 /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74741F4E9351001F5318 /* PopViewController.m */; };
+		040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 040C74761F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png */; };
+		040C747B1F4EAA63001F5318 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C74791F4EAA63001F5318 /* SearchTableViewCell.m */; };
+		040C747C1F4EAA63001F5318 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040C747A1F4EAA63001F5318 /* SearchTableViewCell.xib */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -378,6 +382,12 @@
 		040C745E1F4D48EC001F5318 /* UIButton+JKCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKCountDown.m"; sourceTree = "<group>"; };
 		040C74601F4D4916001F5318 /* UIButton+JKSubmitting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKSubmitting.h"; sourceTree = "<group>"; };
 		040C74611F4D4916001F5318 /* UIButton+JKSubmitting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKSubmitting.m"; sourceTree = "<group>"; };
+		040C74731F4E9351001F5318 /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
+		040C74741F4E9351001F5318 /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
+		040C74761F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropdownMenu_cornerIcon.png; sourceTree = "<group>"; };
+		040C74781F4EAA63001F5318 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		040C74791F4EAA63001F5318 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		040C747A1F4EAA63001F5318 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -1073,6 +1083,9 @@
 			children = (
 				04267F461F17398400FFBC3E /* SearchViewController.h */,
 				04267F471F17398400FFBC3E /* SearchViewController.m */,
+				040C74731F4E9351001F5318 /* PopViewController.h */,
+				040C74741F4E9351001F5318 /* PopViewController.m */,
+				040C74761F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png */,
 			);
 			name = SearchSection;
 			sourceTree = "<group>";
@@ -1663,6 +1676,9 @@
 				04A1D4CC1F340B0200EACEA8 /* SchoolCourseOtherCell.h */,
 				04A1D4CD1F340B0200EACEA8 /* SchoolCourseOtherCell.m */,
 				04A1D4CE1F340B0200EACEA8 /* SchoolCourseOtherCell.xib */,
+				040C74781F4EAA63001F5318 /* SearchTableViewCell.h */,
+				040C74791F4EAA63001F5318 /* SearchTableViewCell.m */,
+				040C747A1F4EAA63001F5318 /* SearchTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2039,6 +2055,7 @@
 				04267ED41F15D1D900FFBC3E /* SchoolTableViewCell.xib in Resources */,
 				040C73FF1F4A6C68001F5318 /* MyCouponTableViewCell.xib in Resources */,
 				04B93D121F39465500B2DA19 /* AdditionalTableViewCell.xib in Resources */,
+				040C747C1F4EAA63001F5318 /* SearchTableViewCell.xib in Resources */,
 				0432AA801F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib in Resources */,
 				04A1D4981F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib in Resources */,
 				04A1D47F1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.xib in Resources */,
@@ -2052,6 +2069,7 @@
 				040C73771F442B57001F5318 /* EvaluateContentTableViewCell.xib in Resources */,
 				04B93D041F38914600B2DA19 /* MultiTagSelectTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
+				040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
 				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
 				040C736D1F442B24001F5318 /* EvaluateTagTableViewCell.xib in Resources */,
@@ -2126,6 +2144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040C747B1F4EAA63001F5318 /* SearchTableViewCell.m in Sources */,
 				040C73941F444390001F5318 /* UIView+Subviews.m in Sources */,
 				040C73711F442B3B001F5318 /* EvaluateNumberTableViewCell.m in Sources */,
 				0478B9E31F14A0F7003A9C8B /* MyViewController.m in Sources */,
@@ -2172,6 +2191,7 @@
 				04B7CF7A1F41486200108915 /* AllOrderViewController.m in Sources */,
 				045632B61F26DE80005E04CB /* MyService.m in Sources */,
 				0432AA681F3D867C00783ED2 /* MySettingViewController.m in Sources */,
+				040C74751F4E9352001F5318 /* PopViewController.m in Sources */,
 				04A1D4791F31ABAD00EACEA8 /* SchoolDetailTableViewCell.m in Sources */,
 				045633401F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m in Sources */,
 				0445EE731F1D9BE500E9DAB3 /* SubTidyViewController.m in Sources */,
