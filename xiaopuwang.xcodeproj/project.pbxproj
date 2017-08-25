@@ -67,9 +67,11 @@
 		040C748D1F4EEF58001F5318 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C74891F4EEF58001F5318 /* bootstrap.min.css */; };
 		040C748E1F4EEF58001F5318 /* common.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C748A1F4EEF58001F5318 /* common.css */; };
 		040C748F1F4EEF58001F5318 /* newGuidance.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C748B1F4EEF58001F5318 /* newGuidance.css */; };
-		040C74911F4EEF60001F5318 /* newGuidance.html in Resources */ = {isa = PBXBuildFile; fileRef = 040C74901F4EEF60001F5318 /* newGuidance.html */; };
 		040C74941F4EEF6F001F5318 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 040C74921F4EEF6F001F5318 /* common.js */; };
 		040C74951F4EEF6F001F5318 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 040C74931F4EEF6F001F5318 /* jquery.min.js */; };
+		040C74971F4F009F001F5318 /* guidanceDetail.html in Resources */ = {isa = PBXBuildFile; fileRef = 040C74961F4F009F001F5318 /* guidanceDetail.html */; };
+		040C74991F4F00D9001F5318 /* newGuidance.html in Resources */ = {isa = PBXBuildFile; fileRef = 040C74981F4F00D9001F5318 /* newGuidance.html */; };
+		040C749B1F4F01A4001F5318 /* guidanceDetail.css in Resources */ = {isa = PBXBuildFile; fileRef = 040C749A1F4F01A4001F5318 /* guidanceDetail.css */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -402,9 +404,11 @@
 		040C74891F4EEF58001F5318 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
 		040C748A1F4EEF58001F5318 /* common.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = common.css; sourceTree = "<group>"; };
 		040C748B1F4EEF58001F5318 /* newGuidance.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = newGuidance.css; sourceTree = "<group>"; };
-		040C74901F4EEF60001F5318 /* newGuidance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = newGuidance.html; sourceTree = "<group>"; };
 		040C74921F4EEF6F001F5318 /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
 		040C74931F4EEF6F001F5318 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
+		040C74961F4F009F001F5318 /* guidanceDetail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = guidanceDetail.html; sourceTree = "<group>"; };
+		040C74981F4F00D9001F5318 /* newGuidance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = newGuidance.html; sourceTree = "<group>"; };
+		040C749A1F4F01A4001F5318 /* guidanceDetail.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = guidanceDetail.css; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -1084,10 +1088,12 @@
 			children = (
 				040C74921F4EEF6F001F5318 /* common.js */,
 				040C74931F4EEF6F001F5318 /* jquery.min.js */,
-				040C74901F4EEF60001F5318 /* newGuidance.html */,
+				040C74961F4F009F001F5318 /* guidanceDetail.html */,
+				040C74981F4F00D9001F5318 /* newGuidance.html */,
 				040C74881F4EEF58001F5318 /* api.css */,
 				040C74891F4EEF58001F5318 /* bootstrap.min.css */,
 				040C748A1F4EEF58001F5318 /* common.css */,
+				040C749A1F4F01A4001F5318 /* guidanceDetail.css */,
 				040C748B1F4EEF58001F5318 /* newGuidance.css */,
 			);
 			name = Web;
@@ -2057,6 +2063,8 @@
 				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				040C73F51F46E042001F5318 /* PayTypeTableViewCell.xib in Resources */,
 				0445EF0C1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib in Resources */,
+				040C749B1F4F01A4001F5318 /* guidanceDetail.css in Resources */,
+				040C74991F4F00D9001F5318 /* newGuidance.html in Resources */,
 				0445EF1B1F2093DD00E9DAB3 /* OrgMapTableViewCell.xib in Resources */,
 				0432AA6D1F3D88A900783ED2 /* MySettingTableViewCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
@@ -2065,6 +2073,7 @@
 				04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				040C74401F4BDC43001F5318 /* ReflectPriceTableViewCell.xib in Resources */,
+				040C74971F4F009F001F5318 /* guidanceDetail.html in Resources */,
 				04A1D47A1F31ABAD00EACEA8 /* SchoolDetailTableViewCell.xib in Resources */,
 				040C73721F442B3B001F5318 /* EvaluateNumberTableViewCell.xib in Resources */,
 				040C748C1F4EEF58001F5318 /* api.css in Resources */,
@@ -2111,7 +2120,6 @@
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
-				040C74911F4EEF60001F5318 /* newGuidance.html in Resources */,
 				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
 				040C736D1F442B24001F5318 /* EvaluateTagTableViewCell.xib in Resources */,
 				0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */,

@@ -88,6 +88,7 @@ PODS:
     - UMengUShare/Social/ReducedWeChat
   - UMengUShare/UI (6.4.5):
     - UMengUShare/Core
+  - WebViewJavascriptBridge (6.0.2)
   - ZFPlayer (2.1.5):
     - Masonry
 
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - UMengUShare/Social/Sina
   - UMengUShare/Social/WeChat
   - UMengUShare/UI
+  - WebViewJavascriptBridge (~> 6.0.2)
   - ZFPlayer (~> 2.1.5)
 
 SPEC CHECKSUMS:
@@ -155,8 +157,9 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
+  WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
 
-PODFILE CHECKSUM: fa4bfba94332ce2df7e190e72594e453f29fd4a6
+PODFILE CHECKSUM: 14c50465276daf872680e22dcb52a58713a814fa
 
 COCOAPODS: 1.2.1

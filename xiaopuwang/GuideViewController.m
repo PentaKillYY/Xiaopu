@@ -7,9 +7,12 @@
 //
 
 #import "GuideViewController.h"
+#import "WebViewJavascriptBridge.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
-@interface GuideViewController ()
+@interface GuideViewController ()<UIWebViewDelegate>
 @property(nonatomic,weak)IBOutlet UIWebView* webView;
+@property WebViewJavascriptBridge* bridge;
 @end
 
 @implementation GuideViewController
@@ -17,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"操作说明";
+    
     
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
@@ -27,7 +30,19 @@
     NSString * htmlCont = [NSString stringWithContentsOfFile:htmlPath
                                                     encoding:NSUTF8StringEncoding
                                                        error:nil];
+    
     [self.webView loadHTMLString:htmlCont baseURL:baseURL];
+
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
+    [_bridge setWebViewDelegate:self];
+    
+    [self registBackFunction];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,14 +50,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)registBackFunction
+{
+    [_bridge registerHandler:@"WebToNative" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
-*/
+
+
 
 @end

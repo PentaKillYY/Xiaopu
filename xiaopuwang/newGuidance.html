@@ -11,6 +11,7 @@
     <script src="jquery.min.js"></script>
     <script src="iscroll.js"></script>
     <script type="text/javascript">
+       
         var myscroll;
 
         function loaded() {
@@ -29,7 +30,14 @@
     </script>
 </head>
 <body>
-
+<header>
+    <a class="left-back" href="#" onclick="back()">
+        <span class="arrow-left"></span>
+    </a>
+    <div class="head-title">
+        操作说明
+    </div>
+</header>
 <section id="wrapper">
     <div>
         <ul class="list-unstyled outList">
@@ -205,9 +213,9 @@
     </div>
 </section>
 </body>
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/api.js"></script>
-<script src="../js/common.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="api.js"></script>
+<script src="common.js"></script>
 <script>
     $('.outList').on('click','li',function(){
             $(this).children('ul').slideToggle("fast","linear");
@@ -220,15 +228,29 @@
 
     })
     $('.inList').on('click','li',function(){
-        
+        sessionStorage.setItem("itemNum", $(this).attr('id'));
+        window.location.href='guidanceDetail.html';
+       
     })
-    apiready = function() {
-        isBarAppearance();
-        if(api.statusBarAppearance){
-            $('#wrapper').height($('body').height()-65);
-        }else{
-            $('#wrapper').height($('body').height()-45);
-        }
+    
+    function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
     }
+
+    setupWebViewJavascriptBridge(function(bridge) {
+           
+    })
+
+    function back(){
+        WebViewJavascriptBridge.callHandler('WebToNative')
+    }
+    
 </script>
 </html>
