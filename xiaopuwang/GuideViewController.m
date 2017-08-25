@@ -8,7 +8,6 @@
 
 #import "GuideViewController.h"
 #import "WebViewJavascriptBridge.h"
-#import <JavaScriptCore/JavaScriptCore.h>
 
 @interface GuideViewController ()<UIWebViewDelegate>
 @property(nonatomic,weak)IBOutlet UIWebView* webView;

@@ -405,14 +405,15 @@
     
     backPriceBgView.backgroundColor = [UIColor colorWithRed:135/255 green:135/255 blue:135/255 alpha:0.8];
     
-    UIImageView* backPriceImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 255, 217)];
+    UIImageView* backPriceImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 235, 198)];
     backPriceImage.center = CGPointMake(Main_Screen_Width/2, (Main_Screen_Height-44-64)/2);
-    backPriceImage.image = V_IMAGE(@"rewardbg");
+    backPriceImage.image = V_IMAGE(@"NewRewardBg");
     
     
     [backPriceBgView addSubview:backPriceImage];
     
-    UILabel* backPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(backPriceImage.frame.origin.x+72, backPriceImage.frame.origin.y+106, 75, 35)];
+    UILabel* backPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(backPriceImage.frame.origin.x+92, backPriceImage.frame.origin.y+44, 33, 16)];
+    backPriceLabel.font = [UIFont systemFontOfSize:13];
     backPriceLabel.text = backPriceResult.message;
     backPriceLabel.textColor = [UIColor whiteColor];
     backPriceLabel.backgroundColor = [UIColor clearColor];

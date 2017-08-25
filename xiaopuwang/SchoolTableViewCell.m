@@ -44,7 +44,7 @@
         self.distance.text = [NSString stringWithFormat:@"%@-%@-%@",[item getString:@"country_name"],[item getString:@"provinces_name"],[item getString:@"city_name"]];
         self.leftTag.text = @" 官方入驻 ";
         self.middleTag.text = @" 免费服务 ";
-        self.rightTag.text = @" 学费补贴 ";
+        self.rightTag.text = @" 英才奖学金 ";
     }else{
         self.orgName.text = [item getString:@"SchoolName"];
         self.orgContent.text = nil;
@@ -55,7 +55,7 @@
         
         self.leftTag.text = @" 官方入驻 ";
         self.middleTag.text = @" 免费升学服务 ";
-        self.rightTag.text = @" 学费补贴 ";
+        self.rightTag.text = @" 英才奖学金 ";
     }
     
 }

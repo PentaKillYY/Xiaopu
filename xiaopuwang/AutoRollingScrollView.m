@@ -29,7 +29,7 @@
     
     //初始化图片
     for(NSInteger i=0;i<_totalImage;i++){
-        NSString *imageName = @"在线咨询可获得1%~100%随机学费补贴  138****9999用户于2017-3获得3250补贴";
+        NSString *imageName = @"在线咨询可获得1%~100%随机英才奖学金  138****9999用户于2017-3获得3250英才奖学金";
         [_imageNameList addObject:imageName];
     }
 }
