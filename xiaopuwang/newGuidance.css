@@ -1,0 +1,36 @@
+body,html{
+    height: 100%;
+    background-color: #fff;
+}
+.outList>li{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.outList>li>p{
+    line-height: 15px;
+    font-size: 13px;
+    color: #333;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.inList{
+    position: relative;
+    width: 100%;
+}
+.inList>li{
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+    padding-left: 30px;
+}
+.inList>li>p{
+    position: relative;
+    line-height: 20px;
+    font-size: 13px;
+    color: #333;
+    padding: 15px;
+}
+.inList>li>p>span:last-child{
+    right: 25px;
+}

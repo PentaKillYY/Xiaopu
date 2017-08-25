@@ -45,6 +45,15 @@
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
     
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
+        
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
     
 }
 
@@ -55,6 +64,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+    
     [self getUserBalanceRequest];
     
     [super viewWillAppear:YES];
@@ -134,47 +144,83 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 && indexPath.row ==0) {
-        [self performSegueWithIdentifier:@"MyToOrder" sender:self];
-    }else if (indexPath.section == 2 && indexPath.row == 0){
-        [self performSegueWithIdentifier:@"MyToWallet" sender:self];
-    }else if (indexPath.section == 2 && indexPath.row == 1){
-        [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
-    }else if (indexPath.section ==3 && indexPath.row == 0) {
-        [self performSegueWithIdentifier:@"MyToFollow" sender:self];
-    }else if (indexPath.section == 3 && indexPath.row == 1){
-        [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
-    }else if (indexPath.section == 3 && indexPath.row == 2) {
-        //显示分享面板
-        [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-            // 根据获取的platformType确定所选平台进行下一步操作
-            
-            [self shareWebPageToPlatformType:platformType];
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
+        if (indexPath.section == 1 && indexPath.row ==0) {
+            [self performSegueWithIdentifier:@"MyToOrder" sender:self];
+        }else if (indexPath.section == 2 && indexPath.row == 0){
+            [self performSegueWithIdentifier:@"MyToWallet" sender:self];
+        }else if (indexPath.section == 2 && indexPath.row == 1){
+            [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
+        }else if (indexPath.section ==3 && indexPath.row == 0) {
+            [self performSegueWithIdentifier:@"MyToFollow" sender:self];
+        }else if (indexPath.section == 3 && indexPath.row == 1){
+            [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
+        }else if (indexPath.section == 3 && indexPath.row == 2) {
+            //显示分享面板
+            [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+                // 根据获取的platformType确定所选平台进行下一步操作
+                
+                [self shareWebPageToPlatformType:platformType];
+                
+            }];
+        }else if (indexPath.section == 3 && indexPath.row == 3){
+            [self performSegueWithIdentifier:@"MyToUpdateInfo" sender:self];
+        }else if (indexPath.section == 3 && indexPath.row == 4){
+            [self performSegueWithIdentifier:@"MyToSetting" sender:self];
+        }
+
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
             
         }];
-    }else if (indexPath.section == 3 && indexPath.row == 3){
-        [self performSegueWithIdentifier:@"MyToUpdateInfo" sender:self];
-    }else if (indexPath.section == 3 && indexPath.row == 4){
-        [self performSegueWithIdentifier:@"MyToSetting" sender:self];
     }
+    
 }
 
 
 -(void)messagePush:(id)sender{
-    MyChatListViewController *chatList = [[MyChatListViewController alloc] init];
-    chatList.hidesBottomBarWhenPushed = YES;
-
-    [self.navigationController pushViewController:chatList animated:YES];
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
+        MyChatListViewController *chatList = [[MyChatListViewController alloc] init];
+        chatList.hidesBottomBarWhenPushed = YES;
+        
+        [self.navigationController pushViewController:chatList animated:YES];
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
 }
 
 -(void)settingPush:(id)sender{
-    [self performSegueWithIdentifier:@"MyToSetting" sender:self];
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length){
+        [self performSegueWithIdentifier:@"MyToSetting" sender:self];
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
+    
 }
 
 -(void)changeUserLogo:(id)sender{
-    UIActionSheet* sheet = [[UIActionSheet alloc] initWithTitle:@"更换头像" cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"拍照",@"从手机相册选择"]];
-    sheet.delegate = self;
-    [sheet showInView:self.view];
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length){
+        UIActionSheet* sheet = [[UIActionSheet alloc] initWithTitle:@"更换头像" cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"拍照",@"从手机相册选择"]];
+        sheet.delegate = self;
+        [sheet showInView:self.view];
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
+    
 }
 
 #pragma mark - ActionSheetDelegate
@@ -269,11 +315,6 @@
             
             [self getUserCouponListRequest];
         } onFailure:^(id json) {
-            
-        }];
-    }else{
-        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
-        [self presentViewController:login animated:YES completion:^{
             
         }];
     }

@@ -34,5 +34,6 @@ pod 'UMengUShare/UI'
 pod 'UMengUShare/Social/WeChat'
 pod 'UMengUShare/Social/QQ'
 pod 'UMengUShare/Social/Sina'
+pod 'WebViewJavascriptBridge', '~> 6.0.2'
 
 end

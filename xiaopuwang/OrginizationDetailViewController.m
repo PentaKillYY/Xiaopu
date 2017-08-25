@@ -127,7 +127,7 @@
         
         loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [loginButton setTitle:@"登录后查看" forState:0];
-        [loginButton setFrame:CGRectMake(Main_Screen_Width/2-40, (self.tableView.frame.size.height-90)/2-40, 80, 80)];
+        [loginButton setFrame:CGRectMake(Main_Screen_Width/2-40, 80, 80, 80)];
         [loginButton setBackgroundColor:[UIColor clearColor]];
         loginButton.titleLabel.font = [UIFont systemFontOfSize:13];
         loginButton.contentHorizontalAlignment=UIControlContentHorizontalAlignmentCenter ;

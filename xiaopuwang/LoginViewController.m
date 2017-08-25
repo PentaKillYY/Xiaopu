@@ -32,6 +32,13 @@
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
     self.passwordTextField.jk_maxLength=12;
     
+    UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    [leftitem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:19],NSFontAttributeName, nil] forState:UIControlStateNormal];
+
+    [leftitem setTintColor:MAINCOLOR];
+    
+    self.navigationItem.leftBarButtonItem = leftitem;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +63,12 @@
 
 -(IBAction)forgetPasswordAction:(id)sender{
     [self performSegueWithIdentifier:@"LoginToForgetPassword" sender:self];
+}
+
+-(void)backAction{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 -(void)loginRequest{
