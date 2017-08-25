@@ -53,6 +53,8 @@
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
+    
+     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
