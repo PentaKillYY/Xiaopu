@@ -28,3 +28,6 @@
 #define EmptyPassword @"密码不能为空"
 #define UserIsRegister @"该手机号已注册"
 #define EmptySearch @"您还未输入搜索内容"
+#define EmptyCommunityTitle @"帖子标题不能为空"
+#define EmptyCommunityType @"您还未选择帖子类型"
+#define EmptyCommunityContentOrImage @"帖子必须包括内容或图片"

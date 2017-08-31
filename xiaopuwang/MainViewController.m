@@ -316,12 +316,18 @@
 
 -(void)tokenRequest{
     [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username,@"portraitUri":[UserInfo sharedUserInfo].headPicUrl} onCompletion:^(id json) {
-        
+        [self uptdateTokenRequest];
     } onFailure:^(id json) {
         
     }];
-    
-    [self rongcloudConnect];
+}
+
+-(void)uptdateTokenRequest{
+    [[MyService sharedMyService] updateUserTokenWithParameters:@{@"token":[UserInfo sharedUserInfo].token} onCompletion:^(id json) {
+        [self rongcloudConnect];
+    } onFailure:^(id json) {
+        
+    }];
 }
 
 #pragma mark - ServiceDelegate

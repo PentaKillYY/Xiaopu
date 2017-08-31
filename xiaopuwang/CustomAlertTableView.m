@@ -38,7 +38,12 @@
         
         [bgView addGestureRecognizer:tap];
         
-        tableView = [[UITableView alloc] initWithFrame:CGRectMake(25, 70+64, frame.size.width-50, Main_Screen_Height-214) style:UITableViewStylePlain];
+        if (count*44+44>Main_Screen_Height-214) {
+            tableView = [[UITableView alloc] initWithFrame:CGRectMake(25, 70+64, frame.size.width-50, Main_Screen_Height-214) style:UITableViewStylePlain];
+        }else{
+            tableView = [[UITableView alloc] initWithFrame:CGRectMake(25, 70+64, frame.size.width-50, count*44+44) style:UITableViewStylePlain];
+        }
+        
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -95,7 +100,10 @@
 
 - (UITableViewCell* )tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SchoolTypeTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SchoolTypeTableViewCell" owner:self options:nil].firstObject;
-    if ([self.tableTitle isEqualToString:@"请选择学校类型"]) {
+    if([self.tableTitle isEqualToString:@"选择身份"]){
+        cell.typeName.text = UserIdentityType[indexPath.row];
+        cell.typeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",UserIdentityType[indexPath.row]]];
+    }else if ([self.tableTitle isEqualToString:@"请选择学校类型"]) {
         cell.typeName.text = PersonChooseSchoolType[indexPath.row];
         cell.typeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"personchoose-%ld",(long)indexPath.row]];
     }else{

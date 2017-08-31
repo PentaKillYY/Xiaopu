@@ -81,6 +81,7 @@
     currentVCIndex = index;
     // 2.给对应位置添加对应子控制器
     [self showVc:index];
+    
 }
 
 // 显示控制器的view

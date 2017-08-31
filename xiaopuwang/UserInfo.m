@@ -46,6 +46,9 @@
         decodeObject(userCity);
         decodeObject(userCoupon);
         decodeObject(recommand);
+        decodeObject(userIdentity);
+        decodeObject(address);
+        decodeObject(communityType);
     }
     
     return self;
@@ -71,6 +74,9 @@
     encodeObject(userCity);
     encodeObject(userCoupon);
     encodeObject(recommand);
+    encodeObject(userIdentity);
+    encodeObject(address);
+    encodeObject(communityType);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
@@ -93,6 +99,9 @@
     self.userCity=dict[@"userCity"];
     self.userCoupon=dict[@"userCoupon"];
     self.recommand=dict[@"recommand"];
+    self.userIdentity=dict[@"userIdentity"];
+    self.address=dict[@"address"];
+    self.communityType=dict[@"communityType"];
 }
 
 - (void)logout{

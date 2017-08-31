@@ -78,7 +78,7 @@
     studentName = @"";
     originalPrice = 0;
     subject = @"";
-    paytype = 0;
+    paytype = 1;
 }
 
 #pragma mark - Table view data source
@@ -114,6 +114,7 @@
             picker.dataSource = self;
             picker.backgroundColor = [UIColor whiteColor];
             picker.tag = indexPath.row;
+            
             UIToolbar*customAccessoryView = [[UIToolbar alloc]initWithFrame:(CGRect){0,0,Main_Screen_Width,40}];
             customAccessoryView.barTintColor = [UIColor whiteColor];
             UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -131,11 +132,13 @@
     if (indexPath.row == 1) {
         cell.cellContent.text = subject;
     }else if (indexPath.row == 2 && originalPrice>0){
-        cell.cellContent.text =  [NSString stringWithFormat:@"%f",originalPrice];
+        cell.cellContent.text =  [NSString stringWithFormat:@"%.2f",originalPrice];
     }else if (indexPath.row == 4){
         cell.cellContent.text = studentName;
-    }else if (indexPath.row == 5 &&  paytype >0){
+    }else if (indexPath.row == 5 ){
+        
         cell.cellContent.text = PayType[paytype-1];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     return cell;

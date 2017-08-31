@@ -292,3 +292,56 @@
 
 //更新密码
 #define ResetPassword @"/user/updatePassword"
+
+//更新用户Token
+#define UpdateUserToken @"/user/UpdateUserToken" 
+
+// *******************************社区**************************
+
+//获取用户帖子类型列表
+#define CommunityType @"/community/communityTypeList"
+
+//获取社区帖子列表
+#define CommunityList @"/community/noteList"
+
+//获取社区帖子详情
+#define CommunityDetail @"/community/note"
+
+//获取帖子的用户回复列表
+#define CommunityReplyList @"/community/userReplyList"
+
+//用户帖子收藏
+#define CollectCommunity @"/community/communityCollectionInsert"
+
+//用户删除收藏
+#define DeleteCollectCommunity @"/community/cmmunityCollectionDelete"
+
+//获取用户帖子点赞数
+#define UserPraiseNumber @"/community/communityUserGoodCountByUserId"
+
+//用户收藏帖子查询
+#define UserCommunityCollectList @"/community/communityCollectionList"
+
+//获取用户发布的帖子
+#define CommunityListByUser @"/community/communityNoteListByUserId"
+
+//获取用户回复信息
+#define CommunityReplyListByUser @"/community/communityUserReplyListByUserId"
+
+//社区帖子删除
+#define DeleteCommunity @"/community/noteDelete"
+
+//用户浏览录入
+#define UserBrowseCommunity @"/community/userBrowseInsert"
+
+//用户点赞录入
+#define UserGoodCommunity @"/community/userGoodInsert"
+
+//更新用户身份
+#define UpdateUserIdentity @"/community/userIdentityUpdate"
+
+//用户删除收藏
+#define UserCollectionDelete @"/community/cmmunityCollectionDelete"
+
+//社区帖子录入
+#define UserPostCommunity @"/community/noteInsert"

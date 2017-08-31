@@ -96,6 +96,8 @@
         info.userProvince = [result.detailinfo getString:@"ProvinceName"];
         info.userCity = [result.detailinfo getString:@"CityName"];
         info.headPicUrl = [result.detailinfo getString:@"Photo"];
+        info.userIdentity = [result.detailinfo getString:@"UserIdentity"];
+        
         [info synchronize];
         
         completionBlock(json);
@@ -564,6 +566,16 @@
                       onCompletion:(JSONResponse)completionBlock
                          onFailure:(JSONResponse)failureBlock{
     [[BaseHttpRequest sharedBaseHttpRequest]GET:ResetPassword parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
+
+-(void)updateUserTokenWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest]GET:[NSString stringWithFormat:@"%@?userId=%@&token=%@",UpdateUserToken,[UserInfo sharedUserInfo].userID,[parameters objectForKey:@"token"]]  parameters:nil success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         failureBlock(json);

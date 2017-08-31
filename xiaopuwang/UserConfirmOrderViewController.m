@@ -341,7 +341,7 @@
         @"OrderNum":[[orderResult.items getItem:0] getString:@"OrderNum"],
         @"Organization_Application_ID":[[orderResult.items getItem:0] getString:@"Organization_Application_ID"],
         @"Purchaser":[UserInfo sharedUserInfo].userID,
-        @"TradeNo":@"",
+        @"TradeNo":@"null",
         @"PayMode":@(payMode),
         @"TradeStatus1":@"TRADE_SUCCESS"
     } onCompletion:^(id json) {

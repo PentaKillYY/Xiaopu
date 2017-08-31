@@ -25,7 +25,7 @@
     failure:(JSONResponse)failure {
     
     
-    DLog(@"%@%@",[NSString stringWithFormat:@"%@%@",REQUEST_URL,URLString],parameters);
+    DLog(@"%@,%@",[NSString stringWithFormat:@"%@%@",REQUEST_URL,URLString],parameters);
     
     self.operationManager = [AFHTTPSessionManager manager];
     self.operationManager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -47,9 +47,8 @@
         }else{
             if (_result.message.length) {
                 [[AppCustomHud sharedEKZCustomHud] showTextHud:_result.message];
-
             }
-        failure(_result);
+            failure(_result);
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

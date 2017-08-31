@@ -19,17 +19,18 @@
 @property (copy, nonatomic) NSString *token;
 @property (copy, nonatomic) NSString* userBalance;
 @property (copy, nonatomic) NSString* userCoupon;
-
+@property (copy, nonatomic) NSString* userIdentity;
 @property (copy, nonatomic) NSString* userLongitude;
 @property (copy, nonatomic) NSString* userLatitude;
 @property (copy, nonatomic) NSString* isReadIntro;
 @property (copy, nonatomic) NSString* selectOrgTypeName;
 @property (copy, nonatomic) NSString* selectCountryname;
 @property (copy, nonatomic) NSString* selectSchoolTypeName;
-
+@property (copy, nonatomic) NSString* address;
 @property (copy, nonatomic) NSString* userCountry;
 @property (copy, nonatomic) NSString* userProvince;
 @property (copy, nonatomic) NSString* userCity;
+@property (copy, nonatomic) NSString* communityType;
 
 +(instancetype)sharedUserInfo;
 -(void)logout;

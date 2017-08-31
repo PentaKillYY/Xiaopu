@@ -3,9 +3,9 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'xiaopuwang' do
-
+    
 pod 'AFNetworking', '~> 3.1.0'
-pod 'SDCycleScrollView', '~> 1.61'
+pod 'SDCycleScrollView', '~> 1.66'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'SVProgressHUD', '~> 2.1.2'
 pod 'MJRefresh', '~> 3.1.12'
@@ -13,6 +13,7 @@ pod 'MJExtension', '~> 3.0.13'
 pod 'UMengAnalytics','~>4.2.4'
 pod 'AMap3DMap', '~> 5.2.1'
 pod 'AMapLocation', '~> 2.4.0'
+pod 'AMapSearch', '~> 5.2.1'
 pod 'BaiduMapKit', '~> 3.3.2'
 pod 'RongCloudIM', '~> 2.8.13'
 pod 'JPush', '~> 3.0.6'
@@ -35,5 +36,6 @@ pod 'UMengUShare/Social/WeChat'
 pod 'UMengUShare/Social/QQ'
 pod 'UMengUShare/Social/Sina'
 pod 'WebViewJavascriptBridge', '~> 6.0.2'
+pod 'ZLPhotoBrowser', '~> 2.2.5'
 
 end

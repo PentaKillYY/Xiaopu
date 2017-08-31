@@ -265,5 +265,9 @@
                       onCompletion:(JSONResponse)completionBlock
                          onFailure:(JSONResponse)failureBlock;
 
+//更新用户Token
+-(void)updateUserTokenWithParameters:(NSDictionary *)parameters
+                        onCompletion:(JSONResponse)completionBlock
+                           onFailure:(JSONResponse)failureBlock;
 
 @end
