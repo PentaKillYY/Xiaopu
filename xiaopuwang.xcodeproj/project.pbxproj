@@ -176,6 +176,8 @@
 		043C0C8E1F56D70400CE98B2 /* PostImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C0C8C1F56D70400CE98B2 /* PostImageCollectionViewCell.m */; };
 		043C0C8F1F56D70400CE98B2 /* PostImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C0C8D1F56D70400CE98B2 /* PostImageCollectionViewCell.xib */; };
 		043C0C911F56DEE400CE98B2 /* searchDel.png in Resources */ = {isa = PBXBuildFile; fileRef = 043C0C901F56DEE400CE98B2 /* searchDel.png */; };
+		043C0CB61F57E45100CE98B2 /* addReplyPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 043C0CB51F57E45100CE98B2 /* addReplyPic.png */; };
+		043C0CBA1F57E59500CE98B2 /* CCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C0CB91F57E59500CE98B2 /* CCTextView.m */; };
 		0445EE3F1F1C8F2600E9DAB3 /* PersonalChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */; };
 		0445EE451F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445EE431F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.m */; };
 		0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445EE441F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib */; };
@@ -629,6 +631,9 @@
 		043C0C8C1F56D70400CE98B2 /* PostImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageCollectionViewCell.m; sourceTree = "<group>"; };
 		043C0C8D1F56D70400CE98B2 /* PostImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		043C0C901F56DEE400CE98B2 /* searchDel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchDel.png; sourceTree = "<group>"; };
+		043C0CB51F57E45100CE98B2 /* addReplyPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addReplyPic.png; sourceTree = "<group>"; };
+		043C0CB81F57E59500CE98B2 /* CCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTextView.h; sourceTree = "<group>"; };
+		043C0CB91F57E59500CE98B2 /* CCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTextView.m; sourceTree = "<group>"; };
 		0445EE3D1F1C8F2600E9DAB3 /* PersonalChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalChooseViewController.h; sourceTree = "<group>"; };
 		0445EE3E1F1C8F2600E9DAB3 /* PersonalChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalChooseViewController.m; sourceTree = "<group>"; };
 		0445EE421F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolTypeTableViewCell.h; sourceTree = "<group>"; };
@@ -1378,6 +1383,7 @@
 		043C0BEB1F53C78000CE98B2 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				043C0CB51F57E45100CE98B2 /* addReplyPic.png */,
 				043C0C901F56DEE400CE98B2 /* searchDel.png */,
 				043C0C5D1F566A4100CE98B2 /* postIoaction.png */,
 				043C0C891F56D43700CE98B2 /* add-pic.png */,
@@ -1415,6 +1421,15 @@
 				043C0C611F566E5200CE98B2 /* PlaceholderTextView.m */,
 			);
 			name = PlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		043C0CB71F57E58500CE98B2 /* CCTextView */ = {
+			isa = PBXGroup;
+			children = (
+				043C0CB81F57E59500CE98B2 /* CCTextView.h */,
+				043C0CB91F57E59500CE98B2 /* CCTextView.m */,
+			);
+			name = CCTextView;
 			sourceTree = "<group>";
 		};
 		0445EE401F1C9AD000E9DAB3 /* Main */ = {
@@ -1778,6 +1793,7 @@
 		0478B9981F147AEB003A9C8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				043C0CB71F57E58500CE98B2 /* CCTextView */,
 				043C0C5F1F566E4000CE98B2 /* PlaceholderTextView */,
 				043C0C331F56603800CE98B2 /* FixAlertView */,
 				040C74091F4AA7BC001F5318 /* DashLine */,
@@ -2439,6 +2455,7 @@
 				040C74261F4BB9BC001F5318 /* WalletBannerTableViewCell.xib in Resources */,
 				043C0C3A1F56633A00CE98B2 /* close.png in Resources */,
 				04573F781F13725F00B52C76 /* Main.storyboard in Resources */,
+				043C0CB61F57E45100CE98B2 /* addReplyPic.png in Resources */,
 				043C0BFB1F53DDF700CE98B2 /* communityCollected.png in Resources */,
 				0432AA7B1F3D968600783ED2 /* MyCardTableViewCell.xib in Resources */,
 				040C74111F4AC62B001F5318 /* MyCouponSimpleTableViewCell.xib in Resources */,
@@ -2681,6 +2698,7 @@
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				040C743A1F4BDC29001F5318 /* ReflectBannerTableViewCell.m in Sources */,
 				040C73F41F46E042001F5318 /* PayTypeTableViewCell.m in Sources */,
+				043C0CBA1F57E59500CE98B2 /* CCTextView.m in Sources */,
 				04B7CF831F4148F400108915 /* OrderEvaluateViewController.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
 				045633131F29BE1C005E04CB /* SRPictureBrowser.m in Sources */,

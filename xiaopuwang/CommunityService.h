@@ -100,4 +100,9 @@
 -(void)UserPostCommunityWithParameters:(NSDictionary *)parameters
                           onCompletion:(JSONResponse)completionBlock
                              onFailure:(JSONResponse)failureBlock;
+
+//帖子回复录入
+-(void)userReplyCommunityWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
 @end

@@ -258,6 +258,7 @@
                                                                                      @"Address":comAddress,
                                                                                      @"UserName":[UserInfo sharedUserInfo].username
                                                                                      } onCompletion:^(id json) {
+                                                                                         [self.navigationController popViewControllerAnimated:YES];
                                                                                          
                                                                                      } onFailure:^(id json) {
                                                                                          

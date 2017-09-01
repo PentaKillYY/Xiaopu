@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="写下你的标题（必填）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-zh-ZbO">
-                        <rect key="frame" x="16" y="0.0" width="137" height="43.5"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
@@ -29,6 +29,7 @@
                     <constraint firstItem="eOz-zh-ZbO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3W2-gb-9qP"/>
                     <constraint firstItem="eOz-zh-ZbO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="b80-ge-T0k"/>
                     <constraint firstAttribute="bottom" secondItem="eOz-zh-ZbO" secondAttribute="bottom" id="iP2-Af-ZDY"/>
+                    <constraint firstAttribute="trailing" secondItem="eOz-zh-ZbO" secondAttribute="trailing" constant="16" id="tQ6-6w-IlB"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

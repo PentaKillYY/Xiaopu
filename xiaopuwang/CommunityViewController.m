@@ -80,13 +80,19 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
         
     }];
     
-    [self.tableView.mj_header beginRefreshing];
-
-    if ([UserInfo sharedUserInfo].username.length) {
+    
+    
+    
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
         
     }else{
-        [self showUserNickALertView];
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
     }
+
     
     [self getCommunityTypeRequest];
 }
@@ -108,11 +114,28 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
     [headerView addSubview:segmentedControl];
     
     [self.view addSubview:headerView];
-}
+    
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if ([UserInfo sharedUserInfo].userID.length) {
+        if ([UserInfo sharedUserInfo].username.length) {
+            
+        }else{
+            [self showUserNickALertView];
+        }
+        [self.tableView.mj_header beginRefreshing];
+    }
+    
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

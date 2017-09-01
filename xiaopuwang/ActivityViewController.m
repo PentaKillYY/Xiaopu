@@ -55,6 +55,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     currentType = indexPath.row;
-    [self performSegueWithIdentifier:@"ActivityToWeb" sender:self];
+//    [self performSegueWithIdentifier:@"ActivityToWeb" sender:self];
 }
 @end

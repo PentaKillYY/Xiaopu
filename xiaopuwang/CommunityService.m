@@ -196,9 +196,19 @@
                           onCompletion:(JSONResponse)completionBlock
                              onFailure:(JSONResponse)failureBlock{
   [[BaseHttpRequest sharedBaseHttpRequest] POST:UserPostCommunity parameters:parameters success:^(id json) {
-      
+      completionBlock(json);
   } failure:^(id json) {
-      
+      failureBlock(json);
   }];
+}
+
+-(void)userReplyCommunityWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:UserReplyCommunity parameters:parameters success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
 }
 @end

@@ -345,3 +345,6 @@
 
 //社区帖子录入
 #define UserPostCommunity @"/community/noteInsert"
+
+//帖子回复录入
+#define UserReplyCommunity @"/community/userReplyInsert"

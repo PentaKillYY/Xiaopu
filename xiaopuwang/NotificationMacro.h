@@ -31,3 +31,4 @@
 #define EmptyCommunityTitle @"帖子标题不能为空"
 #define EmptyCommunityType @"您还未选择帖子类型"
 #define EmptyCommunityContentOrImage @"帖子必须包括内容或图片"
+#define CommunityIsEmpty @"该帖子不存在"
