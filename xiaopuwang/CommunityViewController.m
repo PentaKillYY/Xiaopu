@@ -45,9 +45,9 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
     
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.title = @"社区";
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor blackColor]}];
     
-    UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"comunityType") style:UIBarButtonItemStylePlain target:self action:@selector(selectCommunityType)];
+    UIBarButtonItem* leftitem = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"communityType") style:UIBarButtonItemStylePlain target:self action:@selector(selectCommunityType)];
     
     UIBarButtonItem* rightItm = [[UIBarButtonItem alloc] initWithImage:V_IMAGE(@"communityUser") style:UIBarButtonItemStylePlain target:self action:@selector(goToCommunityUserCenter)];
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];

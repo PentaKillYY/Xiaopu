@@ -27,36 +27,36 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="外语培训中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9p-vt-kX2">
-                        <rect key="frame" x="103" y="5" width="80" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="103" y="5" width="86" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-2b-PVQ">
-                        <rect key="frame" x="103" y="44" width="209" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑,花剑,佩剑,重剑" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-2b-PVQ">
+                        <rect key="frame" x="103" y="45" width="209" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-zZ-XNz" customClass="StarRatingView">
-                        <rect key="frame" x="103" y="24" width="209" height="15"/>
+                        <rect key="frame" x="103" y="25" width="209" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="EXn-Ri-4kW"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e85-yl-9a8" customClass="SKTagView">
-                        <rect key="frame" x="103" y="57.5" width="209" height="22.5"/>
+                        <rect key="frame" x="103" y="79" width="209" height="0.0"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addres" translatesAutoresizingMaskIntoConstraints="NO" id="z70-yi-Anp">
-                        <rect key="frame" x="103" y="81.5" width="8" height="11"/>
+                        <rect key="frame" x="103" y="81" width="8" height="11"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="z70-yi-Anp" secondAttribute="height" multiplier="5:7" id="Vde-G7-qhG"/>
                             <constraint firstAttribute="width" constant="8" id="qiW-bn-u0s"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="江苏省-无锡市-梁溪区 距您0.4公里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bj-RD-AMl">
-                        <rect key="frame" x="114" y="80" width="177" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="114" y="79" width="192.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

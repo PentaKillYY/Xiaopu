@@ -142,11 +142,7 @@ static NSString *replyidentify = @"CommunityReplyCell";
     [self.replyTextView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
     [self.replyTextView.layer setBorderWidth:0.5];
     [self.replyTextView.layer setMasksToBounds:YES];
-    
-//    self.replyTextView.placeholder = @"我也说一句...";
-//    [self.replyTextView setPlaceholderOpacity:.5];
-//    [self.replyTextView setPlaceholderColor:[UIColor lightGrayColor]];
-//    [self.replyTextView setPlaceholderFont:[UIFont boldSystemFontOfSize:14]];
+
     self.replyTextView.text = replyName;
     [self.replyTextView setFont:[UIFont systemFontOfSize:14]];
     self.replyTextView.shouldAutoUpdateHeight = YES;
@@ -186,7 +182,12 @@ static NSString *replyidentify = @"CommunityReplyCell";
     if (section==0) {
         return 1;
     }else{
-        return communityReplyListArray.size;
+        if (communityReplyListArray.size) {
+            return communityReplyListArray.size;
+        }else{
+            return 1;
+        }
+        
     }
 }
 
@@ -210,11 +211,16 @@ static NSString *replyidentify = @"CommunityReplyCell";
         }];
  
     }else{
-        return [tableView fd_heightForCellWithIdentifier:replyidentify cacheByIndexPath:indexPath configuration:^(CommunityReplyCell *cell) {
-            
-            [self configReplyCell:cell IndexPath:indexPath];
-            
-        }];
+        if (communityReplyListArray.size){
+            return [tableView fd_heightForCellWithIdentifier:replyidentify cacheByIndexPath:indexPath configuration:^(CommunityReplyCell *cell) {
+                
+                [self configReplyCell:cell IndexPath:indexPath];
+                
+            }];
+        }else{
+            return Main_Screen_Height-45-64-120;
+        }
+        
     }
 }
 
@@ -226,29 +232,38 @@ static NSString *replyidentify = @"CommunityReplyCell";
         [self configCell:cell IndexPath:indexPath];
         return cell;
     }else{
-        CommunityReplyCell* cell = [[NSBundle mainBundle] loadNibNamed:@"CommunityReplyCell" owner:self options:nil].firstObject;
-        [self configReplyCell:cell IndexPath:indexPath];
-        return cell;
+        if (communityReplyListArray.size) {
+            CommunityReplyCell* cell = [[NSBundle mainBundle] loadNibNamed:@"CommunityReplyCell" owner:self options:nil].firstObject;
+            [self configReplyCell:cell IndexPath:indexPath];
+            return cell;
+        }else{
+            NoReplyTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"NoReplyTableViewCell" owner:self options:nil].firstObject;
+            return cell;
+        }
+        
     }
     
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-        DataItem* item = [communityReplyListArray getItem:indexPath.row];
-        replyName = [NSString stringWithFormat:@"回复%@:",[item getString:@"UserName"]];
-        if ([[item getString:@"UserName"] isEqualToString:[UserInfo sharedUserInfo].username]) {
-           self.replyTextView.text = @"回复楼主:";
-            parentUserId = @"";
-            parentUserName = @"";
-        }else{
-            self.replyTextView.text = replyName;
-            parentUserId = [item getString:@"UserId"];
-            parentUserName = [item getString:@"UserName"];
+        if (communityReplyListArray.size) {
+            DataItem* item = [communityReplyListArray getItem:indexPath.row];
+            replyName = [NSString stringWithFormat:@"回复%@:",[item getString:@"UserName"]];
+            if ([[item getString:@"UserName"] isEqualToString:[UserInfo sharedUserInfo].username]) {
+                self.replyTextView.text = @"回复楼主:";
+                parentUserId = @"";
+                parentUserName = @"";
+            }else{
+                self.replyTextView.text = replyName;
+                parentUserId = [item getString:@"UserId"];
+                parentUserName = [item getString:@"UserName"];
+            }
+            
+            
+            [self showReplyAction];
+ 
         }
-        
-        
-        [self showReplyAction];
     }
     
 }
@@ -355,7 +370,7 @@ static NSString *replyidentify = @"CommunityReplyCell";
         [addImageBG addSubview:imageCollectionView];
         
         imageNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _keyBoardHeight-40, Main_Screen_Width, 20)];
-        imageNumberLabel.text = [NSString stringWithFormat:@"已选%d张，还可以添加%d张",selectImageNumber,3-selectImageNumber];
+        imageNumberLabel.text = [NSString stringWithFormat:@"已选%ld张，还可以添加%ld张",(long)selectImageNumber,3-selectImageNumber];
         imageNumberLabel.textColor = [UIColor darkGrayColor];
         imageNumberLabel.font = [UIFont systemFontOfSize:13.0];
         imageNumberLabel.textAlignment = NSTextAlignmentCenter;
@@ -435,7 +450,7 @@ static NSString *replyidentify = @"CommunityReplyCell";
     [selectImageArray removeObjectAtIndex:button.tag];
     [imageCollectionView reloadData];
     selectImageNumber -= 1;
-    imageNumberLabel.text = [NSString stringWithFormat:@"已选%d张，还可以添加%d张",selectImageNumber,3-selectImageNumber];
+    imageNumberLabel.text = [NSString stringWithFormat:@"已选%ld张，还可以添加%ld张",(long)selectImageNumber,3-selectImageNumber];
 }
 
 -(void)addImageDelegate{
@@ -472,8 +487,6 @@ static NSString *replyidentify = @"CommunityReplyCell";
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-    DLog(@"%@",text);
-    DLog(@"%d",textView.selectedRange.location);
     if (textView.selectedRange.location<replyName.length ) {
         return NO;
     }else{
@@ -542,6 +555,14 @@ static NSString *replyidentify = @"CommunityReplyCell";
             
         }else{
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        if (communityReplyListArray.size) {
+            self.tableView.mj_footer.hidden = NO;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        }else{
+            self.tableView.mj_footer.hidden = YES;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         }
         
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];

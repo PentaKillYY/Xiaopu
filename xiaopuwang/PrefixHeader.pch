@@ -45,5 +45,8 @@
 #import <UShareUI/UShareUI.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
-
+#import "NoDataTableViewCell.h"
+#import "NoSearchDataTableViewCell.h"
+#import "NoReplyTableViewCell.h"
+#import "NoOrderTableViewCell.h"
 #endif /* PrefixHeader_pch */

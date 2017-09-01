@@ -100,6 +100,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
+}
+
 -(void)setUpTableView
 {
     self.tableView.contentOffset = CGPointMake(0, -45);
@@ -683,6 +693,8 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (currentSegIndex == 0) {
         pickerString = EducationTrainingSchoolPickerData[pickerView.tag][row];
+
+        
     }else if (currentSegIndex == 1){
         if (pickerView.tag > 5 && pickerView.tag < 5+internationalArray.count+1+1){
             pickerString = EducationInternationalForeignScore[row];

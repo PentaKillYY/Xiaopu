@@ -95,7 +95,11 @@
 
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return appointmentResult.items.size+orderResult.items.size;
+    if (appointmentResult.items.size+orderResult.items.size) {
+       return appointmentResult.items.size+orderResult.items.size;
+    }else{
+        return 1;
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -107,64 +111,77 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section < appointmentResult.items.size) {
-        return  [tableView fd_heightForCellWithIdentifier:@"MyAppiontOrder" cacheByIndexPath:indexPath configuration:^(id cell) {
-                    [self congigCell:cell Index:indexPath];
-        }];
-    }else{
-        DataItem* item = [orderResult.items getItem:indexPath.section-appointmentResult.items.size];
-        if ([[item getString:@"TradeStatus1"] isEqual:@"未支付"]){
-            return  [tableView fd_heightForCellWithIdentifier:@"MyPay" cacheByIndexPath:indexPath configuration:^(id cell) {
-                [self configPayCell:cell Index:indexPath];
-            }];
-        }else if([[item getString:@"TradeStatus1"] isEqual:@"已支付"] &&[[item getString:@"EvaluateStatus"] isEqual:@"未评价"]) {
-            return  [tableView fd_heightForCellWithIdentifier:@"MyEvaluate" cacheByIndexPath:indexPath configuration:^(id cell) {
-                [self configEvaluateCell:cell Index:indexPath];
+    if (appointmentResult.items.size+orderResult.items.size) {
+        if (indexPath.section < appointmentResult.items.size) {
+            return  [tableView fd_heightForCellWithIdentifier:@"MyAppiontOrder" cacheByIndexPath:indexPath configuration:^(id cell) {
+                [self congigCell:cell Index:indexPath];
             }];
         }else{
-            return  [tableView fd_heightForCellWithIdentifier:@"MyAllOrder" cacheByIndexPath:indexPath configuration:^(id cell) {
-                [self configAllOrderCell:cell Index:indexPath];
-            }];
+            DataItem* item = [orderResult.items getItem:indexPath.section-appointmentResult.items.size];
+            if ([[item getString:@"TradeStatus1"] isEqual:@"未支付"]){
+                return  [tableView fd_heightForCellWithIdentifier:@"MyPay" cacheByIndexPath:indexPath configuration:^(id cell) {
+                    [self configPayCell:cell Index:indexPath];
+                }];
+            }else if([[item getString:@"TradeStatus1"] isEqual:@"已支付"] &&[[item getString:@"EvaluateStatus"] isEqual:@"未评价"]) {
+                return  [tableView fd_heightForCellWithIdentifier:@"MyEvaluate" cacheByIndexPath:indexPath configuration:^(id cell) {
+                    [self configEvaluateCell:cell Index:indexPath];
+                }];
+            }else{
+                return  [tableView fd_heightForCellWithIdentifier:@"MyAllOrder" cacheByIndexPath:indexPath configuration:^(id cell) {
+                    [self configAllOrderCell:cell Index:indexPath];
+                }];
+            }
+            
         }
-       
+
+    }else{
+        return Main_Screen_Height-64-45;
     }
-    
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section < appointmentResult.items.size) {
-        MyAppiontOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyAppiontOrderTableViewCell" owner:self options:nil].firstObject;
-        cell.delegate = self;
-        cell.dealOrderButton.tag =indexPath.section;
-        cell.cancelOrderButton.tag = indexPath.section;
-        
-        [self congigCell:cell Index:indexPath];
-        return cell;
-    }else{
-        DataItem* item = [orderResult.items getItem:indexPath.section-appointmentResult.items.size];
-        if ([[item getString:@"TradeStatus1"] isEqual:@"未支付"]) {
-            MyPayTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyPayTableViewCell" owner:self options:nil].firstObject;
+    
+    if (appointmentResult.items.size+orderResult.items.size){
+        if (indexPath.section < appointmentResult.items.size) {
+            MyAppiontOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyAppiontOrderTableViewCell" owner:self options:nil].firstObject;
             cell.delegate = self;
+            cell.dealOrderButton.tag =indexPath.section;
             cell.cancelOrderButton.tag = indexPath.section;
-            cell.dealOrderButton.tag = indexPath.section;
-            [self configPayCell:cell Index:indexPath];
-            return cell;
-        }else if ([[item getString:@"TradeStatus1"] isEqual:@"已支付"] &&[[item getString:@"EvaluateStatus"] isEqual:@"未评价"]){
-            MyEvaluateTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyEvaluateTableViewCell" owner:self options:nil].firstObject;
-            cell.delegate = self;
-            cell.cancelOrderButton.tag = indexPath.section;
-            cell.dealOrderButton.tag = indexPath.section;
             
-            [self configEvaluateCell:cell Index:indexPath];
+            [self congigCell:cell Index:indexPath];
             return cell;
         }else{
-            MyAllOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyAllOrderTableViewCell" owner:self options:nil].firstObject;
-            cell.delegate = self;
-            cell.deleteOrderButton.tag = indexPath.section;
-            [self configAllOrderCell:cell Index:indexPath];
-            return cell;
+            DataItem* item = [orderResult.items getItem:indexPath.section-appointmentResult.items.size];
+            if ([[item getString:@"TradeStatus1"] isEqual:@"未支付"]) {
+                MyPayTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyPayTableViewCell" owner:self options:nil].firstObject;
+                cell.delegate = self;
+                cell.cancelOrderButton.tag = indexPath.section;
+                cell.dealOrderButton.tag = indexPath.section;
+                [self configPayCell:cell Index:indexPath];
+                return cell;
+            }else if ([[item getString:@"TradeStatus1"] isEqual:@"已支付"] &&[[item getString:@"EvaluateStatus"] isEqual:@"未评价"]){
+                MyEvaluateTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyEvaluateTableViewCell" owner:self options:nil].firstObject;
+                cell.delegate = self;
+                cell.cancelOrderButton.tag = indexPath.section;
+                cell.dealOrderButton.tag = indexPath.section;
+                
+                [self configEvaluateCell:cell Index:indexPath];
+                return cell;
+            }else{
+                MyAllOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyAllOrderTableViewCell" owner:self options:nil].firstObject;
+                cell.delegate = self;
+                cell.deleteOrderButton.tag = indexPath.section;
+                [self configAllOrderCell:cell Index:indexPath];
+                return cell;
+            }
         }
+
+    }else{
+        NoOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"NoOrderTableViewCell" owner:self options:nil].firstObject;
+        
+        return cell;
     }
+    
 }
 
 

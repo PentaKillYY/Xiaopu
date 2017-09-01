@@ -40,17 +40,22 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.activityArray.count;
+//    return self.activityArray.count;
+    return 1;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ActivityTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"ActivityTableViewCell" owner:self options:nil].firstObject;
-    [cell bingdingViewModel:self.activityArray[indexPath.row]];
+//    ActivityTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"ActivityTableViewCell" owner:self options:nil].firstObject;
+//    [cell bingdingViewModel:self.activityArray[indexPath.row]];
+//    return cell;
+    
+    NoDataTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"NoDataTableViewCell" owner:self options:nil].firstObject;
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  (Main_Screen_Width-10)/2+31;
+//    return  (Main_Screen_Width-10)/2+31;
+    return Main_Screen_Height-64;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

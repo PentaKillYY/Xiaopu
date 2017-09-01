@@ -16,8 +16,6 @@
     UIView* backPriceBgView;
 }
 
-
-
 @end
 
 @implementation OrderEvaluateViewController
@@ -71,7 +69,12 @@
 
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return orderResult.items.size;
+    if (orderResult.items.size) {
+        return orderResult.items.size;
+    }else{
+        return 1;
+    }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -83,19 +86,29 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  [tableView fd_heightForCellWithIdentifier:@"MyEvaluate" cacheByIndexPath:indexPath configuration:^(id cell) {
-        [self congigCell:cell Index:indexPath];
-    }];
+    if (orderResult.items.size) {
+        return  [tableView fd_heightForCellWithIdentifier:@"MyEvaluate" cacheByIndexPath:indexPath configuration:^(id cell) {
+            [self congigCell:cell Index:indexPath];
+        }];
+    }else{
+        return Main_Screen_Height-64-45;
+    }
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MyEvaluateTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyEvaluateTableViewCell" owner:self options:nil].firstObject;
-    cell.delegate = self;
-    cell.cancelOrderButton.tag = indexPath.section;
-    cell.dealOrderButton.tag = indexPath.section;
-    
-    [self congigCell:cell Index:indexPath];
-    return cell;
+    if (orderResult.items.size) {
+        MyEvaluateTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyEvaluateTableViewCell" owner:self options:nil].firstObject;
+        cell.delegate = self;
+        cell.cancelOrderButton.tag = indexPath.section;
+        cell.dealOrderButton.tag = indexPath.section;
+        
+        [self congigCell:cell Index:indexPath];
+        return cell;
+    }else{
+        NoOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"NoOrderTableViewCell" owner:self options:nil].firstObject;
+        
+        return cell;
+    }
 }
 
 -(void)congigCell:(MyEvaluateTableViewCell*)cell Index:(NSIndexPath*)indexpath{
@@ -235,9 +248,9 @@
     
     backPriceBgView.backgroundColor = [UIColor colorWithRed:135/255 green:135/255 blue:135/255 alpha:0.8];
     
-    UIImageView* backPriceImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 255, 217)];
+    UIImageView* backPriceImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 235, 198)];
     backPriceImage.center = CGPointMake(Main_Screen_Width/2, (Main_Screen_Height-44-64)/2);
-    backPriceImage.image = V_IMAGE(@"rewardbg");
+    backPriceImage.image = V_IMAGE(@"NewRewardBg");
     
     
     [backPriceBgView addSubview:backPriceImage];

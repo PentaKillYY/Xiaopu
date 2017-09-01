@@ -16,14 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="58.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-2h-Uth">
-                        <rect key="frame" x="127" y="10" width="66" height="10"/>
+                        <rect key="frame" x="107" y="7" width="106" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="x9z-2h-Uth" secondAttribute="height" multiplier="198:30" id="2dv-uz-1NR"/>
-                            <constraint firstAttribute="height" constant="10" id="KSb-PY-EbU"/>
+                            <constraint firstAttribute="height" constant="16" id="KSb-PY-EbU"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="69T-qv-HGS">
@@ -36,9 +36,9 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="69T-qv-HGS" secondAttribute="trailing" constant="8" id="Ki8-RT-fUm"/>
                     <constraint firstAttribute="bottom" secondItem="69T-qv-HGS" secondAttribute="bottom" constant="10" id="L4o-vT-bHG"/>
-                    <constraint firstItem="x9z-2h-Uth" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MzF-2Q-lHY"/>
+                    <constraint firstItem="x9z-2h-Uth" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="MzF-2Q-lHY"/>
                     <constraint firstItem="x9z-2h-Uth" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Rg0-YI-3EQ"/>
-                    <constraint firstItem="69T-qv-HGS" firstAttribute="top" secondItem="x9z-2h-Uth" secondAttribute="bottom" constant="10" id="feT-ie-UEi"/>
+                    <constraint firstItem="69T-qv-HGS" firstAttribute="top" secondItem="x9z-2h-Uth" secondAttribute="bottom" constant="7" id="feT-ie-UEi"/>
                     <constraint firstItem="69T-qv-HGS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jMY-by-9WC"/>
                 </constraints>
             </tableViewCellContentView>

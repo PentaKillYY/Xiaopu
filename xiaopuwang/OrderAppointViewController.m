@@ -68,7 +68,12 @@
 
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return appointmentResult.items.size;
+    if (appointmentResult.items.size) {
+        return appointmentResult.items.size;
+    }else{
+        return 1;
+    }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -80,19 +85,32 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  [tableView fd_heightForCellWithIdentifier:@"MyAppiontOrder" cacheByIndexPath:indexPath configuration:^(id cell) {
-        [self congigCell:cell Index:indexPath];
-    }];
+    if (appointmentResult.items.size) {
+        return  [tableView fd_heightForCellWithIdentifier:@"MyAppiontOrder" cacheByIndexPath:indexPath configuration:^(id cell) {
+            [self congigCell:cell Index:indexPath];
+        }];
+    }else{
+        return Main_Screen_Height-64-45;
+    }
+    
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MyAppiontOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyAppiontOrderTableViewCell" owner:self options:nil].firstObject;
-    cell.delegate = self;
-    cell.dealOrderButton.tag =indexPath.section;
-    cell.cancelOrderButton.tag = indexPath.section;
+    if (appointmentResult.items.size) {
+        MyAppiontOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyAppiontOrderTableViewCell" owner:self options:nil].firstObject;
+        cell.delegate = self;
+        cell.dealOrderButton.tag =indexPath.section;
+        cell.cancelOrderButton.tag = indexPath.section;
+        
+        [self congigCell:cell Index:indexPath];
+        return cell;
+    }else{
+        NoOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"NoOrderTableViewCell" owner:self options:nil].firstObject;
+
+        return cell;
+
+    }
     
-    [self congigCell:cell Index:indexPath];
-    return cell;
 }
 
 -(void)congigCell:(MyAppiontOrderTableViewCell*)cell Index:(NSIndexPath*)indexpath{

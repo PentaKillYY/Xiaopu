@@ -30,7 +30,7 @@ static NSString *identifyCollection = @"CommentImageCollectionViewCell";
 
 -(void)bingdingViewModel:(DataItem*)item{
     [self.userLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,[item getString:@"UserPhoto"]]] placeholderImage:nil];
-    [self.userLogo.layer setCornerRadius:7.5];
+    [self.userLogo.layer setCornerRadius:11];
     [self.userLogo.layer setMasksToBounds:YES];
     
     self.userName.text = [item getString:@"UserName"];

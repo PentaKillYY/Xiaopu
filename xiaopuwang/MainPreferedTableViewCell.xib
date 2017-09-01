@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUs-TQ-cst">
-                        <rect key="frame" x="127" y="10" width="66" height="10"/>
+                        <rect key="frame" x="107.5" y="6" width="105" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="gUs-TQ-cst" secondAttribute="height" multiplier="198:30" id="bSG-Fq-TmW"/>
-                            <constraint firstAttribute="height" constant="10" id="vsT-JY-n22"/>
+                            <constraint firstAttribute="height" constant="16" id="vsT-JY-n22"/>
                         </constraints>
                     </imageView>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhT-sB-anV">
@@ -31,10 +31,10 @@
                     </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gUs-TQ-cst" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="16i-SN-UEL"/>
+                    <constraint firstItem="gUs-TQ-cst" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="16i-SN-UEL"/>
                     <constraint firstItem="dhT-sB-anV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8d6-22-jiw"/>
                     <constraint firstAttribute="bottom" secondItem="dhT-sB-anV" secondAttribute="bottom" constant="8" id="CyZ-Bc-eVh"/>
-                    <constraint firstItem="dhT-sB-anV" firstAttribute="top" secondItem="gUs-TQ-cst" secondAttribute="bottom" constant="8" id="NEr-o6-yzj"/>
+                    <constraint firstItem="dhT-sB-anV" firstAttribute="top" secondItem="gUs-TQ-cst" secondAttribute="bottom" constant="6" id="NEr-o6-yzj"/>
                     <constraint firstAttribute="trailing" secondItem="dhT-sB-anV" secondAttribute="trailing" constant="8" id="lRH-5Z-eNY"/>
                     <constraint firstItem="gUs-TQ-cst" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qTg-5e-5aS"/>
                 </constraints>

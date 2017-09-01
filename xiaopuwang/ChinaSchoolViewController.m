@@ -49,6 +49,7 @@
 
     [self.tableView registerNib:[UINib nibWithNibName:@"SchoolTableViewCell" bundle:nil] forCellReuseIdentifier:@"SchoolTableViewCell"];
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"NoSearchDataTableViewCell" bundle:nil] forCellReuseIdentifier:@"NoSearchDataTableViewCell"];
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
@@ -111,7 +112,12 @@
     if (section == 0) {
         return 1;
     }else{
-        return schoolListArray.size;
+        if (schoolListArray.size) {
+            return schoolListArray.size;
+        }else{
+            return 1;
+        }
+        
     }
 }
 
@@ -122,9 +128,16 @@
         
         return cell;
     }else{
-        SchoolTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SchoolTableViewCell" owner:self options:nil].firstObject;
-        [self configCell:cell indexpath:indexPath];
-        return cell;
+        if (schoolListArray.size) {
+            SchoolTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SchoolTableViewCell" owner:self options:nil].firstObject;
+            [self configCell:cell indexpath:indexPath];
+            return cell;
+        }else{
+            NoSearchDataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoSearchDataTableViewCell" forIndexPath:indexPath];
+            
+            return cell;
+        }
+        
     }
 }
 
@@ -132,12 +145,15 @@
     if (indexPath.section == 0) {
         return 180;
     }else{
-        return [tableView fd_heightForCellWithIdentifier:@"SchoolTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            // configurations
-            [self configCell:cell indexpath:indexPath];
-        }];
-
-        
+        if (schoolListArray.size) {
+            return [tableView fd_heightForCellWithIdentifier:@"SchoolTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+                // configurations
+                [self configCell:cell indexpath:indexPath];
+            }];
+  
+        }else{
+            return 240;
+        }
     }
 }
 
@@ -361,7 +377,16 @@
         }else{
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
+        if (totalCount) {
+            self.tableView.mj_footer.hidden = NO;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        }else{
+            self.tableView.mj_footer.hidden = YES;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+        
         [self.tableView reloadData];
+        
         
     } onFailure:^(id json) {
         

@@ -40,11 +40,21 @@
     [reflectButton setBackgroundColor:SPECIALISTNAVCOLOR];
     [reflectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [reflectButton addTarget:self action:@selector(userReflectRequest) forControlEvents:UIControlEventTouchUpInside];
-    UILabel* tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 60, Main_Screen_Width-60, 20)];
+    
+    UILabel* tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 70, Main_Screen_Width-60, 20)];
     tipLabel.text = ReflectTip;
     tipLabel.font = [UIFont systemFontOfSize:10];
+    tipLabel.numberOfLines = 0;
+    NSDictionary *attrs = @{NSFontAttributeName : tipLabel.font};
+    CGSize maxSize = CGSizeMake(Main_Screen_Width-60, MAXFLOAT);
+    // 计算文字占据的高度
+    CGSize size = [ReflectTip boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
     
-    UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 80)];
+    // 设置label尺寸
+    tipLabel.frame = CGRectMake(30, 70, size.width, size.height);
+    
+    
+    UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width,  size.height+70+10)];
     [footerView addSubview:reflectButton];
     [footerView addSubview:tipLabel];
     

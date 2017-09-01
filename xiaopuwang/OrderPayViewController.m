@@ -67,7 +67,12 @@
 
 #pragma mark - UItableViewDatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return orderResult.items.size;
+    if (orderResult.items.size) {
+        return orderResult.items.size;
+    }else{
+        return 1;
+    }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -79,18 +84,30 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  [tableView fd_heightForCellWithIdentifier:@"MyPay" cacheByIndexPath:indexPath configuration:^(id cell) {
-        [self congigCell:cell Index:indexPath];
-    }];
+    if (orderResult.items.size) {
+        return  [tableView fd_heightForCellWithIdentifier:@"MyPay" cacheByIndexPath:indexPath configuration:^(id cell) {
+            [self congigCell:cell Index:indexPath];
+        }];
+    }else{
+        return Main_Screen_Height-64-45;
+    }
+    
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MyPayTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyPayTableViewCell" owner:self options:nil].firstObject;
-    cell.delegate = self;
-    cell.cancelOrderButton.tag = indexPath.section;
-    cell.dealOrderButton.tag = indexPath.section;
-    [self congigCell:cell Index:indexPath];
-    return cell;
+    if (orderResult.items.size) {
+        MyPayTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MyPayTableViewCell" owner:self options:nil].firstObject;
+        cell.delegate = self;
+        cell.cancelOrderButton.tag = indexPath.section;
+        cell.dealOrderButton.tag = indexPath.section;
+        [self congigCell:cell Index:indexPath];
+        return cell;
+    }else{
+        NoOrderTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"NoOrderTableViewCell" owner:self options:nil].firstObject;
+        
+        return cell;
+    }
+   
 }
 
 -(void)congigCell:(MyPayTableViewCell*)cell Index:(NSIndexPath*)indexpath{

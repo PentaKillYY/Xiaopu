@@ -81,6 +81,8 @@
     [self getCourseTypeList];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"OrginizationTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"NoSearchDataTableViewCell" bundle:nil] forCellReuseIdentifier:@"NoSearchDataTableViewCell"];
+    
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
@@ -189,7 +191,12 @@
     if (section == 0) {
         return 1;
     }else{
-        return orgListArray.size;
+        if (orgListArray.size) {
+            return orgListArray.size;
+        }else{
+            return 1;
+        }
+        
     }
 }
 
@@ -199,13 +206,18 @@
         cell.delegate = self;
         return cell;
     }else{
-        OrginizationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrgCell" forIndexPath:indexPath];
+        if (orgListArray.size) {
+            OrginizationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrgCell" forIndexPath:indexPath];
+            
+            [self configCell:cell indexpath:indexPath];
+            
+            return cell;
+        }else{
+            NoSearchDataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoSearchDataTableViewCell" forIndexPath:indexPath];
+            
+            return cell;
+        }
         
-
-
-        [self configCell:cell indexpath:indexPath];
-        
-        return cell;
     }
 }
 
@@ -225,9 +237,6 @@
             CATextLayer* title = [[CATextLayer alloc] init];
             title.string = @[orgDistrictAry,orgTypeAry,orgSortAry][selectColumn][selectRow];
         }
-        
-        
-//        CATextLayer *title = [self createTextLayerWithNSString:titleString withColor:self.textColor andPosition:titlePosition];
 
         return _menu;
 
@@ -251,11 +260,13 @@
     if (indexPath.section == 0) {
         return 180.0;
     }else{
-
-        return  [tableView fd_heightForCellWithIdentifier:@"OrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-           [self configCell:cell indexpath:indexPath];
-        }];
-        
+        if (orgListArray.size) {
+            return  [tableView fd_heightForCellWithIdentifier:@"OrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+                [self configCell:cell indexpath:indexPath];
+            }];
+        }else{
+            return 240;
+        }
     }
 }
 
@@ -443,11 +454,14 @@
         
         int curretnIndex = (int)orgListArray.size - (int)[result.detailinfo getDataItemArray:@"orglist"].size;
         if (totalCount > 0 ) {
+            
             for ( int i=curretnIndex ; i< orgListArray.size ; i++) {
                 [self getCourseClassTypeWithindex:i];
                 
             }
         }else{
+            self.tableView.mj_footer.hidden = YES;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
             
             [self.tableView.mj_header endRefreshing];
             
@@ -455,6 +469,7 @@
                 [self.tableView.mj_footer endRefreshing];
                 
             }else{
+                
                 [self.tableView.mj_footer endRefreshingWithNoMoreData];
             }
             [self.tableView reloadData];
@@ -472,8 +487,7 @@
     DataItem* item = [orgListArray getItem:index];
     
     [[OrginizationService sharedOrginizationService] getCourseClassTypeWithParameters:@{@"orgId":[item getString:@"Organization_Application_ID"]} onCompletion:^(id json) {
-        
-        DataResult* result = json;
+                DataResult* result = json;
         
         
         [tagDic setObject:result.items forKey:[NSString stringWithFormat:@"%ld",(long)index]];
@@ -492,6 +506,9 @@
         }else{
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
+        self.tableView.mj_footer.hidden = NO;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
 
     } onFailure:^(id json) {
         
