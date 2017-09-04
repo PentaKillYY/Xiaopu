@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="api.css" />
+    <link rel="stylesheet" type="text/css" href="common.css" />
+    <link rel="stylesheet" type="text/css" href="guidanceDetail.css" />
+    <script src="jquery.min.js"></script>
+    <script src="iscroll.js"></script>
+    <script type="text/javascript">
+
+        
+        var myscroll;
+
+        function loaded() {
+
+            setTimeout(function () {
+
+                myscroll1 = new iScroll("wrapper", {
+                    hScrollbar: false,
+                    vScrollbar: false,
+                    checkDOMChanges:true
+                });
+            })
+        }
+        window.addEventListener("load",loaded,false);
+
+    </script>
+</head>
+<body>
+<header>
+    <a class="left-back" href="#" onclick="backPage()">
+        <span class="arrow-left"></span>
+    </a>
+    <div class="head-title">
+        问题详述
+    </div>
+</header>
+<section id="wrapper">
+    <div>
+        <!--<div class="guiDanceItem">
+            <p class="guiDanceItem_Title">THIS IS A TITLE</p>
+            <div class="guiDanceItem_Info">
+                THIS IS INFO THIS IS INFO THIS IS INFO THIS IS INFO THIS IS INFO THIS IS INFO THIS IS INFO THIS IS INFO THIS IS INFO THIS IS INFO
+                <img src="../images/123.jpg" alt=""/>
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">THIS IS A TITLE</p>
+                <ul class="list-unstyled">
+                    <li>
+                        THIS IS AN OTHER QUESTION
+                    </li>
+                    <li>
+                        THIS IS AN OTHER QUESTION
+                    </li>
+                    <li>
+                        THIS IS AN OTHER QUESTION
+                    </li>
+                    <li>
+                        THIS IS AN OTHER QUESTION
+                    </li>
+                </ul>
+            </div>-->
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">选择好机构如何咨询</p>
+            <div class="guiDanceItem_Info">
+                在机构详情页面；
+                点击机构下方【联系机构课程顾问】即可咨询；
+                输入相应的咨询信息，机构老师会主动和你联系的；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="2">
+                        咨询后一般几天内有答复
+                    </li>
+                    <li class="3">
+                        如何再次联系机构老师
+                    </li>
+                    <li class="6">
+                        如何支付报名费用
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno ">
+            <p class="guiDanceItem_Title">咨询后一般几天内有答复</p>
+            <div class="guiDanceItem_Info">
+                机构咨询后，一般在5个工作日内，机构老师会主动联系
+                您，请耐心等待。
+                <span class="colorSpan_1">温馨提示：</span>如未能主动联系，请再次进入该机构详情页面
+                点击<span class="colorSpan_1">【联系老师】</span>再次沟通；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="3">
+                        如何再次联系机构老师
+                    </li>
+                    <li class="4">
+                        详情页“我要砍价”什么意思
+                    </li>
+                    <li class="6">
+                        如何支付报名费用
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">如何再次联系机构老师</p>
+            <div class="guiDanceItem_Info">
+                进入该机构详情页面点击下方【联系老师】再次沟通；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="4">
+                        详情页“我要砍价”什么意思
+                    </li>
+                    <li class="6">
+                        详情页“立即支付”怎么操作
+                    </li>
+                    <li class="6">
+                        如何支付报名费用
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">详情页“我要砍价”什么意思</p>
+            <div class="guiDanceItem_Info">
+                机构详情页咨询后，就会出现【我要砍价】按钮，点击按钮，可以寻求校谱网帮助，由我们平台和该机构进行沟通，为您争取最少的学费。
+
+               <span class="colorSpan_1">温馨提示：</span>减免学费最终金额，解释权归平台所有。
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="6">
+                        如何支付报名费用
+                    </li>
+                    <li class="5">
+                        详情页“立即支付”怎么操作
+                    </li>
+                    <li class="7">
+                        机构订单在哪里显示
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">详情页“立即支付”怎么操作</p>
+            <div class="guiDanceItem_Info">
+                进入该机构详情页面点击【立即支付】，输入与机构老师达成一致的信息，点击提交，选择支付方式，即可；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="6">
+                        如何支付报名费用
+                    </li>
+                    <li class="7">
+                        机构订单在哪里显示
+                    </li>
+                    <li class="8">
+                        线下支付订单如何确认
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">如何支付报名费用</p>
+            <div class="guiDanceItem_Info">
+                首页点击【我的】进入个人中心页面，再次点击【培训学校订单】；
+                进入全部订单页面，可以看到已预约成功的订单；点击【立即付款】即可支付相应学费；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="7">
+                        机构订单在哪里显示
+                    </li>
+                    <li class="8">
+                        线下支付订单如何确认
+                    </li>
+                    <li class="9">
+                        如何抽取英才奖学金
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">机构订单在哪里显示</p>
+            <div class="guiDanceItem_Info">
+                首页点击【我的】进入个人中心页面，再次点击【培训学校订单】；进入全部订单页面；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="8">
+                        线下支付订单如何确认
+                    </li>
+                    <li class="9">
+                        如何抽取英才奖学金
+                    </li>
+                    <li class="11">
+                        英才奖学金在哪里
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">线下支付订单如何确认</p>
+            <div class="guiDanceItem_Info">
+                线下支付的订单，请耐心等待培训学校确认；确认完成后，可评价订单及抽取英才奖学金
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="9">
+                        如何抽取英才奖学金
+                    </li>
+                    <li class="11">
+                        英才奖学金在哪里
+                    </li>
+                    <li class="10">
+                        英才奖学金如何提现
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">如何抽取英才奖学金</p>
+            <div class="guiDanceItem_Info">
+                在首页点击【我的】进入个人中心页面，再次点击【培训学校订单】；
+                进入全部订单页面，可以看到已付款成功的订单；点击【分享抽学费】分享到朋友圈后，就可以领取英才奖学金
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="10">
+                        英才奖学金如何提现
+                    </li>
+                    <li class="11">
+                        英才奖学金在哪里
+                    </li>
+                    <li class="12">
+                        申请提现多久到账
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">英才奖学金如何提现</p>
+            <div class="guiDanceItem_Info">
+                在个人中心，点击【我的钱包】进入我的钱包页面【提现】按钮，申请提现
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="16">
+                        如何绑定银行卡
+                    </li>
+                    <li class="12">
+                        申请提现多久到账
+                    </li>
+                    <li class="13">
+                        提现有没有手续费
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">英才奖学金在哪里</p>
+            <div class="guiDanceItem_Info">
+                在个人中心，点击【我的钱包】进入我的钱包页面
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="14">
+                        为什么购买成功没有英才奖学金
+                    </li>
+                    <li class="12">
+                        申请提现多久到账
+                    </li>
+                    <li class="10">
+                        英才奖学金如何提现
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">申请提现多久到账</p>
+            <div class="guiDanceItem_Info">
+                申请提现后工作人员会在2-3个工作日处理提现申请，申请功通过后3-5个工作日到账；具体到账时间更具提现所在银行；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="10">
+                        英才奖学金如何提现
+                    </li>
+                    <li class="13">
+                        提现有没有手续费
+                    </li>
+                    <li class="16">
+                        如何绑定银行卡
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">提现有没有手续费</p>
+            <div class="guiDanceItem_Info">
+                没有手续费；提现金额全部打款到账
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="12">
+                        申请提现多久到账
+                    </li>
+                    <li class="10">
+                        英才奖学金如何提现
+                    </li>
+                    <li class="16">
+                        如何绑定银行卡
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">为什么购买成功没有英才奖学金</p>
+            <div class="guiDanceItem_Info">
+                进入个人中心点击【培训学校订单】；在待评价，状态里点击【分享抽学费】即可；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="12">
+                        如何抽取英才奖学金
+                    </li>
+                    <li class="14">
+                        英才奖学金在哪里
+                    </li>
+                    <li class="13">
+                        英才奖学金如何提现
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">为什么发起提现还没有到账</p>
+            <div class="guiDanceItem_Info">
+                您放心，任何提现都是提到您绑定的银行卡里；
+                请耐心等待；
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="12">
+                        申请提现多久到账
+                    </li>
+                    <li class="16">
+                        如何绑定银行卡
+                    </li>
+                    <li class="13">
+                        提现有没有手续费
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="guiDanceItem disno">
+            <p class="guiDanceItem_Title">如何绑定银行卡</p>
+            <div class="guiDanceItem_Info">
+                在我的【我的钱包】页面点击【我的银行卡】，点击右上角+按钮，新增银行卡；
+                温馨提示：微信公众号用户，点击下方新增银行按钮，新增银行卡
+            </div>
+            <div class="guiDanceItem_AboutQuestion">
+                <p class="guiDanceItem_AboutQuestion_Title">相关问题</p>
+                <ul class="list-unstyled">
+                    <li class="10">
+                        英才奖学金如何提现
+                    </li>
+                    <li class="13">
+                        提现有没有手续费
+                    </li>
+                    <li class="12">
+                        申请提现多久到账
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="api.js"></script>
+<script src="common.js"></script>
+<script>
+        function backPage(){
+        window.location.href='newGuidance.html';
+    }
+
+    function showItem(){
+        $('.guiDanceItem').eq(itemNum-1).removeClass('disno');
+    }
+    $('.guiDanceItem>.guiDanceItem_AboutQuestion>ul').on('click','li',function(){
+        $('.guiDanceItem:not([class*=disno])').addClass('disno');
+        itemNum=Number($(this).attr('class'))-1;
+        $('.guiDanceItem').eq(itemNum).removeClass('disno');
+    })
+    
+    var itemNum=1;
+if(sessionStorage.getItem('itemNum'))
+	itemNum=1;sessionStorage.getItem=sessionStorage.getItem('itemNum');
+    showItem();
+</script>
+</html>

@@ -1,0 +1,61 @@
+html,body{
+    background-color: #efefef;
+    height: 100%;
+}
+section{
+    height: 100%;
+}
+.guiDanceItem{
+    margin: 15px;
+    border:1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+.guiDanceItem>.guiDanceItem_Title{
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.guiDanceItem>.guiDanceItem_Info{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+.guiDanceItem>.guiDanceItem_Info>img{
+    margin-top: 10px;
+    width: 100%;
+}
+.guiDanceItem>.guiDanceItem_AboutQuestion{
+    display: inline-block;
+    width: 100%;
+    padding: 15px 20px;
+}
+.guiDanceItem>.guiDanceItem_AboutQuestion>.guiDanceItem_AboutQuestion_Title{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 17px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+.guiDanceItem>.guiDanceItem_AboutQuestion>ul>li{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 13px;
+    font-size: 13px;
+    color: #078ef7;
+}
+.colorSpan_1{
+    color: #f00;
+}
+

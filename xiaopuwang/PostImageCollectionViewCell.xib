@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kPostImageCollectionCell" id="gTV-IL-0wX" customClass="PostImageCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="108" height="101"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="108" height="101"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="WDF-Iu-dzn">
+                        <rect key="frame" x="8" y="8" width="92" height="85"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15y-eS-7cy">
+                        <rect key="frame" x="88" y="0.0" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Dga-Vs-wh7"/>
+                            <constraint firstAttribute="width" constant="20" id="qm0-kx-1dV"/>
+                        </constraints>
+                        <state key="normal" image="searchDel.png"/>
+                        <connections>
+                            <action selector="deleteImage:" destination="gTV-IL-0wX" eventType="touchUpInside" id="0tq-QV-lTr"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="15y-eS-7cy" secondAttribute="trailing" id="1bK-MY-jAZ"/>
+                <constraint firstItem="WDF-Iu-dzn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="62B-0J-Sf6"/>
+                <constraint firstItem="WDF-Iu-dzn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ElX-wR-ugf"/>
+                <constraint firstAttribute="trailing" secondItem="WDF-Iu-dzn" secondAttribute="trailing" constant="8" id="LJZ-oA-hdb"/>
+                <constraint firstAttribute="bottom" secondItem="WDF-Iu-dzn" secondAttribute="bottom" constant="8" id="cDX-ds-ENQ"/>
+                <constraint firstItem="15y-eS-7cy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ySP-Ie-0RM"/>
+            </constraints>
+            <size key="customSize" width="108" height="101"/>
+            <connections>
+                <outlet property="deleteButton" destination="15y-eS-7cy" id="Jye-QR-4aK"/>
+                <outlet property="selectImage" destination="WDF-Iu-dzn" id="tdf-IN-wiu"/>
+            </connections>
+            <point key="canvasLocation" x="62" y="131.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="add-pic.png" width="104" height="104"/>
+        <image name="searchDel.png" width="32" height="32"/>
+    </resources>
+</document>

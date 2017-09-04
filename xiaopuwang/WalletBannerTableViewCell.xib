@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="WalletBannerTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9b-Ks-GdG">
+                        <rect key="frame" x="16" y="16" width="57" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="优惠券6张">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="couponAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UF1-Vt-fvI"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户余额（人民币）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuy-Ju-MEB">
+                        <rect key="frame" x="105" y="22.5" width="110.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cko-2q-xiT">
+                        <rect key="frame" x="254" y="16" width="50" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="交易明细">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="detailAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7Hs-9c-dhW"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="￥0.08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWS-Z9-rXp">
+                        <rect key="frame" x="137.5" y="53" width="46.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltZ-TA-B9s">
+                        <rect key="frame" x="135" y="87" width="50" height="16.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="申请提现">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="reflectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5n5-0k-zCX"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Yuy-Ju-MEB" firstAttribute="centerY" secondItem="U9b-Ks-GdG" secondAttribute="centerY" id="0kO-ZA-mGQ"/>
+                    <constraint firstAttribute="trailing" secondItem="Cko-2q-xiT" secondAttribute="trailing" constant="16" id="7gw-e3-QKM"/>
+                    <constraint firstItem="AWS-Z9-rXp" firstAttribute="top" secondItem="Yuy-Ju-MEB" secondAttribute="bottom" constant="16" id="B8g-a8-SrA"/>
+                    <constraint firstItem="Cko-2q-xiT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="CpI-wj-ZcQ"/>
+                    <constraint firstItem="ltZ-TA-B9s" firstAttribute="top" secondItem="AWS-Z9-rXp" secondAttribute="bottom" constant="16" id="Dgx-Yw-XqM"/>
+                    <constraint firstItem="Yuy-Ju-MEB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="GqH-oM-q1H"/>
+                    <constraint firstItem="ltZ-TA-B9s" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Jq4-3A-Ils"/>
+                    <constraint firstItem="AWS-Z9-rXp" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gWk-ct-lmo"/>
+                    <constraint firstItem="U9b-Ks-GdG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="p3J-ps-Pvm"/>
+                    <constraint firstAttribute="bottom" secondItem="ltZ-TA-B9s" secondAttribute="bottom" constant="16" id="rsk-WW-0VM"/>
+                    <constraint firstItem="U9b-Ks-GdG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="sga-Ip-PrJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92803418636322021" green="0.47948157787322998" blue="0.32720911502838135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="balanceLabel" destination="AWS-Z9-rXp" id="VIi-6M-arM"/>
+                <outlet property="couponButton" destination="U9b-Ks-GdG" id="X4f-jz-Tak"/>
+                <outlet property="detailButton" destination="Cko-2q-xiT" id="aNF-xD-l4h"/>
+                <outlet property="reflectButton" destination="ltZ-TA-B9s" id="aHa-Iu-iTF"/>
+            </connections>
+            <point key="canvasLocation" x="48" y="159"/>
+        </tableViewCell>
+    </objects>
+</document>

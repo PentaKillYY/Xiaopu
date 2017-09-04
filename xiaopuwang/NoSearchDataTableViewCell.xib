@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoSearchDataTableViewCell" id="KGk-i7-Jjw" customClass="NoSearchDataTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoSearch.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Hh-lR-UNq">
+                        <rect key="frame" x="138.5" y="0.0" width="43.5" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="5Hh-lR-UNq" secondAttribute="height" multiplier="1:1" id="IK6-9A-F0M"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5Hh-lR-UNq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="0wd-0E-xLB"/>
+                    <constraint firstAttribute="bottom" secondItem="5Hh-lR-UNq" secondAttribute="bottom" id="cCK-82-fT7"/>
+                    <constraint firstItem="5Hh-lR-UNq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yKa-eh-fwc"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="NoSearch.png" width="240" height="240"/>
+    </resources>
+</document>
