@@ -44,6 +44,7 @@
  
     [self configLocationManager];
     [self startSerialLocation];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -178,7 +179,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 6;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -192,13 +193,10 @@
         cell.dataresult = advertisementResult;
         return cell;
     }else if (indexPath.section == 1){
-        MainRollingTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainRollingTableViewCell" owner:self options:nil].firstObject;
-        return cell;
-    }else if (indexPath.section == 2){
         MainServiceTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainServiceTableViewCell" owner:self options:nil].firstObject;
         cell.delegate = self;
         return cell;
-    }else if (indexPath.section == 5){
+    }else if (indexPath.section == 4){
         MainPreferedTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainPreferedTableViewCell" owner:self options:nil].firstObject;
         cell.atitleView.image = V_IMAGE(@"校谱优选");
         cell.dataResult = advertisementResult;
@@ -206,7 +204,7 @@
         return cell;
     }else{
         MainActivityTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainActivityTableViewCell" owner:self options:nil].firstObject;
-        if (indexPath.section == 3) {
+        if (indexPath.section == 2) {
             cell.atitleImage.image = V_IMAGE(@"大额");
             cell.acontentImage.image = V_IMAGE(@"大额补贴");
         }else{
@@ -224,13 +222,11 @@
     if (indexPath.section == 0) {
         return (Main_Screen_Width/750)*452;
     }else if (indexPath.section == 1){
-        return 44;
-    }else if (indexPath.section == 2){
         return ((Main_Screen_Width-20)/2 *216)/342 +10;
-    }else if (indexPath.section == 5){
+    }else if (indexPath.section == 4){
         return (Main_Screen_Width-14)/3+30+(Main_Screen_Width/320)*10;
     }else {
-        if (indexPath.section == 3) {
+        if (indexPath.section == 2) {
            return ((Main_Screen_Width-16)/1473)*540+30+ (Main_Screen_Width/320)*10;
         }else{
             return ((Main_Screen_Width-16)/1920)*648+30+ (Main_Screen_Width/320)*10;
@@ -249,9 +245,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 3 ) {
+    if (indexPath.section == 2 ) {
         [self performSegueWithIdentifier:@"MainToSubTidy" sender:self];
-    }else if (indexPath.section == 4){
+    }else if (indexPath.section == 3){
         [self performSegueWithIdentifier:@"MainToActivity" sender:self];
     }
 }

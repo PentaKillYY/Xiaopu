@@ -263,7 +263,6 @@
 		04573F721F13725F00B52C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04573F711F13725F00B52C76 /* AppDelegate.m */; };
 		04573F781F13725F00B52C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F761F13725F00B52C76 /* Main.storyboard */; };
 		04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04573F791F13725F00B52C76 /* Assets.xcassets */; };
-		04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04573F7B1F13725F00B52C76 /* LaunchScreen.storyboard */; };
 		0478B9A31F148C40003A9C8B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A21F148C40003A9C8B /* libc++.tbd */; };
 		0478B9A51F148C48003A9C8B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A41F148C48003A9C8B /* libz.tbd */; };
 		0478B9A71F148C4F003A9C8B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A61F148C4F003A9C8B /* SystemConfiguration.framework */; };
@@ -296,6 +295,7 @@
 		0478BA361F14C489003A9C8B /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA351F14C489003A9C8B /* BaseTableViewCell.m */; };
 		0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */; };
 		0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA451F14CD0F003A9C8B /* SchoolViewController.m */; };
+		0498E8381F59786700B83FF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0498E8371F59786700B83FF6 /* LaunchScreen.storyboard */; };
 		04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */; };
 		04A1D46C1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D46A1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m */; };
 		04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A1D46B1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib */; };
@@ -354,6 +354,7 @@
 		04F104A71F50059F0041991C /* CommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F104A61F50059F0041991C /* CommunityViewController.m */; };
 		04F104AC1F5012E90041991C /* CommunityOneLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F104AA1F5012E90041991C /* CommunityOneLineImageCell.m */; };
 		04F104AD1F5012E90041991C /* CommunityOneLineImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F104AB1F5012E90041991C /* CommunityOneLineImageCell.xib */; };
+		04F1E92C1F597B4800C3EF5D /* NewLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1E92B1F597B4800C3EF5D /* NewLaunchScreen.storyboard */; };
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
@@ -786,7 +787,6 @@
 		04573F711F13725F00B52C76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04573F771F13725F00B52C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04573F791F13725F00B52C76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04573F7C1F13725F00B52C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04573F7E1F13725F00B52C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0478B9A21F148C40003A9C8B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		0478B9A41F148C48003A9C8B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -842,6 +842,7 @@
 		0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrginizationViewController.m; sourceTree = "<group>"; };
 		0478BA441F14CD0F003A9C8B /* SchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolViewController.h; sourceTree = "<group>"; };
 		0478BA451F14CD0F003A9C8B /* SchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolViewController.m; sourceTree = "<group>"; };
+		0498E8371F59786700B83FF6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A1D4661F30769000EACEA8 /* ChinaSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaSchoolViewController.h; sourceTree = "<group>"; };
 		04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaSchoolViewController.m; sourceTree = "<group>"; };
 		04A1D4691F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaSchoolBannerTableViewCell.h; sourceTree = "<group>"; };
@@ -937,6 +938,7 @@
 		04F104A91F5012E90041991C /* CommunityOneLineImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityOneLineImageCell.h; sourceTree = "<group>"; };
 		04F104AA1F5012E90041991C /* CommunityOneLineImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityOneLineImageCell.m; sourceTree = "<group>"; };
 		04F104AB1F5012E90041991C /* CommunityOneLineImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityOneLineImageCell.xib; sourceTree = "<group>"; };
+		04F1E92B1F597B4800C3EF5D /* NewLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewLaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
@@ -1662,8 +1664,9 @@
 				0478B9921F147A94003A9C8B /* Resources */,
 				04573F761F13725F00B52C76 /* Main.storyboard */,
 				04573F791F13725F00B52C76 /* Assets.xcassets */,
-				04573F7B1F13725F00B52C76 /* LaunchScreen.storyboard */,
 				04573F7E1F13725F00B52C76 /* Info.plist */,
+				0498E8371F59786700B83FF6 /* LaunchScreen.storyboard */,
+				04F1E92B1F597B4800C3EF5D /* NewLaunchScreen.storyboard */,
 				04573F6D1F13725F00B52C76 /* Supporting Files */,
 			);
 			path = xiaopuwang;
@@ -2416,7 +2419,6 @@
 				043C0C4E1F5664A200CE98B2 /* PostCommunityContentCell.xib in Resources */,
 				0432AA6D1F3D88A900783ED2 /* MySettingTableViewCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
-				04573F7D1F13725F00B52C76 /* LaunchScreen.storyboard in Resources */,
 				04A1D4C61F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib in Resources */,
 				04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
@@ -2424,6 +2426,7 @@
 				040C74401F4BDC43001F5318 /* ReflectPriceTableViewCell.xib in Resources */,
 				040C74971F4F009F001F5318 /* guidanceDetail.html in Resources */,
 				043C0BE01F5165FA00CE98B2 /* CommunityDetailCell.xib in Resources */,
+				0498E8381F59786700B83FF6 /* LaunchScreen.storyboard in Resources */,
 				043C0C491F56648A00CE98B2 /* PostCommunityTitleCell.xib in Resources */,
 				04A1D47A1F31ABAD00EACEA8 /* SchoolDetailTableViewCell.xib in Resources */,
 				040C73721F442B3B001F5318 /* EvaluateNumberTableViewCell.xib in Resources */,
@@ -2442,6 +2445,7 @@
 				043C0CC51F592BBC00CE98B2 /* NoData.png in Resources */,
 				04573F7A1F13725F00B52C76 /* Assets.xcassets in Resources */,
 				0432AA851F3DB06400783ED2 /* MyAboutDetailTableViewCell.xib in Resources */,
+				04F1E92C1F597B4800C3EF5D /* NewLaunchScreen.storyboard in Resources */,
 				040C743B1F4BDC2A001F5318 /* ReflectBannerTableViewCell.xib in Resources */,
 				0445EF201F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib in Resources */,
 				043C0C841F5692F800CE98B2 /* LocationTableViewCell.xib in Resources */,
@@ -2797,14 +2801,6 @@
 				04573F771F13725F00B52C76 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		04573F7B1F13725F00B52C76 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04573F7C1F13725F00B52C76 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

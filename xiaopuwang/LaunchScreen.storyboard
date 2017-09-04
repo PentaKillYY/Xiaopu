@@ -21,16 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchPic" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-bU-Dzz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchPic" translatesAutoresizingMaskIntoConstraints="NO" id="Byy-ky-4Ou">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2017年 ings. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
+                                <rect key="frame" x="20" y="641.5" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Nsh-bU-Dzz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="YYH-jD-frI"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Nsh-bU-Dzz" secondAttribute="bottom" id="eSN-hw-y9f"/>
-                            <constraint firstAttribute="trailing" secondItem="Nsh-bU-Dzz" secondAttribute="trailing" id="qyy-yd-FOE"/>
-                            <constraint firstItem="Nsh-bU-Dzz" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="uoK-Hc-fas"/>
+                            <constraint firstItem="Byy-ky-4Ou" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2Vx-OZ-OP9"/>
+                            <constraint firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
+                            <constraint firstItem="Byy-ky-4Ou" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9vp-E0-5WR"/>
+                            <constraint firstAttribute="trailing" secondItem="Byy-ky-4Ou" secondAttribute="trailing" id="SCL-EY-VcQ"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
+                            <constraint firstAttribute="bottom" secondItem="Byy-ky-4Ou" secondAttribute="bottom" id="UvS-d5-zfl"/>
+                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="5" id="Y44-ml-fuU"/>
                         </constraints>
                     </view>
                 </viewController>
