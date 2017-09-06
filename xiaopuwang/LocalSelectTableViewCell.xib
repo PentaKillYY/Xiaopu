@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="LocalSelectTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本地精选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-aL-D4Z">
+                        <rect key="frame" x="8" y="8" width="57.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcJ-f5-6pA">
+                        <rect key="frame" x="8" y="33" width="74" height="28.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="优选老师">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectTagAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pqL-3L-wzQ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHK-Mx-0VY">
+                        <rect key="frame" x="85" y="33" width="73.5" height="28.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="培训学校">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectTagAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MYb-Ba-2dy"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1O-sq-F3Q">
+                        <rect key="frame" x="161.5" y="33" width="74" height="28.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="国际学校">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectTagAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e7R-6a-egs"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ci1-h7-Tl7">
+                        <rect key="frame" x="238.5" y="33" width="73.5" height="28.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="海外学校">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectTagAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="U9z-iW-hx4"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="whJ-aL-D4Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="03O-wH-QD5"/>
+                    <constraint firstItem="FHK-Mx-0VY" firstAttribute="height" secondItem="NcJ-f5-6pA" secondAttribute="height" id="1lh-ik-vX4"/>
+                    <constraint firstItem="FHK-Mx-0VY" firstAttribute="top" secondItem="NcJ-f5-6pA" secondAttribute="top" id="4wc-Vr-bDM"/>
+                    <constraint firstItem="c1O-sq-F3Q" firstAttribute="height" secondItem="NcJ-f5-6pA" secondAttribute="height" id="Fpo-RL-FH7"/>
+                    <constraint firstItem="ci1-h7-Tl7" firstAttribute="top" secondItem="NcJ-f5-6pA" secondAttribute="top" id="Hfy-NI-urk"/>
+                    <constraint firstItem="ci1-h7-Tl7" firstAttribute="width" secondItem="NcJ-f5-6pA" secondAttribute="width" id="N56-An-xwH"/>
+                    <constraint firstItem="ci1-h7-Tl7" firstAttribute="height" secondItem="NcJ-f5-6pA" secondAttribute="height" id="Smf-zM-JcX"/>
+                    <constraint firstItem="NcJ-f5-6pA" firstAttribute="top" secondItem="whJ-aL-D4Z" secondAttribute="bottom" constant="8" id="XDN-GF-7Jb"/>
+                    <constraint firstItem="FHK-Mx-0VY" firstAttribute="leading" secondItem="NcJ-f5-6pA" secondAttribute="trailing" constant="3" id="XGo-7l-SIQ"/>
+                    <constraint firstItem="NcJ-f5-6pA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="d2D-tf-8Lv"/>
+                    <constraint firstItem="FHK-Mx-0VY" firstAttribute="width" secondItem="NcJ-f5-6pA" secondAttribute="width" id="een-DP-k0K"/>
+                    <constraint firstAttribute="bottom" secondItem="NcJ-f5-6pA" secondAttribute="bottom" constant="8" id="fGd-wa-yYN"/>
+                    <constraint firstItem="c1O-sq-F3Q" firstAttribute="top" secondItem="NcJ-f5-6pA" secondAttribute="top" id="gJx-9W-ds4"/>
+                    <constraint firstItem="c1O-sq-F3Q" firstAttribute="width" secondItem="NcJ-f5-6pA" secondAttribute="width" id="pS4-kv-BMu"/>
+                    <constraint firstAttribute="trailing" secondItem="ci1-h7-Tl7" secondAttribute="trailing" constant="8" id="rQN-Yk-Z9e"/>
+                    <constraint firstItem="c1O-sq-F3Q" firstAttribute="leading" secondItem="FHK-Mx-0VY" secondAttribute="trailing" constant="3" id="u10-Wu-Rye"/>
+                    <constraint firstItem="whJ-aL-D4Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="uCX-6I-Yzf"/>
+                    <constraint firstItem="ci1-h7-Tl7" firstAttribute="leading" secondItem="c1O-sq-F3Q" secondAttribute="trailing" constant="3" id="z8k-6o-4vK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="chinaSchoolButton" destination="ci1-h7-Tl7" id="0SD-xt-xQ3"/>
+                <outlet property="interSchoolButton" destination="c1O-sq-F3Q" id="u2h-Pf-3TL"/>
+                <outlet property="orgButton" destination="FHK-Mx-0VY" id="rY9-WB-UiV"/>
+                <outlet property="teacherButton" destination="NcJ-f5-6pA" id="byR-sg-XKS"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="139"/>
+        </tableViewCell>
+    </objects>
+</document>

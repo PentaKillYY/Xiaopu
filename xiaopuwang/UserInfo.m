@@ -49,6 +49,8 @@
         decodeObject(userIdentity);
         decodeObject(address);
         decodeObject(communityType);
+        decodeObject(firstSelectIndex);
+        decodeObject(secondSelectIndex);
     }
     
     return self;
@@ -77,6 +79,8 @@
     encodeObject(userIdentity);
     encodeObject(address);
     encodeObject(communityType);
+    encodeObject(firstSelectIndex);
+    encodeObject(secondSelectIndex);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
@@ -102,6 +106,8 @@
     self.userIdentity=dict[@"userIdentity"];
     self.address=dict[@"address"];
     self.communityType=dict[@"communityType"];
+    self.firstSelectIndex=dict[@"firstSelectIndex"];
+    self.secondSelectIndex=dict[@"secondSelectIndex"];
 }
 
 - (void)logout{

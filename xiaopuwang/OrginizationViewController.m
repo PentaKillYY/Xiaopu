@@ -110,7 +110,12 @@
        orgTypeName = @"";
     }
     
-    orgGroupName = @"";
+    if (self.orgKind.length) {
+        orgGroupName = self.orgKind;
+    }else{
+        orgGroupName = @"";
+    }
+    
     selectArea = @"";
 }
 
@@ -408,6 +413,13 @@
             }else{
                 orgTypeName = @"";
             }
+            
+            if (self.orgKind.length) {
+                orgGroupName = self.orgKind;
+            }else{
+                orgGroupName = @"";
+            }
+            
             [self.tableView.mj_header beginRefreshing];
         }else{
             if (indexPath.row == 3) {

@@ -315,7 +315,13 @@
             
             [self getUserCouponListRequest];
         } onFailure:^(id json) {
+            DataResult* result = json;
             
+            info.userBalance = [NSString stringWithFormat:@"%f",[result.detailinfo getDouble:@"TotalPrice"]];
+            [info synchronize];
+            
+            [self getUserCouponListRequest];
+
         }];
     }
 }

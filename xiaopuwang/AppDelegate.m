@@ -45,6 +45,20 @@
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults objectForKey:CM_FIRST_LAUNCHED]) {
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UITabBarController* mainTab = [mainStoryboard instantiateViewControllerWithIdentifier:@"MainTab"];
+        self.window.rootViewController = mainTab;
+    }else{
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController* nav = [mainStoryboard instantiateViewControllerWithIdentifier:@"SelectNav"];
+        self.window.rootViewController = nav;
+    }
+
+    [defaults setValue:@"NO" forKey:CM_FIRST_LAUNCHED];
+    [defaults synchronize];
     return YES;
 }
 

@@ -10,5 +10,6 @@
 
 @interface OrginizationViewController : BaseViewController
 @property(nonatomic,weak)NSString* orgType;
+@property(nonatomic,weak)NSString* orgKind;
 @property(nonatomic,weak)NSString* searchName;
 @end
