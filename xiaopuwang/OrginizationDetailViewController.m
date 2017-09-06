@@ -315,11 +315,11 @@
         [textView.layer setBorderWidth:0.5];
         [textView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
         
-        [[[LGAlertView alloc] initWithViewAndTitle:@"咨询信息"
+        [[[LGAlertView alloc] initWithViewAndTitle:@"在线咨询学校官方老师"
                                            message:nil
                                              style:LGAlertViewStyleAlert
                                               view:textView
-                                      buttonTitles:@[@"确认"]
+                                      buttonTitles:@[@"提交"]
                                  cancelButtonTitle:@"取消"
                             destructiveButtonTitle:nil
                                           delegate:self] showAnimated:YES completionHandler:nil];

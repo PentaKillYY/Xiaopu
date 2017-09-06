@@ -131,8 +131,8 @@
 #define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
 
-#define kTableViewCellHeight 43
-#define kTableViewHeight 132
+#define kTableViewCellHeight 44
+#define kTableViewHeight 220
 #define kButtomImageViewHeight 21
 
 #define kTextColor [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
@@ -391,7 +391,7 @@
         _detailTextFont = [UIFont systemFontOfSize:11];
         _detailTextColor = kDetailTextColor;
         _indicatorColor = kTextColor;
-        _tableViewHeight = IS_IPHONE_4_OR_LESS ? 200 : kTableViewHeight;
+        _tableViewHeight = IS_IPHONE_4_OR_LESS ? 300 : kTableViewHeight;
         _isClickHaveItemValid = YES;
         _isClickHaveUnitValid = YES;
         
@@ -423,7 +423,7 @@
         // _tagTableView
 
 
-        _tagTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 + self.frame.size.height, Main_Screen_Width, 60*2) style:UITableViewStylePlain];
+        _tagTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 + self.frame.size.height, Main_Screen_Width, 250) style:UITableViewStylePlain];
         [_tagTableView registerNib:[UINib nibWithNibName:@"TagTableViewCell" bundle:nil] forCellReuseIdentifier:@"TagTableViewCell"];
         _tagTableView.rowHeight = 60;
         _tagTableView.dataSource = self;
@@ -670,7 +670,7 @@
             [self.superview addSubview:_tagTableView];
             
             [UIView animateWithDuration:0.2 animations:^{
-                _tagTableView.frame = CGRectMake(self.origin.x , self.frame.origin.y + self.frame.size.height, Main_Screen_Width, 150);
+                _tagTableView.frame = CGRectMake(self.origin.x , self.frame.origin.y + self.frame.size.height, Main_Screen_Width, 220);
             }];
         }else{
             [_tagTableView removeFromSuperview];
