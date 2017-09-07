@@ -334,7 +334,7 @@
     }else if (indexPath.section == 2){
         return ((Main_Screen_Width-20)/2 *216)/342 +10;
     }else if (indexPath.section == 3){
-        return 295*(Main_Screen_Width/320);
+        return 290*(Main_Screen_Width/320);
     }else {
         if (indexPath.row ==0) {
             return 90;
@@ -362,16 +362,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (selectLocalIndex == 0) {
         currentSelectTeacherIndex   = indexPath.row;
-        [self performSegueWithIdentifier:@"MainToOrgDetail" sender:self];
+        if (teacherResult) {
+            [self performSegueWithIdentifier:@"MainToOrgDetail" sender:self];
+        }
     }else if (selectLocalIndex == 1){
         currentSelectOrgIndex = indexPath.row;
-        [self performSegueWithIdentifier:@"MainToOrgDetail" sender:self];
+        if (localOrgResult) {
+           [self performSegueWithIdentifier:@"MainToOrgDetail" sender:self];
+        }
     }else if (selectLocalIndex == 3){
         currentSelectSchoolIndex = indexPath.row;
-        [self performSegueWithIdentifier:@"MainToSchoolDetail" sender:self];
+        if (localInterSchoolResult) {
+            [self performSegueWithIdentifier:@"MainToSchoolDetail" sender:self];
+        }
     }else{
         currentSelectChinaSchoolIndex = indexPath.row;
-        [self performSegueWithIdentifier:@"MainToChinaSchoolDetail" sender:self];
+        if (localChinaSchoolResult) {
+            [self performSegueWithIdentifier:@"MainToChinaSchoolDetail" sender:self];
+        }
     }
 }
 

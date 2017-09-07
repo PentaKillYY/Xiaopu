@@ -37,6 +37,8 @@
     NSString* schoolNature;
     
     NSInteger currentSelectRow;
+    
+    BOOL needRefresh;
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -187,7 +189,7 @@
     if (section == 0) {
         return nil;
     }else{
-        if (!_menu) {
+        if (!_menu || needRefresh) {
             DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
             menu.delegate = self;
             menu.dataSource = self;
@@ -378,7 +380,7 @@
             }else{
                 schoolCountry = @"";
             }
-            
+            needRefresh = NO;
             [self.tableView.mj_header beginRefreshing];
         }else if (indexPath.row == 1){
             [self.menu reloadData];
@@ -395,6 +397,7 @@
             
             if (indexPath.item == 0) {
                 schoolProvince = @"";
+                needRefresh = NO;
                 [self.tableView.mj_header beginRefreshing];
             }else if(indexPath.item >0){
                 
@@ -405,9 +408,11 @@
                 
                 if (indexPath.unit == 0) {
                     schoolCity = @"";
+                    needRefresh = NO;
                     [self.tableView.mj_header beginRefreshing];
                 }else if (indexPath.unit >0){
                     schoolCity = [[cityResult.items getItem:indexPath.unit -1] getString:@"text"];
+                    needRefresh = NO;
                     [self.tableView.mj_header beginRefreshing];
                 }else{
                 
@@ -586,7 +591,11 @@
         [self getSchoolTypeRequest];
         [self getSchoolNatureRequest];
         
-        
+        schoolCity = @"";
+        schoolProvince = @"";
+        schoolType = @"";
+        schoolNature = @"";
+        needRefresh = YES;
         [self.tableView.mj_header beginRefreshing];
     }else if (button.tag == 0){
         [self pushToChinaSChool];

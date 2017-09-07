@@ -67,9 +67,13 @@
 -(double)calculateWithX:(double)x Y:(double)y{
     UserInfo* info = [UserInfo sharedUserInfo];
     
-    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[info.userLatitude floatValue] longitude:[info.userLongitude floatValue]];
-    CLLocation *orgLocation = [[CLLocation alloc] initWithLatitude:fabs(y) longitude:fabs(x)];
-    double distance = [currentLocation distanceFromLocation:orgLocation]/1000.0;
-    return distance;
+    if (info.userLatitude && info.userLongitude) {
+        CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[info.userLatitude floatValue] longitude:[info.userLongitude floatValue]];
+        CLLocation *orgLocation = [[CLLocation alloc] initWithLatitude:fabs(y) longitude:fabs(x)];
+        double distance = [currentLocation distanceFromLocation:orgLocation]/1000.0;
+        return distance;
+    }else{
+        return 0.0;
+    }
 }
 @end

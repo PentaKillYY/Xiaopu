@@ -368,6 +368,8 @@
 
 -(void)updateUserBalanceRequest{
     [[MyService sharedMyService] updateUserBalanceWithParameters:@{@"UserId":[UserInfo sharedUserInfo].userID,@"Price":@([backPriceResult.message doubleValue]),@"ChannelName":@"订单返现",@"ChannelCode":[[orderResult.items getItem:currentCellIndex-appointmentResult.items.size] getString:@"OrderNum"],@"OperationType":@(0)} onCompletion:^(id json) {
+        [self.tableView.mj_header beginRefreshing];
+
         [self showRewardBackView];
     } onFailure:^(id json) {
         

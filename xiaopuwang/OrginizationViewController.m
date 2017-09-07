@@ -48,6 +48,7 @@
     
     NSInteger selectColumn;
     NSInteger selectRow;
+    BOOL needRefresh;
 }
 
 @property (nonatomic,strong) UISearchBar* searchBar;
@@ -234,7 +235,7 @@
         return nil;
     }else{
         
-        if (!_menu) {
+        if (!_menu || needRefresh) {
             // 添加下拉菜单
             DOPDropDownMenu*menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 181) andHeight:50 andWidth:Main_Screen_Width];
             menu.delegate = self;
@@ -400,11 +401,13 @@
     if (indexPath.column == 0) {
         if (indexPath.row == 0) {
            selectArea = @"";
+            needRefresh = NO;
              [self.tableView.mj_header beginRefreshing];
         }else if (indexPath.row ==1){
             
         }else{
             selectArea = orgDistrictAry[indexPath.row];
+            needRefresh = NO;
              [self.tableView.mj_header beginRefreshing];
         }
        
@@ -422,7 +425,7 @@
             }else{
                 orgGroupName = @"";
             }
-            
+            needRefresh = NO;
             [self.tableView.mj_header beginRefreshing];
         }else{
             orgTypeName = orgTypeAry[indexPath.row];
@@ -431,10 +434,12 @@
                 NSString* key = orgTypeAry[indexPath.row];
                 
                 orgGroupName = [[[[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] getDataItemArray:key] getItem:indexPath.item] getString:@"Text"];
+                needRefresh = NO;
                 [self.tableView.mj_header beginRefreshing];
             }
         }
     }else{
+        needRefresh = NO;
         [self.tableView.mj_header beginRefreshing];
     }
     
@@ -565,6 +570,7 @@
     }
     orgGroupName = @"";
     selectArea = @"";
+    needRefresh = YES;
     [self.tableView.mj_header beginRefreshing];
 }
 
