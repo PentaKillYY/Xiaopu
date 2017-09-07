@@ -67,7 +67,10 @@ static NSString *identifyCollection = @"CommentImageCollectionViewCell";
     NSString *imageStr = self.imageDatas[indexPath.item];
     CommentImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifyCollection forIndexPath:indexPath];
     __weak typeof(cell)weakCell = cell;
-    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,imageStr]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    
+    NSString* encodedString = [imageStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,encodedString]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
         if (cacheType == SDImageCacheTypeNone && image) {
             weakCell.mainImageView.alpha = 0;

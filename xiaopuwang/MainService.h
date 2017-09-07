@@ -41,4 +41,15 @@
 -(void)postSpecialistOverseaSchoolWithParameters:(NSDictionary *)parameters
                                   onCompletion:(JSONResponse)completionBlock
                                      onFailure:(JSONResponse)failureBlock;
+
+//获取课程在线试听信息列表
+-(void)getVideoCourseListWithParameters:(NSDictionary *)parameters
+                           onCompletion:(JSONResponse)completionBlock
+                              onFailure:(JSONResponse)failureBlock;
+
+//获取老师信息列表（分页）
+-(void)getTeacherListWithParameters:(NSDictionary *)parameters
+                       onCompletion:(JSONResponse)completionBlock
+                          onFailure:(JSONResponse)failureBlock;
+
 @end

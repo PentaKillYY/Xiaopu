@@ -31,7 +31,8 @@
 @property (copy, nonatomic) NSString* userProvince;
 @property (copy, nonatomic) NSString* userCity;
 @property (copy, nonatomic) NSString* communityType;
-
+@property (copy, nonatomic) NSString* firstSelectIndex;
+@property (copy, nonatomic) NSString* secondSelectIndex;
 +(instancetype)sharedUserInfo;
 -(void)logout;
 @end

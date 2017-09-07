@@ -103,4 +103,9 @@
                           onCompletion:(JSONResponse)completionBlock
                              onFailure:(JSONResponse)failureBlock;
 
+//获取课程类别及其科目种类
+-(void)getCourseTypeBuGroupWithParameters:(NSDictionary *)parameters
+                             onCompletion:(JSONResponse)completionBlock
+                                onFailure:(JSONResponse)failureBlock;
+
 @end

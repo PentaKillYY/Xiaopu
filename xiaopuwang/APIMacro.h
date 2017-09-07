@@ -27,6 +27,12 @@
 //录入专家咨询-国外学校
 #define SpecialistOverseaSchool @"/user/OverSeasSchoolExpertConsultationInsert"
 
+//获取课程在线试听信息列表
+#define OnlineVideoCourseList @"/cousertrain/CourseVideoList"
+
+//获取老师信息列表（分页)
+#define TeacherList @"/cousertrain/courseTeacherInfo"
+
 // *******************************机构**************************
 
 //获取机构列表（分页）
@@ -85,6 +91,10 @@
 
 //通过课程名称获取机构列表
 #define OrgByClass @"/cousertrain/orgInfoByCourseName"
+
+//获取课程类别及其科目种类
+#define CourseTypeByGroup @"/cousertrain/CourseTypeByGroup"
+
 
 // *******************************学校**************************
 

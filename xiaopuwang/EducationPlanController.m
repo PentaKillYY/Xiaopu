@@ -77,7 +77,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"教育规划";
+    self.title = @"专家选校";
    
     internationalArray = [NSMutableArray new];
     internationalScoreArray = [NSMutableArray new];

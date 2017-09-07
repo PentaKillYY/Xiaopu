@@ -12,6 +12,7 @@
 #import "OrginizationService.h"
 #import "WXApi.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "UMMobClick/MobClick.h"
 
 @interface AppDelegate ()<WXApiDelegate>
 
@@ -26,6 +27,10 @@
     [[UMSocialManager defaultManager] openLog:YES];
     
     /* 设置友盟appkey */
+    UMConfigInstance.appKey = UMKEY;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+    
     [[UMSocialManager defaultManager] setUmSocialAppkey:UMKEY];
     
     [self configUSharePlatforms];
@@ -45,6 +50,20 @@
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults objectForKey:CM_FIRST_LAUNCHED]) {
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UITabBarController* mainTab = [mainStoryboard instantiateViewControllerWithIdentifier:@"MainTab"];
+        self.window.rootViewController = mainTab;
+    }else{
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController* nav = [mainStoryboard instantiateViewControllerWithIdentifier:@"SelectNav"];
+        self.window.rootViewController = nav;
+    }
+
+    [defaults setValue:@"NO" forKey:CM_FIRST_LAUNCHED];
+    [defaults synchronize];
     return YES;
 }
 

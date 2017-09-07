@@ -44,8 +44,6 @@
     
 }
 
-
-
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str = @"cellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];

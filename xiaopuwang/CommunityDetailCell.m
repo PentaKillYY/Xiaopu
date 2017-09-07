@@ -14,6 +14,13 @@ static NSString *identifyCollection = @"CommentImageCollectionViewCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.imageCollectionView.backgroundColor = [UIColor whiteColor];
+    self.imageCollectionView.delegate = self;
+    self.imageCollectionView.dataSource = self;
+    
+    [self.imageCollectionView registerNib:[UINib nibWithNibName:identifyCollection bundle:nil] forCellWithReuseIdentifier:identifyCollection];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -82,7 +89,9 @@ static NSString *identifyCollection = @"CommentImageCollectionViewCell";
     NSString *imageStr = self.imageDatas[indexPath.item];
     CommentImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifyCollection forIndexPath:indexPath];
     __weak typeof(cell)weakCell = cell;
-    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,imageStr]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+     NSString* encodedString = [imageStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,encodedString]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
         if (cacheType == SDImageCacheTypeNone && image) {
             weakCell.mainImageView.alpha = 0;
@@ -95,6 +104,13 @@ static NSString *identifyCollection = @"CommentImageCollectionViewCell";
             weakCell.mainImageView.alpha = 1.0f;
         }
     }];
+    
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapAction:)];
+    cell.mainImageView.tag = indexPath.row;
+    [cell.mainImageView addGestureRecognizer:tapGestureRecognizer];
+    [self.imageViewFrames addObject:[NSValue valueWithCGRect:cell.mainImageView.frame]];
+
     return cell;
 }
 
@@ -128,6 +144,7 @@ static NSString *identifyCollection = @"CommentImageCollectionViewCell";
     return CGSizeZero;
 }
 
+
 -(IBAction)deleteCommunityAction:(id)sender{
     [self.delegate deleteCommunityDelegate:sender];
 }
@@ -138,4 +155,39 @@ static NSString *identifyCollection = @"CommentImageCollectionViewCell";
         [self.delegate praiseCommunityDelegate:sender];
     }
 }
+
+- (NSMutableArray *)imageViewFrames {
+    
+    if (!_imageViewFrames) {
+        _imageViewFrames = [NSMutableArray array];
+    }
+    return _imageViewFrames;
+}
+
+- (void)imageTapAction:(UITapGestureRecognizer *)tapGestureRecognizer {
+    
+    UIImageView *tapedImageView = (UIImageView *)tapGestureRecognizer.view;
+    NSMutableArray *imageBrowserModels = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < self.imageDatas.count; i ++) {
+        NSString *imageStr = self.imageDatas[i];
+        NSString* encodedString = [imageStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        SRPictureModel *imageBrowserModel = [SRPictureModel sr_pictureModelWithPicURLString:[NSString stringWithFormat:@"%@/%@",IMAGE_URL,encodedString]
+                                                                              containerView:tapedImageView.superview
+                                                                        positionInContainer:[self.imageViewFrames[i] CGRectValue]
+                                                                                      index:i];
+        [imageBrowserModels addObject:imageBrowserModel];
+    }
+    [SRPictureBrowser sr_showPictureBrowserWithModels:imageBrowserModels currentIndex:tapedImageView.tag delegate:self];
+}
+
+- (void)pictureBrowserDidShow:(SRPictureBrowser *)pictureBrowser {
+    
+    NSLog(@"%s", __func__);
+}
+
+- (void)pictureBrowserDidDismiss {
+    
+    NSLog(@"%s", __func__);
+}
+
 @end

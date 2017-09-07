@@ -16,7 +16,8 @@
 
 #define OrginizationDistrictFilter @[@"智能排序",@"离我最近",@"梁溪区",@"锡山区",@"滨湖区",@"新吴区",@"惠山区"]
 
-#define OrginizationTypeFilter @[@"全部",@"语言类",@"出国类",@"小学/学前类",@"初高中类",@"兴趣类",@"电脑IT类",@"职业技能类",@"学历教育类"]
+#define OrginizationTypeFilter @[@"全部",@"语言类培训课程",@"出国类培训课程",@"学前/小学培训课程",@"初高中培训课程",@"兴趣类培训课程",@"电脑与IT类",@"职业技能类",@"学历教育"]
+#define OrginizationTypeSelectFilter @[@"语言类培训课程",@"出国类培训课程",@"学前/小学培训课程",@"初高中培训课程",@"兴趣类培训课程",@"电脑与IT类",@"职业技能类",@"学历教育"]
 
 #define OrginizationSort @[@"距离排名"]
 
@@ -90,4 +91,11 @@
 #define SearchFilter @[@"机构",@"学校",@"课程"]
 
 #define UserIdentityType @[@"我是家长",@"我是学生"]
+
+#define HomeSelectTitle @[@"培训机构",@"国际学校",@"海外学校"]
+#define HomeSelectSecondTitle @[@"学前小学",@"初高中",@"兴趣类",@"语言类",@"出国类",@"电脑IT",@"职业技能",@"学历教育"]
+#define MainAllSelectLeftTitle @[@"学前小学",@"初高中",@"兴趣类",@"语言类",@"出国类",@"电脑IT",@"职业技能",@"学历教育",@"国际学校",@"海外学校"]
+#define InterSchoolTitle @[@"幼儿园",@"小学",@"初中",@"高中",@"大学",@"技术/专科学院"]
+#define OverSeaSchoolTitle @[@"澳大利亚",@"加拿大",@"美国",@"日本",@"新加坡",@"英国"]
+
 #endif /* ConstantMarco_h */

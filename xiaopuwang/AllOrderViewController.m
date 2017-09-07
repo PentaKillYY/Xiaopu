@@ -351,7 +351,7 @@
 }
 
 -(void)updateShareRequest{
-    [[MyService sharedMyService] updateOrderShareWithParameters:@{@"orderId":[[orderResult.items getItem:currentCellIndex-appointmentResult.items.size] getString:@"courseOrderID"]} onCompletion:^(id json) {
+    [[MyService sharedMyService] updateOrderShareWithParameters:@{@"orderId":[[orderResult.items getItem:currentCellIndex-appointmentResult.items.size] getString:@"OrderNum"]} onCompletion:^(id json) {
         [self addBackPriceRequest];
     } onFailure:^(id json) {
         
@@ -359,7 +359,7 @@
 }
 
 -(void)addBackPriceRequest{
-    [[MyService sharedMyService] addBackPriceWithParameters:@{@"orderId":[[orderResult.items getItem:currentCellIndex-appointmentResult.items.size] getString:@"courseOrderID"],@"price":@""} onCompletion:^(id json) {
+    [[MyService sharedMyService] addBackPriceWithParameters:@{@"orderId":[[orderResult.items getItem:currentCellIndex-appointmentResult.items.size] getString:@"OrderNum"],@"price":@""} onCompletion:^(id json) {
         [self updateUserBalanceRequest];
     } onFailure:^(id json) {
         
@@ -367,8 +367,10 @@
 }
 
 -(void)updateUserBalanceRequest{
-    [[MyService sharedMyService] updateUserBalanceWithParameters:@{@"UserId":[UserInfo sharedUserInfo].userID,@"Price":@([backPriceResult.message doubleValue]),@"ChannelName":@"订单返现",@"ChannelCode":[[orderResult.items getItem:currentCellIndex-appointmentResult.items.size] getString:@"courseOrderID"],@"OperationType":@(0)} onCompletion:^(id json) {
-        [self shareUIShow];
+    [[MyService sharedMyService] updateUserBalanceWithParameters:@{@"UserId":[UserInfo sharedUserInfo].userID,@"Price":@([backPriceResult.message doubleValue]),@"ChannelName":@"订单返现",@"ChannelCode":[[orderResult.items getItem:currentCellIndex-appointmentResult.items.size] getString:@"OrderNum"],@"OperationType":@(0)} onCompletion:^(id json) {
+        [self.tableView.mj_header beginRefreshing];
+
+        [self showRewardBackView];
     } onFailure:^(id json) {
         
     }];
@@ -429,12 +431,13 @@
     
     [backPriceBgView addSubview:backPriceImage];
     
-    UILabel* backPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(backPriceImage.frame.origin.x+92, backPriceImage.frame.origin.y+44, 33, 16)];
-    backPriceLabel.font = [UIFont systemFontOfSize:13];
+    UILabel* backPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(backPriceImage.frame.origin.x+92, backPriceImage.frame.origin.y+40, 42, 21)];
     backPriceLabel.text = backPriceResult.message;
-    backPriceLabel.textColor = [UIColor whiteColor];
+    backPriceLabel.center = CGPointMake(235/2, 52);
+    backPriceLabel.textColor = [UIColor redColor];
     backPriceLabel.backgroundColor = [UIColor clearColor];
-    [backPriceBgView addSubview:backPriceLabel];
+    [backPriceImage addSubview:backPriceLabel];
+
     
     
     [self.view addSubview:backPriceBgView];
