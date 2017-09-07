@@ -8,6 +8,8 @@
 
 #import "BaseTableViewCell.h"
 #import "CommunityOneLineImageCell.h"
+#import "SRPictureBrowser.h"
+#import "SRPictureModel.h"
 
 @protocol CommunityDetailCellDelegate <NSObject>
 
@@ -16,7 +18,7 @@
 
 @end
 
-@interface CommunityDetailCell : BaseTableViewCell
+@interface CommunityDetailCell : BaseTableViewCell<SRPictureBrowserDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(nonatomic,weak)IBOutlet UIImageView* userLogo;
 @property(nonatomic,weak)IBOutlet UILabel* userName;
 @property(nonatomic,weak)IBOutlet UILabel* communityTime;
@@ -34,6 +36,8 @@
 @property(nonatomic,weak)IBOutlet UIButton* deleteCommunityButton;
 @property(nonatomic,assign)id<CommunityDetailCellDelegate>delegate;
 @property(nonatomic,weak)IBOutlet UIButton* praiseButton;
+@property (nonatomic, strong) NSMutableArray *imageViewFrames;
+
 
 -(void)bingdingViewModel:(DataItem*)item;
 -(IBAction)deleteCommunityAction:(id)sender;

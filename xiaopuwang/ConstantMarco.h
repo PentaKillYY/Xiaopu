@@ -16,7 +16,8 @@
 
 #define OrginizationDistrictFilter @[@"智能排序",@"离我最近",@"梁溪区",@"锡山区",@"滨湖区",@"新吴区",@"惠山区"]
 
-#define OrginizationTypeFilter @[@"全部",@"语言类",@"出国类",@"小学/学前类",@"初高中类",@"兴趣类",@"电脑IT类",@"职业技能类",@"学历教育类"]
+#define OrginizationTypeFilter @[@"全部",@"语言类培训课程",@"出国类培训课程",@"学前/小学培训课程",@"初高中培训课程",@"兴趣类培训课程",@"电脑与IT类",@"职业技能类",@"学历教育"]
+#define OrginizationTypeSelectFilter @[@"语言类培训课程",@"出国类培训课程",@"学前/小学培训课程",@"初高中培训课程",@"兴趣类培训课程",@"电脑与IT类",@"职业技能类",@"学历教育"]
 
 #define OrginizationSort @[@"距离排名"]
 

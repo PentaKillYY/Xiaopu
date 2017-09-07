@@ -92,6 +92,10 @@
 //通过课程名称获取机构列表
 #define OrgByClass @"/cousertrain/orgInfoByCourseName"
 
+//获取课程类别及其科目种类
+#define CourseTypeByGroup @"/cousertrain/CourseTypeByGroup"
+
+
 // *******************************学校**************************
 
 //学校搜索页-分页查询

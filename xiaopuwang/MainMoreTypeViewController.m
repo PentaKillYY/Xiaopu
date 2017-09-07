@@ -13,8 +13,7 @@
 @interface MainMoreTypeViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     DataResult* courseTypeResult;
-    DataResult* groupTypeResult;
-    NSString* courseValue;
+    DataResult* courseGroupTypeResult;
     
     NSInteger leftIndex;
     
@@ -22,6 +21,9 @@
     NSString* schoolType;
     NSString* orgType;
     NSString* orgKind;
+    
+    NSArray* orgTypeAry;
+
 }
 @property(nonatomic,weak)IBOutlet UITableView* leftTableView;
 @property(nonatomic,weak)IBOutlet UITableView* rightTableView;
@@ -33,13 +35,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    courseValue = @"1";
     self.title = @"全部科目";
+    UserInfo* info = [UserInfo sharedUserInfo];
     
+    if ([info.firstSelectIndex intValue] ==1) {
+        leftIndex = 8;
+    }else if ([info.firstSelectIndex intValue] ==2){
+        leftIndex = 9;
+    }else{
+        leftIndex = [info.secondSelectIndex intValue];
+    }
+    orgTypeAry = OrginizationTypeSelectFilter;
     self.leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.rightTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self getCourseTypeList];
-    [self getGroupList];
+    [self getCourseTypeAndGroupRequest];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,12 +81,12 @@
     if (tableView == self.leftTableView) {
         return 10;
     }else{
-         if ([courseValue intValue] == 80) {
+         if (leftIndex == 8) {
              return 6;
-         }else if ([courseValue intValue] == 90){
+         }else if (leftIndex == 9){
              return 6;
          }else{
-             return groupTypeResult.items.size;
+             return [[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] allKeys].count;
          }
     }
 }
@@ -95,12 +108,13 @@
         }
         
     }else{
-        if ([courseValue intValue] == 80) {
+        if (leftIndex == 8) {
             cell.searchName.text = InterSchoolTitle[indexPath.row];
-        }else if ([courseValue intValue] == 90){
+        }else if (leftIndex == 9){
             cell.searchName.text = OverSeaSchoolTitle[indexPath.row];
         }else{
-            cell.searchName.text = [[groupTypeResult.items getItem:indexPath.row] getString:@"Text"];
+            NSString* key = orgTypeAry[leftIndex];
+            cell.searchName.text = [[[[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] getDataItemArray:key] getItem:indexPath.row] getString:@"Text"];
         }
         
         cell.contentView.backgroundColor = [UIColor whiteColor];
@@ -114,25 +128,20 @@
         leftIndex = indexPath.row;
         
         if (indexPath.row < 8) {
-            courseValue = [[courseTypeResult.items getItem:indexPath.row] getString:@"Value"];
             orgType = [[courseTypeResult.items getItem:indexPath.row] getString:@"Text"];
-            [self getGroupList];
-        }else{
-            courseValue = [NSString stringWithFormat:@"%ld",indexPath.row*10];
-            [self.rightTableView reloadData];
         }
-        
+        [self.rightTableView reloadData];
         [self.leftTableView reloadData];
     }else{
-        if ([courseValue intValue] == 80) {
+        if (leftIndex == 8) {
             chinaSchoolType = InterSchoolTitle[indexPath.row];
             [self performSegueWithIdentifier:@"MainMoreToChinaSchool" sender:self];
-        }else if ([courseValue intValue] == 90){
+        }else if (leftIndex == 9){
             schoolType = OverSeaSchoolTitle[indexPath.row];
             [self performSegueWithIdentifier:@"MainMoreToSchool" sender:self];
         }else{
-            
-            orgKind = [[groupTypeResult.items getItem:indexPath.row] getString:@"Text"];
+            NSString* key = orgTypeAry[leftIndex];
+            orgKind = [[[[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] getDataItemArray:key] getItem:indexPath.row] getString:@"Text"];
             [self performSegueWithIdentifier:@"MainMoreToOrg" sender:self];
         }
     }
@@ -149,15 +158,12 @@
     }];
 }
 
--(void)getGroupList{
-    [[OrginizationService sharedOrginizationService] getGroupTypeParameters:@{@"courseType":@"CourseType",@"value":courseValue} onCompletion:^(id json) {
-        groupTypeResult = json;
+-(void)getCourseTypeAndGroupRequest{
+    [[OrginizationService sharedOrginizationService] getCourseTypeBuGroupWithParameters:@{@"courseType":@"CourseType"} onCompletion:^(id json) {
+        courseGroupTypeResult = json;
         [self.rightTableView reloadData];
-        
     } onFailure:^(id json) {
         
     }];
 }
-
-
 @end

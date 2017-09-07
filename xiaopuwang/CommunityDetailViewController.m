@@ -16,6 +16,7 @@
 #import <Photos/Photos.h>
 #import "MyService.h"
 
+
 static NSString *identify = @"CommunityDetailCell";
 static NSString *replyidentify = @"CommunityReplyCell";
 @interface CommunityDetailViewController ()<UITableViewDelegate,UITableViewDataSource,CommunityDetailCellDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PostImageDelegate,UITextViewDelegate>

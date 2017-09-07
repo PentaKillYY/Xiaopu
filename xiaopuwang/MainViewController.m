@@ -334,10 +334,10 @@
     }else if (indexPath.section == 2){
         return ((Main_Screen_Width-20)/2 *216)/342 +10;
     }else if (indexPath.section == 3){
-        return 305*(Main_Screen_Width/320);
+        return 295*(Main_Screen_Width/320);
     }else {
         if (indexPath.row ==0) {
-            return 70;
+            return 90;
         }else{
             if (selectLocalIndex == 1) {
                 return  [tableView fd_heightForCellWithIdentifier:@"LocalSelectOrgCell" cacheByIndexPath:indexPath configuration:^(id cell) {
@@ -356,7 +356,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.1;
+    return 8;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

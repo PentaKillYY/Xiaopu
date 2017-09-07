@@ -569,7 +569,11 @@
     UIButton* button = (UIButton*)sender;
     if (button.tag != 7 && button.tag !=0 ) {
         if (button.tag == 1) {
+            schoolCountry = [[countryResult.items getItem:3] getString:@"text"];
+        }else if (button.tag == 2){
             schoolCountry = [[countryResult.items getItem:4] getString:@"text"];
+        }else if(button.tag == 3){
+            schoolCountry = [[countryResult.items getItem:2] getString:@"text"];
         }else if (button.tag == 4){
             schoolCountry = [[countryResult.items getItem:5] getString:@"text"];
         }else if (button.tag == 5){

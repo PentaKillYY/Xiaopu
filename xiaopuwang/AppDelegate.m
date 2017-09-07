@@ -12,6 +12,7 @@
 #import "OrginizationService.h"
 #import "WXApi.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "UMMobClick/MobClick.h"
 
 @interface AppDelegate ()<WXApiDelegate>
 
@@ -26,6 +27,10 @@
     [[UMSocialManager defaultManager] openLog:YES];
     
     /* 设置友盟appkey */
+    UMConfigInstance.appKey = UMKEY;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+    
     [[UMSocialManager defaultManager] setUmSocialAppkey:UMKEY];
     
     [self configUSharePlatforms];

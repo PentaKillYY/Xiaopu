@@ -38,9 +38,11 @@
     NSString* orgGroupName;
     
     DataResult* courseTypeResult;
-    DataResult* groupTypeResult;
+//    DataResult* groupTypeResult;
     
-    NSMutableDictionary* groupDic;
+    DataResult* courseGroupTypeResult;
+    
+//    NSMutableDictionary* groupDic;
     
     NSInteger selectIndex;
     
@@ -68,16 +70,17 @@
     orgListArray = [DataItemArray new];
     
     tagDic = [[NSMutableDictionary alloc] init];
-    groupDic = [[NSMutableDictionary alloc] init];
     
     [self setUpSearchFilter];
     
-    [self getGroupList];
     
     [self addNavTitleView];
     
     [self loadFilterSortData];
     
+    
+    [self getCourseList];
+    [self getCourseTypeAndGroupRequest];
     [self getCourseTypeList];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"OrginizationTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgCell"];
@@ -362,9 +365,9 @@
         if (row == 0) {
             return 0;
         } else {
-            DataItemArray * array = [groupDic objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
+            NSString* key = orgTypeAry[row];
             
-            return array.size;
+            return  [[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] getDataItemArray:key].size;
         };
         
     }
@@ -383,8 +386,8 @@
         if (indexPath.row == 0) {
             return 0;
         } else {
-            DataItemArray * array = [groupDic objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
-            return [[array getItem:indexPath.item] getString:@"Text"];
+            NSString* key = orgTypeAry[indexPath.row];
+           return  [[[[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] getDataItemArray:key] getItem:indexPath.item] getString:@"Text"];
         }
     }
     return nil;
@@ -422,17 +425,12 @@
             
             [self.tableView.mj_header beginRefreshing];
         }else{
-            if (indexPath.row == 3) {
-                orgTypeName = [[courseTypeResult.items getItem:3] getString:@"Text"];
-            }else if (indexPath.row  == 4){
-                orgTypeName = [[courseTypeResult.items getItem:2] getString:@"Text"];
-            }else{
-                orgTypeName = [[courseTypeResult.items getItem:indexPath.row-1] getString:@"Text"];
-            }
+            orgTypeName = orgTypeAry[indexPath.row];
             
             if (indexPath.item == 0 || indexPath.item > 0) {
-                DataItemArray * array = [groupDic objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
-                orgGroupName = [[array getItem:indexPath.item] getString:@"Text"];
+                NSString* key = orgTypeAry[indexPath.row];
+                
+                orgGroupName = [[[[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] getDataItemArray:key] getItem:indexPath.item] getString:@"Text"];
                 [self.tableView.mj_header beginRefreshing];
             }
         }
@@ -546,17 +544,12 @@
     }];
 }
 
--(void)getGroupList{
-    for (int i = 0 ; i < 8; i++) {
-        [[OrginizationService sharedOrginizationService] getGroupTypeParameters:@{@"courseType":@"CourseType",@"value":@(i)} onCompletion:^(id json) {
-            groupTypeResult = json;
-            
-            [groupDic setObject:groupTypeResult.items forKey:[NSString stringWithFormat:@"%d",i]];
-            
-        } onFailure:^(id json) {
-            
-        }];
-    }
+-(void)getCourseTypeAndGroupRequest{
+    [[OrginizationService sharedOrginizationService] getCourseTypeBuGroupWithParameters:@{@"courseType":@"CourseType"} onCompletion:^(id json) {
+        courseGroupTypeResult = json;
+    } onFailure:^(id json) {
+        
+    }];
 }
 
 #pragma mark - BannerDelegate
@@ -570,6 +563,8 @@
     }else{
         orgTypeName = [[courseTypeResult.items getItem:button.tag] getString:@"Text"];
     }
+    orgGroupName = @"";
+    selectArea = @"";
     [self.tableView.mj_header beginRefreshing];
 }
 
