@@ -4,55 +4,55 @@
               "txt": "才艺",
               "imgUrl": "才艺.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "才艺"
+              "CourseKind": "才艺(早教)"
               },
               {
               "txt": "启蒙",
               "imgUrl": "启蒙.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "启蒙"
+              "CourseKind": "启蒙(早教)"
               },
               {
               "txt": "亲子",
               "imgUrl": "亲子.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "亲子"
+              "CourseKind": "亲子(早教)"
               },
               {
               "txt": "全科辅导",
               "imgUrl": "全科辅导.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "辅导"
+              "CourseKind": "辅导(小学)"
               },
               {
               "txt": "托管",
               "imgUrl": "托管.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "托管班"
+              "CourseKind": "托管班(小学)"
               },
               {
               "txt": "艺术",
               "imgUrl": "艺术.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "艺术"
+              "CourseKind": "艺术(幼儿园)"
               },
               {
               "txt": "益智",
               "imgUrl": "益智.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "益智"
+              "CourseKind": "益智(早教)"
               },
               {
               "txt": "英语",
               "imgUrl": "英语.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "英语"
+              "CourseKind": "英语(小学)"
               },
               {
               "txt": "智力开发",
               "imgUrl": "智力开发.png",
               "CourseType": "学前/小学培训课程",
-              "CourseKind": "智力开发"
+              "CourseKind": "智力开发(幼儿园)"
               },
               {
               "txt": "全部",
@@ -66,49 +66,55 @@
               "txt": "奥数",
               "imgUrl": "奥数.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "奥数"
+              "CourseKind": "奥数(初中)"
               },
               {
               "txt": "化学",
               "imgUrl": "化学.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "化学"
+              "CourseKind": "化学(初中)"
               },
               {
               "txt": "理综",
               "imgUrl": "理综.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "理综"
+              "CourseKind": "理综(高中)"
               },
               {
               "txt": "全科辅导",
               "imgUrl": "全科辅导.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "全科辅导"
+              "CourseKind": "全科辅导(高中)"
               },
               {
               "txt": "数学",
               "imgUrl": "数学.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "数学"
+              "CourseKind": "数学(高中)"
               },
               {
               "txt": "文综",
               "imgUrl": "文综.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "文综"
+              "CourseKind": "文综(高中)"
               },
               {
               "txt": "物理",
               "imgUrl": "物理.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "物理"
+              "CourseKind": "物理(高中)"
               },
               {
               "txt": "语文",
               "imgUrl": "语文.png",
               "CourseType": "初高中培训课程",
-              "CourseKind": "语文"
+              "CourseKind": "语文(高中)"
+              },
+              {
+              "txt": "英语",
+              "imgUrl": "英语.png",
+              "CourseType": "初高中培训课程",
+              "CourseKind": "英语(高中)"
               },
               {
               "txt": "全部",
@@ -122,55 +128,55 @@
               "txt": "素描",
               "imgUrl": "素描.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "素描"
+              "CourseKind": "素描(绘画)"
               },
               {
               "txt": "钢琴",
               "imgUrl": "钢琴.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "钢琴"
+              "CourseKind": "钢琴(乐器)"
               },
               {
               "txt": "围棋",
               "imgUrl": "围棋.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "围棋"
+              "CourseKind": "围棋(棋牌)"
               },
               {
               "txt": "平面设计",
               "imgUrl": "平面设计.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "平面设计"
+              "CourseKind": "平面设计(设计)"
               },
               {
               "txt": "声乐",
               "imgUrl": "声乐.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "流行"
+              "CourseKind": "流行(声乐)"
               },
               {
               "txt": "硬笔书法",
               "imgUrl": "硬笔书法.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "硬笔书法"
+              "CourseKind": "硬笔书法(书法)"
               },
               {
               "txt": "跆拳道",
               "imgUrl": "跆拳道.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "跆拳道"
+              "CourseKind": "跆拳道(武术)"
               },
               {
               "txt": "街舞",
               "imgUrl": "街舞.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "街舞"
+              "CourseKind": "街舞(舞蹈)"
               },
               {
               "txt": "篮球",
               "imgUrl": "篮球.png",
               "CourseType": "兴趣类培训课程",
-              "CourseKind": "篮球"
+              "CourseKind": "篮球(运动)"
               },
               {
               "txt": "全部",
@@ -308,55 +314,55 @@
               "txt": "AutoCAD",
               "imgUrl": "AutoCAD.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "AutoCAD"
+              "CourseKind": "AutoCAD(软件制图)"
               },
               {
               "txt": "Photoshop",
               "imgUrl": "Photoshop.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "Photoshop"
+              "CourseKind": "Photoshop(软件制图)"
               },
               {
               "txt": "UI设计师",
               "imgUrl": "UI设计师.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "UI设计师 "
+              "CourseKind": "UI设计师(设计师)"
               },
               {
               "txt": "软件开发",
               "imgUrl": "软件开发.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "软件开发 "
+              "CourseKind": "软件开发(软件系统)"
               },
               {
               "txt": "系统架构师",
               "imgUrl": "系统架构师.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "系统架构师 "
+              "CourseKind": "系统架构师(软件系统)"
               },
               {
               "txt": "Illustrator",
               "imgUrl": "Illustrator.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "ILLUSTRATOR"
+              "CourseKind": "ILLUSTRATOR(软件制图)"
               },
               {
               "txt": "网页设计师",
               "imgUrl": "网页设计师.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "网页设计师 "
+              "CourseKind": "网页设计师(设计师)"
               },
               {
               "txt": "动漫设计",
               "imgUrl": "动漫设计.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "动漫设计"
+              "CourseKind": "动漫设计(影视动漫)"
               },
               {
               "txt": "游戏开发",
               "imgUrl": "游戏开发.png",
               "CourseType": "电脑与IT类",
-              "CourseKind": "游戏开发"
+              "CourseKind": "游戏开发(影视动漫)"
               },
               {
               "txt": "全部",
@@ -370,49 +376,49 @@
               "txt": "ACCA",
               "imgUrl": "ACCA.png",
               "CourseType": "职业技能类",
-              "CourseKind": "ACCA"
+              "CourseKind": "ACCA(财经金融)"
               },
               {
               "txt": "法律顾问",
               "imgUrl": "法律顾问.png",
               "CourseType": "职业技能类",
-              "CourseKind": "法律顾问"
+              "CourseKind": "法律顾问(国家公职)"
               },
               {
               "txt": "公务员",
               "imgUrl": "公务员.png",
               "CourseType": "职业技能类",
-              "CourseKind": "公务员"
+              "CourseKind": "公务员(国家公职)"
               },
               {
               "txt": "国际会计师",
               "imgUrl": "国际会计师.png",
               "CourseType": "职业技能类",
-              "CourseKind": "AIA国际会计师"
+              "CourseKind": "AIA国际会计师(财经金融)"
               },
               {
               "txt": "会计从业资格",
               "imgUrl": "会计从业资格.png",
               "CourseType": "职业技能类",
-              "CourseKind": "会计从业资格"
+              "CourseKind": "会计从业资格(财金金融)"
               },
               {
               "txt": "教师资格",
               "imgUrl": "教师资格.png",
               "CourseType": "职业技能类",
-              "CourseKind": "教师资格"
+              "CourseKind": "教师资格(国家公职)"
               },
               {
               "txt": "司法考试",
               "imgUrl": "司法考试.png",
               "CourseType": "职业技能类",
-              "CourseKind": "司法考试"
+              "CourseKind": "司法考试(国家公职)"
               },
               {
               "txt": "幼师资格",
               "imgUrl": "幼师资格.png",
               "CourseType": "职业技能类",
-              "CourseKind": "幼师资格"
+              "CourseKind": "幼师资格(国家公职)"
               },
               {
               "txt": "全部",

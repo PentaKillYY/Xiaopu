@@ -97,7 +97,9 @@
         info.userCity = [result.detailinfo getString:@"CityName"];
         info.headPicUrl = [result.detailinfo getString:@"Photo"];
         info.userIdentity = [result.detailinfo getString:@"UserIdentity"];
-        
+        info.countryID = [result.detailinfo getString:@"CountryID"];
+        info.provinceID = [result.detailinfo getString:@"ProvinceID"];
+        info.cityID = [result.detailinfo getString:@"CityID"];
         [info synchronize];
         
         completionBlock(json);

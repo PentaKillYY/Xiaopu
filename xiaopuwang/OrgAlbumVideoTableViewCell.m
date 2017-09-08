@@ -8,6 +8,7 @@
 
 #import "OrgAlbumVideoTableViewCell.h"
 
+
 @implementation OrgAlbumVideoTableViewCell
 
 - (void)awakeFromNib {
@@ -23,6 +24,9 @@
 
 
 - (void)setupUI:(DataResult*)dataresult Type:(NSInteger)albumType{
+    self.AlbumResult = [[DataResult alloc] init];
+    [self .AlbumResult append:dataresult];
+
     CGFloat imgW = (Main_Screen_Width-14)/3; // 图片的宽度
     CGFloat imgH = (Main_Screen_Width-14)/3; // 图片的高度
     NSMutableArray* array = [[NSMutableArray alloc] init];
@@ -73,9 +77,25 @@
         [imageView.layer setMasksToBounds:YES];
         [imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,array[i]] ] placeholderImage:nil];
         imageView.frame = CGRectMake((imgW+2)*i, 0, imgW, imgH);
+        imageView.userInteractionEnabled = YES;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = YES;
+        if (albumType) {
+            UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+            UIVisualEffectView*effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+            effectview.frame = CGRectMake(0, 0, imgW+2,imgH+2);
+            effectview.alpha = 0.7f;
+            
+            [imageView addSubview:effectview];
+        }
         
+        [self.imageViewFrames addObject:[NSValue valueWithCGRect:imageView.frame]];
+
         
-        
+        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImage:)];
+        [imageView addGestureRecognizer:tap];
+        tap.view.tag = albumType*10 +i;
+
         [self.contentScroll addSubview:imageView];
         
         if (albumType !=0) {
@@ -87,7 +107,37 @@
         }
         
     }
-    self.contentScroll.contentSize = CGSizeMake(imgW*array.count, imgH);
+    self.contentScroll.contentSize = CGSizeMake(imgW*scrollCount, 0);
+}
+
+-(void)tapImage:(id)sender{
+    
+    UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
+    
+    UIImageView *tapedImageView = (UIImageView *)tap.view;
+    if (tapedImageView.tag <10) {
+        NSMutableArray *imageBrowserModels = [[NSMutableArray alloc] init];
+        NSInteger albumNumber;
+        
+        if (self .AlbumResult.items.size>4) {
+            albumNumber = 4;
+        }else{
+            albumNumber = self .AlbumResult.items.size;
+        }
+        for (NSInteger i = 0; i < albumNumber; i ++) {
+            DataItem* item = [self .AlbumResult.items getItem:i];
+            SRPictureModel *imageBrowserModel = [SRPictureModel sr_pictureModelWithPicURLString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"PhotoURL"]]
+                                                                                  containerView:tapedImageView.superview
+                                                                            positionInContainer:[self.imageViewFrames[i] CGRectValue]
+                                                                                          index:i];
+            [imageBrowserModels addObject:imageBrowserModel];
+        }
+        [SRPictureBrowser sr_showPictureBrowserWithModels:imageBrowserModels currentIndex:tapedImageView.tag delegate:self];
+
+    }
+    
+    
+    [self.delegate albumClickDelegate:sender];
 }
 
 @end

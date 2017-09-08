@@ -108,4 +108,9 @@
                              onCompletion:(JSONResponse)completionBlock
                                 onFailure:(JSONResponse)failureBlock;
 
+//发送通知提醒至预约机构
+-(void)sendToOrgWithParameters:(NSDictionary *)parameters
+                  onCompletion:(JSONResponse)completionBlock
+                     onFailure:(JSONResponse)failureBlock;
+
 @end

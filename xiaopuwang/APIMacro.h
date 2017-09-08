@@ -95,6 +95,8 @@
 //获取课程类别及其科目种类
 #define CourseTypeByGroup @"/cousertrain/CourseTypeByGroup"
 
+//发送通知提醒至预约机构
+#define SendAppointToOrg @"/user/SendMessageToOrganization"
 
 // *******************************学校**************************
 

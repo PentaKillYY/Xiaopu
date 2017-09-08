@@ -67,8 +67,6 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LocalSelectOrgCell" bundle:nil] forCellReuseIdentifier:@"LocalSelectOrgCell"];
     
-    
-    
     [self changeNavTitleView];
     [self loginRequest];
     
@@ -470,7 +468,11 @@
         moreButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         [moreButton addTarget:self action:@selector(goToMoreOrg) forControlEvents:UIControlEventTouchUpInside];
         self.tableView.tableFooterView  = moreButton;
+        NSIndexPath  *indexPath=[NSIndexPath indexPathForRow:0 inSection:4];
         
+
+        
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         [self getCourseList];
     }else if (selectLocalIndex == 3){
         UIButton* moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -480,7 +482,11 @@
         moreButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         [moreButton addTarget:self action:@selector(goToMoreSchool) forControlEvents:UIControlEventTouchUpInside];
         self.tableView.tableFooterView  = moreButton;
+        NSIndexPath  *indexPath=[NSIndexPath indexPathForRow:0 inSection:4];
         
+        
+        
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         [self getSchoolListRequest];
     }else{
         UIButton* moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -490,7 +496,9 @@
         moreButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         [moreButton addTarget:self action:@selector(goToMoreChinaSchool) forControlEvents:UIControlEventTouchUpInside];
         self.tableView.tableFooterView  = moreButton;
+        NSIndexPath  *indexPath=[NSIndexPath indexPathForRow:0 inSection:4];
         
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         [self getChinaSchoolListRequest];
     }
 }
@@ -540,7 +548,7 @@
 
 -(void)tokenRequest{
 
-    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username} onCompletion:^(id json) {
+    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].telphone} onCompletion:^(id json) {
         [self uptdateTokenRequest];
     } onFailure:^(id json) {
         
@@ -581,10 +589,10 @@
     
     NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":@"",@"CourseType":@"",@"CourseKind":@"",@"City":@"",@"Field":@"",@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0)};
     
-    [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:1 Size:3 Parameters:parameters onCompletion:^(id json) {
+    [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:1 Size:10 Parameters:parameters onCompletion:^(id json) {
         localOrgResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadData];
     } onFailure:^(id json) {
         
     }];
@@ -592,21 +600,21 @@
 
 -(void)getSchoolListRequest{
 
-    [[SchoolService sharedSchoolService] getSchoolListWithPage:1 Size:3 Parameters:@{@"ChineseName":@"",@"Country":@"",@"Province":@"",@"City":@"",@"CollegeNature":@"",@"CollegeType":@"",@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
+    [[SchoolService sharedSchoolService] getSchoolListWithPage:1 Size:10 Parameters:@{@"ChineseName":@"",@"Country":@"",@"Province":@"",@"City":@"",@"CollegeNature":@"",@"CollegeType":@"",@"TestScore":@"",@"TuitionBudget":@"",@"MinimumAverage":@""} onCompletion:^(id json) {
         
         localInterSchoolResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadData];
     } onFailure:^(id json) {
         
     }];
 }
 
 -(void)getChinaSchoolListRequest{
-    [[SchoolService sharedSchoolService] postChinaSchoolListWithPage:1 Size:3 Parameters:@{@"SchoolName":@"",@"Province":@"",@"City":@"",@"CollegeNature":@"",@"CollegeType":@"",@"Area":@"",@"X":@(0),@"Y":@(0)} onCompletion:^(id json) {
+    [[SchoolService sharedSchoolService] postChinaSchoolListWithPage:1 Size:10 Parameters:@{@"SchoolName":@"",@"Province":@"",@"City":@"",@"CollegeNature":@"",@"CollegeType":@"",@"Area":@"",@"X":@(0),@"Y":@(0)} onCompletion:^(id json) {
         localChinaSchoolResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadData];
     } onFailure:^(id json) {
         
     }];

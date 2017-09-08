@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述相符" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-ca-WCg">
@@ -32,14 +32,14 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="非常好" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gue-Tk-YWA">
-                        <rect key="frame" x="210" y="14" width="40" height="16"/>
+                        <rect key="frame" x="234.5" y="14" width="40" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gue-Tk-YWA" firstAttribute="leading" secondItem="zok-QW-gyO" secondAttribute="trailing" constant="8" id="2AU-25-ojC"/>
+                    <constraint firstItem="gue-Tk-YWA" firstAttribute="leading" secondItem="zok-QW-gyO" secondAttribute="trailing" constant="32" id="2AU-25-ojC"/>
                     <constraint firstAttribute="bottom" secondItem="zok-QW-gyO" secondAttribute="bottom" id="Bph-KY-azo"/>
                     <constraint firstItem="QyY-ca-WCg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="OWt-Ww-OxW"/>
                     <constraint firstItem="zok-QW-gyO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PVe-Va-PGc"/>

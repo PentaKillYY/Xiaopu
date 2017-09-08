@@ -51,6 +51,9 @@
         decodeObject(communityType);
         decodeObject(firstSelectIndex);
         decodeObject(secondSelectIndex);
+        decodeObject(countryID);
+        decodeObject(provinceID);
+        decodeObject(cityID);
     }
     
     return self;
@@ -81,6 +84,9 @@
     encodeObject(communityType);
     encodeObject(firstSelectIndex);
     encodeObject(secondSelectIndex);
+    encodeObject(countryID);
+    encodeObject(provinceID);
+    encodeObject(cityID);
 }
 
 - (void)setWithDict:(NSDictionary *)dict{
@@ -108,6 +114,9 @@
     self.communityType=dict[@"communityType"];
     self.firstSelectIndex=dict[@"firstSelectIndex"];
     self.secondSelectIndex=dict[@"secondSelectIndex"];
+    self.countryID=dict[@"countryID"];
+    self.provinceID=dict[@"provinceID"];
+    self.cityID=dict[@"cityID"];
 }
 
 - (void)logout{

@@ -18,13 +18,15 @@
     NSString* pickerString;
     NSString* selectCountryId;
     NSString* selectProvinceId;
-    
+    NSString* selectCityId;
     
     NSString* userName;
     NSString* userGender;
     NSString* userCountry;
     NSString* userProvince;
     NSString* userCity;
+    
+    
 }
 @end
 
@@ -49,7 +51,7 @@
     
     [self getSchoolCountryListRequest];
     
-    
+    self.tableView.hidden =YES;
 }
 
 
@@ -90,6 +92,26 @@
         userCity=@"";
     }
     
+    if (info.countryID) {
+        selectCountryId = info.countryID;
+        [self getSchoolProvinceListRequest];
+    }else{
+        selectCountryId = @"";
+    }
+    
+    if (info.provinceID) {
+        selectProvinceId = info.provinceID;
+        [self getSchoolCityLIstRequest];
+
+    }else{
+        selectProvinceId = @"";
+    }
+    
+    if (info.cityID) {
+        selectCityId = info.cityID;
+    }else{
+        selectCityId = @"";
+    }
 }
 
 #pragma mark - Table view data source
@@ -104,7 +126,6 @@
     cell.cellTitle.text = MyInfoTitle[indexPath.row];
     cell.cellContent.tag = indexPath.row;
     cell.cellContent.delegate = self;
-    
     if (indexPath.row !=0) {
         UIPickerView* picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 180)];
         picker.delegate = self;
@@ -145,11 +166,11 @@
     if(pickerView.tag == 1){
         return Gender.count;
     }else if (pickerView.tag == 2){
-        return countryResult.items.size;
+        return countryResult.items.size+1;
     }else if(pickerView.tag == 3){
-        return provinceResult.items.size;
+        return provinceResult.items.size+1;
     }else{
-        return cityResult.items.size;
+        return cityResult.items.size+1;
     }
 }
 
@@ -157,11 +178,20 @@
     if (pickerView.tag == 1) {
         return Gender[row];
     }else if (pickerView.tag ==2){
-        return [[countryResult.items getItem:row] getString:@"text"];
+        if (row==0) {
+            return @"请选择国家";
+        }
+        return [[countryResult.items getItem:row-1] getString:@"text"];
     }else if (pickerView.tag == 3){
-        return [[provinceResult.items getItem:row] getString:@"text"];
+        if (row==0) {
+            return @"请选择省";
+        }
+        return [[provinceResult.items getItem:row-1] getString:@"text"];
     }else{
-        return [[cityResult.items getItem:row] getString:@"text"];
+        if (row==0) {
+            return @"请选择市";
+        }
+        return [[cityResult.items getItem:row-1] getString:@"text"];
     }
 }
 
@@ -169,15 +199,31 @@
     if (pickerView.tag == 1) {
         userGender = Gender[row];
     }else if (pickerView.tag == 2){
-        selectCountryId = [[countryResult.items getItem:row] getString:@"value"];
-        userCountry = [[countryResult.items getItem:row] getString:@"text"];
-        [self getSchoolProvinceListRequest];
+        if (row ==0) {
+            selectCountryId = @"";
+            userCountry = @"";
+        }else{
+            selectCountryId = [[countryResult.items getItem:row-1] getString:@"value"];
+            userCountry = [[countryResult.items getItem:row-1] getString:@"text"];
+            [self getSchoolProvinceListRequest];
+        }
     }else if (pickerView.tag == 3){
-        selectProvinceId = [[provinceResult.items getItem:row] getString:@"value"];
-        userProvince = [[provinceResult.items getItem:row] getString:@"text"];
-        [self getSchoolCityLIstRequest];
+        if (row ==0) {
+            selectProvinceId = @"";
+            userProvince = @"";
+        }else{
+            selectProvinceId = [[provinceResult.items getItem:row-1] getString:@"value"];
+            userProvince = [[provinceResult.items getItem:row-1] getString:@"text"];
+            [self getSchoolCityLIstRequest];
+        }
     }else{
-        userCity = [[cityResult.items getItem:row] getString:@"text"];
+        if (row ==0) {
+            userCity = @"";
+            selectCityId = @"";
+        }else{
+            userCity = [[cityResult.items getItem:row] getString:@"text"];
+            selectCityId = [[cityResult.items getItem:row] getString:@"value"];
+        }
     }
 }
 
@@ -217,26 +263,44 @@
     return YES;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField.tag ==0) {
+        if (textField.text.length) {
+            userName = textField.text;
+        }
+    }
+}
+
 #pragma mark - NetWorkRequest
 
 -(void)updateInfoRequest:(id)sender{
     UserInfo* info = [UserInfo sharedUserInfo];
+    NSMutableDictionary* parameter = [[NSMutableDictionary alloc] init];
     
-    [[MyService sharedMyService] updateUserInfoWithParameters:@{
-                                                                @"UserId":info.userID,
-                                                                @"UserName":userName,
-                                                                @"UserNickName":userName,
-                                                                @"Sex":userGender,
-                                                                @"Birthday":@"",
-                                                                @"Country":userCountry,
-                                                                @"Province":userProvince,
-                                                                @"City":userCity,
-                                                                @"SchoolStatus":@"",
-                                                                @"School":@"",
-                                                                @"UserQQ":@"",
-                                                                @"Grade":@"",
-                                                                @"Major":@"",
-                                                                @"AverageScore":@""} onCompletion:^(id json) {
+    [parameter setObject:info.userID forKey:@"UserId"];
+    
+    if (userName.length) {
+        [parameter setObject:userName forKey:@"UserName"];
+        [parameter setObject:userName forKey:@"UserNickName"];
+    }
+    
+    if (userGender.length) {
+        [parameter setObject:userGender forKey:@"Sex"];
+    }
+
+    if (selectCountryId.length) {
+        [parameter setObject:selectCountryId forKey:@"Country"];
+    }
+    
+    if (selectProvinceId.length) {
+        [parameter setObject:selectProvinceId forKey:@"Province"];
+    }
+    
+    if (selectCityId.length) {
+        [parameter setObject:selectProvinceId forKey:@"City"];
+    }
+    
+    [[MyService sharedMyService] updateUserInfoWithParameters:parameter onCompletion:^(id json) {
                                                                     
                                                                     UserInfo* info = [UserInfo sharedUserInfo];
                                                                     info.username = userName;
@@ -254,7 +318,8 @@
 -(void)getSchoolCountryListRequest{
     [[SchoolService sharedSchoolService] getSchoolCountryListonCompletion:^(id json) {
         countryResult = json;
-        
+        self.tableView.hidden = NO;
+        [self.tableView reloadData];
     } onFailure:^(id json) {
         
     }];

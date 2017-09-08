@@ -292,7 +292,7 @@
     
     [cell.orgClassView removeAllTags];
     
-    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-111;
+    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-121;
     
     cell.orgClassView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
     cell.orgClassView.lineSpacing = 5;

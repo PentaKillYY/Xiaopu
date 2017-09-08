@@ -24,10 +24,6 @@
 @property(nonatomic,weak)IBOutlet UILabel* threeLabel;
 @property(nonatomic,weak)IBOutlet UILabel* fourLabel;
 
-@property(nonatomic,weak)IBOutlet UIImageView* oneBG;
-@property(nonatomic,weak)IBOutlet UIImageView* twoBG;
-@property(nonatomic,weak)IBOutlet UIImageView* threeBG;
-@property(nonatomic,weak)IBOutlet UIImageView* fourBG;
 @property(nonatomic,assign)id<VideoCourseCellDelegate>delegate;
 
 -(IBAction)selectViedeoAction:(id)sender;

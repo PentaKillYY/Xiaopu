@@ -33,6 +33,10 @@
 @property (copy, nonatomic) NSString* communityType;
 @property (copy, nonatomic) NSString* firstSelectIndex;
 @property (copy, nonatomic) NSString* secondSelectIndex;
+
+@property (copy, nonatomic) NSString* countryID;
+@property (copy, nonatomic) NSString* provinceID;
+@property (copy, nonatomic) NSString* cityID;
 +(instancetype)sharedUserInfo;
 -(void)logout;
 @end

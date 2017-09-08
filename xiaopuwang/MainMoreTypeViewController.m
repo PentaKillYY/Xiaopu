@@ -86,7 +86,8 @@
          }else if (leftIndex == 9){
              return 6;
          }else{
-             return [[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] allKeys].count;
+             NSString* key = orgTypeAry[leftIndex];
+             return  [[courseGroupTypeResult.detailinfo getDataItem:@"property_ConfigList"] getDataItemArray:key].size;
          }
     }
 }
