@@ -214,4 +214,14 @@
         failureBlock(json);
     }];
 }
+
+-(void)sendToOrgWithParameters:(NSDictionary *)parameters
+                  onCompletion:(JSONResponse)completionBlock
+                     onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?mobile=%@&name=%@",SendAppointToOrg,[parameters objectForKey:@"mobile"],[parameters objectForKey:@"name"]] parameters:nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

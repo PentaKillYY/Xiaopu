@@ -99,7 +99,8 @@
 }
 
 -(void)tokenRequest{
-    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].username,@"portraitUri":[UserInfo sharedUserInfo].headPicUrl} onCompletion:^(id json) {
+
+    [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].telphone,@"portraitUri":[UserInfo sharedUserInfo].headPicUrl} onCompletion:^(id json) {
         [self rongcloudConnect];
         
         [self dismissViewControllerAnimated:YES completion:^{

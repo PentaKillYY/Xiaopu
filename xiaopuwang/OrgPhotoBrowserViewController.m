@@ -23,8 +23,6 @@
     self.title = @"机构相册";
 
     [self.collctionView registerNib:[UINib nibWithNibName:@"ImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"ImageCollectionViewCell"];
-
-    DLog(@"%@",_AlbumResult);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +66,7 @@
     DataItem* item = [_AlbumResult.items getItem:indexPath.row];
     
     [cell.orgImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"PhotoURL"]]] placeholderImage:nil];
+    
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapAction:)];
     cell.orgImage.tag = indexPath.row;
     [cell.orgImage addGestureRecognizer:tapGestureRecognizer];

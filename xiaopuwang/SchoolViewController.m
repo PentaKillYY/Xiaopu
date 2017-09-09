@@ -253,7 +253,7 @@
         tag.padding = UIEdgeInsetsMake(3, 3, 3, 3);
         [cell.orgClassView addTag:tag];
     }];
-    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-111;
+    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-121;
     
     cell.orgClassView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
     cell.orgClassView.interitemSpacing = 5;

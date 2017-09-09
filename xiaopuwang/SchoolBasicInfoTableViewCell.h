@@ -7,12 +7,13 @@
 //
 
 #import "BaseTableViewCell.h"
-
+#import "TopLeftLabel.h"
 @interface SchoolBasicInfoTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* scoreTitleLabel;
-@property(nonatomic,weak)IBOutlet UILabel* scoreLabel;
-@property(nonatomic,weak)IBOutlet UILabel* applyStartLabel;
-@property(nonatomic,weak)IBOutlet UILabel* applyEndLabel;
+@property(nonatomic,weak)IBOutlet TopLeftLabel* scoreLabel;
+@property(nonatomic,weak)IBOutlet TopLeftLabel* applyStartLabel;
+@property(nonatomic,weak)IBOutlet TopLeftLabel* applyEndLabel;
+
 
 -(void)bingdngViewModel:(DataItem*)item;
 @end

@@ -49,12 +49,16 @@
         [scoreTItleString appendString:@"日语"];
         [scoreString appendString:Japanese];
     }
-    
+  
     self.scoreTitleLabel.text = scoreTItleString;
+    self.scoreLabel.numberOfLines = 0;
+    self.applyStartLabel.numberOfLines = 0;
+    self.applyEndLabel.numberOfLines = 0;
     self.scoreLabel.text = scoreString;
-    
     self.applyStartLabel.text = [item getString:@"ApplyStart"];
     self.applyEndLabel.text = [item getString:@"ApplyEnd"];
-    
+    [self.scoreLabel sizeToFit];
+    [self.applyStartLabel sizeToFit];
+    [self.applyEndLabel sizeToFit];
 }
 @end

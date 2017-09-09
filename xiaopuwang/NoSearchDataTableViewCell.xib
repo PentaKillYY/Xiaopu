@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoSearchDataTableViewCell" id="KGk-i7-Jjw" customClass="NoSearchDataTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoSearchDataTableViewCell" rowHeight="147" id="KGk-i7-Jjw" customClass="NoSearchDataTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="146.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoSearch.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Hh-lR-UNq">
-                        <rect key="frame" x="138.5" y="0.0" width="43.5" height="43.5"/>
+                        <rect key="frame" x="87" y="0.0" width="146.5" height="146.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="5Hh-lR-UNq" secondAttribute="height" multiplier="1:1" id="IK6-9A-F0M"/>
                         </constraints>
@@ -32,6 +32,7 @@
                     <constraint firstItem="5Hh-lR-UNq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yKa-eh-fwc"/>
                 </constraints>
             </tableViewCellContentView>
+            <point key="canvasLocation" x="33" y="157.5"/>
         </tableViewCell>
     </objects>
     <resources>

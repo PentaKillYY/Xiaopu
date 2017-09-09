@@ -6,14 +6,14 @@
 //  Copyright © 2017年 ings. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 @protocol MainTypeDelegate <NSObject>
 
 -(void)selectMainTypeDelegate:(id)sender;
 
 @end
 
-@interface MainTypeTableViewCell : UITableViewCell
+@interface MainTypeTableViewCell : BaseTableViewCell
 
 @property(nonatomic,weak)IBOutlet UIButton* oneButton;
 @property(nonatomic,weak)IBOutlet UIButton* twoButton;

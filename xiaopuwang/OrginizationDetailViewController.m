@@ -25,7 +25,7 @@
 #import <LGAlertView/LGAlertView.h>
 
 
-@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate>{
+@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate,AlbumVideoDelegate>{
     NSInteger currentSegIndex;
     
     DataResult* _detailInfoResult;
@@ -58,6 +58,9 @@
     
     UIVisualEffectView *effectview;
     UIButton* loginButton;
+    
+    NSInteger selectAlbumAndVideoIndex;
+    
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -170,6 +173,37 @@
         id theSegue = segue.destinationViewController;
         DLog(@"%@",[[[_classResult.detailinfo getDataItemArray:@"list"] getItem:selectCourseIndex] getString:@"Organization_Course_ID"]);
         [theSegue setValue: [[[_classResult.detailinfo getDataItemArray:@"list"] getItem:selectCourseIndex] getString:@"Organization_Course_ID"] forKey:@"courseId"];
+    }else if ([segue.identifier isEqualToString:@"DetailToVideoPlayer" ]){
+        id theSegue = segue.destinationViewController;
+
+        
+        if (selectAlbumAndVideoIndex<20) {
+            NSMutableArray* array = [[NSMutableArray alloc] init];
+            
+            DataItemArray* itemArray = [_videoRequest.detailinfo getDataItemArray:@"videoList"];
+            for (int i = 0; i < itemArray.size; i++) {
+                DataItem* item = [itemArray getItem:i];
+                if ([item getInt:@"VideoType"] == 0) {
+                    [array addObject:item];
+                }
+            }
+
+          [theSegue setValue:array[selectAlbumAndVideoIndex-10] forKey:@"currenrItem"];
+        }else{
+            NSMutableArray* array = [[NSMutableArray alloc] init];
+            
+            DataItemArray* itemArray = [_videoRequest.detailinfo getDataItemArray:@"videoList"];
+            for (int i = 0; i < itemArray.size; i++) {
+                DataItem* item = [itemArray getItem:i];
+                if ([item getInt:@"VideoType"] == 1) {
+                    [array addObject:item];
+                }
+            }
+            
+            [theSegue setValue:array[selectAlbumAndVideoIndex-20] forKey:@"currenrItem"];
+        }
+        
+        
     }
 }
 
@@ -356,10 +390,22 @@
 - (void)alertView:(nonnull LGAlertView *)alertView clickedButtonAtIndex:(NSUInteger)index title:(nullable NSString *)title{
     UITextView* textView = (UITextView*)alertView.innerView;
     [self appointOrgRequest:textView.text];
-    DLog(@"lgalertview%@",textView.text);
-    
-    
 }
+
+#pragma mark - AlbumVideoDelegate
+-(void)albumClickDelegate:(id)sender{
+    UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
+    selectAlbumAndVideoIndex = tap.view.tag;
+    
+    if (tap.view.tag < 10) {
+                
+    }else if (tap.view.tag <20){
+        [self performSegueWithIdentifier:@"DetailToVideoPlayer" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"DetailToVideoPlayer" sender:self];
+    }
+}
+
 
 #pragma mark - UITableViewDatasource
 
@@ -598,6 +644,7 @@
             if (indexPath.section == 3) {
                 cell.orgTitle.text = @"相册";
                 [cell setupUI:_albumRequest Type:0];
+
             }else if (indexPath.section == 4){
                 cell.orgTitle.text = @"学校视频";
                 [cell setupUI:_videoRequest Type:1];
@@ -605,7 +652,7 @@
                 cell.orgTitle.text = @"在线试听";
                 [cell setupUI:_videoRequest Type:2];
             }
-            
+            cell.delegate = self;
             return cell;
         }
 
@@ -947,6 +994,16 @@
     }
 }
 
+#pragma mark - ALbumDelegate
+- (void)pictureBrowserDidShow:(SRPictureBrowser *)pictureBrowser {
+    
+    NSLog(@"%s", __func__);
+}
+
+- (void)pictureBrowserDidDismiss {
+    
+    NSLog(@"%s", __func__);
+}
 
 
 #pragma mark - NetWorkRequest
@@ -1132,6 +1189,7 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     [[OrginizationService sharedOrginizationService] appointOrgWithParameters:@{@"orgApplicationID":self.orgID,@"userId":info.userID,@"peopleContent":acontent} onCompletion:^(id json) {
         [self getAppointStateRequest];
+        [self sendAppointToOrgRequest];
     } onFailure:^(id json) {
         
     }];
@@ -1141,6 +1199,14 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     [[MyService sharedMyService] GetUserAdscriptionWithParameters:@{@"orgId":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
         _userAdsResult = json;
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)sendAppointToOrgRequest{
+    [[OrginizationService sharedOrginizationService] sendToOrgWithParameters:@{@"mobile":[_detailInfoResult.detailinfo getString:@"ContactMobile"],@"name":[_detailInfoResult.detailinfo getString:@"ContactPeople"]} onCompletion:^(id json) {
+        
     } onFailure:^(id json) {
         
     }];

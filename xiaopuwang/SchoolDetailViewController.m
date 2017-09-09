@@ -298,9 +298,9 @@
 }
 
 - (void)configBasicInfoCell:(SchoolBasicInfoTableViewCell *)cell indexpath:(NSIndexPath *)indexpath{
-    cell.scoreLabel.preferredMaxLayoutWidth = 70;
-    cell.applyStartLabel.preferredMaxLayoutWidth = 70;
-    cell.applyEndLabel.preferredMaxLayoutWidth = 70;
+    cell.scoreLabel.preferredMaxLayoutWidth = (Main_Screen_Width-16*2-8*2)/3;
+    cell.applyStartLabel.preferredMaxLayoutWidth = (Main_Screen_Width-16*2-8*2)/3;
+    cell.applyEndLabel.preferredMaxLayoutWidth = (Main_Screen_Width-16*2-8*2)/3;
     
     [cell bingdngViewModel:[detailResult.items getItem:0]];
     
@@ -380,13 +380,16 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     [[SchoolService sharedSchoolService] judgeSchoolFollowStateWithParameters:@{@"schoolId":self.applicationID,@"userId":info.userID} onCompletion:^(id json) {
         _focusResult = json;
-        self.followTitle.text = @"已关注";
-        self.followButton.selected = YES;
-
+        if ([_focusResult.message isEqualToString:@"0"]) {
+            _focusResult = json;
+            self.followTitle.text = @"关注";
+            self.followButton.selected = NO;
+        }else{
+            self.followTitle.text = @"已关注";
+            self.followButton.selected = YES;
+        }
     } onFailure:^(id json) {
-        _focusResult = json;
-        self.followTitle.text = @"关注";
-        self.followButton.selected = NO;
+        
     }];
 }
 

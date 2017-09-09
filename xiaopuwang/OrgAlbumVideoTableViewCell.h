@@ -7,10 +7,23 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "SRPictureBrowser.h"
+#import "SRPictureModel.h"
 
-@interface OrgAlbumVideoTableViewCell : BaseTableViewCell
+@protocol AlbumVideoDelegate <NSObject>
+
+-(void)albumClickDelegate:(id)sender;
+
+@end
+
+@interface OrgAlbumVideoTableViewCell : BaseTableViewCell<SRPictureBrowserDelegate>
 @property(nonatomic,weak)IBOutlet UILabel* orgTitle;
 @property(nonatomic,weak)IBOutlet UIScrollView* contentScroll;
+@property(nonatomic,assign)id<AlbumVideoDelegate>delegate;
+@property (nonatomic, strong) NSMutableArray *imageViewFrames;
+@property(nonatomic,strong)DataResult *AlbumResult;
 
 - (void)setupUI:(DataResult*)dataresult Type:(NSInteger)albumType;
+
 @end
+

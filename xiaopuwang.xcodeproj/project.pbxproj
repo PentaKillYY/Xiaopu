@@ -281,6 +281,7 @@
 		047827551F5EA2D5000D4ED8 /* MainMoreTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827541F5EA2D5000D4ED8 /* MainMoreTypeViewController.m */; };
 		047827801F5F8CD4000D4ED8 /* NewRewardBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478277F1F5F8CD4000D4ED8 /* NewRewardBg.png */; };
 		047827821F5F9B36000D4ED8 /* typeIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 047827811F5F9B36000D4ED8 /* typeIcon.json */; };
+		0478278F1F62789A000D4ED8 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478278E1F62789A000D4ED8 /* TopLeftLabel.m */; };
 		0478B9A31F148C40003A9C8B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A21F148C40003A9C8B /* libc++.tbd */; };
 		0478B9A51F148C48003A9C8B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A41F148C48003A9C8B /* libz.tbd */; };
 		0478B9A71F148C4F003A9C8B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A61F148C4F003A9C8B /* SystemConfiguration.framework */; };
@@ -834,6 +835,8 @@
 		047827541F5EA2D5000D4ED8 /* MainMoreTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMoreTypeViewController.m; sourceTree = "<group>"; };
 		0478277F1F5F8CD4000D4ED8 /* NewRewardBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewRewardBg.png; sourceTree = "<group>"; };
 		047827811F5F9B36000D4ED8 /* typeIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = typeIcon.json; sourceTree = "<group>"; };
+		0478278D1F62789A000D4ED8 /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
+		0478278E1F62789A000D4ED8 /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		0478B9A21F148C40003A9C8B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		0478B9A41F148C48003A9C8B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0478B9A61F148C4F003A9C8B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -1894,6 +1897,8 @@
 				04267F421F17189200FFBC3E /* UIButton+JKImagePosition.m */,
 				047827501F5E7F59000D4ED8 /* InnerLabel.h */,
 				047827511F5E7F59000D4ED8 /* InnerLabel.m */,
+				0478278D1F62789A000D4ED8 /* TopLeftLabel.h */,
+				0478278E1F62789A000D4ED8 /* TopLeftLabel.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -2697,6 +2702,7 @@
 				043C0BE91F53A68500CE98B2 /* CommunityReplyCell.m in Sources */,
 				040C74441F4BDC65001F5318 /* AddReflectTableViewCell.m in Sources */,
 				047827451F5D4F7F000D4ED8 /* LocalSelectOrgCell.m in Sources */,
+				0478278F1F62789A000D4ED8 /* TopLeftLabel.m in Sources */,
 				045633141F29BE1C005E04CB /* SRPictureModel.m in Sources */,
 				04A1D4CA1F340ADB00EACEA8 /* SchoolCourseTestCell.m in Sources */,
 				040C74591F4D1B16001F5318 /* ForgetPasswordViewController.m in Sources */,
@@ -2927,6 +2933,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2974,6 +2981,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2999,6 +3007,7 @@
 			baseConfigurationReference = 6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = AG9QJ8CTNX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3152,6 +3161,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ings.xiaopuwang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "../XTDemoKitV1/XTDemoKitV1/Classes/**";
 			};
 			name = Debug;
@@ -3161,6 +3171,7 @@
 			baseConfigurationReference = F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = AG9QJ8CTNX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3314,6 +3325,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ings.xiaopuwang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "../XTDemoKitV1/XTDemoKitV1/Classes/**";
 			};
 			name = Release;

@@ -90,7 +90,7 @@
                         <segue destination="rVy-5l-OQ8" kind="push" identifier="MainToEducationPlan" id="pWt-O0-gxy"/>
                         <segue destination="N9O-2r-Z20" kind="push" identifier="MainToOrgDetail" id="Eet-PD-6bI"/>
                         <segue destination="KmR-Ma-ywa" kind="push" identifier="MainToGuide" id="FSU-ww-TS2"/>
-                        <segue destination="Kut-kc-9Yh" kind="push" identifier="MainToVideoPlayer" id="qGq-NF-EW6"/>
+                        <segue destination="Kut-kc-9Yh" kind="modal" identifier="MainToVideoPlayer" id="qGq-NF-EW6"/>
                         <segue destination="HTF-MC-NrZ" kind="push" identifier="MainToSchoolDetail" id="sS5-PK-I1T"/>
                         <segue destination="kOm-uz-ieO" kind="push" identifier="MainToChinaSchoolDetail" id="Cca-EC-7UM"/>
                         <segue destination="3IF-KR-xqP" kind="push" identifier="MainToOrgList" id="IIS-gU-qB3"/>
@@ -791,6 +791,7 @@
                         <segue destination="PbP-mi-eef" kind="push" identifier="DetailToMoreEvaluate" id="DNz-LL-W6p"/>
                         <segue destination="b0z-uj-pwP" kind="push" identifier="DetailToCourseDetail" id="dFW-sS-bdb"/>
                         <segue destination="XVB-0J-k9I" kind="push" identifier="DetailToMyOrder" id="U2m-as-IXV"/>
+                        <segue destination="Kut-kc-9Yh" kind="modal" identifier="DetailToVideoPlayer" id="Eho-hf-EWg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp6-vb-6Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1014,7 +1015,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fgt-lc-NUR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="kOm-uz-ieO" id="cON-lm-whm"/>
@@ -1181,7 +1182,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-rK-LZW">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -2430,7 +2431,7 @@
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnH-D5-iTx">
                                 <rect key="frame" x="195.5" y="442.5" width="74" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="职业技能">
+                                <state key="normal" title="职业资格">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -3798,20 +3799,20 @@
         <segue reference="yad-da-8Nz"/>
         <segue reference="h06-1T-d8P"/>
         <segue reference="sOd-j3-mVK"/>
-        <segue reference="Cca-EC-7UM"/>
-        <segue reference="qGq-NF-EW6"/>
-        <segue reference="hc7-hA-kQF"/>
         <segue reference="sS5-PK-I1T"/>
         <segue reference="Eet-PD-6bI"/>
-        <segue reference="xcV-3d-LJO"/>
-        <segue reference="C9X-s8-weM"/>
+        <segue reference="qGq-NF-EW6"/>
+        <segue reference="Cca-EC-7UM"/>
+        <segue reference="hc7-hA-kQF"/>
         <segue reference="dFW-sS-bdb"/>
         <segue reference="U2m-as-IXV"/>
+        <segue reference="xcV-3d-LJO"/>
+        <segue reference="C9X-s8-weM"/>
         <segue reference="wET-gJ-VhJ"/>
         <segue reference="RZP-Ti-Kfv"/>
         <segue reference="8qs-Mb-CW5"/>
-        <segue reference="P2M-WO-PHT"/>
         <segue reference="R0j-r9-wjC"/>
         <segue reference="YZ5-ra-U5E"/>
+        <segue reference="P2M-WO-PHT"/>
     </inferredMetricsTieBreakers>
 </document>

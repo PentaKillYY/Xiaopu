@@ -51,7 +51,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
     }
     cell.textLabel.text = _arr1[indexPath.row];
-    
+    cell.textLabel.font = [UIFont systemFontOfSize:13];
     return cell;
     
     

@@ -77,7 +77,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"专家选校";
+    self.title = @"教育规划";
    
     internationalArray = [NSMutableArray new];
     internationalScoreArray = [NSMutableArray new];
@@ -965,6 +965,8 @@
                                                                            @"IsState":@(0)
                                                                            }
                                                             onCompletion:^(id json) {
+                                                                [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
+                                                                [self.navigationController popViewControllerAnimated:YES];
                                                                 
                                                             } onFailure:^(id json) {
                                                                 
@@ -1002,7 +1004,8 @@
                                                                                @"IsState":@(0)
                                                                                }
      onCompletion:^(id json) {
-        
+         [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
+         [self.navigationController popViewControllerAnimated:YES];
      } onFailure:^(id json) {
         
      }];
@@ -1054,7 +1057,8 @@
                                                                                      }
          
                                                                       onCompletion:^(id json) {
-                                                                          
+                                                                          [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
+                                                                          [self.navigationController popViewControllerAnimated:YES];
                                                                       } onFailure:^(id json) {
                                                                           
                                                                       }];
