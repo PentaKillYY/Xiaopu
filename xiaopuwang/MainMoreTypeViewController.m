@@ -43,7 +43,19 @@
     }else if ([info.firstSelectIndex intValue] ==2){
         leftIndex = 9;
     }else{
+        if ([info.secondSelectIndex intValue]==3) {
+            leftIndex = 0;
+        }else if ([info.secondSelectIndex intValue]==4){
+            leftIndex =1;
+        }else if ([info.secondSelectIndex intValue]==1){
+            leftIndex =2;
+        }else if ([info.secondSelectIndex intValue]==0){
+            leftIndex =3;
+        }else if ([info.secondSelectIndex intValue]==2){
+            leftIndex=4;
+        }else{
         leftIndex = [info.secondSelectIndex intValue];
+        }
     }
     orgTypeAry = OrginizationTypeSelectFilter;
     self.leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];

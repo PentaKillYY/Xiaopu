@@ -32,3 +32,5 @@
 #define EmptyCommunityType @"您还未选择帖子类型"
 #define EmptyCommunityContentOrImage @"帖子必须包括内容或图片"
 #define CommunityIsEmpty @"该帖子不存在"
+#define NoBalance @"您的账户余额为0"
+#define SuccessSpecialistPost @"您已成功提交，我们会尽快与您联系"

@@ -133,9 +133,10 @@ static NSString *replyidentify = @"CommunityReplyCell";
 -(void)showReplyUI{
     selectImageArray = [[NSMutableArray alloc] init];
     
+    [self.sendButton setTitleColor:MAINCOLOR forState:UIControlStateNormal];
     [self.sendButton.layer setCornerRadius:3.0];
     [self.sendButton.layer setBorderWidth:0.5];
-    [self.sendButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [self.sendButton.layer setBorderColor:MAINCOLOR.CGColor];
     [self.sendButton.layer setMasksToBounds:YES];
     
     self.replyTextView.delegate = self;

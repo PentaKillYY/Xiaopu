@@ -219,7 +219,10 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     
     //1线上  2线下
-    if (orgID.length >0 && studentName.length >0 && originalPrice>0 &&subject.length>0 && paytype>0) {
+    
+    if(originalPrice == 0){
+        [[AppCustomHud sharedEKZCustomHud] showTextHud:@"下单金额不能为0"];
+    }else if (orgID.length >0 && studentName.length >0 &&subject.length>0 && paytype>0) {
         [[MyService sharedMyService] userMakeOrderWithParameters:@{@"OrderNum":orderNumber,@"CourseId":@"",@"Organization_Application_ID":orgID,@"Purchaser":info.userID,@"StudentName":studentName,@"TotalPrice":@(originalPrice),@"OriginalPrice":@(originalPrice),@"BackPrice":@(0),@"Subject":subject,@"PayType":@(paytype)} onCompletion:^(id json) {
             
             [self updateOrderRequest];

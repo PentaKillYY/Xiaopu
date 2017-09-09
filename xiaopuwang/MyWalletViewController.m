@@ -90,8 +90,11 @@
 }
 
 -(void)reflectDelegate:(id)sender{
-    [self performSegueWithIdentifier:@"WalletToReflectBalance" sender:self];
-
+    if ([[UserInfo sharedUserInfo].userBalance doubleValue]>0) {
+       [self performSegueWithIdentifier:@"WalletToReflectBalance" sender:self];
+    }else{
+        [[AppCustomHud sharedEKZCustomHud] showTextHud:NoBalance];
+    }
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
