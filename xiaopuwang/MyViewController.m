@@ -151,7 +151,7 @@
         }else if (indexPath.section == 2 && indexPath.row == 0){
             [self performSegueWithIdentifier:@"MyToWallet" sender:self];
         }else if (indexPath.section == 2 && indexPath.row == 1){
-            [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
+//            [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
         }else if (indexPath.section ==3 && indexPath.row == 0) {
             [self performSegueWithIdentifier:@"MyToFollow" sender:self];
         }else if (indexPath.section == 3 && indexPath.row == 1){

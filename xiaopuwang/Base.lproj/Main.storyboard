@@ -2254,10 +2254,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sq-tB-h5c">
-                                <rect key="frame" x="55" y="248.5" width="70" height="70"/>
+                                <rect key="frame" x="50" y="246" width="95" height="95"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="UdI-TV-o8e"/>
-                                    <constraint firstAttribute="width" constant="70" id="tsX-L7-hOP"/>
+                                    <constraint firstAttribute="height" constant="95" id="UdI-TV-o8e"/>
+                                    <constraint firstAttribute="width" constant="95" id="tsX-L7-hOP"/>
                                 </constraints>
                                 <state key="normal" title="培训机构">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2267,7 +2267,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPh-Ru-8NK">
-                                <rect key="frame" x="250" y="248.5" width="70" height="70"/>
+                                <rect key="frame" x="230" y="246" width="95" height="95"/>
                                 <state key="normal" title="国际学校">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2276,7 +2276,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDi-ec-WG1">
-                                <rect key="frame" x="152" y="348.5" width="70" height="70"/>
+                                <rect key="frame" x="139.5" y="346" width="95" height="95"/>
                                 <state key="normal" title="海外学校">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2300,13 +2300,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HcE-yj-YyG" firstAttribute="centerX" secondItem="GvW-II-lOa" secondAttribute="centerX" id="0uu-v0-tMF"/>
-                            <constraint firstItem="qDi-ec-WG1" firstAttribute="centerY" secondItem="GvW-II-lOa" secondAttribute="centerY" constant="50" id="1Lo-0P-YkY"/>
+                            <constraint firstItem="qDi-ec-WG1" firstAttribute="centerY" secondItem="GvW-II-lOa" secondAttribute="centerY" constant="60" id="1Lo-0P-YkY"/>
                             <constraint firstItem="E5q-Up-qQA" firstAttribute="top" secondItem="0x0-v9-ONO" secondAttribute="bottom" constant="44" id="Qn0-DR-ROM"/>
-                            <constraint firstAttribute="trailing" secondItem="mPh-Ru-8NK" secondAttribute="trailing" constant="55" id="UNm-xr-2FC"/>
+                            <constraint firstAttribute="trailing" secondItem="mPh-Ru-8NK" secondAttribute="trailing" constant="50" id="UNm-xr-2FC"/>
                             <constraint firstItem="qDi-ec-WG1" firstAttribute="width" secondItem="7sq-tB-h5c" secondAttribute="width" id="VAy-kL-jjy"/>
                             <constraint firstItem="mPh-Ru-8NK" firstAttribute="centerY" secondItem="7sq-tB-h5c" secondAttribute="centerY" id="WZv-0C-ftR"/>
-                            <constraint firstItem="7sq-tB-h5c" firstAttribute="centerY" secondItem="GvW-II-lOa" secondAttribute="centerY" constant="-50" id="ZZ4-4S-UoR"/>
-                            <constraint firstItem="7sq-tB-h5c" firstAttribute="leading" secondItem="GvW-II-lOa" secondAttribute="leading" constant="55" id="ddS-6W-dit"/>
+                            <constraint firstItem="7sq-tB-h5c" firstAttribute="centerY" secondItem="GvW-II-lOa" secondAttribute="centerY" constant="-40" id="ZZ4-4S-UoR"/>
+                            <constraint firstItem="7sq-tB-h5c" firstAttribute="leading" secondItem="GvW-II-lOa" secondAttribute="leading" constant="50" id="ddS-6W-dit"/>
                             <constraint firstItem="HcE-yj-YyG" firstAttribute="top" secondItem="E5q-Up-qQA" secondAttribute="bottom" constant="16" id="e2k-FF-6eb"/>
                             <constraint firstItem="mPh-Ru-8NK" firstAttribute="width" secondItem="7sq-tB-h5c" secondAttribute="width" id="hgw-yz-dmk"/>
                             <constraint firstItem="qDi-ec-WG1" firstAttribute="centerX" secondItem="GvW-II-lOa" secondAttribute="centerX" id="iG9-Vn-POA"/>

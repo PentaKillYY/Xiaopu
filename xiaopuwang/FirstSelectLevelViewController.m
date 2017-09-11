@@ -29,13 +29,13 @@
     self.overseaButton.titleLabel.numberOfLines = 2;
     [self.overseaButton setTitle:@"海外\n学校" forState:0];
     
-    self.orgButton.backgroundColor = SPECIALISTNAVCOLOR;
-    self.interButton.backgroundColor = SPECIALISTNAVCOLOR;
-    self.overseaButton.backgroundColor = SPECIALISTNAVCOLOR;
+    self.orgButton.backgroundColor = FIRSTLEVELORGCOLOR;
+    self.interButton.backgroundColor = FIRSTLEVELINTERCOLOR;
+    self.overseaButton.backgroundColor = FIRSTLEVELOVERSEACOLOR;
     
-    [self.orgButton.layer setCornerRadius:35];
-    [self.interButton.layer setCornerRadius:35];
-    [self.overseaButton.layer setCornerRadius:35];
+    [self.orgButton.layer setCornerRadius:95/2];
+    [self.interButton.layer setCornerRadius:95/2];
+    [self.overseaButton.layer setCornerRadius:95/2];
     
 }
 
