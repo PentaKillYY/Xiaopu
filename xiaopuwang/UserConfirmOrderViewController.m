@@ -99,7 +99,7 @@
     if (tableView.tag == 1) {
         return couponNumber+1;
     }else{
-        return ConfirmOrderTitle.count+1+1;
+        return ConfirmOrderTitle.count+1;
     }
 }
 
@@ -107,7 +107,7 @@
     if (tableView.tag == 1) {
         return 44;
     }else{
-        if (indexPath.row == 5) {
+        if (indexPath.row == 4) {
             return 105;
         }else{
             return 44;
@@ -132,15 +132,16 @@
         }
         return cell;
     }else{
-        if (indexPath.row == 4) {
-            PaySelectCouponTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"PaySelectCouponTableViewCell" owner:self options:nil].firstObject;
-            if (couponNumber == 0) {
-                cell.couponNumber.text = @"不使用优惠券";
-            }else{
-                cell.couponNumber.text = [NSString stringWithFormat:@"节省%lu元",selectCouponArray.count*100];
-            }
-            return cell;
-        }else if (indexPath.row == 5){
+//        if (indexPath.row == 4) {
+//            PaySelectCouponTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"PaySelectCouponTableViewCell" owner:self options:nil].firstObject;
+//            if (couponNumber == 0) {
+//                cell.couponNumber.text = @"不使用优惠券";
+//            }else{
+//                cell.couponNumber.text = [NSString stringWithFormat:@"节省%u元",selectCouponArray.count*100];
+//            }
+//            return cell;
+//        }else
+            if (indexPath.row == 4){
             PayTypeTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"PayTypeTableViewCell" owner:self options:nil].firstObject;
             cell.delegate = self;
             return cell;
@@ -179,9 +180,9 @@
         }
         [tableView reloadData];
     }else{
-        if (indexPath.row == 4) {
-            [self showCouponView];
-        }
+//        if (indexPath.row == 4) {
+//            [self showCouponView];
+//        }
     }
 }
 
