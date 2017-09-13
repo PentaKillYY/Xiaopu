@@ -64,6 +64,9 @@
                             <constraint firstAttribute="width" secondItem="ioM-dc-ceQ" secondAttribute="height" multiplier="1:1" id="2o6-SL-v32"/>
                         </constraints>
                         <state key="normal" image="addressArrow"/>
+                        <connections>
+                            <action selector="showNavAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ecx-vC-uNv"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到这去" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgN-UF-wMT">
                         <rect key="frame" x="262" y="74" width="37" height="22.5"/>

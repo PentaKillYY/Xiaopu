@@ -40,4 +40,8 @@
     }
     
 }
+
+-(IBAction)showNavAction:(id)sender{
+    [self.delegate navToAddress:sender];
+}
 @end

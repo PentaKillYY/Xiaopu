@@ -21,11 +21,12 @@
 #import "OrgTitleClassTableViewCell.h"
 #import "OrginizationService.h"
 #import "MyService.h"
+#import "UIActionSheet+Block.h"
 
 #import <LGAlertView/LGAlertView.h>
 
 
-@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate,AlbumVideoDelegate,OrgDetailCellDelegate,OrgTitleClassDelegate>{
+@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate,AlbumVideoDelegate,OrgDetailCellDelegate,OrgTitleClassDelegate,OrgDetailAddressDelegate,UIActionSheetDelegate>{
     NSInteger currentSegIndex;
     
     DataResult* _detailInfoResult;
@@ -63,6 +64,7 @@
     NSInteger courseCount;
     UIButton* _rightButton;
     NSString* orderIndex;
+    NSMutableArray* installmaps;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -80,7 +82,7 @@
     // Do any additional setup after loading the view.
     self.title = @"机构详情";
     self.view.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:228.0/255.0 blue:233.0/255.0 alpha:1.0];
-   
+    installmaps = [[NSMutableArray alloc] init];
     [self.tableView registerNib:[UINib nibWithNibName:@"OrgTeacherTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgTeacher"];
     [self.tableView registerNib:[UINib nibWithNibName:@"OrgDetailAddressTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgDetailAddress"];
     [self.tableView registerNib:[UINib nibWithNibName:@"OrgDetailInfoTableViewCell" bundle:nil]forCellReuseIdentifier:@"OrgDetailInfo"];
@@ -461,6 +463,7 @@
     }else if (indexPath.section==3){
         OrgDetailAddressTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgDetailAddressTableViewCell" owner:self options:nil].firstObject;
         [self configAddressCell:cell IndexPath:indexPath];
+        cell.delegate = self;
         return cell;
     }else if (indexPath.section==4){
         OrgHouseRateTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgHouseRateTableViewCell" owner:self options:nil].firstObject;
@@ -602,6 +605,83 @@
 #pragma mark - DetailDelegate
 -(void)showMoreInfo:(id)sender{
     [self performSegueWithIdentifier:@"DetailToContent" sender:self];
+}
+
+#pragma mark - OrgDetailAddressDelegate
+-(void)navToAddress:(id)sender{
+    CLLocationCoordinate2D startPt = (CLLocationCoordinate2D){[_detailInfoResult.detailinfo getDouble:@"Y"], [_detailInfoResult.detailinfo getDouble:@"X"]};
+    UIActionSheet* sheet = [[UIActionSheet alloc] initWithTitle:@"选择地图导航" cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:[self getInstalledMapAppWithEndLocation:startPt]];
+    sheet.delegate = self;
+    [sheet showInView:self.view];
+}
+
+#pragma mark - ActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==0) {
+        [self navAppleMap];
+    }else {
+        NSDictionary *dic = installmaps[buttonIndex];
+        NSString *urlString = dic[@"url"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    }
+}
+
+//苹果地图
+- (void)navAppleMap
+{
+    CLLocationCoordinate2D gps = (CLLocationCoordinate2D){[_detailInfoResult.detailinfo getDouble:@"Y"], [_detailInfoResult.detailinfo getDouble:@"X"]};
+    
+    MKMapItem *currentLoc = [MKMapItem mapItemForCurrentLocation];
+    MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:gps addressDictionary:nil]];
+    NSArray *items = @[currentLoc,toLocation];
+    NSDictionary *dic = @{
+                          MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving,
+                          MKLaunchOptionsMapTypeKey : @(MKMapTypeStandard),
+                          MKLaunchOptionsShowsTrafficKey : @(YES)
+                          };
+    
+    [MKMapItem openMapsWithItems:items launchOptions:dic];
+}
+
+#pragma mark - 导航方法
+- (NSArray *)getInstalledMapAppWithEndLocation:(CLLocationCoordinate2D)endLocation
+{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    
+    NSMutableArray *maps = [NSMutableArray array];
+    
+    //苹果地图
+    NSMutableDictionary *iosMapDic = [NSMutableDictionary dictionary];
+    iosMapDic[@"title"] = @"苹果地图";
+    [maps addObject:@"苹果地图"];
+    [installmaps addObject:iosMapDic];
+    
+    //百度地图
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
+        NSMutableDictionary *baiduMapDic = [NSMutableDictionary dictionary];
+        baiduMapDic[@"title"] = @"百度地图";
+      
+        NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin=%f,%f&destination=%f,%f&mode=driving&src=webapp.navi.ings.xiaopuwang",[info.userLatitude doubleValue],[info.userLongitude doubleValue] ,endLocation.latitude,endLocation.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+        
+        baiduMapDic[@"url"] = urlString;
+        [maps addObject:@"百度地图"];
+        [installmaps addObject:baiduMapDic];
+
+    }
+    
+    //高德地图
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]]) {
+        NSMutableDictionary *gaodeMapDic = [NSMutableDictionary dictionary];
+        gaodeMapDic[@"title"] = @"高德地图";
+        NSString *urlString = [[NSString stringWithFormat:@"iosamap://navi?sourceApplication=%@&backScheme=%@&lat=%f&lon=%f&dev=0&style=2",@"xiaopuwang",@"xiaopuwang",endLocation.latitude,endLocation.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        gaodeMapDic[@"url"] = urlString;
+        [maps addObject:@"高德地图"];
+        [installmaps addObject:gaodeMapDic];
+
+    }
+    
+    return maps;
 }
 
 #pragma mark - ALbumDelegate
