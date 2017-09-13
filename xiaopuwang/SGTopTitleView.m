@@ -103,7 +103,7 @@ static CGFloat const indicatorHeight = 2;
         [_staticTitleLabel addGestureRecognizer:tap];
         
         // 默认选中第0个label
-        if (j == 0) {
+        if (j == self.defaultIndex) {
             [self staticTitleClick:tap];
         }
         
@@ -111,7 +111,7 @@ static CGFloat const indicatorHeight = 2;
     }
     
     // 取出第一个子控件
-    UILabel *firstLabel = self.subviews.firstObject;
+    UILabel *defaultLabel = self.subviews[self.defaultIndex];
     
     // 添加指示器
     self.indicatorView = [[UIView alloc] init];
@@ -123,9 +123,9 @@ static CGFloat const indicatorHeight = 2;
     
     // 指示器默认在第一个选中位置
     // 计算TitleLabel内容的Size
-    CGSize labelSize = [self sizeWithText:firstLabel.text font:labelFontOfSize maxSize:CGSizeMake(MAXFLOAT, labelH)];
+    CGSize labelSize = [self sizeWithText:defaultLabel.text font:labelFontOfSize maxSize:CGSizeMake(MAXFLOAT, labelH)];
     _indicatorView.SG_width = labelSize.width;
-    _indicatorView.SG_centerX = firstLabel.SG_centerX;
+    _indicatorView.SG_centerX = defaultLabel.SG_centerX;
 }
 
 /** staticTitleClick的点击事件 */

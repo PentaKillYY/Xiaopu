@@ -58,6 +58,9 @@
 #define FIRSTLEVELINTERCOLOR UIColorFromRGB(0xb0d627)
 #define FIRSTLEVELOVERSEACOLOR UIColorFromRGB(0x5a5af9)
 
+#define DealOrderButtonColor COLOR(233, 105, 100, 1)
+#define PayOrderButtonCOlor COLOR(146, 178, 84, 1)
+
 #define SUBCOLOR UIColorFromRGB(0xFF4C4C)
 
 #define GX_BGCOLOR COLOR(234, 234, 234, 1)

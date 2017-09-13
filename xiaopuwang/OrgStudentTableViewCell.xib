@@ -12,40 +12,78 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrgStudent" rowHeight="105" id="KGk-i7-Jjw" customClass="OrgStudentTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrgStudent" rowHeight="118" id="KGk-i7-Jjw" customClass="OrgStudentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y4H-ry-5v6">
-                        <rect key="frame" x="8" y="8" width="70" height="70"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="70" id="gbc-Ge-ayD"/>
-                            <constraint firstAttribute="width" secondItem="Y4H-ry-5v6" secondAttribute="height" multiplier="1:1" id="qPS-p5-TuZ"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASZ-uy-EKR">
-                        <rect key="frame" x="86" y="8" width="33" height="16"/>
+                        <rect key="frame" x="86" y="37" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzK-G9-EJa">
-                        <rect key="frame" x="86" y="32" width="226" height="64.5"/>
+                        <rect key="frame" x="86" y="61" width="226" height="48.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFR-xb-V90">
+                        <rect key="frame" x="8" y="8" width="5" height="21"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="C5C-5f-z9P"/>
+                            <constraint firstAttribute="height" constant="21" id="KY0-8O-aZW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优秀学生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uC-X3-ARj">
+                        <rect key="frame" x="21" y="10" width="57.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ0-Q9-Ugo">
+                        <rect key="frame" x="268" y="10" width="29" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y4H-ry-5v6">
+                        <rect key="frame" x="8" y="37" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="gbc-Ge-ayD"/>
+                            <constraint firstAttribute="width" secondItem="Y4H-ry-5v6" secondAttribute="height" multiplier="1:1" id="qPS-p5-TuZ"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-back-blue-right.png" translatesAutoresizingMaskIntoConstraints="NO" id="J3q-ip-d4X">
+                        <rect key="frame" x="305" y="12" width="7" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="FKZ-60-KhQ"/>
+                            <constraint firstAttribute="width" constant="7" id="HHi-Vx-dNz"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Y4H-ry-5v6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2XR-xu-nZ7"/>
+                    <constraint firstItem="Y4H-ry-5v6" firstAttribute="top" secondItem="SFR-xb-V90" secondAttribute="bottom" constant="8" id="5L8-QN-2ho"/>
                     <constraint firstAttribute="trailing" secondItem="wzK-G9-EJa" secondAttribute="trailing" constant="8" id="78s-pn-Q6x"/>
-                    <constraint firstItem="ASZ-uy-EKR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Eyq-iq-P4h"/>
+                    <constraint firstItem="oQ0-Q9-Ugo" firstAttribute="centerY" secondItem="1uC-X3-ARj" secondAttribute="centerY" id="7c8-DZ-ElM"/>
+                    <constraint firstItem="1uC-X3-ARj" firstAttribute="leading" secondItem="SFR-xb-V90" secondAttribute="trailing" constant="8" id="Ddc-Je-5hQ"/>
                     <constraint firstItem="wzK-G9-EJa" firstAttribute="leading" secondItem="Y4H-ry-5v6" secondAttribute="trailing" constant="8" id="Jb1-Gx-xag"/>
+                    <constraint firstItem="J3q-ip-d4X" firstAttribute="leading" secondItem="oQ0-Q9-Ugo" secondAttribute="trailing" constant="8" id="LaD-Jo-DNc"/>
+                    <constraint firstAttribute="trailing" secondItem="J3q-ip-d4X" secondAttribute="trailing" constant="8" id="UAB-PQ-QXv"/>
                     <constraint firstAttribute="bottom" secondItem="wzK-G9-EJa" secondAttribute="bottom" constant="8" id="UAP-Nd-7Z3"/>
+                    <constraint firstItem="1uC-X3-ARj" firstAttribute="centerY" secondItem="SFR-xb-V90" secondAttribute="centerY" id="enz-EF-z76"/>
+                    <constraint firstItem="ASZ-uy-EKR" firstAttribute="top" secondItem="Y4H-ry-5v6" secondAttribute="top" id="gx4-KS-4U1"/>
+                    <constraint firstItem="J3q-ip-d4X" firstAttribute="centerY" secondItem="1uC-X3-ARj" secondAttribute="centerY" id="hkL-di-Zly"/>
+                    <constraint firstItem="SFR-xb-V90" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="j7x-bT-hpJ"/>
                     <constraint firstItem="Y4H-ry-5v6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="keZ-mZ-LJR"/>
+                    <constraint firstItem="SFR-xb-V90" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="oue-Ki-1IA"/>
                     <constraint firstItem="ASZ-uy-EKR" firstAttribute="leading" secondItem="Y4H-ry-5v6" secondAttribute="trailing" constant="8" id="rwO-j7-wVZ"/>
                     <constraint firstItem="wzK-G9-EJa" firstAttribute="top" secondItem="ASZ-uy-EKR" secondAttribute="bottom" constant="8" id="tDN-9C-hXK"/>
                 </constraints>
@@ -55,7 +93,10 @@
                 <outlet property="studentLogo" destination="Y4H-ry-5v6" id="RSL-fC-ft8"/>
                 <outlet property="studentName" destination="ASZ-uy-EKR" id="vtP-YN-q7u"/>
             </connections>
-            <point key="canvasLocation" x="33" y="117.5"/>
+            <point key="canvasLocation" x="33" y="124"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrow-back-blue-right.png" width="14" height="26"/>
+    </resources>
 </document>
