@@ -282,6 +282,19 @@
 		047827801F5F8CD4000D4ED8 /* NewRewardBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478277F1F5F8CD4000D4ED8 /* NewRewardBg.png */; };
 		047827821F5F9B36000D4ED8 /* typeIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 047827811F5F9B36000D4ED8 /* typeIcon.json */; };
 		0478278F1F62789A000D4ED8 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478278E1F62789A000D4ED8 /* TopLeftLabel.m */; };
+		047827BD1F678235000D4ED8 /* OrgDetailInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827BB1F678235000D4ED8 /* OrgDetailInfoTableViewCell.m */; };
+		047827BE1F678235000D4ED8 /* OrgDetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047827BC1F678235000D4ED8 /* OrgDetailInfoTableViewCell.xib */; };
+		047827C71F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827C51F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.m */; };
+		047827C81F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047827C61F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.xib */; };
+		047827CC1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827CA1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.m */; };
+		047827CD1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047827CB1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.xib */; };
+		047827D11F67852B000D4ED8 /* OrgDetailTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827CF1F67852B000D4ED8 /* OrgDetailTagTableViewCell.m */; };
+		047827D21F67852B000D4ED8 /* OrgDetailTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047827D01F67852B000D4ED8 /* OrgDetailTagTableViewCell.xib */; };
+		047827D61F67DA10000D4ED8 /* OrgTitleClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827D41F67DA10000D4ED8 /* OrgTitleClassTableViewCell.m */; };
+		047827D71F67DA10000D4ED8 /* OrgTitleClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047827D51F67DA10000D4ED8 /* OrgTitleClassTableViewCell.xib */; };
+		047827D91F68BB80000D4ED8 /* arrow-back-blue-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 047827D81F68BB80000D4ED8 /* arrow-back-blue-right.png */; };
+		047827DD1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827DB1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.m */; };
+		047827DE1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047827DC1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.xib */; };
 		0478B9A31F148C40003A9C8B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A21F148C40003A9C8B /* libc++.tbd */; };
 		0478B9A51F148C48003A9C8B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A41F148C48003A9C8B /* libz.tbd */; };
 		0478B9A71F148C4F003A9C8B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478B9A61F148C4F003A9C8B /* SystemConfiguration.framework */; };
@@ -837,6 +850,25 @@
 		047827811F5F9B36000D4ED8 /* typeIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = typeIcon.json; sourceTree = "<group>"; };
 		0478278D1F62789A000D4ED8 /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
 		0478278E1F62789A000D4ED8 /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
+		047827BA1F678235000D4ED8 /* OrgDetailInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgDetailInfoTableViewCell.h; sourceTree = "<group>"; };
+		047827BB1F678235000D4ED8 /* OrgDetailInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgDetailInfoTableViewCell.m; sourceTree = "<group>"; };
+		047827BC1F678235000D4ED8 /* OrgDetailInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgDetailInfoTableViewCell.xib; sourceTree = "<group>"; };
+		047827C41F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgDetailEvaluateTableViewCell.h; sourceTree = "<group>"; };
+		047827C51F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgDetailEvaluateTableViewCell.m; sourceTree = "<group>"; };
+		047827C61F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgDetailEvaluateTableViewCell.xib; sourceTree = "<group>"; };
+		047827C91F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgDetailAddressTableViewCell.h; sourceTree = "<group>"; };
+		047827CA1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgDetailAddressTableViewCell.m; sourceTree = "<group>"; };
+		047827CB1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgDetailAddressTableViewCell.xib; sourceTree = "<group>"; };
+		047827CE1F67852B000D4ED8 /* OrgDetailTagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgDetailTagTableViewCell.h; sourceTree = "<group>"; };
+		047827CF1F67852B000D4ED8 /* OrgDetailTagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgDetailTagTableViewCell.m; sourceTree = "<group>"; };
+		047827D01F67852B000D4ED8 /* OrgDetailTagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgDetailTagTableViewCell.xib; sourceTree = "<group>"; };
+		047827D31F67DA10000D4ED8 /* OrgTitleClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgTitleClassTableViewCell.h; sourceTree = "<group>"; };
+		047827D41F67DA10000D4ED8 /* OrgTitleClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgTitleClassTableViewCell.m; sourceTree = "<group>"; };
+		047827D51F67DA10000D4ED8 /* OrgTitleClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgTitleClassTableViewCell.xib; sourceTree = "<group>"; };
+		047827D81F68BB80000D4ED8 /* arrow-back-blue-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-back-blue-right.png"; sourceTree = "<group>"; };
+		047827DA1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMoreStudentTableViewCell.h; sourceTree = "<group>"; };
+		047827DB1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMoreStudentTableViewCell.m; sourceTree = "<group>"; };
+		047827DC1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgMoreStudentTableViewCell.xib; sourceTree = "<group>"; };
 		0478B9A21F148C40003A9C8B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		0478B9A41F148C48003A9C8B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0478B9A61F148C4F003A9C8B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -1457,6 +1489,7 @@
 				043C0CB51F57E45100CE98B2 /* addReplyPic.png */,
 				0478277F1F5F8CD4000D4ED8 /* NewRewardBg.png */,
 				043C0C901F56DEE400CE98B2 /* searchDel.png */,
+				047827D81F68BB80000D4ED8 /* arrow-back-blue-right.png */,
 				043C0C891F56D43700CE98B2 /* add-pic.png */,
 				043C0C221F55342B00CE98B2 /* 我是家长.png */,
 				043C0C391F56633A00CE98B2 /* close.png */,
@@ -1761,6 +1794,95 @@
 				0478272C1F5CE32F000D4ED8 /* SecondSelectLevelViewController.m */,
 			);
 			name = TypeSelect;
+			sourceTree = "<group>";
+		};
+		047827BF1F67823B000D4ED8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				045632D71F2867DC005E04CB /* OrgClassTableViewCell.h */,
+				045632D81F2867DC005E04CB /* OrgClassTableViewCell.m */,
+				045632D91F2867DC005E04CB /* OrgClassTableViewCell.xib */,
+				047827D31F67DA10000D4ED8 /* OrgTitleClassTableViewCell.h */,
+				047827D41F67DA10000D4ED8 /* OrgTitleClassTableViewCell.m */,
+				047827D51F67DA10000D4ED8 /* OrgTitleClassTableViewCell.xib */,
+				047827BA1F678235000D4ED8 /* OrgDetailInfoTableViewCell.h */,
+				047827BB1F678235000D4ED8 /* OrgDetailInfoTableViewCell.m */,
+				047827BC1F678235000D4ED8 /* OrgDetailInfoTableViewCell.xib */,
+				047827C41F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.h */,
+				047827C51F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.m */,
+				047827C61F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.xib */,
+				047827C91F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.h */,
+				047827CA1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.m */,
+				047827CB1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.xib */,
+				047827CE1F67852B000D4ED8 /* OrgDetailTagTableViewCell.h */,
+				047827CF1F67852B000D4ED8 /* OrgDetailTagTableViewCell.m */,
+				047827D01F67852B000D4ED8 /* OrgDetailTagTableViewCell.xib */,
+				0445EF081F20933400E9DAB3 /* OrgHouseRateTableViewCell.h */,
+				0445EF091F20933400E9DAB3 /* OrgHouseRateTableViewCell.m */,
+				0445EF0A1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib */,
+				0445EF121F2093A800E9DAB3 /* OrgProportionTableViewCell.h */,
+				0445EF131F2093A800E9DAB3 /* OrgProportionTableViewCell.m */,
+				0445EF141F2093A800E9DAB3 /* OrgProportionTableViewCell.xib */,
+				045632DC1F2867ED005E04CB /* OrgTeacherTableViewCell.h */,
+				045632DD1F2867ED005E04CB /* OrgTeacherTableViewCell.m */,
+				045632DE1F2867ED005E04CB /* OrgTeacherTableViewCell.xib */,
+				045632E11F2867FC005E04CB /* OrgStudentTableViewCell.h */,
+				045632E21F2867FC005E04CB /* OrgStudentTableViewCell.m */,
+				045632E31F2867FC005E04CB /* OrgStudentTableViewCell.xib */,
+				0445EF1C1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.h */,
+				0445EF1D1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m */,
+				0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		047827C01F67828D000D4ED8 /* Org */ = {
+			isa = PBXGroup;
+			children = (
+				04267ECB1F15CE5F00FFBC3E /* OrginizationTableViewCell.h */,
+				04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */,
+				04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */,
+				04267F531F1871FC00FFBC3E /* OrginizationBannerTableViewCell.h */,
+				04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */,
+				04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */,
+			);
+			name = Org;
+			sourceTree = "<group>";
+		};
+		047827C11F6782C0000D4ED8 /* CourseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				045633451F2B1228005E04CB /* CouseDetailImageTableViewCell.h */,
+				045633461F2B1228005E04CB /* CouseDetailImageTableViewCell.m */,
+				045633471F2B1228005E04CB /* CouseDetailImageTableViewCell.xib */,
+				0456334D1F2B1257005E04CB /* CourseDetailInfoTableViewCell.h */,
+				0456334E1F2B1257005E04CB /* CourseDetailInfoTableViewCell.m */,
+				0456334F1F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib */,
+				045633521F2B126C005E04CB /* CourseDetailContentTableViewCell.h */,
+				045633531F2B126C005E04CB /* CourseDetailContentTableViewCell.m */,
+				045633541F2B126C005E04CB /* CourseDetailContentTableViewCell.xib */,
+			);
+			name = CourseDetail;
+			sourceTree = "<group>";
+		};
+		047827C21F678303000D4ED8 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				0456331A1F29BE8F005E04CB /* ImageCollectionViewCell.h */,
+				0456331B1F29BE8F005E04CB /* ImageCollectionViewCell.m */,
+				0456331C1F29BE8F005E04CB /* ImageCollectionViewCell.xib */,
+			);
+			name = Album;
+			sourceTree = "<group>";
+		};
+		047827C31F678314000D4ED8 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				0456331F1F29D0FD005E04CB /* VideoTableViewCell.h */,
+				045633201F29D0FD005E04CB /* VideoTableViewCell.m */,
+				045633211F29D0FD005E04CB /* VideoTableViewCell.xib */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 		0478B98B1F147A2F003A9C8B /* AppDelegate */ = {
@@ -2194,60 +2316,29 @@
 		0478BA3F1F14CCB7003A9C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04267ECB1F15CE5F00FFBC3E /* OrginizationTableViewCell.h */,
-				04267ECC1F15CE5F00FFBC3E /* OrginizationTableViewCell.m */,
-				04267ECD1F15CE5F00FFBC3E /* OrginizationTableViewCell.xib */,
-				04267F531F1871FC00FFBC3E /* OrginizationBannerTableViewCell.h */,
-				04267F541F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m */,
-				04267F551F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib */,
+				047827C31F678314000D4ED8 /* Video */,
+				047827C21F678303000D4ED8 /* Album */,
+				047827C11F6782C0000D4ED8 /* CourseDetail */,
+				047827C01F67828D000D4ED8 /* Org */,
+				047827BF1F67823B000D4ED8 /* Detail */,
 				0445EF031F20926600E9DAB3 /* OrgInfoTableViewCell.h */,
 				0445EF041F20926600E9DAB3 /* OrgInfoTableViewCell.m */,
 				0445EF051F20926600E9DAB3 /* OrgInfoTableViewCell.xib */,
-				0445EF081F20933400E9DAB3 /* OrgHouseRateTableViewCell.h */,
-				0445EF091F20933400E9DAB3 /* OrgHouseRateTableViewCell.m */,
-				0445EF0A1F20933400E9DAB3 /* OrgHouseRateTableViewCell.xib */,
-				0445EF121F2093A800E9DAB3 /* OrgProportionTableViewCell.h */,
-				0445EF131F2093A800E9DAB3 /* OrgProportionTableViewCell.m */,
-				0445EF141F2093A800E9DAB3 /* OrgProportionTableViewCell.xib */,
 				0445EF171F2093DD00E9DAB3 /* OrgMapTableViewCell.h */,
 				0445EF181F2093DD00E9DAB3 /* OrgMapTableViewCell.m */,
 				0445EF191F2093DD00E9DAB3 /* OrgMapTableViewCell.xib */,
-				0445EF1C1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.h */,
-				0445EF1D1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m */,
-				0445EF1E1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.xib */,
 				045632BF1F2822A1005E04CB /* OrgContentTableViewCell.h */,
 				045632C01F2822A1005E04CB /* OrgContentTableViewCell.m */,
 				045632C11F2822A1005E04CB /* OrgContentTableViewCell.xib */,
-				045632D71F2867DC005E04CB /* OrgClassTableViewCell.h */,
-				045632D81F2867DC005E04CB /* OrgClassTableViewCell.m */,
-				045632D91F2867DC005E04CB /* OrgClassTableViewCell.xib */,
-				045632DC1F2867ED005E04CB /* OrgTeacherTableViewCell.h */,
-				045632DD1F2867ED005E04CB /* OrgTeacherTableViewCell.m */,
-				045632DE1F2867ED005E04CB /* OrgTeacherTableViewCell.xib */,
-				045632E11F2867FC005E04CB /* OrgStudentTableViewCell.h */,
-				045632E21F2867FC005E04CB /* OrgStudentTableViewCell.m */,
-				045632E31F2867FC005E04CB /* OrgStudentTableViewCell.xib */,
 				045632E61F28682A005E04CB /* OrgEvaluateTableViewCell.h */,
 				045632E71F28682A005E04CB /* OrgEvaluateTableViewCell.m */,
 				045632E81F28682A005E04CB /* OrgEvaluateTableViewCell.xib */,
-				0456331A1F29BE8F005E04CB /* ImageCollectionViewCell.h */,
-				0456331B1F29BE8F005E04CB /* ImageCollectionViewCell.m */,
-				0456331C1F29BE8F005E04CB /* ImageCollectionViewCell.xib */,
-				0456331F1F29D0FD005E04CB /* VideoTableViewCell.h */,
-				045633201F29D0FD005E04CB /* VideoTableViewCell.m */,
-				045633211F29D0FD005E04CB /* VideoTableViewCell.xib */,
 				0456333D1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.h */,
 				0456333E1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.m */,
 				0456333F1F2AE888005E04CB /* OrgMoreTeacherTableViewCell.xib */,
-				045633451F2B1228005E04CB /* CouseDetailImageTableViewCell.h */,
-				045633461F2B1228005E04CB /* CouseDetailImageTableViewCell.m */,
-				045633471F2B1228005E04CB /* CouseDetailImageTableViewCell.xib */,
-				0456334D1F2B1257005E04CB /* CourseDetailInfoTableViewCell.h */,
-				0456334E1F2B1257005E04CB /* CourseDetailInfoTableViewCell.m */,
-				0456334F1F2B1257005E04CB /* CourseDetailInfoTableViewCell.xib */,
-				045633521F2B126C005E04CB /* CourseDetailContentTableViewCell.h */,
-				045633531F2B126C005E04CB /* CourseDetailContentTableViewCell.m */,
-				045633541F2B126C005E04CB /* CourseDetailContentTableViewCell.xib */,
+				047827DA1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.h */,
+				047827DB1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.m */,
+				047827DC1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2475,6 +2566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047827C81F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.xib in Resources */,
 				043C0C0C1F53EBD700CE98B2 /* MyReplyCOmmunityTableViewCell.xib in Resources */,
 				043C0CC21F592B0B00CE98B2 /* NoDataTableViewCell.xib in Resources */,
 				04A1D4841F31AC0900EACEA8 /* SchoolGradeTableViewCell.xib in Resources */,
@@ -2491,11 +2583,13 @@
 				0478BA031F14B07C003A9C8B /* MyBannerCell.xib in Resources */,
 				0432AA461F3BF69500783ED2 /* MyFollowOrgCell.xib in Resources */,
 				045632C31F2822A1005E04CB /* OrgContentTableViewCell.xib in Resources */,
+				047827CD1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.xib in Resources */,
 				043C0CCC1F592EDD00CE98B2 /* NoSearch.png in Resources */,
 				04B7CF8D1F41553C00108915 /* MyPayTableViewCell.xib in Resources */,
 				040C737C1F442B6B001F5318 /* EvaluatePicTableViewCell.xib in Resources */,
 				04B7CF921F41554F00108915 /* MyEvaluateTableViewCell.xib in Resources */,
 				040C748F1F4EEF58001F5318 /* newGuidance.css in Resources */,
+				047827DE1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.xib in Resources */,
 				043C0C0F1F53FB2E00CE98B2 /* parent.png in Resources */,
 				04A1D4D01F340B0200EACEA8 /* SchoolCourseOtherCell.xib in Resources */,
 				040C73F51F46E042001F5318 /* PayTypeTableViewCell.xib in Resources */,
@@ -2565,6 +2659,7 @@
 				040C747C1F4EAA63001F5318 /* SearchTableViewCell.xib in Resources */,
 				0432AA801F3DA95000783ED2 /* MyAboutInfoTableViewCell.xib in Resources */,
 				04A1D4981F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.xib in Resources */,
+				047827D71F67DA10000D4ED8 /* OrgTitleClassTableViewCell.xib in Resources */,
 				04A1D47F1F31ABE500EACEA8 /* SchoolBasicInfoTableViewCell.xib in Resources */,
 				040C74361F4BD666001F5318 /* TredeDetailTableViewCell.xib in Resources */,
 				040C742B1F4BBDCD001F5318 /* WalletBankCardTableViewCell.xib in Resources */,
@@ -2589,10 +2684,13 @@
 				040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
 				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
+				047827D91F68BB80000D4ED8 /* arrow-back-blue-right.png in Resources */,
+				047827D21F67852B000D4ED8 /* OrgDetailTagTableViewCell.xib in Resources */,
 				043C0C911F56DEE400CE98B2 /* searchDel.png in Resources */,
 				040C736D1F442B24001F5318 /* EvaluateTagTableViewCell.xib in Resources */,
 				0432AA541F3C2E1000783ED2 /* MySpecialistTableViewCell.xib in Resources */,
 				04A1D4891F31AC2400EACEA8 /* SchoolCourseTableViewCell.xib in Resources */,
+				047827BE1F678235000D4ED8 /* OrgDetailInfoTableViewCell.xib in Resources */,
 				043C0C321F56498700CE98B2 /* CommunityTypeCollectionViewCell.xib in Resources */,
 				043C0C531F5664BB00CE98B2 /* PostCommunityImageCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
@@ -2724,6 +2822,8 @@
 				045633191F29BE1C005E04CB /* SRPictureHUD.m in Sources */,
 				0432AA6C1F3D88A900783ED2 /* MySettingTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
+				047827D61F67DA10000D4ED8 /* OrgTitleClassTableViewCell.m in Sources */,
+				047827BD1F678235000D4ED8 /* OrgDetailInfoTableViewCell.m in Sources */,
 				045633171F29BE1C005E04CB /* SRPictureIndicator.m in Sources */,
 				04B7CF7A1F41486200108915 /* AllOrderViewController.m in Sources */,
 				045632B61F26DE80005E04CB /* MyService.m in Sources */,
@@ -2739,6 +2839,7 @@
 				045632F11F29B415005E04CB /* OrgVideoViewController.m in Sources */,
 				04B7CFA51F42DE2D00108915 /* UserConfirmOrderViewController.m in Sources */,
 				0478273B1F5D4F4C000D4ED8 /* LocalSelectTeacherCell.m in Sources */,
+				047827CC1F6783DB000D4ED8 /* OrgDetailAddressTableViewCell.m in Sources */,
 				0445EEB61F1EFAA800E9DAB3 /* ActivityWebViewController.m in Sources */,
 				0456331D1F29BE8F005E04CB /* ImageCollectionViewCell.m in Sources */,
 				04B7CF9B1F419B4600108915 /* MyAllOrderTableViewCell.m in Sources */,
@@ -2746,6 +2847,7 @@
 				0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */,
 				045633161F29BE1C005E04CB /* SRPictureView.m in Sources */,
 				04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */,
+				047827C71F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.m in Sources */,
 				043C0C881F56C2D500CE98B2 /* CommunityTypeViewController.m in Sources */,
 				0445EF061F20926600E9DAB3 /* OrgInfoTableViewCell.m in Sources */,
 				045632D61F282896005E04CB /* UULineChart.m in Sources */,
@@ -2856,11 +2958,13 @@
 				0478BA021F14B07C003A9C8B /* MyBannerCell.m in Sources */,
 				047827521F5E7F59000D4ED8 /* InnerLabel.m in Sources */,
 				040C743A1F4BDC29001F5318 /* ReflectBannerTableViewCell.m in Sources */,
+				047827D11F67852B000D4ED8 /* OrgDetailTagTableViewCell.m in Sources */,
 				040C73F41F46E042001F5318 /* PayTypeTableViewCell.m in Sources */,
 				043C0CBA1F57E59500CE98B2 /* CCTextView.m in Sources */,
 				047827361F5D2F3A000D4ED8 /* LocalSelectTableViewCell.m in Sources */,
 				04B7CF831F4148F400108915 /* OrderEvaluateViewController.m in Sources */,
 				04267ED31F15D1D900FFBC3E /* SchoolTableViewCell.m in Sources */,
+				047827DD1F68FCBE000D4ED8 /* OrgMoreStudentTableViewCell.m in Sources */,
 				045633131F29BE1C005E04CB /* SRPictureBrowser.m in Sources */,
 				04B7CF7D1F4148B700108915 /* OrderAppointViewController.m in Sources */,
 				04A1D4971F330D5100EACEA8 /* SchoolCourseTitleTableViewCell.m in Sources */,

@@ -38,6 +38,12 @@
     
     self.topTitleView = [SGTopTitleView topTitleViewWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 44)];
     //    _topTitleView.scrollTitleArr = [NSArray arrayWithArray:_titles];
+    if (self.defaultIndex.length>0) {
+        _topTitleView.defaultIndex =[self.defaultIndex integerValue];
+    }else{
+        _topTitleView.defaultIndex =0;
+    }
+    
     _topTitleView.staticTitleArr = [NSArray arrayWithArray:_titles];
     _topTitleView.titleAndIndicatorColor = MAINCOLOR;
     _topTitleView.delegate_SG = self;
