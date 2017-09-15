@@ -12,4 +12,5 @@
 @property(nonatomic,weak)NSString* orgType;
 @property(nonatomic,weak)NSString* orgKind;
 @property(nonatomic,weak)NSString* searchName;
+@property(nonatomic,weak)NSString* is30Day;
 @end

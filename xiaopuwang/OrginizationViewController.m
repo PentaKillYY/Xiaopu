@@ -449,14 +449,20 @@
 -(void)getCourseList{
     NSString* orgname;
     
-    if (self.searchName.length>0) {
+    if (self.searchName.length) {
         orgname = self.searchName;
     }else{
         orgname = @"";
     }
     
+    NSString* is30Day;
+    if (self.is30Day.length) {
+        is30Day = @"1";
+    }else{
+        is30Day = @"";
+    }
     
-    NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":orgname,@"CourseType":orgTypeName,@"CourseKind":orgGroupName,@"City":@"",@"Field":selectArea,@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0)};
+    NSDictionary* parameters = @{@"Org_Application_Id":@"",@"CourseName":orgname,@"CourseType":orgTypeName,@"CourseKind":orgGroupName,@"City":@"",@"Field":selectArea,@"CourseClassCharacteristic":@"",@"CourseClassType":@"",@"OrderType":@(0),@"Is30Day":@([is30Day intValue])};
     
     [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:currentPage Size:size Parameters:parameters onCompletion:^(id json) {
         

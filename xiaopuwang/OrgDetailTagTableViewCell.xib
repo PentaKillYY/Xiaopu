@@ -62,7 +62,7 @@
                 <outlet property="middleTagW" destination="Ryg-lY-b8P" id="IQB-ML-LMU"/>
                 <outlet property="rightTag" destination="pJn-IY-Q38" id="P9i-fo-k3Q"/>
             </connections>
-            <point key="canvasLocation" x="96" y="126"/>
+            <point key="canvasLocation" x="67" y="113"/>
         </tableViewCell>
     </objects>
 </document>

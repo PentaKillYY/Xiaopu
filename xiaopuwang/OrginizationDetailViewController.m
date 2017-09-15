@@ -572,6 +572,11 @@
     
     
     NSArray* array =  [NSArray arrayWithArray:[[item getString:@"TeachingTips"] componentsSeparatedByString:@","]] ;
+    if (array.count) {
+        cell.teacherTagView.hidden = NO;
+    }else{
+        cell.teacherTagView.hidden = YES;
+    }
     
     [array enumerateObjectsUsingBlock:^(NSString* text, NSUInteger idx, BOOL * _Nonnull stop) {
         

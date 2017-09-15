@@ -328,6 +328,8 @@
 		0478BA431F14CCFE003A9C8B /* OrginizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA421F14CCFE003A9C8B /* OrginizationViewController.m */; };
 		0478BA461F14CD0F003A9C8B /* SchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478BA451F14CD0F003A9C8B /* SchoolViewController.m */; };
 		048B28181F6A17EB000E8FED /* JZLocationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B28171F6A17EB000E8FED /* JZLocationConverter.m */; };
+		048B281C1F6B6D21000E8FED /* ThityBackOrgTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B281A1F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.m */; };
+		048B281D1F6B6D21000E8FED /* ThityBackOrgTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B281B1F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.xib */; };
 		0498E8381F59786700B83FF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0498E8371F59786700B83FF6 /* LaunchScreen.storyboard */; };
 		04A1D4681F30769000EACEA8 /* ChinaSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */; };
 		04A1D46C1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1D46A1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.m */; };
@@ -926,6 +928,9 @@
 		0478BA451F14CD0F003A9C8B /* SchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolViewController.m; sourceTree = "<group>"; };
 		048B28161F6A17EB000E8FED /* JZLocationConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZLocationConverter.h; sourceTree = "<group>"; };
 		048B28171F6A17EB000E8FED /* JZLocationConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZLocationConverter.m; sourceTree = "<group>"; };
+		048B28191F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThityBackOrgTitleTableViewCell.h; sourceTree = "<group>"; };
+		048B281A1F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThityBackOrgTitleTableViewCell.m; sourceTree = "<group>"; };
+		048B281B1F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThityBackOrgTitleTableViewCell.xib; sourceTree = "<group>"; };
 		0498E8371F59786700B83FF6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A1D4661F30769000EACEA8 /* ChinaSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaSchoolViewController.h; sourceTree = "<group>"; };
 		04A1D4671F30769000EACEA8 /* ChinaSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaSchoolViewController.m; sourceTree = "<group>"; };
@@ -1603,6 +1608,9 @@
 				047827481F5E3299000D4ED8 /* MainTypeTableViewCell.h */,
 				047827491F5E3299000D4ED8 /* MainTypeTableViewCell.m */,
 				0478274A1F5E3299000D4ED8 /* MainTypeTableViewCell.xib */,
+				048B28191F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.h */,
+				048B281A1F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.m */,
+				048B281B1F6B6D20000E8FED /* ThityBackOrgTitleTableViewCell.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -2612,6 +2620,7 @@
 				043C0C141F54FE0900CE98B2 /* arrow-back-blue.png in Resources */,
 				040C74401F4BDC43001F5318 /* ReflectPriceTableViewCell.xib in Resources */,
 				040C74971F4F009F001F5318 /* guidanceDetail.html in Resources */,
+				048B281D1F6B6D21000E8FED /* ThityBackOrgTitleTableViewCell.xib in Resources */,
 				043C0BE01F5165FA00CE98B2 /* CommunityDetailCell.xib in Resources */,
 				0498E8381F59786700B83FF6 /* LaunchScreen.storyboard in Resources */,
 				043C0C491F56648A00CE98B2 /* PostCommunityTitleCell.xib in Resources */,
@@ -2828,6 +2837,7 @@
 				045633191F29BE1C005E04CB /* SRPictureHUD.m in Sources */,
 				0432AA6C1F3D88A900783ED2 /* MySettingTableViewCell.m in Sources */,
 				04573F721F13725F00B52C76 /* AppDelegate.m in Sources */,
+				048B281C1F6B6D21000E8FED /* ThityBackOrgTitleTableViewCell.m in Sources */,
 				047827D61F67DA10000D4ED8 /* OrgTitleClassTableViewCell.m in Sources */,
 				047827BD1F678235000D4ED8 /* OrgDetailInfoTableViewCell.m in Sources */,
 				045633171F29BE1C005E04CB /* SRPictureIndicator.m in Sources */,
