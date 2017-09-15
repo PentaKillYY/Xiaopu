@@ -47,12 +47,12 @@
         self.leftTagW = 0;
     }
     
-    if (![item getBool:@"IsOfficiallySettled"]) {
+    if (![item getBool:@"IsTuitionSubsidy"]) {
         self.middleTagW = 0;
     }
     
     self.middleTag.hidden = ![item getBool:@"IsTuitionSubsidy"];
-    self.rightTag.hidden = ![item getBool:@"IsCourseGrading"];
+//    self.rightTag.hidden = ![item getBool:@"IsCourseGrading"];
 
 }
 @end

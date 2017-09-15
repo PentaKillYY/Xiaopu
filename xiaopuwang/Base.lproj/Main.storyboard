@@ -60,7 +60,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-n6-qoj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -97,6 +97,7 @@
                         <segue destination="65V-t9-4va" kind="push" identifier="MainToSchoolList" id="qK7-Ca-lcE"/>
                         <segue destination="25M-Rd-FQn" kind="push" identifier="MainToChinaSchoolList" id="boX-Qa-u7y"/>
                         <segue destination="GBb-8C-B5N" kind="push" identifier="MainToMoreType" id="Ldg-9m-308"/>
+                        <segue destination="3IF-KR-xqP" kind="push" identifier="MainTo30DayOrg" id="V2t-xH-2aQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3671,22 +3672,22 @@
     <inferredMetricsTieBreakers>
         <segue reference="Eet-PD-6bI"/>
         <segue reference="cw5-ua-Bkn"/>
-        <segue reference="yad-da-8Nz"/>
         <segue reference="h06-1T-d8P"/>
+        <segue reference="yad-da-8Nz"/>
         <segue reference="sOd-j3-mVK"/>
-        <segue reference="Cca-EC-7UM"/>
+        <segue reference="V2t-xH-2aQ"/>
+        <segue reference="qGq-NF-EW6"/>
         <segue reference="sS5-PK-I1T"/>
+        <segue reference="Cca-EC-7UM"/>
+        <segue reference="boX-Qa-u7y"/>
+        <segue reference="qK7-Ca-lcE"/>
         <segue reference="hc7-hA-kQF"/>
-        <segue reference="xcV-3d-LJO"/>
         <segue reference="C9X-s8-weM"/>
-        <segue reference="8qs-Mb-CW5"/>
-        <segue reference="wET-gJ-VhJ"/>
-        <segue reference="RZP-Ti-Kfv"/>
-        <segue reference="U2m-as-IXV"/>
+        <segue reference="xcV-3d-LJO"/>
         <segue reference="dFW-sS-bdb"/>
-        <segue reference="Eho-hf-EWg"/>
+        <segue reference="U2m-as-IXV"/>
+        <segue reference="R0j-r9-wjC"/>
         <segue reference="YZ5-ra-U5E"/>
         <segue reference="P2M-WO-PHT"/>
-        <segue reference="R0j-r9-wjC"/>
     </inferredMetricsTieBreakers>
 </document>

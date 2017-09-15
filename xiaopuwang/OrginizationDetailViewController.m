@@ -24,7 +24,7 @@
 #import "UIActionSheet+Block.h"
 
 #import <LGAlertView/LGAlertView.h>
-
+#import "JZLocationConverter.h"
 
 @interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate,AlbumVideoDelegate,OrgDetailCellDelegate,OrgTitleClassDelegate,OrgDetailAddressDelegate,UIActionSheetDelegate>{
     NSInteger currentSegIndex;
@@ -572,6 +572,11 @@
     
     
     NSArray* array =  [NSArray arrayWithArray:[[item getString:@"TeachingTips"] componentsSeparatedByString:@","]] ;
+    if (array.count) {
+        cell.teacherTagView.hidden = NO;
+    }else{
+        cell.teacherTagView.hidden = YES;
+    }
     
     [array enumerateObjectsUsingBlock:^(NSString* text, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -660,8 +665,9 @@
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
         NSMutableDictionary *baiduMapDic = [NSMutableDictionary dictionary];
         baiduMapDic[@"title"] = @"百度地图";
-      
-        NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin=%f,%f&destination=%f,%f&mode=driving&src=webapp.navi.ings.xiaopuwang",[info.userLatitude doubleValue],[info.userLongitude doubleValue] ,endLocation.latitude,endLocation.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        CLLocationCoordinate2D baiduLocation = [JZLocationConverter gcj02ToBd09: endLocation];
+        
+        NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin=%f,%f&destination=%f,%f&mode=driving&src=webapp.navi.ings.xiaopuwang",[info.userLatitude doubleValue],[info.userLongitude doubleValue] ,baiduLocation.latitude,baiduLocation.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
         
         baiduMapDic[@"url"] = urlString;
