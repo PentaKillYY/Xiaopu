@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface MyOrderViewController : BaseViewController
-
+@property(nonatomic,weak)NSString* defaultIndex;
 @end

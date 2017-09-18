@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrgMoreStudent" rowHeight="118" id="koH-GL-bLg" customClass="OrgMoreStudentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="koH-GL-bLg" id="kTG-RI-Hao">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WN8-YC-1uI">
+                        <rect key="frame" x="86" y="8" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRI-0o-UE2">
+                        <rect key="frame" x="86" y="32" width="226" height="77.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UAV-fp-bab">
+                        <rect key="frame" x="8" y="8" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="UAV-fp-bab" secondAttribute="height" multiplier="1:1" id="OYl-Do-qrG"/>
+                            <constraint firstAttribute="width" constant="70" id="lcV-Ub-Gta"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pRI-0o-UE2" firstAttribute="top" secondItem="WN8-YC-1uI" secondAttribute="bottom" constant="8" id="8YB-vs-Yib"/>
+                    <constraint firstItem="UAV-fp-bab" firstAttribute="leading" secondItem="kTG-RI-Hao" secondAttribute="leading" constant="8" id="9Tz-qO-tVv"/>
+                    <constraint firstItem="WN8-YC-1uI" firstAttribute="leading" secondItem="UAV-fp-bab" secondAttribute="trailing" constant="8" id="De7-Eg-6cN"/>
+                    <constraint firstItem="pRI-0o-UE2" firstAttribute="leading" secondItem="UAV-fp-bab" secondAttribute="trailing" constant="8" id="KOt-Lo-293"/>
+                    <constraint firstItem="WN8-YC-1uI" firstAttribute="top" secondItem="UAV-fp-bab" secondAttribute="top" id="WoE-OP-ubc"/>
+                    <constraint firstAttribute="bottom" secondItem="pRI-0o-UE2" secondAttribute="bottom" constant="8" id="XmP-UD-Vy4"/>
+                    <constraint firstItem="UAV-fp-bab" firstAttribute="top" secondItem="kTG-RI-Hao" secondAttribute="top" constant="8" id="fIm-nh-rk1"/>
+                    <constraint firstAttribute="trailing" secondItem="pRI-0o-UE2" secondAttribute="trailing" constant="8" id="omY-tD-JPb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="studentContent" destination="pRI-0o-UE2" id="Azo-uJ-FmS"/>
+                <outlet property="studentLogo" destination="UAV-fp-bab" id="exR-6X-6wy"/>
+                <outlet property="studentName" destination="WN8-YC-1uI" id="Ro4-Q2-7nM"/>
+            </connections>
+            <point key="canvasLocation" x="21" y="259"/>
+        </tableViewCell>
+    </objects>
+</document>

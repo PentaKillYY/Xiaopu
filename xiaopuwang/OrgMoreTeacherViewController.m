@@ -121,9 +121,7 @@
         
         for (int i = 0 ; i < itemArray.size; i++) {
             DataItem* item = [itemArray getItem:i];
-            if ([item getInt:@"TeacherType"] == [self.teacherType intValue]) {
-                [datasourceArray addObject:item];
-            }
+            [datasourceArray addObject:item];
         }
         
         [self.tableView.mj_header endRefreshing];

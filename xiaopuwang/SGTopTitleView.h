@@ -26,6 +26,9 @@
 /** 存入所有Label */
 @property (nonatomic, strong) NSMutableArray *allTitleLabel;
 
+//默认选中第几个
+@property NSInteger defaultIndex;
+
 #pragma mark - - - 以下属性一定要设置在 -> 标题数组 <- 之后, 否则无效果
 /** 文字以及指示器颜色设置(默认为红色)*/
 @property (nonatomic, strong) UIColor *titleAndIndicatorColor;

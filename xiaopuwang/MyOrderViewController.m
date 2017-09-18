@@ -34,10 +34,16 @@
     [self setupChildViewController];
     
 
-    self.titles = @[ @"已预约", @"待支付", @"待评价",@"全部订单"];
+    self.titles = @[ @"已咨询", @"下单待支付", @"已付待评价",@"全部"];
     
     self.topTitleView = [SGTopTitleView topTitleViewWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 44)];
     //    _topTitleView.scrollTitleArr = [NSArray arrayWithArray:_titles];
+    if (self.defaultIndex.length>0) {
+        _topTitleView.defaultIndex =[self.defaultIndex integerValue];
+    }else{
+        _topTitleView.defaultIndex =0;
+    }
+    
     _topTitleView.staticTitleArr = [NSArray arrayWithArray:_titles];
     _topTitleView.titleAndIndicatorColor = MAINCOLOR;
     _topTitleView.delegate_SG = self;

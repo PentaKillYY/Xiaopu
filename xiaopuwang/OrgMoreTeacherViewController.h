@@ -10,5 +10,4 @@
 
 @interface OrgMoreTeacherViewController : BaseViewController
 @property(nonatomic,weak)NSString* orgID;
-@property(nonatomic,weak)NSString* teacherType;
 @end

@@ -8,7 +8,7 @@
 
 #import "OrgMoreStudentViewController.h"
 #import "OrginizationService.h"
-#import "OrgStudentTableViewCell.h"
+#import "OrgMoreStudentTableViewCell.h"
 
 @interface OrgMoreStudentViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -28,7 +28,7 @@
     
     datasourceArray = [[NSMutableArray alloc] init];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"OrgStudentTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgStudent"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"OrgMoreStudentTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgMoreStudent"];
     
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -63,7 +63,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"OrgStudent" cacheByIndexPath:indexPath configuration:^(id cell) {
+    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"OrgMoreStudent" cacheByIndexPath:indexPath configuration:^(id cell) {
         [self configCell:cell indexpath:indexPath];
     }];
     return  height < 86 ? 86:height;
@@ -71,13 +71,13 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    OrgStudentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrgStudent" forIndexPath:indexPath];
+    OrgMoreStudentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrgMoreStudent" forIndexPath:indexPath];
     [self configCell:cell indexpath:indexPath];
     return cell;
     
 }
 
-- (void)configCell:(OrgStudentTableViewCell *)cell indexpath:(NSIndexPath *)indexpath{
+- (void)configCell:(OrgMoreStudentTableViewCell *)cell indexpath:(NSIndexPath *)indexpath{
     
     DataItem * item = datasourceArray[indexpath.row];
     
@@ -95,9 +95,7 @@
         
         for (int i = 0 ; i < itemArray.size; i++) {
             DataItem* item = [itemArray getItem:i];
-            if ([item getInt:@"StudentType"] == [self.studentType intValue]) {
-                [datasourceArray addObject:item];
-            }
+            [datasourceArray addObject:item];
         }
         
         [self.tableView.mj_header endRefreshing];

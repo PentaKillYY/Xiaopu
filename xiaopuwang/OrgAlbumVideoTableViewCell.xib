@@ -38,21 +38,22 @@
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7P0-GB-0WM">
                         <rect key="frame" x="8" y="35.5" width="304" height="110.5"/>
                     </scrollView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqX-BB-w30">
-                        <rect key="frame" x="298.5" y="6" width="13.5" height="25.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-back-blue-right.png" translatesAutoresizingMaskIntoConstraints="NO" id="agK-0e-W0e">
+                        <rect key="frame" x="305" y="12.5" width="7" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="Rro-xz-GyA"/>
+                            <constraint firstAttribute="width" constant="7" id="uv7-Z7-rlc"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Hrc-6h-gjX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4Ak-Dc-1mi"/>
-                    <constraint firstItem="RqX-BB-w30" firstAttribute="centerY" secondItem="rzl-ct-IXg" secondAttribute="centerY" id="6s0-Hq-INu"/>
                     <constraint firstItem="7P0-GB-0WM" firstAttribute="top" secondItem="rzl-ct-IXg" secondAttribute="bottom" constant="8" id="9oh-2f-HFJ"/>
+                    <constraint firstAttribute="trailing" secondItem="agK-0e-W0e" secondAttribute="trailing" constant="8" id="Cmw-rE-xuG"/>
                     <constraint firstAttribute="bottom" secondItem="7P0-GB-0WM" secondAttribute="bottom" constant="8" id="FTy-CE-pDR"/>
                     <constraint firstItem="7P0-GB-0WM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MfM-aQ-PoY"/>
                     <constraint firstItem="rzl-ct-IXg" firstAttribute="leading" secondItem="Hrc-6h-gjX" secondAttribute="trailing" constant="8" id="OLg-J9-aNv"/>
-                    <constraint firstAttribute="trailing" secondItem="RqX-BB-w30" secondAttribute="trailing" constant="8" id="etA-fD-UaF"/>
+                    <constraint firstItem="agK-0e-W0e" firstAttribute="centerY" secondItem="rzl-ct-IXg" secondAttribute="centerY" id="S1S-mu-UqZ"/>
                     <constraint firstAttribute="trailing" secondItem="7P0-GB-0WM" secondAttribute="trailing" constant="8" id="fzm-W5-LpP"/>
                     <constraint firstItem="Hrc-6h-gjX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="lU5-R3-NfM"/>
                     <constraint firstItem="rzl-ct-IXg" firstAttribute="centerY" secondItem="Hrc-6h-gjX" secondAttribute="centerY" id="pRG-E7-uSF"/>
@@ -65,4 +66,7 @@
             <point key="canvasLocation" x="33" y="147"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrow-back-blue-right.png" width="14" height="26"/>
+    </resources>
 </document>
