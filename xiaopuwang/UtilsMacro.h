@@ -57,7 +57,7 @@
 #define FIRSTLEVELORGCOLOR UIColorFromRGB(0xea6000)
 #define FIRSTLEVELINTERCOLOR UIColorFromRGB(0xb0d627)
 #define FIRSTLEVELOVERSEACOLOR UIColorFromRGB(0x5a5af9)
-
+#define GroupCourseRed UIColorFromRGB(0xff2e45)
 #define DealOrderButtonColor COLOR(233, 105, 100, 1)
 #define PayOrderButtonCOlor COLOR(146, 178, 84, 1)
 

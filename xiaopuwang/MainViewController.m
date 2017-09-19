@@ -24,6 +24,8 @@
 #import "OrginizationTableViewCell.h"
 #import "MainTypeTableViewCell.h"
 #import "ThityBackOrgTitleTableViewCell.h"
+#import "HomeGroupCourseTitleCell.h"
+#import "HomeGroupCourseTableViewCell.h"
 #import "OrginizationService.h"
 #import "SchoolService.h"
 
@@ -241,7 +243,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 6;
+    return 7;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -251,8 +253,10 @@
         }else{
             return 0;
         }
-    }if (section == 5) {
+    }else if (section == 6) {
         return 4;
+    }else if (section ==4){
+        return 2;
     }else{
         return 1;
     }
@@ -285,7 +289,19 @@
             
             return cell;
         }
-    }else if (indexPath.section == 4){
+    }else if(indexPath.section ==4){
+        if (indexPath.row==0) {
+            HomeGroupCourseTitleCell* cell = [[NSBundle mainBundle] loadNibNamed:@"HomeGroupCourseTitleCell" owner:self options:nil].firstObject;
+            
+            return cell;
+        }else{
+            HomeGroupCourseTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"HomeGroupCourseTableViewCell" owner:self options:nil].firstObject;
+            
+            return cell;
+
+        }
+        
+    }else if (indexPath.section == 5){
         VideoCourseTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"VideoCourseTableViewCell" owner:self options:nil].firstObject;
         cell.delegate = self;
         [cell bingdingViewModel:videoCourseResult];
@@ -421,7 +437,13 @@
                 [self configCell:cell indexpath:indexPath];
             }];
         }
-    }else if (indexPath.section == 4){
+    }else if (indexPath.section ==4){
+        if (indexPath.row ==0) {
+            return 44;
+        }else{
+            return 118+(Main_Screen_Width)/2;
+        }
+    }else if (indexPath.section == 5){
         return 290*(Main_Screen_Width/320);
     }else {
         if (indexPath.row ==0) {
@@ -458,7 +480,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section ==3) {
         [self performSegueWithIdentifier:@"MainTo30DayOrg" sender:self];
-    }else if (indexPath.section == 5 ) {
+    }else if (indexPath.section==4 && indexPath.row ==0){
+        [self performSegueWithIdentifier:@"MainToGroupCourse" sender:self];
+    }else if (indexPath.section == 6 && indexPath.row !=0){
         if (selectLocalIndex == 0) {
             currentSelectTeacherIndex   = indexPath.row;
             if (teacherResult) {
@@ -573,12 +597,8 @@
         moreButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         [moreButton addTarget:self action:@selector(goToMoreOrg) forControlEvents:UIControlEventTouchUpInside];
         self.tableView.tableFooterView  = moreButton;
-        NSIndexPath  *indexPath=[NSIndexPath indexPathForRow:0 inSection:4];
-        
-
-        
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        [self getCourseList];
+         [self getCourseList];
+       
     }else if (selectLocalIndex == 3){
         UIButton* moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [moreButton setTitle:@"查看更多" forState:0];
@@ -587,12 +607,8 @@
         moreButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         [moreButton addTarget:self action:@selector(goToMoreSchool) forControlEvents:UIControlEventTouchUpInside];
         self.tableView.tableFooterView  = moreButton;
-        NSIndexPath  *indexPath=[NSIndexPath indexPathForRow:0 inSection:4];
-        
-        
-        
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         [self getSchoolListRequest];
+
     }else{
         UIButton* moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [moreButton setTitle:@"查看更多" forState:0];
@@ -601,10 +617,9 @@
         moreButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         [moreButton addTarget:self action:@selector(goToMoreChinaSchool) forControlEvents:UIControlEventTouchUpInside];
         self.tableView.tableFooterView  = moreButton;
-        NSIndexPath  *indexPath=[NSIndexPath indexPathForRow:0 inSection:4];
         
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         [self getChinaSchoolListRequest];
+        
     }
 }
 
@@ -684,7 +699,7 @@
     [[MainService sharedMainService] getTeacherListWithParameters:@{@"CourseType":@"",@"CourseKind":@"",@"City":@"",@"Field":@"",@"TeachingAge":@"",@"IsOversea":@"",@"TeacherSex":@""} onCompletion:^(id json) {
         teacherResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];
@@ -697,7 +712,7 @@
     [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:1 Size:10 Parameters:parameters onCompletion:^(id json) {
         localOrgResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];
@@ -709,7 +724,7 @@
         
         localInterSchoolResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];
@@ -719,7 +734,7 @@
     [[SchoolService sharedSchoolService] postChinaSchoolListWithPage:1 Size:10 Parameters:@{@"SchoolName":@"",@"Province":@"",@"City":@"",@"CollegeNature":@"",@"CollegeType":@"",@"Area":@"",@"X":@(0),@"Y":@(0)} onCompletion:^(id json) {
         localChinaSchoolResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];

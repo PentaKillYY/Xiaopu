@@ -98,6 +98,7 @@
                         <segue destination="25M-Rd-FQn" kind="push" identifier="MainToChinaSchoolList" id="boX-Qa-u7y"/>
                         <segue destination="GBb-8C-B5N" kind="push" identifier="MainToMoreType" id="Ldg-9m-308"/>
                         <segue destination="3IF-KR-xqP" kind="push" identifier="MainTo30DayOrg" id="V2t-xH-2aQ"/>
+                        <segue destination="oMp-dS-Ffa" kind="push" identifier="MainToGroupCourse" id="FbS-2F-e0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1251,6 +1252,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQh-HJ-i37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1997.5999999999999" y="519.49025487256381"/>
+        </scene>
+        <!--Group Course View Controller-->
+        <scene sceneID="aw3-yL-Y8p">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="oMp-dS-Ffa" customClass="GroupCourseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oy5-4j-7MP"/>
+                        <viewControllerLayoutGuide type="bottom" id="JGp-WH-9fQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7NT-bz-3hh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylu-Bb-ZUu" customClass="SDCycleScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="187.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ylu-Bb-ZUu" secondAttribute="height" multiplier="2:1" id="VVF-1N-7Nu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ylu-Bb-ZUu" firstAttribute="leading" secondItem="7NT-bz-3hh" secondAttribute="leading" id="5B6-KJ-vi7"/>
+                            <constraint firstAttribute="trailing" secondItem="ylu-Bb-ZUu" secondAttribute="trailing" id="KWU-lL-7q7"/>
+                            <constraint firstItem="ylu-Bb-ZUu" firstAttribute="top" secondItem="oy5-4j-7MP" secondAttribute="bottom" id="Lnm-Al-lvc"/>
+                            <constraint firstItem="ylu-Bb-ZUu" firstAttribute="leading" secondItem="7NT-bz-3hh" secondAttribute="leading" id="Mu3-bJ-1xh"/>
+                            <constraint firstAttribute="trailing" secondItem="ylu-Bb-ZUu" secondAttribute="trailing" id="NON-tR-6IN"/>
+                            <constraint firstItem="ylu-Bb-ZUu" firstAttribute="top" secondItem="oy5-4j-7MP" secondAttribute="bottom" id="oN3-nl-pSd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kbb-sl-Vn8"/>
+                    <connections>
+                        <segue destination="Knb-aJ-JDG" kind="push" identifier="GroupCourseToDetail" id="iX8-yD-a73"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJ6-Ti-6ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-407.19999999999999" y="1010.6446776611695"/>
+        </scene>
+        <!--Group Course Detail View Controller-->
+        <scene sceneID="xfn-JG-axO">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Knb-aJ-JDG" customClass="GroupCourseDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HrP-0w-JS5"/>
+                        <viewControllerLayoutGuide type="bottom" id="pjo-gR-r5k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ipd-Sd-lMi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JD2-Zy-8oI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufa-5S-3uI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="1011"/>
         </scene>
         <!--我的-->
         <scene sceneID="XCv-XS-aFS">
@@ -3670,24 +3729,24 @@
         <image name="登录背景" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Eet-PD-6bI"/>
         <segue reference="cw5-ua-Bkn"/>
-        <segue reference="h06-1T-d8P"/>
         <segue reference="yad-da-8Nz"/>
+        <segue reference="h06-1T-d8P"/>
         <segue reference="sOd-j3-mVK"/>
-        <segue reference="V2t-xH-2aQ"/>
-        <segue reference="qGq-NF-EW6"/>
-        <segue reference="sS5-PK-I1T"/>
-        <segue reference="Cca-EC-7UM"/>
         <segue reference="boX-Qa-u7y"/>
-        <segue reference="qK7-Ca-lcE"/>
         <segue reference="hc7-hA-kQF"/>
+        <segue reference="Cca-EC-7UM"/>
+        <segue reference="qGq-NF-EW6"/>
+        <segue reference="V2t-xH-2aQ"/>
+        <segue reference="Eet-PD-6bI"/>
+        <segue reference="sS5-PK-I1T"/>
+        <segue reference="qK7-Ca-lcE"/>
         <segue reference="C9X-s8-weM"/>
         <segue reference="xcV-3d-LJO"/>
-        <segue reference="dFW-sS-bdb"/>
         <segue reference="U2m-as-IXV"/>
-        <segue reference="R0j-r9-wjC"/>
-        <segue reference="YZ5-ra-U5E"/>
+        <segue reference="idq-hp-ijp"/>
         <segue reference="P2M-WO-PHT"/>
+        <segue reference="R0j-r9-wjC"/>
+        <segue reference="das-9m-Knb"/>
     </inferredMetricsTieBreakers>
 </document>
