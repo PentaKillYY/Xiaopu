@@ -58,6 +58,7 @@
     DataItemArray* groupCourseArray;
     
     NSInteger currentGroupCourseIndex;
+    NSInteger current30DayIndex;
 }
 
 @property (nonatomic,weak)IBOutlet UITableView* tableView;
@@ -87,10 +88,11 @@
     [self loginRequest];
     
     [self getMainData];
-    [self getCourseVideoListRequest];
-    [self getTeaherListRequest];
+    
     [self getThirtyBackCourseList];
     [self getGroupCourseListRequest];
+    [self getCourseVideoListRequest];
+    [self getTeaherListRequest];
     
     [self configLocationManager];
     [self startSerialLocation];
@@ -243,6 +245,12 @@
         DataItem* item = [groupCourseArray getItem:currentGroupCourseIndex];
         
         [theSegue setValue:[item getString:@"FightCourseId"] forKey:@"courseId"];
+    }else if ([segue.identifier isEqualToString:@"MainTo30DayOrgDetail"]){
+        id theSegue = segue.destinationViewController;
+
+        DataItem* item = [orgListArray getItem:current30DayIndex-1];
+
+        [theSegue setValue:[item getString:@"Organization_Application_ID"] forKey:@"orgID"];
     }
 
 }
@@ -264,18 +272,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 3) {
         if (orgListArray.size) {
-            return orgListArray.size+1;
+            if (orgListArray.size ==1) {
+                return 2;
+            }else{
+                return 3;
+            }
         }else{
             return 0;
         }
-    }else if (section == 6) {
-        return 4;
     }else if (section ==4){
         if (groupCourseArray.size) {
             return 2;
         }else{
             return 0;
         }
+    }else if (section == 6) {
+        return 4;
     }else{
         return 1;
     }
@@ -384,37 +396,40 @@
 
 - (void)configCell:(OrginizationTableViewCell *)cell indexpath:(NSIndexPath *)indexpath {
     
-    DataItem* item = [orgListArray getItem:indexpath.row-1];
-    
-    [cell bingdingViewModel:item] ;
-    
-    [cell.orgClassView removeAllTags];
-    
-    cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-121;
-    
-    cell.orgClassView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
-    cell.orgClassView.lineSpacing = 5;
-    cell.orgClassView.interitemSpacing = 5;
-    cell.orgClassView.singleLine = NO;
-    
-    
-    DataItemArray* itemArray =   [[DataItemArray alloc] init];
-    [itemArray append:[tagDic objectForKey:[NSString stringWithFormat:@"%ld",(long)indexpath.row]]];
-    NSArray* array =  [NSArray arrayWithArray:[itemArray toArray]] ;
-    [array enumerateObjectsUsingBlock:^(DataItem* item, NSUInteger idx, BOOL * _Nonnull stop) {
+    if (orgListArray.size) {
+        DataItem* item = [orgListArray getItem:indexpath.row-1];
         
-        SKTag *tag = [[SKTag alloc] initWithText:[item getString:@"CourseClassType"]];
+        [cell bingdingViewModel:item] ;
         
-        tag.font = [UIFont systemFontOfSize:12];
-        tag.textColor = [UIColor lightGrayColor];
-        tag.bgColor =[UIColor whiteColor];
-        tag.borderColor = [UIColor lightGrayColor];
-        tag.borderWidth = 1.0;
-        tag.cornerRadius = 3;
-        tag.enable = YES;
-        tag.padding = UIEdgeInsetsMake(3, 3, 3, 3);
-        [cell.orgClassView addTag:tag];
-    }];
+        [cell.orgClassView removeAllTags];
+        
+        cell.orgClassView.preferredMaxLayoutWidth = Main_Screen_Width-121;
+        
+        cell.orgClassView.padding = UIEdgeInsetsMake(5, 0, 5, 0);
+        cell.orgClassView.lineSpacing = 5;
+        cell.orgClassView.interitemSpacing = 5;
+        cell.orgClassView.singleLine = NO;
+        
+        
+        DataItemArray* itemArray =   [[DataItemArray alloc] init];
+        [itemArray append:[tagDic objectForKey:[NSString stringWithFormat:@"%ld",(long)indexpath.row]]];
+        NSArray* array =  [NSArray arrayWithArray:[itemArray toArray]] ;
+        [array enumerateObjectsUsingBlock:^(DataItem* item, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            SKTag *tag = [[SKTag alloc] initWithText:[item getString:@"CourseClassType"]];
+            
+            tag.font = [UIFont systemFontOfSize:12];
+            tag.textColor = [UIColor lightGrayColor];
+            tag.bgColor =[UIColor whiteColor];
+            tag.borderColor = [UIColor lightGrayColor];
+            tag.borderWidth = 1.0;
+            tag.cornerRadius = 3;
+            tag.enable = YES;
+            tag.padding = UIEdgeInsetsMake(3, 3, 3, 3);
+            [cell.orgClassView addTag:tag];
+        }];
+
+    }
 }
 
 
@@ -499,7 +514,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section ==3) {
-        [self performSegueWithIdentifier:@"MainTo30DayOrg" sender:self];
+        if (indexPath.row ==0) {
+            [self performSegueWithIdentifier:@"MainTo30DayOrg" sender:self];
+        }else{
+            current30DayIndex = indexPath.row;
+            [self performSegueWithIdentifier:@"MainTo30DayOrgDetail" sender:self];
+        }
     }else if (indexPath.section==4 && indexPath.row ==0){
         [self performSegueWithIdentifier:@"MainToGroupCourse" sender:self];
     }else if (indexPath.section == 6 && indexPath.row !=0){
@@ -713,7 +733,7 @@
         
         videoCourseResult = json;
         NSIndexPath *imageIndexPath = [NSIndexPath indexPathForRow:0 inSection:5];
-        
+
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:imageIndexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
@@ -774,14 +794,22 @@
         DataResult* result = json;
         
         [orgListArray append:[result.detailinfo getDataItemArray:@"orglist"]];
+
+        [self.tableView beginUpdates];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:3];
         
-        
-        int curretnIndex = (int)orgListArray.size - (int)[result.detailinfo getDataItemArray:@"orglist"].size;
-        for ( int i=curretnIndex ; i< orgListArray.size ; i++) {
-            [self getCourseClassTypeWithindex:i];
-            
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        [indexPaths addObject:indexPath];
+        for (int i =0; i< orgListArray.size; i++) {
+            NSIndexPath *indexPath1 = [NSIndexPath indexPathForRow:1+i inSection:3];
+            [indexPaths addObject:indexPath1];
         }
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
         
+        for ( int i=0 ; i< orgListArray.size ; i++) {
+            [self getCourseClassTypeWithindex:i];
+        }
     } onFailure:^(id json) {
         
     }];
@@ -792,12 +820,10 @@
     
     [[OrginizationService sharedOrginizationService] getCourseClassTypeWithParameters:@{@"orgId":[item getString:@"Organization_Application_ID"]} onCompletion:^(id json) {
         DataResult* result = json;
-        
-        
         [tagDic setObject:result.items forKey:[NSString stringWithFormat:@"%ld",(long)index]];
         
         if ([tagDic allKeys].count == orgListArray.size) {
-            [self.tableView reloadData];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationNone];
         }
         
     } onFailure:^(id json) {
@@ -822,7 +848,18 @@
                 DataResult* result = json;
                 [groupCourseArray append:[result.detailinfo getDataItemArray:@"list"]];
                 
-                [self.tableView reloadData];
+                if (groupCourseArray.size) {
+                    [self.tableView beginUpdates];
+
+                    NSMutableArray *indexPaths = [NSMutableArray array];
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:4];
+                    [indexPaths addObject:indexPath];
+                    NSIndexPath *indexPath1 = [NSIndexPath indexPathForRow:1 inSection:4];
+                    [indexPaths addObject:indexPath1];
+                    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+                    [self.tableView endUpdates];
+                }
+                
             } onFailure:^(id json) {
                 
             }];
@@ -831,16 +868,34 @@
                 DataResult* result = json;
                 [groupCourseArray append:[result.detailinfo getDataItemArray:@"list"]];
                 
-                [self.tableView reloadData];
+                if (groupCourseArray.size) {
+                    [self.tableView beginUpdates];
+                    
+                    NSMutableArray *indexPaths = [NSMutableArray array];
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:4];
+                    [indexPaths addObject:indexPath];
+                    NSIndexPath *indexPath1 = [NSIndexPath indexPathForRow:1 inSection:4];
+                    [indexPaths addObject:indexPath1];
+                    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+                    [self.tableView endUpdates];
+                }
             } onFailure:^(id json) {
                 
             }];
-
         }
     }else{
         [groupCourseArray clear];
         
-        [self.tableView reloadData];
+        [self.tableView beginUpdates];
+        
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:4];
+        [indexPaths addObject:indexPath];
+        NSIndexPath *indexPath1 = [NSIndexPath indexPathForRow:1 inSection:4];
+        [indexPaths addObject:indexPath1];
+        [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+        
     }
 }
 

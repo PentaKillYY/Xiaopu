@@ -140,7 +140,7 @@
 #pragma mark - GroupCourseShareDelegate
 
 -(void)contactOrgDelegate:(id)sender{
-    [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
+    [self performSegueWithIdentifier:@"GroupCourseShareToOrgDetail" sender:self];
 }
 
 -(void)shareOrgDelegate:(id)sender{
@@ -202,7 +202,7 @@
     NSString* encodedString = [courseType stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
     
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:ShareDetailTitle descr:nil thumImage:[UIImage imageNamed:@"ShareLogo"]];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:ShareGroupCourseTitle descr:nil thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
     
     shareObject.webpageUrl =[NSString stringWithFormat:@"http://apphtml.ings.org.cn/html/lesson.html?id=%@&type=%@",self.courseId,encodedString];
     
