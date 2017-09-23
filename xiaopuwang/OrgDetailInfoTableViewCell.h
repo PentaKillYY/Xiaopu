@@ -26,5 +26,6 @@
 
 -(IBAction)clickMoreInfoAction:(id)sender;
 -(void)bingdingViewModel:(DataItem*)item;
+-(void)bingdingImageModel:(DataItemArray*)itemArray;
 @end
 

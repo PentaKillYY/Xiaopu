@@ -163,7 +163,7 @@
         chat.targetId = SchoolRongCloudId;
         
         //设置聊天会话界面要显示的标题
-        chat.title = @"校谱网顾问+学校官方招生代表2对1为您服务";
+        chat.title = @"海外学校顾问";
         //显示聊天会话界面
         [self.navigationController pushViewController:chat animated:YES];
     }else{

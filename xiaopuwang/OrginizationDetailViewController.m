@@ -152,13 +152,13 @@
         effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
         
         
-        effectview.frame = CGRectMake(0, 90, self.tableView.frame.size.width,self.tableView.frame.size.height);
+        effectview.frame = CGRectMake(0, 229, self.tableView.frame.size.width,self.tableView.frame.size.height);
         
         [self.tableView addSubview:effectview];
         
         loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [loginButton setTitle:@"登录后查看" forState:0];
-        [loginButton setFrame:CGRectMake(Main_Screen_Width/2-40, 80, 80, 80)];
+        [loginButton setFrame:CGRectMake(Main_Screen_Width/2-40, 229+80, 80, 80)];
         [loginButton setBackgroundColor:[UIColor clearColor]];
         loginButton.titleLabel.font = [UIFont systemFontOfSize:13];
         loginButton.contentHorizontalAlignment=UIControlContentHorizontalAlignmentCenter ;
@@ -406,6 +406,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section ==0) {
+       
         return [tableView fd_heightForCellWithIdentifier:@"OrgDetailInfo" cacheByIndexPath:indexPath configuration:^(id cell) {
             [self configInfoCell:cell IndexPath:indexPath];
         }];
@@ -450,6 +451,8 @@
     if (indexPath.section == 0) {
         OrgDetailInfoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgDetailInfoTableViewCell" owner:self options:nil].firstObject;
         [self configInfoCell:cell IndexPath:indexPath];
+        [cell bingdingImageModel:_albumRequest.items];
+        
         cell.delegate = self;
         return cell;
     }else if (indexPath.section ==1){
@@ -724,8 +727,12 @@
     [[OrginizationService sharedOrginizationService] getAlbumWithParameters:@{@"orgId":self.orgID} onCompletion:^(id json) {
         _albumRequest = json;
         albumCount = _albumRequest.items.size>0?1:0;
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:8];
-        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
+        [idxSet addIndex:0];
+        [idxSet addIndex:8];
+        [self.tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        
     } onFailure:^(id json) {
         
     }];
@@ -821,13 +828,16 @@
 
 -(void)judgeFocusOrgRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
-    [[OrginizationService sharedOrginizationService] judgeFocusOrgWithParameters:@{@"organizationId":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
-        _focusResult = json;
-        _rightButton.selected = YES;
-    } onFailure:^(id json) {
-        _focusResult = json;
-        _rightButton.selected = NO;
-    }];
+    if (info.userID.length) {
+        [[OrginizationService sharedOrginizationService] judgeFocusOrgWithParameters:@{@"organizationId":self.orgID,@"userId":info.userID} onCompletion:^(id json) {
+            _focusResult = json;
+            _rightButton.selected = YES;
+        } onFailure:^(id json) {
+            _focusResult = json;
+            _rightButton.selected = NO;
+        }];
+    }
+    
 }
 
 -(void)focusOrgRequest{

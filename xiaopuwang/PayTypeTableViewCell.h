@@ -15,7 +15,7 @@
 @end
 
 @interface PayTypeTableViewCell : BaseTableViewCell
-
+@property(nonatomic,weak)IBOutlet UILabel* tipLabel;
 @property(nonatomic,weak)IBOutlet UIButton* aliPayButton;
 @property(nonatomic,weak)IBOutlet UIButton* wxPayButton;
 @property(nonatomic,assign)id<PayTypeCellDelegate>delegate;
