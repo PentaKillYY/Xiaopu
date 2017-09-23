@@ -24,18 +24,26 @@ static NSString *identifyCollection = @"GroupCourseCollectionViewCell";
 
     // Configure the view for the selected state
 }
+-(void)bingdingViewModel:(DataItemArray*)courseArray{
+    self.courseItemArray = courseArray;
+    [self.collectionView reloadData];
+}
 
 #pragma mark - colletionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 2;
+    if (self.courseItemArray.size) {
+        return self.courseItemArray.size>2?2:self.courseItemArray.size;
+    }else{
+        return 0;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     GroupCourseCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifyCollection forIndexPath:indexPath];
-    
+    DataItem* item = [self.courseItemArray getItem:indexPath.row];
+    [cell bingdingViewModel:item];
     return cell;
 }
 
@@ -59,9 +67,15 @@ static NSString *identifyCollection = @"GroupCourseCollectionViewCell";
 {
     return CGSizeZero;
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
 {
     return CGSizeZero;
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.delegate groupCourseSelect:indexPath.row];
+}
+
 
 @end

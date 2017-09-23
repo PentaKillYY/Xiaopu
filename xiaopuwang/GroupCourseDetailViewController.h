@@ -10,4 +10,5 @@
 
 @interface GroupCourseDetailViewController : BaseViewController
 
+@property(nonatomic,copy)NSString * courseId;
 @end

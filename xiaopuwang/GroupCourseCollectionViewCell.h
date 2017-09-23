@@ -16,6 +16,8 @@
 @property(nonatomic,weak)IBOutlet UILabel* totalPeople;
 @property(nonatomic,weak)IBOutlet UILabel* currentPeople;
 @property(nonatomic,weak)IBOutlet UIImageView* peopleLogo;
-@property(nonatomic,weak)IBOutlet UILabel* groupCourseLabel;
+@property(nonatomic,weak)IBOutlet UILabel* groupCourseStateLabel;
 @property(nonatomic,weak)IBOutlet UILabel* trainingCorner;
+
+-(void)bingdingViewModel:(DataItem*)item;
 @end

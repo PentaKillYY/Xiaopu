@@ -360,3 +360,21 @@
 
 //帖子回复录入
 #define UserReplyCommunity @"/community/userReplyInsert"
+
+// *******************************拼课**************************
+
+//获取拼课列表
+#define GroupCourseList @"/fightCourse/FightCourseList"
+
+//获取拼课详情
+#define GroupCourseDetail @"/fightCourse/FightCourseDetail"
+
+//通过用户ID获取拼课列表
+#define UserGroupList @"/fightCourse/FightCourseListByUserId"
+
+//拼课支付参数
+#define FightCoursePayUnifiedorder @"/fightCourse/FightCoursePayUnifiedorder"
+
+//获取中奖名单
+#define GroupCourseReward @"/fightCourse/FightCourseReward"
+

@@ -28,8 +28,9 @@
 #import "HomeGroupCourseTableViewCell.h"
 #import "OrginizationService.h"
 #import "SchoolService.h"
+#import "GroupCourseService.h"
 
-@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate,PreferredTapDelegate,VideoCourseCellDelegate,LocalSelectDelegate,MainTypeDelegate>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate,PreferredTapDelegate,VideoCourseCellDelegate,LocalSelectDelegate,MainTypeDelegate,HomeGroupCourseDelegate>
 {
     DataResult* advertisementResult;
     DataResult* videoCourseResult;
@@ -54,6 +55,9 @@
     
     NSMutableDictionary* tagDic;
     DataItemArray* orgListArray;
+    DataItemArray* groupCourseArray;
+    
+    NSInteger currentGroupCourseIndex;
 }
 
 @property (nonatomic,weak)IBOutlet UITableView* tableView;
@@ -71,6 +75,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     orgListArray = [DataItemArray new];
+    groupCourseArray = [DataItemArray new];
     
     tagDic = [[NSMutableDictionary alloc] init];
     
@@ -85,6 +90,7 @@
     [self getCourseVideoListRequest];
     [self getTeaherListRequest];
     [self getThirtyBackCourseList];
+    [self getGroupCourseListRequest];
     
     [self configLocationManager];
     [self startSerialLocation];
@@ -93,7 +99,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: YES];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -225,11 +230,21 @@
         segue.destinationViewController.hidesBottomBarWhenPushed = YES;
         id theSegue = segue.destinationViewController;
         [theSegue  setValue:chinaSchoolType forKey:@"chinaType"];
-    }else if ([segue.identifier isEqualToString:@"MainTo30DayOrg"]){
+        
+    }
+    
+    else if ([segue.identifier isEqualToString:@"MainTo30DayOrg"]){
         segue.destinationViewController.hidesBottomBarWhenPushed = YES;
         id theSegue = segue.destinationViewController;
         [theSegue setValue:@"1" forKey:@"is30Day"];
+    }else if([segue.identifier isEqualToString:@"MainToGroupCourseDetail"])
+    {
+        id theSegue = segue.destinationViewController;
+        DataItem* item = [groupCourseArray getItem:currentGroupCourseIndex];
+        
+        [theSegue setValue:[item getString:@"FightCourseId"] forKey:@"courseId"];
     }
+
 }
 
 -(void)goToSelect{
@@ -256,7 +271,11 @@
     }else if (section == 6) {
         return 4;
     }else if (section ==4){
-        return 2;
+        if (groupCourseArray.size) {
+            return 2;
+        }else{
+            return 0;
+        }
     }else{
         return 1;
     }
@@ -296,7 +315,8 @@
             return cell;
         }else{
             HomeGroupCourseTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"HomeGroupCourseTableViewCell" owner:self options:nil].firstObject;
-            
+            cell.delegate = self;
+            [cell bingdingViewModel:groupCourseArray];
             return cell;
 
         }
@@ -515,6 +535,13 @@
     [self performSegueWithIdentifier:@"MainSearch" sender:self];
 }
 
+#pragma mark - HomeGroupCourseDelegate
+
+-(void)groupCourseSelect:(NSInteger)index{
+    currentGroupCourseIndex = index;
+    [self performSegueWithIdentifier:@"MainToGroupCourseDetail" sender:self];
+}
+
 #pragma mark - MainTypeDelegate
 -(void)selectMainTypeDelegate:(id)sender{
     UIButton* button = (UIButton*)sender;
@@ -575,7 +602,6 @@
 
 #pragma mark - VideoCourseCellDelegate
 -(void)selectVideoDelegate:(id)sender{
-//    UIButton* button = (UIButton*)sender;
     UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
     
     selectVideoIndex = tap.view.tag;
@@ -667,7 +693,6 @@
 
 
 -(void)tokenRequest{
-
     [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].telphone} onCompletion:^(id json) {
         [self uptdateTokenRequest];
     } onFailure:^(id json) {
@@ -687,7 +712,7 @@
     [[MainService sharedMainService] getVideoCourseListWithParameters:@{@"top":@(4)} onCompletion:^(id json) {
         
         videoCourseResult = json;
-        NSIndexPath *imageIndexPath = [NSIndexPath indexPathForRow:0 inSection:4];
+        NSIndexPath *imageIndexPath = [NSIndexPath indexPathForRow:0 inSection:5];
         
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:imageIndexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
@@ -772,13 +797,51 @@
         [tagDic setObject:result.items forKey:[NSString stringWithFormat:@"%ld",(long)index]];
         
         if ([tagDic allKeys].count == orgListArray.size) {
-            
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView reloadData];
         }
         
     } onFailure:^(id json) {
         
     }];
+}
+
+-(void)getGroupCourseListRequest{
+    NSString* courseType ;
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if ([info.firstSelectIndex intValue]==0) {
+        NSString * jsonPath = [[NSBundle mainBundle]pathForResource:@"typeIcon" ofType:@"json"];
+        NSData * jsonData = [[NSData alloc]initWithContentsOfFile:jsonPath];
+        NSMutableDictionary *typeDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+        
+        NSString* keyString = [NSString stringWithFormat:@"org_%d",[info.secondSelectIndex intValue]+1];
+        NSArray* array = [NSArray arrayWithArray:[typeDic objectForKey:keyString]];
+        courseType =[array[0] objectForKey:@"CourseType"];
+        
+        if ([UserInfo sharedUserInfo].userID.length) {
+            [[GroupCourseService sharedGroupCourseService] groupCourseListWithPage:1 Size:2 Parameters:@{@"userId":[UserInfo sharedUserInfo].userID,@"courseType":courseType} onCompletion:^(id json) {
+                DataResult* result = json;
+                [groupCourseArray append:[result.detailinfo getDataItemArray:@"list"]];
+                
+                [self.tableView reloadData];
+            } onFailure:^(id json) {
+                
+            }];
+        }else{
+            [[GroupCourseService sharedGroupCourseService] groupCourseListWithPage:1 Size:2 Parameters:@{@"courseType":courseType} onCompletion:^(id json) {
+                DataResult* result = json;
+                [groupCourseArray append:[result.detailinfo getDataItemArray:@"list"]];
+                
+                [self.tableView reloadData];
+            } onFailure:^(id json) {
+                
+            }];
+
+        }
+    }else{
+        [groupCourseArray clear];
+        
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - TableViewFooter

@@ -60,6 +60,8 @@
 #define GroupCourseRed UIColorFromRGB(0xff2e45)
 #define DealOrderButtonColor COLOR(233, 105, 100, 1)
 #define PayOrderButtonCOlor COLOR(146, 178, 84, 1)
+#define GroupCourseDarkGray UIColorFromRGB(0x727171)
+#define GroupCourseLightGray UIColorFromRGB(0x9fa0a0)
 
 #define SUBCOLOR UIColorFromRGB(0xFF4C4C)
 

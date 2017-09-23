@@ -37,5 +37,5 @@ pod 'UMengUShare/Social/QQ'
 pod 'UMengUShare/Social/Sina'
 pod 'WebViewJavascriptBridge', '~> 6.0.2'
 pod 'ZLPhotoBrowser', '~> 2.2.5'
-
+pod 'SYStickHeaderWaterFall', '~> 0.0.2' 
 end

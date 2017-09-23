@@ -34,3 +34,5 @@
 #define CommunityIsEmpty @"该帖子不存在"
 #define NoBalance @"您的账户余额为0"
 #define SuccessSpecialistPost @"您已成功提交，我们会尽快与您联系"
+#define GroupCourseNotStart @"拼课活动还未开始"
+#define GroupCourseWaitingAdward @"暂未开奖请耐心等待"

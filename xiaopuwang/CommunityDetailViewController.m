@@ -113,6 +113,8 @@ static NSString *replyidentify = @"CommunityReplyCell";
 
 - (void) viewWillDisappear: (BOOL)animated {
     [super viewWillDisappear:animated];
+    
+
     //关闭键盘事件相应
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     
