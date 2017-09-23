@@ -148,8 +148,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"OrginizationDetail"]) //"goView2"是SEGUE连线的标识
-    {
+    if([segue.identifier isEqualToString:@"OrginizationDetail"])     {
         id theSegue = segue.destinationViewController;
         
         DataItem* item = [orgListArray getItem:selectIndex];

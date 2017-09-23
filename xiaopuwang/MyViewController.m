@@ -97,7 +97,7 @@
         
         cell.userName.text = info.username;
         cell.balance.text = [NSString stringWithFormat:@"账户余额:%.2f",[info.userBalance doubleValue]];
-        cell.coupon.text = [NSString stringWithFormat:@"优惠券:%d张",[info.userCoupon integerValue]];
+      
         
         cell.delegate = self;
         return cell;
@@ -110,12 +110,8 @@
         
         cell.cellImage.image = V_IMAGE(imageName);
         
-        if (indexPath.section == 2 && indexPath.row == 0) {
+        if (indexPath.section == 1 && indexPath.row == 0) {
             cell.cellDetail.text = [NSString stringWithFormat:@"%.2f元",[info.userBalance doubleValue]];
-        }else if (indexPath.section == 2 && indexPath.row == 1){
-            cell.cellDetail.text = [NSString stringWithFormat:@"%d张",[info.userCoupon integerValue]];
-        }else if (indexPath.section == 2 && indexPath.row == 2){
-            cell.cellDetail.text = @"0.00元";
         }else{
             cell.cellDetail.text = @"";
         }
@@ -147,26 +143,26 @@
     UserInfo* info = [UserInfo sharedUserInfo];
     if (info.userID.length) {
         if (indexPath.section == 1 && indexPath.row ==0) {
-            [self performSegueWithIdentifier:@"MyToOrder" sender:self];
-        }else if (indexPath.section == 2 && indexPath.row == 0){
             [self performSegueWithIdentifier:@"MyToWallet" sender:self];
-        }else if (indexPath.section == 2 && indexPath.row == 1){
-//            [self performSegueWithIdentifier:@"MyToCoupon" sender:self];
-        }else if (indexPath.section ==3 && indexPath.row == 0) {
+        }else if (indexPath.section == 2 && indexPath.row == 0){
             [self performSegueWithIdentifier:@"MyToFollow" sender:self];
-        }else if (indexPath.section == 3 && indexPath.row == 1){
+        }else if (indexPath.section == 2 && indexPath.row == 1){
             [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
-        }else if (indexPath.section == 3 && indexPath.row == 2) {
-            //显示分享面板
-            [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-                // 根据获取的platformType确定所选平台进行下一步操作
-                
-                [self shareWebPageToPlatformType:platformType];
-                
-            }];
-        }else if (indexPath.section == 3 && indexPath.row == 3){
+        }else if (indexPath.section ==2 && indexPath.row == 2) {
+            [self performSegueWithIdentifier:@"MyToOrder" sender:self];
+
+        }else if (indexPath.section == 2 && indexPath.row == 3){
+            [self performSegueWithIdentifier:@"MyToGroupCourse" sender:self];
+        }else if (indexPath.section == 3 && indexPath.row == 0) {
+//            //显示分享面板
+//            [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+//                // 根据获取的platformType确定所选平台进行下一步操作
+//                
+//                [self shareWebPageToPlatformType:platformType];
+//                
+//            }];
             [self performSegueWithIdentifier:@"MyToUpdateInfo" sender:self];
-        }else if (indexPath.section == 3 && indexPath.row == 4){
+        }else if (indexPath.section == 3 && indexPath.row == 1){
             [self performSegueWithIdentifier:@"MyToSetting" sender:self];
         }
 

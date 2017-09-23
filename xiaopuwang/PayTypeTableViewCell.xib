@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付方式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfq-cj-pjb">
-                        <rect key="frame" x="16" y="8" width="53.5" height="16"/>
+                        <rect key="frame" x="21" y="8" width="53.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -72,13 +72,25 @@
                             <action selector="wxPaySelectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pwa-rR-kTz"/>
                         </connections>
                     </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeX-nj-i3W">
+                        <rect key="frame" x="8" y="5.5" width="5" height="21"/>
+                        <color key="backgroundColor" red="0.97631138559999997" green="0.16368901729999999" blue="0.2814570367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="QRX-uY-JMa"/>
+                            <constraint firstAttribute="width" constant="5" id="xNs-VC-ulq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="9GR-qM-A8Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2Gl-Mi-Iy7"/>
                     <constraint firstItem="jfq-cj-pjb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2RT-Da-ynd"/>
-                    <constraint firstItem="jfq-cj-pjb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="49E-pG-SxP"/>
                     <constraint firstItem="xhd-gt-67P" firstAttribute="centerY" secondItem="Mdg-dA-jXV" secondAttribute="centerY" id="7wR-yD-JLl"/>
+                    <constraint firstItem="LeX-nj-i3W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8Ua-nY-1WV"/>
                     <constraint firstItem="36d-n7-GbX" firstAttribute="leading" secondItem="9GR-qM-A8Z" secondAttribute="trailing" constant="8" id="9r5-jT-Oc6"/>
+                    <constraint firstItem="jfq-cj-pjb" firstAttribute="centerY" secondItem="LeX-nj-i3W" secondAttribute="centerY" id="L3D-hP-mZh"/>
                     <constraint firstItem="4UI-Ym-EPK" firstAttribute="top" secondItem="jfq-cj-pjb" secondAttribute="bottom" constant="8" id="LU3-4w-dao"/>
                     <constraint firstAttribute="trailing" secondItem="czb-Sb-MbU" secondAttribute="trailing" constant="16" id="NMx-hk-xn3"/>
                     <constraint firstItem="9GR-qM-A8Z" firstAttribute="top" secondItem="4UI-Ym-EPK" secondAttribute="bottom" constant="8" id="QAa-yU-zaX"/>
@@ -87,11 +99,13 @@
                     <constraint firstAttribute="trailing" secondItem="xhd-gt-67P" secondAttribute="trailing" constant="16" id="ZHk-CU-R34"/>
                     <constraint firstItem="4UI-Ym-EPK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="a1o-0U-s1g"/>
                     <constraint firstItem="Mdg-dA-jXV" firstAttribute="leading" secondItem="4UI-Ym-EPK" secondAttribute="trailing" constant="8" id="bnr-c1-UuR"/>
+                    <constraint firstItem="jfq-cj-pjb" firstAttribute="leading" secondItem="LeX-nj-i3W" secondAttribute="trailing" constant="8" id="gcp-LM-pSK"/>
                     <constraint firstItem="36d-n7-GbX" firstAttribute="centerY" secondItem="9GR-qM-A8Z" secondAttribute="centerY" id="tiK-XL-bGY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="aliPayButton" destination="xhd-gt-67P" id="WCo-q8-fEL"/>
+                <outlet property="tipLabel" destination="LeX-nj-i3W" id="vc9-AL-mPO"/>
                 <outlet property="wxPayButton" destination="czb-Sb-MbU" id="dCO-QV-QPw"/>
             </connections>
             <point key="canvasLocation" x="33" y="130.5"/>

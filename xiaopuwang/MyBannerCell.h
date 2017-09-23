@@ -19,8 +19,7 @@
 @property(nonatomic,weak)IBOutlet UILabel* userName;
 @property(nonatomic,assign)id<UserLogoDelegate>delegate;
 @property(nonatomic,weak)IBOutlet UILabel* balance;
-@property(nonatomic,weak)IBOutlet UILabel* fund;
-@property(nonatomic,weak)IBOutlet UILabel* coupon;
+
 
 -(IBAction)userLogoAction:(id)sender;
 

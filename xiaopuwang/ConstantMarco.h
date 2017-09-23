@@ -23,7 +23,7 @@
 
 #define OrgDistanceFilter @[@"全城搜索",@"<1km",@"<3km",@"<5km"]
 
-#define MyCellTitle @[@[@""],@[@"培训学校订单"],@[@"我的钱包",@"公益基金"],@[@"我的关注",@"教育规划受理状态",@"邀请好友",@"个人信息",@"设置"]]
+#define MyCellTitle @[@[@""],@[@"账户余额"],@[@"我的关注",@"教育规划",@"培训学校订单",@"我的拼课订单"],@[@"个人信息",@"设置"]]
 
 #define ShareTitle @"校谱网学费红包-选最合适的学校 领最高全额英才奖学金"
 #define ShareDetailTitle @"校谱网学费红包-选最合适的学校 领最高全额英才奖学金"
@@ -97,4 +97,7 @@
 #define InterSchoolTitle @[@"幼儿园",@"小学",@"初中",@"高中",@"大学",@"技术/专科学院"]
 #define OverSeaSchoolTitle @[@"澳大利亚",@"加拿大",@"美国",@"日本",@"新加坡",@"英国"]
 
+#define GroupCourseExplain @"邀请好友参加拼课活动，在规定时间内凑齐人数则拼课成功，若未凑齐人数则拼课失败，成功后将会抽取1名用户获得该课程。"
+#define GroupCourseInfoTitle @[@"姓名",@"手机号"]
+#define GroupCourseInfoPlaceholder @[@"请输入您的姓名",@"请输入您的联系方式"]
 #endif /* ConstantMarco_h */

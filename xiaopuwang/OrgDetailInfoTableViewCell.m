@@ -28,6 +28,21 @@
     self.focusCount.text =[NSString stringWithFormat:@"%d",arc4random()%500];
 }
 
+-(void)bingdingImageModel:(DataItemArray*)itemArray{
+    _cycleScrollView.delegate = self;
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    NSInteger cycleImageCount = itemArray.size>4?4:itemArray.size;
+    
+    for (int i = 0; i < cycleImageCount; i++) {
+        DataItem* item = [itemArray getItem:i];
+        
+        [array addObject: [NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"PhotoURL"]] ];
+    }
+    _cycleScrollView.imageURLStringsGroup = array;
+    _cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
+    _cycleScrollView.autoScrollTimeInterval = 3.;// 自动滚动时间间隔
+}
+
 -(IBAction)clickMoreInfoAction:(id)sender{
     [self.delegate showMoreInfo:sender];
 }
