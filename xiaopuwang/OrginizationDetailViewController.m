@@ -451,6 +451,8 @@
     if (indexPath.section == 0) {
         OrgDetailInfoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgDetailInfoTableViewCell" owner:self options:nil].firstObject;
         [self configInfoCell:cell IndexPath:indexPath];
+        [cell bingdingImageModel:_albumRequest.items];
+        
         cell.delegate = self;
         return cell;
     }else if (indexPath.section ==1){
@@ -725,8 +727,12 @@
     [[OrginizationService sharedOrginizationService] getAlbumWithParameters:@{@"orgId":self.orgID} onCompletion:^(id json) {
         _albumRequest = json;
         albumCount = _albumRequest.items.size>0?1:0;
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:8];
-        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
+        [idxSet addIndex:0];
+        [idxSet addIndex:8];
+        [self.tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        
     } onFailure:^(id json) {
         
     }];
