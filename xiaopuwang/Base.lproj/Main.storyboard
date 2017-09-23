@@ -100,6 +100,7 @@
                         <segue destination="3IF-KR-xqP" kind="push" identifier="MainTo30DayOrg" id="V2t-xH-2aQ"/>
                         <segue destination="oMp-dS-Ffa" kind="push" identifier="MainToGroupCourse" id="FbS-2F-e0e"/>
                         <segue destination="Knb-aJ-JDG" kind="push" identifier="MainToGroupCourseDetail" id="VdX-7c-qLn"/>
+                        <segue destination="N9O-2r-Z20" kind="push" identifier="MainTo30DayOrgDetail" id="5Ph-W1-cyA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytV-X8-U19" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sPp-pF-dsq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rr-3M-0Yd" id="Dwh-ly-W8w"/>
@@ -688,7 +689,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2N-hl-GEN">
-                                <rect key="frame" x="8" y="0.0" width="359" height="667"/>
+                                <rect key="frame" x="8" y="20" width="359" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -2317,6 +2318,7 @@
                     <navigationItem key="navigationItem" id="nEs-jW-BC6"/>
                     <connections>
                         <outlet property="collectionView" destination="GeQ-St-DNF" id="YKg-rT-Gp0"/>
+                        <segue destination="Knb-aJ-JDG" kind="push" identifier="MyCouponToDetail" id="ubG-X0-myc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBU-Hi-WeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4211,20 +4213,20 @@
         <segue reference="Jsj-9t-jwq"/>
         <segue reference="h06-1T-d8P"/>
         <segue reference="sOd-j3-mVK"/>
+        <segue reference="qGq-NF-EW6"/>
         <segue reference="sS5-PK-I1T"/>
         <segue reference="qK7-Ca-lcE"/>
-        <segue reference="V2t-xH-2aQ"/>
         <segue reference="boX-Qa-u7y"/>
+        <segue reference="VdX-7c-qLn"/>
+        <segue reference="Cca-EC-7UM"/>
+        <segue reference="V2t-xH-2aQ"/>
+        <segue reference="5Ph-W1-cyA"/>
         <segue reference="hc7-hA-kQF"/>
-        <segue reference="CcT-O5-KWk"/>
-        <segue reference="xcV-3d-LJO"/>
         <segue reference="C9X-s8-weM"/>
-        <segue reference="das-9m-Knb"/>
-        <segue reference="ZAD-Q3-1cz"/>
-        <segue reference="SLF-pC-F65"/>
-        <segue reference="dFW-sS-bdb"/>
-        <segue reference="Eho-hf-EWg"/>
+        <segue reference="xcV-3d-LJO"/>
         <segue reference="U2m-as-IXV"/>
+        <segue reference="dFW-sS-bdb"/>
+        <segue reference="das-9m-Knb"/>
         <segue reference="R0j-r9-wjC"/>
         <segue reference="P2M-WO-PHT"/>
     </inferredMetricsTieBreakers>

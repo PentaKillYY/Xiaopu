@@ -40,9 +40,6 @@
 }
 
 -(void)bingdingViewModel:(DataItem*)item{
-    
-    
-    
     if (![item getBool:@"IsOfficiallySettled"]) {
         self.leftTagW = 0;
     }
@@ -52,6 +49,8 @@
     }
     
     self.middleTag.hidden = ![item getBool:@"IsTuitionSubsidy"];
+    
+    self.rightTag.hidden = ![item getBool:@"Is30Day"];
 //    self.rightTag.hidden = ![item getBool:@"IsCourseGrading"];
 
 }

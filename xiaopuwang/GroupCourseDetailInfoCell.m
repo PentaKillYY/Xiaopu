@@ -26,7 +26,7 @@
     [self.orgLogo.layer setCornerRadius:12.5];
     [self.orgLogo.layer setMasksToBounds:YES];
     
-    self.orgName.text = [detailItem getString:@"CourseName"];
+    self.orgName.text = [detailItem getString:@"OrgName"];
     
     NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[[detailItem getString:@"FightCourseIntroduction"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
     self.courseInfo.attributedText = attrStr;

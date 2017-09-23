@@ -61,6 +61,16 @@ static NSString *identifyCollection = @"GroupCourseCollectionViewCell";
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"MyCouponToDetail"])     {
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:[[groupCourseArray getItem:selectItemIndex] getString:@"FightCourseId"] forKey:@"courseId"];
+    }
+}
+
+
 #pragma mark - colletionViewDelegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -104,6 +114,11 @@ static NSString *identifyCollection = @"GroupCourseCollectionViewCell";
     
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    selectItemIndex = indexPath.row;
+    
+    [self performSegueWithIdentifier:@"MyCouponToDetail" sender:self];
+}
 
 #pragma mark - Networkrequest
 

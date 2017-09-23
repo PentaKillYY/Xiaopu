@@ -27,7 +27,7 @@
 
 #define ShareTitle @"校谱网学费红包-选最合适的学校 领最高全额英才奖学金"
 #define ShareDetailTitle @"校谱网学费红包-选最合适的学校 领最高全额英才奖学金"
-
+#define ShareGroupCourseTitle @"我在校谱网参加了拼课活动！快来一起参与吧！"
 #define EducationTrainingSchoolHeader @[@"请提供学生的情况",@"请提供家庭教育的情况"]
 #define EducationInternationalSchoolHeader @[@"请提供学生的情况",@"请提供您的核心需求"]
 
