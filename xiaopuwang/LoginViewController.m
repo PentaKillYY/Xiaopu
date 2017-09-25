@@ -100,12 +100,21 @@
 
 -(void)tokenRequest{
     [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].telphone} onCompletion:^(id json) {
-        [self rongcloudConnect];
+        [self uptdateTokenRequest];
         
+        
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)uptdateTokenRequest{
+    [[MyService sharedMyService] updateUserTokenWithParameters:@{@"token":[UserInfo sharedUserInfo].token} onCompletion:^(id json) {
+        [self rongcloudConnect];
         [self dismissViewControllerAnimated:YES completion:^{
             
         }];
-        
     } onFailure:^(id json) {
         
     }];
