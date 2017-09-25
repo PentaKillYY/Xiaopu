@@ -795,21 +795,27 @@
         
         [orgListArray append:[result.detailinfo getDataItemArray:@"orglist"]];
 
-        [self.tableView beginUpdates];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:3];
-        
-        NSMutableArray *indexPaths = [NSMutableArray array];
-        [indexPaths addObject:indexPath];
-        for (int i =0; i< orgListArray.size; i++) {
-            NSIndexPath *indexPath1 = [NSIndexPath indexPathForRow:1+i inSection:3];
-            [indexPaths addObject:indexPath1];
+        if (orgListArray.size) {
+            [self.tableView beginUpdates];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:3];
+            
+            NSMutableArray *indexPaths = [NSMutableArray array];
+            [indexPaths addObject:indexPath];
+            for (int i =0; i< orgListArray.size; i++) {
+                NSIndexPath *indexPath1 = [NSIndexPath indexPathForRow:1+i inSection:3];
+                [indexPaths addObject:indexPath1];
+            }
+            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView endUpdates];
+            
+            for ( int i=0 ; i< orgListArray.size ; i++) {
+                [self getCourseClassTypeWithindex:i];
+            }
+        }else{
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationNone];
+
         }
-        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
-        [self.tableView endUpdates];
         
-        for ( int i=0 ; i< orgListArray.size ; i++) {
-            [self getCourseClassTypeWithindex:i];
-        }
     } onFailure:^(id json) {
         
     }];
