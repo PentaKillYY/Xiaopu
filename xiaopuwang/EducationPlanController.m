@@ -78,7 +78,8 @@
     [super viewDidLoad];
     
     self.title = @"教育规划";
-   
+    currentSegIndex = [self.currentSelectIndex intValue];
+    
     internationalArray = [NSMutableArray new];
     internationalScoreArray = [NSMutableArray new];
     

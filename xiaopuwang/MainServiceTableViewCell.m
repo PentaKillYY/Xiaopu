@@ -19,16 +19,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    
-    [self setupUI];
+    self.leadingSpace.constant = (Main_Screen_Width-240)/4;
+    self.trainingSpace.constant =( Main_Screen_Width-240)/4;
+    self.sepHeight.constant = 0.5;
 }
 
-- (void)setupUI{
-    self.lineH.constant = 0.5;
-    self.lineH2.constant = 0.5;
-    [self.specialistBtn setBackgroundImage:[UIImage imageNamed:@"英才奖学金"] forState:0];
-    [self.personalBtn setBackgroundImage:[UIImage imageNamed:@"教育规划"] forState:0];
-}
+
 
 -(IBAction)serviceAction:(id)sender{
     [self.delegate pushToServicePage:sender];

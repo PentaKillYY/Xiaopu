@@ -6,47 +6,127 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MainServiceTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="167" id="KGk-i7-Jjw" customClass="MainServiceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh6-eU-Gra">
-                        <rect key="frame" x="8" y="5" width="147" height="34"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教育规划" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuy-vT-fpq">
+                        <rect key="frame" x="8" y="8" width="57.5" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专家帮你选好学校 大数据分析推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzJ-iy-9le">
+                        <rect key="frame" x="73" y="13.5" width="187.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gt-of-u8K">
+                        <rect key="frame" x="30" y="49.5" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="UTS-Yr-MRc"/>
+                            <constraint firstAttribute="width" secondItem="6Gt-of-u8K" secondAttribute="height" multiplier="1:1" id="hRm-zG-Mli"/>
+                        </constraints>
+                        <state key="normal" image="HomeOrgSpecialist"/>
                         <connections>
-                            <action selector="serviceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3WT-2a-ap8"/>
+                            <action selector="serviceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pwa-K3-qCX"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY6-Bc-Nsd">
-                        <rect key="frame" x="165" y="5" width="147" height="34"/>
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcF-hu-VCq">
+                        <rect key="frame" x="120" y="49.5" width="80" height="80"/>
+                        <state key="normal" image="HomeOverseaSchoolSpecialist"/>
                         <connections>
-                            <action selector="serviceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3ii-e7-Y6f"/>
+                            <action selector="serviceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iiq-FZ-gLD"/>
                         </connections>
                     </button>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPg-1M-8cy">
+                        <rect key="frame" x="203" y="49.5" width="80" height="80"/>
+                        <state key="normal" image="HomeChinaSchoolSpecialist"/>
+                        <connections>
+                            <action selector="serviceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4XH-F6-GFk"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="培训学校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiz-ey-uvS">
+                        <rect key="frame" x="43.5" y="137.5" width="53.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海外学校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnW-IJ-dpF">
+                        <rect key="frame" x="133.5" y="137.5" width="53.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="国际学校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igm-ND-cCy">
+                        <rect key="frame" x="217" y="137.5" width="53.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dJ-Vh-ArC">
+                        <rect key="frame" x="0.0" y="36" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="9u5-3q-B0j"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="tY6-Bc-Nsd" secondAttribute="bottom" constant="5" id="F9o-yT-yeh"/>
-                    <constraint firstAttribute="bottom" secondItem="hh6-eU-Gra" secondAttribute="bottom" constant="5" id="L0D-ub-YSq"/>
-                    <constraint firstItem="tY6-Bc-Nsd" firstAttribute="width" secondItem="hh6-eU-Gra" secondAttribute="width" id="ZCR-fv-5eb"/>
-                    <constraint firstItem="hh6-eU-Gra" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="aOr-Lx-2sJ"/>
-                    <constraint firstItem="tY6-Bc-Nsd" firstAttribute="height" secondItem="hh6-eU-Gra" secondAttribute="height" id="jlg-K6-8SQ"/>
-                    <constraint firstAttribute="trailing" secondItem="tY6-Bc-Nsd" secondAttribute="trailing" constant="8" id="pzW-rL-b0X"/>
-                    <constraint firstItem="tY6-Bc-Nsd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="t1Q-aK-WIh"/>
-                    <constraint firstItem="hh6-eU-Gra" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="uOy-A3-jXi"/>
-                    <constraint firstItem="tY6-Bc-Nsd" firstAttribute="leading" secondItem="hh6-eU-Gra" secondAttribute="trailing" constant="10" id="wic-f0-8tR"/>
+                    <constraint firstItem="xcF-hu-VCq" firstAttribute="top" secondItem="6Gt-of-u8K" secondAttribute="top" id="2kC-p2-fnX"/>
+                    <constraint firstItem="iuy-vT-fpq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3bm-gM-N0O"/>
+                    <constraint firstItem="6Gt-of-u8K" firstAttribute="top" secondItem="iuy-vT-fpq" secondAttribute="bottom" constant="16" id="6XQ-mM-eSM"/>
+                    <constraint firstItem="sPg-1M-8cy" firstAttribute="bottom" secondItem="6Gt-of-u8K" secondAttribute="bottom" id="6bA-cm-6aa"/>
+                    <constraint firstAttribute="trailing" secondItem="9dJ-Vh-ArC" secondAttribute="trailing" id="7EB-Cs-seR"/>
+                    <constraint firstItem="sPg-1M-8cy" firstAttribute="width" secondItem="6Gt-of-u8K" secondAttribute="width" id="8TL-st-uNp"/>
+                    <constraint firstItem="xcF-hu-VCq" firstAttribute="bottom" secondItem="6Gt-of-u8K" secondAttribute="bottom" id="9uh-Ct-T05"/>
+                    <constraint firstItem="bzJ-iy-9le" firstAttribute="centerY" secondItem="iuy-vT-fpq" secondAttribute="centerY" id="HoV-a8-PGa"/>
+                    <constraint firstItem="xcF-hu-VCq" firstAttribute="width" secondItem="6Gt-of-u8K" secondAttribute="width" id="KJF-p1-w33"/>
+                    <constraint firstItem="bzJ-iy-9le" firstAttribute="leading" secondItem="iuy-vT-fpq" secondAttribute="trailing" constant="8" id="O0P-KI-vxD"/>
+                    <constraint firstItem="mnW-IJ-dpF" firstAttribute="top" secondItem="xcF-hu-VCq" secondAttribute="bottom" constant="8" id="PyV-50-6xQ"/>
+                    <constraint firstAttribute="bottom" secondItem="Igm-ND-cCy" secondAttribute="bottom" constant="16" id="QpN-ns-UXd"/>
+                    <constraint firstAttribute="bottom" secondItem="iiz-ey-uvS" secondAttribute="bottom" constant="16" id="RW7-aj-StQ"/>
+                    <constraint firstItem="9dJ-Vh-ArC" firstAttribute="top" secondItem="bzJ-iy-9le" secondAttribute="bottom" constant="8" id="UPB-4f-JlK"/>
+                    <constraint firstItem="iiz-ey-uvS" firstAttribute="centerX" secondItem="6Gt-of-u8K" secondAttribute="centerX" id="UeR-ur-1hy"/>
+                    <constraint firstItem="xcF-hu-VCq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Utz-Fz-qWk"/>
+                    <constraint firstItem="iuy-vT-fpq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="YOR-vR-m2B"/>
+                    <constraint firstItem="9dJ-Vh-ArC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ccB-gM-o9S"/>
+                    <constraint firstItem="mnW-IJ-dpF" firstAttribute="centerX" secondItem="xcF-hu-VCq" secondAttribute="centerX" id="cp8-7b-8XP"/>
+                    <constraint firstAttribute="bottom" secondItem="mnW-IJ-dpF" secondAttribute="bottom" constant="16" id="hn8-a2-1ue"/>
+                    <constraint firstItem="6Gt-of-u8K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="i7R-Kp-nFX"/>
+                    <constraint firstItem="sPg-1M-8cy" firstAttribute="top" secondItem="6Gt-of-u8K" secondAttribute="top" id="jGL-YQ-8lC"/>
+                    <constraint firstItem="Igm-ND-cCy" firstAttribute="centerX" secondItem="sPg-1M-8cy" secondAttribute="centerX" id="kjh-2G-gO0"/>
+                    <constraint firstItem="Igm-ND-cCy" firstAttribute="top" secondItem="sPg-1M-8cy" secondAttribute="bottom" constant="8" id="pG3-hv-ONW"/>
+                    <constraint firstAttribute="trailing" secondItem="sPg-1M-8cy" secondAttribute="trailing" constant="37" id="rLb-Kx-izc"/>
+                    <constraint firstItem="iiz-ey-uvS" firstAttribute="top" secondItem="6Gt-of-u8K" secondAttribute="bottom" constant="8" id="ruK-S7-964"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="personalBtn" destination="hh6-eU-Gra" id="Vj5-4N-Gar"/>
-                <outlet property="specialistBtn" destination="tY6-Bc-Nsd" id="Ync-hB-fZF"/>
+                <outlet property="chinaSchoolBtn" destination="sPg-1M-8cy" id="BtR-UO-6JC"/>
+                <outlet property="leadingSpace" destination="i7R-Kp-nFX" id="u0c-gQ-j6f"/>
+                <outlet property="orgBtn" destination="6Gt-of-u8K" id="S7i-dL-SqF"/>
+                <outlet property="overseaSchoolBtn" destination="xcF-hu-VCq" id="iUL-bA-LRi"/>
+                <outlet property="sepHeight" destination="9u5-3q-B0j" id="AOj-Zj-9bC"/>
+                <outlet property="trainingSpace" destination="rLb-Kx-izc" id="rWE-Ok-6Qe"/>
             </connections>
+            <point key="canvasLocation" x="85" y="127"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="HomeChinaSchoolSpecialist" width="80" height="80"/>
+        <image name="HomeOrgSpecialist" width="80" height="80"/>
+        <image name="HomeOverseaSchoolSpecialist" width="80" height="80"/>
+    </resources>
 </document>

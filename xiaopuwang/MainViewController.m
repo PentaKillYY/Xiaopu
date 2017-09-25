@@ -59,6 +59,7 @@
     
     NSInteger currentGroupCourseIndex;
     NSInteger current30DayIndex;
+    NSInteger currentServiceIndex;
 }
 
 @property (nonatomic,weak)IBOutlet UITableView* tableView;
@@ -188,7 +189,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"MainToOrgDetail"])
+    if ([segue.identifier isEqualToString:@"MainToEducationPlan"]) {
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:[NSString stringWithFormat:@"%ld",(long)currentServiceIndex] forKey:@"currentSelectIndex"];
+        
+    }else if([segue.identifier isEqualToString:@"MainToOrgDetail"])
     {
         id theSegue = segue.destinationViewController;
         
@@ -463,7 +468,7 @@
         }
         
     }else if (indexPath.section == 2){
-        return ((Main_Screen_Width-20)/2 *216)/342 +10;
+        return 170;
     }else if (indexPath.section ==3){
         if (indexPath.row==0) {
             return 44;
@@ -925,14 +930,8 @@
 #pragma mark - ServiceDelegate
 -(void)pushToServicePage:(id)sender{
     UIButton* currentButton = (UIButton*)sender;
-    
-    if (currentButton.tag == 1) {
-        [self performSegueWithIdentifier:@"MainToSubTidy" sender:self];
-
-    }else{
-        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
-
-    }
+    currentServiceIndex = currentButton.tag;
+    [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
 }
 
 #pragma mark - PreferredDelegate
