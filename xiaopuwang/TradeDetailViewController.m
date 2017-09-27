@@ -22,9 +22,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"交易明细";
-    self.navigationController.navigationBar.barTintColor = SPECIALISTNAVCOLOR;
     self.tableView.hidden = YES;
     [self getUserTradeDetailRequest];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+    
 }
 
 #pragma mark - UITableViewdatasource
@@ -66,5 +72,9 @@
     } onFailure:^(id json) {
         
     }];
+}
+
+-(IBAction)clickBack:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

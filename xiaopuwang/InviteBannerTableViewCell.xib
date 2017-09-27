@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="KGk-i7-Jjw" customClass="InviteBannerTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InviteBannerBG" translatesAutoresizingMaskIntoConstraints="NO" id="oZ8-y5-gDT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="113.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" red="0.99646371600000005" green="0.85898989439999995" blue="0.20397639270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="oZ8-y5-gDT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CUT-9R-NEq"/>
+                    <constraint firstAttribute="trailing" secondItem="oZ8-y5-gDT" secondAttribute="trailing" id="WHl-JY-V2R"/>
+                    <constraint firstItem="oZ8-y5-gDT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="a94-gp-A2g"/>
+                    <constraint firstAttribute="bottom" secondItem="oZ8-y5-gDT" secondAttribute="bottom" id="aFq-Y5-hZw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="102" y="102"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="InviteBannerBG" width="375" height="235"/>
+    </resources>
+</document>

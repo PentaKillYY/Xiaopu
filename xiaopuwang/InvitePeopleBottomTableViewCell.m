@@ -1,0 +1,28 @@
+//
+//  InvitePeopleBottomTableViewCell.m
+//  xiaopuwang
+//
+//  Created by TonyJiang on 2017/9/26.
+//  Copyright © 2017年 ings. All rights reserved.
+//
+
+#import "InvitePeopleBottomTableViewCell.h"
+
+@implementation InvitePeopleBottomTableViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+    [self.commonLabel.layer setBorderWidth:1.0];
+    [self.commonLabel.layer setBorderColor:[UIColor darkGrayColor].CGColor];
+    [self.commonLabel.layer setCornerRadius:5.0];
+    [self.commonLabel.layer setMasksToBounds:YES];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

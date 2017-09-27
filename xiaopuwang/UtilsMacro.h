@@ -62,7 +62,7 @@
 #define PayOrderButtonCOlor COLOR(146, 178, 84, 1)
 #define GroupCourseDarkGray UIColorFromRGB(0x727171)
 #define GroupCourseLightGray UIColorFromRGB(0x9fa0a0)
-
+#define RedBagGray UIColorFromRGB(0xb5b5b5)
 #define SUBCOLOR UIColorFromRGB(0xFF4C4C)
 
 #define GX_BGCOLOR COLOR(234, 234, 234, 1)

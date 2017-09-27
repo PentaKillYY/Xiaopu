@@ -28,7 +28,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"申请提现";
-    self.navigationController.navigationBar.barTintColor = SPECIALISTNAVCOLOR;
     self.tableView.hidden = YES;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
