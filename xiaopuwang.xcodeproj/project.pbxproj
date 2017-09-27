@@ -90,6 +90,7 @@
 		041BC7491F7A71550031A01C /* InvitePeopleContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC7471F7A71550031A01C /* InvitePeopleContentTableViewCell.xib */; };
 		041BC74D1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC74B1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.m */; };
 		041BC74E1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC74C1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.xib */; };
+		041BC7521F7B3D9F0031A01C /* RedBagService.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7511F7B3D9F0031A01C /* RedBagService.m */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -600,6 +601,8 @@
 		041BC74A1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitePeopleBottomTableViewCell.h; sourceTree = "<group>"; };
 		041BC74B1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitePeopleBottomTableViewCell.m; sourceTree = "<group>"; };
 		041BC74C1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvitePeopleBottomTableViewCell.xib; sourceTree = "<group>"; };
+		041BC7501F7B3D9F0031A01C /* RedBagService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBagService.h; sourceTree = "<group>"; };
+		041BC7511F7B3D9F0031A01C /* RedBagService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBagService.m; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -2325,6 +2328,8 @@
 			children = (
 				045632B41F26DE80005E04CB /* MyService.h */,
 				045632B51F26DE80005E04CB /* MyService.m */,
+				041BC7501F7B3D9F0031A01C /* RedBagService.h */,
+				041BC7511F7B3D9F0031A01C /* RedBagService.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -3174,6 +3179,7 @@
 				040C742A1F4BBDCD001F5318 /* WalletBankCardTableViewCell.m in Sources */,
 				043C0C481F56648A00CE98B2 /* PostCommunityTitleCell.m in Sources */,
 				045632EE1F29B121005E04CB /* OrgPhotoBrowserViewController.m in Sources */,
+				041BC7521F7B3D9F0031A01C /* RedBagService.m in Sources */,
 				040C74031F4A8485001F5318 /* MyCouponDetailTableViewCell.m in Sources */,
 				0456332E1F2AC40A005E04CB /* OrgMoreCourseViewController.m in Sources */,
 				04B93D0C1F39463300B2DA19 /* AddTableViewCell.m in Sources */,

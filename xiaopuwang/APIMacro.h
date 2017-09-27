@@ -378,3 +378,19 @@
 //获取中奖名单
 #define GroupCourseReward @"/fightCourse/FightCourseReward"
 
+// *******************************红包**************************
+
+//用户咨询得红包
+#define RedBagByContact @"/user/redPacketByUserConsultation"
+
+//用户下单得红包
+#define RedBagByConfirmOrder @"/user/redPacketByUserOrder"
+
+//获取用户现金红包
+#define RedBagList @"/user/userCaseRedPacketList"
+
+//更新用户现金红包状态
+#define UpdateRedBagState @"/user/userCaseRedPacketStateUpdate"
+
+//获取用户邀请人和总的红包面值
+#define GetUserRedBagInfo @"/user/userRedPacketByRecommender"

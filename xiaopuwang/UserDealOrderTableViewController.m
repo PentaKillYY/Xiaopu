@@ -9,6 +9,7 @@
 #import "UserDealOrderTableViewController.h"
 #import "MyInfoTableViewCell.h"
 #import "MyService.h"
+#import "RedBagService.h"
 
 @interface UserDealOrderTableViewController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
@@ -64,8 +65,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 -(void)loadCelldata{
     NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
@@ -229,6 +228,13 @@
         } onFailure:^(id json) {
             
         }];
+        
+        if (paytype ==1) {
+            
+            //下单得红包
+            [self redBagByDealOrderRequest];
+            
+        }
     }else{
         [[AppCustomHud sharedEKZCustomHud] showTextHud:@"下单内容不完整"];
     }
@@ -248,6 +254,15 @@
         }
         
         [self.navigationController popViewControllerAnimated:YES];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)redBagByDealOrderRequest{
+    UserInfo* info = [UserInfo sharedUserInfo];
+    [[RedBagService sharedRedBagService] getRedBagByConfirmOrderWithParameters:@{@"userId":info.userID,@"organization_Application_ID":orgID} onCompletion:^(id json) {
+        
     } onFailure:^(id json) {
         
     }];
