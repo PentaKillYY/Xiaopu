@@ -25,7 +25,7 @@
     [self.courseLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"CourseImage"]]] placeholderImage:nil];
     self.courseNameLabel.text = [item getString:@"CourseName"];
     self.groupPriceLabel.text = [NSString stringWithFormat:@"$%.2f",[item getDouble:@"FightCoursePrice"]];
-    self.saveLabel.text = [NSString stringWithFormat:@"省%d元",(int)[item getDouble:@"OriginalPrice"]-(int)[item getDouble:@"FightCoursePrice"]];
+    self.saveLabel.text = [NSString stringWithFormat:@"省%.2f元",[item getDouble:@"OriginalPrice"]-[item getDouble:@"FightCoursePrice"]];
     self.groupStateLabel.text = [NSString stringWithFormat:@"已有%d人参与",[item getInt:@"FightCourseIsSignPeopleCount"]];
 }
 @end

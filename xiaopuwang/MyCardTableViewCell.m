@@ -36,7 +36,12 @@
     [self.circle.layer setCornerRadius:self.circle.frame.size.width/2];
     [self.circle.layer setMasksToBounds:YES];
     
-    self.cardLastNumber.text =  [NSString stringWithFormat:@"尾号 %@",[[item getString:@"CardNum"] substringWithRange:NSMakeRange([item getString:@"CardNum"].length-4, 4)]] ;
+    if ([item getString:@"CardNum"].length>4) {
+        self.cardLastNumber.text =  [NSString stringWithFormat:@"尾号 %@",[[item getString:@"CardNum"] substringWithRange:NSMakeRange([item getString:@"CardNum"].length-4, 4)]] ;
+    }else{
+        self.cardLastNumber.text =[item getString:@"CardNum"];
+    }
+    
     [self.cardBGView.layer setCornerRadius:3.0];
     [self.cardBGView.layer setMasksToBounds:YES];
 }
