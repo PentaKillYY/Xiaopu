@@ -46,11 +46,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-ZE-Bdn">
-                        <rect key="frame" x="242" y="89" width="54" height="28"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                        <state key="normal" title="立即使用"/>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q1q-2r-1pZ">
                         <rect key="frame" x="24" y="93.5" width="20" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,7 +68,6 @@
                     <constraint firstItem="VEi-GF-73K" firstAttribute="leading" secondItem="q1q-2r-1pZ" secondAttribute="trailing" constant="8" id="3Vp-DZ-ize"/>
                     <constraint firstItem="nVQ-Qe-Bv1" firstAttribute="trailing" secondItem="WdH-jd-ZPD" secondAttribute="trailing" id="AgM-ao-sqa"/>
                     <constraint firstItem="Dje-6E-7XT" firstAttribute="top" secondItem="xFv-MG-4R5" secondAttribute="top" constant="8" id="GCU-I8-25j"/>
-                    <constraint firstItem="Rxp-ZE-Bdn" firstAttribute="trailing" secondItem="nVQ-Qe-Bv1" secondAttribute="trailing" id="IyI-xi-fAg"/>
                     <constraint firstItem="nVQ-Qe-Bv1" firstAttribute="top" secondItem="dX5-2g-dXQ" secondAttribute="top" id="Jrx-wM-xer"/>
                     <constraint firstItem="Dje-6E-7XT" firstAttribute="leading" secondItem="xFv-MG-4R5" secondAttribute="leading" constant="8" id="L57-BD-P73"/>
                     <constraint firstItem="sss-Z8-kdc" firstAttribute="leading" secondItem="xFv-MG-4R5" secondAttribute="leading" constant="24" id="OPK-YX-lbR"/>
@@ -83,7 +77,6 @@
                     <constraint firstItem="q1q-2r-1pZ" firstAttribute="leading" secondItem="sss-Z8-kdc" secondAttribute="leading" id="YdA-4e-n53"/>
                     <constraint firstItem="sss-Z8-kdc" firstAttribute="top" secondItem="xFv-MG-4R5" secondAttribute="top" constant="40" id="ZvL-KG-I6t"/>
                     <constraint firstItem="dX5-2g-dXQ" firstAttribute="leading" secondItem="sss-Z8-kdc" secondAttribute="trailing" constant="5" id="cuI-vJ-f32"/>
-                    <constraint firstItem="Rxp-ZE-Bdn" firstAttribute="centerY" secondItem="q1q-2r-1pZ" secondAttribute="centerY" id="fxe-7h-EWa"/>
                     <constraint firstItem="dX5-2g-dXQ" firstAttribute="bottom" secondItem="sss-Z8-kdc" secondAttribute="bottom" constant="8" id="gnO-5d-VFS"/>
                     <constraint firstItem="VEi-GF-73K" firstAttribute="centerY" secondItem="q1q-2r-1pZ" secondAttribute="centerY" id="o7l-J8-N1y"/>
                 </constraints>
@@ -96,7 +89,6 @@
                 <outlet property="bagPriceUnitLabel" destination="sss-Z8-kdc" id="Wrt-rg-PMe"/>
                 <outlet property="orgLogo" destination="q1q-2r-1pZ" id="xXu-pe-iAY"/>
                 <outlet property="orgName" destination="VEi-GF-73K" id="RDO-iV-gHX"/>
-                <outlet property="useButton" destination="Rxp-ZE-Bdn" id="t73-lo-kiz"/>
             </connections>
             <point key="canvasLocation" x="110" y="145"/>
         </tableViewCell>

@@ -10,12 +10,13 @@
 #import "CommonRedBagTableViewCell.h"
 #import "SpecialRedBagTableViewCell.h"
 #import "HMSegmentedControl.h"
+#import "RedBagService.h"
 
 @interface RedBagViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger currentSegIndex;
-    NSInteger currentPage;
-    NSInteger totalCount;
+
+    DataItemArray* redbagArray;
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property(nonatomic,weak)IBOutlet HMSegmentedControl* segmentedControl;
@@ -30,19 +31,14 @@
     
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.tableView.contentInset = UIEdgeInsetsMake(25, 0, 0, 0);
+    
+    redbagArray = [DataItemArray new];
     
     [self setupSeg];
     
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        //Call this Block When enter the refresh status automatically
-        currentPage +=1;
-        [self getRedBagRequest];
-    }];
-    
+
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        currentPage = 1;
         [self getRedBagRequest];
     }];
     
@@ -69,7 +65,7 @@
 #pragma mark - UITableViewDataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return redbagArray.size;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -78,13 +74,15 @@
 
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row%2) {
+    DataItem* item =[redbagArray getItem:indexPath.row];
+    if ([item getInt:@"RedPacketType"]==0) {
         CommonRedBagTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"CommonRedBagTableViewCell" owner:self options:nil].firstObject;
         if (currentSegIndex ==0) {
             [cell setupred];
         }else{
             [cell setupgray];
         }
+        [cell bingdingViewModel:[redbagArray getItem:indexPath.row]];
         return cell;
     }else{
         SpecialRedBagTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"SpecialRedBagTableViewCell" owner:self options:nil].firstObject;
@@ -93,6 +91,7 @@
         }else{
             [cell setupgray];
         }
+        [cell bingdingViewModel:[redbagArray getItem:indexPath.row]];
         return cell;
     }
     
@@ -105,8 +104,19 @@
 
 
 -(void)getRedBagRequest{
-    [self.tableView.mj_header endRefreshing];
+    [redbagArray clear];
+    [[RedBagService sharedRedBagService] getUserRedBagListWithParameters:@{@"userId":[UserInfo sharedUserInfo].userID,@"state":@(currentSegIndex)} onCompletion:^(id json) {
+        DataResult* result = json;
+        [redbagArray append:result.items];
+        [self.tableView.mj_header endRefreshing];
+        
+        [self.tableView reloadData];
+
+    } onFailure:^(id json) {
+        [self.tableView.mj_header endRefreshing];
+        
+        [self.tableView reloadData];
+    }];
     
-    [self.tableView reloadData];
-}
+   }
 @end

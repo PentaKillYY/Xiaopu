@@ -91,6 +91,10 @@
 		041BC74D1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC74B1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.m */; };
 		041BC74E1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC74C1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.xib */; };
 		041BC7521F7B3D9F0031A01C /* RedBagService.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7511F7B3D9F0031A01C /* RedBagService.m */; };
+		041BC7581F7C8C6F0031A01C /* OrderPayRedBagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7571F7C8C6F0031A01C /* OrderPayRedBagViewController.m */; };
+		041BC75C1F7C8E1F0031A01C /* InviteRuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC75A1F7C8E1F0031A01C /* InviteRuleTableViewCell.m */; };
+		041BC75D1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC75B1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib */; };
+		041BC75F1F7C91030031A01C /* GroupCourseBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 041BC75E1F7C91030031A01C /* GroupCourseBanner.png */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -445,7 +449,6 @@
 		04D6C37C1F74F0370080BDFF /* GroupCourseAdwardGradeTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D6C37A1F74F0370080BDFF /* GroupCourseAdwardGradeTitleCell.xib */; };
 		04D6C3801F74F0580080BDFF /* GroupCourseAdwardInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C37E1F74F0580080BDFF /* GroupCourseAdwardInfoTableViewCell.m */; };
 		04D6C3811F74F0580080BDFF /* GroupCourseAdwardInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D6C37F1F74F0580080BDFF /* GroupCourseAdwardInfoTableViewCell.xib */; };
-		04D6C3831F74FA820080BDFF /* GroupCourseBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D6C3821F74FA820080BDFF /* GroupCourseBanner.png */; };
 		04D6C3861F75010B0080BDFF /* MyGroupCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C3851F75010B0080BDFF /* MyGroupCourseViewController.m */; };
 		04F104A71F50059F0041991C /* CommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F104A61F50059F0041991C /* CommunityViewController.m */; };
 		04F104AC1F5012E90041991C /* CommunityOneLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F104AA1F5012E90041991C /* CommunityOneLineImageCell.m */; };
@@ -603,6 +606,12 @@
 		041BC74C1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvitePeopleBottomTableViewCell.xib; sourceTree = "<group>"; };
 		041BC7501F7B3D9F0031A01C /* RedBagService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBagService.h; sourceTree = "<group>"; };
 		041BC7511F7B3D9F0031A01C /* RedBagService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBagService.m; sourceTree = "<group>"; };
+		041BC7561F7C8C6F0031A01C /* OrderPayRedBagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPayRedBagViewController.h; sourceTree = "<group>"; };
+		041BC7571F7C8C6F0031A01C /* OrderPayRedBagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPayRedBagViewController.m; sourceTree = "<group>"; };
+		041BC7591F7C8E1F0031A01C /* InviteRuleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteRuleTableViewCell.h; sourceTree = "<group>"; };
+		041BC75A1F7C8E1F0031A01C /* InviteRuleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteRuleTableViewCell.m; sourceTree = "<group>"; };
+		041BC75B1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteRuleTableViewCell.xib; sourceTree = "<group>"; };
+		041BC75E1F7C91030031A01C /* GroupCourseBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupCourseBanner.png; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -1177,7 +1186,6 @@
 		04D6C37D1F74F0580080BDFF /* GroupCourseAdwardInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupCourseAdwardInfoTableViewCell.h; sourceTree = "<group>"; };
 		04D6C37E1F74F0580080BDFF /* GroupCourseAdwardInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCourseAdwardInfoTableViewCell.m; sourceTree = "<group>"; };
 		04D6C37F1F74F0580080BDFF /* GroupCourseAdwardInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCourseAdwardInfoTableViewCell.xib; sourceTree = "<group>"; };
-		04D6C3821F74FA820080BDFF /* GroupCourseBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupCourseBanner.png; sourceTree = "<group>"; };
 		04D6C3841F75010B0080BDFF /* MyGroupCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupCourseViewController.h; sourceTree = "<group>"; };
 		04D6C3851F75010B0080BDFF /* MyGroupCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroupCourseViewController.m; sourceTree = "<group>"; };
 		04F104A51F50059F0041991C /* CommunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityViewController.h; sourceTree = "<group>"; };
@@ -1240,6 +1248,8 @@
 				04B7CFA11F4288C000108915 /* UserDealOrderTableViewController.m */,
 				04B7CF7E1F4148DC00108915 /* OrderPayViewController.h */,
 				04B7CF7F1F4148DC00108915 /* OrderPayViewController.m */,
+				041BC7561F7C8C6F0031A01C /* OrderPayRedBagViewController.h */,
+				041BC7571F7C8C6F0031A01C /* OrderPayRedBagViewController.m */,
 				04B7CFA31F42DE2C00108915 /* UserConfirmOrderViewController.h */,
 				04B7CFA41F42DE2D00108915 /* UserConfirmOrderViewController.m */,
 				04B7CF811F4148F400108915 /* OrderEvaluateViewController.h */,
@@ -1551,6 +1561,9 @@
 				041BC74A1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.h */,
 				041BC74B1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.m */,
 				041BC74C1F7A84D10031A01C /* InvitePeopleBottomTableViewCell.xib */,
+				041BC7591F7C8E1F0031A01C /* InviteRuleTableViewCell.h */,
+				041BC75A1F7C8E1F0031A01C /* InviteRuleTableViewCell.m */,
+				041BC75B1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib */,
 			);
 			name = Invite;
 			sourceTree = "<group>";
@@ -1695,7 +1708,7 @@
 			children = (
 				043C0CC31F592BA800CE98B2 /* Data */,
 				043C0CB51F57E45100CE98B2 /* addReplyPic.png */,
-				04D6C3821F74FA820080BDFF /* GroupCourseBanner.png */,
+				041BC75E1F7C91030031A01C /* GroupCourseBanner.png */,
 				0478277F1F5F8CD4000D4ED8 /* NewRewardBg.png */,
 				043C0C901F56DEE400CE98B2 /* searchDel.png */,
 				047827D81F68BB80000D4ED8 /* arrow-back-blue-right.png */,
@@ -3027,13 +3040,14 @@
 				04A1D4931F31B6F800EACEA8 /* SchoolIntroduceTableViewCell.xib in Resources */,
 				047827821F5F9B36000D4ED8 /* typeIcon.json in Resources */,
 				04A1D48E1F31AC4B00EACEA8 /* SchoolAdvantageTableViewCell.xib in Resources */,
-				04D6C3831F74FA820080BDFF /* GroupCourseBanner.png in Resources */,
 				04D6C3391F710D7D0080BDFF /* JHHeaderReusableView.xib in Resources */,
 				040C74041F4A8485001F5318 /* MyCouponDetailTableViewCell.xib in Resources */,
 				0478BA121F14B0C0003A9C8B /* MyTableCell.xib in Resources */,
 				047827321F5D2BD9000D4ED8 /* VideoCourseTableViewCell.xib in Resources */,
+				041BC75D1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib in Resources */,
 				040C748D1F4EEF58001F5318 /* bootstrap.min.css in Resources */,
 				043C0CD31F593E9200CE98B2 /* NoOrder.png in Resources */,
+				041BC75F1F7C91030031A01C /* GroupCourseBanner.png in Resources */,
 				043C0C241F55342B00CE98B2 /* 我是家长.png in Resources */,
 				045633491F2B1228005E04CB /* CouseDetailImageTableViewCell.xib in Resources */,
 				040C73771F442B57001F5318 /* EvaluateContentTableViewCell.xib in Resources */,
@@ -3223,6 +3237,7 @@
 				0445EE7F1F1DA01000E9DAB3 /* ActivityTableViewCell.m in Sources */,
 				045633161F29BE1C005E04CB /* SRPictureView.m in Sources */,
 				04267F561F1871FC00FFBC3E /* OrginizationBannerTableViewCell.m in Sources */,
+				041BC75C1F7C8E1F0031A01C /* InviteRuleTableViewCell.m in Sources */,
 				047827C71F6783C4000D4ED8 /* OrgDetailEvaluateTableViewCell.m in Sources */,
 				043C0C881F56C2D500CE98B2 /* CommunityTypeViewController.m in Sources */,
 				0445EF061F20926600E9DAB3 /* OrgInfoTableViewCell.m in Sources */,
@@ -3288,6 +3303,7 @@
 				043C0CC11F592B0B00CE98B2 /* NoDataTableViewCell.m in Sources */,
 				04A1D4D71F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.m in Sources */,
 				040C745C1F4D461F001F5318 /* UITextField+JKInputLimit.m in Sources */,
+				041BC7581F7C8C6F0031A01C /* OrderPayRedBagViewController.m in Sources */,
 				040C745F1F4D48EC001F5318 /* UIButton+JKCountDown.m in Sources */,
 				0432AA941F3EE03400783ED2 /* UIColor+HexColor.m in Sources */,
 				04D6C35D1F73D7AF0080BDFF /* GroupCoursePayViewController.m in Sources */,

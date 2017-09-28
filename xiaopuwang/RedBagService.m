@@ -21,7 +21,7 @@
 -(void)getRedBagByContactWithParameters:(NSDictionary *)parameters
                            onCompletion:(JSONResponse)completionBlock
                               onFailure:(JSONResponse)failureBlock{
-    [[BaseHttpRequest sharedBaseHttpRequest] POST:RedBagByContact parameters:parameters success:^(id json) {
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@&organization_Application_ID=%@",RedBagByContact,[parameters objectForKey:@"userId"],[parameters objectForKey:@"organization_Application_ID"]]  parameters:nil success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         failureBlock(json);
@@ -32,7 +32,7 @@
 -(void)getRedBagByConfirmOrderWithParameters:(NSDictionary *)parameters
                                 onCompletion:(JSONResponse)completionBlock
                                    onFailure:(JSONResponse)failureBlock{
-    [[BaseHttpRequest sharedBaseHttpRequest] POST:RedBagByConfirmOrder parameters:parameters success:^(id json) {
+    [[BaseHttpRequest sharedBaseHttpRequest] POST:[NSString stringWithFormat:@"%@?userId=%@&organization_Application_ID=%@",RedBagByConfirmOrder,[parameters objectForKey:@"userId"],[parameters objectForKey:@"organization_Application_ID"]] parameters:nil success:^(id json) {
         completionBlock(json);
     } failure:^(id json) {
         failureBlock(json);
