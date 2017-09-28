@@ -14,7 +14,6 @@
     [super awakeFromNib];
     // Initialization code
     
-    [self setupInviteTotal];
     [self.sendInviteButton.layer setCornerRadius:15.0];
     [self.sendInviteButton.layer setMasksToBounds:YES];
 }
@@ -25,8 +24,8 @@
     // Configure the view for the selected state
 }
 
--(void)setupInviteTotal{
-    NSString* price = @"5050";
+-(void)setupInviteTotal:(DataResult* )result{
+    NSString* price = [NSString stringWithFormat:@"%d",[result.detailinfo getInt:@"TotalRedPacket"]] ;
     
     self.totalWidth.constant = price.length*24-3;
     
@@ -39,7 +38,7 @@
         number.textAlignment = NSTextAlignmentCenter;
         [number.layer setCornerRadius:3.0];
         [number.layer setMasksToBounds:YES];
-        number.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:15.0];
+        number.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20.0];
         [self.priceBG addSubview:number];
     }
 

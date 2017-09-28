@@ -14,5 +14,5 @@
 @property(nonatomic,weak)IBOutlet UILabel* rightPriceLabel;
 @property(nonatomic,weak)IBOutlet UIView* priceBG;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* totalWidth;
--(void)setupInviteTotal;
+-(void)setupInviteTotal:(DataResult* )result;
 @end

@@ -10,4 +10,8 @@
 
 @interface InvitePeopleBottomTableViewCell : UITableViewCell
 @property(nonatomic,weak)IBOutlet UILabel* commonLabel;
+@property(nonatomic,weak)IBOutlet UILabel* phoneLabel;
+@property(nonatomic,weak)IBOutlet UILabel* timeLabel;
+
+-(void)bingdingViewModel:(DataItem*)item;
 @end
