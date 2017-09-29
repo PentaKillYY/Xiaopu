@@ -34,11 +34,11 @@
     
     
     NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
-    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString: [NSString stringWithFormat:@"$%.2f",[item getDouble:@"OriginalPrice"]] attributes:attribtDic];
+    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString: [NSString stringWithFormat:@"￥%.2f",[item getDouble:@"OriginalPrice"]] attributes:attribtDic];
     
     self.originPrice.attributedText = attribtStr;
     
-    self.realPrice.text = [NSString stringWithFormat:@"$%.2f",[item getDouble:@"TotalPrice"]];
+    self.realPrice.text = [NSString stringWithFormat:@"￥%.2f",[item getDouble:@"TotalPrice"]];
     self.studentName.text = [NSString stringWithFormat:@"学生姓名:%@",[item getString:@"StudentName"]];
     self.orderID.text = [NSString stringWithFormat:@"订单编号:%@",[item getString:@"OrderNum"]];
     
