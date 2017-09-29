@@ -38,13 +38,14 @@
     
     NSString* startTime =  [[item getString:@"CreateTime"] substringToIndex:10] ;
     
-    
+    NSInteger validTime = [item getInt:@"ValidityTime"];
+
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     format.dateFormat = @"yyyy-MM-dd";
     
     NSDate *data = [format dateFromString:startTime];
-    NSDate *nextDate = [NSDate dateWithTimeInterval:60*60*60 sinceDate:data];
+    NSDate *nextDate = [NSDate dateWithTimeInterval:validTime*24*60*60  sinceDate:data];
     NSString *endTime = [format stringFromDate:nextDate];
     
     self.bagEndTimeLabel.text= [NSString stringWithFormat:@"有效期至:%@",endTime] ;
