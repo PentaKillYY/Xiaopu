@@ -44,4 +44,21 @@
     self.orgName.textColor = RedBagGray;
     self.useButton.hidden = YES;
 }
+
+-(void)bingdingViewModel:(DataItem*)item{
+    self.bagPriceLabel.text = [NSString stringWithFormat:@"%d",[item getInt:@"Price"]] ;
+    
+    NSString* startTime =  [[item getString:@"CreateTime"] substringToIndex:10] ;
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    format.dateFormat = @"yyyy-MM-dd";
+    
+    NSDate *data = [format dateFromString:startTime];
+    NSDate *nextDate = [NSDate dateWithTimeInterval:60*60*60 sinceDate:data];
+    NSString *endTime = [format stringFromDate:nextDate];
+    
+    self.bagEndTimeLabel.text= [NSString stringWithFormat:@"有效期至:%@",endTime] ;
+    self.orgName.text = [item getString:@"OrganizationName"];
+    [self.orgLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"OrganizationLogo"]]] placeholderImage:nil];
+}
 @end

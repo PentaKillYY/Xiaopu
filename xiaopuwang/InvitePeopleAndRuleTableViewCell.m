@@ -41,6 +41,6 @@
 }
 
 -(void)segmentedControlChangedValue:(HMSegmentedControl*)seg{
-
+    [self.delegate changeSeg:seg.selectedSegmentIndex];
 }
 @end

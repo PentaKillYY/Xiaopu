@@ -27,13 +27,18 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
-    
-    [self getUserBankCardRequest];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self getUserBankCardRequest];
 }
 
 #pragma mark - UITableViewDatasource

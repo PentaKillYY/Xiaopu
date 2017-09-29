@@ -18,28 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUq-Bi-dYT">
-                        <rect key="frame" x="12" y="0.0" width="1" height="43.5"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="1" id="J7h-eh-UB3"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cac-O5-p1p">
-                        <rect key="frame" x="307" y="0.0" width="1" height="44"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="1" id="879-zG-DCV"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPM-ww-TCG">
-                        <rect key="frame" x="13" y="0.0" width="294" height="43"/>
+                        <rect key="frame" x="12" y="0.0" width="296" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="138****2323" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAL-7m-yZw">
                                 <rect key="frame" x="16" y="13.5" width="80" height="16"/>
@@ -48,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-09-09 23:23:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-DG-6r4">
-                                <rect key="frame" x="145" y="13.5" width="133" height="16"/>
+                                <rect key="frame" x="147" y="13.5" width="133" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -64,19 +44,18 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="UPM-ww-TCG" firstAttribute="leading" secondItem="mUq-Bi-dYT" secondAttribute="trailing" id="5Bw-SR-ogu"/>
-                    <constraint firstItem="Cac-O5-p1p" firstAttribute="leading" secondItem="UPM-ww-TCG" secondAttribute="trailing" id="8ec-eq-f7N"/>
-                    <constraint firstAttribute="bottom" secondItem="Cac-O5-p1p" secondAttribute="bottom" id="Ibp-TD-WEJ"/>
-                    <constraint firstAttribute="trailing" secondItem="Cac-O5-p1p" secondAttribute="trailing" constant="12" id="JGv-2c-ZIu"/>
-                    <constraint firstItem="mUq-Bi-dYT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="UPC-M8-Iyl"/>
-                    <constraint firstAttribute="bottom" secondItem="mUq-Bi-dYT" secondAttribute="bottom" id="VCm-As-ch9"/>
+                    <constraint firstItem="UPM-ww-TCG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="2S3-ev-U3G"/>
+                    <constraint firstAttribute="trailing" secondItem="UPM-ww-TCG" secondAttribute="trailing" constant="12" id="BW9-Mr-RZg"/>
                     <constraint firstItem="UPM-ww-TCG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Vr0-0S-X0y"/>
                     <constraint firstAttribute="bottom" secondItem="UPM-ww-TCG" secondAttribute="bottom" id="dwR-rO-NBw"/>
-                    <constraint firstItem="mUq-Bi-dYT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eRC-bz-yt8"/>
-                    <constraint firstItem="Cac-O5-p1p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="q4L-3W-c3V"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.99646371600000005" green="0.85898989439999995" blue="0.20397639270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="contentBgView" destination="UPM-ww-TCG" id="yFw-dW-U2X"/>
+                <outlet property="phoneLabel" destination="RAL-7m-yZw" id="Mcq-ji-o1x"/>
+                <outlet property="timeLabel" destination="tPA-DG-6r4" id="ron-ke-0fu"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

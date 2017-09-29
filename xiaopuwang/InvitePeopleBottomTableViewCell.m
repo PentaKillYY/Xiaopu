@@ -25,4 +25,8 @@
     // Configure the view for the selected state
 }
 
+-(void)bingdingViewModel:(DataItem*)item{
+    self.phoneLabel.text =  [item getString:@"LoginName"].length>10?[NSString stringWithFormat:@"%@****%@",[[item getString:@"LoginName"] substringToIndex:3],[[item getString:@"LoginName"] substringWithRange:NSMakeRange([item getString:@"LoginName"].length-3, 3)]]:[item getString:@"LoginName"];
+    self.timeLabel.text = [item getString:@"ModifyTime"] ;
+}
 @end

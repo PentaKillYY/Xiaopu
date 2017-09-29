@@ -29,7 +29,9 @@
 #import "OrginizationService.h"
 #import "SchoolService.h"
 #import "GroupCourseService.h"
-
+#import "CommunityOneLineImageCell.h"
+#import "CommunityService.h"
+#import "MainCommunityTitleTableViewCell.h"
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate,PreferredTapDelegate,VideoCourseCellDelegate,LocalSelectDelegate,MainTypeDelegate,HomeGroupCourseDelegate>
 {
     DataResult* advertisementResult;
@@ -47,6 +49,7 @@
     NSInteger currentSelectOrgIndex;
     NSInteger currentSelectSchoolIndex;
     NSInteger currentSelectChinaSchoolIndex;
+    NSInteger selectCommunityIndex;
     
     NSString* chinaSchoolType;
     NSString* schoolType;
@@ -56,7 +59,8 @@
     NSMutableDictionary* tagDic;
     DataItemArray* orgListArray;
     DataItemArray* groupCourseArray;
-    
+    DataItemArray* communityListArray;
+
     NSInteger currentGroupCourseIndex;
     NSInteger current30DayIndex;
     NSInteger currentServiceIndex;
@@ -78,11 +82,13 @@
     // Do any additional setup after loading the view.
     orgListArray = [DataItemArray new];
     groupCourseArray = [DataItemArray new];
+    communityListArray = [DataItemArray new];
     
     tagDic = [[NSMutableDictionary alloc] init];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LocalSelectOrgCell" bundle:nil] forCellReuseIdentifier:@"LocalSelectOrgCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"OrginizationTableViewCell" bundle:nil] forCellReuseIdentifier:@"OrgCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CommunityOneLineImageCell" bundle:nil] forCellReuseIdentifier:@"CommunityOneLineImageCell"];
 
     
     [self changeNavTitleView];
@@ -92,6 +98,7 @@
     
     [self getThirtyBackCourseList];
     [self getGroupCourseListRequest];
+    [self getComunityListRequest];
     [self getCourseVideoListRequest];
     [self getTeaherListRequest];
     
@@ -107,7 +114,9 @@
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
     
-     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
+    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -256,6 +265,13 @@
         DataItem* item = [orgListArray getItem:current30DayIndex-1];
 
         [theSegue setValue:[item getString:@"Organization_Application_ID"] forKey:@"orgID"];
+    }if([segue.identifier isEqualToString:@"MainToCommunityDetail"])
+    {
+        id theSegue = segue.destinationViewController;
+        
+        DataItem* item =[communityListArray getItem:selectCommunityIndex];
+        
+        [theSegue setValue:[item getString:@"Id"] forKey:@"communityId"];
     }
 
 }
@@ -271,7 +287,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 7;
+    return 8;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -291,7 +307,13 @@
         }else{
             return 0;
         }
-    }else if (section == 6) {
+    }else if (section ==5){
+        if (communityListArray.size) {
+            return communityListArray.size+1;
+        }else{
+            return 0;
+        }
+    }else if (section == 7) {
         return 4;
     }else{
         return 1;
@@ -338,7 +360,18 @@
 
         }
         
-    }else if (indexPath.section == 5){
+    }else if (indexPath.section==5){
+        if (indexPath.row==0) {
+            MainCommunityTitleTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainCommunityTitleTableViewCell" owner:self options:nil].firstObject;
+            return cell;
+        }else{
+            CommunityOneLineImageCell* cell = [[NSBundle mainBundle] loadNibNamed:@"CommunityOneLineImageCell" owner:self options:nil].firstObject;
+            [self configCommunityCell:cell IndexPath:indexPath];
+            return cell;
+        }
+        
+        
+    }else if (indexPath.section == 6){
         VideoCourseTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"VideoCourseTableViewCell" owner:self options:nil].firstObject;
         cell.delegate = self;
         [cell bingdingViewModel:videoCourseResult];
@@ -442,6 +475,36 @@
     [cell bingdingViewModel:[[localOrgResult.detailinfo getDataItemArray:@"orglist"] getItem:indexpath.row-1]];
 }
 
+-(void)configCommunityCell:(CommunityOneLineImageCell*)cell IndexPath:(NSIndexPath*)path{
+    DataItem* item = [communityListArray getItem:path.row-1];
+    [cell bingdingViewModel:item];
+    
+    
+    if ([item getString:@"ImageUrl"].length) {
+        // img  九宫格图片，用collectionView做
+        NSArray* imageArray = [[item getString:@"ImageUrl"] componentsSeparatedByString:@","];
+        
+        cell.imageDatas = [[NSMutableArray alloc] initWithArray:imageArray];
+    }else{
+        cell.imageDatas = [[NSMutableArray alloc] initWithArray:@[]];;
+    }
+    
+    
+    [cell.imageCollectionView reloadData];
+    
+    CGFloat width = SCREEN_WIDTH - 64 - 20;
+    // 没图片就高度为0 （约束是可以拖出来的哦哦）
+    if ([NSArray isEmpty:cell.imageDatas])
+    {
+        cell.colletionViewHeight.constant = 0;
+    }
+    else
+    {
+        cell.colletionViewHeight.constant = ((cell.imageDatas.count - 1) / 3 + 1) * (width / 3) + (cell.imageDatas.count - 1) / 3 * 15;
+    }
+    
+}
+
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -484,6 +547,17 @@
             return 118+(Main_Screen_Width)/2;
         }
     }else if (indexPath.section == 5){
+        if (indexPath.row==0) {
+            return 44;
+        }else{
+            return [tableView fd_heightForCellWithIdentifier:@"CommunityOneLineImageCell" cacheByIndexPath:indexPath configuration:^(CommunityOneLineImageCell *cell) {
+                
+                [self configCommunityCell:cell IndexPath:indexPath];
+                
+            }];
+        }
+        
+    }else if (indexPath.section ==6){
         return 290*(Main_Screen_Width/320);
     }else {
         if (indexPath.row ==0) {
@@ -527,7 +601,14 @@
         }
     }else if (indexPath.section==4 && indexPath.row ==0){
         [self performSegueWithIdentifier:@"MainToGroupCourse" sender:self];
-    }else if (indexPath.section == 6 && indexPath.row !=0){
+    }else if (indexPath.section==5 ){
+        if (indexPath.row ==0) {
+            self.tabBarController.selectedIndex = 3;
+        }else{
+            selectCommunityIndex = indexPath.row-1;
+            [self performSegueWithIdentifier:@"MainToCommunityDetail" sender:self];
+        }
+    }else if (indexPath.section == 7 && indexPath.row !=0){
         if (selectLocalIndex == 0) {
             currentSelectTeacherIndex   = indexPath.row;
             if (teacherResult) {
@@ -737,7 +818,7 @@
     [[MainService sharedMainService] getVideoCourseListWithParameters:@{@"top":@(4)} onCompletion:^(id json) {
         
         videoCourseResult = json;
-        NSIndexPath *imageIndexPath = [NSIndexPath indexPathForRow:0 inSection:5];
+        NSIndexPath *imageIndexPath = [NSIndexPath indexPathForRow:0 inSection:6];
 
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:imageIndexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
@@ -749,7 +830,7 @@
     [[MainService sharedMainService] getTeacherListWithParameters:@{@"CourseType":@"",@"CourseKind":@"",@"City":@"",@"Field":@"",@"TeachingAge":@"",@"IsOversea":@"",@"TeacherSex":@""} onCompletion:^(id json) {
         teacherResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:7] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];
@@ -762,7 +843,7 @@
     [[OrginizationService sharedOrginizationService] postGetOrginfoWithPage:1 Size:10 Parameters:parameters onCompletion:^(id json) {
         localOrgResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:7] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];
@@ -774,7 +855,7 @@
         
         localInterSchoolResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:7] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];
@@ -784,7 +865,7 @@
     [[SchoolService sharedSchoolService] postChinaSchoolListWithPage:1 Size:10 Parameters:@{@"SchoolName":@"",@"Province":@"",@"City":@"",@"CollegeNature":@"",@"CollegeType":@"",@"Area":@"",@"X":@(0),@"Y":@(0)} onCompletion:^(id json) {
         localChinaSchoolResult = json;
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:7] withRowAnimation:UITableViewRowAnimationNone];
     } onFailure:^(id json) {
         
     }];
@@ -869,6 +950,8 @@
                     [indexPaths addObject:indexPath1];
                     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
                     [self.tableView endUpdates];
+                }else{
+                    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationNone];
                 }
                 
             } onFailure:^(id json) {
@@ -889,6 +972,8 @@
                     [indexPaths addObject:indexPath1];
                     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
                     [self.tableView endUpdates];
+                }else{
+                    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationNone];
                 }
             } onFailure:^(id json) {
                 
@@ -909,6 +994,45 @@
         
     }
 }
+
+-(void)getComunityListRequest{
+    NSDictionary* parameter;
+    if ([UserInfo sharedUserInfo].userID.length) {
+        parameter = @{@"communityTypeId":@"",@"isEssence":@(1),@"userId":[UserInfo sharedUserInfo].userID};
+    }else{
+        parameter =@{@"communityTypeId":@"",@"isEssence":@(1)};
+    }
+   
+    [[CommunityService sharedCommunityService] getCommunityListWithPage:1 Size:2 Parameters:parameter onCompletion:^(id json) {
+        DataResult* result = json;
+        
+        [communityListArray append:[result.detailinfo getDataItemArray:@"list"]];
+        
+        if (communityListArray.size){
+            [self.tableView beginUpdates];
+            
+            NSMutableArray *indexPaths = [NSMutableArray array];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:5];
+            [indexPaths addObject:indexPath];
+            
+            for (int i =0; i< communityListArray.size; i++) {
+                NSIndexPath *indexPath1 = [NSIndexPath indexPathForRow:i+1 inSection:5];
+                [indexPaths addObject:indexPath1];
+            }
+            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView endUpdates];
+            
+        }else{
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:5] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        
+    } onFailure:^(id json) {
+        
+    }];
+
+    
+}
+
 
 #pragma mark - TableViewFooter
 -(void)goToMoreOrg{

@@ -20,4 +20,5 @@
 
 -(void)setupred;
 -(void)setupgray;
+-(void)bingdingViewModel:(DataItem*)item;
 @end

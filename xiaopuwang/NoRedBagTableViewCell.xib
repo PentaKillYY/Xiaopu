@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="47" id="KGk-i7-Jjw" customClass="NoRedBagTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpC-kT-fTO">
+                        <rect key="frame" x="8" y="8" width="304" height="38.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不使用红包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-PG-59c">
+                                <rect key="frame" x="8" y="11" width="66.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOR-gZ-rqp">
+                                <rect key="frame" x="276" y="8.5" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.14488115909999999" green="0.62224781510000005" blue="0.94514447450000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="5pC-2Z-lOV"/>
+                                    <constraint firstAttribute="height" constant="20" id="tV4-cz-2Me"/>
+                                </constraints>
+                                <state key="normal" image="WhiteSelect"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jOR-gZ-rqp" firstAttribute="centerY" secondItem="lpC-kT-fTO" secondAttribute="centerY" id="3QW-nl-7Zt"/>
+                            <constraint firstItem="JQE-PG-59c" firstAttribute="centerY" secondItem="lpC-kT-fTO" secondAttribute="centerY" id="9KH-hz-6Jy"/>
+                            <constraint firstAttribute="trailing" secondItem="jOR-gZ-rqp" secondAttribute="trailing" constant="8" id="MtR-VA-AYl"/>
+                            <constraint firstItem="JQE-PG-59c" firstAttribute="leading" secondItem="lpC-kT-fTO" secondAttribute="leading" constant="8" id="RcA-k7-cqq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="lpC-kT-fTO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="18T-ws-QyN"/>
+                    <constraint firstAttribute="bottom" secondItem="lpC-kT-fTO" secondAttribute="bottom" id="7oG-a7-jjF"/>
+                    <constraint firstItem="lpC-kT-fTO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="cgr-o4-xkF"/>
+                    <constraint firstAttribute="trailing" secondItem="lpC-kT-fTO" secondAttribute="trailing" constant="8" id="p7t-37-yvD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="redBG" destination="lpC-kT-fTO" id="oVD-3w-Qwm"/>
+                <outlet property="selectStateButton" destination="jOR-gZ-rqp" id="UNS-Bs-sUV"/>
+            </connections>
+            <point key="canvasLocation" x="81" y="67.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="WhiteSelect" width="18" height="18"/>
+    </resources>
+</document>
