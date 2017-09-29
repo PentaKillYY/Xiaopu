@@ -174,7 +174,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==4) {
-        [self performSegueWithIdentifier:@"PayToSelectRedBag" sender:self];
+        if ([[orderResult.items getItem:0] getDouble:@"TotalPrice"] >2000) {
+            [self performSegueWithIdentifier:@"PayToSelectRedBag" sender:self];
+ 
+        }else{
+            [[AppCustomHud sharedEKZCustomHud] showTextHud:@"订单金额不足2000无法使用红包抵扣"];
+        }
     }
 }
 
