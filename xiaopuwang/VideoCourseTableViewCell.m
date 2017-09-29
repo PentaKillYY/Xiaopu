@@ -42,49 +42,6 @@
         [self.fourButton sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[[result.items getItem:3] getString:@"VideoPictureUrl"]]] forState:0];
         self.fourButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
         self.fourButton.imageView.clipsToBounds = YES;
-        
-        CGFloat imgW = (Main_Screen_Width-12-8-12)/2;
-        CGFloat imgH = imgW/326*200;
-        
-        UIBlurEffect *oneblur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        UIVisualEffectView*oneeffectview = [[UIVisualEffectView alloc] initWithEffect:oneblur];
-        oneeffectview.frame = CGRectMake(0, 0, imgW,imgH);
-        oneeffectview.alpha = 0.7f;
-        oneeffectview.userInteractionEnabled = YES;
-        oneeffectview.tag = 0;
-        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectViedeoAction:)];
-        [oneeffectview addGestureRecognizer:tap];
-        
-        [self.oneButton addSubview:oneeffectview];
-        
-        UIBlurEffect *twoblur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        UIVisualEffectView*twoeffectview = [[UIVisualEffectView alloc] initWithEffect:twoblur];
-        twoeffectview.frame = CGRectMake(0, 0, imgW,imgH);
-        twoeffectview.alpha = 0.7f;
-        twoeffectview.tag = 1;
-        UITapGestureRecognizer* tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectViedeoAction:)];
-        [twoeffectview addGestureRecognizer:tap2];
-
-        [self.twoButton addSubview:twoeffectview];
-        
-        UIBlurEffect *threeblur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        UIVisualEffectView*threeffectview = [[UIVisualEffectView alloc] initWithEffect:threeblur];
-        threeffectview.frame = CGRectMake(0, 0, imgW,imgH);
-        threeffectview.alpha = 0.7f;
-        threeffectview.tag = 2;
-        UITapGestureRecognizer* tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectViedeoAction:)];
-        [threeffectview addGestureRecognizer:tap3];
-        [self.threeButton addSubview:threeffectview];
-        
-        UIBlurEffect *fourblur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        UIVisualEffectView*foureffectview = [[UIVisualEffectView alloc] initWithEffect:fourblur];
-        foureffectview.frame = CGRectMake(0, 0, imgW,imgH);
-        foureffectview.alpha = 0.7f;
-        foureffectview.tag = 3;
-        UITapGestureRecognizer* tap4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectViedeoAction:)];
-        [foureffectview addGestureRecognizer:tap4];
-        [self.fourButton addSubview:foureffectview];
-        
     }
     
 }
