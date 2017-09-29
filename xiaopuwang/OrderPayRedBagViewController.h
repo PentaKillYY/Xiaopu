@@ -9,5 +9,9 @@
 #import "BaseViewController.h"
 
 @interface OrderPayRedBagViewController : BaseViewController
-
+@property(nonatomic,copy)NSString* originPrice;
+@property(nonatomic,copy)NSString* orgId;
+@property(nonatomic,copy)NSString* currentindex;
+@property(nonatomic,copy)NSString* currentids;
+@property(nonatomic,copy)NSString* currentredbagNumber;
 @end

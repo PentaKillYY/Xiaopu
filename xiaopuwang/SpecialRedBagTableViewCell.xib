@@ -21,14 +21,14 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedBagBG" translatesAutoresizingMaskIntoConstraints="NO" id="Dje-6E-7XT">
                         <rect key="frame" x="8" y="8" width="304" height="113.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sss-Z8-kdc">
-                        <rect key="frame" x="24" y="40" width="12.5" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sss-Z8-kdc">
+                        <rect key="frame" x="24" y="40" width="20.5" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX5-2g-dXQ">
-                        <rect key="frame" x="41.5" y="21.5" width="76" height="50.5"/>
+                        <rect key="frame" x="49.5" y="21.5" width="76" height="50.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

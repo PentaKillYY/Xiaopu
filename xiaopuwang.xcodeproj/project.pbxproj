@@ -95,6 +95,14 @@
 		041BC75C1F7C8E1F0031A01C /* InviteRuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC75A1F7C8E1F0031A01C /* InviteRuleTableViewCell.m */; };
 		041BC75D1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC75B1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib */; };
 		041BC75F1F7C91030031A01C /* GroupCourseBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 041BC75E1F7C91030031A01C /* GroupCourseBanner.png */; };
+		041BC7681F7CD7C40031A01C /* NoRedBagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7661F7CD7C40031A01C /* NoRedBagTableViewCell.m */; };
+		041BC7691F7CD7C40031A01C /* NoRedBagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC7671F7CD7C40031A01C /* NoRedBagTableViewCell.xib */; };
+		041BC76D1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC76B1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.m */; };
+		041BC76E1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC76C1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.xib */; };
+		041BC7721F7CE2150031A01C /* RedBagCommonSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7701F7CE2150031A01C /* RedBagCommonSelectTableViewCell.m */; };
+		041BC7731F7CE2150031A01C /* RedBagCommonSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC7711F7CE2150031A01C /* RedBagCommonSelectTableViewCell.xib */; };
+		041BC7771F7D0EE20031A01C /* MainCommunityTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7751F7D0EE20031A01C /* MainCommunityTitleTableViewCell.m */; };
+		041BC7781F7D0EE20031A01C /* MainCommunityTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC7761F7D0EE20031A01C /* MainCommunityTitleTableViewCell.xib */; };
 		0425A24D1F219DD000A18739 /* libXTDemoKitV1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0425A24A1F219DA200A18739 /* libXTDemoKitV1.a */; };
 		0425A2511F21A6E100A18739 /* MainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2501F21A6E100A18739 /* MainService.m */; };
 		0425A2541F21CD0D00A18739 /* OrginizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A2531F21CD0D00A18739 /* OrginizationService.m */; };
@@ -612,6 +620,18 @@
 		041BC75A1F7C8E1F0031A01C /* InviteRuleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteRuleTableViewCell.m; sourceTree = "<group>"; };
 		041BC75B1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteRuleTableViewCell.xib; sourceTree = "<group>"; };
 		041BC75E1F7C91030031A01C /* GroupCourseBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupCourseBanner.png; sourceTree = "<group>"; };
+		041BC7651F7CD7C40031A01C /* NoRedBagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoRedBagTableViewCell.h; sourceTree = "<group>"; };
+		041BC7661F7CD7C40031A01C /* NoRedBagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoRedBagTableViewCell.m; sourceTree = "<group>"; };
+		041BC7671F7CD7C40031A01C /* NoRedBagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoRedBagTableViewCell.xib; sourceTree = "<group>"; };
+		041BC76A1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBagSpecialSelectTableViewCell.h; sourceTree = "<group>"; };
+		041BC76B1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBagSpecialSelectTableViewCell.m; sourceTree = "<group>"; };
+		041BC76C1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedBagSpecialSelectTableViewCell.xib; sourceTree = "<group>"; };
+		041BC76F1F7CE2150031A01C /* RedBagCommonSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBagCommonSelectTableViewCell.h; sourceTree = "<group>"; };
+		041BC7701F7CE2150031A01C /* RedBagCommonSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBagCommonSelectTableViewCell.m; sourceTree = "<group>"; };
+		041BC7711F7CE2150031A01C /* RedBagCommonSelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedBagCommonSelectTableViewCell.xib; sourceTree = "<group>"; };
+		041BC7741F7D0EE20031A01C /* MainCommunityTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCommunityTitleTableViewCell.h; sourceTree = "<group>"; };
+		041BC7751F7D0EE20031A01C /* MainCommunityTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCommunityTitleTableViewCell.m; sourceTree = "<group>"; };
+		041BC7761F7D0EE20031A01C /* MainCommunityTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCommunityTitleTableViewCell.xib; sourceTree = "<group>"; };
 		0425A2451F219DA200A18739 /* XTDemoKitV1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XTDemoKitV1.xcodeproj; path = ../../XTDemoKitV1/XTDemoKitV1.xcodeproj; sourceTree = "<group>"; };
 		0425A24F1F21A6E100A18739 /* MainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainService.h; sourceTree = "<group>"; };
 		0425A2501F21A6E100A18739 /* MainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainService.m; sourceTree = "<group>"; };
@@ -1312,6 +1332,15 @@
 				040C73F11F46E042001F5318 /* PayTypeTableViewCell.h */,
 				040C73F21F46E042001F5318 /* PayTypeTableViewCell.m */,
 				040C73F31F46E042001F5318 /* PayTypeTableViewCell.xib */,
+				041BC76F1F7CE2150031A01C /* RedBagCommonSelectTableViewCell.h */,
+				041BC7701F7CE2150031A01C /* RedBagCommonSelectTableViewCell.m */,
+				041BC7711F7CE2150031A01C /* RedBagCommonSelectTableViewCell.xib */,
+				041BC76A1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.h */,
+				041BC76B1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.m */,
+				041BC76C1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.xib */,
+				041BC7651F7CD7C40031A01C /* NoRedBagTableViewCell.h */,
+				041BC7661F7CD7C40031A01C /* NoRedBagTableViewCell.m */,
+				041BC7671F7CD7C40031A01C /* NoRedBagTableViewCell.xib */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -1801,6 +1830,9 @@
 				0478BA311F14BCA1003A9C8B /* MainPreferedTableViewCell.xib */,
 				04267EDE1F16179700FFBC3E /* AutoRollingScrollView.h */,
 				04267EDF1F16179700FFBC3E /* AutoRollingScrollView.m */,
+				041BC7741F7D0EE20031A01C /* MainCommunityTitleTableViewCell.h */,
+				041BC7751F7D0EE20031A01C /* MainCommunityTitleTableViewCell.m */,
+				041BC7761F7D0EE20031A01C /* MainCommunityTitleTableViewCell.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -2930,6 +2962,7 @@
 				04A1D4CB1F340ADB00EACEA8 /* SchoolCourseTestCell.xib in Resources */,
 				04A1D4D81F3460E700EACEA8 /* ChinaTeacherAndSrudentCell.xib in Resources */,
 				04B93D0D1F39463300B2DA19 /* AddTableViewCell.xib in Resources */,
+				041BC76E1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.xib in Resources */,
 				040C73F01F46D98C001F5318 /* PaySelectCouponTableViewCell.xib in Resources */,
 				040C744A1F4BDC9E001F5318 /* ReflectCardTableViewCell.xib in Resources */,
 				04267F5C1F18A9D000FFBC3E /* SchoolBannerTableViewCell.xib in Resources */,
@@ -2958,8 +2991,10 @@
 				0432AA6D1F3D88A900783ED2 /* MySettingTableViewCell.xib in Resources */,
 				041BC73F1F7A3EB10031A01C /* InviteStrategyTableViewCell.xib in Resources */,
 				0445EE461F1C9B0100E9DAB3 /* SchoolTypeTableViewCell.xib in Resources */,
+				041BC7731F7CE2150031A01C /* RedBagCommonSelectTableViewCell.xib in Resources */,
 				04A1D4C61F340AB300EACEA8 /* SChoolCourseAcceptGradeCell.xib in Resources */,
 				04A1D46D1F307BC700EACEA8 /* ChinaSchoolBannerTableViewCell.xib in Resources */,
+				041BC7691F7CD7C40031A01C /* NoRedBagTableViewCell.xib in Resources */,
 				047827411F5D4F65000D4ED8 /* LocalSelectSchoolCell.xib in Resources */,
 				04267F681F19AF5E00FFBC3E /* TagTableViewCell.xib in Resources */,
 				041BC7491F7A71550031A01C /* InvitePeopleContentTableViewCell.xib in Resources */,
@@ -3071,6 +3106,7 @@
 				041BC7441F7A3ED00031A01C /* InvitePeopleAndRuleTableViewCell.xib in Resources */,
 				043C0C321F56498700CE98B2 /* CommunityTypeCollectionViewCell.xib in Resources */,
 				043C0C531F5664BB00CE98B2 /* PostCommunityImageCell.xib in Resources */,
+				041BC7781F7D0EE20031A01C /* MainCommunityTitleTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				043C0C581F56651E00CE98B2 /* PostCommunityTypeCell.xib in Resources */,
 				04D6C3521F734DD80080BDFF /* GroupCourseDetailExplainCell.xib in Resources */,
@@ -3211,6 +3247,7 @@
 				048B281C1F6B6D21000E8FED /* ThityBackOrgTitleTableViewCell.m in Sources */,
 				041BC7211F79E3B40031A01C /* RedBagViewController.m in Sources */,
 				047827D61F67DA10000D4ED8 /* OrgTitleClassTableViewCell.m in Sources */,
+				041BC7681F7CD7C40031A01C /* NoRedBagTableViewCell.m in Sources */,
 				047827BD1F678235000D4ED8 /* OrgDetailInfoTableViewCell.m in Sources */,
 				045633171F29BE1C005E04CB /* SRPictureIndicator.m in Sources */,
 				04B7CF7A1F41486200108915 /* AllOrderViewController.m in Sources */,
@@ -3281,6 +3318,7 @@
 				041BC73E1F7A3EB10031A01C /* InviteStrategyTableViewCell.m in Sources */,
 				04D6C33E1F71F8B20080BDFF /* GroupCourseService.m in Sources */,
 				040C742E1F4BC65A001F5318 /* TradeDetailViewController.m in Sources */,
+				041BC7771F7D0EE20031A01C /* MainCommunityTitleTableViewCell.m in Sources */,
 				0478BA231F14BC40003A9C8B /* MainRollingTableViewCell.m in Sources */,
 				04B93D031F38914600B2DA19 /* MultiTagSelectTableViewCell.m in Sources */,
 				048B282F1F6F6A07000E8FED /* HomeGroupCourseTableViewCell.m in Sources */,
@@ -3400,6 +3438,8 @@
 				040C74351F4BD666001F5318 /* TredeDetailTableViewCell.m in Sources */,
 				04D6C3511F734DD80080BDFF /* GroupCourseDetailExplainCell.m in Sources */,
 				0445EF1F1F20945400E9DAB3 /* OrgAlbumVideoTableViewCell.m in Sources */,
+				041BC76D1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.m in Sources */,
+				041BC7721F7CE2150031A01C /* RedBagCommonSelectTableViewCell.m in Sources */,
 				045633271F29E1F7005E04CB /* OrgVideoPlayerViewController.m in Sources */,
 				040C74101F4AC62B001F5318 /* MyCouponSimpleTableViewCell.m in Sources */,
 				043C0C521F5664BB00CE98B2 /* PostCommunityImageCell.m in Sources */,

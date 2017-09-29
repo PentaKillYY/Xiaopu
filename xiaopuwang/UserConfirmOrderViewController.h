@@ -11,4 +11,5 @@
 @interface UserConfirmOrderViewController : BaseViewController
 @property(nonatomic,weak)NSString* orderNumber;
 @property(nonatomic,weak)NSString* isAll;
+@property(nonatomic,strong)NSDictionary* redBagDic;
 @end
