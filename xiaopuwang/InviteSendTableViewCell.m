@@ -43,4 +43,8 @@
     }
 
 }
+
+-(IBAction)sendInviteUrl:(id)sender{
+    [self.delegate shareInvite:sender];
+}
 @end

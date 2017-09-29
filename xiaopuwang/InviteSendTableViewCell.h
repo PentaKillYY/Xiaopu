@@ -7,6 +7,11 @@
 //
 
 #import "BaseTableViewCell.h"
+@protocol InviteSendDelegate <NSObject>
+
+-(void)shareInvite:(id)sender;
+
+@end
 
 @interface InviteSendTableViewCell : BaseTableViewCell
 @property(nonatomic,weak)IBOutlet UIButton* sendInviteButton;
@@ -14,5 +19,11 @@
 @property(nonatomic,weak)IBOutlet UILabel* rightPriceLabel;
 @property(nonatomic,weak)IBOutlet UIView* priceBG;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* totalWidth;
+@property(nonatomic,assign)id<InviteSendDelegate>delegate;
+
 -(void)setupInviteTotal:(DataResult* )result;
+
+-(IBAction)sendInviteUrl:(id)sender;
 @end
+
+
