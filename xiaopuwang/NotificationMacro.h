@@ -33,6 +33,6 @@
 #define EmptyCommunityContentOrImage @"帖子必须包括内容或图片"
 #define CommunityIsEmpty @"该帖子不存在"
 #define NoBalance @"您的账户余额为0"
-#define SuccessSpecialistPost @"您已成功提交，我们会尽快与您联系"
+#define SuccessSpecialistPost @"您已成功提交，专业教育顾问将于24小时内为您提供教育规划"
 #define GroupCourseNotStart @"拼课活动还未开始"
 #define GroupCourseWaitingAdward @"暂未开奖请耐心等待"
