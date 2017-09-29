@@ -32,7 +32,7 @@
 #import "CommunityOneLineImageCell.h"
 #import "CommunityService.h"
 #import "MainCommunityTitleTableViewCell.h"
-@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate,PreferredTapDelegate,VideoCourseCellDelegate,LocalSelectDelegate,MainTypeDelegate,HomeGroupCourseDelegate>
+@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,ServiceDelegate,AMapLocationManagerDelegate,PreferredTapDelegate,VideoCourseCellDelegate,LocalSelectDelegate,MainTypeDelegate,HomeGroupCourseDelegate,MainCycleDelegate>
 {
     DataResult* advertisementResult;
     DataResult* videoCourseResult;
@@ -325,6 +325,7 @@
     if (indexPath.section == 0) {
         MainCycleTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainCycleTableViewCell" owner:self options:nil].firstObject;
         cell.dataresult = advertisementResult;
+        cell.delegate = self;
         return cell;
     }else if (indexPath.section ==1){
         MainTypeTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"MainTypeTableViewCell" owner:self options:nil].firstObject;
@@ -641,6 +642,22 @@
     [self performSegueWithIdentifier:@"MainSearch" sender:self];
 }
 
+#pragma mark - MainCycleDelegate
+
+-(void)clickImageWithIndex:(NSString*)imageName{
+    if ([imageName isEqualToString:@"1"]) {
+        [self performSegueWithIdentifier:@"MainTo30DayOrg" sender:self];
+    }else if ([imageName isEqualToString:@"2"]){
+        currentServiceIndex = 0;
+        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
+    }else if ([imageName isEqualToString:@"3"]){
+        [self performSegueWithIdentifier:@"MainToGroupCourse" sender:self];
+    }else{
+        currentServiceIndex = 2;
+        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
+    }
+}
+
 #pragma mark - HomeGroupCourseDelegate
 
 -(void)groupCourseSelect:(NSInteger)index{
@@ -708,9 +725,10 @@
 
 #pragma mark - VideoCourseCellDelegate
 -(void)selectVideoDelegate:(id)sender{
-    UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
+//    UITapGestureRecognizer* tap = (UITapGestureRecognizer*)sender;
+    UIButton* button = (UIButton*)sender;
     
-    selectVideoIndex = tap.view.tag;
+    selectVideoIndex = button.tag;
     [self performSegueWithIdentifier:@"MainToVideoPlayer" sender:self];
 }
 
