@@ -281,7 +281,8 @@
         @"OriginalPrice":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]),
         @"BackPrice":@([[orderResult.items getItem:0] getDouble:@"BackPrice"]),
         @"Subject":[[orderResult.items getItem:0] getString:@"Subject"],
-        @"PayType":@([[orderResult.items getItem:0] getInt:@"PayType"])
+        @"PayType":@([[orderResult.items getItem:0] getInt:@"PayType"]),
+        @"RedPackPrice":@([[orderResult.items getItem:0] getDouble:@"TotalPrice"]-totalPriceNumber)
     } onCompletion:^(id json) {
         if ([self.isAll isEqualToString:@"no"]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshPay" object:nil];
@@ -298,7 +299,7 @@
 
 -(void)updateUserBalanceRequest{
     if ([[orderResult.items getItem:0] getDouble:@"TotalPrice"] > 1000 && [UserInfo sharedUserInfo].recommand.length) {
-        [[MyService sharedMyService] updateUserBalanceWithParameters:@{@"UserId":[UserInfo sharedUserInfo].userID,@"Price":@(55),@"ChannelName":@"邀请奖励",@"ChannelCode":@"",@"OperationType":@(0)} onCompletion:^(id json) {
+        [[MyService sharedMyService] updateUserBalanceWithParameters:@{@"UserId":[UserInfo sharedUserInfo].userID,@"Price":@(0),@"ChannelName":@"邀请奖励",@"ChannelCode":@"",@"OperationType":@(0)} onCompletion:^(id json) {
             //支付后处理4
             [self updateTotalPriceAfterRequest];
         } onFailure:^(id json) {

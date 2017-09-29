@@ -185,7 +185,7 @@
 }
 
 -(void)addBackPriceRequest{
-    [[MyService sharedMyService] addBackPriceWithParameters:@{@"orderId":[[orderResult.items getItem:currentCellIndex] getString:@"OrderNum"],@"price":@([backPriceResult.message doubleValue])} onCompletion:^(id json) {
+    [[MyService sharedMyService] addBackPriceWithParameters:@{@"ordreNum":[[orderResult.items getItem:currentCellIndex] getString:@"OrderNum"],@"userPrice":@([backPriceResult.detailinfo getDouble:@"UserBackPrice"]),@"orgPrice":@([backPriceResult.detailinfo getDouble:@"OrgBackPrice"])} onCompletion:^(id json) {
         [self updateUserBalanceRequest];
     } onFailure:^(id json) {
         
