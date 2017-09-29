@@ -110,7 +110,7 @@
                     return cell;
                 }else{
                     InvitePeopleContentTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"InvitePeopleContentTableViewCell" owner:self options:nil].firstObject;
-                    
+                    [cell bingdingViewModel:[[inviteResult.detailinfo getDataItemArray:@"list"] getItem:indexPath.row-1]];
                     return cell;
                 }
             }else{
