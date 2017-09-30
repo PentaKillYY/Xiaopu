@@ -17,7 +17,7 @@
 #import "AdditionalTableViewCell.h"
 #import <LGAlertView/LGAlertView.h>
 
-@interface EducationPlanController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,LGAlertViewDelegate,DeleteAdditionalCellDelegate,TextTagDelegate>{
+@interface EducationPlanController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,LGAlertViewDelegate,DeleteAdditionalCellDelegate,TextTagDelegate,UITextViewDelegate>{
     NSInteger currentSegIndex;
     
     NSString* pickerString;
@@ -78,7 +78,8 @@
     [super viewDidLoad];
     
     self.title = @"教育规划";
-   
+    currentSegIndex = [self.currentSelectIndex intValue];
+    
     internationalArray = [NSMutableArray new];
     internationalScoreArray = [NSMutableArray new];
     
@@ -243,7 +244,7 @@
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-        HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"培训学校", @"国际学校", @"海外学校"]];
+        HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"培训规划", @"国际选校规划", @"留学规划"]];
         segmentedControl.frame = CGRectMake(0 , 0, Main_Screen_Width, 40);
         [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
         segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
@@ -553,33 +554,42 @@
 #pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (currentSegIndex == 1 && indexPath.row == 5+internationalArray.count+1) {
-        UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 240, 30)];
-        textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.placeholder = @"请输入其它语言名称";
-        textField.font = [UIFont systemFontOfSize:13];
-        [[[LGAlertView alloc] initWithViewAndTitle:@"语言名称"
-                                           message:nil
-                                             style:LGAlertViewStyleAlert
-                                              view:textField
-                                      buttonTitles:@[@"确认"]
-                                 cancelButtonTitle:@"取消"
-                            destructiveButtonTitle:nil
-                                          delegate:self] showAnimated:YES completionHandler:nil];
-    }else if (currentSegIndex == 2 && indexPath.row == 5+boardArray.count+1){
-        UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 240, 30)];
-        textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.placeholder = @"请输入其它语言名称";
-        textField.font = [UIFont systemFontOfSize:13];
-        [[[LGAlertView alloc] initWithViewAndTitle:@"语言名称"
-                                           message:nil
-                                             style:LGAlertViewStyleAlert
-                                              view:textField
-                                      buttonTitles:@[@"确认"]
-                                 cancelButtonTitle:@"取消"
-                            destructiveButtonTitle:nil
-                                          delegate:self] showAnimated:YES completionHandler:nil];
+    if ([UserInfo sharedUserInfo].userID) {
+        if (currentSegIndex == 1 && indexPath.row == 5+internationalArray.count+1) {
+            UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 240, 30)];
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+            textField.placeholder = @"请输入其它语言名称";
+            textField.font = [UIFont systemFontOfSize:13];
+            [[[LGAlertView alloc] initWithViewAndTitle:@"语言名称"
+                                               message:nil
+                                                 style:LGAlertViewStyleAlert
+                                                  view:textField
+                                          buttonTitles:@[@"确认"]
+                                     cancelButtonTitle:@"取消"
+                                destructiveButtonTitle:nil
+                                              delegate:self] showAnimated:YES completionHandler:nil];
+        }else if (currentSegIndex == 2 && indexPath.row == 5+boardArray.count+1){
+            UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 240, 30)];
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+            textField.placeholder = @"请输入其它语言名称";
+            textField.font = [UIFont systemFontOfSize:13];
+            [[[LGAlertView alloc] initWithViewAndTitle:@"语言名称"
+                                               message:nil
+                                                 style:LGAlertViewStyleAlert
+                                                  view:textField
+                                          buttonTitles:@[@"确认"]
+                                     cancelButtonTitle:@"取消"
+                                destructiveButtonTitle:nil
+                                              delegate:self] showAnimated:YES completionHandler:nil];
+        }
+
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
     }
+    
 }
 
 
@@ -715,16 +725,36 @@
 }
 
 -(void)postSpecialist:(id)sender{
-    if (currentSegIndex == 0) {
-        [self postTrainingSchoolRequest];
-    }else if (currentSegIndex == 1){
-        [self postInternationalSchoolRequest];
+    if ([UserInfo sharedUserInfo].userID) {
+        if (currentSegIndex == 0) {
+            [self postTrainingSchoolRequest];
+        }else if (currentSegIndex == 1){
+            [self postInternationalSchoolRequest];
+        }else{
+            [self postOverseaSchoolRequest];
+        }
     }else{
-        [self postOverseaSchoolRequest];
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
     }
+    
+    
 }
 
 #pragma mark - UITextFieldDelegate
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if ([UserInfo sharedUserInfo].userID) {
+        
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (currentSegIndex == 0 && textField.tag == 1) {
         trainingName = textField.text;
@@ -748,6 +778,18 @@
     
     
     return YES;
+}
+
+#pragma mark - UITextViewDelegate
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    if ([UserInfo sharedUserInfo].userID) {
+        
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
 }
 
 -(void)dismissTextViewInput:(UIBarButtonItem*)item{

@@ -46,6 +46,8 @@
         }else{
             [self.segControl setSelectedSegmentIndex:[info.secondSelectIndex intValue]];
         }
+    }else{
+        [self.segControl setSelectedSegmentIndex:2];
     }
 }
 

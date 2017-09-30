@@ -65,7 +65,8 @@
     
     segmentedControl.selectionIndicatorColor = MAINCOLOR;
     segmentedControl.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:13]};
-    
+    segmentedControl.selectionIndicatorEdgeInsets =UIEdgeInsetsMake(0, -20, 0, -40);
+
     [segmentedControl setSelectedSegmentIndex:currentSegIndex];
     
     [self.view addSubview:segmentedControl];

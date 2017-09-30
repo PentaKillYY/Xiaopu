@@ -14,12 +14,13 @@
 @end
 
 @interface MainServiceTableViewCell : BaseTableViewCell
-@property (nonatomic,weak)IBOutlet UIButton* specialistBtn;
-@property (nonatomic,weak)IBOutlet UIButton* personalBtn;
-@property (nonatomic,weak)IBOutlet UILabel* bottomLine;
-@property (nonatomic,weak)IBOutlet UILabel* topLine;
-@property (nonatomic,strong)IBOutlet NSLayoutConstraint* lineH;
-@property (nonatomic,strong)IBOutlet NSLayoutConstraint* lineH2;
+@property (nonatomic,weak)IBOutlet UIButton* orgBtn;
+@property (nonatomic,weak)IBOutlet UIButton* chinaSchoolBtn;
+@property (nonatomic,weak)IBOutlet UIButton* overseaSchoolBtn;
+@property (nonatomic,weak)IBOutlet NSLayoutConstraint* leadingSpace;
+@property (nonatomic,weak)IBOutlet NSLayoutConstraint* trainingSpace;
+@property (nonatomic,weak)IBOutlet NSLayoutConstraint* sepHeight;
+
 @property (nonatomic,assign)id<ServiceDelegate>delegate;
 
 -(IBAction)serviceAction:(id)sender;

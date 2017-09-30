@@ -26,17 +26,22 @@
     
     _cycleScrollView.delegate = self;
     NSMutableArray* array = [[NSMutableArray alloc] init];
-    
+    self.ImageNameArray = [NSMutableArray new];
     for (int i = 0; i < self.dataresult.items.size; i++) {
         DataItem* item = [self.dataresult.items getItem:i];
         
-        if ([item getInt:@"AdvType"] == 1) {
+        if ([item getInt:@"AdvType"] == 1 ) {
             [array addObject:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"AdvImage"]]];
+            [self.ImageNameArray addObject:item];
         }
     }
     _cycleScrollView.imageURLStringsGroup = array;
     
     _cycleScrollView.autoScrollTimeInterval = 3.;// 自动滚动时间间隔
 
+}
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    [self.delegate clickImageWithIndex:self.ImageNameArray[index]];
 }
 @end

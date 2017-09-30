@@ -22,6 +22,6 @@
 }
 
 -(void)bingdingViewModel{
-    self.balanceLabel.text = [NSString stringWithFormat:@"$%.2f",[[UserInfo sharedUserInfo].userBalance doubleValue]];
+    self.balanceLabel.text = [NSString stringWithFormat:@"￥%.2f",[[UserInfo sharedUserInfo].userBalance doubleValue]];
 }
 @end

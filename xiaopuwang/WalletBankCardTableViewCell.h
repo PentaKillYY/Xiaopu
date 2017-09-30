@@ -10,4 +10,6 @@
 
 @interface WalletBankCardTableViewCell : BaseTableViewCell
 
+@property(nonatomic,weak)IBOutlet UIImageView* walletLogo;
+@property(nonatomic,weak)IBOutlet UILabel* walletLabel;
 @end

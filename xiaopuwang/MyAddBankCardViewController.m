@@ -20,13 +20,18 @@
 
 @implementation MyAddBankCardViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.title = @"添加银行卡";
-    
-    self.navigationController.navigationBar.barTintColor = SPECIALISTNAVCOLOR;
     
     UIButton* sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
     sendButton.frame = CGRectMake(30, 5, Main_Screen_Width-60, 35);
@@ -205,5 +210,9 @@
     } onFailure:^(id json) {
         
     }];
+}
+
+-(IBAction)clickBack:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

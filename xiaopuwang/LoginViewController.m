@@ -73,6 +73,7 @@
 
 -(void)loginRequest{
     [[MainService sharedMainService] loginWithParameters:@{@"loginName":self.userNameTextField.text,@"password":self.passwordTextField.text} onCompletion:^(id json) {
+        
         [self getUserBasicInfoRequest];
     } onFailure:^(id json) {
        

@@ -23,7 +23,7 @@
     self.courseName.text = [item getString:@"CourseName"];
     self.courseName.textColor = GroupCourseDarkGray;
     
-    NSMutableAttributedString * noteStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"$%.2f",[item getDouble:@"FightCoursePrice"]]];
+    NSMutableAttributedString * noteStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"￥%.2f",[item getDouble:@"FightCoursePrice"]]];
     NSRange redRangeTwo = NSMakeRange(1, [[noteStr string] rangeOfString:@"."].length);
     [noteStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:redRangeTwo];
     [self.groupPrice setAttributedText:noteStr];
@@ -31,7 +31,7 @@
     [self.groupPrice sizeToFit];
     
     NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
-    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString: [NSString stringWithFormat:@"$%.2f",[item getDouble:@"OriginalPrice"]] attributes:attribtDic];
+    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString: [NSString stringWithFormat:@"￥%.2f",[item getDouble:@"OriginalPrice"]] attributes:attribtDic];
     
     self.originPrice.attributedText = attribtStr;
     

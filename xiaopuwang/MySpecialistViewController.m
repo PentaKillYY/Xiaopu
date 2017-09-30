@@ -27,9 +27,7 @@
     self.title = @"教育规划受理状态";
     
     allDataResult = [DataResult new];
-    
-    self.navigationController.navigationBar.barTintColor = SPECIALISTNAVCOLOR;
-    
+        
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
     
     [self layoutNavigationBar:nil titleColor:nil titleFont:nil leftBarButtonItem:nil rightBarButtonItem:nil];
@@ -37,14 +35,18 @@
     self.tableView.hidden = YES;
     
     [self getSpecialistOrgRequest];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+    
 }
 
 #pragma mark - UITableViewDatasource
@@ -113,4 +115,7 @@
     }];
 }
 
+-(IBAction)clickBack:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

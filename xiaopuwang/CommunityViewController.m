@@ -83,16 +83,16 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
     
     
     
-    UserInfo* info = [UserInfo sharedUserInfo];
-    if (info.userID.length) {
-        
-    }else{
-        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
-        [self presentViewController:login animated:YES completion:^{
-            
-        }];
-    }
-
+//    UserInfo* info = [UserInfo sharedUserInfo];
+//    if (info.userID.length) {
+//        
+//    }else{
+//        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+//        [self presentViewController:login animated:YES completion:^{
+//            
+//        }];
+//    }
+//
     
     [self getCommunityTypeRequest];
 }
@@ -199,8 +199,18 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
 #pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    selectIndex = indexPath.section;
-    [self performSegueWithIdentifier:@"CommunityToDetail" sender:self];
+    
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
+        selectIndex = indexPath.section;
+        [self performSegueWithIdentifier:@"CommunityToDetail" sender:self];
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
+    
 }
 
 -(void)configCell:(CommunityOneLineImageCell*)cell IndexPath:(NSIndexPath*)path{
@@ -237,15 +247,13 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
 
 -(void)segmentedControlChangedValue:(HMSegmentedControl*)seg{
     currentSegIndex = seg.selectedSegmentIndex;
-    
-    if (currentIndex == 0) {
-        self.tableView.hidden= NO;
+    if (currentSegIndex == 0) {
         [self.tableView.mj_header beginRefreshing];
-    }else if (currentIndex ==1){
-        self.tableView.hidden= NO;
+    }else if (currentSegIndex ==1){
         [self.tableView.mj_header beginRefreshing];
     }else{
-        self.tableView.hidden = YES;
+        [communityListArray clear];
+        [self.tableView reloadData];
     }
     
 }
@@ -281,7 +289,14 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
         communityTypeId = [[communityTypeResult.items getItem:selectTypeTag-1] getString:@"Id"];
     }
     
-    [[CommunityService sharedCommunityService] getCommunityListWithPage:currentIndex Size:10 Parameters:@{@"communityTypeId":communityTypeId,@"isEssence":@(isEssence),@"userId":[UserInfo sharedUserInfo].userID} onCompletion:^(id json) {
+    NSDictionary* parameter;
+    if ([UserInfo sharedUserInfo].userID.length) {
+        parameter = @{@"communityTypeId":communityTypeId,@"isEssence":@(isEssence),@"userId":[UserInfo sharedUserInfo].userID};
+    }else{
+        parameter =@{@"communityTypeId":communityTypeId,@"isEssence":@(isEssence)};
+    }
+    
+    [[CommunityService sharedCommunityService] getCommunityListWithPage:currentIndex Size:10 Parameters:parameter onCompletion:^(id json) {
         DataResult* result = json;
         
         [communityListArray append:[result.detailinfo getDataItemArray:@"list"]];

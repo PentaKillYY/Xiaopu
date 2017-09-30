@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface EducationPlanController : UITableViewController
-
+@property(nonatomic,weak)NSString* currentSelectIndex;
 @end

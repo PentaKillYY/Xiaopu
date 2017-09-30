@@ -9,7 +9,17 @@
 #import "BaseTableViewCell.h"
 #import "SDCycleScrollView.h"
 
+@protocol MainCycleDelegate <NSObject>
+
+-(void)clickImageWithIndex:(DataItem*)item;
+
+@end
+
 @interface MainCycleTableViewCell : BaseTableViewCell<SDCycleScrollViewDelegate>
 @property(nonatomic,strong)IBOutlet SDCycleScrollView* cycleScrollView;
 @property(nonatomic,strong)DataResult* dataresult;
+@property(nonatomic,assign)id<MainCycleDelegate>delegate;
+@property(nonatomic,strong)NSMutableArray* ImageNameArray;
+
 @end
+

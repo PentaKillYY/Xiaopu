@@ -22,7 +22,7 @@
 #import "OrginizationService.h"
 #import "MyService.h"
 #import "UIActionSheet+Block.h"
-
+#import "RedBagService.h"
 #import <LGAlertView/LGAlertView.h>
 #import "JZLocationConverter.h"
 
@@ -256,22 +256,12 @@
 -(IBAction)chatOrg:(id)sender{
     if (_appointStateResult.statusCode == 1) {
         if ([_userAdsResult.message isEqualToString:@"1"]) {
-            //新建一个聊天会话View Controller对象,建议这样初始化
-            RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
             
-            //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
-            chat.conversationType = ConversationType_PRIVATE;
-            //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
-            chat.targetId = [_detailInfoResult.detailinfo getString:@"User_ID"];
+            //下单得红包
+            [self redBagByContactRequest];
             
-            //设置聊天会话界面要显示的标题
-            chat.title = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
-            
-            RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:[_detailInfoResult.detailinfo getString:@"User_ID"] name:[_detailInfoResult.detailinfo getString:@"OrganizationName"] portrait:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[_detailInfoResult.detailinfo getString:@"Logo"]] ];
-            [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
-            
-            //显示聊天会话界面
-            [self.navigationController pushViewController:chat animated:YES];
+            //融云即时聊天
+            [self contactByRongcloud];
         }
 
     }else{
@@ -316,6 +306,26 @@
     }
 }
 
+
+-(void)contactByRongcloud{
+    //新建一个聊天会话View Controller对象,建议这样初始化
+    RCConversationViewController *chat = [[RCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
+    
+    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+    chat.conversationType = ConversationType_PRIVATE;
+    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+    chat.targetId = [_detailInfoResult.detailinfo getString:@"User_ID"];
+    
+    //设置聊天会话界面要显示的标题
+    chat.title = [_detailInfoResult.detailinfo getString:@"OrganizationName"];
+    
+    RCUserInfo* rcinfo = [[RCUserInfo alloc] initWithUserId:[_detailInfoResult.detailinfo getString:@"User_ID"] name:[_detailInfoResult.detailinfo getString:@"OrganizationName"] portrait:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[_detailInfoResult.detailinfo getString:@"Logo"]] ];
+    [[RCIM sharedRCIM] refreshUserInfoCache:rcinfo withUserId:[_detailInfoResult.detailinfo getString:@"User_ID"]];
+    
+    //显示聊天会话界面
+    [self.navigationController pushViewController:chat animated:YES];
+
+}
 
 -(void)followOrginization:(id)sender{
     UserInfo* info = [UserInfo sharedUserInfo];
@@ -363,7 +373,22 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section<6) {
+    if (section == 4) {
+        if ([_detailInfoResult.detailinfo getInt:@"SchoolScale"]==0 && [_detailInfoResult.detailinfo getInt:@"ReadPeople"]==0 &&
+            [_detailInfoResult.detailinfo getInt:@"WillReadPeople"]==0) {
+            return 0;
+        }else{
+            return 1;
+        }
+    }else if (section == 5){
+        if ([_detailInfoResult.detailinfo getString:@"CoursePeople"].length) {
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    
+    else if (section<6) {
         return 1;
     }else if (section==6){
         if (teacherCount) {
@@ -443,7 +468,57 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section==0) {
         return 0.01;
+    }else if (section==4){
+        if ([_detailInfoResult.detailinfo getInt:@"SchoolScale"]==0 && [_detailInfoResult.detailinfo getInt:@"ReadPeople"]==0 &&
+            [_detailInfoResult.detailinfo getInt:@"WillReadPeople"]==0){
+            return 0.01;
+        }else{
+            return 5;
+        }
+    }else if (section==5){
+        if ([_detailInfoResult.detailinfo getString:@"CoursePeople"].length){
+            return 5;
+        }else{
+            return 0.01;
+        }
+    }else if (section ==6){
+        if (teacherCount) {
+            return 5;
+        }else{
+            return 0.01;
+        }
+    }else if (section ==7){
+        if (studentCount) {
+            return 5;
+        }else{
+            return 0.01;
+        }
+    }else if (section ==8){
+        if (albumCount) {
+            return 5;
+        }else{
+            return 0.01;
+        }
+    }else if (section ==9){
+        if (onlineMediaCount) {
+            return 5;
+        }else{
+            return 0.01;
+        }
+    }else if (section ==10){
+        if (videoCount) {
+            return 5;
+        }else{
+            return 0.01;
+        }
+    }else if (section==11){
+        if (courseCount){
+            return 5;
+        }else{
+            return 0.01;
+        }
     }
+    
     return 5;
 }
 
@@ -891,6 +966,14 @@
 
 -(void)sendAppointToOrgRequest{
     [[OrginizationService sharedOrginizationService] sendToOrgWithParameters:@{@"mobile":[_detailInfoResult.detailinfo getString:@"ContactMobile"],@"name":[_detailInfoResult.detailinfo getString:@"ContactPeople"]} onCompletion:^(id json) {
+        
+    } onFailure:^(id json) {
+        
+    }];
+}
+
+-(void)redBagByContactRequest{
+    [[RedBagService sharedRedBagService] getRedBagByContactWithParameters:@{@"userId":[UserInfo sharedUserInfo].userID,@"organization_Application_ID":self.orgID} onCompletion:^(id json) {
         
     } onFailure:^(id json) {
         

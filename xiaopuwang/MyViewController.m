@@ -145,24 +145,19 @@
         if (indexPath.section == 1 && indexPath.row ==0) {
             [self performSegueWithIdentifier:@"MyToWallet" sender:self];
         }else if (indexPath.section == 2 && indexPath.row == 0){
-            [self performSegueWithIdentifier:@"MyToFollow" sender:self];
+//            [self performSegueWithIdentifier:@"MyToFollow" sender:self];
+            [self performSegueWithIdentifier:@"MyToInvite" sender:self];
         }else if (indexPath.section == 2 && indexPath.row == 1){
             [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
         }else if (indexPath.section ==2 && indexPath.row == 2) {
             [self performSegueWithIdentifier:@"MyToOrder" sender:self];
-
         }else if (indexPath.section == 2 && indexPath.row == 3){
             [self performSegueWithIdentifier:@"MyToGroupCourse" sender:self];
-        }else if (indexPath.section == 3 && indexPath.row == 0) {
-//            //显示分享面板
-//            [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-//                // 根据获取的platformType确定所选平台进行下一步操作
-//                
-//                [self shareWebPageToPlatformType:platformType];
-//                
-//            }];
+        }else if (indexPath.section ==3 && indexPath.row ==0){
+            [self performSegueWithIdentifier:@"MyToFollow" sender:self];
+        }else if (indexPath.section == 3 && indexPath.row == 1) {
             [self performSegueWithIdentifier:@"MyToUpdateInfo" sender:self];
-        }else if (indexPath.section == 3 && indexPath.row == 1){
+        }else if (indexPath.section == 3 && indexPath.row == 2){
             [self performSegueWithIdentifier:@"MyToSetting" sender:self];
         }
 

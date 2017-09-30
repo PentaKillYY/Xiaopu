@@ -19,14 +19,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BankCardLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CSE-Kg-u11">
-                        <rect key="frame" x="16" y="9.5" width="25" height="25"/>
+                        <rect key="frame" x="16" y="12" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="MPI-FU-c8d"/>
-                            <constraint firstAttribute="width" constant="25" id="yfy-7A-uL7"/>
+                            <constraint firstAttribute="height" constant="20" id="MPI-FU-c8d"/>
+                            <constraint firstAttribute="width" constant="20" id="yfy-7A-uL7"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejt-6z-7zR">
-                        <rect key="frame" x="49" y="14" width="66.5" height="16"/>
+                        <rect key="frame" x="44" y="14" width="66.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,6 +39,10 @@
                     <constraint firstItem="Ejt-6z-7zR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="w7G-UG-Ev0"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="walletLabel" destination="Ejt-6z-7zR" id="ahM-Gm-ke5"/>
+                <outlet property="walletLogo" destination="CSE-Kg-u11" id="twJ-as-IIg"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

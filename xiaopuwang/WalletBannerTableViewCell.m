@@ -15,8 +15,7 @@
     // Initialization code
     UserInfo* info = [UserInfo sharedUserInfo];
     
-    [self.couponButton setTitle:[NSString stringWithFormat:@"优惠券%@张",info.userCoupon] forState:UIControlStateNormal];
-    self.balanceLabel.text = [NSString stringWithFormat:@"$%.2f",[info.userBalance doubleValue]];
+    self.balanceLabel.text = [NSString stringWithFormat:@"%.2f",[info.userBalance doubleValue]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -25,15 +24,10 @@
     // Configure the view for the selected state
 }
 
--(IBAction)couponAction:(id)sender{
-    [self.delegate couponDelegate:sender];
-}
 
 -(IBAction)detailAction:(id)sender{
     [self.delegate detailDelegate:sender];
 }
 
--(IBAction)reflectAction:(id)sender{
-    [self.delegate reflectDelegate:sender];
-}
+
 @end
