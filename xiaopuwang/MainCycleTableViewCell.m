@@ -42,6 +42,6 @@
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    [self.delegate clickImageWithIndex:self.ImageNameArray[index]];
+    [self.delegate clickImageWithIndex:[self.dataresult.items getItem:index]];
 }
 @end

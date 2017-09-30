@@ -11,7 +11,7 @@
 
 @protocol MainCycleDelegate <NSObject>
 
--(void)clickImageWithIndex:(NSString*)imageName;
+-(void)clickImageWithIndex:(DataItem*)item;
 
 @end
 

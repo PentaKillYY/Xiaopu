@@ -644,18 +644,27 @@
 
 #pragma mark - MainCycleDelegate
 
--(void)clickImageWithIndex:(NSString*)imageName{
-    if ([imageName isEqualToString:@"1"]) {
-        [self performSegueWithIdentifier:@"MainTo30DayOrg" sender:self];
-    }else if ([imageName isEqualToString:@"2"]){
-        currentServiceIndex = 0;
-        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
-    }else if ([imageName isEqualToString:@"3"]){
-        [self performSegueWithIdentifier:@"MainToGroupCourse" sender:self];
-    }else{
-        currentServiceIndex = 2;
-        [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
+-(void)clickImageWithIndex:(DataItem*)item{
+    if ([item getInt:@"AdvAttribute"]==1) {
+        if ([[item getString:@"AdvUrl"] isEqualToString:@"1"]) {
+            [self performSegueWithIdentifier:@"MainTo30DayOrg" sender:self];
+        }else if ([[item getString:@"AdvUrl"] isEqualToString:@"2"]){
+            currentServiceIndex = 0;
+            [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
+        }else if ([[item getString:@"AdvUrl"] isEqualToString:@"3"]){
+            [self performSegueWithIdentifier:@"MainToGroupCourse" sender:self];
+        }else{
+            currentServiceIndex = 2;
+            [self performSegueWithIdentifier:@"MainToEducationPlan" sender:self];
+        }
+    }else if([item getInt:@"AdvAttribute"]==2){
+        NSString *url=[item getString:@"AdvUrl"];
+        NSString *encodedUrl = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:encodedUrl]];
+
     }
+    
+    
 }
 
 #pragma mark - HomeGroupCourseDelegate
