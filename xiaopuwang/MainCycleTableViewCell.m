@@ -32,7 +32,7 @@
         
         if ([item getInt:@"AdvType"] == 1 ) {
             [array addObject:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"AdvImage"]]];
-            [self.ImageNameArray addObject:[item getString:@"AdvName"]];
+            [self.ImageNameArray addObject:item];
         }
     }
     _cycleScrollView.imageURLStringsGroup = array;
@@ -42,6 +42,6 @@
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    [self.delegate clickImageWithIndex:[self.dataresult.items getItem:index]];
+    [self.delegate clickImageWithIndex:self.ImageNameArray[index]];
 }
 @end

@@ -94,7 +94,6 @@
 		041BC7581F7C8C6F0031A01C /* OrderPayRedBagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7571F7C8C6F0031A01C /* OrderPayRedBagViewController.m */; };
 		041BC75C1F7C8E1F0031A01C /* InviteRuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC75A1F7C8E1F0031A01C /* InviteRuleTableViewCell.m */; };
 		041BC75D1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC75B1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib */; };
-		041BC75F1F7C91030031A01C /* GroupCourseBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 041BC75E1F7C91030031A01C /* GroupCourseBanner.png */; };
 		041BC7681F7CD7C40031A01C /* NoRedBagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC7661F7CD7C40031A01C /* NoRedBagTableViewCell.m */; };
 		041BC7691F7CD7C40031A01C /* NoRedBagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC7671F7CD7C40031A01C /* NoRedBagTableViewCell.xib */; };
 		041BC76D1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041BC76B1F7CE19C0031A01C /* RedBagSpecialSelectTableViewCell.m */; };
@@ -462,6 +461,7 @@
 		04F104AC1F5012E90041991C /* CommunityOneLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F104AA1F5012E90041991C /* CommunityOneLineImageCell.m */; };
 		04F104AD1F5012E90041991C /* CommunityOneLineImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F104AB1F5012E90041991C /* CommunityOneLineImageCell.xib */; };
 		04F1E92C1F597B4800C3EF5D /* NewLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1E92B1F597B4800C3EF5D /* NewLaunchScreen.storyboard */; };
+		6D1994F81F7F4D8E00027558 /* GroupCourseBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1994F71F7F4D8E00027558 /* GroupCourseBanner.png */; };
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
@@ -619,7 +619,6 @@
 		041BC7591F7C8E1F0031A01C /* InviteRuleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteRuleTableViewCell.h; sourceTree = "<group>"; };
 		041BC75A1F7C8E1F0031A01C /* InviteRuleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteRuleTableViewCell.m; sourceTree = "<group>"; };
 		041BC75B1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteRuleTableViewCell.xib; sourceTree = "<group>"; };
-		041BC75E1F7C91030031A01C /* GroupCourseBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupCourseBanner.png; sourceTree = "<group>"; };
 		041BC7651F7CD7C40031A01C /* NoRedBagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoRedBagTableViewCell.h; sourceTree = "<group>"; };
 		041BC7661F7CD7C40031A01C /* NoRedBagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoRedBagTableViewCell.m; sourceTree = "<group>"; };
 		041BC7671F7CD7C40031A01C /* NoRedBagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoRedBagTableViewCell.xib; sourceTree = "<group>"; };
@@ -1215,6 +1214,7 @@
 		04F104AB1F5012E90041991C /* CommunityOneLineImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityOneLineImageCell.xib; sourceTree = "<group>"; };
 		04F1E92B1F597B4800C3EF5D /* NewLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewLaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
+		6D1994F71F7F4D8E00027558 /* GroupCourseBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupCourseBanner.png; sourceTree = "<group>"; };
 		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1737,7 +1737,7 @@
 			children = (
 				043C0CC31F592BA800CE98B2 /* Data */,
 				043C0CB51F57E45100CE98B2 /* addReplyPic.png */,
-				041BC75E1F7C91030031A01C /* GroupCourseBanner.png */,
+				6D1994F71F7F4D8E00027558 /* GroupCourseBanner.png */,
 				0478277F1F5F8CD4000D4ED8 /* NewRewardBg.png */,
 				043C0C901F56DEE400CE98B2 /* searchDel.png */,
 				047827D81F68BB80000D4ED8 /* arrow-back-blue-right.png */,
@@ -3082,7 +3082,6 @@
 				041BC75D1F7C8E1F0031A01C /* InviteRuleTableViewCell.xib in Resources */,
 				040C748D1F4EEF58001F5318 /* bootstrap.min.css in Resources */,
 				043C0CD31F593E9200CE98B2 /* NoOrder.png in Resources */,
-				041BC75F1F7C91030031A01C /* GroupCourseBanner.png in Resources */,
 				043C0C241F55342B00CE98B2 /* 我是家长.png in Resources */,
 				045633491F2B1228005E04CB /* CouseDetailImageTableViewCell.xib in Resources */,
 				040C73771F442B57001F5318 /* EvaluateContentTableViewCell.xib in Resources */,
@@ -3092,6 +3091,7 @@
 				04B93D041F38914600B2DA19 /* MultiTagSelectTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				043C0C071F53EBC100CE98B2 /* MyCommunityTableViewCell.xib in Resources */,
+				6D1994F81F7F4D8E00027558 /* GroupCourseBanner.png in Resources */,
 				040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
 				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
