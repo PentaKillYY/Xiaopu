@@ -104,7 +104,7 @@
     }else if (indexPath.section==1){
         return 130;
     }else if (indexPath.section==2){
-        return 150;
+        return 400;
     }else if (indexPath.section==3){
         return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailExplainCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations

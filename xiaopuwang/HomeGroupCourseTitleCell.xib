@@ -18,36 +18,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拼课" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJL-w2-DvT">
-                        <rect key="frame" x="8" y="13.5" width="29" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拼课专区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJL-w2-DvT">
+                        <rect key="frame" x="8" y="13.5" width="57.5" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="1" green="0.078427635630000006" blue="0.11208529859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" New " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcb-Pl-NNo">
-                        <rect key="frame" x="45" y="16" width="27.5" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NU-Hw-iSf">
-                        <rect key="frame" x="285" y="14" width="27" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多拼课" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NU-Hw-iSf">
+                        <rect key="frame" x="258.5" y="14" width="53.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" red="1" green="0.078427635630000006" blue="0.11208529859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="1NU-Hw-iSf" secondAttribute="trailing" constant="8" id="50j-cD-7uZ"/>
                     <constraint firstItem="1NU-Hw-iSf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ODP-Py-vdF"/>
-                    <constraint firstItem="Hcb-Pl-NNo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XRf-tm-I5G"/>
-                    <constraint firstItem="Hcb-Pl-NNo" firstAttribute="leading" secondItem="OJL-w2-DvT" secondAttribute="trailing" constant="8" id="bLd-3c-f5b"/>
                     <constraint firstItem="OJL-w2-DvT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ncy-ND-kIg"/>
                     <constraint firstItem="OJL-w2-DvT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qfa-Et-5ys"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="groupCourseTag" destination="Hcb-Pl-NNo" id="hCz-ad-JI5"/>
                 <outlet property="groupCourseTitle" destination="OJL-w2-DvT" id="ca6-iC-TJf"/>
             </connections>
         </tableViewCell>

@@ -690,7 +690,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2N-hl-GEN">
-                                <rect key="frame" x="8" y="20" width="359" height="647"/>
+                                <rect key="frame" x="8" y="0.0" width="359" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -1343,7 +1343,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-f5-DQp">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="5" y="64" width="365" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-5w-IRu">
@@ -1380,8 +1380,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PT2-f5-DQp" firstAttribute="leading" secondItem="fuI-L6-oJL" secondAttribute="leading" id="FRy-fk-x9M"/>
-                            <constraint firstAttribute="trailing" secondItem="PT2-f5-DQp" secondAttribute="trailing" id="Gcb-I7-n4p"/>
+                            <constraint firstItem="PT2-f5-DQp" firstAttribute="leading" secondItem="fuI-L6-oJL" secondAttribute="leading" constant="5" id="FRy-fk-x9M"/>
+                            <constraint firstAttribute="trailing" secondItem="PT2-f5-DQp" secondAttribute="trailing" constant="5" id="Gcb-I7-n4p"/>
                             <constraint firstItem="IMS-jS-9Z7" firstAttribute="top" secondItem="PT2-f5-DQp" secondAttribute="bottom" id="XeD-Qs-mcS"/>
                             <constraint firstItem="bSh-5w-IRu" firstAttribute="top" secondItem="fuI-L6-oJL" secondAttribute="top" id="a83-xR-Ypc"/>
                             <constraint firstAttribute="trailing" secondItem="bSh-5w-IRu" secondAttribute="trailing" id="bvs-4l-wQJ"/>

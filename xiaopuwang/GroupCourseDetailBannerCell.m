@@ -27,7 +27,7 @@
     
     [self.bannerLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[detailItem getString:@"CourseImage"]]] placeholderImage:nil];
     self.courseNameLabel.text = [detailItem getString:@"CourseName"];
-    self.groupPeopleLabel.text = [NSString stringWithFormat:@"已有%d人拼课",[detailItem getInt:@"FightCourseIsSignPeopleCount"]];
+    self.groupPeopleLabel.text = [NSString stringWithFormat:@"已有%d/%d人参与拼课",[detailItem getInt:@"FightCourseIsSignPeopleCount"],[detailItem getInt:@"FightCoursePeopleCount"]];
     
     NSString*endTime =[[detailItem getString:@"EndDate"] stringByReplacingOccurrencesOfString:@"T"withString:@" "];
 

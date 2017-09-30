@@ -606,8 +606,19 @@
         if (indexPath.row ==0) {
             self.tabBarController.selectedIndex = 3;
         }else{
-            selectCommunityIndex = indexPath.row-1;
-            [self performSegueWithIdentifier:@"MainToCommunityDetail" sender:self];
+            
+            
+            UserInfo* info = [UserInfo sharedUserInfo];
+            if (info.userID.length) {
+                selectCommunityIndex = indexPath.row-1;
+                [self performSegueWithIdentifier:@"MainToCommunityDetail" sender:self];
+            }else{
+                UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+                [self presentViewController:login animated:YES completion:^{
+                    
+                }];
+            }
+ 
         }
     }else if (indexPath.section == 7 && indexPath.row !=0){
         if (selectLocalIndex == 0) {

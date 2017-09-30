@@ -33,12 +33,22 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"InviteRuleTableViewCell" bundle:nil] forCellReuseIdentifier:@"InviteRuleTableViewCell"];
     
     [self getUserRedBagRequest];
+    
+    UILabel* tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 44)];
+    tipLabel.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:224.0/255.0 blue:3.0/255.0 alpha:1.0];
+    tipLabel.textColor = [UIColor whiteColor];
+    tipLabel.font = [UIFont boldSystemFontOfSize:15.0];
+    tipLabel.text = @"本活动与苹果公司无关";
+    tipLabel.textAlignment = NSTextAlignmentCenter;
+    self.tableView.tableFooterView = tipLabel;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - UITableViewdatasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

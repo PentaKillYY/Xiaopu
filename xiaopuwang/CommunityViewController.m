@@ -199,8 +199,18 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
 #pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    selectIndex = indexPath.section;
-    [self performSegueWithIdentifier:@"CommunityToDetail" sender:self];
+    
+    UserInfo* info = [UserInfo sharedUserInfo];
+    if (info.userID.length) {
+        selectIndex = indexPath.section;
+        [self performSegueWithIdentifier:@"CommunityToDetail" sender:self];
+    }else{
+        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
+    
 }
 
 -(void)configCell:(CommunityOneLineImageCell*)cell IndexPath:(NSIndexPath*)path{
