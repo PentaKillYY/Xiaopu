@@ -36,7 +36,7 @@
     // Do any additional setup after loading the view.
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GroupCourseDetailExplainCell" bundle:nil] forCellReuseIdentifier:@"GroupCourseDetailExplainCell"];
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"GroupCourseDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"GroupCourseDetailTableViewCell"];
     groupCourseArray = [DataItemArray new];
     
     [self getGroupCourseListRequest];
@@ -68,7 +68,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section ==3) {
+    if (section ==3 ) {
         return 2;
     }else{
         return 1;
@@ -77,9 +77,14 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section ==0) {
-        return 108;
+        return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            // configurations
+            [self configCourseDetailCell:cell IndexPath:indexPath];
+        }];
     }else if (indexPath.section==1){
-        return 102;
+        CGFloat width = SCREEN_WIDTH - 90;
+        
+        return 2*(width / 8+19+10)+100;
     }else if (indexPath.section ==2){
         return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailExplainCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations
@@ -98,11 +103,12 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section ==0) {
         GroupCourseDetailTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseDetailTableViewCell" owner:self options:nil].firstObject;
-        [cell bingdingViewModel:detailResult.detailinfo];
+        [self configCourseDetailCell:cell IndexPath:indexPath];
         return cell;
+
     }else if(indexPath.section ==1){
         GroupCourseShareTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseShareTableViewCell" owner:self options:nil].firstObject;
-        cell.delegate = self; 
+        cell.delegate = self;
         [cell bingdingViewModel:detailResult.detailinfo];
         return cell;
     }else if (indexPath.section==2){
@@ -128,6 +134,9 @@
     [cell bingdingViewModel:detailResult.detailinfo];
 }
 
+-(void)configCourseDetailCell:(GroupCourseDetailTableViewCell*)cell IndexPath:(NSIndexPath*)indexPath{
+    [cell bingdingViewModel:detailResult.detailinfo];
+}
 #pragma mark - HomeGroupCourseDelegate
 
 -(void)groupCourseSelect:(NSInteger)index{
@@ -201,8 +210,7 @@
     
     NSString* encodedString = [courseType stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
-    
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:ShareGroupCourseTitle descr:nil thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"我正在参与【%@】，还差【%d】人，快来拼课吧！",[detailResult.detailinfo getString:@"CourseName"],[detailResult.detailinfo getInt:@"FightCourseIsSignPeopleCount"]] descr:[detailResult.detailinfo getString:@"OrgName"] thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
     
     shareObject.webpageUrl =[NSString stringWithFormat:@"http://apphtml.ings.org.cn/html/lesson.html?id=%@&type=%@",self.courseId,encodedString];
     

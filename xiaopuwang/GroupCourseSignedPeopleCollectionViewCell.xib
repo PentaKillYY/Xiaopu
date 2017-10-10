@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCourseSignedPeople" id="gTV-IL-0wX" customClass="GroupCourseSignedPeopleCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" image="UserDefaultLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zN3-FU-3DZ">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="zN3-FU-3DZ" secondAttribute="height" multiplier="1:1" id="rzK-Rf-8ME"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="138*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNd-bH-Hvz">
+                        <rect key="frame" x="0.0" y="54" width="50" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="zN3-FU-3DZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cry-SW-E8s"/>
+                <constraint firstItem="aNd-bH-Hvz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HsY-bT-1ib"/>
+                <constraint firstAttribute="bottom" secondItem="aNd-bH-Hvz" secondAttribute="bottom" id="VaN-eu-P7L"/>
+                <constraint firstAttribute="trailing" secondItem="aNd-bH-Hvz" secondAttribute="trailing" id="iEr-GL-ZVi"/>
+                <constraint firstAttribute="trailing" secondItem="zN3-FU-3DZ" secondAttribute="trailing" id="ksh-5H-oHx"/>
+                <constraint firstItem="zN3-FU-3DZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="v3n-Yy-H4a"/>
+            </constraints>
+            <size key="customSize" width="50" height="70"/>
+            <point key="canvasLocation" x="52" y="70"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="UserDefaultLogo" width="55" height="55"/>
+    </resources>
+</document>

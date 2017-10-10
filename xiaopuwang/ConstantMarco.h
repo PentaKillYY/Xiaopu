@@ -98,7 +98,7 @@
 #define InterSchoolTitle @[@"幼儿园",@"小学",@"初中",@"高中",@"大学",@"技术/专科学院"]
 #define OverSeaSchoolTitle @[@"澳大利亚",@"加拿大",@"美国",@"日本",@"新加坡",@"英国"]
 
-#define GroupCourseExplain @"邀请好友参加拼课活动，在规定时间内凑齐人数则拼课成功，若未凑齐人数则拼课失败，成功后将会抽取1名用户获得该课程。"
+#define GroupCourseExplain @"邀请好友参加拼课活动，在规定时间内凑齐人数则拼课成功，若未凑齐人数则拼课失败全额退款,并附送校谱网50元通用红包券一张。"
 #define GroupCourseInfoTitle @[@"姓名",@"手机号"]
 #define GroupCourseInfoPlaceholder @[@"请输入您的姓名",@"请输入您的联系方式"]
 

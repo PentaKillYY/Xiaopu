@@ -15,7 +15,7 @@
 @property(nonatomic,weak)IBOutlet UILabel* groupPriceLabel;
 @property(nonatomic,weak)IBOutlet UILabel* saveLabel;
 @property(nonatomic,weak)IBOutlet UILabel* groupStateLabel;
-
+@property(nonatomic,weak)IBOutlet UILabel* groupNameLabel;
 -(void)bingdingViewModel:(DataItem*)item;
 
 @end

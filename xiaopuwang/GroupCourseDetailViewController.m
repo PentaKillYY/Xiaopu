@@ -23,6 +23,7 @@
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property(nonatomic,weak)IBOutlet UIButton* backButton;
+@property(nonatomic,weak)IBOutlet UIButton* shareButton;
 @end
 
 @implementation GroupCourseDetailViewController
@@ -33,6 +34,9 @@
 
     [self.backButton.layer setCornerRadius:16];
     [self.backButton.layer setMasksToBounds:YES];
+    
+    [self.shareButton.layer setCornerRadius:16];
+    [self.shareButton.layer setMasksToBounds:YES];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GroupCourseDetailBannerCell" bundle:nil] forCellReuseIdentifier:@"GroupCourseDetailBannerCell"];
     
@@ -186,31 +190,31 @@
 
 #pragma mark - GroupCourseDetailPriceDelegate
 -(void)goToCourseHandle:(BOOL)isOrigin{
-    if ([UserInfo sharedUserInfo].userID) {
-        if (isOrigin) {
-            [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
-        }else{
-            if ([detailResult.detailinfo getInt:@"FightCourseState"]==0) {
-                [[AppCustomHud sharedEKZCustomHud] showTextHud:GroupCourseNotStart];
-            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==1){
-                if ([detailResult.detailinfo getInt:@"UserState"]==0) {
-                    [self performSegueWithIdentifier:@"GroupCourseDetailToPay" sender:self];
-                    
-                }else{
-                    [self performSegueWithIdentifier:@"GroupCourseDetailToShare" sender:self];
-                }
-                
-            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==2){
-                [[AppCustomHud sharedEKZCustomHud]showTextHud:GroupCourseWaitingAdward];
-            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]){
-                [self performSegueWithIdentifier:@"GroupCourseDetailToAdward" sender:self];
-            }
-
-        }
-    }else{
-        [self needLogin];
-    }
-    
+//    if ([UserInfo sharedUserInfo].userID) {
+//        if (isOrigin) {
+//            [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
+//        }else{
+//            if ([detailResult.detailinfo getInt:@"FightCourseState"]==0) {
+//                [[AppCustomHud sharedEKZCustomHud] showTextHud:GroupCourseNotStart];
+//            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==1){
+//                if ([detailResult.detailinfo getInt:@"UserState"]==0) {
+//                    [self performSegueWithIdentifier:@"GroupCourseDetailToPay" sender:self];
+//                    
+//                }else{
+//                    [self performSegueWithIdentifier:@"GroupCourseDetailToShare" sender:self];
+//                }
+//                
+//            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==2){
+//                [[AppCustomHud sharedEKZCustomHud]showTextHud:GroupCourseWaitingAdward];
+//            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]){
+//                [self performSegueWithIdentifier:@"GroupCourseDetailToAdward" sender:self];
+//            }
+//
+//        }
+//    }else{
+//        [self needLogin];
+//    }
+    [self performSegueWithIdentifier:@"GroupCourseDetailToShare" sender:self];
 }
 
 #pragma mark - NetWorkrequest
@@ -275,6 +279,47 @@
 -(IBAction)clickBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(IBAction)shareCourse:(id)sender{
+    //显示分享面板
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        
+        [self shareWebPageToPlatformType:platformType];
+        
+    }];
+
+}
+
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    
+    
+    
+    NSString* encodedString = [courseType stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"我正在参与【%@】，还差【%d】人，快来拼课吧！",[detailResult.detailinfo getString:@"CourseName"],[detailResult.detailinfo getInt:@"FightCourseIsSignPeopleCount"]] descr:[detailResult.detailinfo getString:@"OrgName"] thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
+    
+    shareObject.webpageUrl =[NSString stringWithFormat:@"http://apphtml.ings.org.cn/html/lesson.html?id=%@&type=%@",self.courseId,encodedString];
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
+        }
+    }];
+}
+
 
 -(void)needLogin{
     UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];

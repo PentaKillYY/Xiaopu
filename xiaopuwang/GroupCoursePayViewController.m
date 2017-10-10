@@ -14,8 +14,9 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApi.h"
 #import "MyInfoTableViewCell.h"
+#import "GroupCoursePayTableViewCell.h"
 #import "VerifyRegexTool.h"
-@interface GroupCoursePayViewController ()<UITableViewDelegate,UITableViewDataSource,PayTypeCellDelegate,UITextFieldDelegate>
+@interface GroupCoursePayViewController ()<UITableViewDelegate,UITableViewDataSource,PayTypeCellDelegate,UITextFieldDelegate,GroupCoursePayDelegate>
 {
     DataResult*detailResult;
     NSString* payType;
@@ -43,11 +44,11 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WXPay" object:nil];
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"GroupCourseDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"GroupCourseDetailTableViewCell"];
     
     payType = @"1";
     [self gerGroupCourseDetailRequest];
@@ -74,7 +75,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section ==0) {
         GroupCourseDetailTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseDetailTableViewCell" owner:self options:nil].firstObject;
-        [cell bingdingViewModel:detailResult.detailinfo];
+        [self configCourseDetailCell:cell IndexPath:indexPath];
         return cell;
     }else if (indexPath.section==1){
         if (indexPath.row ==0) {
@@ -95,18 +96,28 @@
             return cell;
         }
     }else{
-        PayTypeTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"PayTypeTableViewCell" owner:self options:nil].firstObject;
-        cell.delegate = self;
-        cell.tipLabel.hidden = NO;
-        return cell;
+//        PayTypeTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"PayTypeTableViewCell" owner:self options:nil].firstObject;
+//        cell.delegate = self;
+//        cell.tipLabel.hidden = NO;
+//        return cell;
+        GroupCoursePayTableViewCell* payCell =[[NSBundle mainBundle] loadNibNamed:@"GroupCoursePayTableViewCell" owner:self options:nil].firstObject;
+        payCell.delegate = self;
+        
+        return payCell;
     }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0) {
-        return 108;
+//        return 108;
+        return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            // configurations
+            [self configCourseDetailCell:cell IndexPath:indexPath];
+        }];
+
+        
     }else if (indexPath.section==2){
-        return 105;
+        return 165;
     }else{
         return 44;
     }
@@ -114,6 +125,10 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 5.0;
+}
+
+-(void)configCourseDetailCell:(GroupCourseDetailTableViewCell*)cell IndexPath:(NSIndexPath*)indexPath{
+    [cell bingdingViewModel:detailResult.detailinfo];
 }
 
 -(IBAction)clickBack:(id)sender{
@@ -149,6 +164,18 @@
         userPhone = textField.text;
     }
 }
+
+#pragma mark - GroupCoursePayDelegate
+-(void)payType:(id)sender{
+    UIButton* button = (UIButton*)sender;
+    if (button.tag == 0) {
+        payType = @"1";
+    }else{
+        payType = @"2";
+    }
+    payMode = [payType intValue];
+}
+
 
 #pragma mark - PayTypeCellDelegate
 

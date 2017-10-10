@@ -1297,15 +1297,26 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic6-vg-oAt">
+                                        <rect key="frame" x="327" y="22" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="X87-ft-Szj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" image="GroupCourseShare 2"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97631138559999997" green="0.16368901729999999" blue="0.2814570367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="2rF-N5-bUB"/>
                                     <constraint firstItem="Ihp-T0-Ym8" firstAttribute="top" secondItem="1Iu-bt-aAE" secondAttribute="top" constant="26" id="DF8-Wr-ekW"/>
                                     <constraint firstAttribute="bottom" secondItem="Ihp-T0-Ym8" secondAttribute="bottom" constant="6" id="Jal-vK-dSe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ic6-vg-oAt" secondAttribute="trailing" constant="8" id="NNK-N6-pGp"/>
                                     <constraint firstItem="b1A-kP-bMG" firstAttribute="centerY" secondItem="Ihp-T0-Ym8" secondAttribute="centerY" id="imI-Xx-Mwv"/>
                                     <constraint firstItem="Ihp-T0-Ym8" firstAttribute="leading" secondItem="1Iu-bt-aAE" secondAttribute="leading" id="tah-5Z-7na"/>
                                     <constraint firstItem="b1A-kP-bMG" firstAttribute="centerX" secondItem="1Iu-bt-aAE" secondAttribute="centerX" id="upy-xp-NnZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ic6-vg-oAt" secondAttribute="bottom" constant="2" id="wYr-Hm-gYD"/>
+                                    <constraint firstItem="Ic6-vg-oAt" firstAttribute="top" secondItem="1Iu-bt-aAE" secondAttribute="top" constant="22" id="xvz-Lz-t5N"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1434,13 +1445,27 @@
                                             <action selector="clickBack:" destination="Knb-aJ-JDG" eventType="touchUpInside" id="YZl-QM-rc5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NX-yV-2ic">
+                                        <rect key="frame" x="327" y="26" width="32" height="32"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="OT9-9D-VrE"/>
+                                        </constraints>
+                                        <state key="normal" image="topShare"/>
+                                        <connections>
+                                            <action selector="shareCourse:" destination="Knb-aJ-JDG" eventType="touchUpInside" id="O4l-SE-g4E"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="A6a-5T-0cy" secondAttribute="bottom" constant="6" id="5ua-Sk-C6E"/>
                                     <constraint firstItem="A6a-5T-0cy" firstAttribute="leading" secondItem="WPE-Sd-GEb" secondAttribute="leading" constant="16" id="7Wf-bW-QPW"/>
                                     <constraint firstAttribute="height" constant="64" id="Eav-MY-WJJ"/>
+                                    <constraint firstItem="9NX-yV-2ic" firstAttribute="bottom" secondItem="A6a-5T-0cy" secondAttribute="bottom" id="G6O-wk-8aL"/>
                                     <constraint firstItem="A6a-5T-0cy" firstAttribute="top" secondItem="WPE-Sd-GEb" secondAttribute="top" constant="26" id="gzH-4o-biZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="9NX-yV-2ic" secondAttribute="trailing" constant="16" id="h6Y-6O-v6F"/>
+                                    <constraint firstItem="9NX-yV-2ic" firstAttribute="top" secondItem="A6a-5T-0cy" secondAttribute="top" id="wYa-5J-Ioi"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1458,6 +1483,7 @@
                     <navigationItem key="navigationItem" id="JD2-Zy-8oI"/>
                     <connections>
                         <outlet property="backButton" destination="A6a-5T-0cy" id="ESp-xh-FoW"/>
+                        <outlet property="shareButton" destination="9NX-yV-2ic" id="SAD-e6-P4X"/>
                         <outlet property="tableView" destination="9ks-dR-IOi" id="dI6-rd-jDw"/>
                         <segue destination="GnT-Nt-14I" kind="push" identifier="GroupCoueseDetailToInfo" id="jMs-kt-sfO"/>
                         <segue destination="PzM-kC-BIK" kind="push" identifier="GroupCourseDetailToPay" id="obL-ee-1Nq"/>
@@ -4506,6 +4532,7 @@
     </scenes>
     <resources>
         <image name="Coupon-2" width="288" height="83"/>
+        <image name="GroupCourseShare 2" width="20" height="20"/>
         <image name="addReplyPic.png" width="48" height="44"/>
         <image name="footernav_01" width="25" height="25"/>
         <image name="footernav_02" width="25" height="25"/>
@@ -4519,6 +4546,7 @@
         <image name="footernav_10" width="25" height="25"/>
         <image name="password" width="24" height="24"/>
         <image name="question" width="40" height="40"/>
+        <image name="topShare" width="16" height="16"/>
         <image name="username" width="24" height="24"/>
         <image name="validCode" width="24" height="24"/>
         <image name="whiteBack" width="66" height="66"/>
@@ -4528,22 +4556,22 @@
         <segue reference="Jsj-9t-jwq"/>
         <segue reference="h06-1T-d8P"/>
         <segue reference="sOd-j3-mVK"/>
-        <segue reference="qGq-NF-EW6"/>
-        <segue reference="hc7-hA-kQF"/>
-        <segue reference="VdX-7c-qLn"/>
-        <segue reference="Eet-PD-6bI"/>
-        <segue reference="sS5-PK-I1T"/>
         <segue reference="KV2-wG-76q"/>
+        <segue reference="sS5-PK-I1T"/>
+        <segue reference="hc7-hA-kQF"/>
         <segue reference="Cca-EC-7UM"/>
+        <segue reference="qK7-Ca-lcE"/>
         <segue reference="boX-Qa-u7y"/>
         <segue reference="V2t-xH-2aQ"/>
-        <segue reference="qK7-Ca-lcE"/>
-        <segue reference="dFW-sS-bdb"/>
-        <segue reference="U2m-as-IXV"/>
+        <segue reference="qGq-NF-EW6"/>
         <segue reference="C9X-s8-weM"/>
         <segue reference="xcV-3d-LJO"/>
+        <segue reference="iX8-yD-a73"/>
+        <segue reference="uaA-ve-52F"/>
+        <segue reference="U2m-as-IXV"/>
+        <segue reference="dFW-sS-bdb"/>
         <segue reference="LxF-HX-IEE"/>
-        <segue reference="das-9m-Knb"/>
         <segue reference="P2M-WO-PHT"/>
+        <segue reference="das-9m-Knb"/>
     </inferredMetricsTieBreakers>
 </document>
