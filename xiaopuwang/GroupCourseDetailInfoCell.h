@@ -10,7 +10,7 @@
 @protocol GroupCourseDetailInfoDelegate <NSObject>
 
 -(void)groupCourseMoreInfoDelegate:(id)sender;
-
+-(void)groupCourseToOrgDelegate:(id)sender;
 @end
 
 @interface GroupCourseDetailInfoCell : BaseTableViewCell
@@ -22,5 +22,6 @@
 -(void)bingdingViewModel:(DataItem*)detailItem;
 
 -(IBAction)seeMoreInfoAction:(id)sender;
+-(IBAction)goToOrgAction:(id)sender;
 @end
 

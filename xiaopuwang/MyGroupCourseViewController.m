@@ -83,7 +83,7 @@ static NSString *identifyCollection = @"GroupCourseCollectionViewCell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((SCREEN_WIDTH-24)/2, 110+(Main_Screen_Width)/2);
+    return CGSizeMake((SCREEN_WIDTH-24)/2, 145+(Main_Screen_Width)/2);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section

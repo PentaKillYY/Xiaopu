@@ -35,4 +35,8 @@
 -(IBAction)seeMoreInfoAction:(id)sender{
     [self.delegate groupCourseMoreInfoDelegate:sender];
 }
+
+-(IBAction)goToOrgAction:(id)sender{
+    [self.delegate groupCourseToOrgDelegate:sender];
+}
 @end

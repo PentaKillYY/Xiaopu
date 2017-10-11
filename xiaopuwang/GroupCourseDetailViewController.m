@@ -118,7 +118,7 @@
         if (indexPath.row ==0) {
             return 44;
         }else{
-            return 118+(Main_Screen_Width)/2;
+            return 153+(Main_Screen_Width)/2;
         }
     }
 }
@@ -178,6 +178,11 @@
 -(void)groupCourseMoreInfoDelegate:(id)sender{
     [self performSegueWithIdentifier:@"GroupCoueseDetailToInfo" sender:self];
 }
+
+-(void)groupCourseToOrgDelegate:(id)sender{
+    [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
+}
+
 
 #pragma mark - HomeGroupCourseDelegate
 

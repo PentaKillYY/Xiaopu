@@ -56,6 +56,8 @@
             self.groupCourseStateLabel.text = @" 邀好友";
         }
     }else if ([item getInt:@"FightCourseState"]==2) {
+        self.groupCourseStateLabel.text = @" 已结束";
+    }else if ([item getInt:@"FightCourseState"]==3){
         self.groupCourseStateLabel.text = @" 待开奖";
     }else {
         self.groupCourseStateLabel.text = @" 已开奖";

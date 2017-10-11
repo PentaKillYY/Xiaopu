@@ -130,7 +130,7 @@ static NSString *const kHeaderID = @"JHHeaderReusableView";
     if (indexPath.section==0) {
         return CGSizeMake(Main_Screen_Width, Main_Screen_Width/750*313);
     }else{
-      return CGSizeMake((SCREEN_WIDTH-24)/2, 110+(Main_Screen_Width)/2);
+      return CGSizeMake((SCREEN_WIDTH-24)/2, 145+(Main_Screen_Width)/2);
     }
 }
 
