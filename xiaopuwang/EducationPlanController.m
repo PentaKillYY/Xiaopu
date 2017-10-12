@@ -45,6 +45,8 @@
     NSString* overseaPhone;
     
 }
+
+@property (nonatomic,strong) UIButton* rightButton;
 @end
 
 @implementation EducationPlanController
@@ -59,7 +61,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MultiTagSelectTableViewCell" bundle:nil] forCellReuseIdentifier:@"MultiTagSelectTableViewCell"];
 
     [self setUpTableView];
-    
+    [self setupTitleView];
    
     [self setupTrainingParameter];
     [self setupInternationalParameter];
@@ -69,6 +71,24 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setupTitleView{
+    _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_rightButton setFrame:CGRectMake(0, 0, 44, 44)];
+    [_rightButton setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+    [_rightButton addTarget:self action:@selector(shareEducationPlan) forControlEvents:UIControlEventTouchUpInside];
+    [_rightButton setImage:V_IMAGE(@"GroupCourseShare 2") forState:0];
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    negativeSpacer.width = -10;
+    
+    
+    UIBarButtonItem* rightItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+    
+    self.navigationItem.rightBarButtonItems = @[negativeSpacer,rightItem];
 }
 
 -(void)setUpTableView
@@ -272,6 +292,17 @@
                 cell.contentField.delegate = self;
                 cell.contentTitle.text = EducationBoardSchoolTitle[indexPath.row];
                 cell.contentField.placeholder = EducationBoardSchoolPlaceHolder[indexPath.row];
+                [cell.contentField addDoneOnKeyboardWithTarget:self action:@selector(doneAction:)];
+                if (indexPath.row==1 || indexPath.row==3 || indexPath.row==7 || indexPath.row ==8 || indexPath.row==9) {
+                    UIPickerView* picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 180)];
+                    picker.delegate = self;
+                    picker.dataSource = self;
+                    picker.backgroundColor = [UIColor whiteColor];
+                    picker.tag = indexPath.row;
+                    cell.contentField.inputView = picker;
+                }
+
+                
                 return cell;
 
             }
@@ -380,12 +411,20 @@
     }else{
         if (currentSegIndex ==0) {
             NSArray* pickerData = [NSArray arrayWithArray:EducationTrainingSchoolPickerData[pickerView.tag]];
-            trainingGrade = pickerData[row];
+            if (row>0) {
+                trainingGrade = pickerData[row];
+            }else{
+                trainingGrade = @"";
+            }
         }else if (currentSegIndex ==1){
             if (pickerView.tag == 1) {
                 NSArray* pickerData = [NSArray arrayWithArray:EducationInternationalPickerData[pickerView.tag]];
+                if (row>0) {
+                    internationalGrade = pickerData[row];
+                }else{
+                    internationalGrade = @"";
+                }
                 
-                internationalGrade = pickerData[row];
             }else if(pickerView.tag == 3){
                 NSString * jsonPath = [[NSBundle mainBundle]pathForResource:@"allprovinces" ofType:@"json"];
                 NSData * jsonData = [[NSData alloc]initWithContentsOfFile:jsonPath];
@@ -393,17 +432,28 @@
                 NSDictionary* provinceDic = [NSDictionary dictionaryWithDictionary:typeArray[row]];
                 NSDictionary* cityDic = [NSDictionary dictionaryWithDictionary:typeArray[currentPickerComponent]];
                 NSArray * array = [NSArray arrayWithArray:[cityDic objectForKey:@"cities"]];
-
-                internationalCity = [NSString stringWithFormat:@"%@ - %@",[provinceDic objectForKey:@"name"],array[row]];
+                if (row>0) {
+                    internationalCity = [NSString stringWithFormat:@"%@ - %@",[provinceDic objectForKey:@"name"],array[row]];
+                }else{
+                    internationalCity = @"";
+                }
                 
             }else if(pickerView.tag == 4){
                 NSArray* pickerData = [NSArray arrayWithArray:EducationInternationalPickerData[pickerView.tag]];
+                if (row>0) {
+                    internationalWhen = pickerData[row];
+                }else{
+                    internationalWhen = @"";
+                }
                 
-                internationalWhen = pickerData[row];
             }else if(pickerView.tag == 5){
                 NSArray* pickerData = [NSArray arrayWithArray:EducationInternationalPickerData[pickerView.tag]];
+                if (row>0) {
+                    internationalDirection = pickerData[row];
+                }else{
+                    internationalDirection = @"";
+                }
                 
-                internationalDirection = pickerData[row];
             }
 
 
@@ -492,7 +542,7 @@
         }
 
     }else{
-    
+        
     }
     
 }
@@ -512,126 +562,101 @@
 #pragma mark - NetworkRequest
 -(void)postTrainingSchoolRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
-    
-//    if (trainingGender.length && trainingCharacter.length && trainingInGrade.length && trainingSchoolLearningAtmosphere.length && trainingIndependentLearningAttitude.length && trainingAcademicRecord.length && trainigMoreInterested.length && trainingReadingtrainingCourse.length && trainingChildCareEducation.length && trainingCommunicationFrequency.length && trainingLearningContent.length && trainingRemarks.length) {
-//        [[MainService sharedMainService] postSpecialistOrgWithParameters:@{@"Id":@"",
-//                                                                           @"UserId":info.userID,
-//                                                                           @"Gender":trainingGender,
-//                                                                           @"Character":trainingCharacter,
-//                                                                           @"InGrade":trainingInGrade,
-//                                                                           @"SchoolLearningAtmosphere":trainingSchoolLearningAtmosphere,
-//                                                                           @"IndependentLearningAttitude":trainingIndependentLearningAttitude,
-//                                                                           @"AcademicRecord":trainingAcademicRecord,
-//                                                                           @"MoreInterested":trainigMoreInterested,
-//                                                                           @"ReadingtrainingCourse":trainingReadingtrainingCourse,
-//                                                                           @"ChildCareEducation":trainingChildCareEducation,
-//                                                                           @"CommunicationFrequency":trainingCommunicationFrequency,
-//                                                                           @"LearningContent":trainingLearningContent,
-//                                                                           @"Remarks":trainingRemarks,
-//                                                                           @"CreateTime":@"2017-08-07T02:55:28.111Z",
-//                                                                           @"IsState":@(0)
-//                                                                           }
-//                                                            onCompletion:^(id json) {
-//                                                                [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
-//                                                                [self.navigationController popViewControllerAnimated:YES];
-//                                                                
-//                                                            } onFailure:^(id json) {
-//                                                                
-//                                                            }];
-//
-//    }
-//    
-    
+    if (![VerifyRegexTool validateMobile:trainingPhone]) {
+        [[AppCustomHud sharedEKZCustomHud] showTextHud:InvalidPhone];
+
+    }else if (trainingGrade.length && trainingSchool.length && trainingCourse.length && trainingLocation.length && trainingPhone.length) {
+        [[MainService sharedMainService] postSpecialistOrgWithParameters:@{
+            @"Id":@"",@"UserId":info.userID,@"InGrade":trainingGrade,
+            @"InSchool":trainingSchool,@"SignUpTrainCourse":trainingCourse,
+            @"TrainAddress":trainingLocation,@"Contact":trainingPhone}
+        onCompletion:^(id json) {
+            [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
+            [self.navigationController popViewControllerAnimated:YES];
+        } onFailure:^(id json) {
+                                                                
+        }];
+
+    }else{
+       [[AppCustomHud sharedEKZCustomHud] showTextHud:@"填写资料不完整"];
+    }
 }
 
 -(void)postInternationalSchoolRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
 
-//    if (internationalEnglishAchievement.length) {
-//        [internationalForeignLanguageAchievement appendString:[NSString stringWithFormat:@"英语:%@",internationalEnglishAchievement]];
-//    }
-//    
-//    for (int i = 6; i<5+internationalArray.count+1; i++) {
-//        [internationalForeignLanguageAchievement appendString:[NSString stringWithFormat:@",%@:%@",internationalArray[i-6],internationalScoreArray[i-6]]];
-//    }
-//    
-//    
-//    [[MainService sharedMainService] postSpecialistChinaSchoolWithParameters:@{@"Id":@"",
-//                                                                               @"UserId":info.userID,
-//                                                                               @"Gender":internationalGender,
-//                                                                               @"Character":internationalCharacter,
-//                                                                               @"InGrade":internationalInGrade,
-//                                                                               @"ForeignLanguageAchievement":internationalForeignLanguageAchievement,
-//                                                                               @"MathematicsAchievement":internationalMathematicsAchievement,
-//                                                                               @"InternationalExamination":internationalInternationalExamination,
-//                                                                               @"InternationalCurriculumGrade":internationalInternationalCurriculumGrade,
-//                                                                               @"InternationalCurriculum":internationalInternationalCurriculum,
-//                                                                               @"Remarks":internationalRemarks,
-//                                                                               @"CreateTime":@"2017-08-07T02:55:28.111Z",
-//                                                                               @"IsState":@(0)
-//                                                                               }
-//     onCompletion:^(id json) {
-//         [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
-//         [self.navigationController popViewControllerAnimated:YES];
-//     } onFailure:^(id json) {
-//        
-//     }];
+    if (![VerifyRegexTool validateMobile:internationalPhone]) {
+       [[AppCustomHud sharedEKZCustomHud] showTextHud:InvalidPhone];
+    }else if (internationalGrade.length && internationalSchool.length && internationalCity.length && internationalWhen.length && internationalDirection.length && internationalPhone.length){
+        [[MainService sharedMainService] postSpecialistChinaSchoolWithParameters:@{@"Id":@"",@"UserId":info.userID,@"InGrade":internationalGrade,@"InSchool":internationalSchool,@"IntentionalCity":internationalCity,@"IntentionalDate":internationalWhen,@"SchoolDirection":internationalDirection,@"Contact":internationalPhone}
+        onCompletion:^(id json) {
+            [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
+            [self.navigationController popViewControllerAnimated:YES];
+        } onFailure:^(id json) {
+                                                                        
+        }];
+    }else{
+        [[AppCustomHud sharedEKZCustomHud] showTextHud:@"填写资料不完整"];
+    }
 }
 
 -(void)postOverseaSchoolRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
-    
-//    if (overseaEnglishAchievement.length) {
-//        [overseaForeignLanguageAchievement appendString:[NSString stringWithFormat:@"英语:%@",overseaEnglishAchievement]];
-//    }
-//    
-//    for (int i = 6; i<5+boardArray.count+1; i++) {
-//        [overseaForeignLanguageAchievement appendString:[NSString stringWithFormat:@",%@:%@",boardArray[i-6],boardScoreArray[i-6]]];
-//    }
-//    
-//    if (overseaCountryArray.count >0) {
-//        overseaIntentionStudyCountry = [overseaCountryArray componentsJoinedByString:@","];
-//    }
-//    
-//    if (overseaCountryArray.count>0) {
-//        NSMutableString* astring = [NSMutableString new];
-//        
-//        for (NSString*string in overseaCountryArray) {
-//            [astring appendString:EducationOverSeaCountry[[string intValue]]];
-//            [astring appendString:@","];
-//        }
-//       overseaIntentionStudyCountry = [astring substringToIndex:astring.length-1];
-//        
-//    }
-//    
-//    
-//    if (overseaGender.length && overseaCharacter.length && overseaInGrade.length && overseaForeignLanguageAchievement.length && overseaAverageScoresOfSubjects.length && overseaExtracurricularPractice.length && overseaInternationalExamination.length && overseaIntentionStudyCountry.length && overseaIntentionToStudyAbroad.length && overseaTimeToGoAbroad.length && overseaRemarks.length) {
-//        [[MainService sharedMainService] postSpecialistOverseaSchoolWithParameters:@{@"Id":@"",
-//                                                                                     @"UserId":info.userID,
-//                                                                                     @"Gender":overseaGender,
-//                                                                                     @"Character":overseaCharacter,
-//                                                                                     @"InGrade":overseaInGrade,
-//                                                                                     @"ForeignLanguageAchievement":overseaForeignLanguageAchievement,
-//                                                                                     @"AverageScoresOfSubjects":overseaAverageScoresOfSubjects,
-//                                                                                     @"ExtracurricularPractice":overseaExtracurricularPractice,
-//                                                                                     @"InternationalExamination":overseaInternationalExamination,
-//                                                                                     @"IntentionStudyCountry":overseaIntentionStudyCountry,
-//                                                                                     @"IntentionToStudyAbroad":overseaIntentionToStudyAbroad,
-//                                                                                     @"TimeToGoAbroad":overseaTimeToGoAbroad,
-//                                                                                     @"Remarks":overseaRemarks,
-//                                                                                     @"CreateTime":@"2017-08-07T02:55:28.167Z",
-//                                                                                     @"IsState": @(0)
-//                                                                                     }
-//         
-//                                                                      onCompletion:^(id json) {
-//                                                                          [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
-//                                                                          [self.navigationController popViewControllerAnimated:YES];
-//                                                                      } onFailure:^(id json) {
-//                                                                          
-//                                                                      }];
-// 
-//    }
-//    
-    
+    if (![VerifyRegexTool validateMobile:overseaPhone]) {
+        
+    }else if (overseaGrade.length && overseaSchool.length && overseaCountry.length && overseaRequirement.length && overseaWantSchool.length && overseaWantCourse.length && overseaWhen.length && overIsExam.length && overseaExamScore.length && overseaPhone.length) {
+        [[MainService sharedMainService] postSpecialistOverseaSchoolWithParameters:@{@"Id":@"",@"UserId":info.userID,@"InGrade":overseaGrade,@"InSchool":overseaSchool,
+            @"IntentionalCountry":overseaCountry,
+            @"RequirementsOfStudyAbroad":overseaRequirement,
+            @"WantSchool":overseaWantSchool,@"WantMajor":overseaWantCourse,
+            @"StudyAbroadTime":overseaWhen,@"LanguageAchievementAbroad":overIsExam,@"InAverage":overseaExamScore,@"Contact":overseaPhone}
+         onCompletion:^(id json) {
+            [[AppCustomHud sharedEKZCustomHud] showTextHud:SuccessSpecialistPost];
+            [self.navigationController popViewControllerAnimated:YES];
+        } onFailure:^(id json) {
+        
+        }];
+    }else{
+        [[AppCustomHud sharedEKZCustomHud] showTextHud:@"填写资料不完整"];
+    }
 }
+
+-(void)shareEducationPlan{
+    //显示分享面板
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        
+        [self shareWebPageToPlatformType:platformType];
+        
+    }];
+}
+
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    
+    
+    
+    
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"" descr:@"" thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
+    
+    shareObject.webpageUrl =@"";
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
+        }
+    }];
+}
+
 @end
