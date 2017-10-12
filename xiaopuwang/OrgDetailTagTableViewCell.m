@@ -39,18 +39,19 @@
 }
 
 -(void)bingdingViewModel:(DataItem*)item{
-    if (![item getBool:@"IsOfficiallySettled"]) {
-        self.leftTagW = 0;
-    }
-    
-    if (![item getBool:@"IsTuitionSubsidy"]) {
-        self.middleTagW = 0;
-    }
+    self.leftTagW.constant = 0;
     
     self.middleTag.hidden = ![item getBool:@"IsTuitionSubsidy"];
     
     self.rightTag.hidden = ![item getBool:@"Is30Day"];
-//    self.rightTag.hidden = ![item getBool:@"IsCourseGrading"];
 
+}
+
+-(void)bingdingGroupCourseModel:(BOOL)isGroupCourse{
+    if (!isGroupCourse) {
+        self.leftTagW.constant = 0;
+    }else{
+        self.leftTagW.constant = 63;
+    }
 }
 @end

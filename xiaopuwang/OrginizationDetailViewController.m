@@ -564,6 +564,12 @@
     }else if (indexPath.section==2){
         OrgDetailTagTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgDetailTagTableViewCell" owner:self options:nil].firstObject;
         [cell bingdingViewModel:_detailInfoResult.detailinfo];
+        if (groupCourseCount) {
+            [cell bingdingGroupCourseModel:YES];
+        }else{
+            [cell bingdingGroupCourseModel:NO];
+        }
+        
         return cell;
     }else if (indexPath.section==3){
         OrgDetailAddressTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgDetailAddressTableViewCell" owner:self options:nil].firstObject;
@@ -846,8 +852,12 @@
         _groupCourseResult = json;
         groupCourseCount = _groupCourseResult.items.size>0?1:0;
         
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:6];
-        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
+        [idxSet addIndex:2];
+        [idxSet addIndex:6];
+        
+//        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:6];
+        [self.tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } onFailure:^(id json) {
         
     }];
