@@ -210,31 +210,31 @@
 
 #pragma mark - GroupCourseDetailPriceDelegate
 -(void)goToCourseHandle:(BOOL)isOrigin{
-//    if ([UserInfo sharedUserInfo].userID) {
-//        if (isOrigin) {
-//            [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
-//        }else{
-//            if ([detailResult.detailinfo getInt:@"FightCourseState"]==0) {
-//                [[AppCustomHud sharedEKZCustomHud] showTextHud:GroupCourseNotStart];
-//            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==1){
-//                if ([detailResult.detailinfo getInt:@"UserState"]==0) {
-//                    [self performSegueWithIdentifier:@"GroupCourseDetailToPay" sender:self];
-//                    
-//                }else{
-//                    [self performSegueWithIdentifier:@"GroupCourseDetailToShare" sender:self];
-//                }
-//                
-//            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==2){
-//                [[AppCustomHud sharedEKZCustomHud]showTextHud:GroupCourseWaitingAdward];
-//            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]){
-//                [self performSegueWithIdentifier:@"GroupCourseDetailToAdward" sender:self];
-//            }
-//
-//        }
-//    }else{
-//        [self needLogin];
-//    }
-    [self performSegueWithIdentifier:@"GroupCourseDetailToShare" sender:self];
+    if ([UserInfo sharedUserInfo].userID) {
+        if (isOrigin) {
+            [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
+        }else{
+            if ([detailResult.detailinfo getInt:@"FightCourseState"]==0) {
+                [[AppCustomHud sharedEKZCustomHud] showTextHud:GroupCourseNotStart];
+            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==1){
+                if ([detailResult.detailinfo getInt:@"UserState"]==0) {
+                    [self performSegueWithIdentifier:@"GroupCourseDetailToPay" sender:self];
+                    
+                }else{
+                    [self performSegueWithIdentifier:@"GroupCourseDetailToShare" sender:self];
+                }
+            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==2){
+                [[AppCustomHud sharedEKZCustomHud]showTextHud:GroupCourseIsEnd];
+            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==3){
+                [[AppCustomHud sharedEKZCustomHud]showTextHud:GroupCourseWaitingAdward];
+            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]){
+                [self performSegueWithIdentifier:@"GroupCourseDetailToAdward" sender:self];
+            }
+
+        }
+    }else{
+        [self needLogin];
+    }
 }
 
 #pragma mark - NetWorkrequest

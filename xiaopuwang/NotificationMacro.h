@@ -35,4 +35,5 @@
 #define NoBalance @"您的账户余额为0"
 #define SuccessSpecialistPost @"您已成功提交，专业教育顾问将于24小时内为您提供教育规划"
 #define GroupCourseNotStart @"拼课活动还未开始"
+#define GroupCourseIsEnd @"拼课已结束"
 #define GroupCourseWaitingAdward @"暂未开奖请耐心等待"
