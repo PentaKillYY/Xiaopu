@@ -80,20 +80,6 @@ static NSString *collectIdentify = @"CommunityTypeCollectionViewCell";
         
     }];
     
-    
-    
-    
-//    UserInfo* info = [UserInfo sharedUserInfo];
-//    if (info.userID.length) {
-//        
-//    }else{
-//        UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
-//        [self presentViewController:login animated:YES completion:^{
-//            
-//        }];
-//    }
-//
-    
     [self getCommunityTypeRequest];
 }
 
