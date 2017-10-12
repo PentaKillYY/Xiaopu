@@ -30,6 +30,16 @@
     
     self.orgName.text = [detailItem getString:@"OrgName"];
     
+    if ([detailItem getString:@"VideoURL"].length) {
+        self.sepHeight.constant = 8;
+        self.videoHeight.constant = (Main_Screen_Width-16)/2;
+        self.playImg.hidden = NO;
+    }else{
+        self.videoHeight.constant = 0;
+        self.sepHeight.constant = 0;
+        self.playImg.hidden = YES;
+    }
+    
     NSString * htmlcontent = [NSString stringWithFormat:@"<div id=\"webview_content_wrapper\">%@</div>", [detailItem getString:@"FightCourseIntroduction"]];
     
     NSString *BookStr = [NSString stringWithFormat:@"<html> \n"
@@ -69,5 +79,9 @@
 
 -(IBAction)goToOrgAction:(id)sender{
     [self.delegate groupCourseToOrgDelegate:sender];
+}
+
+-(IBAction)playVideoAction:(id)sender{
+    [self.delegate groupCoursePlayVideoDelegate:sender];
 }
 @end

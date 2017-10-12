@@ -224,4 +224,14 @@
         failureBlock(json);
     }];
 }
+
+-(void)groupCourseByOrgWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock{
+    [[BaseHttpRequest sharedBaseHttpRequest] GET:[NSString stringWithFormat:@"%@?orgId=%@",GroupCourseByOrg,[parameters objectForKey:@"orgId"]] parameters:nil success:^(id json) {
+        completionBlock(json);
+    } failure:^(id json) {
+        failureBlock(json);
+    }];
+}
 @end

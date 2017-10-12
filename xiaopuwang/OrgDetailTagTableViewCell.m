@@ -25,12 +25,11 @@
     [self.middleTag.layer setMasksToBounds:YES];
     self.middleTag.textColor = MAINCOLOR;
     
-    [self.rightTag.layer setBorderColor:MAINCOLOR.CGColor];
+    [self.rightTag.layer setBorderColor:ORGGOLD.CGColor];
     [self.rightTag.layer setBorderWidth:0.5];
     [self.rightTag.layer setCornerRadius:3.0];
     [self.rightTag.layer setMasksToBounds:YES];
-    self.rightTag.textColor = MAINCOLOR;
-
+    self.rightTag.textColor = ORGGOLD;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

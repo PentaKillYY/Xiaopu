@@ -25,11 +25,13 @@
 #import "RedBagService.h"
 #import <LGAlertView/LGAlertView.h>
 #import "JZLocationConverter.h"
+#import "OrgGroupCourseTableViewCell.h"
 
-@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate,AlbumVideoDelegate,OrgDetailCellDelegate,OrgTitleClassDelegate,OrgDetailAddressDelegate,UIActionSheetDelegate>{
+@interface OrginizationDetailViewController ()<UITableViewDataSource,UITableViewDelegate,LGAlertViewDelegate,AlbumVideoDelegate,OrgDetailCellDelegate,OrgTitleClassDelegate,OrgDetailAddressDelegate,UIActionSheetDelegate,OrgGroupCourseDelegate>{
     NSInteger currentSegIndex;
     
     DataResult* _detailInfoResult;
+    DataResult* _groupCourseResult;
     DataResult* _albumRequest;
     DataResult* _videoRequest;
     DataResult* _classResult;
@@ -56,6 +58,7 @@
     
     NSInteger selectAlbumAndVideoIndex;
     
+    NSInteger groupCourseCount;
     NSInteger teacherCount;
     NSInteger studentCount;
     NSInteger albumCount;
@@ -65,6 +68,7 @@
     UIButton* _rightButton;
     NSString* orderIndex;
     NSMutableArray* installmaps;
+    NSString* groupCourseId;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -93,6 +97,7 @@
     [self setupBottomView];
     
     [self getOrgDetailInfoRequest];
+    [self getGroupCourseByOrgRequest];
     [self gerOrgAlbumRequest];
     [self getVideoAlbumRequest];
     [self getTeacherListRequest];
@@ -232,6 +237,9 @@
     }else if ([segue.identifier isEqualToString:@"DetailToMyOrder"]){
         id theSegue = segue.destinationViewController;
         [theSegue setValue:orderIndex forKey:@"defaultIndex"];
+    }else if ([segue.identifier isEqualToString:@"DetailToGroupCourseDetail"]){
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:groupCourseId forKey:@"courseId"];
     }
 }
 
@@ -246,11 +254,7 @@
 #pragma mark - SetUpUI
 
 -(void)setupBottomView{
-    [self.consultButton setBackgroundColor:MAINCOLOR];
-    
-    [self.dealOrderButton setBackgroundColor:[UIColor darkGrayColor]];
     self.dealOrderButton.userInteractionEnabled = NO;
-    [self.payButton setBackgroundColor:PayOrderButtonCOlor];
 }
 
 -(IBAction)chatOrg:(id)sender{
@@ -369,7 +373,7 @@
 #pragma mark - UITableViewDatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 12;
+    return 13;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -391,30 +395,38 @@
     else if (section<6) {
         return 1;
     }else if (section==6){
+        if (groupCourseCount) {
+           return 1;
+        }else{
+            return 0;
+        }
+        
+    }
+    else if (section==7){
         if (teacherCount) {
             return 1;
         }else{
             return 0;
         }
-    }else if (section==7){
+    }else if (section==8){
         if (studentCount) {
             return 1;
         }else{
             return 0;
         }
-    }else if (section==8){
+    }else if (section==9){
         if (albumCount) {
             return 1;
         }else{
             return 0;
         }
-    }else if (section==9){
+    }else if (section==10){
         if (onlineMediaCount) {
             return 1;
         }else{
             return 0;
         }
-    }else if (section==10){
+    }else if (section==11){
         if (videoCount) {
             return 1;
         }else{
@@ -445,17 +457,26 @@
         return 218;
     }else if (indexPath.section==5){
         return 220;
-    }else if (indexPath.section ==6){
+    }else if (indexPath.section==6){
+        if (_groupCourseResult.items.size>2) {
+            return (153+(Main_Screen_Width)/2)*2+29;
+        }else if (_groupCourseResult.items.size>0){
+            return (153+(Main_Screen_Width)/2)*1+29;
+        }else{
+            return 0;
+        }
+        
+    }else if (indexPath.section ==7){
         return  [tableView fd_heightForCellWithIdentifier:@"OrgTeacher" cacheByIndexPath:indexPath configuration:^(id cell) {
             [self configCell:cell indexpath:indexPath];
         }];
-    }else if (indexPath.section ==7){
-        return 118;
     }else if (indexPath.section ==8){
-        return (Main_Screen_Width-14)/3+43;
+        return 118;
     }else if (indexPath.section ==9){
         return (Main_Screen_Width-14)/3+43;
     }else if (indexPath.section ==10){
+        return (Main_Screen_Width-14)/3+43;
+    }else if (indexPath.section ==11){
         return (Main_Screen_Width-14)/3+43;
     }else {
         if (indexPath.row ==0) {
@@ -481,37 +502,43 @@
         }else{
             return 0.01;
         }
-    }else if (section ==6){
-        if (teacherCount) {
+    }else if (section==6){
+        if (groupCourseCount) {
             return 5;
         }else{
             return 0.01;
         }
     }else if (section ==7){
-        if (studentCount) {
+        if (teacherCount) {
             return 5;
         }else{
             return 0.01;
         }
     }else if (section ==8){
-        if (albumCount) {
+        if (studentCount) {
             return 5;
         }else{
             return 0.01;
         }
     }else if (section ==9){
-        if (onlineMediaCount) {
+        if (albumCount) {
             return 5;
         }else{
             return 0.01;
         }
     }else if (section ==10){
+        if (onlineMediaCount) {
+            return 5;
+        }else{
+            return 0.01;
+        }
+    }else if (section ==11){
         if (videoCount) {
             return 5;
         }else{
             return 0.01;
         }
-    }else if (section==11){
+    }else if (section==12){
         if (courseCount){
             return 5;
         }else{
@@ -526,7 +553,7 @@
     if (indexPath.section == 0) {
         OrgDetailInfoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgDetailInfoTableViewCell" owner:self options:nil].firstObject;
         [self configInfoCell:cell IndexPath:indexPath];
-        [cell bingdingImageModel:_albumRequest.items];
+//        [cell bingdingImageModel:_albumRequest.items];
         
         cell.delegate = self;
         return cell;
@@ -552,6 +579,14 @@
         [cell bingdingViewModel:_detailInfoResult.detailinfo];
         return cell;
     }else if (indexPath.section==6){
+        OrgGroupCourseTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgGroupCourseTableViewCell" owner:self options:nil].firstObject;
+        if (groupCourseCount) {
+            [cell bingdingViewModel:_groupCourseResult];
+        }
+        cell.delegate = self;
+        return cell;
+
+    }else if (indexPath.section==7){
         OrgTeacherTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgTeacherTableViewCell" owner:self options:nil].firstObject;
         if (teacherCount) {
             [self configCell:cell indexpath:indexPath];
@@ -559,14 +594,14 @@
         }
         return cell;
         
-    }else if (indexPath.section==7){
+    }else if (indexPath.section==8){
         OrgStudentTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgStudentTableViewCell" owner:self options:nil].firstObject;
         if (studentCount) {
             [cell bingdingViewModel:[[_studentResult.detailinfo getDataItemArray:@"studentList"] getItem:0]];
         }
         
         return cell;
-    }else if (indexPath.section==8){
+    }else if (indexPath.section==9){
         OrgAlbumVideoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgAlbumVideoTableViewCell" owner:self options:nil].firstObject;
         if (albumCount) {
             cell.orgTitle.text = @"相册";
@@ -575,7 +610,7 @@
         cell.delegate = self;
 
         return cell;
-    }else if (indexPath.section==9){
+    }else if (indexPath.section==10){
         OrgAlbumVideoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgAlbumVideoTableViewCell" owner:self options:nil].firstObject;
         if (onlineMediaCount) {
             cell.orgTitle.text = @"学校视频";
@@ -584,7 +619,7 @@
         cell.delegate = self;
 
         return cell;
-    }else if (indexPath.section==10){
+    }else if (indexPath.section==11){
         OrgAlbumVideoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"OrgAlbumVideoTableViewCell" owner:self options:nil].firstObject;
         if (videoCount) {
             cell.orgTitle.text = @"在线试听";
@@ -618,19 +653,19 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section ==1) {
         [self performSegueWithIdentifier:@"DetailToMoreEvaluate" sender:self];
-    }else if (indexPath.section==6){
-        [self performSegueWithIdentifier:@"DetailToMoreTeacher" sender:self];
     }else if (indexPath.section==7){
-        [self performSegueWithIdentifier:@"DetailToMoreStudent" sender:self];
+        [self performSegueWithIdentifier:@"DetailToMoreTeacher" sender:self];
     }else if (indexPath.section==8){
-        [self performSegueWithIdentifier:@"DetailToPhotoBrowser" sender:self];
+        [self performSegueWithIdentifier:@"DetailToMoreStudent" sender:self];
     }else if (indexPath.section==9){
+        [self performSegueWithIdentifier:@"DetailToPhotoBrowser" sender:self];
+    }else if (indexPath.section==10){
         videoType = @"0";
         [self performSegueWithIdentifier:@"DetailToVideo" sender:self];
-    }else if (indexPath.section==10){
+    }else if (indexPath.section==11){
         videoType = @"1";
         [self performSegueWithIdentifier:@"DetailToVideo" sender:self];
-    }else if (indexPath.section==11){
+    }else if (indexPath.section==12){
         selectCourseIndex = indexPath.row;
         [self performSegueWithIdentifier:@"DetailToCourseDetail" sender:self];
     }
@@ -664,6 +699,7 @@
         tag.textColor = [UIColor lightGrayColor];
         tag.bgColor =[UIColor whiteColor];
         tag.borderColor = [UIColor lightGrayColor];
+        
         tag.borderWidth = 1.0;
         tag.cornerRadius = 3;
         tag.enable = YES;
@@ -768,6 +804,13 @@
     return maps;
 }
 
+#pragma mark - OrgGroupCourseDelegate
+-(void)orgGroupCourseToDetailDelegate:(NSInteger)itemIndex{
+    DataItem* item = [_groupCourseResult.items getItem:itemIndex];
+    groupCourseId = [item getString:@"FightCourseId"];
+    [self performSegueWithIdentifier:@"DetailToGroupCourseDetail" sender:self];
+}
+
 #pragma mark - ALbumDelegate
 - (void)pictureBrowserDidShow:(SRPictureBrowser *)pictureBrowser {
     
@@ -798,13 +841,25 @@
     }];
 }
 
+-(void)getGroupCourseByOrgRequest{
+    [[OrginizationService sharedOrginizationService] groupCourseByOrgWithParameters:@{@"orgId":self.orgID} onCompletion:^(id json) {
+        _groupCourseResult = json;
+        groupCourseCount = _groupCourseResult.items.size>0?1:0;
+        
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:6];
+        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    } onFailure:^(id json) {
+        
+    }];
+}
+
 -(void)gerOrgAlbumRequest{
     [[OrginizationService sharedOrginizationService] getAlbumWithParameters:@{@"orgId":self.orgID} onCompletion:^(id json) {
         _albumRequest = json;
         albumCount = _albumRequest.items.size>0?1:0;
         NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
         [idxSet addIndex:0];
-        [idxSet addIndex:8];
+        [idxSet addIndex:9];
         [self.tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationAutomatic];
         
         
@@ -828,7 +883,7 @@
         onlineMediaCount = onlineMediaArray.count>0?1:0;
         videoCount = videoArray.count>0?1:0;
         
-        NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndexesInRange:NSMakeRange(9, 2)];
+        NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndexesInRange:NSMakeRange(10, 2)];
         
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } onFailure:^(id json) {
@@ -840,7 +895,7 @@
     [[OrginizationService sharedOrginizationService] getOrgCourseListWithParameters:@{@"orgApplicationID":self.orgID,@"pageIndex":@(1),@"pageSize":@(10)} onCompletion:^(id json) {
         _classResult = json;
         courseCount = [_classResult.detailinfo getDataItemArray:@"list"].size>0?1:0;
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:11];
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:12];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } onFailure:^(id json) {
         
@@ -852,7 +907,7 @@
         _teacherResult = json;
         teacherCount = [_teacherResult.detailinfo getDataItemArray:@"teacherList"].size>0?1:0;
 
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:6];
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:7];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } onFailure:^(id json) {
         
@@ -864,7 +919,7 @@
         _studentResult = json;
         studentCount = [_studentResult.detailinfo getDataItemArray:@"studentList"].size>0?1:0;
         
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:7];
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:8];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
         
 
@@ -892,7 +947,8 @@
         _appointStateResult = json;
         
         self.dealOrderButton.userInteractionEnabled = YES;
-        [self.dealOrderButton setBackgroundColor:DealOrderButtonColor];
+        [self.dealOrderButton setImage:V_IMAGE(@"DealAvailable") forState:UIControlStateNormal];
+        [self.dealOrderButton setImage:V_IMAGE(@"DealAVailableClicked") forState:UIControlStateHighlighted];
         [self.tableView reloadData];
     } onFailure:^(id json) {
         _appointStateResult = json;

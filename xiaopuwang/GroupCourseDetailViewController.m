@@ -40,8 +40,7 @@
     [self.shareButton.layer setCornerRadius:16];
     [self.shareButton.layer setMasksToBounds:YES];
     
-    // 注册加载完成高度的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:@"WEBVIEW_HEIGHT" object:nil];
+    
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GroupCourseDetailBannerCell" bundle:nil] forCellReuseIdentifier:@"GroupCourseDetailBannerCell"];
     
@@ -57,11 +56,19 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    // 注册加载完成高度的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:@"WEBVIEW_HEIGHT" object:nil];
     
     self.navigationController.navigationBarHidden = YES;
     
     [self getGroupCourseListRequest];
     [self gerGroupCourseDetailRequest];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WEBVIEW_HEIGHT" object:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -87,6 +94,10 @@
         id theSegue = segue.destinationViewController;
         
         [theSegue setValue:[detailResult.detailinfo getString:@"FightCourseId"] forKey:@"courseId"];
+    }else if ([segue.identifier isEqualToString:@"GroupCourseDetailToVideoPlayer"]){
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:detailResult.detailinfo forKey:@"currenrItem"];
     }
 }
 
@@ -113,7 +124,12 @@
     }else if (indexPath.section==1){
         return 130;
     }else if (indexPath.section==2){
-        return webHeight+70;
+        if ([detailResult.detailinfo getString:@"VideoURL"].length) {
+            return webHeight+70+8+(Main_Screen_Width-16)/2;
+        }else{
+            return webHeight+70;
+        }
+        
     }else if (indexPath.section==3){
         return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailExplainCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations
@@ -198,6 +214,9 @@
     [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
 }
 
+-(void)groupCoursePlayVideoDelegate:(id)sender{
+    [self performSegueWithIdentifier:@"GroupCourseDetailToVideoPlayer" sender:self];
+}
 
 #pragma mark - HomeGroupCourseDelegate
 
@@ -235,6 +254,7 @@
     }else{
         [self needLogin];
     }
+    
 }
 
 #pragma mark - NetWorkrequest

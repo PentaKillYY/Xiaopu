@@ -98,6 +98,9 @@
 //发送通知提醒至预约机构
 #define SendAppointToOrg @"/user/SendMessageToOrganization"
 
+//获取机构下的拼课列表
+#define GroupCourseByOrg @"/cousertrain/fightCourseListByOrgId"
+
 // *******************************学校**************************
 
 //学校搜索页-分页查询

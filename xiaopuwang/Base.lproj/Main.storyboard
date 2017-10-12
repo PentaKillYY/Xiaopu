@@ -276,7 +276,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sPp-pF-dsq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rr-3M-0Yd" id="Dwh-ly-W8w"/>
@@ -585,7 +585,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="3" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="k1U-eD-OlA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="N9O-2r-Z20" id="OMY-1f-s7q"/>
@@ -593,34 +593,34 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7w-Hx-Yz8">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rd-3U-QqK">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="咨询有红包">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rd-3U-QqK">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="48"/>
+                                        <state key="normal" image="OrgChat">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="highlighted" image="OrgChatClicked"/>
                                         <connections>
                                             <action selector="chatOrg:" destination="N9O-2r-Z20" eventType="touchUpInside" id="s3a-98-C09"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8P-gC-QBs">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="下单有红包">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8P-gC-QBs">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="48"/>
+                                        <state key="normal" title="下单有红包" image="DealNotAvailable">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="highlighted" image="DealNotAvailableClicked"/>
                                         <connections>
                                             <action selector="userAppointOrg:" destination="N9O-2r-Z20" eventType="touchUpInside" id="loD-3w-kZt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmU-wQ-hLL">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="支付有奖学金">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmU-wQ-hLL">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="48"/>
+                                        <state key="normal" title="支付有奖学金" image="OrgPay">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="highlighted" image="OrgPayClicked"/>
                                         <connections>
                                             <action selector="userAppointOrg:" destination="N9O-2r-Z20" eventType="touchUpInside" id="XgR-eQ-GPJ"/>
                                         </connections>
@@ -635,7 +635,7 @@
                                     <constraint firstItem="y8P-gC-QBs" firstAttribute="leading" secondItem="8Rd-3U-QqK" secondAttribute="trailing" id="YSG-7M-4QJ"/>
                                     <constraint firstAttribute="trailing" secondItem="PmU-wQ-hLL" secondAttribute="trailing" id="aa4-U2-OhG"/>
                                     <constraint firstAttribute="bottom" secondItem="8Rd-3U-QqK" secondAttribute="bottom" id="ba8-IH-jZe"/>
-                                    <constraint firstAttribute="height" constant="50" id="c10-K9-sys"/>
+                                    <constraint firstAttribute="height" constant="48" id="c10-K9-sys"/>
                                     <constraint firstItem="y8P-gC-QBs" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" id="cdY-aR-zJw"/>
                                     <constraint firstItem="PmU-wQ-hLL" firstAttribute="top" secondItem="F7w-Hx-Yz8" secondAttribute="top" id="cja-dz-f7E"/>
                                     <constraint firstAttribute="bottom" secondItem="PmU-wQ-hLL" secondAttribute="bottom" id="emz-QN-So7"/>
@@ -671,11 +671,12 @@
                         <segue destination="b0z-uj-pwP" kind="push" identifier="DetailToCourseDetail" id="dFW-sS-bdb"/>
                         <segue destination="XVB-0J-k9I" kind="push" identifier="DetailToMyOrder" id="U2m-as-IXV"/>
                         <segue destination="Kut-kc-9Yh" kind="modal" identifier="DetailToVideoPlayer" id="Eho-hf-EWg"/>
+                        <segue destination="Knb-aJ-JDG" kind="push" identifier="DetailToGroupCourseDetail" id="4wk-2Y-35K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp6-vb-6Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2716" y="-141.67916041979012"/>
+            <point key="canvasLocation" x="2601" y="-143"/>
         </scene>
         <!--Org Info Content View Controller-->
         <scene sceneID="3bZ-Jf-cPg">
@@ -1493,6 +1494,7 @@
                         <segue destination="oLM-HQ-yXY" kind="push" identifier="GroupCourseDetailToShare" id="nsa-VC-QNM"/>
                         <segue destination="vcU-9g-kvI" kind="push" identifier="GroupCourseDetailToAdward" id="7ye-tZ-qNe"/>
                         <segue destination="N9O-2r-Z20" kind="push" identifier="GroupCourseDetailToOrgDetail" id="uaA-ve-52F"/>
+                        <segue destination="Kut-kc-9Yh" kind="push" identifier="GroupCourseDetailToVideoPlayer" id="APi-ap-Qy4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufa-5S-3uI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4535,7 +4537,13 @@
     </scenes>
     <resources>
         <image name="Coupon-2" width="288" height="83"/>
+        <image name="DealNotAvailable" width="106" height="47"/>
+        <image name="DealNotAvailableClicked" width="106" height="47"/>
         <image name="GroupCourseShare 2" width="20" height="20"/>
+        <image name="OrgChat" width="106" height="47"/>
+        <image name="OrgChatClicked" width="106" height="47"/>
+        <image name="OrgPay" width="106" height="47"/>
+        <image name="OrgPayClicked" width="106" height="47"/>
         <image name="addReplyPic.png" width="48" height="44"/>
         <image name="footernav_01" width="25" height="25"/>
         <image name="footernav_02" width="25" height="25"/>
@@ -4556,25 +4564,25 @@
         <image name="登录背景" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="uaA-ve-52F"/>
+        <segue reference="4wk-2Y-35K"/>
+        <segue reference="U2m-as-IXV"/>
+        <segue reference="dFW-sS-bdb"/>
+        <segue reference="Eho-hf-EWg"/>
+        <segue reference="KV2-wG-76q"/>
         <segue reference="Jsj-9t-jwq"/>
         <segue reference="h06-1T-d8P"/>
         <segue reference="sOd-j3-mVK"/>
-        <segue reference="KV2-wG-76q"/>
         <segue reference="sS5-PK-I1T"/>
         <segue reference="hc7-hA-kQF"/>
-        <segue reference="Cca-EC-7UM"/>
-        <segue reference="qK7-Ca-lcE"/>
         <segue reference="boX-Qa-u7y"/>
         <segue reference="V2t-xH-2aQ"/>
-        <segue reference="qGq-NF-EW6"/>
+        <segue reference="Cca-EC-7UM"/>
         <segue reference="C9X-s8-weM"/>
         <segue reference="xcV-3d-LJO"/>
-        <segue reference="iX8-yD-a73"/>
-        <segue reference="uaA-ve-52F"/>
-        <segue reference="U2m-as-IXV"/>
-        <segue reference="dFW-sS-bdb"/>
-        <segue reference="LxF-HX-IEE"/>
-        <segue reference="P2M-WO-PHT"/>
+        <segue reference="eWi-wM-yQJ"/>
         <segue reference="das-9m-Knb"/>
+        <segue reference="P2M-WO-PHT"/>
+        <segue reference="LxF-HX-IEE"/>
     </inferredMetricsTieBreakers>
 </document>
