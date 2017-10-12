@@ -1304,6 +1304,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" image="GroupCourseShare 2"/>
+                                        <connections>
+                                            <action selector="shareGroupCourseHome:" destination="oMp-dS-Ffa" eventType="touchUpInside" id="a9q-O7-U5b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97631138559999997" green="0.16368901729999999" blue="0.2814570367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
