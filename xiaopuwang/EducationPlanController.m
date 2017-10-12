@@ -283,7 +283,8 @@
             if (indexPath.row==4) {
                 TextViewTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"TextViewTableViewCell" owner:self options:nil].firstObject;
                 cell.contentTitle.text = EducationBoardSchoolTitle[indexPath.row];
-                cell.contentTextView.text = EducationBoardSchoolPlaceHolder[indexPath.row];
+                cell.contentTextView.text = overseaRequirement;
+                cell.contentTextView.delegate = self;
                 return cell;
             }else{
                 TextFieldTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldTableViewCell" owner:self options:nil].firstObject;
@@ -301,7 +302,26 @@
                     picker.tag = indexPath.row;
                     cell.contentField.inputView = picker;
                 }
-
+                
+                if (indexPath.row==1) {
+                    cell.contentField.text = overseaGrade;
+                }else if (indexPath.row==2){
+                    cell.contentField.text = overseaSchool;
+                }else if (indexPath.row==3){
+                    cell.contentField.text = overseaCountry;
+                }else if (indexPath.row==5){
+                    cell.contentField.text = overseaWantSchool;
+                }else if (indexPath.row==6){
+                    cell.contentField.text = overseaWantCourse;
+                }else if(indexPath.row==7){
+                    cell.contentField.text = overseaWhen;
+                }else if (indexPath.row==8){
+                    cell.contentField.text = overIsExam;
+                }else if (indexPath.row==9){
+                    cell.contentField.text = overseaExamScore;
+                }else{
+                    cell.contentField.text = overseaPhone;
+                }
                 
                 return cell;
 
@@ -455,11 +475,39 @@
                 }
                 
             }
-
-
-            
         }else{
-        
+            NSArray* pickerData = [NSArray arrayWithArray:EducationBoardPickerData[pickerView.tag]];
+            if (pickerView.tag == 1) {
+                if (row>0) {
+                    overseaGrade = pickerData[row];
+                }else{
+                    overseaGrade = @"";
+                }
+            }else if (pickerView.tag ==3){
+                if (row>0) {
+                    overseaCountry = pickerData[row];
+                }else{
+                    overseaCountry = @"";
+                }
+            }else if (pickerView.tag ==7){
+                if (row>0) {
+                    overseaWhen = pickerData[row];
+                }else{
+                    overseaWhen = @"";
+                }
+            }else if (pickerView.tag ==8){
+                if (row>0) {
+                    overIsExam = pickerData[row];
+                }else{
+                    overIsExam = @"";
+                }
+            }else{
+                if (row>0) {
+                    overseaExamScore = pickerData[row];
+                }else{
+                    overseaExamScore = @"";
+                }
+            }
         }
         
     }
@@ -485,8 +533,6 @@
             
         }];
     }
-    
-    
 }
 
 #pragma mark - UITextFieldDelegate
@@ -542,7 +588,28 @@
         }
 
     }else{
-        
+        switch (tag){
+            case 2:
+            {
+                overseaSchool = textField.text;
+            }
+                break;
+            case 5:
+            {
+                overseaWantSchool = textField.text;
+            }
+                break;
+            case 6:
+            {
+                overseaWantCourse = textField.text;
+            }
+                break;
+            case 10:
+            {
+                overseaPhone = textField.text;
+            }
+                break;
+        }
     }
     
 }
@@ -557,6 +624,10 @@
             
         }];
     }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    overseaRequirement = textView.text;
 }
 
 #pragma mark - NetworkRequest
