@@ -21,7 +21,7 @@
 -(void)bingdingViewModel:(DataItem*)item{
     [self.groupCourseLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"CourseImage"]]] placeholderImage:nil];
     self.courseName.text = [item getString:@"CourseName"];
-    self.courseName.textColor = GroupCourseDarkGray;
+    self.orgName.text = [item getString:@"OrganizationName"];
     
     NSMutableAttributedString * noteStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"￥%.2f",[item getDouble:@"FightCoursePrice"]]];
     NSRange redRangeTwo = NSMakeRange(1, [[noteStr string] rangeOfString:@"."].length);

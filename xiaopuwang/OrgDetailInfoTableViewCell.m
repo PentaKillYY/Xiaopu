@@ -22,7 +22,7 @@
 }
 
 -(void)bingdingViewModel:(DataItem*)item{
-    self.orgName.text = [item getString:@"ChineseName"];
+    self.orgName.text = [item getString:@"OrganizationName"];
     [self.orgLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"Logo"]]] placeholderImage:nil];
     self.viewCount.text = [NSString stringWithFormat:@"%d",arc4random()%500];
     self.focusCount.text =[NSString stringWithFormat:@"%d",arc4random()%500];

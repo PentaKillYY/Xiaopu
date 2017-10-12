@@ -545,7 +545,7 @@
         if (indexPath.row ==0) {
             return 44;
         }else{
-            return 118+(Main_Screen_Width)/2;
+            return 153+(Main_Screen_Width)/2;
         }
     }else if (indexPath.section == 5){
         if (indexPath.row==0) {
