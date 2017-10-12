@@ -20,6 +20,8 @@
     NSInteger currentPage;
     NSString* courseType;
     DataResult* detailResult;
+    CGFloat webHeight;
+    BOOL isReloadHeight;
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property(nonatomic,weak)IBOutlet UIButton* backButton;
@@ -37,6 +39,9 @@
     
     [self.shareButton.layer setCornerRadius:16];
     [self.shareButton.layer setMasksToBounds:YES];
+    
+    // 注册加载完成高度的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:@"WEBVIEW_HEIGHT" object:nil];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GroupCourseDetailBannerCell" bundle:nil] forCellReuseIdentifier:@"GroupCourseDetailBannerCell"];
     
@@ -108,7 +113,7 @@
     }else if (indexPath.section==1){
         return 130;
     }else if (indexPath.section==2){
-        return 400;
+        return webHeight+70;
     }else if (indexPath.section==3){
         return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailExplainCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations
@@ -172,6 +177,16 @@
 
 -(void)configExplainCell:(GroupCourseDetailExplainCell*)cell IndexPath:(NSIndexPath*)indexPath{
     [cell bingdingViewModel:detailResult.detailinfo];
+}
+
+- (void)noti:(NSNotification *)sender{
+    NSDictionary* notiDic = [sender object];//通过这个获取到传递的对象
+    if (webHeight == [[notiDic objectForKey:@"WEBVIEW_HEIGHT"] floatValue] && !isReloadHeight) {
+        webHeight = [[notiDic objectForKey:@"WEBVIEW_HEIGHT"] floatValue];
+        [self.tableView reloadData];
+        isReloadHeight = YES;
+    }
+    webHeight = [[notiDic objectForKey:@"WEBVIEW_HEIGHT"] floatValue];
 }
 
 #pragma mark - GroupCourseDetailInfoDelegate
@@ -324,7 +339,6 @@
         }
     }];
 }
-
 
 -(void)needLogin{
     UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];

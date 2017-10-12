@@ -13,6 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.webView.scrollView.scrollEnabled = NO;
+   
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -28,13 +30,42 @@
     
     self.orgName.text = [detailItem getString:@"OrgName"];
     
-    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[[detailItem getString:@"FightCourseIntroduction"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
-    self.courseInfo.attributedText = attrStr;
+    NSString * htmlcontent = [NSString stringWithFormat:@"<div id=\"webview_content_wrapper\">%@</div>", [detailItem getString:@"FightCourseIntroduction"]];
+    
+    NSString *BookStr = [NSString stringWithFormat:@"<html> \n"
+                         "<head> \n"
+                         "<style type=\"text/css\"> \n"
+                         "body {margin:0;font-size: %f;}\n"
+                         "</style> \n"
+                         "</head> \n"
+                         "<body>%@</body> \n"
+                         "</html>",13.0,htmlcontent];
+    
+    self.webView.scrollView.showsVerticalScrollIndicator = NO;
+    self.webView.delegate = self;
+    self.webView.backgroundColor = [UIColor whiteColor];
+    
+    [self.webView loadHTMLString:BookStr baseURL:nil];
 }
 
--(IBAction)seeMoreInfoAction:(id)sender{
-    [self.delegate groupCourseMoreInfoDelegate:sender];
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *js = @"function imgAutoFit() { \
+    var imgs = document.getElementsByTagName('img'); \
+    for (var i = 0; i < imgs.length; ++i) {\
+    var img = imgs[i];   \
+    img.style.maxWidth = %f;   \
+    } \
+    }";
+    js = [NSString stringWithFormat:js, [UIScreen mainScreen].bounds.size.width - 16];
+    
+    [webView stringByEvaluatingJavaScriptFromString:js];
+    [webView stringByEvaluatingJavaScriptFromString:@"imgAutoFit()"];
+    
+    CGFloat height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"] floatValue];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WEBVIEW_HEIGHT" object:@{@"WEBVIEW_HEIGHT":@(height)} userInfo:nil];
 }
+
 
 -(IBAction)goToOrgAction:(id)sender{
     [self.delegate groupCourseToOrgDelegate:sender];

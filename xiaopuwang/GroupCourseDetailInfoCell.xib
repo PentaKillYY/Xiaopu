@@ -49,58 +49,41 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="和国际护士节给客户时间规划局山东黄金说过话飞机返回公司会计环境" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLR-yB-sCs">
-                        <rect key="frame" x="8" y="70" width="304" height="37"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3b-KI-Hua">
-                        <rect key="frame" x="258" y="114.5" width="54" height="27"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="27" id="5SX-Ez-Eo7"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="查看全部">
-                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="seeMoreInfoAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vDi-x6-kEd"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4V-fZ-9TQ">
                         <rect key="frame" x="8" y="37" width="304" height="25"/>
                         <connections>
                             <action selector="goToOrgAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FiZ-Zg-py1"/>
                         </connections>
                     </button>
+                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iey-lA-QKg">
+                        <rect key="frame" x="8" y="70" width="304" height="79.5"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </webView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="iey-lA-QKg" secondAttribute="bottom" id="0Cl-h3-wym"/>
                     <constraint firstItem="bFC-Qk-KCO" firstAttribute="bottom" secondItem="Z4V-fZ-9TQ" secondAttribute="bottom" id="4qE-3l-liu"/>
+                    <constraint firstItem="iey-lA-QKg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="9LC-gd-fIn"/>
                     <constraint firstItem="l22-1f-GI2" firstAttribute="leading" secondItem="HEJ-mT-6Uj" secondAttribute="trailing" constant="8" id="FDF-Od-bAC"/>
                     <constraint firstAttribute="trailing" secondItem="tce-YB-JcT" secondAttribute="trailing" constant="8" id="FV0-LL-h3z"/>
-                    <constraint firstItem="D3b-KI-Hua" firstAttribute="top" secondItem="gLR-yB-sCs" secondAttribute="bottom" constant="8" id="Hjs-3V-FQ9"/>
-                    <constraint firstAttribute="trailing" secondItem="gLR-yB-sCs" secondAttribute="trailing" constant="8" id="KjU-CG-s0a"/>
-                    <constraint firstAttribute="bottom" secondItem="D3b-KI-Hua" secondAttribute="bottom" constant="8" id="MVR-q4-fmg"/>
                     <constraint firstAttribute="trailing" secondItem="Z4V-fZ-9TQ" secondAttribute="trailing" constant="8" id="RYI-Bj-o8r"/>
                     <constraint firstItem="bFC-Qk-KCO" firstAttribute="top" secondItem="Z4V-fZ-9TQ" secondAttribute="top" id="RtJ-MR-1RQ"/>
-                    <constraint firstItem="gLR-yB-sCs" firstAttribute="top" secondItem="bFC-Qk-KCO" secondAttribute="bottom" constant="8" id="Uaz-w0-BWE"/>
+                    <constraint firstAttribute="trailing" secondItem="iey-lA-QKg" secondAttribute="trailing" constant="8" id="Yt1-RN-fuf"/>
                     <constraint firstItem="HEJ-mT-6Uj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="bcU-Ym-KhC"/>
                     <constraint firstItem="tce-YB-JcT" firstAttribute="centerY" secondItem="bFC-Qk-KCO" secondAttribute="centerY" id="e9d-PC-Qxh"/>
                     <constraint firstItem="tce-YB-JcT" firstAttribute="leading" secondItem="bFC-Qk-KCO" secondAttribute="trailing" constant="8" id="fr0-Se-fEZ"/>
                     <constraint firstItem="Z4V-fZ-9TQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="j53-ps-uoc"/>
                     <constraint firstItem="l22-1f-GI2" firstAttribute="centerY" secondItem="HEJ-mT-6Uj" secondAttribute="centerY" id="jwq-Fw-YNi"/>
-                    <constraint firstItem="gLR-yB-sCs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="o5W-iW-CcV"/>
-                    <constraint firstAttribute="trailing" secondItem="D3b-KI-Hua" secondAttribute="trailing" constant="8" id="qZL-h5-60m"/>
+                    <constraint firstItem="iey-lA-QKg" firstAttribute="top" secondItem="Z4V-fZ-9TQ" secondAttribute="bottom" constant="8" id="ndT-pz-v08"/>
                     <constraint firstItem="bFC-Qk-KCO" firstAttribute="top" secondItem="HEJ-mT-6Uj" secondAttribute="bottom" constant="8" id="tia-hU-Bpn"/>
                     <constraint firstItem="bFC-Qk-KCO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="zCe-P5-E3s"/>
                     <constraint firstItem="HEJ-mT-6Uj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="znH-Rd-tG8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="courseInfo" destination="gLR-yB-sCs" id="hKd-pb-xcn"/>
                 <outlet property="orgLogo" destination="bFC-Qk-KCO" id="zcl-Xx-gSN"/>
                 <outlet property="orgName" destination="tce-YB-JcT" id="Wws-Zq-lGO"/>
+                <outlet property="webView" destination="iey-lA-QKg" id="1nG-ej-EnP"/>
             </connections>
             <point key="canvasLocation" x="74" y="175"/>
         </tableViewCell>
