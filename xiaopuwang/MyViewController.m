@@ -43,7 +43,7 @@
     [self.navigationItem.rightBarButtonItem setTintColor:MAINCOLOR];
     [self.navigationItem.leftBarButtonItem setTintColor:MAINCOLOR];
     
-    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:15],NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     UserInfo* info = [UserInfo sharedUserInfo];
     if (info.userID.length) {
@@ -145,7 +145,6 @@
         if (indexPath.section == 1 && indexPath.row ==0) {
             [self performSegueWithIdentifier:@"MyToWallet" sender:self];
         }else if (indexPath.section == 2 && indexPath.row == 0){
-//            [self performSegueWithIdentifier:@"MyToFollow" sender:self];
             [self performSegueWithIdentifier:@"MyToInvite" sender:self];
         }else if (indexPath.section == 2 && indexPath.row == 1){
             [self performSegueWithIdentifier:@"MyToSpecialist" sender:self];
