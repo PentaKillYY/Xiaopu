@@ -98,6 +98,8 @@
     if (self.passwordTextField.text.length > 5) {
         [[MyService sharedMyService] userRegisterWithParameters:@{@"LoginName":self.usernameTextfield.text,@"UserName":self.usernameTextfield.text,@"Phone":self.usernameTextfield.text,@"Password":self.passwordTextField.text} onCompletion:^(id json) {
             [self.navigationController popViewControllerAnimated:YES];
+            
+            
         } onFailure:^(id json) {
             
         }];
@@ -108,6 +110,6 @@
             [[AppCustomHud sharedEKZCustomHud] showTextHud:PasswordMinLenth];
         }
     }
-    
+
 }
 @end

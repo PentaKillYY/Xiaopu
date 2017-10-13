@@ -43,16 +43,14 @@
 #pragma mark - UITableViewDatesource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section==0) {
         return 1;
-    }else if (section==1){
-        return 3;
     }else{
-        return 2+[adwardResult.detailinfo getDataItemArray:@"Tow"].size;
+        return 2+[adwardResult.detailinfo getDataItemArray:@"Winner"].size;
     }
 }
 
@@ -73,30 +71,17 @@
         GroupCourseDetailTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseDetailTableViewCell" owner:self options:nil].firstObject;
         [cell bingdingViewModel:detailResult.detailinfo];
         return cell;
-    }else if (indexPath.section==1){
-        if (indexPath.row==0) {
-            GroupCourseAdwardGradeCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseAdwardGradeCell" owner:self options:nil].firstObject;
-            cell.gradeLabel.text = @"一等奖名单";
-            return cell;
-        }else if (indexPath.row==1){
-            GroupCourseAdwardGradeTitleCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseAdwardGradeTitleCell" owner:self options:nil].firstObject;
-            return cell;
-        }else{
-            GroupCourseAdwardInfoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseAdwardInfoTableViewCell" owner:self options:nil].firstObject;
-            [cell bingdingViewModel:[[adwardResult.detailinfo getDataItemArray:@"Tow"] getItem:indexPath.row-2]];
-            return cell;
-        }
     }else{
         if (indexPath.row==0) {
             GroupCourseAdwardGradeCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseAdwardGradeCell" owner:self options:nil].firstObject;
-            cell.gradeLabel.text = @"二等奖名单";
+            cell.gradeLabel.text = @"中奖者名单";
             return cell;
         }else if (indexPath.row==1){
             GroupCourseAdwardGradeTitleCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseAdwardGradeTitleCell" owner:self options:nil].firstObject;
             return cell;
         }else{
             GroupCourseAdwardInfoTableViewCell* cell = [[NSBundle mainBundle] loadNibNamed:@"GroupCourseAdwardInfoTableViewCell" owner:self options:nil].firstObject;
-            [cell bingdingViewModel:[[adwardResult.detailinfo getDataItemArray:@"Tow"] getItem:indexPath.row-2]];
+            [cell bingdingViewModel:[[adwardResult.detailinfo getDataItemArray:@"Winner"] getItem:indexPath.row-2]];
             return cell;
         }
     }

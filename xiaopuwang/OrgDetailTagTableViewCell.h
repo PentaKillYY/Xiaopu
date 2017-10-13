@@ -15,4 +15,5 @@
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* leftTagW;
 @property(nonatomic,weak)IBOutlet NSLayoutConstraint* middleTagW;
 -(void)bingdingViewModel:(DataItem*)item;
+-(void)bingdingGroupCourseModel:(BOOL)isGroupCourse;
 @end

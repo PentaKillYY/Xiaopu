@@ -61,6 +61,14 @@
     
     [webView stringByEvaluatingJavaScriptFromString:js];
     [webView stringByEvaluatingJavaScriptFromString:@"imgAutoFit()"];
+    
+    // 方法一
+    CGFloat height = [self.webView sizeThatFits:CGSizeZero].height;
+    
+    // 方法二
+    CGFloat height2 = webView.scrollView.contentSize.height;
+    
+    DLog(@"height1:%f,height2:%f",height,height2);
 }
 
 -(IBAction)clickBack:(id)sender{

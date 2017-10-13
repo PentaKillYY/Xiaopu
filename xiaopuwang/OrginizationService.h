@@ -113,4 +113,8 @@
                   onCompletion:(JSONResponse)completionBlock
                      onFailure:(JSONResponse)failureBlock;
 
+//获取机构下的拼课列表
+-(void)groupCourseByOrgWithParameters:(NSDictionary *)parameters
+                         onCompletion:(JSONResponse)completionBlock
+                            onFailure:(JSONResponse)failureBlock;
 @end

@@ -35,6 +35,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="GroupCourseBanner.png" width="750" height="313"/>
+        <image name="GroupCourseBanner.png" width="751" height="275"/>
     </resources>
 </document>

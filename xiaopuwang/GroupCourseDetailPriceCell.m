@@ -94,6 +94,8 @@
         }
         
     }else if ([detailItem getInt:@"FightCourseState"]==2){
+        [self.courseButton setTitle:@"拼课已结束" forState:0];
+    }else if ([detailItem getInt:@"FightCourseState"]==3){
         [self.courseButton setTitle:@"等待开奖" forState:0];
     }else if ([detailItem getInt:@"FightCourseState"]){
         [self.courseButton setTitle:@"查看中奖情况" forState:0];

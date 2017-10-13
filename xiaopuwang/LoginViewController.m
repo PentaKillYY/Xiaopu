@@ -75,6 +75,12 @@
     [[MainService sharedMainService] loginWithParameters:@{@"loginName":self.userNameTextField.text,@"password":self.passwordTextField.text} onCompletion:^(id json) {
         
         [self getUserBasicInfoRequest];
+        [self getUserOnlyRequest];
+        [self tokenRequest];
+        
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
     } onFailure:^(id json) {
        
     }];
@@ -82,7 +88,7 @@
 
 -(void)getUserBasicInfoRequest{
     [[MyService sharedMyService] getUserBasicInfoWithParameters:@{@"userId":[UserInfo sharedUserInfo].userID} onCompletion:^(id json) {
-        [self getUserOnlyRequest];
+        
     } onFailure:^(id json) {
         
     }];
@@ -91,9 +97,7 @@
 -(void)getUserOnlyRequest{
     UserInfo* info = [UserInfo sharedUserInfo];
     [[MyService sharedMyService] getUserOnlyWithParameters:@{@"userId":info.userID} onCompletion:^(id json) {
-        
-        
-        [self tokenRequest];
+
     } onFailure:^(id json) {
         
     }];
@@ -102,9 +106,7 @@
 -(void)tokenRequest{
     [[MyService sharedMyService] getTokenWithParameters:@{@"appKey":RONGCLOUDDISKEY,@"appSecret":RONGCLOUDDISSECRET,@"userId":[UserInfo sharedUserInfo].userID,@"name":[UserInfo sharedUserInfo].telphone} onCompletion:^(id json) {
         [self uptdateTokenRequest];
-        
-        
-        
+
     } onFailure:^(id json) {
         
     }];
@@ -113,9 +115,8 @@
 -(void)uptdateTokenRequest{
     [[MyService sharedMyService] updateUserTokenWithParameters:@{@"token":[UserInfo sharedUserInfo].token} onCompletion:^(id json) {
         [self rongcloudConnect];
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+        
+        
     } onFailure:^(id json) {
         
     }];

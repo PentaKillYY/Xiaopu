@@ -128,9 +128,9 @@ static NSString *const kHeaderID = @"JHHeaderReusableView";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
-        return CGSizeMake(Main_Screen_Width, Main_Screen_Width/750*313);
+        return CGSizeMake(Main_Screen_Width, Main_Screen_Width/750*275);
     }else{
-      return CGSizeMake((SCREEN_WIDTH-24)/2, 110+(Main_Screen_Width)/2);
+      return CGSizeMake((SCREEN_WIDTH-24)/2, 145+(Main_Screen_Width)/2);
     }
 }
 
@@ -268,4 +268,40 @@ static NSString *const kHeaderID = @"JHHeaderReusableView";
 -(IBAction)clickBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(IBAction)shareGroupCourseHome:(id)sender{
+    //显示分享面板
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        
+        [self shareWebPageToPlatformType:platformType];
+        
+    }];
+}
+
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:GroupCourseHomeShareTitle descr:GroupCourseHomeShareDes thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
+    
+    shareObject.webpageUrl =@"http://www.wechat.ings.org.cn/course.html";
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
+        }
+    }];
+}
+
 @end

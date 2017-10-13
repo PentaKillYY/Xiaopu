@@ -21,7 +21,7 @@
 -(void)bingdingViewModel:(DataItem*)item{
     [self.groupCourseLogo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[item getString:@"CourseImage"]]] placeholderImage:nil];
     self.courseName.text = [item getString:@"CourseName"];
-    self.courseName.textColor = GroupCourseDarkGray;
+    self.orgName.text = [item getString:@"OrganizationName"];
     
     NSMutableAttributedString * noteStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"￥%.2f",[item getDouble:@"FightCoursePrice"]]];
     NSRange redRangeTwo = NSMakeRange(1, [[noteStr string] rangeOfString:@"."].length);
@@ -56,6 +56,8 @@
             self.groupCourseStateLabel.text = @" 邀好友";
         }
     }else if ([item getInt:@"FightCourseState"]==2) {
+        self.groupCourseStateLabel.text = @" 已结束";
+    }else if ([item getInt:@"FightCourseState"]==3){
         self.groupCourseStateLabel.text = @" 待开奖";
     }else {
         self.groupCourseStateLabel.text = @" 已开奖";

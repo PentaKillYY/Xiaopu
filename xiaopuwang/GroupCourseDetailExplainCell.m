@@ -37,13 +37,14 @@
             [self setupStepImageState:2];
         }
     }else if ([detailItem getInt:@"FightCourseState"]==2) {
-        [self setupStepImageState:3];
+        [self setupStepImageState:4];
     }else{
         [self setupStepImageState:3];
     }
 }
 
 -(void)setupStepImageState:(NSInteger)state{
+    
     if (state ==1) {
         self.oneStepImage.image = V_IMAGE(@"groupCourse-1-red");
         self.twoStepImage.image = V_IMAGE(@"groupCourse-2-gray");
@@ -52,10 +53,14 @@
         self.oneStepImage.image = V_IMAGE(@"groupCourse-1-gray");
         self.twoStepImage.image = V_IMAGE(@"groupCourse-2-red");
         self.threeStepImage.image = V_IMAGE(@"groupCourse-3-gray");
-    }else{
+    }else if(state ==3){
         self.oneStepImage.image = V_IMAGE(@"groupCourse-1-gray");
         self.twoStepImage.image = V_IMAGE(@"groupCourse-2-gray");
         self.threeStepImage.image = V_IMAGE(@"groupCourse-3-red");
+    }else{
+        self.oneStepImage.image = V_IMAGE(@"groupCourse-1-gray");
+        self.twoStepImage.image = V_IMAGE(@"groupCourse-2-gray");
+        self.threeStepImage.image = V_IMAGE(@"groupCourse-3-gray");
     }
 }
 @end

@@ -20,9 +20,12 @@
     NSInteger currentPage;
     NSString* courseType;
     DataResult* detailResult;
+    CGFloat webHeight;
+    BOOL isReloadHeight;
 }
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
 @property(nonatomic,weak)IBOutlet UIButton* backButton;
+@property(nonatomic,weak)IBOutlet UIButton* shareButton;
 @end
 
 @implementation GroupCourseDetailViewController
@@ -33,6 +36,11 @@
 
     [self.backButton.layer setCornerRadius:16];
     [self.backButton.layer setMasksToBounds:YES];
+    
+    [self.shareButton.layer setCornerRadius:16];
+    [self.shareButton.layer setMasksToBounds:YES];
+    
+    
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GroupCourseDetailBannerCell" bundle:nil] forCellReuseIdentifier:@"GroupCourseDetailBannerCell"];
     
@@ -48,11 +56,19 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    // 注册加载完成高度的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:@"WEBVIEW_HEIGHT" object:nil];
     
     self.navigationController.navigationBarHidden = YES;
     
     [self getGroupCourseListRequest];
     [self gerGroupCourseDetailRequest];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WEBVIEW_HEIGHT" object:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -78,6 +94,10 @@
         id theSegue = segue.destinationViewController;
         
         [theSegue setValue:[detailResult.detailinfo getString:@"FightCourseId"] forKey:@"courseId"];
+    }else if ([segue.identifier isEqualToString:@"GroupCourseDetailToVideoPlayer"]){
+        id theSegue = segue.destinationViewController;
+        
+        [theSegue setValue:detailResult.detailinfo forKey:@"currenrItem"];
     }
 }
 
@@ -104,7 +124,12 @@
     }else if (indexPath.section==1){
         return 130;
     }else if (indexPath.section==2){
-        return 400;
+        if ([detailResult.detailinfo getString:@"VideoURL"].length) {
+            return webHeight+70+8+(Main_Screen_Width-16)/2;
+        }else{
+            return webHeight+70;
+        }
+        
     }else if (indexPath.section==3){
         return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailExplainCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations
@@ -114,7 +139,7 @@
         if (indexPath.row ==0) {
             return 44;
         }else{
-            return 118+(Main_Screen_Width)/2;
+            return 153+(Main_Screen_Width)/2;
         }
     }
 }
@@ -170,9 +195,27 @@
     [cell bingdingViewModel:detailResult.detailinfo];
 }
 
+- (void)noti:(NSNotification *)sender{
+    NSDictionary* notiDic = [sender object];//通过这个获取到传递的对象
+    if (webHeight == [[notiDic objectForKey:@"WEBVIEW_HEIGHT"] floatValue] && !isReloadHeight) {
+        webHeight = [[notiDic objectForKey:@"WEBVIEW_HEIGHT"] floatValue];
+        [self.tableView reloadData];
+        isReloadHeight = YES;
+    }
+    webHeight = [[notiDic objectForKey:@"WEBVIEW_HEIGHT"] floatValue];
+}
+
 #pragma mark - GroupCourseDetailInfoDelegate
 -(void)groupCourseMoreInfoDelegate:(id)sender{
     [self performSegueWithIdentifier:@"GroupCoueseDetailToInfo" sender:self];
+}
+
+-(void)groupCourseToOrgDelegate:(id)sender{
+    [self performSegueWithIdentifier:@"GroupCourseDetailToOrgDetail" sender:self];
+}
+
+-(void)groupCoursePlayVideoDelegate:(id)sender{
+    [self performSegueWithIdentifier:@"GroupCourseDetailToVideoPlayer" sender:self];
 }
 
 #pragma mark - HomeGroupCourseDelegate
@@ -199,8 +242,9 @@
                 }else{
                     [self performSegueWithIdentifier:@"GroupCourseDetailToShare" sender:self];
                 }
-                
             }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==2){
+                [[AppCustomHud sharedEKZCustomHud]showTextHud:GroupCourseIsEnd];
+            }else if ([detailResult.detailinfo getInt:@"FightCourseState"]==3){
                 [[AppCustomHud sharedEKZCustomHud]showTextHud:GroupCourseWaitingAdward];
             }else if ([detailResult.detailinfo getInt:@"FightCourseState"]){
                 [self performSegueWithIdentifier:@"GroupCourseDetailToAdward" sender:self];
@@ -210,7 +254,6 @@
     }else{
         [self needLogin];
     }
-    
 }
 
 #pragma mark - NetWorkrequest
@@ -274,6 +317,69 @@
 
 -(IBAction)clickBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)shareCourse:(id)sender{
+    //显示分享面板
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        
+        [self shareWebPageToPlatformType:platformType];
+        
+    }];
+
+}
+
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    
+    
+    
+    NSString* encodedString = [courseType stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    UserInfo* info = [UserInfo sharedUserInfo];
+    UMShareWebpageObject *shareObject;
+    
+    if (info.userID.length) {
+        if ([detailResult.detailinfo getInt:@"UserState"]==0) {
+            NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[detailResult.detailinfo getString:@"CourseImage"]]]];
+            
+            shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"【%@】",[detailResult.detailinfo getString:@"CourseName"]] descr:[NSString stringWithFormat:@"【%@】",[detailResult.detailinfo getString:@"OrgName"]]  thumImage:[UIImage imageWithData:data]];
+
+        }else{
+            NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[detailResult.detailinfo getString:@"CourseImage"]]]];
+            
+            shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"我正在参与【%@】，还差【%d】人，快来一起拼课吧！",[detailResult.detailinfo getString:@"CourseName"],[detailResult.detailinfo getInt:@"FightCourseIsSignPeopleCount"]] descr:[NSString stringWithFormat:@"【%@】",[detailResult.detailinfo getString:@"OrgName"]]  thumImage:[UIImage imageWithData:data]];
+
+        }
+        
+    }else{
+        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[detailResult.detailinfo getString:@"CourseImage"]]]];
+        
+        shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"我正在参与【%@】，还差【%d】人，快来一起拼课吧！",[detailResult.detailinfo getString:@"CourseName"],[detailResult.detailinfo getInt:@"FightCourseIsSignPeopleCount"]] descr:[NSString stringWithFormat:@"【%@】",[detailResult.detailinfo getString:@"OrgName"]]  thumImage:[UIImage imageWithData:data]];
+
+    }
+    
+    
+    
+    shareObject.webpageUrl =[NSString stringWithFormat:@"http://www.wechat.ings.org.cn/course_share.html?courseId=%@",self.courseId];
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
+        }
+    }];
 }
 
 -(void)needLogin{
