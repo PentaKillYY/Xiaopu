@@ -78,6 +78,11 @@
     }else if (indexPath.row == 3){
         [self performSegueWithIdentifier:@"MyToAbout" sender:self];
     }else{
+        //清空SDWebImage缓存
+        [[SDImageCache sharedImageCache] clearMemory];
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+            
+        }];
         
         //清空登录缓存信息
         UserInfo* info = [UserInfo sharedUserInfo];
@@ -87,6 +92,8 @@
         [[RCIM sharedRCIM] logout];
         
         UINavigationController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+        
+        
         [self presentViewController:login animated:YES completion:^{
             
         }];
@@ -112,13 +119,19 @@
 
 #pragma mark - NetworkRequest
 -(void)getUserBankCardRequest{
-    [[MyService sharedMyService] getUserBankCardWithParameters:@{@"userId":[UserInfo sharedUserInfo].userID} onCompletion:^(id json) {
-        DataResult* result = json;
-        cardNumber = result.items.size;
-        
+    if ([UserInfo sharedUserInfo].userID.length) {
+        [[MyService sharedMyService] getUserBankCardWithParameters:@{@"userId":[UserInfo sharedUserInfo].userID} onCompletion:^(id json) {
+            DataResult* result = json;
+            cardNumber = result.items.size;
+            
+            [self.tableView reloadData];
+        } onFailure:^(id json) {
+            
+        }];
+    }else{
+        cardNumber =0;
         [self.tableView reloadData];
-    } onFailure:^(id json) {
-        
-    }];
+    }
+    
 }
 @end
