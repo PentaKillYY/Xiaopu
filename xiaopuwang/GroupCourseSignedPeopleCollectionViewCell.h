@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GroupCourseSignedPeopleCollectionViewCell : UICollectionViewCell
-
+@property(nonatomic,weak)IBOutlet UIImageView* userLogoView;
+@property(nonatomic,weak)IBOutlet UILabel* userName;
+-(void)bingdingViewModel:(DataItem*)item;
 @end

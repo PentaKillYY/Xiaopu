@@ -22,6 +22,8 @@ static NSString *identifyCollection = @"GroupCourseSignedPeople";
     [self.shareButton.layer setMasksToBounds:YES];
     
     [self.peopleCollectionView registerNib:[UINib nibWithNibName:@"GroupCourseSignedPeopleCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:identifyCollection];
+    
+    detailItem = [DataItem new];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -31,7 +33,8 @@ static NSString *identifyCollection = @"GroupCourseSignedPeople";
 }
 
 -(void)bingdingViewModel:(DataItem*)item{
-//    self.remainPeopleLabel.text = [NSString stringWithFormat:@"仅剩%d个名额，快邀请好友来参团吧",[item getInt:@"FightCoursePeopleCount"]-[item getInt:@"FightCourseIsSignPeopleCount"]];
+    self.remainPeopleLabel.text = [NSString stringWithFormat:@"仅剩%d个名额，快邀请好友来参团吧",[item getInt:@"FightCoursePeopleCount"]-[item getInt:@"FightCourseIsSignPeopleCount"]];
+    [detailItem append:item];
 }
 
 -(IBAction)contactOrgAction:(id)sender{
@@ -45,13 +48,15 @@ static NSString *identifyCollection = @"GroupCourseSignedPeople";
 #pragma mark - colletionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 11;
+    
+    return [detailItem getDataItemArray:@"participant"].size;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
     GroupCourseSignedPeopleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifyCollection forIndexPath:indexPath];
+    [cell bingdingViewModel:[[detailItem getDataItemArray:@"participant"] getItem:indexPath.row]];
     return cell;
 }
 

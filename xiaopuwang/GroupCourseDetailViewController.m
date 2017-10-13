@@ -254,7 +254,6 @@
     }else{
         [self needLogin];
     }
-    
 }
 
 #pragma mark - NetWorkrequest

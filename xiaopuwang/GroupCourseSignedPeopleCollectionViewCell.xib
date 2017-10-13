@@ -42,6 +42,10 @@
                 <constraint firstItem="zN3-FU-3DZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="v3n-Yy-H4a"/>
             </constraints>
             <size key="customSize" width="50" height="70"/>
+            <connections>
+                <outlet property="userLogoView" destination="zN3-FU-3DZ" id="w3D-6N-RV2"/>
+                <outlet property="userName" destination="aNd-bH-Hvz" id="b34-MU-syW"/>
+            </connections>
             <point key="canvasLocation" x="52" y="70"/>
         </collectionViewCell>
     </objects>

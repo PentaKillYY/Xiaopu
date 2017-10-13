@@ -16,7 +16,9 @@
 @end
 
 @interface GroupCourseShareTableViewCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-
+{
+    DataItem* detailItem;
+}
 @property(nonatomic,weak)IBOutlet UIButton*contactBotton;
 @property(nonatomic,weak)IBOutlet UIButton* shareButton;
 @property(nonatomic,weak)IBOutlet UILabel* remainPeopleLabel;

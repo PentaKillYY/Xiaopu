@@ -83,8 +83,11 @@
         }];
     }else if (indexPath.section==1){
         CGFloat width = SCREEN_WIDTH - 90;
-        
-        return 2*(width / 8+19+10)+100;
+        if ([detailResult.detailinfo getDataItemArray:@"participant"].size%8) {
+            return 100+(width / 8+19+10)*([detailResult.detailinfo getDataItemArray:@"participant"].size/8+1);
+        }else{
+            return 100+(width / 8+19+10)*([detailResult.detailinfo getDataItemArray:@"participant"].size/8);
+        }
     }else if (indexPath.section ==2){
         return [tableView fd_heightForCellWithIdentifier:@"GroupCourseDetailExplainCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             // configurations
