@@ -289,7 +289,7 @@ static NSString *const kHeaderID = @"JHHeaderReusableView";
     
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:GroupCourseHomeShareTitle descr:GroupCourseHomeShareDes thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
     
-    shareObject.webpageUrl =@"";
+    shareObject.webpageUrl =@"http://www.wechat.ings.org.cn/course.html";
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;

@@ -367,7 +367,7 @@
     
     
     
-    shareObject.webpageUrl =[NSString stringWithFormat:@"http://apphtml.ings.org.cn/html/lesson.html?id=%@&type=%@",self.courseId,encodedString];
+    shareObject.webpageUrl =[NSString stringWithFormat:@"http://www.wechat.ings.org.cn/course_share.html?courseId=%@",self.courseId];
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;

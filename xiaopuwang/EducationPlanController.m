@@ -61,7 +61,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MultiTagSelectTableViewCell" bundle:nil] forCellReuseIdentifier:@"MultiTagSelectTableViewCell"];
 
     [self setUpTableView];
-    [self setupTitleView];
+//    [self setupTitleView];
    
     [self setupTrainingParameter];
     [self setupInternationalParameter];

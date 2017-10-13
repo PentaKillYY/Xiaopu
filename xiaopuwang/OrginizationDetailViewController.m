@@ -957,8 +957,8 @@
         _appointStateResult = json;
         
         self.dealOrderButton.userInteractionEnabled = YES;
-        [self.dealOrderButton setImage:V_IMAGE(@"DealAvailable") forState:UIControlStateNormal];
-        [self.dealOrderButton setImage:V_IMAGE(@"DealAVailableClicked") forState:UIControlStateHighlighted];
+        [self.dealOrderButton setBackgroundImage:V_IMAGE(@"DealAvailable") forState:UIControlStateNormal];
+        [self.dealOrderButton setBackgroundImage:V_IMAGE(@"DealAVailableClicked") forState:UIControlStateHighlighted];
         [self.tableView reloadData];
     } onFailure:^(id json) {
         _appointStateResult = json;
