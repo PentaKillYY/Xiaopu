@@ -128,7 +128,7 @@ static NSString *const kHeaderID = @"JHHeaderReusableView";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
-        return CGSizeMake(Main_Screen_Width, Main_Screen_Width/750*313);
+        return CGSizeMake(Main_Screen_Width, Main_Screen_Width/750*275);
     }else{
       return CGSizeMake((SCREEN_WIDTH-24)/2, 145+(Main_Screen_Width)/2);
     }

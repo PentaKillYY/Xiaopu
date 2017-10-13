@@ -299,6 +299,7 @@
 		046EF1CB1F8CADC7008B6EB6 /* GroupCourseSignedPeopleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046EF1C91F8CADC7008B6EB6 /* GroupCourseSignedPeopleCollectionViewCell.xib */; };
 		046EF1D31F8F54D1008B6EB6 /* OrgGroupCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046EF1D11F8F54D1008B6EB6 /* OrgGroupCourseTableViewCell.m */; };
 		046EF1D41F8F54D1008B6EB6 /* OrgGroupCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046EF1D21F8F54D1008B6EB6 /* OrgGroupCourseTableViewCell.xib */; };
+		046EF1D71F908AF2008B6EB6 /* GroupCourseBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 046EF1D61F908AF2008B6EB6 /* GroupCourseBanner.png */; };
 		0478272A1F5CE30A000D4ED8 /* FirstSelectLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047827291F5CE30A000D4ED8 /* FirstSelectLevelViewController.m */; };
 		0478272D1F5CE32F000D4ED8 /* SecondSelectLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478272C1F5CE32F000D4ED8 /* SecondSelectLevelViewController.m */; };
 		047827311F5D2BD9000D4ED8 /* VideoCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478272F1F5D2BD9000D4ED8 /* VideoCourseTableViewCell.m */; };
@@ -467,7 +468,6 @@
 		04F104AC1F5012E90041991C /* CommunityOneLineImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F104AA1F5012E90041991C /* CommunityOneLineImageCell.m */; };
 		04F104AD1F5012E90041991C /* CommunityOneLineImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F104AB1F5012E90041991C /* CommunityOneLineImageCell.xib */; };
 		04F1E92C1F597B4800C3EF5D /* NewLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1E92B1F597B4800C3EF5D /* NewLaunchScreen.storyboard */; };
-		6D1994F81F7F4D8E00027558 /* GroupCourseBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1994F71F7F4D8E00027558 /* GroupCourseBanner.png */; };
 		B0AA2EDB6FD7F97F0C26A65D /* Pods_xiaopuwang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */; };
 /* End PBXBuildFile section */
 
@@ -957,6 +957,7 @@
 		046EF1D01F8F54D1008B6EB6 /* OrgGroupCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgGroupCourseTableViewCell.h; sourceTree = "<group>"; };
 		046EF1D11F8F54D1008B6EB6 /* OrgGroupCourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgGroupCourseTableViewCell.m; sourceTree = "<group>"; };
 		046EF1D21F8F54D1008B6EB6 /* OrgGroupCourseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrgGroupCourseTableViewCell.xib; sourceTree = "<group>"; };
+		046EF1D61F908AF2008B6EB6 /* GroupCourseBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupCourseBanner.png; sourceTree = "<group>"; };
 		047827281F5CE30A000D4ED8 /* FirstSelectLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstSelectLevelViewController.h; sourceTree = "<group>"; };
 		047827291F5CE30A000D4ED8 /* FirstSelectLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstSelectLevelViewController.m; sourceTree = "<group>"; };
 		0478272B1F5CE32F000D4ED8 /* SecondSelectLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondSelectLevelViewController.h; sourceTree = "<group>"; };
@@ -1229,7 +1230,6 @@
 		04F104AB1F5012E90041991C /* CommunityOneLineImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityOneLineImageCell.xib; sourceTree = "<group>"; };
 		04F1E92B1F597B4800C3EF5D /* NewLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewLaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A73B19A75D70B27491827BC /* Pods-xiaopuwang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.debug.xcconfig"; sourceTree = "<group>"; };
-		6D1994F71F7F4D8E00027558 /* GroupCourseBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupCourseBanner.png; sourceTree = "<group>"; };
 		BDCBA81EED57608AFCDD6680 /* Pods_xiaopuwang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaopuwang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06F5DE0059CDDF9D1C05657 /* Pods-xiaopuwang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaopuwang.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaopuwang/Pods-xiaopuwang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1752,7 +1752,7 @@
 			children = (
 				043C0CC31F592BA800CE98B2 /* Data */,
 				043C0CB51F57E45100CE98B2 /* addReplyPic.png */,
-				6D1994F71F7F4D8E00027558 /* GroupCourseBanner.png */,
+				046EF1D61F908AF2008B6EB6 /* GroupCourseBanner.png */,
 				0478277F1F5F8CD4000D4ED8 /* NewRewardBg.png */,
 				043C0C901F56DEE400CE98B2 /* searchDel.png */,
 				047827D81F68BB80000D4ED8 /* arrow-back-blue-right.png */,
@@ -3117,7 +3117,6 @@
 				04B93D041F38914600B2DA19 /* MultiTagSelectTableViewCell.xib in Resources */,
 				045633231F29D0FD005E04CB /* VideoTableViewCell.xib in Resources */,
 				043C0C071F53EBC100CE98B2 /* MyCommunityTableViewCell.xib in Resources */,
-				6D1994F81F7F4D8E00027558 /* GroupCourseBanner.png in Resources */,
 				040C74771F4E9FCD001F5318 /* dropdownMenu_cornerIcon.png in Resources */,
 				045632DB1F2867DC005E04CB /* OrgClassTableViewCell.xib in Resources */,
 				04B7CF9C1F419B4600108915 /* MyAllOrderTableViewCell.xib in Resources */,
@@ -3135,6 +3134,7 @@
 				041BC7781F7D0EE20031A01C /* MainCommunityTitleTableViewCell.xib in Resources */,
 				04267F571F1871FC00FFBC3E /* OrginizationBannerTableViewCell.xib in Resources */,
 				043C0C581F56651E00CE98B2 /* PostCommunityTypeCell.xib in Resources */,
+				046EF1D71F908AF2008B6EB6 /* GroupCourseBanner.png in Resources */,
 				04D6C3521F734DD80080BDFF /* GroupCourseDetailExplainCell.xib in Resources */,
 				043C0CCA1F592EAB00CE98B2 /* NoSearchDataTableViewCell.xib in Resources */,
 				043C0BCC1F5105DC00CE98B2 /* CommentImageCollectionViewCell.xib in Resources */,
