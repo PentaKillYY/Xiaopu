@@ -287,10 +287,7 @@ static NSString *const kHeaderID = @"JHHeaderReusableView";
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     CFShow((__bridge CFTypeRef)(infoDictionary));
     
-    
-    
-    
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"" descr:@"" thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:GroupCourseHomeShareTitle descr:GroupCourseHomeShareDes thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
     
     shareObject.webpageUrl =@"";
     

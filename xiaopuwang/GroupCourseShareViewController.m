@@ -210,7 +210,12 @@
     
     NSString* encodedString = [courseType stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"我正在参与【%@】，还差【%d】人，快来拼课吧！",[detailResult.detailinfo getString:@"CourseName"],[detailResult.detailinfo getInt:@"FightCourseIsSignPeopleCount"]] descr:[detailResult.detailinfo getString:@"OrgName"] thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
+    
+    
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[detailResult.detailinfo getString:@"CourseImage"]]]];
+    
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"我正在参与【%@】，还差【%d】人，快来一起拼课吧！",[detailResult.detailinfo getString:@"CourseName"],[detailResult.detailinfo getInt:@"FightCourseIsSignPeopleCount"]] descr:[NSString stringWithFormat:@"【%@】",[detailResult.detailinfo getString:@"OrgName"]]  thumImage:[UIImage imageWithData:data]];
+    
     
     shareObject.webpageUrl =[NSString stringWithFormat:@"http://apphtml.ings.org.cn/html/lesson.html?id=%@&type=%@",self.courseId,encodedString];
     

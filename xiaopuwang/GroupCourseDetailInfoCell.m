@@ -34,6 +34,7 @@
         self.sepHeight.constant = 8;
         self.videoHeight.constant = (Main_Screen_Width-16)/2;
         self.playImg.hidden = NO;
+        [self.playVideoButton sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGE_URL,[detailItem getString:@"VideoPictureUrl"]]]  forState:UIControlStateNormal];
     }else{
         self.videoHeight.constant = 0;
         self.sepHeight.constant = 0;

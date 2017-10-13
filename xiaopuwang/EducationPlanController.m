@@ -710,10 +710,7 @@
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     CFShow((__bridge CFTypeRef)(infoDictionary));
     
-    
-    
-    
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"" descr:@"" thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:EducationPlanShareTitle descr:EducationPlanShareDesc thumImage:[UIImage imageNamed:@"GroupCourseShare"]];
     
     shareObject.webpageUrl =@"";
     
