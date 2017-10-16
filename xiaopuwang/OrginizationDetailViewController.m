@@ -69,6 +69,8 @@
     NSString* orderIndex;
     NSMutableArray* installmaps;
     NSString* groupCourseId;
+    
+    NSInteger mapCount;
 }
 
 @property(nonatomic,weak)IBOutlet UITableView* tableView;
@@ -734,8 +736,11 @@
 
 #pragma mark - OrgDetailAddressDelegate
 -(void)navToAddress:(id)sender{
+    
+    
     CLLocationCoordinate2D startPt = (CLLocationCoordinate2D){[_detailInfoResult.detailinfo getDouble:@"Y"], [_detailInfoResult.detailinfo getDouble:@"X"]};
     UIActionSheet* sheet = [[UIActionSheet alloc] initWithTitle:@"选择地图导航" cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:[self getInstalledMapAppWithEndLocation:startPt]];
+    mapCount =[self getInstalledMapAppWithEndLocation:startPt].count;
     sheet.delegate = self;
     [sheet showInView:self.view];
 }
@@ -744,7 +749,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex==0) {
         [self navAppleMap];
-    }else {
+    }else if(buttonIndex != mapCount-1) {
         NSDictionary *dic = installmaps[buttonIndex];
         NSString *urlString = dic[@"url"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
